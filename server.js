@@ -1,45 +1,35 @@
-const express = require("express");
+app.get("/teste-cartola", async (req, res) => {
+  const resultados = {};
 
-const app = express();
+  try {
+    const mercado = await fetch(
+      "https://api.cartolafc.globo.com/mercado/status"
+    );
 
-const PORT = process.env.PORT || 3000;
+    resultados.mercado = mercado.status;
+  } catch (e) {
+    resultados.mercado = e.toString();
+  }
 
-app.get("/", (req, res) => {
-  res.json({
-    status: "online",
-    versao: "4.2",
-    app: "Cartola Silvas FC",
-    mensagem: "Servidor funcionando com notícias da rodada",
-    ultimaAtualizacao: new Date().toISOString(),
-    noticias: [
-      {
-        titulo: "Atacante Favorito pode ser poupado",
-        clube: "Brasil",
-        jogador: "Atacante Favorito",
-        nivel: "alto",
-        fonte: "Teste manual do servidor",
-        resumo: "Jogador aparece como risco alto para testar a Central de Notícias."
-      },
-      {
-        titulo: "Meia Bola Parada treinou parcialmente",
-        clube: "Argentina",
-        jogador: "Meia Bola Parada",
-        nivel: "medio",
-        fonte: "Teste manual do servidor",
-        resumo: "Situação exige atenção antes de confirmar nos 25 times."
-      },
-      {
-        titulo: "Centroavante Forte treinou normalmente",
-        clube: "França",
-        jogador: "Centroavante Forte",
-        nivel: "baixo",
-        fonte: "Teste manual do servidor",
-        resumo: "Jogador aparece como opção segura para a rodada."
-      }
-    ]
-  });
-});
+  try {
+    const clubes = await fetch(
+      "https://api.cartolafc.globo.com/clubes"
+    );
 
-app.listen(PORT, () => {
-  console.log(`Servidor rodando na porta ${PORT}`);
+    resultados.clubes = clubes.status;
+  } catch (e) {
+    resultados.clubes = e.toString();
+  }
+
+  try {
+    const rodadas = await fetch(
+      "https://api.cartolafc.globo.com/rodadas"
+    );
+
+    resultados.rodadas = rodadas.status;
+  } catch (e) {
+    resultados.rodadas = e.toString();
+  }
+
+  res.json(resultados);
 });
