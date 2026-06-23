@@ -68,7 +68,12 @@ app.get("/", async (req, res) => {
 
 app.get("/teste-cartola", async (req, res) => {
   try {
-    const dados = await buscarStatusCartola();
+
+    const resposta = await fetch(
+      "https://api.cartolafc.globo.com/partidas"
+    );
+
+    const dados = await resposta.json();
 
     res.json({
       sucesso: true,
