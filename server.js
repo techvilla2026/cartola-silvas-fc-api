@@ -120,7 +120,7 @@ app.get("/copa", async (req, res) => {
 
     jogos: [
       {
-        mandante: "Brasil",
+        mandante: "Brasil - Teste",
         visitante: "França",
         data: "2026-06-27 21:00"
       },
