@@ -66,24 +66,23 @@ app.get("/", async (req, res) => {
   });
 });
 
-app.get("/teste-cartola", async (req, res) => {
+app.get("/teste-partidas", async (req, res) => {
   try {
 
     const resposta = await fetch(
-      "https://api.cartolafc.globo.com/clubes"
+      "https://api.cartolafc.globo.com/partidas"
     );
 
     const dados = await resposta.json();
 
-    res.json({
-      sucesso: true,
-      dados
-    });
+    res.json(dados);
+
   } catch (erro) {
+
     res.json({
-      sucesso: false,
       erro: erro.toString()
     });
+
   }
 });
 
