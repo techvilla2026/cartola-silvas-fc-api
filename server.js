@@ -94,6 +94,27 @@ app.get("/", async (req, res) => {
   });
 });
 
+app.get("/teste-copa-api", async (req, res) => {
+  try {
+    const resposta = await fetch(
+      "https://worldcupjson.net/matches"
+    );
+
+    const dados = await resposta.json();
+
+    res.json({
+      sucesso: true,
+      total: Array.isArray(dados) ? dados.length : 0,
+      primeiroItem: Array.isArray(dados) ? dados[0] : dados
+    });
+  } catch (erro) {
+    res.json({
+      sucesso: false,
+      erro: erro.toString()
+    });
+  }
+});
+
 app.get("/teste-cartola", async (req, res) => {
   try {
     const dados = await buscarStatusCartola();
