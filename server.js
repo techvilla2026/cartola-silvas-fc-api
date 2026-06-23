@@ -40,11 +40,24 @@ app.get("/", (req, res) => {
   });
 });
 
-app.get("/teste-cartola", (req, res) => {
-  res.json({
-    status: "ok",
-    mensagem: "Rota de teste criada com sucesso"
-  });
+app.get("/teste-cartola", async (req, res) => {
+  try {
+    const resposta = await fetch(
+      "https://api.cartolafc.globo.com/mercado/status"
+    );
+
+    const dados = await resposta.json();
+
+    res.json({
+      sucesso: true,
+      dados
+    });
+  } catch (erro) {
+    res.json({
+      sucesso: false,
+      erro: erro.toString()
+    });
+  }
 });
 
 app.listen(PORT, () => {
