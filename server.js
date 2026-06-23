@@ -18,25 +18,53 @@ async function buscarStatusCartola() {
   };
 }
 
+async function buscarPartidasCartola() {
+  const resposta = await fetch("https://api.cartolafc.globo.com/partidas");
+  const dados = await resposta.json();
+
+  const clubes = dados.clubes || {};
+  const partidas = Array.isArray(dados.partidas) ? dados.partidas : [];
+
+  return partidas.map((p) => {
+    const mandante = clubes[p.clube_casa_id] || {};
+    const visitante = clubes[p.clube_visitante_id] || {};
+
+    return {
+      partidaId: p.partida_id,
+      mandante: mandante.nome || mandante.nome_fantasia || `Clube ${p.clube_casa_id}`,
+      visitante: visitante.nome || visitante.nome_fantasia || `Clube ${p.clube_visitante_id}`,
+      data: p.partida_data || "",
+      local: p.local || "Local não informado",
+      valida: p.valida === true,
+      transmissao: p.transmissao?.label || ""
+    };
+  });
+}
+
 app.get("/", async (req, res) => {
   let cartola = null;
+  let partidas = [];
 
   try {
     cartola = await buscarStatusCartola();
   } catch (e) {
-    cartola = {
-      erro: "Não foi possível buscar dados do Cartola",
-      detalhe: e.toString()
-    };
+    cartola = { erro: "Não foi possível buscar dados do Cartola", detalhe: e.toString() };
+  }
+
+  try {
+    partidas = await buscarPartidasCartola();
+  } catch (e) {
+    partidas = [];
   }
 
   res.json({
     status: "online",
-    versao: "5.0",
+    versao: "5.1",
     app: "Cartola Silvas FC",
-    mensagem: "Servidor com dados reais do Cartola",
+    mensagem: "Servidor com dados reais do Cartola e agenda da rodada",
     ultimaAtualizacao: new Date().toISOString(),
     cartola,
+    partidas,
     noticias: [
       {
         titulo: "Atacante Favorito pode ser poupado",
@@ -66,24 +94,21 @@ app.get("/", async (req, res) => {
   });
 });
 
+app.get("/teste-cartola", async (req, res) => {
+  try {
+    const dados = await buscarStatusCartola();
+    res.json({ sucesso: true, dados });
+  } catch (erro) {
+    res.json({ sucesso: false, erro: erro.toString() });
+  }
+});
+
 app.get("/teste-partidas", async (req, res) => {
   try {
-    const resposta = await fetch("https://api.cartolafc.globo.com/partidas");
-    const dados = await resposta.json();
-
-    res.json({
-      sucesso: true,
-      temClubes: !!dados.clubes,
-      totalClubes: dados.clubes ? Object.keys(dados.clubes).length : 0,
-      temPartidas: Array.isArray(dados.partidas),
-      totalPartidas: Array.isArray(dados.partidas) ? dados.partidas.length : 0,
-      primeiraPartida: Array.isArray(dados.partidas) ? dados.partidas[0] : null
-    });
+    const partidas = await buscarPartidasCartola();
+    res.json({ sucesso: true, totalPartidas: partidas.length, partidas });
   } catch (erro) {
-    res.json({
-      sucesso: false,
-      erro: erro.toString()
-    });
+    res.json({ sucesso: false, erro: erro.toString() });
   }
 });
 
