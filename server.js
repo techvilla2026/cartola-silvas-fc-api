@@ -68,21 +68,22 @@ app.get("/", async (req, res) => {
 
 app.get("/teste-partidas", async (req, res) => {
   try {
-
-    const resposta = await fetch(
-      "https://api.cartolafc.globo.com/partidas"
-    );
-
+    const resposta = await fetch("https://api.cartolafc.globo.com/partidas");
     const dados = await resposta.json();
 
-    res.json(dados);
-
-  } catch (erro) {
-
     res.json({
+      sucesso: true,
+      temClubes: !!dados.clubes,
+      totalClubes: dados.clubes ? Object.keys(dados.clubes).length : 0,
+      temPartidas: Array.isArray(dados.partidas),
+      totalPartidas: Array.isArray(dados.partidas) ? dados.partidas.length : 0,
+      primeiraPartida: Array.isArray(dados.partidas) ? dados.partidas[0] : null
+    });
+  } catch (erro) {
+    res.json({
+      sucesso: false,
       erro: erro.toString()
     });
-
   }
 });
 
