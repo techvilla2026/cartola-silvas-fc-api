@@ -97,15 +97,14 @@ app.get("/", async (req, res) => {
 app.get("/teste-copa-api", async (req, res) => {
   try {
     const resposta = await fetch(
-      "https://worldcupjson.net/matches"
+      "https://raw.githubusercontent.com/openfootball/worldcup.json/master/2026/worldcup.json"
     );
 
     const dados = await resposta.json();
 
     res.json({
       sucesso: true,
-      total: Array.isArray(dados) ? dados.length : 0,
-      primeiroItem: Array.isArray(dados) ? dados[0] : dados
+      dados
     });
   } catch (erro) {
     res.json({
