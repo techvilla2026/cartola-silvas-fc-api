@@ -40,6 +40,13 @@ app.get("/", (req, res) => {
   });
 });
 
+app.get("/teste-cartola", (req, res) => {
+  res.json({
+    status: "ok",
+    mensagem: "Rota de teste criada com sucesso"
+  });
+});
+
 app.listen(PORT, () => {
   console.log(`Servidor rodando na porta ${PORT}`);
 });
