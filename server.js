@@ -112,6 +112,46 @@ app.get("/teste-partidas", async (req, res) => {
   }
 });
 
+app.get("/copa", async (req, res) => {
+
+  res.json({
+    competicao: "Copa do Mundo 2026",
+    fase: "Fase de Grupos",
+
+    jogos: [
+      {
+        mandante: "Brasil",
+        visitante: "França",
+        data: "2026-06-27 21:00"
+      },
+      {
+        mandante: "Argentina",
+        visitante: "Espanha",
+        data: "2026-06-26 16:00"
+      }
+    ],
+
+    grupos: [
+      {
+        grupo: "A",
+        times: [
+          { nome: "Brasil", pontos: 6 },
+          { nome: "Holanda", pontos: 4 },
+          { nome: "Japão", pontos: 1 },
+          { nome: "Canadá", pontos: 0 }
+        ]
+      }
+    ],
+
+    artilheiros: [
+      { jogador: "Mbappé", gols: 5 },
+      { jogador: "Vini Jr", gols: 4 },
+      { jogador: "Haaland", gols: 3 }
+    ]
+  });
+
+});
+
 app.listen(PORT, () => {
   console.log(`Servidor rodando na porta ${PORT}`);
 });
