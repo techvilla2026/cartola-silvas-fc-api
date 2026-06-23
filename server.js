@@ -133,43 +133,48 @@ app.get("/teste-partidas", async (req, res) => {
 });
 
 app.get("/copa", async (req, res) => {
+  try {
+    const resposta = await fetch(
+      "https://raw.githubusercontent.com/openfootball/worldcup.json/master/2026/worldcup.json"
+    );
 
-  res.json({
-    competicao: "Copa do Mundo 2026",
-    fase: "Fase de Grupos",
+    const dados = await resposta.json();
 
-    jogos: [
-      {
-        mandante: "Brasil - Teste",
-        visitante: "França",
-        data: "2026-06-27 21:00"
-      },
-      {
-        mandante: "Argentina",
-        visitante: "Espanha",
-        data: "2026-06-26 16:00"
-      }
-    ],
+    const partidas = Array.isArray(dados.matches) ? dados.matches : [];
 
-    grupos: [
-      {
-        grupo: "A",
-        times: [
-          { nome: "Brasil", pontos: 6 },
-          { nome: "Holanda", pontos: 4 },
-          { nome: "Japão", pontos: 1 },
-          { nome: "Canadá", pontos: 0 }
-        ]
-      }
-    ],
+    const jogos = partidas.map((jogo) => {
+      return {
+        mandante: jogo.team1 || "",
+        visitante: jogo.team2 || "",
+        data: `${jogo.date || ""} ${jogo.time || ""}`.trim(),
+        grupo: jogo.group || "",
+        estadio: jogo.ground || "",
+        rodada: jogo.round || "",
+        placar: jogo.score?.ft
+          ? `${jogo.score.ft[0]} x ${jogo.score.ft[1]}`
+          : ""
+      };
+    });
 
-    artilheiros: [
-      { jogador: "Mbappé", gols: 5 },
-      { jogador: "Vini Jr", gols: 4 },
-      { jogador: "Haaland", gols: 3 }
-    ]
-  });
+    res.json({
+      competicao: dados.name || "Copa do Mundo 2026",
+      fase: "Automático via API pública",
+      totalJogos: jogos.length,
+      jogos,
+      grupos: [],
+      artilheiros: []
+    });
 
+  } catch (erro) {
+    res.json({
+      competicao: "Copa do Mundo 2026",
+      fase: "Erro ao carregar dados automáticos",
+      erro: erro.toString(),
+      jogos: [],
+      grupos: [],
+      artilheiros: []
+    });
+  }
 });
 
 app.listen(PORT, () => {
