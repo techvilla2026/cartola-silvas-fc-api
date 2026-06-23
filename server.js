@@ -1,16 +1,42 @@
 const express = require("express");
 
 const app = express();
-
 const PORT = process.env.PORT || 3000;
 
-app.get("/", (req, res) => {
+async function buscarStatusCartola() {
+  const resposta = await fetch("https://api.cartolafc.globo.com/mercado/status");
+  const dados = await resposta.json();
+
+  return {
+    rodadaAtual: dados.rodada_atual,
+    nomeRodada: dados.nome_rodada,
+    statusMercado: dados.status_mercado,
+    mercadoAberto: dados.status_mercado === 1,
+    timesEscalados: dados.times_escalados,
+    rodadaFinal: dados.rodada_final,
+    gameOver: dados.game_over
+  };
+}
+
+app.get("/", async (req, res) => {
+  let cartola = null;
+
+  try {
+    cartola = await buscarStatusCartola();
+  } catch (e) {
+    cartola = {
+      erro: "Não foi possível buscar dados do Cartola",
+      detalhe: e.toString()
+    };
+  }
+
   res.json({
     status: "online",
-    versao: "4.2",
+    versao: "5.0",
     app: "Cartola Silvas FC",
-    mensagem: "Servidor funcionando com notícias da rodada",
+    mensagem: "Servidor com dados reais do Cartola",
     ultimaAtualizacao: new Date().toISOString(),
+    cartola,
     noticias: [
       {
         titulo: "Atacante Favorito pode ser poupado",
@@ -42,11 +68,7 @@ app.get("/", (req, res) => {
 
 app.get("/teste-cartola", async (req, res) => {
   try {
-    const resposta = await fetch(
-      "https://api.cartolafc.globo.com/mercado/status"
-    );
-
-    const dados = await resposta.json();
+    const dados = await buscarStatusCartola();
 
     res.json({
       sucesso: true,
