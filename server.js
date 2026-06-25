@@ -169,13 +169,14 @@ for (const jogo of partidas) {
 
 }
     res.json({
-      competicao: dados.name || "Copa do Mundo 2026",
-      fase: "Automático via API pública",
-      totalJogos: jogos.length,
-      jogos,
-      grupos: [],
-      artilheiros: []
-    });
+  competicao: dados.name || "World Cup 2026",
+  fase: "Automático via API pública",
+  totalJogos: jogos.length,
+  jogos,
+  resultados,
+  grupos: [],
+  artilheiros: []
+});
 
   } catch (erro) {
     res.json({
