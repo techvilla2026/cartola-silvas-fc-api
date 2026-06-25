@@ -145,18 +145,18 @@ app.get("/copa", async (req, res) => {
     const partidas = Array.isArray(dados.matches) ? dados.matches : [];
 
     const jogos = partidas.map((jogo) => {
-      return {
-        mandante: jogo.team1 || "",
-        visitante: jogo.team2 || "",
-        data: `${jogo.date || ""} ${jogo.time || ""}`.trim(),
-        grupo: jogo.group || "",
-        estadio: jogo.ground || "",
-        rodada: jogo.round || "",
-        placar: jogo.score?.ft
-          ? `${jogo.score.ft[0]} x ${jogo.score.ft[1]}`
-          : ""
-      };
-    });
+  return {
+    mandante: jogo.team1 || "",
+    visitante: jogo.team2 || "",
+    data: `${jogo.date || ""} ${jogo.time || ""}`.trim(),
+    grupo: jogo.group || "",
+    estadio: jogo.ground || "",
+    rodada: jogo.round || "",
+    placar: jogo.score?.ft
+      ? `${jogo.score.ft[0]} x ${jogo.score.ft[1]}`
+      : ""
+  };
+});
     res.json({
       competicao: dados.name || "Copa do Mundo 2026",
       fase: "Automático via API pública",
