@@ -178,18 +178,19 @@ res.json({
   artilheiros: []
 });
 
-  } catch (erro) {
-    res.json({
-      competicao: "Copa do Mundo 2026",
-      fase: "Erro ao carregar dados automáticos",
-      erro: erro.toString(),
-      jogos: [],
-      grupos: [],
-      artilheiros: []
-    });
-  }
+} catch (erro) {
+  res.json({
+    competicao: dados.name || "World Cup 2026",
+    fase: "Automático via API pública",
+    totalJogos: jogos.length,
+    totalResultados: resultados.length,
+    totalGeral: jogos.length + resultados.length,
+    jogos,
+    resultados,
+    grupos: [],
+    artilheiros: []
 });
-
+    
 app.listen(PORT, () => {
   console.log(`Servidor rodando na porta ${PORT}`);
 });
