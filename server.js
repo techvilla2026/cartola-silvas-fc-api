@@ -48,7 +48,10 @@ app.get("/", async (req, res) => {
   try {
     cartola = await buscarStatusCartola();
   } catch (e) {
-    cartola = { erro: "Não foi possível buscar dados do Cartola", detalhe: e.toString() };
+    cartola = {
+      erro: "Não foi possível buscar dados do Cartola",
+      detalhe: e.toString()
+    };
   }
 
   try {
@@ -94,22 +97,58 @@ app.get("/", async (req, res) => {
   });
 });
 
-app.get("/teste-copa-api", async (req, res) => {
+app.get("/copa", async (req, res) => {
   try {
     const resposta = await fetch(
       "https://raw.githubusercontent.com/openfootball/worldcup.json/master/2026/worldcup.json"
     );
 
     const dados = await resposta.json();
+    const partidas = Array.isArray(dados.matches) ? dados.matches : [];
+
+    const jogos = [];
+    const resultados = [];
+
+    for (const jogo of partidas) {
+      const item = {
+        mandante: jogo.team1 || "",
+        visitante: jogo.team2 || "",
+        data: `${jogo.date || ""} ${jogo.time || ""}`.trim(),
+        grupo: jogo.group || "",
+        estadio: jogo.ground || "",
+        rodada: jogo.round || "",
+        placar: jogo.score?.ft
+          ? `${jogo.score.ft[0]} x ${jogo.score.ft[1]}`
+          : ""
+      };
+
+      if (item.placar === "") {
+        jogos.push(item);
+      } else {
+        resultados.push(item);
+      }
+    }
 
     res.json({
-      sucesso: true,
-      dados
+      competicao: dados.name || "World Cup 2026",
+      fase: "Automático via API pública",
+      totalJogos: jogos.length,
+      totalResultados: resultados.length,
+      totalGeral: jogos.length + resultados.length,
+      jogos,
+      resultados,
+      grupos: [],
+      artilheiros: []
     });
   } catch (erro) {
     res.json({
-      sucesso: false,
-      erro: erro.toString()
+      competicao: "Copa do Mundo 2026",
+      fase: "Erro ao carregar dados automáticos",
+      erro: erro.toString(),
+      jogos: [],
+      resultados: [],
+      grupos: [],
+      artilheiros: []
     });
   }
 });
@@ -132,70 +171,13 @@ app.get("/teste-partidas", async (req, res) => {
   }
 });
 
-app.get("/copa", async (req, res) => {
-  try {
-    const resposta = await fetch(
-      "https://raw.githubusercontent.com/openfootball/worldcup.json/master/2026/worldcup.json"
-    );
-
-    const dados = await resposta.json();
-
-    const partidas = Array.isArray(dados.matches) ? dados.matches : [];
-
-    const jogos = [];
-    const resultados = [];
-
-    for (const jogo of partidas) {
-
-     const item = {
-      mandante: jogo.team1 || "",
-      visitante: jogo.team2 || "",
-      data: `${jogo.date || ""} ${jogo.time || ""}`.trim(),
-      grupo: jogo.group || "",
-      estadio: jogo.ground || "",
-      rodada: jogo.round || "",
-      placar: jogo.score?.ft
-        ? `${jogo.score.ft[0]} x ${jogo.score.ft[1]}`
-        : ""
-  };
-
-  if (item.placar === "") {
-    jogos.push(item);
-  } else {
-    resultados.push(item);
-  }
-
-}
-res.json({
-  competicao: dados.name || "World Cup 2026",
-  fase: "Automático via API pública",
-  totalJogos: jogos.length,
-  jogos,
-  resultados,
-  grupos: [],
-  artilheiros: []
-});
-
-} catch (erro) {
-  res.json({
-    competicao: dados.name || "World Cup 2026",
-    fase: "Automático via API pública",
-    totalJogos: jogos.length,
-    totalResultados: resultados.length,
-    totalGeral: jogos.length + resultados.length,
-    jogos,
-    resultados,
-    grupos: [],
-    artilheiros: []
-});
-
 app.get("/versao6", (req, res) => {
   res.json({
     versao: "6.0",
     mensagem: "Servidor atualizado"
   });
 });
-    
+
 app.listen(PORT, () => {
   console.log(`Servidor rodando na porta ${PORT}`);
 });
