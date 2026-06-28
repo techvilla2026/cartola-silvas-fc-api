@@ -142,8 +142,6 @@ app.get("/copa", async (req, res) => {
 
     const partidas = Array.isArray(dados.matches) ? dados.matches : [];
 
-    const partidas = Array.isArray(dados.matches) ? dados.matches : [];
-
     const jogos = [];
     const resultados = [];
 
