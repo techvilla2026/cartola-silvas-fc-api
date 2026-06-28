@@ -190,6 +190,13 @@ res.json({
     grupos: [],
     artilheiros: []
 });
+
+app.get("/versao6", (req, res) => {
+  res.json({
+    versao: "6.0",
+    mensagem: "Servidor atualizado"
+  });
+});
     
 app.listen(PORT, () => {
   console.log(`Servidor rodando na porta ${PORT}`);
