@@ -144,21 +144,21 @@ app.get("/copa", async (req, res) => {
 
     const partidas = Array.isArray(dados.matches) ? dados.matches : [];
 
-   const jogos = [];
-const resultados = [];
+    const jogos = [];
+    const resultados = [];
 
-for (const jogo of partidas) {
+    for (const jogo of partidas) {
 
-  const item = {
-    mandante: jogo.team1 || "",
-    visitante: jogo.team2 || "",
-    data: `${jogo.date || ""} ${jogo.time || ""}`.trim(),
-    grupo: jogo.group || "",
-    estadio: jogo.ground || "",
-    rodada: jogo.round || "",
-    placar: jogo.score?.ft
-      ? `${jogo.score.ft[0]} x ${jogo.score.ft[1]}`
-      : ""
+     const item = {
+      mandante: jogo.team1 || "",
+      visitante: jogo.team2 || "",
+      data: `${jogo.date || ""} ${jogo.time || ""}`.trim(),
+      grupo: jogo.group || "",
+      estadio: jogo.ground || "",
+      rodada: jogo.round || "",
+      placar: jogo.score?.ft
+        ? `${jogo.score.ft[0]} x ${jogo.score.ft[1]}`
+        : ""
   };
 
   if (item.placar === "") {
@@ -168,7 +168,7 @@ for (const jogo of partidas) {
   }
 
 }
-    res.json({
+res.json({
   competicao: dados.name || "World Cup 2026",
   fase: "Automático via API pública",
   totalJogos: jogos.length,
