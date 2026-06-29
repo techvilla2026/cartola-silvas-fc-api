@@ -320,6 +320,102 @@ app.get("/copa", async (req, res) => {
   }
 });
 
+app.get("/ia-copa", async (req, res) => {
+  try {
+    const resposta = await fetch(
+      "https://api.cartolafc.globo.com/copa/atletas/mercado"
+    );
+
+    const dados = await resposta.json();
+
+    const atletas = Array.isArray(dados.atletas) ? dados.atletas : [];
+    const clubes = dados.clubes || {};
+    const posicoes = dados.posicoes || {};
+    const status = dados.status || {};
+
+    function calcularNotaIA(jogador) {
+      let nota = 0;
+
+      nota += (jogador.media_num || 0) * 5;
+      nota += (jogador.pontos_num || 0) * 0.5;
+      nota += (jogador.jogos_num || 0) * 1.5;
+
+      if (jogador.status_id === 7) nota += 12;
+      if (jogador.status_id === 2) nota -= 8;
+      if (jogador.status_id === 3) nota -= 20;
+      if (jogador.status_id === 5) nota -= 25;
+      if (jogador.status_id === 6) nota -= 30;
+
+      nota -= (jogador.preco_num || 0) * 0.15;
+
+      return Number(nota.toFixed(2));
+    }
+
+    function atletaFormatado(jogador) {
+      const clube = clubes[jogador.clube_id] || {};
+      const posicao = posicoes[jogador.posicao_id] || {};
+      const situacao = status[jogador.status_id] || {};
+
+      return {
+        nome: jogador.nome || "",
+        apelido: jogador.apelido || "",
+        foto: jogador.foto || "",
+        clube: clube.nome || "",
+        selecao: clube.nome_fantasia || clube.nome || "",
+        escudo: clube.escudos?.["60x60"] || "",
+        posicao: posicao.nome || "",
+        posicaoAbreviacao: posicao.abreviacao || "",
+        status: situacao.nome || "",
+        preco: jogador.preco_num || 0,
+        media: jogador.media_num || 0,
+        pontos: jogador.pontos_num || 0,
+        jogos: jogador.jogos_num || 0,
+        notaIA: calcularNotaIA(jogador)
+      };
+    }
+
+    const ranking = atletas
+      .map(atletaFormatado)
+      .filter(j => j.status !== "Contundido" && j.status !== "Suspenso")
+      .sort((a, b) => b.notaIA - a.notaIA);
+
+    function topPorPosicao(abreviacao, limite) {
+      return ranking
+        .filter(j => j.posicaoAbreviacao === abreviacao)
+        .slice(0, limite);
+    }
+
+    const baratos = ranking
+      .filter(j => j.preco > 0 && j.preco <= 6)
+      .slice(0, 20);
+
+    const capitaes = ranking
+      .filter(j => ["ata", "mei"].includes(j.posicaoAbreviacao))
+      .slice(0, 20);
+
+    res.json({
+      versao: "7.0",
+      origem: "Cartola da Copa",
+      totalAtletas: atletas.length,
+      totalAnalisados: ranking.length,
+      capitaes,
+      atacantes: topPorPosicao("ata", 20),
+      meias: topPorPosicao("mei", 20),
+      laterais: topPorPosicao("lat", 20),
+      zagueiros: topPorPosicao("zag", 20),
+      goleiros: topPorPosicao("gol", 20),
+      tecnicos: topPorPosicao("tec", 10),
+      baratos,
+      topGeral: ranking.slice(0, 30)
+    });
+
+  } catch (erro) {
+    res.json({
+      erro: erro.toString()
+    });
+  }
+});
+
 app.listen(PORT, () => {
   console.log(`Servidor rodando na porta ${PORT}`);
 });
