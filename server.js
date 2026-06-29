@@ -178,6 +178,30 @@ app.get("/versao6", (req, res) => {
   });
 });
 
+app.get("/teste-atletas", async (req, res) => {
+  try {
+    const resposta = await fetch(
+      "https://api.cartolafc.globo.com/atletas/mercado"
+    );
+
+    const dados = await resposta.json();
+
+    res.json({
+      sucesso: true,
+      totalAtletas: dados.atletas ? dados.atletas.length : 0,
+      primeiroAtleta: dados.atletas ? dados.atletas[0] : null,
+      posicoes: dados.posicoes,
+      clubes: dados.clubes,
+      status: dados.status
+    });
+  } catch (erro) {
+    res.json({
+      sucesso: false,
+      erro: erro.toString()
+    });
+  }
+});
+
 app.listen(PORT, () => {
   console.log(`Servidor rodando na porta ${PORT}`);
 });
