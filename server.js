@@ -240,6 +240,30 @@ app.get("/teste-cartola-copa", async (req, res) => {
   });
 });
 
+app.get("/teste-atletas-copa", async (req, res) => {
+  try {
+    const resposta = await fetch(
+      "https://api.cartolafc.globo.com/copa/atletas/mercado"
+    );
+
+    const dados = await resposta.json();
+
+    res.json({
+      totalAtletas: dados.atletas?.length ?? 0,
+      primeiroAtleta: dados.atletas?.[0] ?? null,
+      chaves: Object.keys(dados),
+      posicoes: dados.posicoes,
+      status: dados.status,
+      clubes: Object.keys(dados.clubes || {}).length
+    });
+
+  } catch (e) {
+    res.json({
+      erro: e.toString()
+    });
+  }
+});
+
 app.listen(PORT, () => {
   console.log(`Servidor rodando na porta ${PORT}`);
 });
