@@ -202,6 +202,44 @@ app.get("/teste-atletas", async (req, res) => {
   }
 });
 
+app.get("/teste-cartola-copa", async (req, res) => {
+  const urls = [
+    "https://api.cartolafc.globo.com/copa/atletas/mercado",
+    "https://api.cartolafc.globo.com/cartola-copa/atletas/mercado",
+    "https://api.cartolafc.globo.com/competicoes/copa/atletas/mercado",
+    "https://api.cartolafc.globo.com/fifa/atletas/mercado",
+    "https://api.cartolafc.globo.com/world-cup/atletas/mercado",
+    "https://api.cartolafc.globo.com/atletas/mercado?competicao=copa",
+    "https://api.cartolafc.globo.com/atletas/mercado?game=copa"
+  ];
+
+  const resultados = [];
+
+  for (const url of urls) {
+    try {
+      const resposta = await fetch(url);
+      const texto = await resposta.text();
+
+      resultados.push({
+        url,
+        status: resposta.status,
+        contentType: resposta.headers.get("content-type"),
+        inicioResposta: texto.substring(0, 300)
+      });
+    } catch (erro) {
+      resultados.push({
+        url,
+        erro: erro.toString()
+      });
+    }
+  }
+
+  res.json({
+    sucesso: true,
+    resultados
+  });
+});
+
 app.listen(PORT, () => {
   console.log(`Servidor rodando na porta ${PORT}`);
 });
