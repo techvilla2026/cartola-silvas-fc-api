@@ -264,6 +264,62 @@ app.get("/teste-atletas-copa", async (req, res) => {
   }
 });
 
+app.get("/copa", async (req, res) => {
+  try {
+    const resposta = await fetch(
+      "https://raw.githubusercontent.com/openfootball/worldcup.json/master/2026/worldcup.json"
+    );
+
+    const dados = await resposta.json();
+    const partidas = Array.isArray(dados.matches) ? dados.matches : [];
+
+    const jogos = [];
+    const resultados = [];
+
+    for (const jogo of partidas) {
+      const item = {
+        mandante: jogo.team1 || "",
+        visitante: jogo.team2 || "",
+        data: `${jogo.date || ""} ${jogo.time || ""}`.trim(),
+        grupo: jogo.group || "",
+        estadio: jogo.ground || "",
+        rodada: jogo.round || "",
+        placar: jogo.score?.ft
+          ? `${jogo.score.ft[0]} x ${jogo.score.ft[1]}`
+          : ""
+      };
+
+      if (item.placar === "") {
+        jogos.push(item);
+      } else {
+        resultados.push(item);
+      }
+    }
+
+    res.json({
+      competicao: dados.name || "World Cup 2026",
+      fase: "Automático via API pública",
+      totalJogos: jogos.length,
+      totalResultados: resultados.length,
+      totalGeral: jogos.length + resultados.length,
+      jogos,
+      resultados,
+      grupos: [],
+      artilheiros: []
+    });
+  } catch (erro) {
+    res.json({
+      competicao: "Copa do Mundo 2026",
+      fase: "Erro ao carregar dados automáticos",
+      erro: erro.toString(),
+      jogos: [],
+      resultados: [],
+      grupos: [],
+      artilheiros: []
+    });
+  }
+});
+
 app.listen(PORT, () => {
   console.log(`Servidor rodando na porta ${PORT}`);
 });
