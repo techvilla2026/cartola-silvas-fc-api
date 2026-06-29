@@ -336,19 +336,22 @@ app.get("/ia-copa", async (req, res) => {
     function calcularNotaIA(jogador) {
       let nota = 0;
 
-      nota += (jogador.media_num || 0) * 5;
-      nota += (jogador.pontos_num || 0) * 0.5;
-      nota += (jogador.jogos_num || 0) * 1.5;
+      nota += (jogador.media_num || 0) * 3.2;
+      nota += (jogador.pontos_num || 0) * 0.35;
+      nota += (jogador.jogos_num || 0) * 2;
 
-      if (jogador.status_id === 7) nota += 12;
-      if (jogador.status_id === 2) nota -= 8;
-      if (jogador.status_id === 3) nota -= 20;
+      if (jogador.status_id === 7) nota += 10;
+      if (jogador.status_id === 2) nota -= 10;
+      if (jogador.status_id === 3) nota -= 25;
       if (jogador.status_id === 5) nota -= 25;
       if (jogador.status_id === 6) nota -= 30;
 
-      nota -= (jogador.preco_num || 0) * 0.15;
+      nota -= (jogador.preco_num || 0) * 0.12;
 
-      return Number(nota.toFixed(2));
+      if (nota > 100) nota = 100;
+      if (nota < 0) nota = 0;
+
+      return Number(nota.toFixed(1));
     }
 
     function atletaFormatado(jogador) {
