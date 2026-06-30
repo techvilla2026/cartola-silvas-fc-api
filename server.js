@@ -332,6 +332,25 @@ app.get("/ia-copa", async (req, res) => {
     const clubes = dados.clubes || {};
     const posicoes = dados.posicoes || {};
     const status = dados.status || {};
+    const respostaJogos = await fetch(
+      "https://raw.githubusercontent.com/openfootball/worldcup.json/master/2026/worldcup.json"
+    );
+
+    const dadosJogos = await respostaJogos.json();
+
+    const jogos = Array.isArray(dadosJogos.matches)
+      ? dadosJogos.matches.map((jogo) => ({
+          mandante: jogo.team1 || "",
+          visitante: jogo.team2 || "",
+          data: `${jogo.date || ""} ${jogo.time || ""}`.trim(),
+          grupo: jogo.group || "",
+          estadio: jogo.ground || "",
+          rodada: jogo.round || "",
+          placar: jogo.score?.ft
+            ? `${jogo.score.ft[0]} x ${jogo.score.ft[1]}`
+            : ""
+        }))
+      : [];
     const FORCA_SELECOES = {
       "Argentina": 98,
       "França": 97,
@@ -429,6 +448,12 @@ app.get("/ia-copa", async (req, res) => {
       nota += (jogador.pontos_num || 0) * 0.35;
       nota += (jogador.jogos_num || 0) * 2;
       nota += forca * 0.18;
+      const selecao =
+        clubes[jogador.clube_id]?.nome_fantasia ||
+        clubes[jogador.clube_id]?.nome ||
+        "";
+      
+      nota += bonusConfronto(selecao, jogos);
       nota += bonusConfronto(
           clubes[jogador.clube_id]?.nome_fantasia ||
           clubes[jogador.clube_id]?.nome ||
