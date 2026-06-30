@@ -439,43 +439,79 @@ function calcularIndiceSilvas(jogador, selecao, posicaoAbreviacao, confronto) {
   const jogos = jogador.jogos_num || 0;
   const preco = jogador.preco_num || 0;
 
-  const mediaScore = clamp(media / 20 * 30, 0, 30);
-  const momentoScore = clamp(pontos / 120 * 15, 0, 15);
-  const regularidadeScore = clamp(jogos / 7 * 10, 0, 10);
-  const forcaScore = clamp((forcaSelecao(selecao) - 60) / 40 * 15, 0, 15);
-  const confrontoScore = clamp(confronto.confrontoScore, 0, 20);
+  const mediaNorm = clamp(media / 20 * 100, 0, 100);
+  const pontosNorm = clamp(pontos / 120 * 100, 0, 100);
+  const regularidadeNorm = clamp(jogos / 7 * 100, 0, 100);
+  const forcaNorm = clamp((forcaSelecao(selecao) - 55) / 45 * 100, 0, 100);
+  const confrontoNorm = clamp(confronto.confrontoScore / 20 * 100, 0, 100);
+  const sgNorm = clamp(confronto.chanceSG, 0, 100);
+  const custoNorm = preco > 0 ? clamp((media / preco) * 65, 0, 100) : 35;
 
-  let custoBeneficioScore = 5;
-  if (preco > 0) {
-    custoBeneficioScore = clamp((media / preco) * 5, 0, 10);
+  let statusNorm = 100;
+  if (jogador.status_id === 2) statusNorm = 45;
+  if ([3, 5, 6].includes(jogador.status_id)) statusNorm = 0;
+
+  // Pesos por posição:
+  // Copa: não força zaga fechada. A IA busca o melhor atleta individual por posição.
+  let indice = 0;
+
+  if (posicaoAbreviacao === "gol") {
+    indice =
+      sgNorm * 0.35 +
+      forcaNorm * 0.20 +
+      mediaNorm * 0.25 +
+      custoNorm * 0.10 +
+      statusNorm * 0.10;
+  } else if (posicaoAbreviacao === "zag") {
+    indice =
+      sgNorm * 0.30 +
+      mediaNorm * 0.25 +
+      forcaNorm * 0.15 +
+      confrontoNorm * 0.10 +
+      custoNorm * 0.10 +
+      statusNorm * 0.10;
+  } else if (posicaoAbreviacao === "lat") {
+    indice =
+      sgNorm * 0.22 +
+      confrontoNorm * 0.20 +
+      mediaNorm * 0.25 +
+      regularidadeNorm * 0.10 +
+      custoNorm * 0.13 +
+      statusNorm * 0.10;
+  } else if (posicaoAbreviacao === "mei") {
+    indice =
+      mediaNorm * 0.30 +
+      confrontoNorm * 0.25 +
+      pontosNorm * 0.15 +
+      regularidadeNorm * 0.10 +
+      custoNorm * 0.10 +
+      statusNorm * 0.10;
+  } else if (posicaoAbreviacao === "ata") {
+    indice =
+      confrontoNorm * 0.32 +
+      mediaNorm * 0.28 +
+      pontosNorm * 0.15 +
+      forcaNorm * 0.10 +
+      custoNorm * 0.05 +
+      statusNorm * 0.10;
+  } else if (posicaoAbreviacao === "tec") {
+    indice =
+      sgNorm * 0.30 +
+      forcaNorm * 0.30 +
+      confrontoNorm * 0.20 +
+      custoNorm * 0.05 +
+      statusNorm * 0.15;
+  } else {
+    indice =
+      mediaNorm * 0.30 +
+      confrontoNorm * 0.20 +
+      pontosNorm * 0.15 +
+      forcaNorm * 0.15 +
+      custoNorm * 0.10 +
+      statusNorm * 0.10;
   }
 
-  let statusScore = 5;
-  if (jogador.status_id === 2) statusScore = 2;
-  if ([3, 5, 6].includes(jogador.status_id)) statusScore = 0;
-
-  let ajustePosicao = 0;
-  if (["ata", "mei"].includes(posicaoAbreviacao)) {
-    ajustePosicao += confronto.ajusteAtacante;
-  }
-
-  if (["gol", "zag", "lat", "tec"].includes(posicaoAbreviacao)) {
-    ajustePosicao += confronto.ajusteDefensor;
-  }
-
-  const bruto =
-    mediaScore +
-    momentoScore +
-    regularidadeScore +
-    forcaScore +
-    confrontoScore +
-    custoBeneficioScore +
-    statusScore +
-    ajustePosicao;
-
-  const indice = clamp(bruto, 0, 100);
-
-  return Number(indice.toFixed(1));
+  return Number(clamp(indice, 0, 100).toFixed(1));
 }
 
 function gerarMotivos(jogador, selecao, posicaoAbreviacao, confronto, indice) {
@@ -515,6 +551,24 @@ function gerarMotivos(jogador, selecao, posicaoAbreviacao, confronto, indice) {
   }
 
   return motivos;
+}
+
+
+function radarSilvas(jogador, posicaoAbreviacao, confronto, indice) {
+  if (["Contundido", "Suspenso"].includes(jogador.status || "")) return "EVITAR";
+  if (indice >= 90 && confronto.classificacao !== "Muito difícil") return "EXPLODIR";
+  if (indice >= 80) return "SEGURO";
+  if (indice >= 70) return "APOSTA";
+  if (indice >= 60) return "ARRISCADO";
+  return "EVITAR";
+}
+
+function recomendacaoFinal(indice) {
+  if (indice >= 90) return "ESCALAR";
+  if (indice >= 80) return "ESCALAR COM CONFIANÇA";
+  if (indice >= 70) return "USAR COM CAUTELA";
+  if (indice >= 60) return "SÓ SE PRECISAR";
+  return "NÃO RECOMENDADO";
 }
 
 function atletaFormatado(jogador, clubes, posicoes, status, jogos) {
@@ -563,7 +617,9 @@ function atletaFormatado(jogador, clubes, posicoes, status, jogos) {
       data: confronto.jogo?.data || "",
       rodada: confronto.jogo?.rodada || ""
     },
-    motivos: gerarMotivos(jogador, selecao, posicaoAbreviacao, confronto, indiceSilvas)
+    motivos: gerarMotivos(jogador, selecao, posicaoAbreviacao, confronto, indiceSilvas),
+    radar: radarSilvas({ status: situacao.nome || "" }, posicaoAbreviacao, confronto, indiceSilvas),
+    recomendacao: recomendacaoFinal(indiceSilvas)
   };
 }
 
@@ -640,6 +696,15 @@ function montarCategorias(ranking) {
     )
     .slice(0, 20);
 
+  const defesasDaRodada = atletasValidos
+    .filter(j => ["gol", "zag", "lat", "tec"].includes(j.posicaoAbreviacao))
+    .sort((a, b) => {
+      const sgA = a.confronto?.chanceSG || 0;
+      const sgB = b.confronto?.chanceSG || 0;
+      return (sgB + b.indiceSilvas / 4) - (sgA + a.indiceSilvas / 4);
+    })
+    .slice(0, 30);
+
   return {
     capitaes,
     atacantes: topPorPosicao(atletasValidos, "ata", 20),
@@ -653,6 +718,7 @@ function montarCategorias(ranking) {
     apostas,
     diferenciais,
     evitar,
+    defesasDaRodada,
     topGeral: atletasValidos.slice(0, 30),
     timeIdeal: montarTimeIdeal(atletasValidos)
   };
@@ -679,15 +745,15 @@ app.get("/", async (req, res) => {
 
   res.json({
     status: "online",
-    versao: "8.0",
+    versao: "8.5",
     app: "Cartola Silvas FC",
-    mensagem: "Servidor com IA Silvas 8.0",
+    mensagem: "Servidor com IA Silvas 8.5",
     ultimaAtualizacao: new Date().toISOString(),
     cartola,
     partidas,
     noticias: [
       {
-        titulo: "IA Silvas 8.0 ativa",
+        titulo: "IA Silvas 8.5 ativa",
         clube: "Cartola da Copa",
         jogador: "Índice Silvas",
         nivel: "alto",
@@ -756,7 +822,7 @@ app.get("/ia-copa", async (req, res) => {
     const categorias = montarCategorias(ranking);
 
     res.json({
-      versao: "8.0",
+      versao: "8.5",
       origem: "Cartola da Copa",
       modo: "Copa",
       estrategia: "Na Copa, a IA não força zaga fechada. Ela prioriza o melhor atleta por posição.",
@@ -776,7 +842,7 @@ app.get("/ia-copa", async (req, res) => {
 
   } catch (erro) {
     res.json({
-      versao: "8.0",
+      versao: "8.5",
       erro: erro.toString()
     });
   }
@@ -801,7 +867,7 @@ app.get("/time-ideal", async (req, res) => {
     );
 
     res.json({
-      versao: "8.0",
+      versao: "8.5",
       modo: "Copa",
       ...montarTimeIdeal(ranking)
     });
@@ -849,10 +915,17 @@ app.get("/teste-atletas-copa", async (req, res) => {
   }
 });
 
+app.get("/versao85", (req, res) => {
+  res.json({
+    versao: "8.5",
+    mensagem: "IA Silvas 8.5 ativa"
+  });
+});
+
 app.get("/versao8", (req, res) => {
   res.json({
-    versao: "8.0",
-    mensagem: "IA Silvas 8.0 ativa"
+    versao: "8.5",
+    mensagem: "IA Silvas 8.5 ativa"
   });
 });
 
