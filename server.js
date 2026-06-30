@@ -3,8 +3,248 @@ const express = require("express");
 const app = express();
 const PORT = process.env.PORT || 3000;
 
+const CARTOLA_COPA_ATLETAS_URL = "https://api.cartolafc.globo.com/copa/atletas/mercado";
+const CARTOLA_STATUS_URL = "https://api.cartolafc.globo.com/mercado/status";
+const CARTOLA_PARTIDAS_URL = "https://api.cartolafc.globo.com/partidas";
+const COPA_JOGOS_URL = "https://raw.githubusercontent.com/openfootball/worldcup.json/master/2026/worldcup.json";
+
+function clamp(valor, minimo, maximo) {
+  return Math.max(minimo, Math.min(maximo, valor));
+}
+
+function normalizarTexto(texto) {
+  return (texto || "")
+    .toString()
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .toLowerCase()
+    .trim();
+}
+
+const ALIASES_SELECOES = {
+  "brasil": "Brazil",
+  "brazil": "Brazil",
+  "argentina": "Argentina",
+  "franca": "France",
+  "france": "France",
+  "espanha": "Spain",
+  "spain": "Spain",
+  "portugal": "Portugal",
+  "alemanha": "Germany",
+  "germany": "Germany",
+  "inglaterra": "England",
+  "england": "England",
+  "holanda": "Netherlands",
+  "netherlands": "Netherlands",
+  "paises baixos": "Netherlands",
+  "belgica": "Belgium",
+  "belgium": "Belgium",
+  "croacia": "Croatia",
+  "croatia": "Croatia",
+  "uruguai": "Uruguay",
+  "uruguay": "Uruguay",
+  "marrocos": "Morocco",
+  "morocco": "Morocco",
+  "mexico": "Mexico",
+  "estados unidos": "United States",
+  "usa": "United States",
+  "united states": "United States",
+  "japao": "Japan",
+  "japan": "Japan",
+  "suica": "Switzerland",
+  "switzerland": "Switzerland",
+  "dinamarca": "Denmark",
+  "denmark": "Denmark",
+  "servia": "Serbia",
+  "serbia": "Serbia",
+  "senegal": "Senegal",
+  "colombia": "Colombia",
+  "equador": "Ecuador",
+  "ecuador": "Ecuador",
+  "canada": "Canada",
+  "noruega": "Norway",
+  "norway": "Norway",
+  "paraguai": "Paraguay",
+  "paraguay": "Paraguay",
+  "australia": "Australia",
+  "coreia do sul": "South Korea",
+  "south korea": "South Korea",
+  "polonia": "Poland",
+  "poland": "Poland",
+  "austria": "Austria",
+  "escocia": "Scotland",
+  "scotland": "Scotland",
+  "turquia": "Turkey",
+  "turkey": "Turkey",
+  "costa do marfim": "Ivory Coast",
+  "ivory coast": "Ivory Coast",
+  "egito": "Egypt",
+  "egypt": "Egypt",
+  "gana": "Ghana",
+  "ghana": "Ghana",
+  "africa do sul": "South Africa",
+  "south africa": "South Africa",
+  "tunisia": "Tunisia",
+  "tunisía": "Tunisia",
+  "republica democratica do congo": "DR Congo",
+  "rd congo": "DR Congo",
+  "dr congo": "DR Congo",
+  "congo dr": "DR Congo",
+  "nova zelandia": "New Zealand",
+  "new zealand": "New Zealand",
+  "ira": "Iran",
+  "iran": "Iran",
+  "haiti": "Haiti",
+  "cabo verde": "Cape Verde",
+  "cape verde": "Cape Verde",
+  "bosnia e herzegovina": "Bosnia & Herzegovina",
+  "bosnia & herzegovina": "Bosnia & Herzegovina",
+  "qatar": "Qatar",
+  "catar": "Qatar",
+  "republica tcheca": "Czech Republic",
+  "czech republic": "Czech Republic",
+  "curacao": "Curaçao",
+  "curaçao": "Curaçao",
+  "suecia": "Sweden",
+  "sweden": "Sweden",
+  "argelia": "Algeria",
+  "algeria": "Algeria",
+  "jordania": "Jordan",
+  "jordan": "Jordan",
+  "iraque": "Iraq",
+  "iraq": "Iraq",
+  "uzbequistao": "Uzbekistan",
+  "uzbekistan": "Uzbekistan",
+  "panama": "Panama",
+  "arabia saudita": "Saudi Arabia",
+  "saudi arabia": "Saudi Arabia"
+};
+
+const FORCA_SELECOES = {
+  "Argentina": 98,
+  "France": 97,
+  "Brazil": 96,
+  "Spain": 95,
+  "Portugal": 93,
+  "Germany": 92,
+  "England": 92,
+  "Netherlands": 90,
+  "Belgium": 88,
+  "Croatia": 86,
+  "Uruguay": 85,
+  "Morocco": 84,
+  "Mexico": 82,
+  "United States": 82,
+  "Japan": 81,
+  "Switzerland": 80,
+  "Denmark": 80,
+  "Serbia": 79,
+  "Senegal": 79,
+  "Colombia": 78,
+  "Ecuador": 77,
+  "Canada": 76,
+  "Norway": 76,
+  "Paraguay": 75,
+  "Australia": 74,
+  "South Korea": 73,
+  "Poland": 73,
+  "Austria": 72,
+  "Scotland": 72,
+  "Turkey": 72,
+  "Ivory Coast": 71,
+  "Egypt": 70,
+  "Ghana": 69,
+  "South Africa": 68,
+  "Tunisia": 67,
+  "DR Congo": 66,
+  "New Zealand": 64,
+  "Iran": 64,
+  "Haiti": 60,
+  "Cape Verde": 67,
+  "Bosnia & Herzegovina": 69,
+  "Qatar": 63,
+  "Czech Republic": 72,
+  "Curaçao": 60,
+  "Sweden": 78,
+  "Algeria": 70,
+  "Jordan": 62,
+  "Iraq": 62,
+  "Uzbekistan": 63,
+  "Panama": 61,
+  "Saudi Arabia": 64
+};
+
+function selecaoCanonica(nome) {
+  const chave = normalizarTexto(nome);
+  return ALIASES_SELECOES[chave] || nome || "";
+}
+
+function forcaSelecao(nome) {
+  const canonica = selecaoCanonica(nome);
+  return FORCA_SELECOES[canonica] ?? 70;
+}
+
+function traduzirSelecao(nome) {
+  const canonica = selecaoCanonica(nome);
+  const mapa = {
+    "Brazil": "Brasil",
+    "Argentina": "Argentina",
+    "France": "França",
+    "Spain": "Espanha",
+    "Portugal": "Portugal",
+    "Germany": "Alemanha",
+    "England": "Inglaterra",
+    "Netherlands": "Holanda",
+    "Belgium": "Bélgica",
+    "Croatia": "Croácia",
+    "Uruguay": "Uruguai",
+    "Morocco": "Marrocos",
+    "Mexico": "México",
+    "United States": "Estados Unidos",
+    "Japan": "Japão",
+    "Switzerland": "Suíça",
+    "Denmark": "Dinamarca",
+    "Serbia": "Sérvia",
+    "Senegal": "Senegal",
+    "Colombia": "Colômbia",
+    "Ecuador": "Equador",
+    "Canada": "Canadá",
+    "Norway": "Noruega",
+    "Paraguay": "Paraguai",
+    "Australia": "Austrália",
+    "South Korea": "Coreia do Sul",
+    "Poland": "Polônia",
+    "Austria": "Áustria",
+    "Scotland": "Escócia",
+    "Turkey": "Turquia",
+    "Ivory Coast": "Costa do Marfim",
+    "Egypt": "Egito",
+    "Ghana": "Gana",
+    "South Africa": "África do Sul",
+    "Tunisia": "Tunísia",
+    "DR Congo": "República Democrática do Congo",
+    "New Zealand": "Nova Zelândia",
+    "Iran": "Irã",
+    "Haiti": "Haiti",
+    "Cape Verde": "Cabo Verde",
+    "Bosnia & Herzegovina": "Bósnia e Herzegovina",
+    "Qatar": "Catar",
+    "Czech Republic": "República Tcheca",
+    "Curaçao": "Curaçao",
+    "Sweden": "Suécia",
+    "Algeria": "Argélia",
+    "Jordan": "Jordânia",
+    "Iraq": "Iraque",
+    "Uzbekistan": "Uzbequistão",
+    "Panama": "Panamá",
+    "Saudi Arabia": "Arábia Saudita"
+  };
+
+  return mapa[canonica] || nome || "";
+}
+
 async function buscarStatusCartola() {
-  const resposta = await fetch("https://api.cartolafc.globo.com/mercado/status");
+  const resposta = await fetch(CARTOLA_STATUS_URL);
   const dados = await resposta.json();
 
   return {
@@ -19,7 +259,7 @@ async function buscarStatusCartola() {
 }
 
 async function buscarPartidasCartola() {
-  const resposta = await fetch("https://api.cartolafc.globo.com/partidas");
+  const resposta = await fetch(CARTOLA_PARTIDAS_URL);
   const dados = await resposta.json();
 
   const clubes = dados.clubes || {};
@@ -39,6 +279,383 @@ async function buscarPartidasCartola() {
       transmissao: p.transmissao?.label || ""
     };
   });
+}
+
+async function buscarJogosCopa() {
+  const resposta = await fetch(COPA_JOGOS_URL);
+  const dados = await resposta.json();
+  const partidas = Array.isArray(dados.matches) ? dados.matches : [];
+
+  return partidas.map((jogo) => {
+    const placar = jogo.score?.ft
+      ? `${jogo.score.ft[0]} x ${jogo.score.ft[1]}`
+      : "";
+
+    return {
+      mandante: jogo.team1 || "",
+      visitante: jogo.team2 || "",
+      mandantePt: traduzirSelecao(jogo.team1 || ""),
+      visitantePt: traduzirSelecao(jogo.team2 || ""),
+      data: `${jogo.date || ""} ${jogo.time || ""}`.trim(),
+      grupo: jogo.group || "",
+      estadio: jogo.ground || "",
+      rodada: jogo.round || "",
+      placar
+    };
+  });
+}
+
+async function buscarAtletasCopa() {
+  const resposta = await fetch(CARTOLA_COPA_ATLETAS_URL);
+  return await resposta.json();
+}
+
+function proximoJogoDaSelecao(selecao, jogos) {
+  const canonica = selecaoCanonica(selecao);
+
+  return jogos.find((jogo) =>
+    jogo.placar === "" &&
+    (
+      selecaoCanonica(jogo.mandante) === canonica ||
+      selecaoCanonica(jogo.visitante) === canonica
+    )
+  );
+}
+
+function infoConfronto(selecao, jogos) {
+  const canonica = selecaoCanonica(selecao);
+  const jogo = proximoJogoDaSelecao(canonica, jogos);
+
+  if (!jogo) {
+    return {
+      temJogo: false,
+      adversario: "",
+      adversarioPt: "",
+      jogo: null,
+      forcaSelecao: forcaSelecao(canonica),
+      forcaAdversario: 70,
+      diferenca: 0,
+      classificacao: "Sem jogo próximo",
+      confrontoScore: 10,
+      chanceSG: 45,
+      ajusteAtacante: 0,
+      ajusteDefensor: 0
+    };
+  }
+
+  const adversario = selecaoCanonica(jogo.mandante) === canonica
+    ? jogo.visitante
+    : jogo.mandante;
+
+  const minhaForca = forcaSelecao(canonica);
+  const forcaAdv = forcaSelecao(adversario);
+  const diferenca = minhaForca - forcaAdv;
+
+  let classificacao = "Equilibrado";
+  let confrontoScore = 12;
+  let chanceSG = 45;
+
+  if (diferenca >= 20) {
+    classificacao = "Muito favorável";
+    confrontoScore = 20;
+    chanceSG = 78;
+  } else if (diferenca >= 12) {
+    classificacao = "Favorável";
+    confrontoScore = 17;
+    chanceSG = 68;
+  } else if (diferenca >= 6) {
+    classificacao = "Leve vantagem";
+    confrontoScore = 15;
+    chanceSG = 58;
+  } else if (diferenca >= 0) {
+    classificacao = "Equilibrado com vantagem";
+    confrontoScore = 13;
+    chanceSG = 50;
+  } else if (diferenca <= -20) {
+    classificacao = "Muito difícil";
+    confrontoScore = 4;
+    chanceSG = 18;
+  } else if (diferenca <= -12) {
+    classificacao = "Difícil";
+    confrontoScore = 7;
+    chanceSG = 26;
+  } else if (diferenca <= -6) {
+    classificacao = "Desafiador";
+    confrontoScore = 9;
+    chanceSG = 35;
+  } else {
+    classificacao = "Equilibrado";
+    confrontoScore = 11;
+    chanceSG = 43;
+  }
+
+  return {
+    temJogo: true,
+    adversario,
+    adversarioPt: traduzirSelecao(adversario),
+    jogo,
+    forcaSelecao: minhaForca,
+    forcaAdversario: forcaAdv,
+    diferenca,
+    classificacao,
+    confrontoScore,
+    chanceSG,
+    ajusteAtacante: Math.round((confrontoScore - 10) * 0.9),
+    ajusteDefensor: Math.round((chanceSG - 45) / 5)
+  };
+}
+
+function nivelIndice(indice) {
+  if (indice >= 96) return "LENDÁRIO";
+  if (indice >= 90) return "ELITE";
+  if (indice >= 85) return "MUITO FORTE";
+  if (indice >= 80) return "BOA APOSTA";
+  if (indice >= 70) return "ARRISCADO";
+  if (indice >= 60) return "EVITE";
+  return "FUJA";
+}
+
+function emojiNivel(indice) {
+  if (indice >= 96) return "🟣";
+  if (indice >= 90) return "🟢";
+  if (indice >= 85) return "🔵";
+  if (indice >= 80) return "🟠";
+  if (indice >= 70) return "🟡";
+  if (indice >= 60) return "🔴";
+  return "⚫";
+}
+
+function estrelasIndice(indice) {
+  if (indice >= 90) return "⭐⭐⭐⭐⭐";
+  if (indice >= 80) return "⭐⭐⭐⭐☆";
+  if (indice >= 70) return "⭐⭐⭐☆☆";
+  if (indice >= 60) return "⭐⭐☆☆☆";
+  return "⭐☆☆☆☆";
+}
+
+function calcularIndiceSilvas(jogador, selecao, posicaoAbreviacao, confronto) {
+  const media = jogador.media_num || 0;
+  const pontos = jogador.pontos_num || 0;
+  const jogos = jogador.jogos_num || 0;
+  const preco = jogador.preco_num || 0;
+
+  const mediaScore = clamp(media / 20 * 30, 0, 30);
+  const momentoScore = clamp(pontos / 120 * 15, 0, 15);
+  const regularidadeScore = clamp(jogos / 7 * 10, 0, 10);
+  const forcaScore = clamp((forcaSelecao(selecao) - 60) / 40 * 15, 0, 15);
+  const confrontoScore = clamp(confronto.confrontoScore, 0, 20);
+
+  let custoBeneficioScore = 5;
+  if (preco > 0) {
+    custoBeneficioScore = clamp((media / preco) * 5, 0, 10);
+  }
+
+  let statusScore = 5;
+  if (jogador.status_id === 2) statusScore = 2;
+  if ([3, 5, 6].includes(jogador.status_id)) statusScore = 0;
+
+  let ajustePosicao = 0;
+  if (["ata", "mei"].includes(posicaoAbreviacao)) {
+    ajustePosicao += confronto.ajusteAtacante;
+  }
+
+  if (["gol", "zag", "lat", "tec"].includes(posicaoAbreviacao)) {
+    ajustePosicao += confronto.ajusteDefensor;
+  }
+
+  const bruto =
+    mediaScore +
+    momentoScore +
+    regularidadeScore +
+    forcaScore +
+    confrontoScore +
+    custoBeneficioScore +
+    statusScore +
+    ajustePosicao;
+
+  const indice = clamp(bruto, 0, 100);
+
+  return Number(indice.toFixed(1));
+}
+
+function gerarMotivos(jogador, selecao, posicaoAbreviacao, confronto, indice) {
+  const motivos = [];
+
+  motivos.push(`${emojiNivel(indice)} ${nivelIndice(indice)} pelo Índice Silvas`);
+  motivos.push(`⚔️ Confronto: ${confronto.classificacao}`);
+
+  if (confronto.temJogo) {
+    motivos.push(`🆚 Próximo jogo: ${traduzirSelecao(selecao)} x ${confronto.adversarioPt}`);
+  } else {
+    motivos.push("⏳ Sem jogo próximo encontrado na base da Copa");
+  }
+
+  if (["gol", "zag", "lat", "tec"].includes(posicaoAbreviacao)) {
+    motivos.push(`🛡️ Chance estimada de SG: ${confronto.chanceSG}%`);
+  }
+
+  if (["ata", "mei"].includes(posicaoAbreviacao) && confronto.confrontoScore >= 15) {
+    motivos.push("⚽ Boa oportunidade ofensiva pelo confronto");
+  }
+
+  if ((jogador.media_num || 0) >= 10) {
+    motivos.push("📈 Média alta no Cartola da Copa");
+  }
+
+  if ((jogador.preco_num || 0) > 0 && (jogador.media_num || 0) / (jogador.preco_num || 1) >= 0.8) {
+    motivos.push("💰 Bom custo-benefício");
+  }
+
+  if (jogador.status_id === 7) {
+    motivos.push("✅ Status provável");
+  }
+
+  if (jogador.status_id === 2) {
+    motivos.push("⚠️ Status de dúvida");
+  }
+
+  return motivos;
+}
+
+function atletaFormatado(jogador, clubes, posicoes, status, jogos) {
+  const clube = clubes[jogador.clube_id] || {};
+  const posicao = posicoes[jogador.posicao_id] || {};
+  const situacao = status[jogador.status_id] || {};
+
+  const selecaoOriginal = clube.nome_fantasia || clube.nome || "";
+  const selecao = selecaoCanonica(selecaoOriginal);
+  const selecaoPt = traduzirSelecao(selecaoOriginal);
+  const posicaoAbreviacao = posicao.abreviacao || "";
+
+  const confronto = infoConfronto(selecao, jogos);
+  const indiceSilvas = calcularIndiceSilvas(jogador, selecao, posicaoAbreviacao, confronto);
+
+  return {
+    nome: jogador.nome || "",
+    apelido: jogador.apelido || "",
+    foto: jogador.foto || "",
+    clube: clube.nome || "",
+    selecao: selecaoPt,
+    selecaoOriginal,
+    escudo: clube.escudos?.["60x60"] || clube.escudos?.["45x45"] || "",
+    posicao: posicao.nome || "",
+    posicaoAbreviacao,
+    status: situacao.nome || "",
+    preco: jogador.preco_num || 0,
+    media: jogador.media_num || 0,
+    pontos: jogador.pontos_num || 0,
+    jogos: jogador.jogos_num || 0,
+
+    // Mantém compatibilidade com o Flutter atual.
+    notaIA: indiceSilvas,
+
+    indiceSilvas,
+    nivel: nivelIndice(indiceSilvas),
+    emojiNivel: emojiNivel(indiceSilvas),
+    estrelas: estrelasIndice(indiceSilvas),
+    confronto: {
+      classificacao: confronto.classificacao,
+      adversario: confronto.adversarioPt,
+      chanceSG: confronto.chanceSG,
+      forcaSelecao: confronto.forcaSelecao,
+      forcaAdversario: confronto.forcaAdversario,
+      diferenca: confronto.diferenca,
+      data: confronto.jogo?.data || "",
+      rodada: confronto.jogo?.rodada || ""
+    },
+    motivos: gerarMotivos(jogador, selecao, posicaoAbreviacao, confronto, indiceSilvas)
+  };
+}
+
+function ordenarPorIndice(lista) {
+  return [...lista].sort((a, b) => b.indiceSilvas - a.indiceSilvas);
+}
+
+function topPorPosicao(ranking, abreviacao, limite) {
+  return ranking
+    .filter(j => j.posicaoAbreviacao === abreviacao)
+    .slice(0, limite);
+}
+
+function montarTimeIdeal(ranking) {
+  const pegar = (pos, qtd) => ranking.filter(j => j.posicaoAbreviacao === pos).slice(0, qtd);
+
+  return {
+    estrategia: "Copa: melhor atleta por posição. Não força zaga fechada.",
+    esquema: "4-3-3",
+    goleiros: pegar("gol", 1),
+    laterais: pegar("lat", 2),
+    zagueiros: pegar("zag", 2),
+    meias: pegar("mei", 3),
+    atacantes: pegar("ata", 3),
+    tecnicos: pegar("tec", 1)
+  };
+}
+
+function montarCategorias(ranking) {
+  const atletasValidos = ranking.filter(j => !["Contundido", "Suspenso"].includes(j.status));
+
+  const capitaes = atletasValidos
+    .filter(j => ["ata", "mei"].includes(j.posicaoAbreviacao))
+    .sort((a, b) => {
+      const bonusA = a.confronto.classificacao.includes("favorável") || a.confronto.classificacao.includes("Favorável") ? 3 : 0;
+      const bonusB = b.confronto.classificacao.includes("favorável") || b.confronto.classificacao.includes("Favorável") ? 3 : 0;
+      return (b.indiceSilvas + bonusB) - (a.indiceSilvas + bonusA);
+    })
+    .slice(0, 20);
+
+  const custoBeneficio = atletasValidos
+    .filter(j => j.preco > 0 && j.indiceSilvas >= 65)
+    .sort((a, b) => (b.indiceSilvas / b.preco) - (a.indiceSilvas / a.preco))
+    .slice(0, 20);
+
+  const baratos = atletasValidos
+    .filter(j => j.preco > 0 && j.preco <= 6 && j.indiceSilvas >= 60)
+    .slice(0, 20);
+
+  const apostas = atletasValidos
+    .filter(j =>
+      j.indiceSilvas >= 75 &&
+      j.indiceSilvas < 90 &&
+      j.confronto.classificacao !== "Muito difícil" &&
+      j.confronto.classificacao !== "Difícil"
+    )
+    .slice(0, 20);
+
+  const diferenciais = atletasValidos
+    .filter(j =>
+      j.indiceSilvas >= 70 &&
+      j.preco > 0 &&
+      j.preco <= 12 &&
+      !capitaes.slice(0, 8).some(c => c.apelido === j.apelido)
+    )
+    .slice(0, 20);
+
+  const evitar = ranking
+    .filter(j =>
+      ["Contundido", "Suspenso", "Dúvida"].includes(j.status) ||
+      j.indiceSilvas < 60 ||
+      (j.preco >= 18 && j.indiceSilvas < 75) ||
+      j.confronto.classificacao === "Muito difícil"
+    )
+    .slice(0, 20);
+
+  return {
+    capitaes,
+    atacantes: topPorPosicao(atletasValidos, "ata", 20),
+    meias: topPorPosicao(atletasValidos, "mei", 20),
+    laterais: topPorPosicao(atletasValidos, "lat", 20),
+    zagueiros: topPorPosicao(atletasValidos, "zag", 20),
+    goleiros: topPorPosicao(atletasValidos, "gol", 20),
+    tecnicos: topPorPosicao(atletasValidos, "tec", 10),
+    baratos,
+    custoBeneficio,
+    apostas,
+    diferenciais,
+    evitar,
+    topGeral: atletasValidos.slice(0, 30),
+    timeIdeal: montarTimeIdeal(atletasValidos)
+  };
 }
 
 app.get("/", async (req, res) => {
@@ -62,36 +679,20 @@ app.get("/", async (req, res) => {
 
   res.json({
     status: "online",
-    versao: "5.1",
+    versao: "8.0",
     app: "Cartola Silvas FC",
-    mensagem: "Servidor com dados reais do Cartola e agenda da rodada",
+    mensagem: "Servidor com IA Silvas 8.0",
     ultimaAtualizacao: new Date().toISOString(),
     cartola,
     partidas,
     noticias: [
       {
-        titulo: "Atacante Favorito pode ser poupado",
-        clube: "Brasil",
-        jogador: "Atacante Favorito",
+        titulo: "IA Silvas 8.0 ativa",
+        clube: "Cartola da Copa",
+        jogador: "Índice Silvas",
         nivel: "alto",
-        fonte: "Teste manual do servidor",
-        resumo: "Jogador aparece como risco alto para testar a Central de Notícias."
-      },
-      {
-        titulo: "Meia Bola Parada treinou parcialmente",
-        clube: "Argentina",
-        jogador: "Meia Bola Parada",
-        nivel: "medio",
-        fonte: "Teste manual do servidor",
-        resumo: "Situação exige atenção antes de confirmar nos 25 times."
-      },
-      {
-        titulo: "Centroavante Forte treinou normalmente",
-        clube: "França",
-        jogador: "Centroavante Forte",
-        nivel: "baixo",
-        fonte: "Teste manual do servidor",
-        resumo: "Jogador aparece como opção segura para a rodada."
+        fonte: "Servidor Cartola Silvas FC",
+        resumo: "Nova IA cruza atletas, confronto, força da seleção, custo-benefício e status."
       }
     ]
   });
@@ -99,43 +700,26 @@ app.get("/", async (req, res) => {
 
 app.get("/copa", async (req, res) => {
   try {
-    const resposta = await fetch(
-      "https://raw.githubusercontent.com/openfootball/worldcup.json/master/2026/worldcup.json"
-    );
+    const jogos = await buscarJogosCopa();
 
-    const dados = await resposta.json();
-    const partidas = Array.isArray(dados.matches) ? dados.matches : [];
-
-    const jogos = [];
+    const futuros = [];
     const resultados = [];
 
-    for (const jogo of partidas) {
-      const item = {
-        mandante: jogo.team1 || "",
-        visitante: jogo.team2 || "",
-        data: `${jogo.date || ""} ${jogo.time || ""}`.trim(),
-        grupo: jogo.group || "",
-        estadio: jogo.ground || "",
-        rodada: jogo.round || "",
-        placar: jogo.score?.ft
-          ? `${jogo.score.ft[0]} x ${jogo.score.ft[1]}`
-          : ""
-      };
-
-      if (item.placar === "") {
-        jogos.push(item);
+    for (const jogo of jogos) {
+      if (jogo.placar === "") {
+        futuros.push(jogo);
       } else {
-        resultados.push(item);
+        resultados.push(jogo);
       }
     }
 
     res.json({
-      competicao: dados.name || "World Cup 2026",
+      competicao: "World Cup 2026",
       fase: "Automático via API pública",
-      totalJogos: jogos.length,
+      totalJogos: futuros.length,
       totalResultados: resultados.length,
-      totalGeral: jogos.length + resultados.length,
-      jogos,
+      totalGeral: jogos.length,
+      jogos: futuros,
       resultados,
       grupos: [],
       artilheiros: []
@@ -149,6 +733,81 @@ app.get("/copa", async (req, res) => {
       resultados: [],
       grupos: [],
       artilheiros: []
+    });
+  }
+});
+
+app.get("/ia-copa", async (req, res) => {
+  try {
+    const [dadosAtletas, jogos] = await Promise.all([
+      buscarAtletasCopa(),
+      buscarJogosCopa()
+    ]);
+
+    const atletas = Array.isArray(dadosAtletas.atletas) ? dadosAtletas.atletas : [];
+    const clubes = dadosAtletas.clubes || {};
+    const posicoes = dadosAtletas.posicoes || {};
+    const status = dadosAtletas.status || {};
+
+    const ranking = ordenarPorIndice(
+      atletas.map(jogador => atletaFormatado(jogador, clubes, posicoes, status, jogos))
+    );
+
+    const categorias = montarCategorias(ranking);
+
+    res.json({
+      versao: "8.0",
+      origem: "Cartola da Copa",
+      modo: "Copa",
+      estrategia: "Na Copa, a IA não força zaga fechada. Ela prioriza o melhor atleta por posição.",
+      totalAtletas: atletas.length,
+      totalAnalisados: ranking.length,
+      atualizadoEm: new Date().toISOString(),
+      resumo: {
+        lendarios: ranking.filter(j => j.indiceSilvas >= 96).length,
+        elite: ranking.filter(j => j.indiceSilvas >= 90 && j.indiceSilvas < 96).length,
+        muitoFortes: ranking.filter(j => j.indiceSilvas >= 85 && j.indiceSilvas < 90).length,
+        boaAposta: ranking.filter(j => j.indiceSilvas >= 80 && j.indiceSilvas < 85).length,
+        arriscados: ranking.filter(j => j.indiceSilvas >= 70 && j.indiceSilvas < 80).length,
+        evitar: ranking.filter(j => j.indiceSilvas < 60).length
+      },
+      ...categorias
+    });
+
+  } catch (erro) {
+    res.json({
+      versao: "8.0",
+      erro: erro.toString()
+    });
+  }
+});
+
+app.get("/time-ideal", async (req, res) => {
+  try {
+    const [dadosAtletas, jogos] = await Promise.all([
+      buscarAtletasCopa(),
+      buscarJogosCopa()
+    ]);
+
+    const atletas = Array.isArray(dadosAtletas.atletas) ? dadosAtletas.atletas : [];
+    const clubes = dadosAtletas.clubes || {};
+    const posicoes = dadosAtletas.posicoes || {};
+    const status = dadosAtletas.status || {};
+
+    const ranking = ordenarPorIndice(
+      atletas
+        .map(jogador => atletaFormatado(jogador, clubes, posicoes, status, jogos))
+        .filter(j => !["Contundido", "Suspenso"].includes(j.status))
+    );
+
+    res.json({
+      versao: "8.0",
+      modo: "Copa",
+      ...montarTimeIdeal(ranking)
+    });
+  } catch (erro) {
+    res.json({
+      erro: erro.toString()
     });
   }
 });
@@ -171,82 +830,9 @@ app.get("/teste-partidas", async (req, res) => {
   }
 });
 
-app.get("/versao6", (req, res) => {
-  res.json({
-    versao: "6.0",
-    mensagem: "Servidor atualizado"
-  });
-});
-
-app.get("/teste-atletas", async (req, res) => {
-  try {
-    const resposta = await fetch(
-      "https://api.cartolafc.globo.com/atletas/mercado"
-    );
-
-    const dados = await resposta.json();
-
-    res.json({
-      sucesso: true,
-      totalAtletas: dados.atletas ? dados.atletas.length : 0,
-      primeiroAtleta: dados.atletas ? dados.atletas[0] : null,
-      posicoes: dados.posicoes,
-      clubes: dados.clubes,
-      status: dados.status
-    });
-  } catch (erro) {
-    res.json({
-      sucesso: false,
-      erro: erro.toString()
-    });
-  }
-});
-
-app.get("/teste-cartola-copa", async (req, res) => {
-  const urls = [
-    "https://api.cartolafc.globo.com/copa/atletas/mercado",
-    "https://api.cartolafc.globo.com/cartola-copa/atletas/mercado",
-    "https://api.cartolafc.globo.com/competicoes/copa/atletas/mercado",
-    "https://api.cartolafc.globo.com/fifa/atletas/mercado",
-    "https://api.cartolafc.globo.com/world-cup/atletas/mercado",
-    "https://api.cartolafc.globo.com/atletas/mercado?competicao=copa",
-    "https://api.cartolafc.globo.com/atletas/mercado?game=copa"
-  ];
-
-  const resultados = [];
-
-  for (const url of urls) {
-    try {
-      const resposta = await fetch(url);
-      const texto = await resposta.text();
-
-      resultados.push({
-        url,
-        status: resposta.status,
-        contentType: resposta.headers.get("content-type"),
-        inicioResposta: texto.substring(0, 300)
-      });
-    } catch (erro) {
-      resultados.push({
-        url,
-        erro: erro.toString()
-      });
-    }
-  }
-
-  res.json({
-    sucesso: true,
-    resultados
-  });
-});
-
 app.get("/teste-atletas-copa", async (req, res) => {
   try {
-    const resposta = await fetch(
-      "https://api.cartolafc.globo.com/copa/atletas/mercado"
-    );
-
-    const dados = await resposta.json();
+    const dados = await buscarAtletasCopa();
 
     res.json({
       totalAtletas: dados.atletas?.length ?? 0,
@@ -256,290 +842,18 @@ app.get("/teste-atletas-copa", async (req, res) => {
       status: dados.status,
       clubes: Object.keys(dados.clubes || {}).length
     });
-
-  } catch (e) {
-    res.json({
-      erro: e.toString()
-    });
-  }
-});
-
-app.get("/copa", async (req, res) => {
-  try {
-    const resposta = await fetch(
-      "https://raw.githubusercontent.com/openfootball/worldcup.json/master/2026/worldcup.json"
-    );
-
-    const dados = await resposta.json();
-    const partidas = Array.isArray(dados.matches) ? dados.matches : [];
-
-    const jogos = [];
-    const resultados = [];
-
-    for (const jogo of partidas) {
-      const item = {
-        mandante: jogo.team1 || "",
-        visitante: jogo.team2 || "",
-        data: `${jogo.date || ""} ${jogo.time || ""}`.trim(),
-        grupo: jogo.group || "",
-        estadio: jogo.ground || "",
-        rodada: jogo.round || "",
-        placar: jogo.score?.ft
-          ? `${jogo.score.ft[0]} x ${jogo.score.ft[1]}`
-          : ""
-      };
-
-      if (item.placar === "") {
-        jogos.push(item);
-      } else {
-        resultados.push(item);
-      }
-    }
-
-    res.json({
-      competicao: dados.name || "World Cup 2026",
-      fase: "Automático via API pública",
-      totalJogos: jogos.length,
-      totalResultados: resultados.length,
-      totalGeral: jogos.length + resultados.length,
-      jogos,
-      resultados,
-      grupos: [],
-      artilheiros: []
-    });
-  } catch (erro) {
-    res.json({
-      competicao: "Copa do Mundo 2026",
-      fase: "Erro ao carregar dados automáticos",
-      erro: erro.toString(),
-      jogos: [],
-      resultados: [],
-      grupos: [],
-      artilheiros: []
-    });
-  }
-});
-
-app.get("/ia-copa", async (req, res) => {
-  try {
-    const resposta = await fetch(
-      "https://api.cartolafc.globo.com/copa/atletas/mercado"
-    );
-
-    const dados = await resposta.json();
-
-    const atletas = Array.isArray(dados.atletas) ? dados.atletas : [];
-    const clubes = dados.clubes || {};
-    const posicoes = dados.posicoes || {};
-    const status = dados.status || {};
-    const respostaJogos = await fetch(
-      "https://raw.githubusercontent.com/openfootball/worldcup.json/master/2026/worldcup.json"
-    );
-
-    const dadosJogos = await respostaJogos.json();
-
-    const jogos = Array.isArray(dadosJogos.matches)
-      ? dadosJogos.matches.map((jogo) => ({
-          mandante: jogo.team1 || "",
-          visitante: jogo.team2 || "",
-          data: `${jogo.date || ""} ${jogo.time || ""}`.trim(),
-          grupo: jogo.group || "",
-          estadio: jogo.ground || "",
-          rodada: jogo.round || "",
-          placar: jogo.score?.ft
-            ? `${jogo.score.ft[0]} x ${jogo.score.ft[1]}`
-            : ""
-        }))
-      : [];
-    const FORCA_SELECOES = {
-      "Argentina": 98,
-      "França": 97,
-      "Brasil": 96,
-      "Espanha": 95,
-      "Portugal": 93,
-      "Alemanha": 92,
-      "Inglaterra": 92,
-      "Holanda": 90,
-      "Bélgica": 88,
-      "Croácia": 86,
-      "Uruguai": 85,
-      "Marrocos": 84,
-      "México": 82,
-      "Estados Unidos": 82,
-      "Japão": 81,
-      "Suíça": 80,
-      "Dinamarca": 80,
-      "Sérvia": 79,
-      "Senegal": 79,
-      "Colômbia": 78,
-      "Equador": 77,
-      "Canadá": 76,
-      "Noruega": 76,
-      "Paraguai": 75,
-      "Austrália": 74,
-      "Coreia do Sul": 73,
-      "Polônia": 73,
-      "Áustria": 72,
-      "Escócia": 72,
-      "Turquia": 72,
-      "Nigéria": 71,
-      "Costa do Marfim": 71,
-      "Chile": 70,
-      "Egito": 70,
-      "Gana": 69,
-      "África do Sul": 68,
-      "Tunísia": 67,
-      "Camarões": 67,
-      "RD Congo": 66,
-      "Nova Zelândia": 64,
-      "Irã": 64,
-      "Costa Rica": 63,
-      "Haiti": 60
-    };
-    
-    function forcaSelecao(nome) {
-      return FORCA_SELECOES[nome] ?? 70;
-    }
-    
-    function proximoJogoDaSelecao(selecao, jogos) {
-      return jogos.find(jogo =>
-        jogo.placar === "" &&
-        (
-          jogo.mandante === selecao ||
-          jogo.visitante === selecao
-        )
-      );
-    }
-    
-    function bonusConfronto(selecao, jogos) {
-      const jogo = proximoJogoDaSelecao(selecao, jogos);
-    
-      if (!jogo) return 0;
-    
-      const adversario =
-        jogo.mandante === selecao
-          ? jogo.visitante
-          : jogo.mandante;
-    
-      const minhaForca = forcaSelecao(selecao);
-      const forcaAdv = forcaSelecao(adversario);
-    
-      const diferenca = minhaForca - forcaAdv;
-    
-      if (diferenca >= 20) return 8;
-      if (diferenca >= 12) return 6;
-      if (diferenca >= 6) return 4;
-      if (diferenca >= 0) return 2;
-    
-      if (diferenca <= -20) return -8;
-      if (diferenca <= -12) return -6;
-      if (diferenca <= -6) return -4;
-    
-      return -2;
-    }
-    
-    function calcularNotaIA(jogador, jogos) {
-      let nota = 0;
-      const forca = forcaSelecao(
-        clubes[jogador.clube_id]?.nome_fantasia ||
-        clubes[jogador.clube_id]?.nome ||
-        ""
-      );
-      
-      nota += (jogador.media_num || 0) * 3.2;
-      nota += (jogador.pontos_num || 0) * 0.35;
-      nota += (jogador.jogos_num || 0) * 2;
-      nota += forca * 0.18;
-      const selecao =
-        clubes[jogador.clube_id]?.nome_fantasia ||
-        clubes[jogador.clube_id]?.nome ||
-        "";
-      
-      nota += bonusConfronto(selecao, jogos);
-      nota += bonusConfronto(
-          clubes[jogador.clube_id]?.nome_fantasia ||
-          clubes[jogador.clube_id]?.nome ||
-          "",
-          jogos
-      );
-      
-      if (jogador.status_id === 7) nota += 10;
-      if (jogador.status_id === 2) nota -= 10;
-      if (jogador.status_id === 3) nota -= 25;
-      if (jogador.status_id === 5) nota -= 25;
-      if (jogador.status_id === 6) nota -= 30;
-
-      nota -= (jogador.preco_num || 0) * 0.12;
-
-      if (nota > 100) nota = 100;
-      if (nota < 0) nota = 0;
-
-      return Number(nota.toFixed(1));
-    }
-
-    function atletaFormatado(jogador) {
-      const clube = clubes[jogador.clube_id] || {};
-      const posicao = posicoes[jogador.posicao_id] || {};
-      const situacao = status[jogador.status_id] || {};
-
-      return {
-        nome: jogador.nome || "",
-        apelido: jogador.apelido || "",
-        foto: jogador.foto || "",
-        clube: clube.nome || "",
-        selecao: clube.nome_fantasia || clube.nome || "",
-        escudo: clube.escudos?.["60x60"] || "",
-        posicao: posicao.nome || "",
-        posicaoAbreviacao: posicao.abreviacao || "",
-        status: situacao.nome || "",
-        preco: jogador.preco_num || 0,
-        media: jogador.media_num || 0,
-        pontos: jogador.pontos_num || 0,
-        jogos: jogador.jogos_num || 0,
-        notaIA: calcularNotaIA(jogador, jogos)
-      };
-    }
-
-    const ranking = atletas
-      .map(atletaFormatado)
-      .filter(j => j.status !== "Contundido" && j.status !== "Suspenso")
-      .sort((a, b) => b.notaIA - a.notaIA);
-
-    function topPorPosicao(abreviacao, limite) {
-      return ranking
-        .filter(j => j.posicaoAbreviacao === abreviacao)
-        .slice(0, limite);
-    }
-
-    const baratos = ranking
-      .filter(j => j.preco > 0 && j.preco <= 6)
-      .slice(0, 20);
-
-    const capitaes = ranking
-      .filter(j => ["ata", "mei"].includes(j.posicaoAbreviacao))
-      .slice(0, 20);
-
-    res.json({
-      versao: "7.0",
-      origem: "Cartola da Copa",
-      totalAtletas: atletas.length,
-      totalAnalisados: ranking.length,
-      capitaes,
-      atacantes: topPorPosicao("ata", 20),
-      meias: topPorPosicao("mei", 20),
-      laterais: topPorPosicao("lat", 20),
-      zagueiros: topPorPosicao("zag", 20),
-      goleiros: topPorPosicao("gol", 20),
-      tecnicos: topPorPosicao("tec", 10),
-      baratos,
-      topGeral: ranking.slice(0, 30)
-    });
-
   } catch (erro) {
     res.json({
       erro: erro.toString()
     });
   }
+});
+
+app.get("/versao8", (req, res) => {
+  res.json({
+    versao: "8.0",
+    mensagem: "IA Silvas 8.0 ativa"
+  });
 });
 
 app.listen(PORT, () => {
