@@ -332,14 +332,68 @@ app.get("/ia-copa", async (req, res) => {
     const clubes = dados.clubes || {};
     const posicoes = dados.posicoes || {};
     const status = dados.status || {};
-
+    const FORCA_SELECOES = {
+      "Argentina": 98,
+      "França": 97,
+      "Brasil": 96,
+      "Espanha": 95,
+      "Portugal": 93,
+      "Alemanha": 92,
+      "Inglaterra": 92,
+      "Holanda": 90,
+      "Bélgica": 88,
+      "Croácia": 86,
+      "Uruguai": 85,
+      "Marrocos": 84,
+      "México": 82,
+      "Estados Unidos": 82,
+      "Japão": 81,
+      "Suíça": 80,
+      "Dinamarca": 80,
+      "Sérvia": 79,
+      "Senegal": 79,
+      "Colômbia": 78,
+      "Equador": 77,
+      "Canadá": 76,
+      "Noruega": 76,
+      "Paraguai": 75,
+      "Austrália": 74,
+      "Coreia do Sul": 73,
+      "Polônia": 73,
+      "Áustria": 72,
+      "Escócia": 72,
+      "Turquia": 72,
+      "Nigéria": 71,
+      "Costa do Marfim": 71,
+      "Chile": 70,
+      "Egito": 70,
+      "Gana": 69,
+      "África do Sul": 68,
+      "Tunísia": 67,
+      "Camarões": 67,
+      "RD Congo": 66,
+      "Nova Zelândia": 64,
+      "Irã": 64,
+      "Costa Rica": 63,
+      "Haiti": 60
+    };
+    function forcaSelecao(nome) {
+      return FORCA_SELECOES[nome] ?? 70;
+    }
+    
     function calcularNotaIA(jogador) {
       let nota = 0;
-
+      const forca = forcaSelecao(
+        clubes[jogador.clube_id]?.nome_fantasia ||
+        clubes[jogador.clube_id]?.nome ||
+        ""
+      );
+      
       nota += (jogador.media_num || 0) * 3.2;
       nota += (jogador.pontos_num || 0) * 0.35;
       nota += (jogador.jogos_num || 0) * 2;
-
+      nota += forca * 0.18;
+      
       if (jogador.status_id === 7) nota += 10;
       if (jogador.status_id === 2) nota -= 10;
       if (jogador.status_id === 3) nota -= 25;
