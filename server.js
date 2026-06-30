@@ -378,10 +378,46 @@ app.get("/ia-copa", async (req, res) => {
       "Haiti": 60
     };
     function forcaSelecao(nome) {
+      function proximoJogoDaSelecao(selecao, jogos) {
+        return jogos.find(jogo =>
+          jogo.placar === "" &&
+          (
+            jogo.mandante === selecao ||
+            jogo.visitante === selecao
+          )
+        );
+      }
+      function bonusConfronto(selecao, jogos) {
+
+      const jogo = proximoJogoDaSelecao(selecao, jogos);
+    
+      if (!jogo) return 0;
+    
+      const adversario =
+          jogo.mandante === selecao
+          ? jogo.visitante
+          : jogo.mandante;
+    
+      const minhaForca = forcaSelecao(selecao);
+      const forcaAdv = forcaSelecao(adversario);
+    
+      const diferenca = minhaForca - forcaAdv;
+    
+      if (diferenca >= 20) return 8;
+      if (diferenca >= 12) return 6;
+      if (diferenca >= 6) return 4;
+      if (diferenca >= 0) return 2;
+    
+      if (diferenca <= -20) return -8;
+      if (diferenca <= -12) return -6;
+      if (diferenca <= -6) return -4;
+    
+      return -2;
+    }
       return FORCA_SELECOES[nome] ?? 70;
     }
     
-    function calcularNotaIA(jogador) {
+    function calcularNotaIA(jogador, jogos) {
       let nota = 0;
       const forca = forcaSelecao(
         clubes[jogador.clube_id]?.nome_fantasia ||
@@ -393,6 +429,12 @@ app.get("/ia-copa", async (req, res) => {
       nota += (jogador.pontos_num || 0) * 0.35;
       nota += (jogador.jogos_num || 0) * 2;
       nota += forca * 0.18;
+      nota += bonusConfronto(
+          clubes[jogador.clube_id]?.nome_fantasia ||
+          clubes[jogador.clube_id]?.nome ||
+          "",
+          jogos
+      );
       
       if (jogador.status_id === 7) nota += 10;
       if (jogador.status_id === 2) nota -= 10;
@@ -427,7 +469,7 @@ app.get("/ia-copa", async (req, res) => {
         media: jogador.media_num || 0,
         pontos: jogador.pontos_num || 0,
         jogos: jogador.jogos_num || 0,
-        notaIA: calcularNotaIA(jogador)
+        notaIA: calcularNotaIA(jogador, jogos)
       };
     }
 
