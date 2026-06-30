@@ -396,24 +396,28 @@ app.get("/ia-copa", async (req, res) => {
       "Costa Rica": 63,
       "Haiti": 60
     };
+    
     function forcaSelecao(nome) {
-      function proximoJogoDaSelecao(selecao, jogos) {
-        return jogos.find(jogo =>
-          jogo.placar === "" &&
-          (
-            jogo.mandante === selecao ||
-            jogo.visitante === selecao
-          )
-        );
-      }
-      function bonusConfronto(selecao, jogos) {
-
+      return FORCA_SELECOES[nome] ?? 70;
+    }
+    
+    function proximoJogoDaSelecao(selecao, jogos) {
+      return jogos.find(jogo =>
+        jogo.placar === "" &&
+        (
+          jogo.mandante === selecao ||
+          jogo.visitante === selecao
+        )
+      );
+    }
+    
+    function bonusConfronto(selecao, jogos) {
       const jogo = proximoJogoDaSelecao(selecao, jogos);
     
       if (!jogo) return 0;
     
       const adversario =
-          jogo.mandante === selecao
+        jogo.mandante === selecao
           ? jogo.visitante
           : jogo.mandante;
     
@@ -432,8 +436,6 @@ app.get("/ia-copa", async (req, res) => {
       if (diferenca <= -6) return -4;
     
       return -2;
-    }
-      return FORCA_SELECOES[nome] ?? 70;
     }
     
     function calcularNotaIA(jogador, jogos) {
