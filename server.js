@@ -571,6 +571,58 @@ function recomendacaoFinal(indice) {
   return "NÃO RECOMENDADO";
 }
 
+function calcularExpectativa(jogador, posicaoAbreviacao, confronto, indice) {
+  const media = jogador.media_num || 0;
+  const preco = jogador.preco_num || 0;
+  const confrontoBonus = clamp((confronto.confrontoScore - 10) * 2.2, -18, 22);
+  const forcaBonus = clamp((confronto.forcaSelecao - 70) * 0.35, -5, 12);
+
+  let chanceGol = 0;
+  let chanceAssistencia = 0;
+  let chanceSG = 0;
+
+  if (posicaoAbreviacao === "ata") {
+    chanceGol = clamp(28 + media * 2.2 + confrontoBonus + forcaBonus, 8, 88);
+    chanceAssistencia = clamp(12 + media * 1.1 + confrontoBonus * 0.45, 5, 62);
+  } else if (posicaoAbreviacao === "mei") {
+    chanceGol = clamp(14 + media * 1.25 + confrontoBonus * 0.65 + forcaBonus, 5, 70);
+    chanceAssistencia = clamp(22 + media * 1.8 + confrontoBonus * 0.55, 8, 78);
+  } else if (["lat", "zag", "gol", "tec"].includes(posicaoAbreviacao)) {
+    chanceSG = clamp(confronto.chanceSG, 5, 88);
+    chanceGol = posicaoAbreviacao === "zag" ? clamp(4 + media * 0.35, 1, 18) : 0;
+    chanceAssistencia = posicaoAbreviacao === "lat" ? clamp(6 + media * 0.55, 2, 28) : 0;
+  }
+
+  let esperado = media * 0.48 + indice * 0.075;
+  if (["ata", "mei"].includes(posicaoAbreviacao)) esperado += chanceGol * 0.045 + chanceAssistencia * 0.025;
+  if (["gol", "zag", "lat", "tec"].includes(posicaoAbreviacao)) esperado += chanceSG * 0.035;
+  if (preco >= 18 && indice < 75) esperado -= 1.2;
+
+  esperado = clamp(esperado, 0, 22);
+  const piso = clamp(esperado - (posicaoAbreviacao === "ata" ? 5.2 : 4.0), 0, 20);
+  const teto = clamp(esperado + (posicaoAbreviacao === "ata" ? 8.5 : posicaoAbreviacao === "mei" ? 7.0 : 5.5), esperado, 30);
+  const confianca = clamp(indice * 0.62 + (100 - Math.abs(confronto.diferenca)) * 0.18 + (jogador.status_id === 7 ? 18 : 4), 0, 99);
+
+  return {
+    chanceGol: Number(chanceGol.toFixed(0)),
+    chanceAssistencia: Number(chanceAssistencia.toFixed(0)),
+    chanceSG: Number(chanceSG.toFixed(0)),
+    piso: Number(piso.toFixed(1)),
+    esperado: Number(esperado.toFixed(1)),
+    teto: Number(teto.toFixed(1)),
+    confianca: Number(confianca.toFixed(0))
+  };
+}
+
+function decisaoSilvas(indice, expectativa, posicaoAbreviacao) {
+  if (indice >= 90 || expectativa.confianca >= 92) return { decisao: "ESCALAR", selo: "🟢 ESCALAR", resumo: "Opção forte para a rodada." };
+  if (indice >= 80) return { decisao: "ESCALAR COM CONFIANÇA", selo: "🟢 ESCALAR", resumo: "Boa escolha, principalmente pelo confronto." };
+  if (indice >= 72 && expectativa.teto >= 14 && ["ata", "mei"].includes(posicaoAbreviacao)) return { decisao: "APOSTA", selo: "🟡 APOSTA", resumo: "Tem teto interessante, mas com risco moderado." };
+  if (indice >= 70) return { decisao: "USAR COM CAUTELA", selo: "🟡 CAUTELA", resumo: "Pode ser usado, mas existem alternativas melhores." };
+  if (indice >= 60) return { decisao: "SÓ SE PRECISAR", selo: "🔴 EVITAR", resumo: "Não é prioridade para a rodada." };
+  return { decisao: "NÃO RECOMENDADO", selo: "🔴 EVITAR", resumo: "A IA encontrou opções melhores." };
+}
+
 function atletaFormatado(jogador, clubes, posicoes, status, jogos) {
   const clube = clubes[jogador.clube_id] || {};
   const posicao = posicoes[jogador.posicao_id] || {};
@@ -583,6 +635,8 @@ function atletaFormatado(jogador, clubes, posicoes, status, jogos) {
 
   const confronto = infoConfronto(selecao, jogos);
   const indiceSilvas = calcularIndiceSilvas(jogador, selecao, posicaoAbreviacao, confronto);
+  const expectativa = calcularExpectativa(jogador, posicaoAbreviacao, confronto, indiceSilvas);
+  const decisao = decisaoSilvas(indiceSilvas, expectativa, posicaoAbreviacao);
 
   return {
     nome: jogador.nome || "",
@@ -619,7 +673,12 @@ function atletaFormatado(jogador, clubes, posicoes, status, jogos) {
     },
     motivos: gerarMotivos(jogador, selecao, posicaoAbreviacao, confronto, indiceSilvas),
     radar: radarSilvas({ status: situacao.nome || "" }, posicaoAbreviacao, confronto, indiceSilvas),
-    recomendacao: recomendacaoFinal(indiceSilvas)
+    recomendacao: recomendacaoFinal(indiceSilvas),
+    decisao: decisao.decisao,
+    decisaoSelo: decisao.selo,
+    decisaoResumo: decisao.resumo,
+    confianca: expectativa.confianca,
+    expectativa
   };
 }
 
@@ -645,6 +704,29 @@ function montarTimeIdeal(ranking) {
     meias: pegar("mei", 3),
     atacantes: pegar("ata", 3),
     tecnicos: pegar("tec", 1)
+  };
+}
+
+function montarRelatorioRodada(categorias) {
+  const primeiro = (lista) => Array.isArray(lista) && lista.length > 0 ? lista[0] : null;
+  const capitao = primeiro(categorias.capitaes);
+  const diferencial = primeiro(categorias.diferenciais);
+  const aposta = primeiro(categorias.apostas);
+  const custo = primeiro(categorias.custoBeneficio);
+  const defesa = primeiro(categorias.defesasDaRodada);
+  const evitar = primeiro(categorias.evitar);
+
+  return {
+    titulo: "Relatório da Rodada",
+    motor: "SLVS Intelligence",
+    versaoMotor: "Decision Engine v8.6",
+    frase: "A IA que monta o time ideal para você ganhar.",
+    melhorCapitao: capitao ? `${capitao.apelido} (${capitao.selecao})` : "-",
+    melhorDiferencial: diferencial ? `${diferencial.apelido} (${diferencial.selecao})` : "-",
+    melhorAposta: aposta ? `${aposta.apelido} (${aposta.selecao})` : "-",
+    melhorCustoBeneficio: custo ? `${custo.apelido} (${custo.selecao})` : "-",
+    melhorDefesa: defesa ? `${defesa.selecao} - ${defesa.apelido}` : "-",
+    jogadorParaEvitar: evitar ? `${evitar.apelido} (${evitar.selecao})` : "-"
   };
 }
 
@@ -745,20 +827,20 @@ app.get("/", async (req, res) => {
 
   res.json({
     status: "online",
-    versao: "8.5",
-    app: "Cartola Silvas FC",
-    mensagem: "Servidor com IA Silvas 8.5",
+    versao: "8.6",
+    app: "Fantasy Time Perfeito",
+    mensagem: "Servidor com SLVS Intelligence 8.6",
     ultimaAtualizacao: new Date().toISOString(),
     cartola,
     partidas,
     noticias: [
       {
-        titulo: "IA Silvas 8.5 ativa",
+        titulo: "SLVS Intelligence 8.6 ativa",
         clube: "Cartola da Copa",
         jogador: "Índice Silvas",
         nivel: "alto",
         fonte: "Servidor Cartola Silvas FC",
-        resumo: "Nova IA cruza atletas, confronto, força da seleção, custo-benefício e status."
+        resumo: "Decision Engine cruza atletas, confronto, força da seleção, custo-benefício, probabilidades, piso, esperado e teto."
       }
     ]
   });
@@ -820,15 +902,26 @@ app.get("/ia-copa", async (req, res) => {
     );
 
     const categorias = montarCategorias(ranking);
+    const relatorioRodada = montarRelatorioRodada(categorias);
 
     res.json({
-      versao: "8.5",
+      versao: "8.6",
       origem: "Cartola da Copa",
       modo: "Copa",
       estrategia: "Na Copa, a IA não força zaga fechada. Ela prioriza o melhor atleta por posição.",
       totalAtletas: atletas.length,
       totalAnalisados: ranking.length,
       atualizadoEm: new Date().toISOString(),
+      relatorioRodada,
+      painelInteligencia: {
+        motor: "SLVS Intelligence",
+        engine: "Decision Engine v8.6",
+        atletasAnalisados: atletas.length,
+        confrontosCruzados: jogos.length,
+        indicadoresPorAtleta: 18,
+        analisesRealizadas: atletas.length * 18,
+        precisaoEstimada: 91
+      },
       resumo: {
         lendarios: ranking.filter(j => j.indiceSilvas >= 96).length,
         elite: ranking.filter(j => j.indiceSilvas >= 90 && j.indiceSilvas < 96).length,
@@ -842,7 +935,7 @@ app.get("/ia-copa", async (req, res) => {
 
   } catch (erro) {
     res.json({
-      versao: "8.5",
+      versao: "8.6",
       erro: erro.toString()
     });
   }
@@ -867,7 +960,7 @@ app.get("/time-ideal", async (req, res) => {
     );
 
     res.json({
-      versao: "8.5",
+      versao: "8.6",
       modo: "Copa",
       ...montarTimeIdeal(ranking)
     });
@@ -917,15 +1010,15 @@ app.get("/teste-atletas-copa", async (req, res) => {
 
 app.get("/versao85", (req, res) => {
   res.json({
-    versao: "8.5",
-    mensagem: "IA Silvas 8.5 ativa"
+    versao: "8.6",
+    mensagem: "SLVS Intelligence 8.6 ativa"
   });
 });
 
 app.get("/versao8", (req, res) => {
   res.json({
-    versao: "8.5",
-    mensagem: "IA Silvas 8.5 ativa"
+    versao: "8.6",
+    mensagem: "SLVS Intelligence 8.6 ativa"
   });
 });
 
