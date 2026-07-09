@@ -1,10 +1,14 @@
 {
   "name": "cartola-silvas-fc-api",
-  "version": "1.0.0",
-  "description": "Servidor do Cartola Silvas FC",
+  "version": "3.5.0",
+  "description": "Backend proxy Cartola FC para o Meu Time Ideal Web",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js"
+    "start": "node server.js",
+    "test": "node --test"
+  },
+  "engines": {
+    "node": ">=18"
   },
   "dependencies": {
     "express": "^4.21.2"
