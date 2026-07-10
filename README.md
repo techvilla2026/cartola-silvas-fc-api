@@ -14,7 +14,7 @@ Retorna informacoes basicas do servico:
 {
   "service": "cartola-silvas-fc-api",
   "status": "online",
-  "version": "3.5.0",
+  "version": "3.7.1",
   "focus": "Brasileirao/Cartola FC"
 }
 ```
@@ -69,6 +69,24 @@ Exemplo:
 
 ```bash
 curl "http://localhost:3000/cartola/times?q=Silvas"
+```
+
+### `GET /cartola/time/:timeId`
+
+Proxy para:
+
+```text
+https://api.cartolafc.globo.com/time/id/:timeId
+```
+
+Retorna o elenco publico real do time no Cartola FC, incluindo os campos enviados pela API oficial, como time, atletas, reservas, capitao, formacao, patrimonio, pontos, rodada e dados do tecnico.
+
+O parametro `timeId` e obrigatorio e deve ser um numero inteiro positivo.
+
+Exemplo:
+
+```bash
+curl "http://localhost:3000/cartola/time/16068219"
 ```
 
 ## CORS

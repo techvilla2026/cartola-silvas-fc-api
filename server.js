@@ -1,7 +1,7 @@
 const express = require("express");
 
 const SERVICE_NAME = "cartola-silvas-fc-api";
-const BACKEND_VERSION = "3.5.0";
+const BACKEND_VERSION = "3.7.1";
 const DEFAULT_PORT = 3000;
 const CARTOLA_API_BASE_URL = "https://api.cartolafc.globo.com";
 const DEFAULT_TIMEOUT_MS = 8000;
@@ -83,7 +83,11 @@ async function readUpstreamBody(response) {
   }
 
   if (contentType.includes("application/json")) {
-    return { body: JSON.parse(text), isJson: true };
+    try {
+      return { body: JSON.parse(text), isJson: true };
+    } catch {
+      return { body: text, isJson: false, invalidJson: true };
+    }
   }
 
   try {
@@ -104,6 +108,19 @@ function sendProxyError(res, status, code, message, details) {
   });
 }
 
+function sendValidationError(res, code, message) {
+  return res.status(400).json({
+    error: {
+      code,
+      message
+    }
+  });
+}
+
+function isPositiveInteger(value) {
+  return /^[1-9]\d*$/.test(value);
+}
+
 async function proxyCartola(req, res, options) {
   const timeoutMs = req.app.locals.timeoutMs;
   const fetchImpl = req.app.locals.fetchImpl;
@@ -121,10 +138,20 @@ async function proxyCartola(req, res, options) {
       signal: controller.signal
     });
 
-    const { body, isJson } = await readUpstreamBody(response);
+    const { body, isJson, invalidJson } = await readUpstreamBody(response);
 
     if (isJson) {
       return res.status(response.status).json(body);
+    }
+
+    if (invalidJson) {
+      return sendProxyError(
+        res,
+        response.ok ? 502 : response.status,
+        "UPSTREAM_INVALID_JSON_RESPONSE",
+        "A API oficial do Cartola retornou um JSON invalido.",
+        { status: response.status }
+      );
     }
 
     return sendProxyError(
@@ -213,6 +240,28 @@ function createApp(options = {}) {
     return proxyCartola(req, res, {
       path: `/times?q=${encodeURIComponent(query)}`
     });
+  });
+
+  app.get("/cartola/time", (req, res) => {
+    return sendValidationError(
+      res,
+      "INVALID_TIME_ID",
+      "Informe um timeId numerico inteiro positivo no caminho da URL."
+    );
+  });
+
+  app.get("/cartola/time/:timeId", (req, res) => {
+    const timeId = typeof req.params.timeId === "string" ? req.params.timeId.trim() : "";
+
+    if (!isPositiveInteger(timeId)) {
+      return sendValidationError(
+        res,
+        "INVALID_TIME_ID",
+        "O timeId deve ser um numero inteiro positivo."
+      );
+    }
+
+    return proxyCartola(req, res, { path: `/time/id/${timeId}` });
   });
 
   app.use((req, res) => {
