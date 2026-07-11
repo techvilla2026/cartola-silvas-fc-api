@@ -1,0 +1,245 @@
+{
+  "schemaVersion": "historical-round-data/v1",
+  "season": 2026,
+  "round": 13,
+  "source": "caRtola",
+  "sourceVersion": "11cd704b2a375d9db273f2b251e3a998b6ead381",
+  "collectedAt": "2026-07-11T21:40:00.172Z",
+  "validatedAt": "2026-07-11T21:40:00.976Z",
+  "validationStatus": "VALID_WITH_WARNINGS",
+  "marketContext": {
+    "dataType": "PRE_ROUND_DATA",
+    "notAvailableForLeakFreeBacktest": [
+      "priceBeforeRound",
+      "averageBeforeRound",
+      "gamesBeforeRound",
+      "statusBeforeRound",
+      "accumulatedScoutsBeforeRound",
+      "lineupProbabilityBeforeRound",
+      "matchResultsBeforeRound"
+    ]
+  },
+  "players": [],
+  "matches": [
+    {
+      "matchId": 346376,
+      "round": 13,
+      "homeClubId": 263,
+      "awayClubId": 285,
+      "date": "2026-04-25 18:30:00",
+      "venue": "Mané Garrincha",
+      "homeScore": null,
+      "awayScore": null,
+      "valid": true,
+      "status": null,
+      "rawSourceReference": {
+        "source": "cartola-official-public-api",
+        "endpoint": "/partidas/:round"
+      }
+    },
+    {
+      "matchId": 346389,
+      "round": 13,
+      "homeClubId": 265,
+      "awayClubId": 277,
+      "date": "2026-04-25 18:30:00",
+      "venue": "Casa de Apostas Arena Fonte Nova",
+      "homeScore": null,
+      "awayScore": null,
+      "valid": true,
+      "status": null,
+      "rawSourceReference": {
+        "source": "cartola-official-public-api",
+        "endpoint": "/partidas/:round"
+      }
+    },
+    {
+      "matchId": 346390,
+      "round": 13,
+      "homeClubId": 364,
+      "awayClubId": 283,
+      "date": "2026-04-25 18:30:00",
+      "venue": "Baenão",
+      "homeScore": null,
+      "awayScore": null,
+      "valid": true,
+      "status": null,
+      "rawSourceReference": {
+        "source": "cartola-official-public-api",
+        "endpoint": "/partidas/:round"
+      }
+    },
+    {
+      "matchId": 346378,
+      "round": 13,
+      "homeClubId": 276,
+      "awayClubId": 2305,
+      "date": "2026-04-25 21:00:00",
+      "venue": "Brinco de Ouro",
+      "homeScore": null,
+      "awayScore": null,
+      "valid": true,
+      "status": null,
+      "rawSourceReference": {
+        "source": "cartola-official-public-api",
+        "endpoint": "/partidas/:round"
+      }
+    },
+    {
+      "matchId": 346380,
+      "round": 13,
+      "homeClubId": 264,
+      "awayClubId": 267,
+      "date": "2026-04-26 16:00:00",
+      "venue": "Neo Química Arena",
+      "homeScore": null,
+      "awayScore": null,
+      "valid": true,
+      "status": null,
+      "rawSourceReference": {
+        "source": "cartola-official-public-api",
+        "endpoint": "/partidas/:round"
+      }
+    },
+    {
+      "matchId": 346386,
+      "round": 13,
+      "homeClubId": 284,
+      "awayClubId": 294,
+      "date": "2026-04-26 16:00:00",
+      "venue": "Arena do Grêmio",
+      "homeScore": null,
+      "awayScore": null,
+      "valid": true,
+      "status": null,
+      "rawSourceReference": {
+        "source": "cartola-official-public-api",
+        "endpoint": "/partidas/:round"
+      }
+    },
+    {
+      "matchId": 346382,
+      "round": 13,
+      "homeClubId": 280,
+      "awayClubId": 275,
+      "date": "2026-04-26 18:30:00",
+      "venue": "Cícero de Souza Marques",
+      "homeScore": null,
+      "awayScore": null,
+      "valid": true,
+      "status": null,
+      "rawSourceReference": {
+        "source": "cartola-official-public-api",
+        "endpoint": "/partidas/:round"
+      }
+    },
+    {
+      "matchId": 346388,
+      "round": 13,
+      "homeClubId": 293,
+      "awayClubId": 287,
+      "date": "2026-04-26 18:30:00",
+      "venue": "Arena da Baixada",
+      "homeScore": null,
+      "awayScore": null,
+      "valid": true,
+      "status": null,
+      "rawSourceReference": {
+        "source": "cartola-official-public-api",
+        "endpoint": "/partidas/:round"
+      }
+    },
+    {
+      "matchId": 346374,
+      "round": 13,
+      "homeClubId": 266,
+      "awayClubId": 315,
+      "date": "2026-04-26 20:30:00",
+      "venue": "Maracanã",
+      "homeScore": null,
+      "awayScore": null,
+      "valid": true,
+      "status": null,
+      "rawSourceReference": {
+        "source": "cartola-official-public-api",
+        "endpoint": "/partidas/:round"
+      }
+    },
+    {
+      "matchId": 346384,
+      "round": 13,
+      "homeClubId": 282,
+      "awayClubId": 262,
+      "date": "2026-04-26 20:30:00",
+      "venue": "Arena MRV",
+      "homeScore": null,
+      "awayScore": null,
+      "valid": true,
+      "status": null,
+      "rawSourceReference": {
+        "source": "cartola-official-public-api",
+        "endpoint": "/partidas/:round"
+      }
+    }
+  ],
+  "clubs": {},
+  "positions": {
+    "1": {
+      "id": 1,
+      "name": "Goleiro",
+      "abbreviation": "gol"
+    },
+    "2": {
+      "id": 2,
+      "name": "Lateral",
+      "abbreviation": "lat"
+    },
+    "3": {
+      "id": 3,
+      "name": "Zagueiro",
+      "abbreviation": "zag"
+    },
+    "4": {
+      "id": 4,
+      "name": "Meia",
+      "abbreviation": "mei"
+    },
+    "5": {
+      "id": 5,
+      "name": "Atacante",
+      "abbreviation": "ata"
+    },
+    "6": {
+      "id": 6,
+      "name": "Tecnico",
+      "abbreviation": "tec"
+    }
+  },
+  "statuses": {
+    "2": {
+      "id": 2,
+      "name": "Duvida"
+    },
+    "3": {
+      "id": 3,
+      "name": "Suspenso"
+    },
+    "5": {
+      "id": 5,
+      "name": "Contundido"
+    },
+    "6": {
+      "id": 6,
+      "name": "Nulo"
+    },
+    "7": {
+      "id": 7,
+      "name": "Provavel"
+    }
+  },
+  "metadata": {
+    "sourceFile": "https://raw.githubusercontent.com/henriquepgomide/caRtola/master/data/01_raw/2026/rodada-13.csv",
+    "primaryLicense": "MIT",
+    "note": "Dados historicos pre-rodada nao foram reconstruidos sem risco de vazamento futuro."
+  }
+}

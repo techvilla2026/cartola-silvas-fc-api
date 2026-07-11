@@ -1,0 +1,118 @@
+{
+  "schemaVersion": "historical-validation-report/v1",
+  "season": 2026,
+  "round": 1,
+  "primarySource": "caRtola",
+  "validationSource": "cartola-official-public-api",
+  "playersCompared": 327,
+  "matchesCompared": 10,
+  "missingPlayers": [],
+  "extraPlayers": [
+    68899,
+    86863,
+    90715,
+    90943,
+    105114,
+    108474,
+    122487,
+    122781
+  ],
+  "pointsDifferences": [
+    {
+      "athleteId": 63013,
+      "primary": 0,
+      "validation": 0.8
+    },
+    {
+      "athleteId": 70800,
+      "primary": 3.81,
+      "validation": 3.33
+    },
+    {
+      "athleteId": 72391,
+      "primary": 4,
+      "validation": 3.02
+    },
+    {
+      "athleteId": 73481,
+      "primary": 7.95,
+      "validation": 7.75
+    },
+    {
+      "athleteId": 73717,
+      "primary": 1.97,
+      "validation": 2.05
+    },
+    {
+      "athleteId": 88037,
+      "primary": 4.47,
+      "validation": 4.32
+    },
+    {
+      "athleteId": 92180,
+      "primary": 9.26,
+      "validation": 8.89
+    },
+    {
+      "athleteId": 92273,
+      "primary": 8.09,
+      "validation": 8.120000000000001
+    },
+    {
+      "athleteId": 97341,
+      "primary": 5.19,
+      "validation": 5.47
+    },
+    {
+      "athleteId": 99274,
+      "primary": 6.2,
+      "validation": 1.2
+    },
+    {
+      "athleteId": 99366,
+      "primary": 5.55,
+      "validation": 5.98
+    },
+    {
+      "athleteId": 103912,
+      "primary": 7.59,
+      "validation": 8.32
+    },
+    {
+      "athleteId": 104027,
+      "primary": 4.8,
+      "validation": 4.470000000000001
+    },
+    {
+      "athleteId": 104754,
+      "primary": 5.21,
+      "validation": 5.18
+    },
+    {
+      "athleteId": 110506,
+      "primary": 3.66,
+      "validation": 3.77
+    },
+    {
+      "athleteId": 117965,
+      "primary": 11.04,
+      "validation": 9.97
+    },
+    {
+      "athleteId": 126977,
+      "primary": 4.32,
+      "validation": 4.51
+    }
+  ],
+  "priceDifferences": [],
+  "scoutDifferences": [
+    {
+      "athleteId": 63013,
+      "scout": "FF",
+      "primary": null,
+      "validation": 1
+    }
+  ],
+  "matchDifferences": [],
+  "validationStatus": "VALID_WITH_WARNINGS"
+}

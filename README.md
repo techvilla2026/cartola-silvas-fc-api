@@ -14,7 +14,7 @@ Retorna informacoes basicas do servico:
 {
   "service": "cartola-silvas-fc-api",
   "status": "online",
-  "version": "3.7.1",
+  "version": "4.2.0",
   "focus": "Brasileirao/Cartola FC"
 }
 ```
@@ -89,6 +89,30 @@ Exemplo:
 curl "http://localhost:3000/cartola/time/16068219"
 ```
 
+### `GET /historical/2026/coverage`
+
+Retorna a cobertura historica persistida localmente para 2026. Nao faz coleta externa durante a requisicao.
+
+### `GET /historical/2026/rounds`
+
+Lista as rodadas historicas persistidas.
+
+### `GET /historical/2026/round/:round`
+
+Retorna os dados pos-rodada persistidos da rodada.
+
+### `GET /historical/2026/round/:round/pre`
+
+Retorna o arquivo pre-rodada persistido. Na Build 4.2.0, campos pre-rodada que nao puderam ser reconstruidos sem risco de vazamento futuro sao marcados em `notAvailableForLeakFreeBacktest`.
+
+### `GET /historical/2026/round/:round/post`
+
+Retorna os dados pos-rodada persistidos.
+
+### `GET /historical/2026/round/:round/validation`
+
+Retorna o relatorio de validacao cruzada da rodada.
+
 ## CORS
 
 O CORS permite explicitamente origens locais de desenvolvimento e o dominio publico atual:
@@ -131,6 +155,49 @@ npm test
 ```
 
 Os testes usam `node:test` e `assert` nativos.
+
+## Dados historicos
+
+A Build 4.2.0 adiciona uma base historica real, auditavel e versionada para o Brasileirao/Cartola FC 2026. O backtest do motor ainda nao foi implementado.
+
+Fonte primaria:
+
+```text
+caRtola - https://github.com/henriquepgomide/caRtola
+```
+
+Fonte secundaria de validacao:
+
+```text
+Cartola FC API publica - https://api.cartolafc.globo.com
+```
+
+Coletar dados:
+
+```bash
+npm run historical:collect -- --season=2026 --from=1 --to=18 --force
+```
+
+Auditar dados persistidos:
+
+```bash
+npm run historical:audit -- --season=2026 --to=18
+```
+
+Estrutura:
+
+```text
+data/historical/2026/round-01/pre-round.json
+data/historical/2026/round-01/post-round.json
+data/historical/2026/round-01/validation.json
+```
+
+Documentacao:
+
+- `docs/historical-data-audit.md`
+- `docs/2026-data-coverage.md`
+- `docs/historical-data-schema.md`
+- `docs/backtest-data-readiness.md`
 
 ## Tratamento de erros
 

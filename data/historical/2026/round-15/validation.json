@@ -1,0 +1,4036 @@
+{
+  "schemaVersion": "historical-validation-report/v1",
+  "season": 2026,
+  "round": 15,
+  "primarySource": "caRtola",
+  "validationSource": "cartola-official-public-api",
+  "playersCompared": 333,
+  "matchesCompared": 10,
+  "missingPlayers": [
+    70163,
+    85425
+  ],
+  "extraPlayers": [
+    78946,
+    79437
+  ],
+  "pointsDifferences": [
+    {
+      "athleteId": 110506,
+      "primary": 3.13,
+      "validation": 3.8
+    },
+    {
+      "athleteId": 149990,
+      "primary": 3.06,
+      "validation": 2.39
+    }
+  ],
+  "priceDifferences": [],
+  "scoutDifferences": [
+    {
+      "athleteId": 37656,
+      "scout": "DE",
+      "primary": 52,
+      "validation": 1
+    },
+    {
+      "athleteId": 37656,
+      "scout": "GS",
+      "primary": 20,
+      "validation": 2
+    },
+    {
+      "athleteId": 41929,
+      "scout": "V",
+      "primary": 5,
+      "validation": 1
+    },
+    {
+      "athleteId": 42411,
+      "scout": "V",
+      "primary": 3,
+      "validation": 1
+    },
+    {
+      "athleteId": 42500,
+      "scout": "DS",
+      "primary": 9,
+      "validation": 1
+    },
+    {
+      "athleteId": 42500,
+      "scout": "FC",
+      "primary": 11,
+      "validation": 3
+    },
+    {
+      "athleteId": 42500,
+      "scout": "FS",
+      "primary": 3,
+      "validation": 1
+    },
+    {
+      "athleteId": 51413,
+      "scout": "DE",
+      "primary": 46,
+      "validation": 4
+    },
+    {
+      "athleteId": 51413,
+      "scout": "GS",
+      "primary": 18,
+      "validation": 1
+    },
+    {
+      "athleteId": 51772,
+      "scout": "DS",
+      "primary": 15,
+      "validation": 4
+    },
+    {
+      "athleteId": 51772,
+      "scout": "FS",
+      "primary": 26,
+      "validation": 1
+    },
+    {
+      "athleteId": 63007,
+      "scout": "CA",
+      "primary": 4,
+      "validation": 1
+    },
+    {
+      "athleteId": 63007,
+      "scout": "FC",
+      "primary": 10,
+      "validation": 2
+    },
+    {
+      "athleteId": 63007,
+      "scout": "FF",
+      "primary": 9,
+      "validation": 2
+    },
+    {
+      "athleteId": 63007,
+      "scout": "FS",
+      "primary": 32,
+      "validation": 5
+    },
+    {
+      "athleteId": 63007,
+      "scout": "G",
+      "primary": 4,
+      "validation": 1
+    },
+    {
+      "athleteId": 68708,
+      "scout": "FS",
+      "primary": 8,
+      "validation": 1
+    },
+    {
+      "athleteId": 68708,
+      "scout": "G",
+      "primary": 2,
+      "validation": 1
+    },
+    {
+      "athleteId": 68806,
+      "scout": "DE",
+      "primary": 27,
+      "validation": 5
+    },
+    {
+      "athleteId": 68806,
+      "scout": "GS",
+      "primary": 12,
+      "validation": 1
+    },
+    {
+      "athleteId": 68928,
+      "scout": "DE",
+      "primary": 42,
+      "validation": 3
+    },
+    {
+      "athleteId": 68928,
+      "scout": "GS",
+      "primary": 16,
+      "validation": 3
+    },
+    {
+      "athleteId": 68938,
+      "scout": "DS",
+      "primary": 5,
+      "validation": 1
+    },
+    {
+      "athleteId": 68938,
+      "scout": "FS",
+      "primary": 10,
+      "validation": 1
+    },
+    {
+      "athleteId": 69012,
+      "scout": "DE",
+      "primary": 33,
+      "validation": 5
+    },
+    {
+      "athleteId": 69012,
+      "scout": "GS",
+      "primary": 14,
+      "validation": 1
+    },
+    {
+      "athleteId": 69208,
+      "scout": "CA",
+      "primary": 2,
+      "validation": 1
+    },
+    {
+      "athleteId": 69208,
+      "scout": "DS",
+      "primary": 13,
+      "validation": 2
+    },
+    {
+      "athleteId": 69208,
+      "scout": "FC",
+      "primary": 12,
+      "validation": 1
+    },
+    {
+      "athleteId": 70360,
+      "scout": "FS",
+      "primary": 10,
+      "validation": 1
+    },
+    {
+      "athleteId": 70666,
+      "scout": "FC",
+      "primary": 10,
+      "validation": 1
+    },
+    {
+      "athleteId": 70944,
+      "scout": "FC",
+      "primary": 11,
+      "validation": 1
+    },
+    {
+      "athleteId": 70944,
+      "scout": "FF",
+      "primary": 7,
+      "validation": 3
+    },
+    {
+      "athleteId": 71043,
+      "scout": "DE",
+      "primary": 70,
+      "validation": 6
+    },
+    {
+      "athleteId": 71043,
+      "scout": "GS",
+      "primary": 22,
+      "validation": 2
+    },
+    {
+      "athleteId": 71123,
+      "scout": "CA",
+      "primary": 6,
+      "validation": 1
+    },
+    {
+      "athleteId": 71123,
+      "scout": "DS",
+      "primary": 10,
+      "validation": 1
+    },
+    {
+      "athleteId": 71123,
+      "scout": "FS",
+      "primary": 31,
+      "validation": 3
+    },
+    {
+      "athleteId": 71123,
+      "scout": "G",
+      "primary": 4,
+      "validation": 1
+    },
+    {
+      "athleteId": 71536,
+      "scout": "FD",
+      "primary": 4,
+      "validation": 1
+    },
+    {
+      "athleteId": 71536,
+      "scout": "FS",
+      "primary": 18,
+      "validation": 2
+    },
+    {
+      "athleteId": 71631,
+      "scout": "DE",
+      "primary": 39,
+      "validation": 4
+    },
+    {
+      "athleteId": 71631,
+      "scout": "GS",
+      "primary": 17,
+      "validation": 1
+    },
+    {
+      "athleteId": 71684,
+      "scout": "DS",
+      "primary": 9,
+      "validation": 1
+    },
+    {
+      "athleteId": 71684,
+      "scout": "I",
+      "primary": 5,
+      "validation": 1
+    },
+    {
+      "athleteId": 72018,
+      "scout": "DE",
+      "primary": 22,
+      "validation": 1
+    },
+    {
+      "athleteId": 72018,
+      "scout": "GS",
+      "primary": 10,
+      "validation": 2
+    },
+    {
+      "athleteId": 72294,
+      "scout": "DE",
+      "primary": 47,
+      "validation": 4
+    },
+    {
+      "athleteId": 72294,
+      "scout": "GS",
+      "primary": 21,
+      "validation": 1
+    },
+    {
+      "athleteId": 72391,
+      "scout": "V",
+      "primary": 2,
+      "validation": 1
+    },
+    {
+      "athleteId": 72460,
+      "scout": "DS",
+      "primary": 6,
+      "validation": 1
+    },
+    {
+      "athleteId": 72460,
+      "scout": "FC",
+      "primary": 5,
+      "validation": 1
+    },
+    {
+      "athleteId": 72493,
+      "scout": "CA",
+      "primary": 2,
+      "validation": 1
+    },
+    {
+      "athleteId": 72493,
+      "scout": "FC",
+      "primary": 13,
+      "validation": 2
+    },
+    {
+      "athleteId": 72493,
+      "scout": "FF",
+      "primary": 3,
+      "validation": 1
+    },
+    {
+      "athleteId": 72605,
+      "scout": "FF",
+      "primary": 2,
+      "validation": 1
+    },
+    {
+      "athleteId": 73318,
+      "scout": "FF",
+      "primary": 2,
+      "validation": 1
+    },
+    {
+      "athleteId": 73318,
+      "scout": "FS",
+      "primary": 2,
+      "validation": 1
+    },
+    {
+      "athleteId": 73384,
+      "scout": "CA",
+      "primary": 2,
+      "validation": 1
+    },
+    {
+      "athleteId": 73384,
+      "scout": "DS",
+      "primary": 14,
+      "validation": 1
+    },
+    {
+      "athleteId": 73384,
+      "scout": "FC",
+      "primary": 12,
+      "validation": 3
+    },
+    {
+      "athleteId": 77656,
+      "scout": "DS",
+      "primary": 5,
+      "validation": 1
+    },
+    {
+      "athleteId": 77656,
+      "scout": "FC",
+      "primary": 2,
+      "validation": 1
+    },
+    {
+      "athleteId": 77777,
+      "scout": "DS",
+      "primary": 10,
+      "validation": 2
+    },
+    {
+      "athleteId": 77777,
+      "scout": "FC",
+      "primary": 13,
+      "validation": 1
+    },
+    {
+      "athleteId": 77777,
+      "scout": "FS",
+      "primary": 4,
+      "validation": 1
+    },
+    {
+      "athleteId": 78117,
+      "scout": "CA",
+      "primary": 2,
+      "validation": 1
+    },
+    {
+      "athleteId": 78117,
+      "scout": "DS",
+      "primary": 9,
+      "validation": 1
+    },
+    {
+      "athleteId": 78117,
+      "scout": "FC",
+      "primary": 13,
+      "validation": 2
+    },
+    {
+      "athleteId": 78117,
+      "scout": "FF",
+      "primary": 5,
+      "validation": 1
+    },
+    {
+      "athleteId": 78117,
+      "scout": "FS",
+      "primary": 16,
+      "validation": 2
+    },
+    {
+      "athleteId": 78248,
+      "scout": "FC",
+      "primary": 14,
+      "validation": 1
+    },
+    {
+      "athleteId": 78445,
+      "scout": "FC",
+      "primary": 7,
+      "validation": 2
+    },
+    {
+      "athleteId": 78445,
+      "scout": "FS",
+      "primary": 5,
+      "validation": 1
+    },
+    {
+      "athleteId": 78605,
+      "scout": "CA",
+      "primary": 5,
+      "validation": 1
+    },
+    {
+      "athleteId": 78605,
+      "scout": "DS",
+      "primary": 17,
+      "validation": 3
+    },
+    {
+      "athleteId": 78605,
+      "scout": "FC",
+      "primary": 11,
+      "validation": 1
+    },
+    {
+      "athleteId": 78850,
+      "scout": "DS",
+      "primary": 6,
+      "validation": 1
+    },
+    {
+      "athleteId": 78850,
+      "scout": "FF",
+      "primary": 9,
+      "validation": 4
+    },
+    {
+      "athleteId": 78850,
+      "scout": "FS",
+      "primary": 6,
+      "validation": 2
+    },
+    {
+      "athleteId": 79701,
+      "scout": "FC",
+      "primary": 6,
+      "validation": 1
+    },
+    {
+      "athleteId": 80196,
+      "scout": "DS",
+      "primary": 5,
+      "validation": 1
+    },
+    {
+      "athleteId": 80196,
+      "scout": "FC",
+      "primary": 6,
+      "validation": 1
+    },
+    {
+      "athleteId": 80287,
+      "scout": "DS",
+      "primary": 8,
+      "validation": 1
+    },
+    {
+      "athleteId": 80287,
+      "scout": "FC",
+      "primary": 17,
+      "validation": 1
+    },
+    {
+      "athleteId": 80287,
+      "scout": "G",
+      "primary": 5,
+      "validation": 1
+    },
+    {
+      "athleteId": 80570,
+      "scout": "DS",
+      "primary": 15,
+      "validation": 1
+    },
+    {
+      "athleteId": 80570,
+      "scout": "FC",
+      "primary": 21,
+      "validation": 1
+    },
+    {
+      "athleteId": 81005,
+      "scout": "FS",
+      "primary": 10,
+      "validation": 1
+    },
+    {
+      "athleteId": 81720,
+      "scout": "DS",
+      "primary": 5,
+      "validation": 2
+    },
+    {
+      "athleteId": 81720,
+      "scout": "FC",
+      "primary": 5,
+      "validation": 1
+    },
+    {
+      "athleteId": 81720,
+      "scout": "FD",
+      "primary": 2,
+      "validation": 1
+    },
+    {
+      "athleteId": 81720,
+      "scout": "FF",
+      "primary": 2,
+      "validation": 1
+    },
+    {
+      "athleteId": 81720,
+      "scout": "FS",
+      "primary": 3,
+      "validation": 1
+    },
+    {
+      "athleteId": 81845,
+      "scout": "CA",
+      "primary": 3,
+      "validation": 1
+    },
+    {
+      "athleteId": 81845,
+      "scout": "FC",
+      "primary": 5,
+      "validation": 1
+    },
+    {
+      "athleteId": 82627,
+      "scout": "DS",
+      "primary": 8,
+      "validation": 2
+    },
+    {
+      "athleteId": 82628,
+      "scout": "A",
+      "primary": 2,
+      "validation": 1
+    },
+    {
+      "athleteId": 82628,
+      "scout": "DS",
+      "primary": 14,
+      "validation": 1
+    },
+    {
+      "athleteId": 82730,
+      "scout": "CA",
+      "primary": 2,
+      "validation": 1
+    },
+    {
+      "athleteId": 82730,
+      "scout": "DE",
+      "primary": 49,
+      "validation": 5
+    },
+    {
+      "athleteId": 82730,
+      "scout": "GS",
+      "primary": 25,
+      "validation": 1
+    },
+    {
+      "athleteId": 83433,
+      "scout": "DS",
+      "primary": 17,
+      "validation": 3
+    },
+    {
+      "athleteId": 83433,
+      "scout": "FD",
+      "primary": 2,
+      "validation": 1
+    },
+    {
+      "athleteId": 83433,
+      "scout": "FF",
+      "primary": 5,
+      "validation": 1
+    },
+    {
+      "athleteId": 83528,
+      "scout": "FC",
+      "primary": 13,
+      "validation": 1
+    },
+    {
+      "athleteId": 83528,
+      "scout": "FS",
+      "primary": 5,
+      "validation": 1
+    },
+    {
+      "athleteId": 83528,
+      "scout": "SG",
+      "primary": 6,
+      "validation": 1
+    },
+    {
+      "athleteId": 84558,
+      "scout": "A",
+      "primary": 3,
+      "validation": 1
+    },
+    {
+      "athleteId": 84558,
+      "scout": "CA",
+      "primary": 2,
+      "validation": 1
+    },
+    {
+      "athleteId": 84558,
+      "scout": "DS",
+      "primary": 9,
+      "validation": 1
+    },
+    {
+      "athleteId": 84558,
+      "scout": "FC",
+      "primary": 12,
+      "validation": 3
+    },
+    {
+      "athleteId": 84558,
+      "scout": "FD",
+      "primary": 3,
+      "validation": 1
+    },
+    {
+      "athleteId": 84626,
+      "scout": "A",
+      "primary": 5,
+      "validation": 1
+    },
+    {
+      "athleteId": 84626,
+      "scout": "FC",
+      "primary": 12,
+      "validation": 1
+    },
+    {
+      "athleteId": 84674,
+      "scout": "FF",
+      "primary": 3,
+      "validation": 1
+    },
+    {
+      "athleteId": 84674,
+      "scout": "FS",
+      "primary": 9,
+      "validation": 1
+    },
+    {
+      "athleteId": 84735,
+      "scout": "CA",
+      "primary": 3,
+      "validation": 1
+    },
+    {
+      "athleteId": 84735,
+      "scout": "DS",
+      "primary": 18,
+      "validation": 2
+    },
+    {
+      "athleteId": 84735,
+      "scout": "FC",
+      "primary": 8,
+      "validation": 1
+    },
+    {
+      "athleteId": 84735,
+      "scout": "FS",
+      "primary": 11,
+      "validation": 1
+    },
+    {
+      "athleteId": 84816,
+      "scout": "DS",
+      "primary": 13,
+      "validation": 1
+    },
+    {
+      "athleteId": 84816,
+      "scout": "FS",
+      "primary": 7,
+      "validation": 2
+    },
+    {
+      "athleteId": 84816,
+      "scout": "SG",
+      "primary": 6,
+      "validation": 1
+    },
+    {
+      "athleteId": 85403,
+      "scout": "DS",
+      "primary": 10,
+      "validation": 3
+    },
+    {
+      "athleteId": 85403,
+      "scout": "FS",
+      "primary": 28,
+      "validation": 4
+    },
+    {
+      "athleteId": 86292,
+      "scout": "CA",
+      "primary": 3,
+      "validation": 1
+    },
+    {
+      "athleteId": 86292,
+      "scout": "FC",
+      "primary": 14,
+      "validation": 2
+    },
+    {
+      "athleteId": 86292,
+      "scout": "FS",
+      "primary": 10,
+      "validation": 1
+    },
+    {
+      "athleteId": 86859,
+      "scout": "FC",
+      "primary": 13,
+      "validation": 2
+    },
+    {
+      "athleteId": 86859,
+      "scout": "FF",
+      "primary": 8,
+      "validation": 1
+    },
+    {
+      "athleteId": 86859,
+      "scout": "FS",
+      "primary": 8,
+      "validation": 2
+    },
+    {
+      "athleteId": 87008,
+      "scout": "DE",
+      "primary": 41,
+      "validation": 3
+    },
+    {
+      "athleteId": 87258,
+      "scout": "FD",
+      "primary": 3,
+      "validation": 1
+    },
+    {
+      "athleteId": 87258,
+      "scout": "FS",
+      "primary": 10,
+      "validation": 1
+    },
+    {
+      "athleteId": 87887,
+      "scout": "DS",
+      "primary": 11,
+      "validation": 2
+    },
+    {
+      "athleteId": 87887,
+      "scout": "FC",
+      "primary": 2,
+      "validation": 1
+    },
+    {
+      "athleteId": 88312,
+      "scout": "DS",
+      "primary": 11,
+      "validation": 2
+    },
+    {
+      "athleteId": 88393,
+      "scout": "DS",
+      "primary": 4,
+      "validation": 1
+    },
+    {
+      "athleteId": 88393,
+      "scout": "FC",
+      "primary": 7,
+      "validation": 2
+    },
+    {
+      "athleteId": 88393,
+      "scout": "FF",
+      "primary": 2,
+      "validation": 1
+    },
+    {
+      "athleteId": 88393,
+      "scout": "SG",
+      "primary": 4,
+      "validation": 1
+    },
+    {
+      "athleteId": 88963,
+      "scout": "V",
+      "primary": 8,
+      "validation": 1
+    },
+    {
+      "athleteId": 89256,
+      "scout": "DS",
+      "primary": 23,
+      "validation": 3
+    },
+    {
+      "athleteId": 89256,
+      "scout": "FD",
+      "primary": 7,
+      "validation": 1
+    },
+    {
+      "athleteId": 89256,
+      "scout": "FF",
+      "primary": 3,
+      "validation": 1
+    },
+    {
+      "athleteId": 89256,
+      "scout": "FS",
+      "primary": 29,
+      "validation": 2
+    },
+    {
+      "athleteId": 89274,
+      "scout": "FS",
+      "primary": 9,
+      "validation": 1
+    },
+    {
+      "athleteId": 89837,
+      "scout": "DS",
+      "primary": 14,
+      "validation": 2
+    },
+    {
+      "athleteId": 89837,
+      "scout": "FC",
+      "primary": 12,
+      "validation": 3
+    },
+    {
+      "athleteId": 89837,
+      "scout": "FF",
+      "primary": 9,
+      "validation": 1
+    },
+    {
+      "athleteId": 89837,
+      "scout": "FS",
+      "primary": 13,
+      "validation": 1
+    },
+    {
+      "athleteId": 89840,
+      "scout": "CA",
+      "primary": 3,
+      "validation": 1
+    },
+    {
+      "athleteId": 89840,
+      "scout": "DS",
+      "primary": 11,
+      "validation": 1
+    },
+    {
+      "athleteId": 89840,
+      "scout": "FC",
+      "primary": 20,
+      "validation": 1
+    },
+    {
+      "athleteId": 89840,
+      "scout": "FF",
+      "primary": 12,
+      "validation": 1
+    },
+    {
+      "athleteId": 89840,
+      "scout": "FS",
+      "primary": 32,
+      "validation": 2
+    },
+    {
+      "athleteId": 89840,
+      "scout": "I",
+      "primary": 7,
+      "validation": 2
+    },
+    {
+      "athleteId": 89918,
+      "scout": "FF",
+      "primary": 5,
+      "validation": 4
+    },
+    {
+      "athleteId": 89918,
+      "scout": "FS",
+      "primary": 4,
+      "validation": 2
+    },
+    {
+      "athleteId": 90031,
+      "scout": "DS",
+      "primary": 9,
+      "validation": 1
+    },
+    {
+      "athleteId": 90031,
+      "scout": "FC",
+      "primary": 9,
+      "validation": 1
+    },
+    {
+      "athleteId": 90061,
+      "scout": "FC",
+      "primary": 4,
+      "validation": 2
+    },
+    {
+      "athleteId": 90285,
+      "scout": "FD",
+      "primary": 2,
+      "validation": 1
+    },
+    {
+      "athleteId": 90302,
+      "scout": "FC",
+      "primary": 18,
+      "validation": 2
+    },
+    {
+      "athleteId": 90302,
+      "scout": "FS",
+      "primary": 22,
+      "validation": 1
+    },
+    {
+      "athleteId": 90588,
+      "scout": "DS",
+      "primary": 16,
+      "validation": 2
+    },
+    {
+      "athleteId": 90588,
+      "scout": "FS",
+      "primary": 13,
+      "validation": 1
+    },
+    {
+      "athleteId": 90768,
+      "scout": "CA",
+      "primary": 4,
+      "validation": 1
+    },
+    {
+      "athleteId": 90768,
+      "scout": "FD",
+      "primary": 4,
+      "validation": 2
+    },
+    {
+      "athleteId": 90917,
+      "scout": "DS",
+      "primary": 5,
+      "validation": 1
+    },
+    {
+      "athleteId": 90917,
+      "scout": "FS",
+      "primary": 9,
+      "validation": 1
+    },
+    {
+      "athleteId": 90917,
+      "scout": "I",
+      "primary": 5,
+      "validation": 1
+    },
+    {
+      "athleteId": 91607,
+      "scout": "FC",
+      "primary": 15,
+      "validation": 1
+    },
+    {
+      "athleteId": 91607,
+      "scout": "FS",
+      "primary": 21,
+      "validation": 2
+    },
+    {
+      "athleteId": 91908,
+      "scout": "CA",
+      "primary": 3,
+      "validation": 1
+    },
+    {
+      "athleteId": 91908,
+      "scout": "DS",
+      "primary": 29,
+      "validation": 2
+    },
+    {
+      "athleteId": 92171,
+      "scout": "DS",
+      "primary": 6,
+      "validation": 1
+    },
+    {
+      "athleteId": 92171,
+      "scout": "FC",
+      "primary": 16,
+      "validation": 1
+    },
+    {
+      "athleteId": 92171,
+      "scout": "FF",
+      "primary": 9,
+      "validation": 1
+    },
+    {
+      "athleteId": 92171,
+      "scout": "FS",
+      "primary": 14,
+      "validation": 2
+    },
+    {
+      "athleteId": 92171,
+      "scout": "G",
+      "primary": 4,
+      "validation": 1
+    },
+    {
+      "athleteId": 92696,
+      "scout": "CA",
+      "primary": 2,
+      "validation": 1
+    },
+    {
+      "athleteId": 92696,
+      "scout": "FC",
+      "primary": 10,
+      "validation": 1
+    },
+    {
+      "athleteId": 92696,
+      "scout": "G",
+      "primary": 3,
+      "validation": 1
+    },
+    {
+      "athleteId": 92854,
+      "scout": "FS",
+      "primary": 10,
+      "validation": 1
+    },
+    {
+      "athleteId": 92854,
+      "scout": "G",
+      "primary": 2,
+      "validation": 1
+    },
+    {
+      "athleteId": 93368,
+      "scout": "DS",
+      "primary": 12,
+      "validation": 2
+    },
+    {
+      "athleteId": 93368,
+      "scout": "FC",
+      "primary": 9,
+      "validation": 2
+    },
+    {
+      "athleteId": 93368,
+      "scout": "FS",
+      "primary": 5,
+      "validation": 2
+    },
+    {
+      "athleteId": 93368,
+      "scout": "I",
+      "primary": 2,
+      "validation": 1
+    },
+    {
+      "athleteId": 93368,
+      "scout": "SG",
+      "primary": 4,
+      "validation": 1
+    },
+    {
+      "athleteId": 93478,
+      "scout": "DS",
+      "primary": 3,
+      "validation": 1
+    },
+    {
+      "athleteId": 94154,
+      "scout": "FS",
+      "primary": 5,
+      "validation": 1
+    },
+    {
+      "athleteId": 94583,
+      "scout": "FC",
+      "primary": 9,
+      "validation": 1
+    },
+    {
+      "athleteId": 94583,
+      "scout": "FD",
+      "primary": 5,
+      "validation": 1
+    },
+    {
+      "athleteId": 94583,
+      "scout": "FS",
+      "primary": 16,
+      "validation": 1
+    },
+    {
+      "athleteId": 94968,
+      "scout": "DS",
+      "primary": 26,
+      "validation": 2
+    },
+    {
+      "athleteId": 94968,
+      "scout": "FC",
+      "primary": 26,
+      "validation": 2
+    },
+    {
+      "athleteId": 94968,
+      "scout": "FF",
+      "primary": 10,
+      "validation": 1
+    },
+    {
+      "athleteId": 94968,
+      "scout": "FS",
+      "primary": 17,
+      "validation": 1
+    },
+    {
+      "athleteId": 94968,
+      "scout": "I",
+      "primary": 2,
+      "validation": 1
+    },
+    {
+      "athleteId": 95332,
+      "scout": "DS",
+      "primary": 10,
+      "validation": 3
+    },
+    {
+      "athleteId": 95332,
+      "scout": "FF",
+      "primary": 6,
+      "validation": 1
+    },
+    {
+      "athleteId": 95362,
+      "scout": "DS",
+      "primary": 2,
+      "validation": 1
+    },
+    {
+      "athleteId": 95362,
+      "scout": "FC",
+      "primary": 9,
+      "validation": 2
+    },
+    {
+      "athleteId": 95362,
+      "scout": "FD",
+      "primary": 2,
+      "validation": 1
+    },
+    {
+      "athleteId": 95362,
+      "scout": "FF",
+      "primary": 3,
+      "validation": 1
+    },
+    {
+      "athleteId": 95362,
+      "scout": "G",
+      "primary": 2,
+      "validation": 1
+    },
+    {
+      "athleteId": 95466,
+      "scout": "DS",
+      "primary": 31,
+      "validation": 1
+    },
+    {
+      "athleteId": 95466,
+      "scout": "FC",
+      "primary": 11,
+      "validation": 1
+    },
+    {
+      "athleteId": 95466,
+      "scout": "SG",
+      "primary": 4,
+      "validation": 1
+    },
+    {
+      "athleteId": 95556,
+      "scout": "FF",
+      "primary": 6,
+      "validation": 1
+    },
+    {
+      "athleteId": 95556,
+      "scout": "FS",
+      "primary": 16,
+      "validation": 2
+    },
+    {
+      "athleteId": 95799,
+      "scout": "DS",
+      "primary": 12,
+      "validation": 1
+    },
+    {
+      "athleteId": 95799,
+      "scout": "FS",
+      "primary": 13,
+      "validation": 1
+    },
+    {
+      "athleteId": 96591,
+      "scout": "FC",
+      "primary": 25,
+      "validation": 1
+    },
+    {
+      "athleteId": 96591,
+      "scout": "FD",
+      "primary": 4,
+      "validation": 1
+    },
+    {
+      "athleteId": 96591,
+      "scout": "FF",
+      "primary": 8,
+      "validation": 1
+    },
+    {
+      "athleteId": 96591,
+      "scout": "FS",
+      "primary": 34,
+      "validation": 4
+    },
+    {
+      "athleteId": 96610,
+      "scout": "DS",
+      "primary": 11,
+      "validation": 1
+    },
+    {
+      "athleteId": 96610,
+      "scout": "FD",
+      "primary": 7,
+      "validation": 1
+    },
+    {
+      "athleteId": 96610,
+      "scout": "FF",
+      "primary": 16,
+      "validation": 2
+    },
+    {
+      "athleteId": 96870,
+      "scout": "SG",
+      "primary": 3,
+      "validation": 1
+    },
+    {
+      "athleteId": 97095,
+      "scout": "FS",
+      "primary": 4,
+      "validation": 1
+    },
+    {
+      "athleteId": 97321,
+      "scout": "FC",
+      "primary": 10,
+      "validation": 2
+    },
+    {
+      "athleteId": 97321,
+      "scout": "FD",
+      "primary": 10,
+      "validation": 2
+    },
+    {
+      "athleteId": 97321,
+      "scout": "FF",
+      "primary": 5,
+      "validation": 1
+    },
+    {
+      "athleteId": 97321,
+      "scout": "FS",
+      "primary": 19,
+      "validation": 2
+    },
+    {
+      "athleteId": 97321,
+      "scout": "I",
+      "primary": 6,
+      "validation": 1
+    },
+    {
+      "athleteId": 97432,
+      "scout": "CA",
+      "primary": 2,
+      "validation": 1
+    },
+    {
+      "athleteId": 97460,
+      "scout": "FC",
+      "primary": 7,
+      "validation": 1
+    },
+    {
+      "athleteId": 97460,
+      "scout": "FS",
+      "primary": 3,
+      "validation": 1
+    },
+    {
+      "athleteId": 97520,
+      "scout": "DS",
+      "primary": 9,
+      "validation": 1
+    },
+    {
+      "athleteId": 97520,
+      "scout": "FC",
+      "primary": 10,
+      "validation": 3
+    },
+    {
+      "athleteId": 97642,
+      "scout": "CA",
+      "primary": 3,
+      "validation": 1
+    },
+    {
+      "athleteId": 97642,
+      "scout": "DS",
+      "primary": 12,
+      "validation": 1
+    },
+    {
+      "athleteId": 97642,
+      "scout": "FC",
+      "primary": 12,
+      "validation": 1
+    },
+    {
+      "athleteId": 97642,
+      "scout": "FF",
+      "primary": 4,
+      "validation": 1
+    },
+    {
+      "athleteId": 97653,
+      "scout": "FD",
+      "primary": 3,
+      "validation": 2
+    },
+    {
+      "athleteId": 97653,
+      "scout": "FF",
+      "primary": 2,
+      "validation": 1
+    },
+    {
+      "athleteId": 97795,
+      "scout": "DS",
+      "primary": 17,
+      "validation": 3
+    },
+    {
+      "athleteId": 97795,
+      "scout": "FF",
+      "primary": 6,
+      "validation": 2
+    },
+    {
+      "athleteId": 97795,
+      "scout": "FS",
+      "primary": 14,
+      "validation": 2
+    },
+    {
+      "athleteId": 97867,
+      "scout": "DS",
+      "primary": 9,
+      "validation": 1
+    },
+    {
+      "athleteId": 97867,
+      "scout": "SG",
+      "primary": 6,
+      "validation": 1
+    },
+    {
+      "athleteId": 97878,
+      "scout": "DS",
+      "primary": 22,
+      "validation": 3
+    },
+    {
+      "athleteId": 97878,
+      "scout": "FC",
+      "primary": 9,
+      "validation": 1
+    },
+    {
+      "athleteId": 97878,
+      "scout": "FS",
+      "primary": 12,
+      "validation": 3
+    },
+    {
+      "athleteId": 97899,
+      "scout": "DS",
+      "primary": 5,
+      "validation": 3
+    },
+    {
+      "athleteId": 97899,
+      "scout": "FS",
+      "primary": 8,
+      "validation": 3
+    },
+    {
+      "athleteId": 98022,
+      "scout": "DS",
+      "primary": 17,
+      "validation": 2
+    },
+    {
+      "athleteId": 98022,
+      "scout": "FC",
+      "primary": 14,
+      "validation": 1
+    },
+    {
+      "athleteId": 98022,
+      "scout": "FS",
+      "primary": 11,
+      "validation": 1
+    },
+    {
+      "athleteId": 98225,
+      "scout": "FS",
+      "primary": 4,
+      "validation": 2
+    },
+    {
+      "athleteId": 98225,
+      "scout": "I",
+      "primary": 2,
+      "validation": 1
+    },
+    {
+      "athleteId": 98517,
+      "scout": "DS",
+      "primary": 30,
+      "validation": 3
+    },
+    {
+      "athleteId": 98517,
+      "scout": "FC",
+      "primary": 23,
+      "validation": 2
+    },
+    {
+      "athleteId": 98672,
+      "scout": "FF",
+      "primary": 12,
+      "validation": 2
+    },
+    {
+      "athleteId": 98672,
+      "scout": "FS",
+      "primary": 13,
+      "validation": 1
+    },
+    {
+      "athleteId": 98672,
+      "scout": "I",
+      "primary": 6,
+      "validation": 1
+    },
+    {
+      "athleteId": 98873,
+      "scout": "FC",
+      "primary": 13,
+      "validation": 2
+    },
+    {
+      "athleteId": 98873,
+      "scout": "FD",
+      "primary": 3,
+      "validation": 2
+    },
+    {
+      "athleteId": 98873,
+      "scout": "FS",
+      "primary": 22,
+      "validation": 2
+    },
+    {
+      "athleteId": 98909,
+      "scout": "DS",
+      "primary": 23,
+      "validation": 2
+    },
+    {
+      "athleteId": 98909,
+      "scout": "FD",
+      "primary": 5,
+      "validation": 2
+    },
+    {
+      "athleteId": 98909,
+      "scout": "FF",
+      "primary": 15,
+      "validation": 1
+    },
+    {
+      "athleteId": 98909,
+      "scout": "FS",
+      "primary": 19,
+      "validation": 3
+    },
+    {
+      "athleteId": 99213,
+      "scout": "A",
+      "primary": 4,
+      "validation": 1
+    },
+    {
+      "athleteId": 99213,
+      "scout": "DS",
+      "primary": 7,
+      "validation": 2
+    },
+    {
+      "athleteId": 99228,
+      "scout": "FF",
+      "primary": 2,
+      "validation": 1
+    },
+    {
+      "athleteId": 99274,
+      "scout": "DS",
+      "primary": 20,
+      "validation": 3
+    },
+    {
+      "athleteId": 99274,
+      "scout": "FC",
+      "primary": 14,
+      "validation": 1
+    },
+    {
+      "athleteId": 99274,
+      "scout": "FD",
+      "primary": 4,
+      "validation": 2
+    },
+    {
+      "athleteId": 99274,
+      "scout": "FF",
+      "primary": 5,
+      "validation": 1
+    },
+    {
+      "athleteId": 99440,
+      "scout": "DS",
+      "primary": 23,
+      "validation": 4
+    },
+    {
+      "athleteId": 99440,
+      "scout": "FF",
+      "primary": 7,
+      "validation": 1
+    },
+    {
+      "athleteId": 99440,
+      "scout": "FS",
+      "primary": 14,
+      "validation": 1
+    },
+    {
+      "athleteId": 99552,
+      "scout": "DE",
+      "primary": 37,
+      "validation": 3
+    },
+    {
+      "athleteId": 99552,
+      "scout": "SG",
+      "primary": 6,
+      "validation": 1
+    },
+    {
+      "athleteId": 99789,
+      "scout": "DS",
+      "primary": 7,
+      "validation": 1
+    },
+    {
+      "athleteId": 99789,
+      "scout": "FF",
+      "primary": 6,
+      "validation": 1
+    },
+    {
+      "athleteId": 99815,
+      "scout": "DS",
+      "primary": 25,
+      "validation": 1
+    },
+    {
+      "athleteId": 99815,
+      "scout": "FC",
+      "primary": 12,
+      "validation": 1
+    },
+    {
+      "athleteId": 99815,
+      "scout": "FS",
+      "primary": 12,
+      "validation": 2
+    },
+    {
+      "athleteId": 99815,
+      "scout": "I",
+      "primary": 4,
+      "validation": 2
+    },
+    {
+      "athleteId": 100652,
+      "scout": "DS",
+      "primary": 3,
+      "validation": 1
+    },
+    {
+      "athleteId": 100652,
+      "scout": "FC",
+      "primary": 12,
+      "validation": 1
+    },
+    {
+      "athleteId": 100652,
+      "scout": "FD",
+      "primary": 10,
+      "validation": 2
+    },
+    {
+      "athleteId": 100652,
+      "scout": "FF",
+      "primary": 8,
+      "validation": 3
+    },
+    {
+      "athleteId": 100652,
+      "scout": "FS",
+      "primary": 11,
+      "validation": 1
+    },
+    {
+      "athleteId": 100695,
+      "scout": "FS",
+      "primary": 6,
+      "validation": 2
+    },
+    {
+      "athleteId": 100742,
+      "scout": "DS",
+      "primary": 14,
+      "validation": 3
+    },
+    {
+      "athleteId": 100742,
+      "scout": "FC",
+      "primary": 9,
+      "validation": 2
+    },
+    {
+      "athleteId": 100742,
+      "scout": "FS",
+      "primary": 15,
+      "validation": 1
+    },
+    {
+      "athleteId": 100804,
+      "scout": "DS",
+      "primary": 13,
+      "validation": 1
+    },
+    {
+      "athleteId": 100804,
+      "scout": "FC",
+      "primary": 8,
+      "validation": 1
+    },
+    {
+      "athleteId": 100969,
+      "scout": "FF",
+      "primary": 3,
+      "validation": 1
+    },
+    {
+      "athleteId": 100987,
+      "scout": "FC",
+      "primary": 4,
+      "validation": 1
+    },
+    {
+      "athleteId": 100987,
+      "scout": "FS",
+      "primary": 2,
+      "validation": 1
+    },
+    {
+      "athleteId": 101254,
+      "scout": "G",
+      "primary": 4,
+      "validation": 1
+    },
+    {
+      "athleteId": 101290,
+      "scout": "DS",
+      "primary": 4,
+      "validation": 2
+    },
+    {
+      "athleteId": 101290,
+      "scout": "FD",
+      "primary": 3,
+      "validation": 1
+    },
+    {
+      "athleteId": 101314,
+      "scout": "FC",
+      "primary": 8,
+      "validation": 2
+    },
+    {
+      "athleteId": 101314,
+      "scout": "FD",
+      "primary": 4,
+      "validation": 1
+    },
+    {
+      "athleteId": 101314,
+      "scout": "FS",
+      "primary": 19,
+      "validation": 3
+    },
+    {
+      "athleteId": 101319,
+      "scout": "FC",
+      "primary": 6,
+      "validation": 1
+    },
+    {
+      "athleteId": 101319,
+      "scout": "FF",
+      "primary": 3,
+      "validation": 1
+    },
+    {
+      "athleteId": 101393,
+      "scout": "DS",
+      "primary": 16,
+      "validation": 1
+    },
+    {
+      "athleteId": 101393,
+      "scout": "FC",
+      "primary": 13,
+      "validation": 4
+    },
+    {
+      "athleteId": 101393,
+      "scout": "FD",
+      "primary": 2,
+      "validation": 1
+    },
+    {
+      "athleteId": 101405,
+      "scout": "FF",
+      "primary": 2,
+      "validation": 1
+    },
+    {
+      "athleteId": 101405,
+      "scout": "FS",
+      "primary": 7,
+      "validation": 1
+    },
+    {
+      "athleteId": 101574,
+      "scout": "DE",
+      "primary": 32,
+      "validation": 3
+    },
+    {
+      "athleteId": 101574,
+      "scout": "GS",
+      "primary": 12,
+      "validation": 2
+    },
+    {
+      "athleteId": 101594,
+      "scout": "DS",
+      "primary": 8,
+      "validation": 3
+    },
+    {
+      "athleteId": 101594,
+      "scout": "FC",
+      "primary": 6,
+      "validation": 1
+    },
+    {
+      "athleteId": 101594,
+      "scout": "FF",
+      "primary": 2,
+      "validation": 1
+    },
+    {
+      "athleteId": 101594,
+      "scout": "FS",
+      "primary": 3,
+      "validation": 1
+    },
+    {
+      "athleteId": 101597,
+      "scout": "CA",
+      "primary": 2,
+      "validation": 1
+    },
+    {
+      "athleteId": 101597,
+      "scout": "DS",
+      "primary": 18,
+      "validation": 3
+    },
+    {
+      "athleteId": 101597,
+      "scout": "FC",
+      "primary": 21,
+      "validation": 1
+    },
+    {
+      "athleteId": 101597,
+      "scout": "FF",
+      "primary": 4,
+      "validation": 1
+    },
+    {
+      "athleteId": 101597,
+      "scout": "FS",
+      "primary": 10,
+      "validation": 1
+    },
+    {
+      "athleteId": 101708,
+      "scout": "DS",
+      "primary": 9,
+      "validation": 3
+    },
+    {
+      "athleteId": 101708,
+      "scout": "FC",
+      "primary": 3,
+      "validation": 1
+    },
+    {
+      "athleteId": 101708,
+      "scout": "FD",
+      "primary": 2,
+      "validation": 1
+    },
+    {
+      "athleteId": 101715,
+      "scout": "FC",
+      "primary": 12,
+      "validation": 3
+    },
+    {
+      "athleteId": 101715,
+      "scout": "FF",
+      "primary": 8,
+      "validation": 1
+    },
+    {
+      "athleteId": 101715,
+      "scout": "FS",
+      "primary": 12,
+      "validation": 1
+    },
+    {
+      "athleteId": 101727,
+      "scout": "DS",
+      "primary": 21,
+      "validation": 5
+    },
+    {
+      "athleteId": 101727,
+      "scout": "FC",
+      "primary": 14,
+      "validation": 2
+    },
+    {
+      "athleteId": 101727,
+      "scout": "FF",
+      "primary": 3,
+      "validation": 1
+    },
+    {
+      "athleteId": 101807,
+      "scout": "FF",
+      "primary": 4,
+      "validation": 1
+    },
+    {
+      "athleteId": 101807,
+      "scout": "FS",
+      "primary": 9,
+      "validation": 1
+    },
+    {
+      "athleteId": 101820,
+      "scout": "DS",
+      "primary": 10,
+      "validation": 2
+    },
+    {
+      "athleteId": 101820,
+      "scout": "FF",
+      "primary": 2,
+      "validation": 1
+    },
+    {
+      "athleteId": 101908,
+      "scout": "DS",
+      "primary": 14,
+      "validation": 1
+    },
+    {
+      "athleteId": 101960,
+      "scout": "DS",
+      "primary": 21,
+      "validation": 1
+    },
+    {
+      "athleteId": 101960,
+      "scout": "FD",
+      "primary": 9,
+      "validation": 1
+    },
+    {
+      "athleteId": 101960,
+      "scout": "FS",
+      "primary": 25,
+      "validation": 1
+    },
+    {
+      "athleteId": 102256,
+      "scout": "FC",
+      "primary": 5,
+      "validation": 2
+    },
+    {
+      "athleteId": 102256,
+      "scout": "FF",
+      "primary": 2,
+      "validation": 1
+    },
+    {
+      "athleteId": 102256,
+      "scout": "FS",
+      "primary": 2,
+      "validation": 1
+    },
+    {
+      "athleteId": 102318,
+      "scout": "DS",
+      "primary": 8,
+      "validation": 3
+    },
+    {
+      "athleteId": 102318,
+      "scout": "FF",
+      "primary": 2,
+      "validation": 1
+    },
+    {
+      "athleteId": 102667,
+      "scout": "FC",
+      "primary": 12,
+      "validation": 1
+    },
+    {
+      "athleteId": 102667,
+      "scout": "FF",
+      "primary": 6,
+      "validation": 1
+    },
+    {
+      "athleteId": 102667,
+      "scout": "FS",
+      "primary": 4,
+      "validation": 2
+    },
+    {
+      "athleteId": 102906,
+      "scout": "DE",
+      "primary": 14,
+      "validation": 4
+    },
+    {
+      "athleteId": 102906,
+      "scout": "GS",
+      "primary": 5,
+      "validation": 1
+    },
+    {
+      "athleteId": 102909,
+      "scout": "DS",
+      "primary": 5,
+      "validation": 2
+    },
+    {
+      "athleteId": 102911,
+      "scout": "FC",
+      "primary": 23,
+      "validation": 1
+    },
+    {
+      "athleteId": 102911,
+      "scout": "FS",
+      "primary": 13,
+      "validation": 1
+    },
+    {
+      "athleteId": 102975,
+      "scout": "DS",
+      "primary": 25,
+      "validation": 1
+    },
+    {
+      "athleteId": 102975,
+      "scout": "FC",
+      "primary": 10,
+      "validation": 3
+    },
+    {
+      "athleteId": 102975,
+      "scout": "SG",
+      "primary": 4,
+      "validation": 1
+    },
+    {
+      "athleteId": 103295,
+      "scout": "FC",
+      "primary": 4,
+      "validation": 2
+    },
+    {
+      "athleteId": 103388,
+      "scout": "DS",
+      "primary": 25,
+      "validation": 2
+    },
+    {
+      "athleteId": 103388,
+      "scout": "FS",
+      "primary": 22,
+      "validation": 2
+    },
+    {
+      "athleteId": 103445,
+      "scout": "FF",
+      "primary": 12,
+      "validation": 2
+    },
+    {
+      "athleteId": 103445,
+      "scout": "FS",
+      "primary": 7,
+      "validation": 1
+    },
+    {
+      "athleteId": 103445,
+      "scout": "I",
+      "primary": 5,
+      "validation": 1
+    },
+    {
+      "athleteId": 103523,
+      "scout": "DS",
+      "primary": 6,
+      "validation": 1
+    },
+    {
+      "athleteId": 103523,
+      "scout": "FS",
+      "primary": 4,
+      "validation": 2
+    },
+    {
+      "athleteId": 104036,
+      "scout": "FS",
+      "primary": 2,
+      "validation": 1
+    },
+    {
+      "athleteId": 104075,
+      "scout": "DS",
+      "primary": 19,
+      "validation": 1
+    },
+    {
+      "athleteId": 104075,
+      "scout": "FC",
+      "primary": 20,
+      "validation": 1
+    },
+    {
+      "athleteId": 104084,
+      "scout": "DE",
+      "primary": 46,
+      "validation": 3
+    },
+    {
+      "athleteId": 104084,
+      "scout": "FS",
+      "primary": 9,
+      "validation": 1
+    },
+    {
+      "athleteId": 104084,
+      "scout": "GS",
+      "primary": 12,
+      "validation": 1
+    },
+    {
+      "athleteId": 104118,
+      "scout": "DE",
+      "primary": 39,
+      "validation": 3
+    },
+    {
+      "athleteId": 104118,
+      "scout": "GS",
+      "primary": 13,
+      "validation": 2
+    },
+    {
+      "athleteId": 104470,
+      "scout": "CA",
+      "primary": 4,
+      "validation": 1
+    },
+    {
+      "athleteId": 104470,
+      "scout": "DS",
+      "primary": 8,
+      "validation": 1
+    },
+    {
+      "athleteId": 104470,
+      "scout": "FC",
+      "primary": 11,
+      "validation": 1
+    },
+    {
+      "athleteId": 104470,
+      "scout": "FD",
+      "primary": 2,
+      "validation": 1
+    },
+    {
+      "athleteId": 104470,
+      "scout": "FS",
+      "primary": 14,
+      "validation": 4
+    },
+    {
+      "athleteId": 104519,
+      "scout": "DS",
+      "primary": 22,
+      "validation": 1
+    },
+    {
+      "athleteId": 104519,
+      "scout": "FC",
+      "primary": 21,
+      "validation": 1
+    },
+    {
+      "athleteId": 104519,
+      "scout": "FF",
+      "primary": 5,
+      "validation": 1
+    },
+    {
+      "athleteId": 104693,
+      "scout": "FS",
+      "primary": 5,
+      "validation": 1
+    },
+    {
+      "athleteId": 104758,
+      "scout": "CA",
+      "primary": 5,
+      "validation": 1
+    },
+    {
+      "athleteId": 104758,
+      "scout": "DS",
+      "primary": 23,
+      "validation": 1
+    },
+    {
+      "athleteId": 104758,
+      "scout": "FC",
+      "primary": 19,
+      "validation": 1
+    },
+    {
+      "athleteId": 104758,
+      "scout": "FS",
+      "primary": 13,
+      "validation": 2
+    },
+    {
+      "athleteId": 104758,
+      "scout": "I",
+      "primary": 2,
+      "validation": 1
+    },
+    {
+      "athleteId": 104783,
+      "scout": "DS",
+      "primary": 38,
+      "validation": 4
+    },
+    {
+      "athleteId": 104811,
+      "scout": "DS",
+      "primary": 16,
+      "validation": 2
+    },
+    {
+      "athleteId": 104811,
+      "scout": "FC",
+      "primary": 18,
+      "validation": 2
+    },
+    {
+      "athleteId": 104811,
+      "scout": "FS",
+      "primary": 12,
+      "validation": 1
+    },
+    {
+      "athleteId": 105048,
+      "scout": "DS",
+      "primary": 14,
+      "validation": 1
+    },
+    {
+      "athleteId": 105048,
+      "scout": "FD",
+      "primary": 7,
+      "validation": 2
+    },
+    {
+      "athleteId": 105048,
+      "scout": "FF",
+      "primary": 8,
+      "validation": 1
+    },
+    {
+      "athleteId": 105157,
+      "scout": "DS",
+      "primary": 11,
+      "validation": 1
+    },
+    {
+      "athleteId": 105157,
+      "scout": "FF",
+      "primary": 4,
+      "validation": 1
+    },
+    {
+      "athleteId": 105175,
+      "scout": "FC",
+      "primary": 12,
+      "validation": 1
+    },
+    {
+      "athleteId": 105213,
+      "scout": "FS",
+      "primary": 2,
+      "validation": 1
+    },
+    {
+      "athleteId": 105300,
+      "scout": "DS",
+      "primary": 13,
+      "validation": 1
+    },
+    {
+      "athleteId": 105300,
+      "scout": "FS",
+      "primary": 5,
+      "validation": 2
+    },
+    {
+      "athleteId": 105436,
+      "scout": "DS",
+      "primary": 12,
+      "validation": 3
+    },
+    {
+      "athleteId": 105436,
+      "scout": "FC",
+      "primary": 4,
+      "validation": 1
+    },
+    {
+      "athleteId": 105436,
+      "scout": "G",
+      "primary": 2,
+      "validation": 1
+    },
+    {
+      "athleteId": 105518,
+      "scout": "FC",
+      "primary": 2,
+      "validation": 1
+    },
+    {
+      "athleteId": 105518,
+      "scout": "FS",
+      "primary": 4,
+      "validation": 2
+    },
+    {
+      "athleteId": 105531,
+      "scout": "CA",
+      "primary": 4,
+      "validation": 1
+    },
+    {
+      "athleteId": 105531,
+      "scout": "DS",
+      "primary": 24,
+      "validation": 2
+    },
+    {
+      "athleteId": 105531,
+      "scout": "FF",
+      "primary": 4,
+      "validation": 1
+    },
+    {
+      "athleteId": 105563,
+      "scout": "FC",
+      "primary": 21,
+      "validation": 2
+    },
+    {
+      "athleteId": 105563,
+      "scout": "FD",
+      "primary": 8,
+      "validation": 1
+    },
+    {
+      "athleteId": 105563,
+      "scout": "FS",
+      "primary": 13,
+      "validation": 1
+    },
+    {
+      "athleteId": 105584,
+      "scout": "DS",
+      "primary": 11,
+      "validation": 6
+    },
+    {
+      "athleteId": 105903,
+      "scout": "CA",
+      "primary": 7,
+      "validation": 1
+    },
+    {
+      "athleteId": 105903,
+      "scout": "DS",
+      "primary": 14,
+      "validation": 1
+    },
+    {
+      "athleteId": 105903,
+      "scout": "FC",
+      "primary": 16,
+      "validation": 2
+    },
+    {
+      "athleteId": 105903,
+      "scout": "FF",
+      "primary": 6,
+      "validation": 3
+    },
+    {
+      "athleteId": 105903,
+      "scout": "FS",
+      "primary": 7,
+      "validation": 2
+    },
+    {
+      "athleteId": 105949,
+      "scout": "DE",
+      "primary": 22,
+      "validation": 1
+    },
+    {
+      "athleteId": 105949,
+      "scout": "DS",
+      "primary": 3,
+      "validation": 1
+    },
+    {
+      "athleteId": 105949,
+      "scout": "GS",
+      "primary": 11,
+      "validation": 2
+    },
+    {
+      "athleteId": 105990,
+      "scout": "CA",
+      "primary": 3,
+      "validation": 1
+    },
+    {
+      "athleteId": 105990,
+      "scout": "FC",
+      "primary": 10,
+      "validation": 3
+    },
+    {
+      "athleteId": 105990,
+      "scout": "FS",
+      "primary": 11,
+      "validation": 1
+    },
+    {
+      "athleteId": 106104,
+      "scout": "DS",
+      "primary": 17,
+      "validation": 2
+    },
+    {
+      "athleteId": 106202,
+      "scout": "DS",
+      "primary": 22,
+      "validation": 1
+    },
+    {
+      "athleteId": 106202,
+      "scout": "FF",
+      "primary": 4,
+      "validation": 1
+    },
+    {
+      "athleteId": 106202,
+      "scout": "FS",
+      "primary": 21,
+      "validation": 2
+    },
+    {
+      "athleteId": 106593,
+      "scout": "FC",
+      "primary": 11,
+      "validation": 1
+    },
+    {
+      "athleteId": 106593,
+      "scout": "FS",
+      "primary": 4,
+      "validation": 1
+    },
+    {
+      "athleteId": 106708,
+      "scout": "DS",
+      "primary": 26,
+      "validation": 3
+    },
+    {
+      "athleteId": 106708,
+      "scout": "FS",
+      "primary": 5,
+      "validation": 1
+    },
+    {
+      "athleteId": 106822,
+      "scout": "DS",
+      "primary": 3,
+      "validation": 1
+    },
+    {
+      "athleteId": 106822,
+      "scout": "FF",
+      "primary": 4,
+      "validation": 1
+    },
+    {
+      "athleteId": 107093,
+      "scout": "DS",
+      "primary": 15,
+      "validation": 2
+    },
+    {
+      "athleteId": 107093,
+      "scout": "FS",
+      "primary": 12,
+      "validation": 1
+    },
+    {
+      "athleteId": 107093,
+      "scout": "G",
+      "primary": 7,
+      "validation": 1
+    },
+    {
+      "athleteId": 107173,
+      "scout": "FC",
+      "primary": 8,
+      "validation": 1
+    },
+    {
+      "athleteId": 107173,
+      "scout": "FS",
+      "primary": 5,
+      "validation": 2
+    },
+    {
+      "athleteId": 107174,
+      "scout": "FF",
+      "primary": 2,
+      "validation": 1
+    },
+    {
+      "athleteId": 107231,
+      "scout": "FD",
+      "primary": 5,
+      "validation": 1
+    },
+    {
+      "athleteId": 107231,
+      "scout": "FF",
+      "primary": 8,
+      "validation": 1
+    },
+    {
+      "athleteId": 107256,
+      "scout": "DS",
+      "primary": 11,
+      "validation": 2
+    },
+    {
+      "athleteId": 107256,
+      "scout": "FC",
+      "primary": 16,
+      "validation": 2
+    },
+    {
+      "athleteId": 107256,
+      "scout": "FF",
+      "primary": 4,
+      "validation": 2
+    },
+    {
+      "athleteId": 107256,
+      "scout": "FS",
+      "primary": 11,
+      "validation": 3
+    },
+    {
+      "athleteId": 107453,
+      "scout": "DS",
+      "primary": 3,
+      "validation": 1
+    },
+    {
+      "athleteId": 107453,
+      "scout": "FC",
+      "primary": 7,
+      "validation": 4
+    },
+    {
+      "athleteId": 107516,
+      "scout": "FC",
+      "primary": 4,
+      "validation": 1
+    },
+    {
+      "athleteId": 107516,
+      "scout": "FS",
+      "primary": 17,
+      "validation": 1
+    },
+    {
+      "athleteId": 107554,
+      "scout": "DS",
+      "primary": 12,
+      "validation": 1
+    },
+    {
+      "athleteId": 107554,
+      "scout": "FC",
+      "primary": 12,
+      "validation": 3
+    },
+    {
+      "athleteId": 107554,
+      "scout": "FS",
+      "primary": 12,
+      "validation": 1
+    },
+    {
+      "athleteId": 107873,
+      "scout": "A",
+      "primary": 2,
+      "validation": 1
+    },
+    {
+      "athleteId": 107873,
+      "scout": "DS",
+      "primary": 26,
+      "validation": 4
+    },
+    {
+      "athleteId": 107873,
+      "scout": "FC",
+      "primary": 17,
+      "validation": 2
+    },
+    {
+      "athleteId": 107873,
+      "scout": "FS",
+      "primary": 5,
+      "validation": 1
+    },
+    {
+      "athleteId": 107989,
+      "scout": "FC",
+      "primary": 15,
+      "validation": 1
+    },
+    {
+      "athleteId": 107989,
+      "scout": "FF",
+      "primary": 15,
+      "validation": 2
+    },
+    {
+      "athleteId": 108131,
+      "scout": "FF",
+      "primary": 4,
+      "validation": 1
+    },
+    {
+      "athleteId": 108133,
+      "scout": "CA",
+      "primary": 2,
+      "validation": 1
+    },
+    {
+      "athleteId": 108133,
+      "scout": "FC",
+      "primary": 16,
+      "validation": 4
+    },
+    {
+      "athleteId": 108133,
+      "scout": "FF",
+      "primary": 15,
+      "validation": 1
+    },
+    {
+      "athleteId": 108133,
+      "scout": "FS",
+      "primary": 7,
+      "validation": 2
+    },
+    {
+      "athleteId": 108133,
+      "scout": "I",
+      "primary": 8,
+      "validation": 1
+    },
+    {
+      "athleteId": 108469,
+      "scout": "DS",
+      "primary": 5,
+      "validation": 1
+    },
+    {
+      "athleteId": 108469,
+      "scout": "FC",
+      "primary": 3,
+      "validation": 1
+    },
+    {
+      "athleteId": 108469,
+      "scout": "FS",
+      "primary": 3,
+      "validation": 2
+    },
+    {
+      "athleteId": 108713,
+      "scout": "FS",
+      "primary": 7,
+      "validation": 1
+    },
+    {
+      "athleteId": 109096,
+      "scout": "DS",
+      "primary": 15,
+      "validation": 3
+    },
+    {
+      "athleteId": 109096,
+      "scout": "FS",
+      "primary": 10,
+      "validation": 2
+    },
+    {
+      "athleteId": 109096,
+      "scout": "FT",
+      "primary": 2,
+      "validation": 1
+    },
+    {
+      "athleteId": 109336,
+      "scout": "FC",
+      "primary": 16,
+      "validation": 2
+    },
+    {
+      "athleteId": 109401,
+      "scout": "DS",
+      "primary": 17,
+      "validation": 2
+    },
+    {
+      "athleteId": 109401,
+      "scout": "FC",
+      "primary": 13,
+      "validation": 2
+    },
+    {
+      "athleteId": 109401,
+      "scout": "FS",
+      "primary": 29,
+      "validation": 2
+    },
+    {
+      "athleteId": 110144,
+      "scout": "DS",
+      "primary": 6,
+      "validation": 3
+    },
+    {
+      "athleteId": 110144,
+      "scout": "FC",
+      "primary": 7,
+      "validation": 1
+    },
+    {
+      "athleteId": 110144,
+      "scout": "FD",
+      "primary": 4,
+      "validation": 2
+    },
+    {
+      "athleteId": 110144,
+      "scout": "FF",
+      "primary": 8,
+      "validation": 1
+    },
+    {
+      "athleteId": 110144,
+      "scout": "FS",
+      "primary": 5,
+      "validation": 2
+    },
+    {
+      "athleteId": 110426,
+      "scout": "FC",
+      "primary": 28,
+      "validation": 3
+    },
+    {
+      "athleteId": 110426,
+      "scout": "FF",
+      "primary": 11,
+      "validation": 2
+    },
+    {
+      "athleteId": 110426,
+      "scout": "FS",
+      "primary": 13,
+      "validation": 1
+    },
+    {
+      "athleteId": 110426,
+      "scout": "I",
+      "primary": 5,
+      "validation": 1
+    },
+    {
+      "athleteId": 110708,
+      "scout": "DE",
+      "primary": 39,
+      "validation": 2
+    },
+    {
+      "athleteId": 110708,
+      "scout": "GS",
+      "primary": 14,
+      "validation": 2
+    },
+    {
+      "athleteId": 110715,
+      "scout": "DS",
+      "primary": 9,
+      "validation": 1
+    },
+    {
+      "athleteId": 110715,
+      "scout": "FC",
+      "primary": 8,
+      "validation": 1
+    },
+    {
+      "athleteId": 110715,
+      "scout": "FF",
+      "primary": 7,
+      "validation": 1
+    },
+    {
+      "athleteId": 110715,
+      "scout": "FS",
+      "primary": 5,
+      "validation": 1
+    },
+    {
+      "athleteId": 110750,
+      "scout": "DS",
+      "primary": 18,
+      "validation": 1
+    },
+    {
+      "athleteId": 110750,
+      "scout": "FD",
+      "primary": 3,
+      "validation": 1
+    },
+    {
+      "athleteId": 110759,
+      "scout": "DS",
+      "primary": 10,
+      "validation": 2
+    },
+    {
+      "athleteId": 110759,
+      "scout": "FD",
+      "primary": 16,
+      "validation": 1
+    },
+    {
+      "athleteId": 110759,
+      "scout": "FF",
+      "primary": 7,
+      "validation": 1
+    },
+    {
+      "athleteId": 110759,
+      "scout": "G",
+      "primary": 7,
+      "validation": 1
+    },
+    {
+      "athleteId": 111246,
+      "scout": "CA",
+      "primary": 4,
+      "validation": 1
+    },
+    {
+      "athleteId": 111246,
+      "scout": "DS",
+      "primary": 11,
+      "validation": 2
+    },
+    {
+      "athleteId": 111246,
+      "scout": "FC",
+      "primary": 25,
+      "validation": 3
+    },
+    {
+      "athleteId": 111309,
+      "scout": "DS",
+      "primary": 8,
+      "validation": 1
+    },
+    {
+      "athleteId": 111309,
+      "scout": "FC",
+      "primary": 13,
+      "validation": 1
+    },
+    {
+      "athleteId": 111466,
+      "scout": "CA",
+      "primary": 6,
+      "validation": 1
+    },
+    {
+      "athleteId": 111466,
+      "scout": "DS",
+      "primary": 18,
+      "validation": 3
+    },
+    {
+      "athleteId": 111466,
+      "scout": "FC",
+      "primary": 19,
+      "validation": 1
+    },
+    {
+      "athleteId": 111466,
+      "scout": "FS",
+      "primary": 9,
+      "validation": 1
+    },
+    {
+      "athleteId": 111682,
+      "scout": "DS",
+      "primary": 7,
+      "validation": 3
+    },
+    {
+      "athleteId": 111831,
+      "scout": "FS",
+      "primary": 12,
+      "validation": 1
+    },
+    {
+      "athleteId": 111832,
+      "scout": "FC",
+      "primary": 4,
+      "validation": 1
+    },
+    {
+      "athleteId": 112017,
+      "scout": "DS",
+      "primary": 8,
+      "validation": 1
+    },
+    {
+      "athleteId": 112576,
+      "scout": "DS",
+      "primary": 23,
+      "validation": 1
+    },
+    {
+      "athleteId": 112576,
+      "scout": "FF",
+      "primary": 5,
+      "validation": 1
+    },
+    {
+      "athleteId": 112863,
+      "scout": "FC",
+      "primary": 14,
+      "validation": 1
+    },
+    {
+      "athleteId": 112863,
+      "scout": "FF",
+      "primary": 5,
+      "validation": 1
+    },
+    {
+      "athleteId": 112863,
+      "scout": "FS",
+      "primary": 14,
+      "validation": 1
+    },
+    {
+      "athleteId": 112863,
+      "scout": "G",
+      "primary": 2,
+      "validation": 1
+    },
+    {
+      "athleteId": 112863,
+      "scout": "I",
+      "primary": 7,
+      "validation": 3
+    },
+    {
+      "athleteId": 112886,
+      "scout": "CA",
+      "primary": 4,
+      "validation": 1
+    },
+    {
+      "athleteId": 112886,
+      "scout": "DS",
+      "primary": 21,
+      "validation": 1
+    },
+    {
+      "athleteId": 112886,
+      "scout": "FC",
+      "primary": 29,
+      "validation": 2
+    },
+    {
+      "athleteId": 112886,
+      "scout": "FS",
+      "primary": 26,
+      "validation": 1
+    },
+    {
+      "athleteId": 113103,
+      "scout": "FC",
+      "primary": 23,
+      "validation": 1
+    },
+    {
+      "athleteId": 113103,
+      "scout": "FD",
+      "primary": 7,
+      "validation": 2
+    },
+    {
+      "athleteId": 113103,
+      "scout": "FF",
+      "primary": 14,
+      "validation": 3
+    },
+    {
+      "athleteId": 113103,
+      "scout": "I",
+      "primary": 11,
+      "validation": 1
+    },
+    {
+      "athleteId": 113125,
+      "scout": "DS",
+      "primary": 25,
+      "validation": 1
+    },
+    {
+      "athleteId": 113157,
+      "scout": "DS",
+      "primary": 19,
+      "validation": 2
+    },
+    {
+      "athleteId": 113157,
+      "scout": "FS",
+      "primary": 9,
+      "validation": 1
+    },
+    {
+      "athleteId": 113397,
+      "scout": "FC",
+      "primary": 11,
+      "validation": 1
+    },
+    {
+      "athleteId": 113397,
+      "scout": "FD",
+      "primary": 12,
+      "validation": 1
+    },
+    {
+      "athleteId": 113397,
+      "scout": "FS",
+      "primary": 32,
+      "validation": 1
+    },
+    {
+      "athleteId": 113690,
+      "scout": "DE",
+      "primary": 7,
+      "validation": 4
+    },
+    {
+      "athleteId": 114040,
+      "scout": "DS",
+      "primary": 3,
+      "validation": 1
+    },
+    {
+      "athleteId": 114405,
+      "scout": "DS",
+      "primary": 3,
+      "validation": 2
+    },
+    {
+      "athleteId": 114405,
+      "scout": "FF",
+      "primary": 4,
+      "validation": 3
+    },
+    {
+      "athleteId": 115025,
+      "scout": "DS",
+      "primary": 5,
+      "validation": 1
+    },
+    {
+      "athleteId": 115914,
+      "scout": "CA",
+      "primary": 2,
+      "validation": 1
+    },
+    {
+      "athleteId": 115914,
+      "scout": "FC",
+      "primary": 14,
+      "validation": 2
+    },
+    {
+      "athleteId": 115914,
+      "scout": "FF",
+      "primary": 10,
+      "validation": 3
+    },
+    {
+      "athleteId": 115914,
+      "scout": "FS",
+      "primary": 3,
+      "validation": 1
+    },
+    {
+      "athleteId": 115986,
+      "scout": "DS",
+      "primary": 8,
+      "validation": 2
+    },
+    {
+      "athleteId": 115986,
+      "scout": "FC",
+      "primary": 8,
+      "validation": 1
+    },
+    {
+      "athleteId": 115986,
+      "scout": "FS",
+      "primary": 6,
+      "validation": 2
+    },
+    {
+      "athleteId": 116706,
+      "scout": "CA",
+      "primary": 4,
+      "validation": 1
+    },
+    {
+      "athleteId": 116706,
+      "scout": "DS",
+      "primary": 26,
+      "validation": 2
+    },
+    {
+      "athleteId": 116706,
+      "scout": "FC",
+      "primary": 21,
+      "validation": 2
+    },
+    {
+      "athleteId": 116706,
+      "scout": "FF",
+      "primary": 18,
+      "validation": 2
+    },
+    {
+      "athleteId": 116706,
+      "scout": "I",
+      "primary": 5,
+      "validation": 1
+    },
+    {
+      "athleteId": 117330,
+      "scout": "DS",
+      "primary": 16,
+      "validation": 2
+    },
+    {
+      "athleteId": 117330,
+      "scout": "FC",
+      "primary": 15,
+      "validation": 2
+    },
+    {
+      "athleteId": 117404,
+      "scout": "DE",
+      "primary": 3,
+      "validation": 2
+    },
+    {
+      "athleteId": 117404,
+      "scout": "GS",
+      "primary": 4,
+      "validation": 1
+    },
+    {
+      "athleteId": 117632,
+      "scout": "A",
+      "primary": 6,
+      "validation": 2
+    },
+    {
+      "athleteId": 117632,
+      "scout": "DS",
+      "primary": 6,
+      "validation": 3
+    },
+    {
+      "athleteId": 117632,
+      "scout": "FC",
+      "primary": 10,
+      "validation": 4
+    },
+    {
+      "athleteId": 117632,
+      "scout": "FF",
+      "primary": 7,
+      "validation": 1
+    },
+    {
+      "athleteId": 117632,
+      "scout": "FS",
+      "primary": 34,
+      "validation": 3
+    },
+    {
+      "athleteId": 117910,
+      "scout": "DS",
+      "primary": 14,
+      "validation": 3
+    },
+    {
+      "athleteId": 117910,
+      "scout": "FC",
+      "primary": 14,
+      "validation": 2
+    },
+    {
+      "athleteId": 117910,
+      "scout": "FS",
+      "primary": 35,
+      "validation": 3
+    },
+    {
+      "athleteId": 117910,
+      "scout": "G",
+      "primary": 2,
+      "validation": 1
+    },
+    {
+      "athleteId": 117930,
+      "scout": "DS",
+      "primary": 8,
+      "validation": 1
+    },
+    {
+      "athleteId": 117930,
+      "scout": "FC",
+      "primary": 7,
+      "validation": 1
+    },
+    {
+      "athleteId": 117930,
+      "scout": "G",
+      "primary": 4,
+      "validation": 1
+    },
+    {
+      "athleteId": 118563,
+      "scout": "FC",
+      "primary": 9,
+      "validation": 2
+    },
+    {
+      "athleteId": 120433,
+      "scout": "DS",
+      "primary": 9,
+      "validation": 3
+    },
+    {
+      "athleteId": 122138,
+      "scout": "FC",
+      "primary": 11,
+      "validation": 2
+    },
+    {
+      "athleteId": 122138,
+      "scout": "FD",
+      "primary": 3,
+      "validation": 1
+    },
+    {
+      "athleteId": 122138,
+      "scout": "FF",
+      "primary": 11,
+      "validation": 1
+    },
+    {
+      "athleteId": 122138,
+      "scout": "FS",
+      "primary": 7,
+      "validation": 2
+    },
+    {
+      "athleteId": 123360,
+      "scout": "DS",
+      "primary": 11,
+      "validation": 1
+    },
+    {
+      "athleteId": 123360,
+      "scout": "FS",
+      "primary": 11,
+      "validation": 1
+    },
+    {
+      "athleteId": 123648,
+      "scout": "CA",
+      "primary": 3,
+      "validation": 1
+    },
+    {
+      "athleteId": 123648,
+      "scout": "DS",
+      "primary": 33,
+      "validation": 4
+    },
+    {
+      "athleteId": 123648,
+      "scout": "FC",
+      "primary": 19,
+      "validation": 3
+    },
+    {
+      "athleteId": 123648,
+      "scout": "FS",
+      "primary": 37,
+      "validation": 1
+    },
+    {
+      "athleteId": 123738,
+      "scout": "FD",
+      "primary": 5,
+      "validation": 2
+    },
+    {
+      "athleteId": 123869,
+      "scout": "DS",
+      "primary": 7,
+      "validation": 4
+    },
+    {
+      "athleteId": 123869,
+      "scout": "FC",
+      "primary": 14,
+      "validation": 2
+    },
+    {
+      "athleteId": 124219,
+      "scout": "FC",
+      "primary": 4,
+      "validation": 1
+    },
+    {
+      "athleteId": 124239,
+      "scout": "DS",
+      "primary": 12,
+      "validation": 1
+    },
+    {
+      "athleteId": 124239,
+      "scout": "FD",
+      "primary": 7,
+      "validation": 1
+    },
+    {
+      "athleteId": 124239,
+      "scout": "FF",
+      "primary": 13,
+      "validation": 1
+    },
+    {
+      "athleteId": 124239,
+      "scout": "FS",
+      "primary": 11,
+      "validation": 1
+    },
+    {
+      "athleteId": 124424,
+      "scout": "FC",
+      "primary": 16,
+      "validation": 1
+    },
+    {
+      "athleteId": 124481,
+      "scout": "CA",
+      "primary": 2,
+      "validation": 1
+    },
+    {
+      "athleteId": 124481,
+      "scout": "DS",
+      "primary": 4,
+      "validation": 1
+    },
+    {
+      "athleteId": 124481,
+      "scout": "FC",
+      "primary": 5,
+      "validation": 2
+    },
+    {
+      "athleteId": 124481,
+      "scout": "FS",
+      "primary": 6,
+      "validation": 1
+    },
+    {
+      "athleteId": 124526,
+      "scout": "DS",
+      "primary": 24,
+      "validation": 1
+    },
+    {
+      "athleteId": 124661,
+      "scout": "DS",
+      "primary": 9,
+      "validation": 2
+    },
+    {
+      "athleteId": 124661,
+      "scout": "FC",
+      "primary": 10,
+      "validation": 1
+    },
+    {
+      "athleteId": 124661,
+      "scout": "FF",
+      "primary": 2,
+      "validation": 1
+    },
+    {
+      "athleteId": 124912,
+      "scout": "DS",
+      "primary": 7,
+      "validation": 2
+    },
+    {
+      "athleteId": 124912,
+      "scout": "FC",
+      "primary": 5,
+      "validation": 2
+    },
+    {
+      "athleteId": 124912,
+      "scout": "FS",
+      "primary": 3,
+      "validation": 1
+    },
+    {
+      "athleteId": 125467,
+      "scout": "DS",
+      "primary": 13,
+      "validation": 2
+    },
+    {
+      "athleteId": 126189,
+      "scout": "DS",
+      "primary": 8,
+      "validation": 1
+    },
+    {
+      "athleteId": 126471,
+      "scout": "DS",
+      "primary": 20,
+      "validation": 5
+    },
+    {
+      "athleteId": 126471,
+      "scout": "FD",
+      "primary": 4,
+      "validation": 1
+    },
+    {
+      "athleteId": 126471,
+      "scout": "FS",
+      "primary": 13,
+      "validation": 2
+    },
+    {
+      "athleteId": 126471,
+      "scout": "I",
+      "primary": 3,
+      "validation": 1
+    },
+    {
+      "athleteId": 127273,
+      "scout": "V",
+      "primary": 5,
+      "validation": 1
+    },
+    {
+      "athleteId": 127970,
+      "scout": "DS",
+      "primary": 4,
+      "validation": 1
+    },
+    {
+      "athleteId": 127970,
+      "scout": "FC",
+      "primary": 8,
+      "validation": 1
+    },
+    {
+      "athleteId": 128431,
+      "scout": "DS",
+      "primary": 7,
+      "validation": 2
+    },
+    {
+      "athleteId": 128431,
+      "scout": "FC",
+      "primary": 8,
+      "validation": 1
+    },
+    {
+      "athleteId": 128431,
+      "scout": "FD",
+      "primary": 3,
+      "validation": 1
+    },
+    {
+      "athleteId": 128431,
+      "scout": "FF",
+      "primary": 6,
+      "validation": 2
+    },
+    {
+      "athleteId": 128431,
+      "scout": "FS",
+      "primary": 3,
+      "validation": 1
+    },
+    {
+      "athleteId": 128433,
+      "scout": "CA",
+      "primary": 3,
+      "validation": 1
+    },
+    {
+      "athleteId": 130048,
+      "scout": "FC",
+      "primary": 16,
+      "validation": 2
+    },
+    {
+      "athleteId": 130048,
+      "scout": "FD",
+      "primary": 2,
+      "validation": 1
+    },
+    {
+      "athleteId": 130048,
+      "scout": "FS",
+      "primary": 11,
+      "validation": 2
+    },
+    {
+      "athleteId": 130209,
+      "scout": "DS",
+      "primary": 6,
+      "validation": 1
+    },
+    {
+      "athleteId": 130209,
+      "scout": "FC",
+      "primary": 5,
+      "validation": 1
+    },
+    {
+      "athleteId": 130209,
+      "scout": "FS",
+      "primary": 12,
+      "validation": 2
+    },
+    {
+      "athleteId": 130209,
+      "scout": "G",
+      "primary": 3,
+      "validation": 1
+    },
+    {
+      "athleteId": 130620,
+      "scout": "FC",
+      "primary": 6,
+      "validation": 1
+    },
+    {
+      "athleteId": 130843,
+      "scout": "DS",
+      "primary": 17,
+      "validation": 1
+    },
+    {
+      "athleteId": 131617,
+      "scout": "FD",
+      "primary": 3,
+      "validation": 1
+    },
+    {
+      "athleteId": 131832,
+      "scout": "CA",
+      "primary": 3,
+      "validation": 1
+    },
+    {
+      "athleteId": 131832,
+      "scout": "FC",
+      "primary": 19,
+      "validation": 1
+    },
+    {
+      "athleteId": 131967,
+      "scout": "DS",
+      "primary": 8,
+      "validation": 3
+    },
+    {
+      "athleteId": 131967,
+      "scout": "FC",
+      "primary": 9,
+      "validation": 1
+    },
+    {
+      "athleteId": 131967,
+      "scout": "FF",
+      "primary": 8,
+      "validation": 2
+    },
+    {
+      "athleteId": 131967,
+      "scout": "FS",
+      "primary": 11,
+      "validation": 3
+    },
+    {
+      "athleteId": 132274,
+      "scout": "DS",
+      "primary": 12,
+      "validation": 4
+    },
+    {
+      "athleteId": 132274,
+      "scout": "FC",
+      "primary": 14,
+      "validation": 1
+    },
+    {
+      "athleteId": 132274,
+      "scout": "FS",
+      "primary": 17,
+      "validation": 2
+    },
+    {
+      "athleteId": 136955,
+      "scout": "FF",
+      "primary": 4,
+      "validation": 1
+    },
+    {
+      "athleteId": 136955,
+      "scout": "FS",
+      "primary": 6,
+      "validation": 1
+    },
+    {
+      "athleteId": 140484,
+      "scout": "DS",
+      "primary": 2,
+      "validation": 1
+    },
+    {
+      "athleteId": 140484,
+      "scout": "FC",
+      "primary": 2,
+      "validation": 1
+    },
+    {
+      "athleteId": 141451,
+      "scout": "CA",
+      "primary": 3,
+      "validation": 1
+    },
+    {
+      "athleteId": 141451,
+      "scout": "DS",
+      "primary": 27,
+      "validation": 1
+    },
+    {
+      "athleteId": 141451,
+      "scout": "FC",
+      "primary": 16,
+      "validation": 1
+    },
+    {
+      "athleteId": 141451,
+      "scout": "FD",
+      "primary": 7,
+      "validation": 1
+    },
+    {
+      "athleteId": 141451,
+      "scout": "FF",
+      "primary": 5,
+      "validation": 1
+    },
+    {
+      "athleteId": 141594,
+      "scout": "FC",
+      "primary": 11,
+      "validation": 1
+    },
+    {
+      "athleteId": 141595,
+      "scout": "FF",
+      "primary": 4,
+      "validation": 1
+    },
+    {
+      "athleteId": 141595,
+      "scout": "FS",
+      "primary": 12,
+      "validation": 2
+    },
+    {
+      "athleteId": 141754,
+      "scout": "DS",
+      "primary": 20,
+      "validation": 5
+    },
+    {
+      "athleteId": 141754,
+      "scout": "FF",
+      "primary": 4,
+      "validation": 1
+    },
+    {
+      "athleteId": 141754,
+      "scout": "FS",
+      "primary": 12,
+      "validation": 2
+    },
+    {
+      "athleteId": 142004,
+      "scout": "FC",
+      "primary": 12,
+      "validation": 2
+    },
+    {
+      "athleteId": 142004,
+      "scout": "FD",
+      "primary": 7,
+      "validation": 1
+    },
+    {
+      "athleteId": 142004,
+      "scout": "FS",
+      "primary": 15,
+      "validation": 1
+    },
+    {
+      "athleteId": 142279,
+      "scout": "FS",
+      "primary": 7,
+      "validation": 1
+    },
+    {
+      "athleteId": 142484,
+      "scout": "FF",
+      "primary": 2,
+      "validation": 1
+    },
+    {
+      "athleteId": 142890,
+      "scout": "FC",
+      "primary": 8,
+      "validation": 1
+    },
+    {
+      "athleteId": 143153,
+      "scout": "DS",
+      "primary": 2,
+      "validation": 1
+    },
+    {
+      "athleteId": 143153,
+      "scout": "FD",
+      "primary": 3,
+      "validation": 1
+    },
+    {
+      "athleteId": 143153,
+      "scout": "FS",
+      "primary": 3,
+      "validation": 2
+    },
+    {
+      "athleteId": 143173,
+      "scout": "DS",
+      "primary": 6,
+      "validation": 1
+    },
+    {
+      "athleteId": 143173,
+      "scout": "FS",
+      "primary": 9,
+      "validation": 2
+    },
+    {
+      "athleteId": 143600,
+      "scout": "CA",
+      "primary": 2,
+      "validation": 1
+    },
+    {
+      "athleteId": 143600,
+      "scout": "DS",
+      "primary": 5,
+      "validation": 1
+    },
+    {
+      "athleteId": 143600,
+      "scout": "FC",
+      "primary": 11,
+      "validation": 2
+    },
+    {
+      "athleteId": 143600,
+      "scout": "FS",
+      "primary": 11,
+      "validation": 2
+    },
+    {
+      "athleteId": 143600,
+      "scout": "G",
+      "primary": 2,
+      "validation": 1
+    },
+    {
+      "athleteId": 146374,
+      "scout": "DS",
+      "primary": 8,
+      "validation": 4
+    },
+    {
+      "athleteId": 146374,
+      "scout": "FC",
+      "primary": 3,
+      "validation": 1
+    },
+    {
+      "athleteId": 146375,
+      "scout": "FC",
+      "primary": 10,
+      "validation": 2
+    },
+    {
+      "athleteId": 146375,
+      "scout": "FF",
+      "primary": 4,
+      "validation": 1
+    },
+    {
+      "athleteId": 147088,
+      "scout": "FS",
+      "primary": 3,
+      "validation": 1
+    },
+    {
+      "athleteId": 147194,
+      "scout": "FC",
+      "primary": 4,
+      "validation": 1
+    },
+    {
+      "athleteId": 147194,
+      "scout": "FD",
+      "primary": 6,
+      "validation": 1
+    }
+  ],
+  "matchDifferences": [],
+  "validationStatus": "VALID_WITH_WARNINGS"
+}

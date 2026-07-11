@@ -1,7 +1,10 @@
 const express = require("express");
+const { HistoricalDataRepository } = require("./src/historical/repositories/fileRepository");
+const { buildAuditSummary } = require("./src/historical/audit");
+const { parseRound, parseSeason } = require("./src/historical/domain/validation");
 
 const SERVICE_NAME = "cartola-silvas-fc-api";
-const BACKEND_VERSION = "3.7.1";
+const BACKEND_VERSION = "4.2.0";
 const DEFAULT_PORT = 3000;
 const CARTOLA_API_BASE_URL = "https://api.cartolafc.globo.com";
 const DEFAULT_TIMEOUT_MS = 8000;
@@ -121,6 +124,24 @@ function isPositiveInteger(value) {
   return /^[1-9]\d*$/.test(value);
 }
 
+function sendNotFound(res, message) {
+  return res.status(404).json({
+    error: {
+      code: "NOT_FOUND",
+      message
+    }
+  });
+}
+
+function sendBadRequest(res, code, message) {
+  return res.status(400).json({
+    error: {
+      code,
+      message
+    }
+  });
+}
+
 async function proxyCartola(req, res, options) {
   const timeoutMs = req.app.locals.timeoutMs;
   const fetchImpl = req.app.locals.fetchImpl;
@@ -189,6 +210,7 @@ function createApp(options = {}) {
   app.locals.fetchImpl = options.fetchImpl || globalThis.fetch;
   app.locals.timeoutMs = Number.isFinite(timeoutMs) && timeoutMs > 0 ? timeoutMs : DEFAULT_TIMEOUT_MS;
   app.locals.allowedOrigins = allowedOrigins;
+  app.locals.historicalRepository = options.historicalRepository || new HistoricalDataRepository();
 
   if (typeof app.locals.fetchImpl !== "function") {
     throw new Error("fetch nativo nao esta disponivel nesta versao do Node.");
@@ -262,6 +284,113 @@ function createApp(options = {}) {
     }
 
     return proxyCartola(req, res, { path: `/time/id/${timeId}` });
+  });
+
+  app.get("/historical/:season/coverage", (req, res) => {
+    const season = parseSeason(req.params.season);
+
+    if (!season) {
+      return sendBadRequest(res, "INVALID_SEASON", "A temporada deve ser um ano valido.");
+    }
+
+    return res.json(buildAuditSummary(app.locals.historicalRepository, season));
+  });
+
+  app.get("/historical/:season/rounds", (req, res) => {
+    const season = parseSeason(req.params.season);
+
+    if (!season) {
+      return sendBadRequest(res, "INVALID_SEASON", "A temporada deve ser um ano valido.");
+    }
+
+    return res.json({
+      season,
+      rounds: app.locals.historicalRepository.listRounds(season)
+    });
+  });
+
+  app.get("/historical/:season/round/:round", (req, res) => {
+    const season = parseSeason(req.params.season);
+    const round = parseRound(req.params.round);
+
+    if (!season) {
+      return sendBadRequest(res, "INVALID_SEASON", "A temporada deve ser um ano valido.");
+    }
+
+    if (!round) {
+      return sendBadRequest(res, "INVALID_ROUND", "A rodada deve ser um inteiro entre 1 e 38.");
+    }
+
+    const post = app.locals.historicalRepository.readRoundFile(season, round, "post-round.json");
+
+    if (!post) {
+      return sendNotFound(res, "Rodada historica nao encontrada.");
+    }
+
+    return res.json(post);
+  });
+
+  app.get("/historical/:season/round/:round/pre", (req, res) => {
+    const season = parseSeason(req.params.season);
+    const round = parseRound(req.params.round);
+
+    if (!season) {
+      return sendBadRequest(res, "INVALID_SEASON", "A temporada deve ser um ano valido.");
+    }
+
+    if (!round) {
+      return sendBadRequest(res, "INVALID_ROUND", "A rodada deve ser um inteiro entre 1 e 38.");
+    }
+
+    const pre = app.locals.historicalRepository.readRoundFile(season, round, "pre-round.json");
+
+    if (!pre) {
+      return sendNotFound(res, "Dados pre-rodada nao encontrados.");
+    }
+
+    return res.json(pre);
+  });
+
+  app.get("/historical/:season/round/:round/post", (req, res) => {
+    const season = parseSeason(req.params.season);
+    const round = parseRound(req.params.round);
+
+    if (!season) {
+      return sendBadRequest(res, "INVALID_SEASON", "A temporada deve ser um ano valido.");
+    }
+
+    if (!round) {
+      return sendBadRequest(res, "INVALID_ROUND", "A rodada deve ser um inteiro entre 1 e 38.");
+    }
+
+    const post = app.locals.historicalRepository.readRoundFile(season, round, "post-round.json");
+
+    if (!post) {
+      return sendNotFound(res, "Dados pos-rodada nao encontrados.");
+    }
+
+    return res.json(post);
+  });
+
+  app.get("/historical/:season/round/:round/validation", (req, res) => {
+    const season = parseSeason(req.params.season);
+    const round = parseRound(req.params.round);
+
+    if (!season) {
+      return sendBadRequest(res, "INVALID_SEASON", "A temporada deve ser um ano valido.");
+    }
+
+    if (!round) {
+      return sendBadRequest(res, "INVALID_ROUND", "A rodada deve ser um inteiro entre 1 e 38.");
+    }
+
+    const validation = app.locals.historicalRepository.readRoundFile(season, round, "validation.json");
+
+    if (!validation) {
+      return sendNotFound(res, "Validacao historica nao encontrada.");
+    }
+
+    return res.json(validation);
   });
 
   app.use((req, res) => {

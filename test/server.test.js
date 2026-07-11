@@ -1,9 +1,13 @@
 const assert = require("node:assert/strict");
 const { once } = require("node:events");
+const fs = require("node:fs");
 const http = require("node:http");
+const os = require("node:os");
+const path = require("node:path");
 const test = require("node:test");
 
 const { createApp } = require("../server");
+const { HistoricalDataRepository } = require("../src/historical/repositories/fileRepository");
 
 async function request(app, path, options = {}) {
   const server = http.createServer(app);
@@ -37,7 +41,7 @@ test("GET / retorna informacoes do servico", async () => {
   assert.equal(response.status, 200);
   assert.equal(response.body.service, "cartola-silvas-fc-api");
   assert.equal(response.body.status, "online");
-  assert.equal(response.body.version, "3.7.1");
+  assert.equal(response.body.version, "4.2.0");
   assert.equal(response.body.focus, "Brasileirao/Cartola FC");
   assert.equal(response.body.cartola, undefined);
 });
@@ -247,4 +251,56 @@ test("proxy de time trata JSON invalido do upstream", async () => {
   assert.equal(response.status, 502);
   assert.equal(response.body.error.code, "UPSTREAM_INVALID_JSON_RESPONSE");
   assert.equal(response.body.error.upstream, "Cartola FC");
+});
+
+test("GET /historical/:season/round/:round retorna 404 para rodada inexistente", async () => {
+  const repository = new HistoricalDataRepository({ baseDir: fs.mkdtempSync(path.join(os.tmpdir(), "historical-")) });
+  const app = createApp({ fetchImpl: fetch, historicalRepository: repository });
+  const response = await request(app, "/historical/2026/round/1");
+
+  assert.equal(response.status, 404);
+  assert.equal(response.body.error.code, "NOT_FOUND");
+});
+
+test("GET /historical/:season/round/:round retorna 400 para rodada invalida", async () => {
+  const repository = new HistoricalDataRepository({ baseDir: fs.mkdtempSync(path.join(os.tmpdir(), "historical-")) });
+  const app = createApp({ fetchImpl: fetch, historicalRepository: repository });
+  const response = await request(app, "/historical/2026/round/0");
+
+  assert.equal(response.status, 400);
+  assert.equal(response.body.error.code, "INVALID_ROUND");
+});
+
+test("GET /historical/:season/coverage retorna 400 para temporada invalida", async () => {
+  const repository = new HistoricalDataRepository({ baseDir: fs.mkdtempSync(path.join(os.tmpdir(), "historical-")) });
+  const app = createApp({ fetchImpl: fetch, historicalRepository: repository });
+  const response = await request(app, "/historical/abc/coverage");
+
+  assert.equal(response.status, 400);
+  assert.equal(response.body.error.code, "INVALID_SEASON");
+});
+
+test("GET /historical/:season/coverage retorna cobertura persistida", async () => {
+  const repository = new HistoricalDataRepository({ baseDir: fs.mkdtempSync(path.join(os.tmpdir(), "historical-")) });
+  repository.saveRound(2026, 1, {
+    "pre-round.json": { season: 2026, round: 1, players: [], matches: [] },
+    "post-round.json": {
+      season: 2026,
+      round: 1,
+      source: "unit-test",
+      collectedAt: "2026-07-11T00:00:00.000Z",
+      players: [{ price: 1, points: 2, average: 3, statusId: 7, played: true, scouts: { G: 1 } }],
+      matches: [{ homeScore: 1, awayScore: 0 }],
+      clubs: { 1: { id: 1 }, 2: { id: 2 } }
+    },
+    "validation.json": { validationStatus: "VALID" }
+  }, { force: true });
+  const app = createApp({ fetchImpl: fetch, historicalRepository: repository });
+  const response = await request(app, "/historical/2026/coverage");
+
+  assert.equal(response.status, 200);
+  assert.deepEqual(response.body.availableRounds, [1]);
+  assert.equal(response.body.rounds[0].athletesCount, 1);
+  assert.equal(response.body.rounds[0].matchesCount, 1);
+  assert.equal(response.body.rounds[0].hasPrices, true);
 });

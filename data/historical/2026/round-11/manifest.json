@@ -1,0 +1,18 @@
+{
+  "season": 2026,
+  "round": 11,
+  "files": {
+    "pre-round.json": {
+      "checksum": "d88a7f4aa4906de964f21de0717f743e857fdf76db320372eadc7000a2c41740",
+      "bytes": 5727
+    },
+    "post-round.json": {
+      "checksum": "76c0af4246c9f94e6670dbe547c16c9f9042b6a6c9721e3845ac82b19c396b54",
+      "bytes": 554128
+    },
+    "validation.json": {
+      "checksum": "6921b58386a212aa575dc3fdd394806aeece72ab140da3c458feefc8aa7162a9",
+      "bytes": 74475
+    }
+  }
+}

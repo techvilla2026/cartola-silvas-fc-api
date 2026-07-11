@@ -1,0 +1,245 @@
+{
+  "schemaVersion": "historical-round-data/v1",
+  "season": 2026,
+  "round": 6,
+  "source": "caRtola",
+  "sourceVersion": "11cd704b2a375d9db273f2b251e3a998b6ead381",
+  "collectedAt": "2026-07-11T21:39:56.647Z",
+  "validatedAt": "2026-07-11T21:39:57.412Z",
+  "validationStatus": "VALID_WITH_WARNINGS",
+  "marketContext": {
+    "dataType": "PRE_ROUND_DATA",
+    "notAvailableForLeakFreeBacktest": [
+      "priceBeforeRound",
+      "averageBeforeRound",
+      "gamesBeforeRound",
+      "statusBeforeRound",
+      "accumulatedScoutsBeforeRound",
+      "lineupProbabilityBeforeRound",
+      "matchResultsBeforeRound"
+    ]
+  },
+  "players": [],
+  "matches": [
+    {
+      "matchId": 346483,
+      "round": 6,
+      "homeClubId": 287,
+      "awayClubId": 282,
+      "date": "2026-03-14 18:30:00",
+      "venue": "Barradão",
+      "homeScore": null,
+      "awayScore": null,
+      "valid": true,
+      "status": null,
+      "rawSourceReference": {
+        "source": "cartola-official-public-api",
+        "endpoint": "/partidas/:round"
+      }
+    },
+    {
+      "matchId": 346476,
+      "round": 6,
+      "homeClubId": 263,
+      "awayClubId": 262,
+      "date": "2026-03-14 20:30:00",
+      "venue": "Nilton Santos (Engenhão)",
+      "homeScore": null,
+      "awayScore": null,
+      "valid": true,
+      "status": null,
+      "rawSourceReference": {
+        "source": "cartola-official-public-api",
+        "endpoint": "/partidas/:round"
+      }
+    },
+    {
+      "matchId": 346475,
+      "round": 6,
+      "homeClubId": 266,
+      "awayClubId": 293,
+      "date": "2026-03-15 16:00:00",
+      "venue": "Maracanã",
+      "homeScore": null,
+      "awayScore": null,
+      "valid": true,
+      "status": null,
+      "rawSourceReference": {
+        "source": "cartola-official-public-api",
+        "endpoint": "/partidas/:round"
+      }
+    },
+    {
+      "matchId": 346477,
+      "round": 6,
+      "homeClubId": 277,
+      "awayClubId": 264,
+      "date": "2026-03-15 16:00:00",
+      "venue": "Vila Belmiro",
+      "homeScore": null,
+      "awayScore": null,
+      "valid": true,
+      "status": null,
+      "rawSourceReference": {
+        "source": "cartola-official-public-api",
+        "endpoint": "/partidas/:round"
+      }
+    },
+    {
+      "matchId": 346481,
+      "round": 6,
+      "homeClubId": 285,
+      "awayClubId": 265,
+      "date": "2026-03-15 16:00:00",
+      "venue": "Beira-Rio",
+      "homeScore": null,
+      "awayScore": null,
+      "valid": true,
+      "status": null,
+      "rawSourceReference": {
+        "source": "cartola-official-public-api",
+        "endpoint": "/partidas/:round"
+      }
+    },
+    {
+      "matchId": 346478,
+      "round": 6,
+      "homeClubId": 275,
+      "awayClubId": 2305,
+      "date": "2026-03-15 18:30:00",
+      "venue": "Allianz Parque",
+      "homeScore": null,
+      "awayScore": null,
+      "valid": true,
+      "status": null,
+      "rawSourceReference": {
+        "source": "cartola-official-public-api",
+        "endpoint": "/partidas/:round"
+      }
+    },
+    {
+      "matchId": 346482,
+      "round": 6,
+      "homeClubId": 294,
+      "awayClubId": 364,
+      "date": "2026-03-15 18:30:00",
+      "venue": "Couto Pereira",
+      "homeScore": null,
+      "awayScore": null,
+      "valid": true,
+      "status": null,
+      "rawSourceReference": {
+        "source": "cartola-official-public-api",
+        "endpoint": "/partidas/:round"
+      }
+    },
+    {
+      "matchId": 346479,
+      "round": 6,
+      "homeClubId": 280,
+      "awayClubId": 276,
+      "date": "2026-03-15 20:30:00",
+      "venue": "Cícero de Souza Marques",
+      "homeScore": null,
+      "awayScore": null,
+      "valid": true,
+      "status": null,
+      "rawSourceReference": {
+        "source": "cartola-official-public-api",
+        "endpoint": "/partidas/:round"
+      }
+    },
+    {
+      "matchId": 346480,
+      "round": 6,
+      "homeClubId": 283,
+      "awayClubId": 267,
+      "date": "2026-03-15 20:30:00",
+      "venue": "Mineirão",
+      "homeScore": null,
+      "awayScore": null,
+      "valid": true,
+      "status": null,
+      "rawSourceReference": {
+        "source": "cartola-official-public-api",
+        "endpoint": "/partidas/:round"
+      }
+    },
+    {
+      "matchId": 346484,
+      "round": 6,
+      "homeClubId": 315,
+      "awayClubId": 284,
+      "date": "2026-03-16 20:00:00",
+      "venue": "Arena Condá",
+      "homeScore": null,
+      "awayScore": null,
+      "valid": true,
+      "status": null,
+      "rawSourceReference": {
+        "source": "cartola-official-public-api",
+        "endpoint": "/partidas/:round"
+      }
+    }
+  ],
+  "clubs": {},
+  "positions": {
+    "1": {
+      "id": 1,
+      "name": "Goleiro",
+      "abbreviation": "gol"
+    },
+    "2": {
+      "id": 2,
+      "name": "Lateral",
+      "abbreviation": "lat"
+    },
+    "3": {
+      "id": 3,
+      "name": "Zagueiro",
+      "abbreviation": "zag"
+    },
+    "4": {
+      "id": 4,
+      "name": "Meia",
+      "abbreviation": "mei"
+    },
+    "5": {
+      "id": 5,
+      "name": "Atacante",
+      "abbreviation": "ata"
+    },
+    "6": {
+      "id": 6,
+      "name": "Tecnico",
+      "abbreviation": "tec"
+    }
+  },
+  "statuses": {
+    "2": {
+      "id": 2,
+      "name": "Duvida"
+    },
+    "3": {
+      "id": 3,
+      "name": "Suspenso"
+    },
+    "5": {
+      "id": 5,
+      "name": "Contundido"
+    },
+    "6": {
+      "id": 6,
+      "name": "Nulo"
+    },
+    "7": {
+      "id": 7,
+      "name": "Provavel"
+    }
+  },
+  "metadata": {
+    "sourceFile": "https://raw.githubusercontent.com/henriquepgomide/caRtola/master/data/01_raw/2026/rodada-6.csv",
+    "primaryLicense": "MIT",
+    "note": "Dados historicos pre-rodada nao foram reconstruidos sem risco de vazamento futuro."
+  }
+}
