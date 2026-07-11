@@ -1,0 +1,285 @@
+{
+  "schemaVersion": "backtest-run/v1",
+  "season": 2026,
+  "fromRound": 2,
+  "toRound": 18,
+  "generatedAt": "2026-07-11T23:03:00.607Z",
+  "datasetSchemaVersion": "historical-pre-round-data/v2",
+  "engineVersion": "historical-evaluation-engine/4.3.0",
+  "predictionPolicyVersion": "pre-round-average-homeaway-v1",
+  "selectionPolicyVersion": "formation-4-3-3-top-predicted-v1",
+  "baselinePolicyVersion": "baseline-average-4-3-3-v1",
+  "buildId": "build-4.3.0",
+  "roundsRequested": 17,
+  "roundsEvaluated": 17,
+  "roundsSkipped": 0,
+  "skipReasons": [],
+  "eligibleAthletes": 12043,
+  "evaluatedPredictions": 5126,
+  "leakageStatus": "PASS",
+  "warnings": [
+    "Motor completo do Flutter nao existe no backend; Build 4.3.0 mede uma politica historica explicita.",
+    "statusBeforeRound e lineupProbabilityBeforeRound nao sao usados.",
+    "Scouts divergentes nao sao usados como equivalentes oficiais por rodada."
+  ],
+  "limitations": [
+    "Nao avalia recomendacoes, evitar jogadores ou comparador por falta de politica backend reproduzivel.",
+    "Tecnico excluido da formacao inicial.",
+    "Politica avaliada nao altera pesos nem aprende com resultados."
+  ],
+  "metrics": {
+    "prediction": {
+      "count": 5126,
+      "mae": 3.0815,
+      "rmse": 4.1227,
+      "bias": 0.0915,
+      "medianAbsoluteError": 2.37,
+      "within1": 0.229,
+      "within2": 0.4331,
+      "within3": 0.5983,
+      "within5": 0.8104
+    },
+    "positions": {
+      "GOL": {
+        "count": 331,
+        "mae": 3.6015,
+        "rmse": 4.5344,
+        "bias": -0.0741,
+        "medianAbsoluteError": 3.099,
+        "within1": 0.1934,
+        "within2": 0.3293,
+        "within3": 0.4924,
+        "within5": 0.7281
+      },
+      "ATA": {
+        "count": 1423,
+        "mae": 3.2132,
+        "rmse": 4.4251,
+        "bias": -0.0257,
+        "medianAbsoluteError": 2.307,
+        "within1": 0.2375,
+        "within2": 0.4448,
+        "within3": 0.5966,
+        "within5": 0.7899
+      },
+      "MEI": {
+        "count": 1799,
+        "mae": 2.7555,
+        "rmse": 3.7654,
+        "bias": 0.2373,
+        "medianAbsoluteError": 2.07,
+        "within1": 0.2601,
+        "within2": 0.4836,
+        "within3": 0.6609,
+        "within5": 0.8571
+      },
+      "LAT": {
+        "count": 792,
+        "mae": 3.4625,
+        "rmse": 4.3656,
+        "bias": 0.0255,
+        "medianAbsoluteError": 2.9205,
+        "within1": 0.1717,
+        "within2": 0.3447,
+        "within3": 0.5114,
+        "within5": 0.7614
+      },
+      "ZAG": {
+        "count": 781,
+        "mae": 2.9855,
+        "rmse": 3.8961,
+        "bias": 0.1065,
+        "medianAbsoluteError": 2.341,
+        "within1": 0.2151,
+        "within2": 0.4289,
+        "within3": 0.5903,
+        "within5": 0.8246
+      }
+    },
+    "scoreBands": {
+      "Regular": {
+        "count": 2246,
+        "averageActual": 2.8283,
+        "medianActual": 1.7,
+        "negativeRate": 0.1242,
+        "rate5Plus": 0.2128,
+        "rate8Plus": 0.1015,
+        "rate10Plus": 0.0499
+      },
+      "Boa": {
+        "count": 1427,
+        "averageActual": 3.9561,
+        "medianActual": 2.9,
+        "negativeRate": 0.089,
+        "rate5Plus": 0.3294,
+        "rate8Plus": 0.1584,
+        "rate10Plus": 0.0897
+      },
+      "Fraca": {
+        "count": 641,
+        "averageActual": 2.102,
+        "medianActual": 1.2,
+        "negativeRate": 0.1466,
+        "rate5Plus": 0.1529,
+        "rate8Plus": 0.0624,
+        "rate10Plus": 0.0312
+      },
+      "Forte": {
+        "count": 560,
+        "averageActual": 4.922,
+        "medianActual": 3.9,
+        "negativeRate": 0.0679,
+        "rate5Plus": 0.4125,
+        "rate8Plus": 0.2232,
+        "rate10Plus": 0.1518
+      },
+      "Excelente": {
+        "count": 252,
+        "averageActual": 4.9496,
+        "medianActual": 3.65,
+        "negativeRate": 0.0754,
+        "rate5Plus": 0.3889,
+        "rate8Plus": 0.2341,
+        "rate10Plus": 0.1706
+      }
+    },
+    "homeAway": {
+      "AWAY": {
+        "count": 2569,
+        "averagePrediction": 3.3165,
+        "averageActual": 3.0092,
+        "mae": 2.9742,
+        "rmse": 3.9626,
+        "bias": 0.3073,
+        "medianAbsoluteError": 2.24,
+        "within1": 0.2336,
+        "within2": 0.4539,
+        "within3": 0.6139,
+        "within5": 0.8213
+      },
+      "HOME": {
+        "count": 2557,
+        "averagePrediction": 3.6361,
+        "averageActual": 3.7614,
+        "mae": 3.1892,
+        "rmse": 4.2776,
+        "bias": -0.1253,
+        "medianAbsoluteError": 2.471,
+        "within1": 0.2245,
+        "within2": 0.4122,
+        "within3": 0.5827,
+        "within5": 0.7994
+      }
+    },
+    "costBenefit": {
+      "10-15": {
+        "count": 570,
+        "averagePrice": 11.7151,
+        "averagePrediction": 6.4926,
+        "averageActual": 4.8221,
+        "actualPointsPerCartola": 0.4116,
+        "mae": 4.3227,
+        "rmse": 5.184,
+        "bias": 1.6705,
+        "medianAbsoluteError": 3.99,
+        "within1": 0.1053,
+        "within2": 0.2333,
+        "within3": 0.3684,
+        "within5": 0.6368
+      },
+      "5-10": {
+        "count": 2770,
+        "averagePrice": 7.109,
+        "averagePrediction": 3.8232,
+        "averageActual": 3.5217,
+        "actualPointsPerCartola": 0.4954,
+        "mae": 3.1453,
+        "rmse": 4.0944,
+        "bias": 0.3015,
+        "medianAbsoluteError": 2.59,
+        "within1": 0.1996,
+        "within2": 0.3939,
+        "within3": 0.5686,
+        "within5": 0.8144
+      },
+      "0-5": {
+        "count": 1682,
+        "averagePrice": 3.7361,
+        "averagePrediction": 1.5885,
+        "averageActual": 2.4935,
+        "actualPointsPerCartola": 0.6674,
+        "mae": 2.3729,
+        "rmse": 3.437,
+        "bias": -0.905,
+        "medianAbsoluteError": 1.6605,
+        "within1": 0.3294,
+        "within2": 0.5826,
+        "within3": 0.7449,
+        "within5": 0.8835
+      },
+      "20+": {
+        "count": 8,
+        "averagePrice": 21.845,
+        "averagePrediction": 13.4596,
+        "averageActual": 4.7125,
+        "actualPointsPerCartola": 0.2157,
+        "mae": 8.7471,
+        "rmse": 10.2037,
+        "bias": 8.7471,
+        "medianAbsoluteError": 7.8445,
+        "within1": 0,
+        "within2": 0,
+        "within3": 0.125,
+        "within5": 0.25
+      },
+      "15-20": {
+        "count": 96,
+        "averagePrice": 16.8558,
+        "averagePrediction": 7.7811,
+        "averageActual": 6.3854,
+        "actualPointsPerCartola": 0.3788,
+        "mae": 5.8128,
+        "rmse": 6.9736,
+        "bias": 1.3956,
+        "medianAbsoluteError": 5.1945,
+        "within1": 0.0729,
+        "within2": 0.1667,
+        "within3": 0.2917,
+        "within5": 0.4896
+      }
+    },
+    "team": {
+      "motorActualTotal": 515,
+      "baselineActualTotal": 518.4,
+      "motorPredictedTotal": 1149.97,
+      "baselinePredictedTotal": 1114.25,
+      "rounds": 17
+    },
+    "captain": {
+      "rounds": 17,
+      "bestRate": 0.1765,
+      "top3Rate": 0.4118,
+      "negativeRate": 0.0588,
+      "averageGapToBest": 3.3294
+    },
+    "baselineComparison": {
+      "wins": 6,
+      "draws": 7,
+      "losses": 4,
+      "averageDifference": -0.2,
+      "cumulativeDifference": -3.4
+    },
+    "recommendations": {
+      "status": "NOT_EVALUATED",
+      "reason": "Nao ha politica backend reproduzivel para recomendacoes positivas nesta build."
+    },
+    "avoidPlayers": {
+      "status": "NOT_EVALUATED",
+      "reason": "Nao ha politica backend reproduzivel para jogadores a evitar nesta build."
+    },
+    "comparator": {
+      "status": "NOT_EVALUATED",
+      "reason": "Nao ha contexto historico do time do usuario antes da rodada."
+    }
+  }
+}

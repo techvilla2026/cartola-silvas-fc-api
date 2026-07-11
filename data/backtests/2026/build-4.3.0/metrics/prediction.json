@@ -1,0 +1,11 @@
+{
+  "count": 5126,
+  "mae": 3.0815,
+  "rmse": 4.1227,
+  "bias": 0.0915,
+  "medianAbsoluteError": 2.37,
+  "within1": 0.229,
+  "within2": 0.4331,
+  "within3": 0.5983,
+  "within5": 0.8104
+}

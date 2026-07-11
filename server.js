@@ -3,9 +3,10 @@ const { HistoricalDataRepository } = require("./src/historical/repositories/file
 const { buildAuditSummary } = require("./src/historical/audit");
 const { parseRound, parseSeason } = require("./src/historical/domain/validation");
 const { analyzeScoutDivergences } = require("./src/historical/reconstruction/scoutDivergence");
+const { BacktestRepository } = require("./src/backtest/repository");
 
 const SERVICE_NAME = "cartola-silvas-fc-api";
-const BACKEND_VERSION = "4.2.1";
+const BACKEND_VERSION = "4.3.0";
 const DEFAULT_PORT = 3000;
 const CARTOLA_API_BASE_URL = "https://api.cartolafc.globo.com";
 const DEFAULT_TIMEOUT_MS = 8000;
@@ -212,6 +213,7 @@ function createApp(options = {}) {
   app.locals.timeoutMs = Number.isFinite(timeoutMs) && timeoutMs > 0 ? timeoutMs : DEFAULT_TIMEOUT_MS;
   app.locals.allowedOrigins = allowedOrigins;
   app.locals.historicalRepository = options.historicalRepository || new HistoricalDataRepository();
+  app.locals.backtestRepository = options.backtestRepository || new BacktestRepository();
 
   if (typeof app.locals.fetchImpl !== "function") {
     throw new Error("fetch nativo nao esta disponivel nesta versao do Node.");
@@ -461,6 +463,87 @@ function createApp(options = {}) {
     }
 
     return res.json(validation);
+  });
+
+  function sendBacktestFile(req, res, relativePath, notFoundMessage) {
+    const season = parseSeason(req.params.season);
+
+    if (!season) {
+      return sendBadRequest(res, "INVALID_SEASON", "A temporada deve ser um ano valido.");
+    }
+
+    const data = app.locals.backtestRepository.readJson(season, relativePath);
+
+    if (!data) {
+      return sendNotFound(res, notFoundMessage);
+    }
+
+    return res.json(data);
+  }
+
+  app.get("/backtests/:season/latest", (req, res) => {
+    return sendBacktestFile(req, res, "run-summary.json", "Backtest nao encontrado.");
+  });
+
+  app.get("/backtests/:season/summary", (req, res) => {
+    return sendBacktestFile(req, res, "run-summary.json", "Resumo de backtest nao encontrado.");
+  });
+
+  app.get("/backtests/:season/rounds", (req, res) => {
+    const season = parseSeason(req.params.season);
+
+    if (!season) {
+      return sendBadRequest(res, "INVALID_SEASON", "A temporada deve ser um ano valido.");
+    }
+
+    const rounds = app.locals.backtestRepository.listRoundResults(season);
+
+    if (!rounds.length) {
+      return sendNotFound(res, "Rodadas de backtest nao encontradas.");
+    }
+
+    return res.json({ season, rounds: rounds.map((round) => ({ round: round.round, actualTotal: round.metrics.team.actualTotal })) });
+  });
+
+  app.get("/backtests/:season/round/:round", (req, res) => {
+    const season = parseSeason(req.params.season);
+    const round = parseRound(req.params.round);
+
+    if (!season) {
+      return sendBadRequest(res, "INVALID_SEASON", "A temporada deve ser um ano valido.");
+    }
+
+    if (!round) {
+      return sendBadRequest(res, "INVALID_ROUND", "A rodada deve ser um inteiro entre 1 e 38.");
+    }
+
+    const data = app.locals.backtestRepository.readJson(season, `rounds/round-${String(round).padStart(2, "0")}.json`);
+
+    if (!data) {
+      return sendNotFound(res, "Resultado da rodada nao encontrado.");
+    }
+
+    return res.json(data);
+  });
+
+  app.get("/backtests/:season/metrics/prediction", (req, res) => {
+    return sendBacktestFile(req, res, "metrics/prediction.json", "Metricas de previsao nao encontradas.");
+  });
+
+  app.get("/backtests/:season/metrics/team", (req, res) => {
+    return sendBacktestFile(req, res, "metrics/team.json", "Metricas de time nao encontradas.");
+  });
+
+  app.get("/backtests/:season/metrics/captain", (req, res) => {
+    return sendBacktestFile(req, res, "metrics/captain.json", "Metricas de capitao nao encontradas.");
+  });
+
+  app.get("/backtests/:season/metrics/score-bands", (req, res) => {
+    return sendBacktestFile(req, res, "metrics/score-bands.json", "Metricas de faixas nao encontradas.");
+  });
+
+  app.get("/backtests/:season/comparison/baseline-average", (req, res) => {
+    return sendBacktestFile(req, res, "comparison/baseline-average.json", "Comparacao com baseline nao encontrada.");
   });
 
   app.use((req, res) => {

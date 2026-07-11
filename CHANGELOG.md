@@ -1,5 +1,15 @@
 # Changelog
 
+## 4.3.0 - 2026-07-11
+
+- Adiciona Historical Evaluation Engine versionada.
+- Adiciona CLI `backtest`, `backtest:round` e `backtest:report`.
+- Persiste resultados em `data/backtests/2026/build-4.3.0`.
+- Calcula metricas de previsao, posicao, faixas de nota, casa/fora, custo-beneficio, time, capitao e baseline.
+- Adiciona endpoints somente leitura de backtest.
+- Documenta que o motor completo do Flutter nao existe no backend e que recomendacoes/comparador ficaram `NOT_EVALUATED`.
+- Nao altera pesos, nao otimiza e nao treina modelos.
+
 ## 4.2.1 - 2026-07-11
 
 - Reconstrui `pre-round.json` em schema `historical-pre-round-data/v2`.

@@ -170,7 +170,7 @@ Os testes usam `node:test` e `assert` nativos.
 
 ## Dados historicos
 
-A Build 4.2.1 adiciona reconstrucao pre-rodada v2 para o Brasileirao/Cartola FC 2026. O backtest do motor ainda nao foi implementado.
+A Build 4.3.0 adiciona o primeiro backtest historico real do backend para o Brasileirao/Cartola FC 2026. Ele mede uma politica historica explicita e versionada, sem otimizar pesos e sem alterar o Flutter.
 
 Fonte primaria:
 
@@ -208,6 +208,18 @@ Verificar vazamento:
 npm run historical:check-leakage -- --season=2026 --from=1 --to=18
 ```
 
+Executar backtest:
+
+```bash
+npm run backtest -- --season=2026 --from=2 --to=18
+```
+
+Gerar relatorio:
+
+```bash
+npm run backtest:report -- --season=2026
+```
+
 Estrutura:
 
 ```text
@@ -225,6 +237,27 @@ Documentacao:
 - `docs/pre-round-reconstruction-method.md`
 - `docs/2026-scout-divergence-analysis.md`
 - `docs/leakage-validation.md`
+- `docs/backtest-4.3.0-report.md`
+
+## Backtest
+
+Resultados persistidos:
+
+```text
+data/backtests/2026/build-4.3.0/
+```
+
+Endpoints:
+
+- `GET /backtests/2026/latest`
+- `GET /backtests/2026/summary`
+- `GET /backtests/2026/rounds`
+- `GET /backtests/2026/round/:round`
+- `GET /backtests/2026/metrics/prediction`
+- `GET /backtests/2026/metrics/team`
+- `GET /backtests/2026/metrics/captain`
+- `GET /backtests/2026/metrics/score-bands`
+- `GET /backtests/2026/comparison/baseline-average`
 
 ## Tratamento de erros
 

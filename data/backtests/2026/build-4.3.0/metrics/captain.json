@@ -1,0 +1,7 @@
+{
+  "rounds": 17,
+  "bestRate": 0.1765,
+  "top3Rate": 0.4118,
+  "negativeRate": 0.0588,
+  "averageGapToBest": 3.3294
+}
