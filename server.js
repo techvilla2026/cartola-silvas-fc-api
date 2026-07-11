@@ -6,7 +6,7 @@ const { analyzeScoutDivergences } = require("./src/historical/reconstruction/sco
 const { BacktestRepository } = require("./src/backtest/repository");
 
 const SERVICE_NAME = "cartola-silvas-fc-api";
-const BACKEND_VERSION = "4.3.0";
+const BACKEND_VERSION = "4.3.1";
 const DEFAULT_PORT = 3000;
 const CARTOLA_API_BASE_URL = "https://api.cartolafc.globo.com";
 const DEFAULT_TIMEOUT_MS = 8000;
@@ -481,6 +481,56 @@ function createApp(options = {}) {
     return res.json(data);
   }
 
+  function isValidBuild(value) {
+    return /^\d+\.\d+\.\d+$/.test(String(value || ""));
+  }
+
+  function backtestRepositoryForBuild(build) {
+    return new BacktestRepository({ buildId: `build-${build}` });
+  }
+
+  function sendBuildBacktestFile(req, res, relativePath, notFoundMessage) {
+    const season = parseSeason(req.params.season);
+    const build = req.params.build;
+
+    if (!season) {
+      return sendBadRequest(res, "INVALID_SEASON", "A temporada deve ser um ano valido.");
+    }
+
+    if (!isValidBuild(build)) {
+      return sendBadRequest(res, "INVALID_BUILD", "A build deve usar o formato x.y.z.");
+    }
+
+    const data = backtestRepositoryForBuild(build).readJson(season, relativePath);
+
+    if (!data) {
+      return sendNotFound(res, notFoundMessage);
+    }
+
+    return res.json(data);
+  }
+
+  app.get("/backtests/:season/builds", (req, res) => {
+    const season = parseSeason(req.params.season);
+
+    if (!season) {
+      return sendBadRequest(res, "INVALID_SEASON", "A temporada deve ser um ano valido.");
+    }
+
+    const fs = require("node:fs");
+    const path = require("node:path");
+    const { DEFAULT_BACKTEST_DIR } = require("./src/backtest/repository");
+    const seasonDir = path.join(DEFAULT_BACKTEST_DIR, String(season));
+    const builds = fs.existsSync(seasonDir)
+      ? fs.readdirSync(seasonDir)
+        .filter((name) => /^build-\d+\.\d+\.\d+$/.test(name))
+        .sort()
+        .map((name) => name.replace(/^build-/, ""))
+      : [];
+
+    return res.json({ season, builds });
+  });
+
   app.get("/backtests/:season/latest", (req, res) => {
     return sendBacktestFile(req, res, "run-summary.json", "Backtest nao encontrado.");
   });
@@ -544,6 +594,78 @@ function createApp(options = {}) {
 
   app.get("/backtests/:season/comparison/baseline-average", (req, res) => {
     return sendBacktestFile(req, res, "comparison/baseline-average.json", "Comparacao com baseline nao encontrada.");
+  });
+
+  app.get("/backtests/:season/build/:build/summary", (req, res) => {
+    return sendBuildBacktestFile(req, res, "run-summary.json", "Resumo de backtest nao encontrado.");
+  });
+
+  app.get("/backtests/:season/build/:build/round/:round", (req, res) => {
+    const season = parseSeason(req.params.season);
+    const round = parseRound(req.params.round);
+    const build = req.params.build;
+
+    if (!season) {
+      return sendBadRequest(res, "INVALID_SEASON", "A temporada deve ser um ano valido.");
+    }
+
+    if (!round) {
+      return sendBadRequest(res, "INVALID_ROUND", "A rodada deve ser um inteiro entre 1 e 38.");
+    }
+
+    if (!isValidBuild(build)) {
+      return sendBadRequest(res, "INVALID_BUILD", "A build deve usar o formato x.y.z.");
+    }
+
+    const data = backtestRepositoryForBuild(build).readJson(season, `rounds/round-${String(round).padStart(2, "0")}.json`);
+
+    if (!data) {
+      return sendNotFound(res, "Resultado da rodada nao encontrado.");
+    }
+
+    return res.json(data);
+  });
+
+  app.get("/backtests/:season/build/:build/metrics/prediction", (req, res) => {
+    return sendBuildBacktestFile(req, res, "metrics/prediction.json", "Metricas de previsao nao encontradas.");
+  });
+
+  app.get("/backtests/:season/build/:build/metrics/team", (req, res) => {
+    return sendBuildBacktestFile(req, res, "metrics/team.json", "Metricas de time nao encontradas.");
+  });
+
+  app.get("/backtests/:season/build/:build/metrics/captain", (req, res) => {
+    return sendBuildBacktestFile(req, res, "metrics/captain.json", "Metricas de capitao nao encontradas.");
+  });
+
+  app.get("/backtests/:season/build/:build/metrics/score-bands", (req, res) => {
+    return sendBuildBacktestFile(req, res, "metrics/score-bands.json", "Metricas de faixas nao encontradas.");
+  });
+
+  app.get("/backtests/:season/build/:build/metrics/central-intelligence", (req, res) => {
+    return sendBuildBacktestFile(req, res, "metrics/central-intelligence.json", "Metricas da Central Inteligente nao encontradas.");
+  });
+
+  app.get("/backtests/:season/compare/:left/:right", (req, res) => {
+    const season = parseSeason(req.params.season);
+    const left = req.params.left;
+    const right = req.params.right;
+
+    if (!season) {
+      return sendBadRequest(res, "INVALID_SEASON", "A temporada deve ser um ano valido.");
+    }
+
+    if (!isValidBuild(left) || !isValidBuild(right)) {
+      return sendBadRequest(res, "INVALID_BUILD", "As builds devem usar o formato x.y.z.");
+    }
+
+    const comparison = backtestRepositoryForBuild(right).readJson(season, `comparison/build-${left}.json`);
+
+    if (!comparison) {
+      return sendNotFound(res, "Comparacao entre builds nao encontrada.");
+    }
+
+    return res.json(comparison);
   });
 
   app.use((req, res) => {

@@ -1,0 +1,76 @@
+{
+  "schemaVersion": "flutter-parity-manifest/v1",
+  "buildId": "build-4.3.1",
+  "generatedAt": "2026-07-11T23:41:53.190Z",
+  "flutterRoot": "C:\\Users\\Patricia\\Downloads\\meu_time_ideal",
+  "engineVersion": "flutter-parity-engine/4.3.1",
+  "predictionPolicyVersion": "flutter-score-prediction-parity/4.3.1",
+  "analysisScorePolicyVersion": "flutter-analysis-score-parity/4.3.1",
+  "dataQualityPolicyVersion": "flutter-data-quality-parity/4.3.1",
+  "selectionPolicyVersion": "flutter-ideal-team-parity/4.3.1",
+  "captainPolicyVersion": "flutter-captain-parity/4.3.1",
+  "auditedFiles": [
+    {
+      "className": "RuleBasedScorePredictionRepository",
+      "flutterFile": "lib/features/score_prediction/data/rule_based_score_prediction_repository.dart",
+      "sha256": "f9f9762e8a5bcdc4055373478af330940a26d32f6f2ff49e6f70cc840713619c"
+    },
+    {
+      "className": "RuleBasedPlayerAnalysisScoreRepository",
+      "flutterFile": "lib/features/player_analysis_score/data/rule_based_player_analysis_score_repository.dart",
+      "sha256": "20dda6b0dcf0dc037d696fa7a95383b03a4c1ac568da00b6626c62b8973dfd79"
+    },
+    {
+      "className": "RuleBasedSlvsConfidenceRepository",
+      "flutterFile": "lib/features/slvs_confidence/data/rule_based_slvs_confidence_repository.dart",
+      "sha256": "275f4322be05e341542fb6678d1b8630631bf8e066500d2988b92ae66fb52614"
+    },
+    {
+      "className": "RealPlayerSelectionPolicy",
+      "flutterFile": "lib/features/ideal_team/data/real_player_selection_policy.dart",
+      "sha256": "cbf5090cd719ff5539379219c2296d686d0cf84bddf493b6f6c7bb34761ba11a"
+    },
+    {
+      "className": "CartolaIdealTeamRepository",
+      "flutterFile": "lib/features/ideal_team/data/cartola_ideal_team_repository.dart",
+      "sha256": "3f83db439740d1d69410910506e516891f94139ebf3a8de7a7b0c5ee1b767ddc"
+    },
+    {
+      "className": "RuleBasedCentralIntelligenceRepository",
+      "flutterFile": "lib/features/central_intelligence/data/rule_based_central_intelligence_repository.dart",
+      "sha256": "0f5abfb853e20b83b79eb78e540c167f2e069bed423eecbcd565ed9005401613"
+    },
+    {
+      "className": "RealTeamComparisonRepository",
+      "flutterFile": "lib/features/compare_team/data/real_team_comparison_repository.dart",
+      "sha256": "80dc25a758dc7cfe323143f109774e184dc7ffa1cd72937b12972de6c7962c44"
+    },
+    {
+      "className": "SuggestedSwap",
+      "flutterFile": "lib/features/compare_team/domain/suggested_swap.dart",
+      "sha256": "59f18722ec6cb03f5f8940e53a2b54fb269e115478fd860380a1ae10761b9d96"
+    }
+  ],
+  "historicalFieldPolicy": {
+    "historicalStatusMode": "unavailable-neutral",
+    "historicalRecentDataMode": "unavailable-zero",
+    "historicalScoutMode": "divergent-not-used",
+    "coachMode": "excluded-from-historical-team-evaluation"
+  },
+  "exactRules": [
+    "Formula de previsao por media, bonus de media alta, bonus de mando, clamp e arredondamento.",
+    "Qualidade dos dados com pesos, redutores, bonus de dados completos e faixas internas.",
+    "Nota da analise com pesos, componentes, limitador por qualidade e faixas.",
+    "Selecao 4-3-3 por status, media, mando, preco e id.",
+    "Capitao e vice por previsao, Nota, qualidade dos dados e media."
+  ],
+  "approximations": [
+    "Status historico indisponivel foi mantido vazio, como componente neutro/conservador.",
+    "Dados recentes do mercado Flutter, como pontos_num e variacao_num atuais, foram zerados por nao existirem de forma pre-rodada segura.",
+    "Scouts historicos acumulados nao foram usados na qualidade por divergencia documentada entre fontes."
+  ],
+  "notReproduced": [
+    "Comparador historico, por falta de elenco real do usuario antes de cada rodada.",
+    "Tecnico na avaliacao do time, por falta de dados historicos seguros suficientes no mesmo contrato."
+  ]
+}

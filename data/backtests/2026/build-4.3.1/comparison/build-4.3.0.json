@@ -1,0 +1,11 @@
+{
+  "leftBuild": "4.3.0",
+  "rightBuild": "4.3.1",
+  "maeDifference": -0.2181,
+  "rmseDifference": -0.0858,
+  "biasDifference": -0.9287,
+  "leftActualTotal": 515,
+  "rightActualTotal": 518.4,
+  "cumulativeDifference": 3.4,
+  "result": "RIGHT_HIGHER"
+}

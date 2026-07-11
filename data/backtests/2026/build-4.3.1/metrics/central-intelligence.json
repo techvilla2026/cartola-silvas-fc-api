@@ -1,0 +1,99 @@
+{
+  "categories": {
+    "bestCaptain": {
+      "status": "EVALUATED",
+      "count": 11,
+      "averagePrediction": 10.8909,
+      "averageAnalysisGrade": 52.5909,
+      "averageActual": 5.5273,
+      "negativeRate": 0.0909,
+      "rate5Plus": 0.4545,
+      "rate8Plus": 0.1818,
+      "rate10Plus": 0.1818
+    },
+    "bestViceCaptain": {
+      "status": "EVALUATED",
+      "count": 10,
+      "averagePrediction": 10.13,
+      "averageAnalysisGrade": 52.71,
+      "averageActual": 3.11,
+      "negativeRate": 0.1,
+      "rate5Plus": 0.2,
+      "rate8Plus": 0,
+      "rate10Plus": 0
+    },
+    "bestDefense": {
+      "status": "EVALUATED",
+      "count": 7,
+      "averagePrediction": 9.9,
+      "averageAnalysisGrade": 51.4,
+      "averageActual": 3.2,
+      "negativeRate": 0.2857,
+      "rate5Plus": 0.4286,
+      "rate8Plus": 0.1429,
+      "rate10Plus": 0
+    },
+    "bestDifferential": {
+      "status": "PARTIALLY_EVALUATED",
+      "count": 8,
+      "averagePrediction": 10.3375,
+      "averageAnalysisGrade": 52.6375,
+      "averageActual": 2.15,
+      "negativeRate": 0.125,
+      "rate5Plus": 0.125,
+      "rate8Plus": 0,
+      "rate10Plus": 0
+    },
+    "risingPlayer": {
+      "status": "PARTIALLY_EVALUATED",
+      "count": 12,
+      "averagePrediction": 10.6167,
+      "averageAnalysisGrade": 51.875,
+      "averageActual": 5.15,
+      "negativeRate": 0.0833,
+      "rate5Plus": 0.4167,
+      "rate8Plus": 0.1667,
+      "rate10Plus": 0.1667
+    },
+    "playerToAvoid": {
+      "status": "EVALUATED",
+      "count": 12,
+      "averagePrediction": 5.7833,
+      "averageAnalysisGrade": 40.8333,
+      "averageActual": 4.2167,
+      "negativeRate": 0.1667,
+      "rate5Plus": 0.4167,
+      "rate8Plus": 0.25,
+      "rate10Plus": 0.0833,
+      "below3Rate": 0.4167,
+      "falseNegative8Plus": 3,
+      "falseNegative10Plus": 1
+    },
+    "bestValue": {
+      "status": "EVALUATED",
+      "count": 6,
+      "averagePrediction": 9.1333,
+      "averageAnalysisGrade": 50.3333,
+      "averageActual": 2.05,
+      "negativeRate": 0.3333,
+      "rate5Plus": 0.3333,
+      "rate8Plus": 0.1667,
+      "rate10Plus": 0
+    },
+    "roundAlert": {
+      "status": "PARTIALLY_EVALUATED",
+      "count": 12,
+      "averagePrediction": 5.7833,
+      "averageAnalysisGrade": 40.8333,
+      "averageActual": 4.2167,
+      "negativeRate": 0.1667,
+      "rate5Plus": 0.4167,
+      "rate8Plus": 0.25,
+      "rate10Plus": 0.0833
+    }
+  },
+  "comparator": {
+    "status": "NOT_EVALUATED",
+    "reason": "Nao ha elenco real historico do usuario antes da rodada; o projeto Flutter usa UserLineupRepository em tempo atual."
+  }
+}

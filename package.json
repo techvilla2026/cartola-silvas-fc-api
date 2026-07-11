@@ -1,6 +1,6 @@
 {
   "name": "cartola-silvas-fc-api",
-  "version": "4.3.0",
+  "version": "4.3.1",
   "description": "Backend proxy Cartola FC para o Meu Time Ideal Web",
   "main": "server.js",
   "scripts": {
@@ -13,7 +13,10 @@
     "historical:scout-divergences": "node scripts/historical-scout-divergences.js",
     "backtest": "node scripts/backtest.js",
     "backtest:round": "node scripts/backtest-round.js",
-    "backtest:report": "node scripts/backtest-report.js"
+    "backtest:report": "node scripts/backtest-report.js",
+    "backtest:flutter-parity": "node scripts/backtest-flutter-parity.js",
+    "backtest:flutter-parity:report": "node scripts/backtest-flutter-parity-report.js",
+    "backtest:compare": "node scripts/backtest-compare.js"
   },
   "engines": {
     "node": ">=18"

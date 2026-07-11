@@ -1,5 +1,16 @@
 # Changelog
 
+## 4.3.1 - 2026-07-11
+
+- Audita as regras reais do Flutter para previsao, Nota da analise, qualidade dos dados, selecao 4-3-3, capitao/vice, Central Inteligente e Comparador.
+- Adiciona `flutter-parity-engine/4.3.1` sem alterar o Flutter.
+- Adiciona comandos `backtest:flutter-parity`, `backtest:flutter-parity:report` e `backtest:compare`.
+- Persiste resultados em `data/backtests/2026/build-4.3.1`.
+- Cria `parity-manifest.json` com arquivos Flutter auditados e hashes SHA-256.
+- Adiciona endpoints somente leitura por build e comparacao entre 4.3.0 e 4.3.1.
+- Mantem status historico como indisponivel/neutro, nao usa scouts divergentes como oficiais e nao cria elenco ficticio do usuario.
+- Nao otimiza pesos, nao treina modelos, nao faz deploy e nao altera o aplicativo Flutter.
+
 ## 4.3.0 - 2026-07-11
 
 - Adiciona Historical Evaluation Engine versionada.

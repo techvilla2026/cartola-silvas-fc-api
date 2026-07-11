@@ -14,7 +14,7 @@ Retorna informacoes basicas do servico:
 {
   "service": "cartola-silvas-fc-api",
   "status": "online",
-  "version": "4.2.1",
+  "version": "4.3.1",
   "focus": "Brasileirao/Cartola FC"
 }
 ```
@@ -170,7 +170,7 @@ Os testes usam `node:test` e `assert` nativos.
 
 ## Dados historicos
 
-A Build 4.3.0 adiciona o primeiro backtest historico real do backend para o Brasileirao/Cartola FC 2026. Ele mede uma politica historica explicita e versionada, sem otimizar pesos e sem alterar o Flutter.
+A Build 4.3.0 adicionou o primeiro backtest historico real do backend para o Brasileirao/Cartola FC 2026. A Build 4.3.1 adiciona o motor de paridade com as regras auditadas do Flutter, sem alterar o aplicativo, sem otimizar pesos e sem treinar modelos.
 
 Fonte primaria:
 
@@ -220,6 +220,24 @@ Gerar relatorio:
 npm run backtest:report -- --season=2026
 ```
 
+Executar backtest com paridade Flutter:
+
+```bash
+npm run backtest:flutter-parity -- --season=2026 --from=2 --to=18
+```
+
+Gerar relatorio da paridade Flutter:
+
+```bash
+npm run backtest:flutter-parity:report -- --season=2026
+```
+
+Comparar builds:
+
+```bash
+npm run backtest:compare -- --season=2026 --left=4.3.0 --right=4.3.1
+```
+
 Estrutura:
 
 ```text
@@ -238,6 +256,9 @@ Documentacao:
 - `docs/2026-scout-divergence-analysis.md`
 - `docs/leakage-validation.md`
 - `docs/backtest-4.3.0-report.md`
+- `docs/flutter-engine-parity-audit.md`
+- `docs/backtest-4.3.1-report.md`
+- `docs/backtest-4.3.0-vs-4.3.1.md`
 
 ## Backtest
 
@@ -245,6 +266,7 @@ Resultados persistidos:
 
 ```text
 data/backtests/2026/build-4.3.0/
+data/backtests/2026/build-4.3.1/
 ```
 
 Endpoints:
@@ -258,6 +280,15 @@ Endpoints:
 - `GET /backtests/2026/metrics/captain`
 - `GET /backtests/2026/metrics/score-bands`
 - `GET /backtests/2026/comparison/baseline-average`
+- `GET /backtests/2026/builds`
+- `GET /backtests/2026/build/4.3.1/summary`
+- `GET /backtests/2026/build/4.3.1/round/:round`
+- `GET /backtests/2026/build/4.3.1/metrics/prediction`
+- `GET /backtests/2026/build/4.3.1/metrics/team`
+- `GET /backtests/2026/build/4.3.1/metrics/captain`
+- `GET /backtests/2026/build/4.3.1/metrics/score-bands`
+- `GET /backtests/2026/build/4.3.1/metrics/central-intelligence`
+- `GET /backtests/2026/compare/4.3.0/4.3.1`
 
 ## Tratamento de erros
 
