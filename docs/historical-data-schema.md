@@ -1,6 +1,6 @@
 # Schema historico
 
-Schema atual:
+Schema pos-rodada atual:
 
 ```text
 historical-round-data/v1
@@ -63,13 +63,47 @@ Ausencia de dado e representada por `null` ou campo ausente. A normalizacao nao 
 
 ## PRE_ROUND_DATA
 
-Arquivos `pre-round.json` existem para preservar a separacao conceitual necessaria ao backtest futuro. Nesta build, os dados historicos pre-rodada nao foram reconstruidos com seguranca, entao os campos abaixo sao marcados em `marketContext.notAvailableForLeakFreeBacktest`:
+Arquivos `pre-round.json` usam o schema:
 
+```text
+historical-pre-round-data/v2
+```
+
+Campos raiz:
+
+- `schemaVersion`
+- `season`
+- `round`
+- `generatedAt`
+- `sourceRounds`
+- `leakageStatus`
+- `players`
+- `matches`
+- `metadata`
+- `readiness`
+
+Jogador:
+
+- `athleteId`
+- `name`
+- `nickname`
+- `clubId`
+- `positionId`
 - `priceBeforeRound`
 - `averageBeforeRound`
 - `gamesBeforeRound`
-- `statusBeforeRound`
+- `accumulatedPointsBeforeRound`
 - `accumulatedScoutsBeforeRound`
+- `statusBeforeRound`
+- `opponent`
+- `homeAway`
+- `fieldProvenance`
+- `eligibleForBacktest`
+- `ineligibilityReasons`
+
+Continuam indisponiveis ou inseguros:
+
+- `statusBeforeRound`
 - `lineupProbabilityBeforeRound`
 - `matchResultsBeforeRound`
 

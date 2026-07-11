@@ -49,6 +49,17 @@ Como a rodada 19 ainda estava futura/nao encerrada na data da auditoria, a ultim
 - Clubes por rodada: 20.
 - Tamanho total do dataset persistido: 10,4 MB em 72 arquivos.
 
+## Reconstrucao pre-rodada v2
+
+- Rodadas READY: 17.
+- Rodadas PARTIALLY_READY: 0.
+- Rodadas NOT_READY: 1.
+- Atletas elegiveis para backtest: 12.365.
+- Atletas inelegiveis: 850.
+- Vazamento PASS: 18 rodadas.
+- Vazamento WARNING: 0 rodadas.
+- Vazamento FAIL: 0 rodadas.
+
 ## Divergencias de validacao
 
 - Jogadores ausentes na fonte primaria contra oficial: 49.

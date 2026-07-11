@@ -1,5 +1,15 @@
 # Changelog
 
+## 4.2.1 - 2026-07-11
+
+- Reconstrui `pre-round.json` em schema `historical-pre-round-data/v2`.
+- Adiciona provenance por campo e elegibilidade por atleta.
+- Adiciona scripts `historical:reconstruct-pre`, `historical:check-leakage` e `historical:scout-divergences`.
+- Adiciona endpoints de prontidao, vazamento e divergencias.
+- Mantem status pre-rodada indisponivel por falta de evidencia temporal segura.
+- Classifica 17 rodadas como READY e a Rodada 1 como NOT_READY.
+- Mantem o backtest fora do escopo.
+
 ## 4.2.0 - 2026-07-11
 
 - Adiciona arquitetura historica separada em `src/historical`.

@@ -53,6 +53,19 @@ class HistoricalDataRepository {
     return { dir, manifest };
   }
 
+  saveRoundFile(season, round, fileName, data, options = {}) {
+    const dir = this.getRoundDirectory(season, round);
+    const filePath = path.join(dir, fileName);
+    fs.mkdirSync(dir, { recursive: true });
+
+    if (fs.existsSync(filePath) && !options.force) {
+      throw new Error(`Arquivo ja existe: ${filePath}. Use --force para sobrescrever.`);
+    }
+
+    fs.writeFileSync(filePath, `${JSON.stringify(data, null, 2)}\n`, "utf8");
+    return { filePath, checksum: checksumJson(data) };
+  }
+
   readRoundFile(season, round, fileName) {
     const filePath = path.join(this.getRoundDirectory(season, round), fileName);
 

@@ -8,21 +8,26 @@ PARTIALLY_READY
 
 ## Rodadas utilizaveis
 
-18 rodadas foram coletadas, da Rodada 1 ate a Rodada 18 de 2026. Nao ha rodadas ausentes nesse intervalo.
+18 rodadas foram coletadas, da Rodada 1 ate a Rodada 18 de 2026. A reconstrucao pre-rodada v2 classificou 17 rodadas como READY e a Rodada 1 como NOT_READY.
 
 ## Campos pre-rodada
 
-Nao ha reconstrucao segura de dados historicos pre-rodada nesta build.
+Disponiveis no schema `historical-pre-round-data/v2`:
 
-Marcados como `notAvailableForLeakFreeBacktest`:
+- confrontos sem placar;
+- adversario;
+- mando;
+- `gamesBeforeRound`;
+- `accumulatedPointsBeforeRound`;
+- `accumulatedScoutsBeforeRound`;
+- `averageBeforeRound`;
+- `priceBeforeRound`, reconstruido por `price - priceVariation` e validado contra a rodada anterior quando possivel.
 
-- `priceBeforeRound`
-- `averageBeforeRound`
-- `gamesBeforeRound`
+Continuam indisponiveis ou inseguros:
+
 - `statusBeforeRound`
-- `accumulatedScoutsBeforeRound`
 - `lineupProbabilityBeforeRound`
-- `matchResultsBeforeRound`
+- qualquer resultado/placar pre-rodada.
 
 ## Campos pos-rodada
 
@@ -48,7 +53,7 @@ Disponiveis:
 
 ## Risco de vazamento futuro
 
-O dataset ainda nao deve ser usado diretamente para simular decisoes pre-rodada, porque preco, media, status, jogos e scouts historicos podem representar estado pos-rodada ou acumulado. Usar esses campos como se estivessem disponiveis antes do fechamento da rodada causaria vazamento futuro.
+O verificador de vazamento passou em 18/18 rodadas. O dataset ainda deve ser usado com filtro de elegibilidade por atleta e sem usar `statusBeforeRound`.
 
 ## Metricas que podem ser calculadas agora
 
@@ -61,7 +66,7 @@ O dataset ainda nao deve ser usado diretamente para simular decisoes pre-rodada,
 ## Limitacoes
 
 - 10.254 divergencias contra a fonte oficial de validacao.
-- Scouts da fonte primaria nao devem ser considerados equivalentes aos scouts oficiais por rodada sem investigacao adicional.
+- Scouts da fonte primaria podem ser usados apenas como acumulados da propria fonte; nao devem ser considerados equivalentes aos scouts oficiais por rodada sem investigacao adicional.
 - Cartola oficial publico nao expõe preco historico por rodada no endpoint de validacao usado.
 - Footstats nao foi confirmada como API publica utilizavel.
-- Backtest sem vazamento ainda depende de reconstruir snapshots pre-rodada confiaveis.
+- Rodada 1 permanece inelegivel por nao ter rodada anterior.

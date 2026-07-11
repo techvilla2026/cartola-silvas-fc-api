@@ -1,0 +1,213 @@
+{
+  "schemaVersion": "historical-scout-divergence-analysis/v1",
+  "total": 10060,
+  "realDifferences": 10055,
+  "missingFieldDifferences": 5,
+  "nomenclatureDifferences": 0,
+  "byScout": {
+    "FF": {
+      "total": 1008,
+      "missingInPrimary": 2,
+      "missingInValidation": 0,
+      "valueDifference": 1006,
+      "maxMagnitude": 20
+    },
+    "DE": {
+      "total": 296,
+      "missingInPrimary": 0,
+      "missingInValidation": 0,
+      "valueDifference": 296,
+      "maxMagnitude": 70
+    },
+    "GS": {
+      "total": 234,
+      "missingInPrimary": 0,
+      "missingInValidation": 0,
+      "valueDifference": 234,
+      "maxMagnitude": 28
+    },
+    "FS": {
+      "total": 2073,
+      "missingInPrimary": 0,
+      "missingInValidation": 0,
+      "valueDifference": 2073,
+      "maxMagnitude": 57
+    },
+    "I": {
+      "total": 232,
+      "missingInPrimary": 0,
+      "missingInValidation": 0,
+      "valueDifference": 232,
+      "maxMagnitude": 17
+    },
+    "FC": {
+      "total": 2306,
+      "missingInPrimary": 0,
+      "missingInValidation": 0,
+      "valueDifference": 2306,
+      "maxMagnitude": 33
+    },
+    "V": {
+      "total": 99,
+      "missingInPrimary": 0,
+      "missingInValidation": 0,
+      "valueDifference": 99,
+      "maxMagnitude": 11
+    },
+    "DS": {
+      "total": 2219,
+      "missingInPrimary": 0,
+      "missingInValidation": 0,
+      "valueDifference": 2219,
+      "maxMagnitude": 38
+    },
+    "CA": {
+      "total": 410,
+      "missingInPrimary": 0,
+      "missingInValidation": 0,
+      "valueDifference": 410,
+      "maxMagnitude": 8
+    },
+    "G": {
+      "total": 212,
+      "missingInPrimary": 0,
+      "missingInValidation": 0,
+      "valueDifference": 212,
+      "maxMagnitude": 9
+    },
+    "SG": {
+      "total": 292,
+      "missingInPrimary": 0,
+      "missingInValidation": 0,
+      "valueDifference": 292,
+      "maxMagnitude": 6
+    },
+    "A": {
+      "total": 97,
+      "missingInPrimary": 0,
+      "missingInValidation": 0,
+      "valueDifference": 97,
+      "maxMagnitude": 8
+    },
+    "FD": {
+      "total": 553,
+      "missingInPrimary": 2,
+      "missingInValidation": 0,
+      "valueDifference": 551,
+      "maxMagnitude": 15
+    },
+    "FT": {
+      "total": 19,
+      "missingInPrimary": 1,
+      "missingInValidation": 0,
+      "valueDifference": 18,
+      "maxMagnitude": 3
+    },
+    "PS": {
+      "total": 5,
+      "missingInPrimary": 0,
+      "missingInValidation": 0,
+      "valueDifference": 5,
+      "maxMagnitude": 2
+    },
+    "DP": {
+      "total": 2,
+      "missingInPrimary": 0,
+      "missingInValidation": 0,
+      "valueDifference": 2,
+      "maxMagnitude": 1
+    },
+    "CV": {
+      "total": 2,
+      "missingInPrimary": 0,
+      "missingInValidation": 0,
+      "valueDifference": 2,
+      "maxMagnitude": 1
+    },
+    "PP": {
+      "total": 1,
+      "missingInPrimary": 0,
+      "missingInValidation": 0,
+      "valueDifference": 1,
+      "maxMagnitude": 1
+    }
+  },
+  "byRound": {
+    "1": {
+      "total": 1
+    },
+    "2": {
+      "total": 310
+    },
+    "3": {
+      "total": 405
+    },
+    "4": {
+      "total": 349
+    },
+    "5": {
+      "total": 436
+    },
+    "6": {
+      "total": 576
+    },
+    "7": {
+      "total": 606
+    },
+    "8": {
+      "total": 628
+    },
+    "9": {
+      "total": 637
+    },
+    "10": {
+      "total": 632
+    },
+    "11": {
+      "total": 715
+    },
+    "12": {
+      "total": 655
+    },
+    "13": {
+      "total": 719
+    },
+    "14": {
+      "total": 660
+    },
+    "15": {
+      "total": 667
+    },
+    "16": {
+      "total": 643
+    },
+    "17": {
+      "total": 703
+    },
+    "18": {
+      "total": 718
+    }
+  },
+  "trustedScouts": [],
+  "excludedScouts": [
+    "A",
+    "CA",
+    "CV",
+    "DE",
+    "DP",
+    "DS",
+    "FC",
+    "FD",
+    "FF",
+    "FS",
+    "FT",
+    "G",
+    "GS",
+    "I",
+    "PP",
+    "PS",
+    "SG",
+    "V"
+  ],
+  "recommendation": "Nao usar scouts como feature decisiva no backtest ate resolver granularidade caRtola vs Cartola oficial."
+}

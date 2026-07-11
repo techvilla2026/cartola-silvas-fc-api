@@ -14,7 +14,7 @@ Retorna informacoes basicas do servico:
 {
   "service": "cartola-silvas-fc-api",
   "status": "online",
-  "version": "4.2.0",
+  "version": "4.2.1",
   "focus": "Brasileirao/Cartola FC"
 }
 ```
@@ -103,7 +103,7 @@ Retorna os dados pos-rodada persistidos da rodada.
 
 ### `GET /historical/2026/round/:round/pre`
 
-Retorna o arquivo pre-rodada persistido. Na Build 4.2.0, campos pre-rodada que nao puderam ser reconstruidos sem risco de vazamento futuro sao marcados em `notAvailableForLeakFreeBacktest`.
+Retorna o arquivo pre-rodada persistido no schema `historical-pre-round-data/v2`, com provenance por campo, elegibilidade por atleta e checagem de vazamento.
 
 ### `GET /historical/2026/round/:round/post`
 
@@ -112,6 +112,18 @@ Retorna os dados pos-rodada persistidos.
 ### `GET /historical/2026/round/:round/validation`
 
 Retorna o relatorio de validacao cruzada da rodada.
+
+### `GET /historical/2026/backtest-readiness`
+
+Retorna a prontidao por rodada para backtest sem vazamento.
+
+### `GET /historical/2026/leakage-report`
+
+Retorna o resultado do verificador de vazamento dos arquivos pre-rodada.
+
+### `GET /historical/2026/scout-divergences`
+
+Retorna a analise agregada das divergencias de scouts.
 
 ## CORS
 
@@ -158,7 +170,7 @@ Os testes usam `node:test` e `assert` nativos.
 
 ## Dados historicos
 
-A Build 4.2.0 adiciona uma base historica real, auditavel e versionada para o Brasileirao/Cartola FC 2026. O backtest do motor ainda nao foi implementado.
+A Build 4.2.1 adiciona reconstrucao pre-rodada v2 para o Brasileirao/Cartola FC 2026. O backtest do motor ainda nao foi implementado.
 
 Fonte primaria:
 
@@ -184,6 +196,18 @@ Auditar dados persistidos:
 npm run historical:audit -- --season=2026 --to=18
 ```
 
+Reconstruir pre-rodada v2:
+
+```bash
+npm run historical:reconstruct-pre -- --season=2026 --from=1 --to=18 --force
+```
+
+Verificar vazamento:
+
+```bash
+npm run historical:check-leakage -- --season=2026 --from=1 --to=18
+```
+
 Estrutura:
 
 ```text
@@ -198,6 +222,9 @@ Documentacao:
 - `docs/2026-data-coverage.md`
 - `docs/historical-data-schema.md`
 - `docs/backtest-data-readiness.md`
+- `docs/pre-round-reconstruction-method.md`
+- `docs/2026-scout-divergence-analysis.md`
+- `docs/leakage-validation.md`
 
 ## Tratamento de erros
 

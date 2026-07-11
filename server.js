@@ -2,9 +2,10 @@ const express = require("express");
 const { HistoricalDataRepository } = require("./src/historical/repositories/fileRepository");
 const { buildAuditSummary } = require("./src/historical/audit");
 const { parseRound, parseSeason } = require("./src/historical/domain/validation");
+const { analyzeScoutDivergences } = require("./src/historical/reconstruction/scoutDivergence");
 
 const SERVICE_NAME = "cartola-silvas-fc-api";
-const BACKEND_VERSION = "4.2.0";
+const BACKEND_VERSION = "4.2.1";
 const DEFAULT_PORT = 3000;
 const CARTOLA_API_BASE_URL = "https://api.cartolafc.globo.com";
 const DEFAULT_TIMEOUT_MS = 8000;
@@ -307,6 +308,75 @@ function createApp(options = {}) {
       season,
       rounds: app.locals.historicalRepository.listRounds(season)
     });
+  });
+
+  app.get("/historical/:season/backtest-readiness", (req, res) => {
+    const season = parseSeason(req.params.season);
+
+    if (!season) {
+      return sendBadRequest(res, "INVALID_SEASON", "A temporada deve ser um ano valido.");
+    }
+
+    const rounds = app.locals.historicalRepository.listRounds(season);
+    const readiness = rounds
+      .map((round) => app.locals.historicalRepository.readRoundFile(season, round, "pre-round.json"))
+      .filter(Boolean)
+      .map((preRound) => ({
+        round: preRound.round,
+        schemaVersion: preRound.schemaVersion,
+        status: preRound.readiness?.status || "NOT_READY",
+        totalPlayers: preRound.readiness?.totalPlayers || 0,
+        eligiblePlayers: preRound.readiness?.eligiblePlayers || 0,
+        ineligiblePlayers: preRound.readiness?.ineligiblePlayers || 0,
+        leakageStatus: preRound.leakageStatus || "UNKNOWN"
+      }));
+
+    return res.json({
+      season,
+      status: readiness.some((item) => item.status === "READY") ? "PARTIALLY_READY" : "NOT_READY",
+      rounds: readiness,
+      totals: {
+        ready: readiness.filter((item) => item.status === "READY").length,
+        partiallyReady: readiness.filter((item) => item.status === "PARTIALLY_READY").length,
+        notReady: readiness.filter((item) => item.status === "NOT_READY").length,
+        eligiblePlayers: readiness.reduce((total, item) => total + item.eligiblePlayers, 0),
+        ineligiblePlayers: readiness.reduce((total, item) => total + item.ineligiblePlayers, 0)
+      }
+    });
+  });
+
+  app.get("/historical/:season/leakage-report", (req, res) => {
+    const season = parseSeason(req.params.season);
+
+    if (!season) {
+      return sendBadRequest(res, "INVALID_SEASON", "A temporada deve ser um ano valido.");
+    }
+
+    const reports = app.locals.historicalRepository.listRounds(season)
+      .map((round) => app.locals.historicalRepository.readRoundFile(season, round, "leakage.json"))
+      .filter(Boolean);
+
+    return res.json({
+      season,
+      pass: reports.filter((item) => item.status === "PASS").length,
+      warning: reports.filter((item) => item.status === "WARNING").length,
+      fail: reports.filter((item) => item.status === "FAIL").length,
+      reports
+    });
+  });
+
+  app.get("/historical/:season/scout-divergences", (req, res) => {
+    const season = parseSeason(req.params.season);
+
+    if (!season) {
+      return sendBadRequest(res, "INVALID_SEASON", "A temporada deve ser um ano valido.");
+    }
+
+    const reports = app.locals.historicalRepository.listRounds(season)
+      .map((round) => app.locals.historicalRepository.readRoundFile(season, round, "validation.json"))
+      .filter(Boolean);
+
+    return res.json(analyzeScoutDivergences(reports));
   });
 
   app.get("/historical/:season/round/:round", (req, res) => {

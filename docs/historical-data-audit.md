@@ -57,3 +57,7 @@ FALLBACK_SOURCE=Cartola FC Brasil Scouts/Kaggle apenas como referencia manual, n
 ## Limitacao central encontrada
 
 A validacao cruzada encontrou 10.254 divergencias entre caRtola e Cartola oficial, concentradas em scouts. Isso indica que os scouts do CSV podem estar em granularidade diferente, possivelmente acumulada ou transformada, e nao devem ser tratados como equivalentes perfeitos aos scouts oficiais da rodada sem investigacao adicional.
+
+## Atualizacao Build 4.2.1
+
+A reconstrucao pre-rodada v2 usa apenas rodadas anteriores para acumulados. O preco pre-rodada foi reconstruido por `preco_num - variacao_num` da propria rodada e validado contra o preco observado ao final da rodada anterior quando possivel. Status pre-rodada permanece indisponivel por falta de evidencia temporal segura.

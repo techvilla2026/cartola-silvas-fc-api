@@ -15,6 +15,13 @@ function buildAuditSummary(repository, season, options = {}) {
   const scoredAthletes = coverage.reduce((total, item) => total + item.scoredAthletesCount, 0);
   const matches = coverage.reduce((total, item) => total + item.matchesCount, 0);
   const coveragePercent = toRound > 0 ? Number(((coverage.length / toRound) * 100).toFixed(2)) : 0;
+  const preRounds = coverage
+    .map((item) => repository.readRoundFile(season, item.round, "pre-round.json"))
+    .filter(Boolean);
+  const ready = preRounds.filter((item) => item.readiness?.status === "READY").length;
+  const partiallyReady = preRounds.filter((item) => item.readiness?.status === "PARTIALLY_READY").length;
+  const notReady = preRounds.filter((item) => item.readiness?.status === "NOT_READY").length;
+  const hasPreRoundV2 = preRounds.some((item) => item.schemaVersion === "historical-pre-round-data/v2");
 
   return {
     season,
@@ -29,8 +36,17 @@ function buildAuditSummary(repository, season, options = {}) {
       coveragePercent
     },
     sources: [...new Set(coverage.map((item) => item.source).filter(Boolean))],
-    backtestStatus: missingRounds.length === 0 && coverage.length > 0 ? "PARTIALLY_READY" : "NOT_READY",
-    limitation: "Campos pre-rodada historicos nao foram reconstruidos sem risco de vazamento futuro."
+    preRoundReadiness: {
+      ready,
+      partiallyReady,
+      notReady,
+      eligiblePlayers: preRounds.reduce((total, item) => total + (item.readiness?.eligiblePlayers || 0), 0),
+      ineligiblePlayers: preRounds.reduce((total, item) => total + (item.readiness?.ineligiblePlayers || 0), 0)
+    },
+    backtestStatus: missingRounds.length === 0 && hasPreRoundV2 && ready > 0 ? "PARTIALLY_READY" : "NOT_READY",
+    limitation: hasPreRoundV2
+      ? "Rodada 1 permanece sem historico anterior; status pre-rodada segue indisponivel."
+      : "Campos pre-rodada historicos nao foram reconstruidos sem risco de vazamento futuro."
   };
 }
 
