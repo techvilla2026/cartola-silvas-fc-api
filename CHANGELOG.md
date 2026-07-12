@@ -1,5 +1,17 @@
 # Changelog
 
+## 4.3.2 - 2026-07-12
+
+- Audita fontes publicas para status pre-rodada, dados recentes, scouts historicos e campos ausentes.
+- Mantem `statusBeforeRound` indisponivel por falta de snapshot publico temporalmente seguro.
+- Reconstrui forma recente usando somente rodadas anteriores.
+- Cria dataset derivado `data/historical/2026-enriched`.
+- Adiciona leakage checker especifico do dataset enriquecido.
+- Adiciona backtest `flutter-parity-enriched-engine/4.3.2`.
+- Adiciona comandos `historical:enrich`, `historical:enrich:audit`, `historical:enrich:check-leakage`, `backtest:flutter-parity-enriched`, `backtest:flutter-parity-enriched:report` e `backtest:compare-all`.
+- Adiciona endpoints somente leitura para historico enriquecido e comparacao geral.
+- Nao altera formulas, pesos, Flutter, builds anteriores, deploy ou git remoto.
+
 ## 4.3.1 - 2026-07-11
 
 - Audita as regras reais do Flutter para previsao, Nota da analise, qualidade dos dados, selecao 4-3-3, capitao/vice, Central Inteligente e Comparador.

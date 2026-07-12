@@ -1,0 +1,8 @@
+{
+  "schemaVersion": "historical-enriched-leakage-report/v1",
+  "season": 2026,
+  "round": 10,
+  "status": "PASS",
+  "issues": [],
+  "warnings": []
+}

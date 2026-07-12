@@ -1,0 +1,24 @@
+{
+  "schemaVersion": "historical-enrichment-provenance/v1",
+  "season": 2026,
+  "round": 2,
+  "generatedAt": "2026-07-12T00:15:41.473Z",
+  "policies": {
+    "statusBeforeRound": "unavailable-not-invented",
+    "lineupProbabilityBeforeRound": "unavailable-not-invented",
+    "historicalScoutMode": "disabled"
+  },
+  "sources": [
+    {
+      "name": "caRtola post-round local derivado",
+      "url": "https://github.com/henriquepgomide/caRtola",
+      "license": "MIT",
+      "role": "recentFormBeforeRound"
+    }
+  ],
+  "fieldSummary": {
+    "recentFormBeforeRound": "reconstructed",
+    "statusBeforeRound": "unavailable",
+    "historicalScoutsBeforeRound": "disabled"
+  }
+}

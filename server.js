@@ -4,9 +4,11 @@ const { buildAuditSummary } = require("./src/historical/audit");
 const { parseRound, parseSeason } = require("./src/historical/domain/validation");
 const { analyzeScoutDivergences } = require("./src/historical/reconstruction/scoutDivergence");
 const { BacktestRepository } = require("./src/backtest/repository");
+const { EnrichedHistoricalRepository } = require("./src/historical/enrichment/enrichedRepository");
+const { buildEnrichedAudit } = require("./src/historical/enrichment/audit");
 
 const SERVICE_NAME = "cartola-silvas-fc-api";
-const BACKEND_VERSION = "4.3.1";
+const BACKEND_VERSION = "4.3.2";
 const DEFAULT_PORT = 3000;
 const CARTOLA_API_BASE_URL = "https://api.cartolafc.globo.com";
 const DEFAULT_TIMEOUT_MS = 8000;
@@ -213,6 +215,7 @@ function createApp(options = {}) {
   app.locals.timeoutMs = Number.isFinite(timeoutMs) && timeoutMs > 0 ? timeoutMs : DEFAULT_TIMEOUT_MS;
   app.locals.allowedOrigins = allowedOrigins;
   app.locals.historicalRepository = options.historicalRepository || new HistoricalDataRepository();
+  app.locals.enrichedHistoricalRepository = options.enrichedHistoricalRepository || new EnrichedHistoricalRepository();
   app.locals.backtestRepository = options.backtestRepository || new BacktestRepository();
 
   if (typeof app.locals.fetchImpl !== "function") {
@@ -465,6 +468,57 @@ function createApp(options = {}) {
     return res.json(validation);
   });
 
+  app.get("/historical/:season/enriched/coverage", (req, res) => {
+    const season = parseSeason(req.params.season);
+
+    if (!season) {
+      return sendBadRequest(res, "INVALID_SEASON", "A temporada deve ser um ano valido.");
+    }
+
+    return res.json(buildEnrichedAudit(app.locals.enrichedHistoricalRepository, season));
+  });
+
+  app.get("/historical/:season/enriched/round/:round", (req, res) => {
+    const season = parseSeason(req.params.season);
+    const round = parseRound(req.params.round);
+
+    if (!season) {
+      return sendBadRequest(res, "INVALID_SEASON", "A temporada deve ser um ano valido.");
+    }
+
+    if (!round) {
+      return sendBadRequest(res, "INVALID_ROUND", "A rodada deve ser um inteiro entre 1 e 38.");
+    }
+
+    const data = app.locals.enrichedHistoricalRepository.readRoundFile(season, round, "pre-round-enriched.json");
+
+    if (!data) {
+      return sendNotFound(res, "Pre-rodada enriquecido nao encontrado.");
+    }
+
+    return res.json(data);
+  });
+
+  app.get("/historical/:season/enriched/leakage-report", (req, res) => {
+    const season = parseSeason(req.params.season);
+
+    if (!season) {
+      return sendBadRequest(res, "INVALID_SEASON", "A temporada deve ser um ano valido.");
+    }
+
+    const reports = app.locals.enrichedHistoricalRepository.listRounds(season)
+      .map((round) => app.locals.enrichedHistoricalRepository.readRoundFile(season, round, "leakage.json"))
+      .filter(Boolean);
+
+    return res.json({
+      season,
+      pass: reports.filter((item) => item.status === "PASS").length,
+      warning: reports.filter((item) => item.status === "WARNING").length,
+      fail: reports.filter((item) => item.status === "FAIL").length,
+      reports
+    });
+  });
+
   function sendBacktestFile(req, res, relativePath, notFoundMessage) {
     const season = parseSeason(req.params.season);
 
@@ -663,6 +717,22 @@ function createApp(options = {}) {
 
     if (!comparison) {
       return sendNotFound(res, "Comparacao entre builds nao encontrada.");
+    }
+
+    return res.json(comparison);
+  });
+
+  app.get("/backtests/:season/compare/all", (req, res) => {
+    const season = parseSeason(req.params.season);
+
+    if (!season) {
+      return sendBadRequest(res, "INVALID_SEASON", "A temporada deve ser um ano valido.");
+    }
+
+    const comparison = backtestRepositoryForBuild("4.3.2").readJson(season, "comparison/all.json");
+
+    if (!comparison) {
+      return sendNotFound(res, "Comparacao geral de backtests nao encontrada.");
     }
 
     return res.json(comparison);

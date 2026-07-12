@@ -1,0 +1,28 @@
+{
+  "AWAY": {
+    "count": 2569,
+    "averagePrediction": 2.3608,
+    "averageActual": 3.0092,
+    "mae": 2.7018,
+    "rmse": 3.8049,
+    "bias": -0.6484,
+    "medianAbsoluteError": 1.9,
+    "within1": 0.3005,
+    "within2": 0.5325,
+    "within3": 0.6937,
+    "within5": 0.8482
+  },
+  "HOME": {
+    "count": 2557,
+    "averagePrediction": 2.7346,
+    "averageActual": 3.7614,
+    "mae": 3.0257,
+    "rmse": 4.2573,
+    "bias": -1.0268,
+    "medianAbsoluteError": 2.1,
+    "within1": 0.2718,
+    "within2": 0.4814,
+    "within3": 0.6453,
+    "within5": 0.8221
+  }
+}

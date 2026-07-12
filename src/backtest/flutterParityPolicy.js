@@ -182,6 +182,9 @@ function calculateAnalysisScore(player, predictedPoints, dataQuality) {
   const status = "";
   const matchupAvailable = Boolean(player.homeAway);
   const isHome = player.homeAway === "HOME";
+  const recent = player.recentFormBeforeRound || {};
+  const roundPoints = Number(recent.pointsLast1BeforeRound || 0);
+  const variation = Number(recent.variationLast1BeforeRound || 0);
 
   const components = {
     prediction: clamp(predictedPoints / 12, 0, 1) * 40,
@@ -190,7 +193,7 @@ function calculateAnalysisScore(player, predictedPoints, dataQuality) {
     sample: clamp(games / 12, 0, 1) * 10,
     home: matchupAvailable ? (isHome ? 5 : 2) : 0,
     value: price > 0 && predictedPoints > 0 ? clamp((predictedPoints / price) / 0.8, 0, 1) * 10 : 0,
-    recent: 0
+    recent: recentComponent(roundPoints, variation)
   };
   const rawScore = Object.values(components).reduce((sum, value) => sum + value, 0);
   const limitedScore = applyDataQualityLimiter(rawScore, dataQuality);
@@ -203,6 +206,12 @@ function calculateAnalysisScore(player, predictedPoints, dataQuality) {
   };
 }
 
+function recentComponent(roundPoints, variation) {
+  const pointsComponent = roundPoints > 0 ? clamp(roundPoints / 10, 0, 1) * 3 : 0;
+  const variationComponent = variation > 0 ? clamp(variation / 3, 0, 1) * 2 : 0;
+  return pointsComponent + variationComponent;
+}
+
 function applyDataQualityLimiter(rawScore, dataQuality) {
   if (!dataQuality?.isAvailable) return clamp(rawScore, 0, 59) * 0.7;
   if (dataQuality.roundedScore >= 85) return rawScore;
@@ -212,12 +221,14 @@ function applyDataQualityLimiter(rawScore, dataQuality) {
 
 function mapHistoricalPlayer(player) {
   const matchupAvailable = Boolean(player.homeAway);
+  const recent = player.recentFormBeforeRound || {};
+  const hasRecoveredRecent = Boolean(recent.reconstructed === true);
   const quality = calculateDataQuality({
     status: "",
     games: Number(player.gamesBeforeRound || 0),
     average: Number(player.averageBeforeRound || 0),
-    roundPoints: 0,
-    variation: 0,
+    roundPoints: hasRecoveredRecent ? Number(recent.pointsLast1BeforeRound || 0) : 0,
+    variation: hasRecoveredRecent ? Number(recent.variationLast1BeforeRound || 0) : 0,
     matchupAvailable,
     scouts: {}
   });
@@ -243,8 +254,10 @@ function mapHistoricalPlayer(player) {
     gamesBeforeRound: player.gamesBeforeRound,
     statusBeforeRound: null,
     historicalStatusMode: "unavailable-neutral",
-    historicalRecentDataMode: "unavailable-zero",
+    historicalRecentDataMode: hasRecoveredRecent ? "reconstructed-from-previous-rounds" : "unavailable-zero",
     historicalScoutMode: "divergent-not-used",
+    recentFormBeforeRound: player.recentFormBeforeRound || null,
+    missingDataPolicy: player.missingDataPolicy || null,
     predictedPoints: prediction.predictedPoints,
     dataQualityScore: round(quality.score, 3),
     dataQualityRoundedScore: quality.roundedScore,

@@ -1,0 +1,18 @@
+{
+  "schemaVersion": "historical-enriched-validation/v1",
+  "season": 2026,
+  "round": 11,
+  "validationStatus": "VALID_WITH_LIMITATIONS",
+  "limitations": [
+    "Status pre-rodada nao recuperado com seguranca temporal.",
+    "Scouts historicos nao habilitados como oficiais.",
+    "Forma recente usa apenas atletas com pontuacao registrada antes da rodada."
+  ],
+  "totals": {
+    "status": "READY",
+    "totalPlayers": 743,
+    "eligiblePlayers": 739,
+    "enrichedPlayers": 547,
+    "insufficientRecent": 196
+  }
+}

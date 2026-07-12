@@ -1,0 +1,401 @@
+{
+  "schemaVersion": "backtest-run/v1",
+  "season": 2026,
+  "fromRound": 2,
+  "toRound": 18,
+  "generatedAt": "2026-07-12T00:16:17.049Z",
+  "datasetSchemaVersion": "historical-pre-round-enriched-data/v1",
+  "engineVersion": "flutter-parity-enriched-engine/4.3.2",
+  "predictionPolicyVersion": "flutter-score-prediction-parity/4.3.1",
+  "analysisScorePolicyVersion": "flutter-analysis-score-parity/4.3.1",
+  "dataQualityPolicyVersion": "flutter-data-quality-parity/4.3.1",
+  "selectionPolicyVersion": "flutter-ideal-team-parity/4.3.1",
+  "captainPolicyVersion": "flutter-captain-parity/4.3.1",
+  "baselinePolicyVersion": "baseline-average-4-3-3-v1",
+  "buildId": "build-4.3.2",
+  "roundsRequested": 17,
+  "roundsEvaluated": 17,
+  "roundsSkipped": 0,
+  "skipReasons": [],
+  "eligibleAthletes": 12043,
+  "evaluatedPredictions": 5126,
+  "leakageStatus": "PASS",
+  "warnings": [
+    "Status pre-rodada permaneceu indisponivel.",
+    "Scouts historicos permaneceram desativados como oficiais.",
+    "Dados recentes sao reconstruidos apenas de rodadas anteriores."
+  ],
+  "limitations": [
+    "Sem status historico seguro.",
+    "Sem lineupProbabilityBeforeRound.",
+    "Sem Comparador historico por falta de elenco real do usuario."
+  ],
+  "metrics": {
+    "prediction": {
+      "count": 5126,
+      "mae": 2.8634,
+      "rmse": 4.0369,
+      "bias": -0.8372,
+      "medianAbsoluteError": 2,
+      "within1": 0.2862,
+      "within2": 0.507,
+      "within3": 0.6695,
+      "within5": 0.8352
+    },
+    "positions": {
+      "GOL": {
+        "count": 331,
+        "mae": 3.4459,
+        "rmse": 4.4312,
+        "bias": -1.1577,
+        "medianAbsoluteError": 2.8,
+        "within1": 0.1934,
+        "within2": 0.3625,
+        "within3": 0.5438,
+        "within5": 0.7734
+      },
+      "ATA": {
+        "count": 1423,
+        "mae": 2.9996,
+        "rmse": 4.4125,
+        "bias": -0.9668,
+        "medianAbsoluteError": 1.9,
+        "within1": 0.3001,
+        "within2": 0.5242,
+        "within3": 0.6739,
+        "within5": 0.8173
+      },
+      "MEI": {
+        "count": 1799,
+        "mae": 2.5043,
+        "rmse": 3.6222,
+        "bias": -0.5901,
+        "medianAbsoluteError": 1.7,
+        "within1": 0.3252,
+        "within2": 0.572,
+        "within3": 0.7304,
+        "within5": 0.8727
+      },
+      "LAT": {
+        "count": 792,
+        "mae": 3.2942,
+        "rmse": 4.3059,
+        "bias": -1.0851,
+        "medianAbsoluteError": 2.6,
+        "within1": 0.2083,
+        "within2": 0.4116,
+        "within3": 0.5732,
+        "within5": 0.7866
+      },
+      "ZAG": {
+        "count": 781,
+        "mae": 2.7585,
+        "rmse": 3.7605,
+        "bias": -0.7828,
+        "medianAbsoluteError": 2.2,
+        "within1": 0.2894,
+        "within2": 0.484,
+        "within3": 0.6722,
+        "within5": 0.8566
+      }
+    },
+    "scoreBands": {
+      "Fraca": {
+        "count": 4508,
+        "averageActual": 3.181,
+        "medianActual": 2,
+        "negativeRate": 0.1127,
+        "rate5Plus": 0.2509,
+        "rate8Plus": 0.1213,
+        "rate10Plus": 0.0663
+      },
+      "Regular": {
+        "count": 594,
+        "averageActual": 4.8359,
+        "medianActual": 3.7,
+        "negativeRate": 0.0825,
+        "rate5Plus": 0.3956,
+        "rate8Plus": 0.2071,
+        "rate10Plus": 0.1397
+      },
+      "Boa": {
+        "count": 24,
+        "averageActual": 5.6792,
+        "medianActual": 4.2,
+        "negativeRate": 0,
+        "rate5Plus": 0.375,
+        "rate8Plus": 0.3333,
+        "rate10Plus": 0.25
+      }
+    },
+    "homeAway": {
+      "AWAY": {
+        "count": 2569,
+        "averagePrediction": 2.3608,
+        "averageActual": 3.0092,
+        "mae": 2.7018,
+        "rmse": 3.8049,
+        "bias": -0.6484,
+        "medianAbsoluteError": 1.9,
+        "within1": 0.3005,
+        "within2": 0.5325,
+        "within3": 0.6937,
+        "within5": 0.8482
+      },
+      "HOME": {
+        "count": 2557,
+        "averagePrediction": 2.7346,
+        "averageActual": 3.7614,
+        "mae": 3.0257,
+        "rmse": 4.2573,
+        "bias": -1.0268,
+        "medianAbsoluteError": 2.1,
+        "within1": 0.2718,
+        "within2": 0.4814,
+        "within3": 0.6453,
+        "within5": 0.8221
+      }
+    },
+    "costBenefit": {
+      "10-15": {
+        "count": 570,
+        "averagePrice": 11.7151,
+        "averagePrediction": 4.8982,
+        "averageActual": 4.8221,
+        "actualPointsPerCartola": 0.4116,
+        "mae": 3.8386,
+        "rmse": 4.8202,
+        "bias": 0.0761,
+        "medianAbsoluteError": 3.3,
+        "within1": 0.1368,
+        "within2": 0.3035,
+        "within3": 0.4702,
+        "within5": 0.7228
+      },
+      "5-10": {
+        "count": 2770,
+        "averagePrice": 7.109,
+        "averagePrediction": 2.7431,
+        "averageActual": 3.5217,
+        "actualPointsPerCartola": 0.4954,
+        "mae": 2.8957,
+        "rmse": 4.0268,
+        "bias": -0.7786,
+        "medianAbsoluteError": 2.1,
+        "within1": 0.2639,
+        "within2": 0.483,
+        "within3": 0.6682,
+        "within5": 0.8401
+      },
+      "0-5": {
+        "count": 1682,
+        "averagePrice": 3.7361,
+        "averagePrediction": 1.1806,
+        "averageActual": 2.4935,
+        "actualPointsPerCartola": 0.6674,
+        "mae": 2.3246,
+        "rmse": 3.5031,
+        "bias": -1.3129,
+        "medianAbsoluteError": 1.4,
+        "within1": 0.3835,
+        "within2": 0.6332,
+        "within3": 0.7592,
+        "within5": 0.8835
+      },
+      "20+": {
+        "count": 8,
+        "averagePrice": 21.845,
+        "averagePrediction": 11.1125,
+        "averageActual": 4.7125,
+        "actualPointsPerCartola": 0.2157,
+        "mae": 6.4,
+        "rmse": 7.9379,
+        "bias": 6.4,
+        "medianAbsoluteError": 5.8,
+        "within1": 0.125,
+        "within2": 0.25,
+        "within3": 0.25,
+        "within5": 0.5
+      },
+      "15-20": {
+        "count": 96,
+        "averagePrice": 16.8558,
+        "averagePrediction": 6.1677,
+        "averageActual": 6.3854,
+        "actualPointsPerCartola": 0.3788,
+        "mae": 5.2865,
+        "rmse": 6.6407,
+        "bias": -0.2177,
+        "medianAbsoluteError": 4.5,
+        "within1": 0.125,
+        "within2": 0.2188,
+        "within3": 0.3542,
+        "within5": 0.5417
+      }
+    },
+    "dataQuality": {
+      "Dados insuficientes para avaliar": 0,
+      "Dados insuficientes": 4782,
+      "Dados suficientes": 344,
+      "Dados completos": 0
+    },
+    "team": {
+      "motorActualTotal": 518.4,
+      "baselineActualTotal": 518.4,
+      "motorPredictedTotal": 929.1,
+      "baselinePredictedTotal": 1114.25,
+      "rounds": 17
+    },
+    "captain": {
+      "rounds": 17,
+      "bestRate": 0.1176,
+      "top3Rate": 0.2941,
+      "negativeRate": 0.0588,
+      "averageActual": 4.2455,
+      "averageGapToBest": 4.6294
+    },
+    "baselineComparison": {
+      "wins": 0,
+      "draws": 17,
+      "losses": 0,
+      "averageDifference": 0,
+      "cumulativeDifference": 0
+    },
+    "centralIntelligence": {
+      "categories": {
+        "bestCaptain": {
+          "status": "EVALUATED",
+          "count": 11,
+          "averagePrediction": 10.8909,
+          "averageAnalysisGrade": 56.7364,
+          "averageActual": 5.5273,
+          "negativeRate": 0.0909,
+          "rate5Plus": 0.4545,
+          "rate8Plus": 0.1818,
+          "rate10Plus": 0.1818
+        },
+        "bestViceCaptain": {
+          "status": "EVALUATED",
+          "count": 10,
+          "averagePrediction": 10.13,
+          "averageAnalysisGrade": 56.66,
+          "averageActual": 3.11,
+          "negativeRate": 0.1,
+          "rate5Plus": 0.2,
+          "rate8Plus": 0,
+          "rate10Plus": 0
+        },
+        "bestDefense": {
+          "status": "EVALUATED",
+          "count": 7,
+          "averagePrediction": 9.9,
+          "averageAnalysisGrade": 54.7143,
+          "averageActual": 3.2,
+          "negativeRate": 0.2857,
+          "rate5Plus": 0.4286,
+          "rate8Plus": 0.1429,
+          "rate10Plus": 0
+        },
+        "bestDifferential": {
+          "status": "PARTIALLY_EVALUATED",
+          "count": 8,
+          "averagePrediction": 10.3375,
+          "averageAnalysisGrade": 57.45,
+          "averageActual": 2.15,
+          "negativeRate": 0.125,
+          "rate5Plus": 0.125,
+          "rate8Plus": 0,
+          "rate10Plus": 0
+        },
+        "risingPlayer": {
+          "status": "PARTIALLY_EVALUATED",
+          "count": 12,
+          "averagePrediction": 10.6167,
+          "averageAnalysisGrade": 55.9833,
+          "averageActual": 5.15,
+          "negativeRate": 0.0833,
+          "rate5Plus": 0.4167,
+          "rate8Plus": 0.1667,
+          "rate10Plus": 0.1667
+        },
+        "playerToAvoid": {
+          "status": "EVALUATED",
+          "count": 12,
+          "averagePrediction": 5.7833,
+          "averageAnalysisGrade": 44.9833,
+          "averageActual": 4.2167,
+          "negativeRate": 0.1667,
+          "rate5Plus": 0.4167,
+          "rate8Plus": 0.25,
+          "rate10Plus": 0.0833
+        },
+        "bestValue": {
+          "status": "EVALUATED",
+          "count": 6,
+          "averagePrediction": 9.1333,
+          "averageAnalysisGrade": 54.3,
+          "averageActual": 2.05,
+          "negativeRate": 0.3333,
+          "rate5Plus": 0.3333,
+          "rate8Plus": 0.1667,
+          "rate10Plus": 0
+        },
+        "roundAlert": {
+          "status": "PARTIALLY_EVALUATED",
+          "count": 12,
+          "averagePrediction": 5.7833,
+          "averageAnalysisGrade": 44.9833,
+          "averageActual": 4.2167,
+          "negativeRate": 0.1667,
+          "rate5Plus": 0.4167,
+          "rate8Plus": 0.25,
+          "rate10Plus": 0.0833
+        }
+      },
+      "comparator": {
+        "status": "NOT_EVALUATED",
+        "reason": "Nao ha elenco real historico do usuario antes da rodada."
+      }
+    },
+    "compareAll": {
+      "schemaVersion": "backtest-compare-all/v1",
+      "generatedAt": "2026-07-12T00:16:17.048Z",
+      "builds": {
+        "4.3.0": {
+          "mae": 3.0815,
+          "rmse": 4.1227,
+          "bias": 0.0915,
+          "medianAbsoluteError": 2.37,
+          "motorActualTotal": 515,
+          "baselineActualTotal": 518.4,
+          "captainBestRate": 0.1765,
+          "captainTop3Rate": 0.4118
+        },
+        "4.3.1": {
+          "mae": 2.8634,
+          "rmse": 4.0369,
+          "bias": -0.8372,
+          "medianAbsoluteError": 2,
+          "motorActualTotal": 518.4,
+          "baselineActualTotal": 518.4,
+          "captainBestRate": 0.1176,
+          "captainTop3Rate": 0.2941
+        },
+        "4.3.2": {
+          "mae": 2.8634,
+          "rmse": 4.0369,
+          "bias": -0.8372,
+          "medianAbsoluteError": 2,
+          "motorActualTotal": 518.4,
+          "baselineActualTotal": 518.4,
+          "captainBestRate": 0.1176,
+          "captainTop3Rate": 0.2941
+        }
+      },
+      "conclusion": {
+        "enrichedVs431Points": 0,
+        "enrichedVsBaselinePoints": 0
+      }
+    }
+  }
+}

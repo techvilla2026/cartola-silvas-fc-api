@@ -14,7 +14,7 @@ Retorna informacoes basicas do servico:
 {
   "service": "cartola-silvas-fc-api",
   "status": "online",
-  "version": "4.3.1",
+  "version": "4.3.2",
   "focus": "Brasileirao/Cartola FC"
 }
 ```
@@ -170,7 +170,7 @@ Os testes usam `node:test` e `assert` nativos.
 
 ## Dados historicos
 
-A Build 4.3.0 adicionou o primeiro backtest historico real do backend para o Brasileirao/Cartola FC 2026. A Build 4.3.1 adiciona o motor de paridade com as regras auditadas do Flutter, sem alterar o aplicativo, sem otimizar pesos e sem treinar modelos.
+A Build 4.3.0 adicionou o primeiro backtest historico real do backend para o Brasileirao/Cartola FC 2026. A Build 4.3.1 adicionou o motor de paridade com as regras auditadas do Flutter. A Build 4.3.2 adiciona um dataset historico enriquecido com forma recente reconstruida somente a partir de rodadas anteriores, sem alterar formulas, pesos ou o Flutter.
 
 Fonte primaria:
 
@@ -208,6 +208,24 @@ Verificar vazamento:
 npm run historical:check-leakage -- --season=2026 --from=1 --to=18
 ```
 
+Enriquecer pre-rodada historico:
+
+```bash
+npm run historical:enrich -- --season=2026 --from=2 --to=18 --force
+```
+
+Auditar enriquecimento:
+
+```bash
+npm run historical:enrich:audit -- --season=2026
+```
+
+Verificar vazamento do enriquecido:
+
+```bash
+npm run historical:enrich:check-leakage -- --season=2026 --from=2 --to=18
+```
+
 Executar backtest:
 
 ```bash
@@ -238,6 +256,24 @@ Comparar builds:
 npm run backtest:compare -- --season=2026 --left=4.3.0 --right=4.3.1
 ```
 
+Executar backtest com dados enriquecidos:
+
+```bash
+npm run backtest:flutter-parity-enriched -- --season=2026 --from=2 --to=18
+```
+
+Gerar relatorio enriquecido:
+
+```bash
+npm run backtest:flutter-parity-enriched:report -- --season=2026
+```
+
+Comparar todas as builds:
+
+```bash
+npm run backtest:compare-all -- --season=2026
+```
+
 Estrutura:
 
 ```text
@@ -259,6 +295,10 @@ Documentacao:
 - `docs/flutter-engine-parity-audit.md`
 - `docs/backtest-4.3.1-report.md`
 - `docs/backtest-4.3.0-vs-4.3.1.md`
+- `docs/historical-missing-data-audit.md`
+- `docs/historical-enrichment-method.md`
+- `docs/backtest-4.3.2-report.md`
+- `docs/backtest-4.3.0-vs-4.3.1-vs-4.3.2.md`
 
 ## Backtest
 
@@ -267,6 +307,8 @@ Resultados persistidos:
 ```text
 data/backtests/2026/build-4.3.0/
 data/backtests/2026/build-4.3.1/
+data/backtests/2026/build-4.3.2/
+data/historical/2026-enriched/
 ```
 
 Endpoints:
@@ -289,6 +331,16 @@ Endpoints:
 - `GET /backtests/2026/build/4.3.1/metrics/score-bands`
 - `GET /backtests/2026/build/4.3.1/metrics/central-intelligence`
 - `GET /backtests/2026/compare/4.3.0/4.3.1`
+- `GET /historical/2026/enriched/coverage`
+- `GET /historical/2026/enriched/round/:round`
+- `GET /historical/2026/enriched/leakage-report`
+- `GET /backtests/2026/build/4.3.2/summary`
+- `GET /backtests/2026/build/4.3.2/round/:round`
+- `GET /backtests/2026/build/4.3.2/metrics/prediction`
+- `GET /backtests/2026/build/4.3.2/metrics/team`
+- `GET /backtests/2026/build/4.3.2/metrics/captain`
+- `GET /backtests/2026/build/4.3.2/metrics/score-bands`
+- `GET /backtests/2026/compare/all`
 
 ## Tratamento de erros
 

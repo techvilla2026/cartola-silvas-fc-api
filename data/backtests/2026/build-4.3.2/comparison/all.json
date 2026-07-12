@@ -1,0 +1,40 @@
+{
+  "schemaVersion": "backtest-compare-all/v1",
+  "generatedAt": "2026-07-12T00:16:17.048Z",
+  "builds": {
+    "4.3.0": {
+      "mae": 3.0815,
+      "rmse": 4.1227,
+      "bias": 0.0915,
+      "medianAbsoluteError": 2.37,
+      "motorActualTotal": 515,
+      "baselineActualTotal": 518.4,
+      "captainBestRate": 0.1765,
+      "captainTop3Rate": 0.4118
+    },
+    "4.3.1": {
+      "mae": 2.8634,
+      "rmse": 4.0369,
+      "bias": -0.8372,
+      "medianAbsoluteError": 2,
+      "motorActualTotal": 518.4,
+      "baselineActualTotal": 518.4,
+      "captainBestRate": 0.1176,
+      "captainTop3Rate": 0.2941
+    },
+    "4.3.2": {
+      "mae": 2.8634,
+      "rmse": 4.0369,
+      "bias": -0.8372,
+      "medianAbsoluteError": 2,
+      "motorActualTotal": 518.4,
+      "baselineActualTotal": 518.4,
+      "captainBestRate": 0.1176,
+      "captainTop3Rate": 0.2941
+    }
+  },
+  "conclusion": {
+    "enrichedVs431Points": 0,
+    "enrichedVsBaselinePoints": 0
+  }
+}

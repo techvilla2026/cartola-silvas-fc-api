@@ -1,6 +1,6 @@
 {
   "name": "cartola-silvas-fc-api",
-  "version": "4.3.1",
+  "version": "4.3.2",
   "description": "Backend proxy Cartola FC para o Meu Time Ideal Web",
   "main": "server.js",
   "scripts": {
@@ -11,12 +11,18 @@
     "historical:reconstruct-pre": "node scripts/historical-reconstruct-pre.js",
     "historical:check-leakage": "node scripts/historical-check-leakage.js",
     "historical:scout-divergences": "node scripts/historical-scout-divergences.js",
+    "historical:enrich": "node scripts/historical-enrich.js",
+    "historical:enrich:audit": "node scripts/historical-enrich-audit.js",
+    "historical:enrich:check-leakage": "node scripts/historical-enrich-check-leakage.js",
     "backtest": "node scripts/backtest.js",
     "backtest:round": "node scripts/backtest-round.js",
     "backtest:report": "node scripts/backtest-report.js",
     "backtest:flutter-parity": "node scripts/backtest-flutter-parity.js",
     "backtest:flutter-parity:report": "node scripts/backtest-flutter-parity-report.js",
-    "backtest:compare": "node scripts/backtest-compare.js"
+    "backtest:compare": "node scripts/backtest-compare.js",
+    "backtest:flutter-parity-enriched": "node scripts/backtest-flutter-parity-enriched.js",
+    "backtest:flutter-parity-enriched:report": "node scripts/backtest-flutter-parity-enriched-report.js",
+    "backtest:compare-all": "node scripts/backtest-compare-all.js"
   },
   "engines": {
     "node": ">=18"

@@ -1,0 +1,57 @@
+{
+  "GOL": {
+    "count": 331,
+    "mae": 3.4459,
+    "rmse": 4.4312,
+    "bias": -1.1577,
+    "medianAbsoluteError": 2.8,
+    "within1": 0.1934,
+    "within2": 0.3625,
+    "within3": 0.5438,
+    "within5": 0.7734
+  },
+  "ATA": {
+    "count": 1423,
+    "mae": 2.9996,
+    "rmse": 4.4125,
+    "bias": -0.9668,
+    "medianAbsoluteError": 1.9,
+    "within1": 0.3001,
+    "within2": 0.5242,
+    "within3": 0.6739,
+    "within5": 0.8173
+  },
+  "MEI": {
+    "count": 1799,
+    "mae": 2.5043,
+    "rmse": 3.6222,
+    "bias": -0.5901,
+    "medianAbsoluteError": 1.7,
+    "within1": 0.3252,
+    "within2": 0.572,
+    "within3": 0.7304,
+    "within5": 0.8727
+  },
+  "LAT": {
+    "count": 792,
+    "mae": 3.2942,
+    "rmse": 4.3059,
+    "bias": -1.0851,
+    "medianAbsoluteError": 2.6,
+    "within1": 0.2083,
+    "within2": 0.4116,
+    "within3": 0.5732,
+    "within5": 0.7866
+  },
+  "ZAG": {
+    "count": 781,
+    "mae": 2.7585,
+    "rmse": 3.7605,
+    "bias": -0.7828,
+    "medianAbsoluteError": 2.2,
+    "within1": 0.2894,
+    "within2": 0.484,
+    "within3": 0.6722,
+    "within5": 0.8566
+  }
+}

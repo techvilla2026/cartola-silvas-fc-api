@@ -1,0 +1,29 @@
+{
+  "Fraca": {
+    "count": 4508,
+    "averageActual": 3.181,
+    "medianActual": 2,
+    "negativeRate": 0.1127,
+    "rate5Plus": 0.2509,
+    "rate8Plus": 0.1213,
+    "rate10Plus": 0.0663
+  },
+  "Regular": {
+    "count": 594,
+    "averageActual": 4.8359,
+    "medianActual": 3.7,
+    "negativeRate": 0.0825,
+    "rate5Plus": 0.3956,
+    "rate8Plus": 0.2071,
+    "rate10Plus": 0.1397
+  },
+  "Boa": {
+    "count": 24,
+    "averageActual": 5.6792,
+    "medianActual": 4.2,
+    "negativeRate": 0,
+    "rate5Plus": 0.375,
+    "rate8Plus": 0.3333,
+    "rate10Plus": 0.25
+  }
+}
