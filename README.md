@@ -4,7 +4,7 @@ Backend proxy do Cartola FC para o aplicativo Meu Time Ideal Web.
 
 Este servidor evita que a versao Web do app Flutter precise chamar diretamente `https://api.cartolafc.globo.com` a partir do navegador, reduzindo problemas de CORS. As rotas retornam dados reais da API oficial do Cartola FC, sem mocks, fallbacks ficticios ou alteracao silenciosa do conteudo recebido.
 
-A Build 4.5.0 adiciona snapshots vivos pre-rodada em `live-pre-round-snapshot/v1`, com captura temporal, hash SHA-256, manifest imutavel e auditoria.
+A Build 4.5.3 prepara GitHub Actions para snapshots vivos pre-rodada em `live-pre-round-snapshot/v1`, com execucao horaria, commit automatico controlado, allowlist de arquivos, protecao de snapshots imutaveis e simulacao local sem push. A automacao de producao fica `PARTIALLY_READY` ate o workflow ser revisado/ativado e o auto deploy do Render ser confirmado.
 
 ## Endpoints
 
@@ -16,7 +16,7 @@ Retorna informacoes basicas do servico:
 {
   "service": "cartola-silvas-fc-api",
   "status": "online",
-  "version": "4.5.0",
+  "version": "4.5.3",
   "focus": "Brasileirao/Cartola FC"
 }
 ```
@@ -304,6 +304,15 @@ Documentacao:
 - `docs/live-pre-round-snapshot-architecture.md`
 - `docs/live-snapshot-operations.md`
 - `docs/live-snapshot-automation-plan.md`
+- `docs/live-snapshot-scheduling-policy.md`
+- `docs/live-snapshot-change-detection.md`
+- `docs/live-snapshot-render-automation.md`
+- `docs/live-snapshot-production-storage-audit.md`
+- `docs/live-snapshot-storage-contract.md`
+- `docs/live-snapshot-production-operations.md`
+- `docs/live-snapshot-github-actions.md`
+- `docs/live-snapshot-automatic-commit-policy.md`
+- `docs/live-snapshot-production-activation-checklist.md`
 
 ## Backtest
 
@@ -368,6 +377,40 @@ Auditar integridade:
 npm run live:snapshot:audit -- --season=2026
 ```
 
+Executar automacao segura:
+
+```bash
+npm run live:snapshot:auto -- --season=2026
+```
+
+Simular a decisao da automacao sem gravar arquivos:
+
+```bash
+npm run live:snapshot:auto -- --season=2026 --dry-run
+```
+
+Verificar storage local:
+
+```bash
+npm run live:snapshot:storage-check -- --season=2026
+```
+
+Validar mudancas permitidas para commit automatico:
+
+```bash
+npm run live:snapshot:validate-changes -- --json
+```
+
+Simular o workflow sem commit nem push:
+
+```bash
+npm run live:snapshot:workflow-simulate
+```
+
+A automacao grava apenas snapshots validos pre-fechamento quando a politica indicar primeira captura valida, checkpoint de janela, mudanca significativa ou captura final de seguranca. Quando nao houver mudanca relevante, retorna `SKIPPED` e atualiza o status da automacao sem criar snapshot duplicado.
+
+Em producao Render, o modo atual permanece `PRODUCTION_AUTOMATION_STATUS=PARTIALLY_READY`: o workflow esta preparado, mas nao foi executado nesta build e o auto deploy do Render nao esta confirmado no repositorio.
+
 Endpoints:
 
 - `GET /live-snapshots/2026/coverage`
@@ -375,8 +418,15 @@ Endpoints:
 - `GET /live-snapshots/2026/round/:round`
 - `GET /live-snapshots/2026/round/:round/latest`
 - `GET /live-snapshots/2026/round/:round/latest-valid-pre-round`
+- `GET /live-snapshots/2026/round/:round/change-history`
+- `GET /live-snapshots/2026/round/:round/final-pre-close`
+- `GET /live-snapshots/2026/round/:round/schedule-status`
 - `GET /live-snapshots/2026/snapshot/:snapshotId`
 - `GET /live-snapshots/2026/integrity`
+- `GET /live-snapshots/2026/automation-status`
+- `GET /live-snapshots/2026/production-health`
+- `GET /live-snapshots/2026/storage-health`
+- `GET /live-snapshots/2026/automation-lock`
 
 ## Tratamento de erros
 

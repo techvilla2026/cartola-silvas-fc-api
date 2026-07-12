@@ -73,6 +73,10 @@ async function captureLivePreRoundSnapshot(options) {
     marketClosingAt,
     capturePhase,
     isValidPreRoundSnapshot: valid,
+    snapshotRole: options.snapshotRole || (valid ? "CHECKPOINT" : "INVALID_AUDIT_CAPTURE"),
+    finalPreCloseDistanceToClosingSeconds: valid && marketClosingAt
+      ? Math.floor((new Date(marketClosingAt).getTime() - new Date(capturedAt).getTime()) / 1000)
+      : null,
     source: "Cartola FC public API",
     sourceEndpoints: sourceEndpoints(sources),
     engineVersions: motorResult.engineVersions,
@@ -111,6 +115,7 @@ async function captureLivePreRoundSnapshot(options) {
     marketClosingAt,
     capturePhase,
     isValidPreRoundSnapshot: valid,
+    snapshotRole: snapshot.snapshotRole,
     contentHash: snapshot.integrity.contentHash,
     players: players.length,
     matches: matches.length

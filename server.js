@@ -9,9 +9,11 @@ const { buildEnrichedAudit } = require("./src/historical/enrichment/audit");
 const { LiveSnapshotRepository } = require("./src/liveSnapshot/repositories/fileRepository");
 const { auditLiveSnapshots, coverage: liveSnapshotCoverage, findSnapshot } = require("./src/liveSnapshot/services/audit");
 const { parseLiveRound, parseSnapshotId } = require("./src/liveSnapshot/domain/validation");
+const { storageHealth } = require("./src/liveSnapshot/services/storageHealth");
+const { buildProductionHealth } = require("./src/liveSnapshot/services/productionHealth");
 
 const SERVICE_NAME = "cartola-silvas-fc-api";
-const BACKEND_VERSION = "4.5.0";
+const BACKEND_VERSION = "4.5.3";
 const DEFAULT_PORT = 3000;
 const CARTOLA_API_BASE_URL = "https://api.cartolafc.globo.com";
 const DEFAULT_TIMEOUT_MS = 8000;
@@ -147,6 +149,21 @@ function sendBadRequest(res, code, message) {
       message
     }
   });
+}
+
+function firstValidSnapshotId(manifest) {
+  return manifest?.firstValidSnapshotId
+    || manifest?.snapshots?.find((item) => item.isValidPreRoundSnapshot)?.snapshotId
+    || null;
+}
+
+function finalPreCloseSnapshotId(manifest) {
+  return manifest?.finalPreCloseSnapshotId || manifest?.lastValidPreRoundSnapshotId || null;
+}
+
+function finalCaptureQuality(manifest) {
+  if (manifest?.finalCaptureQuality) return manifest.finalCaptureQuality;
+  return finalPreCloseSnapshotId(manifest) ? "EARLIER_VALID_FALLBACK" : "UNAVAILABLE";
 }
 
 async function proxyCartola(req, res, options) {
@@ -774,6 +791,54 @@ function createApp(options = {}) {
     return res.json(app.locals.liveSnapshotRepository.readSnapshot(season, round, manifest.lastValidPreRoundSnapshotId));
   });
 
+  app.get("/live-snapshots/:season/round/:round/change-history", (req, res) => {
+    const season = parseSeason(req.params.season);
+    const round = parseLiveRound(req.params.round);
+    if (!season) return sendBadRequest(res, "INVALID_SEASON", "A temporada deve ser um ano valido.");
+    if (!round) return sendBadRequest(res, "INVALID_ROUND", "A rodada deve ser um inteiro entre 1 e 38.");
+    const history = app.locals.liveSnapshotRepository.readChangeHistory(season, round);
+    if (!history) return sendNotFound(res, "Historico de mudancas nao encontrado.");
+    return res.json(history);
+  });
+
+  app.get("/live-snapshots/:season/round/:round/final-pre-close", (req, res) => {
+    const season = parseSeason(req.params.season);
+    const round = parseLiveRound(req.params.round);
+    if (!season) return sendBadRequest(res, "INVALID_SEASON", "A temporada deve ser um ano valido.");
+    if (!round) return sendBadRequest(res, "INVALID_ROUND", "A rodada deve ser um inteiro entre 1 e 38.");
+    const manifest = app.locals.liveSnapshotRepository.readManifest(season, round);
+    const snapshotId = finalPreCloseSnapshotId(manifest);
+    if (!snapshotId) return sendNotFound(res, "Snapshot final pre-fechamento nao encontrado.");
+    return res.json({
+      finalCaptureQuality: finalCaptureQuality(manifest),
+      snapshot: app.locals.liveSnapshotRepository.readSnapshot(season, round, snapshotId)
+    });
+  });
+
+  app.get("/live-snapshots/:season/round/:round/schedule-status", (req, res) => {
+    const season = parseSeason(req.params.season);
+    const round = parseLiveRound(req.params.round);
+    if (!season) return sendBadRequest(res, "INVALID_SEASON", "A temporada deve ser um ano valido.");
+    if (!round) return sendBadRequest(res, "INVALID_ROUND", "A rodada deve ser um inteiro entre 1 e 38.");
+    const manifest = app.locals.liveSnapshotRepository.readManifest(season, round);
+    if (!manifest) return sendNotFound(res, "Manifest de snapshots nao encontrado.");
+    const automationStatus = app.locals.liveSnapshotRepository.readAutomationStatus(season);
+    return res.json({
+      season,
+      round,
+      manifest: {
+        totalSnapshots: manifest.totalSnapshots,
+        validPreRoundSnapshots: manifest.validPreRoundSnapshots,
+        firstValidSnapshotId: firstValidSnapshotId(manifest),
+        latestSnapshotId: manifest.lastSnapshotId || null,
+        latestValidPreRoundSnapshotId: manifest.lastValidPreRoundSnapshotId || null,
+        finalPreCloseSnapshotId: finalPreCloseSnapshotId(manifest),
+        finalCaptureQuality: finalCaptureQuality(manifest)
+      },
+      automationStatus: automationStatus || null
+    });
+  });
+
   app.get("/live-snapshots/:season/round/:round", (req, res) => {
     const season = parseSeason(req.params.season);
     const round = parseLiveRound(req.params.round);
@@ -798,6 +863,41 @@ function createApp(options = {}) {
     const season = parseSeason(req.params.season);
     if (!season) return sendBadRequest(res, "INVALID_SEASON", "A temporada deve ser um ano valido.");
     return res.json(auditLiveSnapshots(app.locals.liveSnapshotRepository, season));
+  });
+
+  app.get("/live-snapshots/:season/production-health", (req, res) => {
+    const season = parseSeason(req.params.season);
+    if (!season) return sendBadRequest(res, "INVALID_SEASON", "A temporada deve ser um ano valido.");
+    return res.json(buildProductionHealth(app.locals.liveSnapshotRepository, season, { backendVersion: BACKEND_VERSION }));
+  });
+
+  app.get("/live-snapshots/:season/storage-health", (req, res) => {
+    const season = parseSeason(req.params.season);
+    if (!season) return sendBadRequest(res, "INVALID_SEASON", "A temporada deve ser um ano valido.");
+    return res.json(storageHealth(app.locals.liveSnapshotRepository, season));
+  });
+
+  app.get("/live-snapshots/:season/automation-lock", (req, res) => {
+    const season = parseSeason(req.params.season);
+    if (!season) return sendBadRequest(res, "INVALID_SEASON", "A temporada deve ser um ano valido.");
+    const lock = app.locals.liveSnapshotRepository.readAutomationLock(season);
+    if (!lock) return res.json({ active: false });
+    return res.json({
+      active: true,
+      executionId: lock.executionId || null,
+      createdAt: lock.createdAt || null,
+      expiresAt: lock.expiresAt || null,
+      season: lock.season || null,
+      round: lock.round || null
+    });
+  });
+
+  app.get("/live-snapshots/:season/automation-status", (req, res) => {
+    const season = parseSeason(req.params.season);
+    if (!season) return sendBadRequest(res, "INVALID_SEASON", "A temporada deve ser um ano valido.");
+    const status = app.locals.liveSnapshotRepository.readAutomationStatus(season);
+    if (!status) return sendNotFound(res, "Status de automacao nao encontrado.");
+    return res.json(status);
   });
 
   app.use((req, res) => {

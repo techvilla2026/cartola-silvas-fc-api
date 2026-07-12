@@ -1,11 +1,12 @@
 {
   "name": "cartola-silvas-fc-api",
-  "version": "4.5.0",
+  "version": "4.5.3",
   "description": "Backend proxy Cartola FC para o Meu Time Ideal Web",
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
     "test": "node --test",
+    "test:live-snapshot-ci": "node --test test/liveSnapshot.test.js test/liveSnapshotWorkflow.test.js test/server.test.js",
     "historical:collect": "node scripts/historical-collect.js",
     "historical:audit": "node scripts/historical-audit.js",
     "historical:reconstruct-pre": "node scripts/historical-reconstruct-pre.js",
@@ -24,7 +25,11 @@
     "backtest:flutter-parity-enriched:report": "node scripts/backtest-flutter-parity-enriched-report.js",
     "backtest:compare-all": "node scripts/backtest-compare-all.js",
     "live:snapshot:capture": "node scripts/live-snapshot-capture.js",
-    "live:snapshot:audit": "node scripts/live-snapshot-audit.js"
+    "live:snapshot:audit": "node scripts/live-snapshot-audit.js",
+    "live:snapshot:auto": "node scripts/live-snapshot-auto.js",
+    "live:snapshot:storage-check": "node scripts/live-snapshot-storage-check.js",
+    "live:snapshot:validate-changes": "node scripts/live-snapshot-validate-changes.js",
+    "live:snapshot:workflow-simulate": "node scripts/live-snapshot-workflow-simulate.js"
   },
   "engines": {
     "node": ">=18"

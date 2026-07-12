@@ -1,5 +1,47 @@
 # Changelog
 
+## 4.5.3 - 2026-07-12
+
+- Prepara workflow GitHub Actions para captura horaria de snapshots vivos.
+- Adiciona `.github/workflows/live-snapshot-capture.yml` com `workflow_dispatch`, `schedule`, `concurrency`, permissao minima `contents: write`, `npm ci`, testes CI, storage-check, automacao strict, auditoria e commit controlado.
+- Adiciona allowlist de arquivos permitidos para commit automatico.
+- Adiciona `live:snapshot:validate-changes` para rejeitar paths proibidos, deletes, renames e modificacao de snapshots ja versionados.
+- Adiciona tratamento semantico de `automation-status` para evitar commit quando so campos volateis mudam.
+- Adiciona `live:snapshot:workflow-simulate` para simular decisoes de workflow sem commit nem push.
+- Adiciona `test:live-snapshot-ci`.
+- Atualiza `production-health` para `GITHUB_ACTIONS_PREPARED`, frequencia `HOURLY`, `workflowActivationStatus=NOT_ACTIVATED` e `gitPersistenceMode=AUTOMATED_COMMIT_PREPARED`.
+- Mantem `productionAutomationStatus=PARTIALLY_READY` porque Render auto deploy nao esta confirmado no repositorio.
+- Nao executa workflow real, commit, push ou deploy.
+
+## 4.5.2 - 2026-07-12
+
+- Audita persistencia e agendamento de producao dos snapshots vivos.
+- Documenta que o storage atual e `LOCAL_FILESYSTEM` e nao e seguro para producao Render sem persistencia confirmada.
+- Adiciona contrato de storage para snapshots vivos.
+- Migra `LiveSnapshotRepository` para implementar operacoes atomicas, imutaveis, health-check e lock local.
+- Adiciona `npm run live:snapshot:storage-check`.
+- Adiciona `executionId` por execucao automatica.
+- Adiciona lock local com expiracao, recuperacao de stale lock e liberacao em sucesso, skip e erro controlado.
+- Adiciona contadores `failureCount`, `consecutiveFailureCount`, `lastSuccessfulRunAt` e `lastFailureAt`.
+- Adiciona alertas operacionais sem envio externo.
+- Adiciona endpoints somente leitura `production-health`, `storage-health` e `automation-lock`.
+- Mantem `PRODUCTION_AUTOMATION_STATUS=BLOCKED` ate existir storage/scheduler persistente confirmado.
+- Nao cria workflow ativo, nao faz commit, push ou deploy automatico.
+
+## 4.5.1 - 2026-07-12
+
+- Adiciona automacao segura de snapshots vivos pre-rodada via `live:snapshot:auto`.
+- Centraliza a politica de captura por janelas ate o fechamento do mercado.
+- Define motivos de captura/skip e `snapshotRole` para snapshots automaticos.
+- Adiciona fingerprint logico que ignora campos volateis e detecta mudancas esportivas relevantes.
+- Evita duplicatas quando nao ha mudanca significativa e a janela minima ainda nao venceu.
+- Preserva primeiro snapshot valido, mudancas significativas, checkpoints e captura final pre-fechamento.
+- Persiste `automation-status.json` por temporada.
+- Persiste `change-history.json` por rodada, sem duplicar o snapshot completo.
+- Adiciona endpoints somente leitura de status da automacao, historico de mudancas, captura final pre-fechamento e status de agenda.
+- Documenta politica de agendamento, deteccao de mudancas e alternativas de automacao no Render.
+- Nao cria endpoint publico de escrita, workflow ativo, deploy, commit ou push automatico.
+
 ## 4.5.0 - 2026-07-12
 
 - Cria o sistema oficial de snapshots vivos pre-rodada.

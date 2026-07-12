@@ -1,0 +1,147 @@
+name: Live Snapshot Capture
+
+on:
+  workflow_dispatch:
+    inputs:
+      season:
+        description: "Cartola season"
+        required: false
+        default: "2026"
+      dry_run:
+        description: "Run without commit or push"
+        required: false
+        default: "false"
+        type: choice
+        options:
+          - "false"
+          - "true"
+  schedule:
+    - cron: "7 * * * *"
+
+concurrency:
+  group: live-snapshot-capture-${{ github.ref }}
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  capture:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      SEASON: ${{ github.event.inputs.season || '2026' }}
+      DRY_RUN: ${{ github.event.inputs.dry_run || 'false' }}
+      BOT_NAME: slvs-snapshot-bot
+      BOT_EMAIL: slvs-snapshot-bot@users.noreply.github.com
+    steps:
+      - name: Validate dispatch inputs
+        run: |
+          if ! [[ "$SEASON" =~ ^[0-9]{4}$ ]]; then
+            echo "Invalid season"
+            exit 1
+          fi
+          if [[ "$DRY_RUN" != "true" && "$DRY_RUN" != "false" ]]; then
+            echo "Invalid dry_run"
+            exit 1
+          fi
+
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run live snapshot CI tests
+        run: npm run test:live-snapshot-ci
+
+      - name: Check storage
+        run: npm run live:snapshot:storage-check -- --season="$SEASON"
+
+      - name: Run automation
+        id: automation
+        run: |
+          if [[ "$DRY_RUN" == "true" ]]; then
+            npm --silent run live:snapshot:auto -- --season="$SEASON" --dry-run --strict | tee automation-result.json
+          else
+            npm --silent run live:snapshot:auto -- --season="$SEASON" --strict | tee automation-result.json
+          fi
+
+      - name: Audit snapshots
+        run: npm run live:snapshot:audit -- --season="$SEASON"
+
+      - name: Validate allowed changes
+        id: validate
+        run: |
+          npm --silent run live:snapshot:validate-changes -- --json --restore-volatile | tee validate-changes.json
+
+      - name: Stop before commit on dry run
+        if: env.DRY_RUN == 'true'
+        run: |
+          echo "Dry run requested; no commit or push will be performed." >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Commit allowed changes
+        if: env.DRY_RUN != 'true'
+        run: |
+          if git diff --quiet -- data/live-snapshots; then
+            echo "No material snapshot changes to commit." >> "$GITHUB_STEP_SUMMARY"
+            exit 0
+          fi
+          git config user.name "$BOT_NAME"
+          git config user.email "$BOT_EMAIL"
+          git add \
+            "data/live-snapshots/$SEASON/automation-status.json" \
+            "data/live-snapshots/$SEASON"/round-*/manifest.json \
+            "data/live-snapshots/$SEASON"/round-*/change-history.json \
+            "data/live-snapshots/$SEASON"/round-*/snapshots/*.json
+          git diff --cached --quiet && exit 0
+          git commit -m "chore(snapshot): automatic pre-round capture"
+          echo "COMMIT_CREATED=true" >> "$GITHUB_ENV"
+
+      - name: Rebase before push
+        if: env.DRY_RUN != 'true' && env.COMMIT_CREATED == 'true'
+        run: |
+          if git diff --cached --quiet && git diff --quiet; then
+            git fetch origin
+            git pull --rebase
+          else
+            git fetch origin
+            git pull --rebase
+          fi
+
+      - name: Push
+        if: env.DRY_RUN != 'true' && env.COMMIT_CREATED == 'true'
+        run: |
+          git push
+
+      - name: Summary
+        if: always()
+        run: |
+          RESULT="$(node -e "const fs=require('fs'); const p='automation-result.json'; if(!fs.existsSync(p)){console.log('UNKNOWN');process.exit(0)} const s=JSON.parse(fs.readFileSync(p,'utf8')); console.log(s.result||'UNKNOWN')")"
+          REASON="$(node -e "const fs=require('fs'); const p='automation-result.json'; if(!fs.existsSync(p)){console.log('');process.exit(0)} const s=JSON.parse(fs.readFileSync(p,'utf8')); console.log(s.reason||'')")"
+          SNAPSHOT_ID="$(node -e "const fs=require('fs'); const p='automation-result.json'; if(!fs.existsSync(p)){console.log('');process.exit(0)} const s=JSON.parse(fs.readFileSync(p,'utf8')); console.log(s.snapshotId||'')")"
+          ALLOWED="$(node -e "const fs=require('fs'); const p='validate-changes.json'; if(!fs.existsSync(p)){console.log('UNKNOWN');process.exit(0)} const s=JSON.parse(fs.readFileSync(p,'utf8')); console.log(s.counts?.allowed ?? 'UNKNOWN')")"
+          DISALLOWED="$(node -e "const fs=require('fs'); const p='validate-changes.json'; if(!fs.existsSync(p)){console.log('UNKNOWN');process.exit(0)} const s=JSON.parse(fs.readFileSync(p,'utf8')); console.log(s.counts?.disallowed ?? 'UNKNOWN')")"
+          {
+            echo "## Live Snapshot Capture"
+            echo "- backendVersion: 4.5.3"
+            echo "- season: $SEASON"
+            echo "- result: $RESULT"
+            echo "- reason: $REASON"
+            echo "- snapshotCreated: $([[ -n "$SNAPSHOT_ID" ]] && echo true || echo false)"
+            echo "- snapshotId: $SNAPSHOT_ID"
+            echo "- auditStatus: executed"
+            echo "- allowedChanges: $ALLOWED"
+            echo "- disallowedChanges: $DISALLOWED"
+            echo "- commitCreated: decided by git diff"
+            echo "- pushPerformed: false when dry_run=true or no commit"
+            echo "- productionAutomationStatus: PARTIALLY_READY"
+          } >> "$GITHUB_STEP_SUMMARY"
