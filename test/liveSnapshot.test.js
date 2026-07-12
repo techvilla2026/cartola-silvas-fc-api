@@ -555,11 +555,13 @@ test("production-health, storage-health e automation-lock sao sanitizados", asyn
     const lock = await get(server, "/live-snapshots/2026/automation-lock");
 
     assert.equal(production.status, 200);
-    assert.equal(production.body.productionAutomationStatus, "PARTIALLY_READY");
-    assert.equal(production.body.backendVersion, "4.5.3");
+    assert.equal(production.body.productionAutomationStatus, "READY");
+    assert.equal(production.body.backendVersion, "4.5.4");
     assert.equal(JSON.stringify(production.body).includes(repository.baseDir), false);
     assert.equal(storage.status, 200);
-    assert.equal(storage.body.assumptions.PRODUCTION_PERSISTENCE_SAFE, false);
+    assert.equal(storage.body.assumptions.PRODUCTION_PERSISTENCE_SAFE, true);
+    assert.equal(storage.body.officialPersistence.status, "PASS");
+    assert.equal(storage.body.overallStatus, "PASS_WITH_RUNTIME_WARNING");
     assert.equal(JSON.stringify(storage.body).includes(repository.baseDir), false);
     assert.equal(lock.status, 200);
     assert.deepEqual(lock.body, { active: false });

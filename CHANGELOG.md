@@ -1,5 +1,18 @@
 # Changelog
 
+## 4.5.4 - 2026-07-12
+
+- Corrige falso `disallowedChanges` no resumo do workflow movendo arquivos temporarios para `$RUNNER_TEMP`.
+- Padroniza o contrato do validador como `live-snapshot-change-validation/v1`.
+- Faz `automation-status` com alteracoes apenas volateis ser restaurado e contado em `ignoredVolatileChanges`, sem aparecer como allowed/disallowed.
+- Atualiza workflow para `actions/checkout@v5` e `actions/setup-node@v6`, com Node 22 no runner.
+- Adiciona configuracao auditavel `config/live-snapshot-production.json`.
+- Atualiza `production-health` para retornar `READY` quando GitHub Actions, execucao real, Render On Commit, snapshot valido e auditoria PASS estiverem confirmados.
+- Separa `runtimeStorageMode=LOCAL_EPHEMERAL` de `officialPersistenceMode=GIT_AUTOMATED_COMMITS`.
+- Atualiza `storage-health` com `runtimeFilesystem`, `officialPersistence` e `overallStatus`.
+- Amplia `workflow-simulate` para cobrir SKIPPED limpo, CAPTURED, paths proibidos, snapshot imutavel e status volatil/material.
+- Nao altera Flutter, motor, snapshots existentes, historico, backtests, commit, push ou deploy.
+
 ## 4.5.3 - 2026-07-12
 
 - Prepara workflow GitHub Actions para captura horaria de snapshots vivos.

@@ -1,0 +1,22 @@
+{
+  "schemaVersion": "live-snapshot-production-config/v1",
+  "githubActionsEnabled": true,
+  "workflowRealExecutionConfirmed": true,
+  "renderAutoDeployConfirmed": true,
+  "renderAutoDeployMode": "ON_COMMIT",
+  "mainBranch": "main",
+  "schedulerFrequency": "HOURLY",
+  "workflowActivationStatus": "ACTIVE",
+  "gitPersistenceMode": "AUTOMATED_COMMIT_ACTIVE",
+  "officialPersistenceMode": "GIT_AUTOMATED_COMMITS",
+  "runtimeStorageMode": "LOCAL_EPHEMERAL",
+  "confirmedAt": "2026-07-12T00:00:00.000Z",
+  "confirmedBy": "project-owner-confirmed",
+  "evidenceNotes": [
+    "workflow manual dry-run executed successfully",
+    "workflow manual real execution completed successfully",
+    "result SKIPPED/TOO_SOON was expected",
+    "Render Auto-Deploy confirmed as On Commit",
+    "main branch confirmed"
+  ]
+}

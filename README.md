@@ -4,7 +4,7 @@ Backend proxy do Cartola FC para o aplicativo Meu Time Ideal Web.
 
 Este servidor evita que a versao Web do app Flutter precise chamar diretamente `https://api.cartolafc.globo.com` a partir do navegador, reduzindo problemas de CORS. As rotas retornam dados reais da API oficial do Cartola FC, sem mocks, fallbacks ficticios ou alteracao silenciosa do conteudo recebido.
 
-A Build 4.5.3 prepara GitHub Actions para snapshots vivos pre-rodada em `live-pre-round-snapshot/v1`, com execucao horaria, commit automatico controlado, allowlist de arquivos, protecao de snapshots imutaveis e simulacao local sem push. A automacao de producao fica `PARTIALLY_READY` ate o workflow ser revisado/ativado e o auto deploy do Render ser confirmado.
+A Build 4.5.4 fecha a automacao de producao dos snapshots vivos pre-rodada em `live-pre-round-snapshot/v1`, com GitHub Actions horario, commit automatico controlado, persistencia oficial por Git, Render Auto-Deploy On Commit confirmado e saude de producao `READY`.
 
 ## Endpoints
 
@@ -16,7 +16,7 @@ Retorna informacoes basicas do servico:
 {
   "service": "cartola-silvas-fc-api",
   "status": "online",
-  "version": "4.5.3",
+  "version": "4.5.4",
   "focus": "Brasileirao/Cartola FC"
 }
 ```
@@ -313,6 +313,7 @@ Documentacao:
 - `docs/live-snapshot-github-actions.md`
 - `docs/live-snapshot-automatic-commit-policy.md`
 - `docs/live-snapshot-production-activation-checklist.md`
+- `docs/live-snapshot-production-ready.md`
 
 ## Backtest
 
@@ -409,7 +410,7 @@ npm run live:snapshot:workflow-simulate
 
 A automacao grava apenas snapshots validos pre-fechamento quando a politica indicar primeira captura valida, checkpoint de janela, mudanca significativa ou captura final de seguranca. Quando nao houver mudanca relevante, retorna `SKIPPED` e atualiza o status da automacao sem criar snapshot duplicado.
 
-Em producao Render, o modo atual permanece `PRODUCTION_AUTOMATION_STATUS=PARTIALLY_READY`: o workflow esta preparado, mas nao foi executado nesta build e o auto deploy do Render nao esta confirmado no repositorio.
+Em producao Render, o modo atual e `PRODUCTION_AUTOMATION_STATUS=READY`: GitHub Actions esta confirmado, a execucao real foi confirmada, a persistencia oficial e `GIT_AUTOMATED_COMMITS` e o Render Auto-Deploy esta confirmado como `ON_COMMIT`.
 
 Endpoints:
 

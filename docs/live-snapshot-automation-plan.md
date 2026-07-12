@@ -1,6 +1,6 @@
 # Plano de Automacao de Snapshots
 
-Build: 4.5.3 prepara GitHub Actions horario com commit controlado, mas nao executa workflow real, commit, push ou deploy durante a implementacao.
+Build: 4.5.4 fecha GitHub Actions horario com commit controlado, persistencia oficial por Git e Render Auto-Deploy On Commit confirmado.
 
 ## Estrategia implementada
 
@@ -30,15 +30,15 @@ Auditoria 4.5.2: Render filesystem local e tratado como inseguro para snapshots 
 
 Um workflow agendado pode ser criado em build futura, mas a 4.5.1 nao adiciona workflow ativo para evitar commits/pushes automaticos sem decisao operacional explicita.
 
-Na 4.5.3, GitHub Actions com commit dos snapshots foi preparado em `.github/workflows/live-snapshot-capture.yml`.
+Na 4.5.4, GitHub Actions com commit dos snapshots esta ativo e confirmado externamente em `.github/workflows/live-snapshot-capture.yml`.
 
 Estado:
 
 ```text
 schedulerFrequency=HOURLY
-workflowActivationStatus=NOT_ACTIVATED
-gitPersistenceMode=AUTOMATED_COMMIT_PREPARED
-productionAutomationStatus=PARTIALLY_READY
+workflowActivationStatus=ACTIVE
+gitPersistenceMode=AUTOMATED_COMMIT_ACTIVE
+productionAutomationStatus=READY
 ```
 
 Limitacao: o scheduler horario nao garante capturas a cada 15 minutos na ultima hora; a politica interna continua recomendando essa janela, mas a infraestrutura preparada executa no maximo uma vez por hora.

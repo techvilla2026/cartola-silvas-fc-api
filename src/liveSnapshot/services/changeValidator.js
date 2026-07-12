@@ -139,7 +139,11 @@ function validateChanges(options = {}) {
   const entries = gitStatus(cwd);
   const allowed = [];
   const disallowed = [];
-  const volatileOnly = [];
+  const ignoredVolatileChanges = [];
+  const newSnapshots = [];
+  const modifiedImmutableSnapshots = [];
+  const deletedFiles = [];
+  const renamedFiles = [];
 
   for (const entry of entries) {
     const status = entry.status;
@@ -151,10 +155,18 @@ function validateChanges(options = {}) {
     const trackedSnapshotModified = isSnapshotPath(filePath) && existsInHead(cwd, filePath) && !status.includes("A") && status !== "??";
 
     let reason = null;
-    if (deleted) reason = "DELETE_NOT_ALLOWED";
-    else if (renamed) reason = "RENAME_NOT_ALLOWED";
+    if (deleted) {
+      reason = "DELETE_NOT_ALLOWED";
+      deletedFiles.push(filePath);
+    } else if (renamed) {
+      reason = "RENAME_NOT_ALLOWED";
+      renamedFiles.push(filePath);
+    }
     else if (!allowedPath) reason = forbiddenPath ? "FORBIDDEN_PATH" : "PATH_NOT_IN_ALLOWLIST";
-    else if (trackedSnapshotModified) reason = "IMMUTABLE_SNAPSHOT_MODIFIED";
+    else if (trackedSnapshotModified) {
+      reason = "IMMUTABLE_SNAPSHOT_MODIFIED";
+      modifiedImmutableSnapshots.push(filePath);
+    }
 
     if (reason) {
       disallowed.push({ path: filePath, status, reason });
@@ -162,6 +174,11 @@ function validateChanges(options = {}) {
     }
 
     const materiality = automationStatusMateriality(cwd, filePath);
+    if (materiality.checked && !materiality.material) {
+      ignoredVolatileChanges.push({ path: filePath, status });
+      continue;
+    }
+
     const item = {
       path: filePath,
       status,
@@ -169,23 +186,34 @@ function validateChanges(options = {}) {
       materialityChecked: materiality.checked
     };
     allowed.push(item);
-    if (materiality.checked && !materiality.material) volatileOnly.push(item);
+    if (isSnapshotPath(filePath) && !existsInHead(cwd, filePath)) newSnapshots.push(filePath);
   }
 
   const materialAllowed = allowed.filter((item) => item.material);
-  const onlyVolatileAutomationStatus = allowed.length > 0 && materialAllowed.length === 0 && disallowed.length === 0;
+  const onlyVolatileAutomationStatus = ignoredVolatileChanges.length > 0 && materialAllowed.length === 0 && disallowed.length === 0;
   const restored = [];
   if (options.restoreVolatile && onlyVolatileAutomationStatus) {
-    for (const item of volatileOnly) {
+    for (const item of ignoredVolatileChanges) {
       restoreFromHead(cwd, item.path);
       restored.push(item.path);
     }
   }
 
   return {
+    schemaVersion: "live-snapshot-change-validation/v1",
     ok: disallowed.length === 0,
     allowed,
     disallowed,
+    allowedChanges: allowed.length,
+    disallowedChanges: disallowed.length,
+    ignoredVolatileChanges,
+    ignoredVolatileChangesCount: ignoredVolatileChanges.length,
+    newSnapshots,
+    modifiedImmutableSnapshots,
+    deletedFiles,
+    renamedFiles,
+    materialChanges: materialAllowed.length,
+    volatileOnlyChanges: ignoredVolatileChanges.length,
     restored,
     onlyVolatileAutomationStatus,
     hasMaterialAllowedChanges: materialAllowed.length > 0,
@@ -193,6 +221,11 @@ function validateChanges(options = {}) {
     counts: {
       allowed: allowed.length,
       disallowed: disallowed.length,
+      ignoredVolatileChanges: ignoredVolatileChanges.length,
+      newSnapshots: newSnapshots.length,
+      modifiedImmutableSnapshots: modifiedImmutableSnapshots.length,
+      deletedFiles: deletedFiles.length,
+      renamedFiles: renamedFiles.length,
       materialAllowed: materialAllowed.length,
       restored: restored.length
     }

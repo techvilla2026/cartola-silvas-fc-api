@@ -87,7 +87,7 @@ Cada execucao recebe `executionId` e usa lock local com expiracao. O lock local 
 
 ## GitHub Actions
 
-A Build 4.5.3 cria workflow horario preparado, mas nao ativado nesta implementacao. `SKIPPED` e sucesso operacional. Se apenas campos volateis de `automation-status` mudarem, o workflow nao cria commit.
+A Build 4.5.4 mantém workflow horario ativo e confirmado externamente. `SKIPPED` e sucesso operacional. Se apenas campos volateis de `automation-status` mudarem, o workflow nao cria commit.
 
 ## Endpoints
 

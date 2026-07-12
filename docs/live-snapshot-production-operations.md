@@ -1,12 +1,12 @@
 # Operacao de Producao dos Snapshots
 
-Build: 4.5.3
+Build: 4.5.4
 
 ## Status
 
-`PRODUCTION_AUTOMATION_STATUS=PARTIALLY_READY`
+`PRODUCTION_AUTOMATION_STATUS=READY`
 
-A automacao segura existe no backend e o workflow GitHub Actions foi preparado. A ativacao recorrente em producao ainda depende de revisao manual, habilitacao do workflow e confirmacao do auto deploy Render.
+A automacao segura existe no backend, o workflow GitHub Actions esta confirmado, a execucao real foi confirmada e o Render Auto-Deploy esta confirmado como `ON_COMMIT`.
 
 ## Checks locais
 
@@ -60,7 +60,6 @@ Alertas expostos:
 - `NO_RECENT_EXECUTION`;
 - `CLOSING_SOON_WITHOUT_RECENT_VALID_SNAPSHOT`;
 - `CONSECUTIVE_FAILURES`;
-- `STORAGE_UNSAFE`;
 - `LOCK_STALE_RECOVERED`;
 - `AUDIT_FAILURE`;
 - `LOCK_ACTIVE`.
@@ -89,6 +88,15 @@ Caracteristicas:
 - validate-changes;
 - commit/push apenas de mudancas materiais permitidas.
 
-## Ativacao recomendada
+## Persistencia oficial
 
-Seguir `docs/live-snapshot-production-activation-checklist.md`. Esta build nao executou workflow real, commit, push ou deploy.
+```text
+runtimeStorageMode=LOCAL_EPHEMERAL
+officialPersistenceMode=GIT_AUTOMATED_COMMITS
+```
+
+O filesystem local continua sendo runtime. A persistencia oficial e feita por commits controlados no Git e deploy Render On Commit.
+
+## Operacao recomendada
+
+Usar `docs/live-snapshot-production-activation-checklist.md` para auditorias futuras, pausas e reativacoes. Esta build local nao executou workflow real, commit, push ou deploy.

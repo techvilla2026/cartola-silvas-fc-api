@@ -1,6 +1,6 @@
 {
   "name": "cartola-silvas-fc-api",
-  "version": "4.5.3",
+  "version": "4.5.4",
   "description": "Backend proxy Cartola FC para o Meu Time Ideal Web",
   "main": "server.js",
   "scripts": {

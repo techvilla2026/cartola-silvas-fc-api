@@ -1,6 +1,6 @@
 # Politica de Commit Automatico de Snapshots
 
-Build: 4.5.3
+Build: 4.5.4
 
 ## Objetivo
 
@@ -72,6 +72,27 @@ Mudancas materiais podem gerar commit:
 - estado de producao.
 
 Se apenas campos volateis mudarem, o validador restaura `automation-status.json` a partir de `HEAD` antes do commit.
+
+## Contrato do validador
+
+Schema:
+
+```text
+live-snapshot-change-validation/v1
+```
+
+Campos principais:
+
+- `ok`;
+- `allowedChanges`;
+- `disallowedChanges`;
+- `ignoredVolatileChangesCount`;
+- `newSnapshots`;
+- `modifiedImmutableSnapshots`;
+- `deletedFiles`;
+- `renamedFiles`;
+- `materialChanges`;
+- `volatileOnlyChanges`.
 
 ## Identidade do bot
 

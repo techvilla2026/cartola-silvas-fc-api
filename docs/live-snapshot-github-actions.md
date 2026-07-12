@@ -1,12 +1,12 @@
 # GitHub Actions de Snapshots Vivos
 
-Build: 4.5.3
+Build: 4.5.4
 
 ## Status
 
-`workflowActivationStatus=NOT_ACTIVATED`
+`workflowActivationStatus=ACTIVE`
 
-O workflow foi preparado, mas nao foi executado nesta build. Nao houve commit, push ou deploy.
+O workflow foi preparado e a execucao real foi confirmada externamente. Nesta implementacao local nao houve commit, push, deploy nem execucao de workflow real.
 
 ## Workflow
 
@@ -81,12 +81,25 @@ Nao ha input para `force`, `now`, path, comando, script ou branch arbitraria.
 11. `git push`;
 12. GitHub Step Summary.
 
+## Actions oficiais
+
+- `actions/checkout@v5`
+- `actions/setup-node@v6`
+
+Essas versoes usam runtime interno Node 24. O projeto roda no workflow com Node 22, compativel com `engines >=18`.
+
 ## Deploy Render
 
-`renderAutoDeployConfirmed=UNKNOWN`
+`renderAutoDeployConfirmed=true`
+
+`renderAutoDeployMode=ON_COMMIT`
 
 Se Render auto deploy estiver ativo, o fluxo esperado e:
 
 GitHub commit automatico -> Render deploy -> Web Service recebe arquivos versionados -> endpoints leem snapshots.
 
-Sem confirmacao do auto deploy, a producao fica `PARTIALLY_READY`, nao totalmente automatizada.
+Com auto deploy confirmado, a producao fica `READY`.
+
+## Step Summary
+
+O resumo consome o contrato final `live-snapshot-change-validation/v1` e mostra `allowedChanges`, `disallowedChanges`, `ignoredVolatileChanges` e `materialChanges`. Em um SKIPPED limpo, o esperado e `allowedChanges=0`, `disallowedChanges=0` e `commitCreated=false`.

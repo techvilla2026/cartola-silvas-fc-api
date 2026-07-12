@@ -13,7 +13,7 @@ const { storageHealth } = require("./src/liveSnapshot/services/storageHealth");
 const { buildProductionHealth } = require("./src/liveSnapshot/services/productionHealth");
 
 const SERVICE_NAME = "cartola-silvas-fc-api";
-const BACKEND_VERSION = "4.5.3";
+const BACKEND_VERSION = "4.5.4";
 const DEFAULT_PORT = 3000;
 const CARTOLA_API_BASE_URL = "https://api.cartolafc.globo.com";
 const DEFAULT_TIMEOUT_MS = 8000;

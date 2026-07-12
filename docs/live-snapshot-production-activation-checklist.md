@@ -1,6 +1,6 @@
 # Checklist de Ativacao em Producao
 
-Build: 4.5.3
+Build: 4.5.4
 
 Antes de ativar:
 
@@ -30,7 +30,8 @@ Rollback:
 Status apos esta build:
 
 ```text
-productionAutomationStatus=PARTIALLY_READY
-workflowActivationStatus=NOT_ACTIVATED
-renderAutoDeployConfirmed=UNKNOWN
+productionAutomationStatus=READY
+workflowActivationStatus=ACTIVE
+renderAutoDeployConfirmed=true
+renderAutoDeployMode=ON_COMMIT
 ```

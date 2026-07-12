@@ -47,14 +47,14 @@ jobs:
           fi
 
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
         with:
           fetch-depth: 0
 
       - name: Setup Node
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v6
         with:
-          node-version: "20"
+          node-version: "22"
           cache: npm
 
       - name: Install dependencies
@@ -70,9 +70,9 @@ jobs:
         id: automation
         run: |
           if [[ "$DRY_RUN" == "true" ]]; then
-            npm --silent run live:snapshot:auto -- --season="$SEASON" --dry-run --strict | tee automation-result.json
+            npm --silent run live:snapshot:auto -- --season="$SEASON" --dry-run --strict | tee "$RUNNER_TEMP/automation-result.json"
           else
-            npm --silent run live:snapshot:auto -- --season="$SEASON" --strict | tee automation-result.json
+            npm --silent run live:snapshot:auto -- --season="$SEASON" --strict | tee "$RUNNER_TEMP/automation-result.json"
           fi
 
       - name: Audit snapshots
@@ -81,7 +81,7 @@ jobs:
       - name: Validate allowed changes
         id: validate
         run: |
-          npm --silent run live:snapshot:validate-changes -- --json --restore-volatile | tee validate-changes.json
+          npm --silent run live:snapshot:validate-changes -- --json --restore-volatile | tee "$RUNNER_TEMP/validate-changes.json"
 
       - name: Stop before commit on dry run
         if: env.DRY_RUN == 'true'
@@ -125,23 +125,30 @@ jobs:
       - name: Summary
         if: always()
         run: |
-          RESULT="$(node -e "const fs=require('fs'); const p='automation-result.json'; if(!fs.existsSync(p)){console.log('UNKNOWN');process.exit(0)} const s=JSON.parse(fs.readFileSync(p,'utf8')); console.log(s.result||'UNKNOWN')")"
-          REASON="$(node -e "const fs=require('fs'); const p='automation-result.json'; if(!fs.existsSync(p)){console.log('');process.exit(0)} const s=JSON.parse(fs.readFileSync(p,'utf8')); console.log(s.reason||'')")"
-          SNAPSHOT_ID="$(node -e "const fs=require('fs'); const p='automation-result.json'; if(!fs.existsSync(p)){console.log('');process.exit(0)} const s=JSON.parse(fs.readFileSync(p,'utf8')); console.log(s.snapshotId||'')")"
-          ALLOWED="$(node -e "const fs=require('fs'); const p='validate-changes.json'; if(!fs.existsSync(p)){console.log('UNKNOWN');process.exit(0)} const s=JSON.parse(fs.readFileSync(p,'utf8')); console.log(s.counts?.allowed ?? 'UNKNOWN')")"
-          DISALLOWED="$(node -e "const fs=require('fs'); const p='validate-changes.json'; if(!fs.existsSync(p)){console.log('UNKNOWN');process.exit(0)} const s=JSON.parse(fs.readFileSync(p,'utf8')); console.log(s.counts?.disallowed ?? 'UNKNOWN')")"
+          RESULT="$(node -e "const fs=require('fs'); const p=process.env.RUNNER_TEMP+'/automation-result.json'; if(!fs.existsSync(p)){console.log('UNKNOWN');process.exit(0)} const s=JSON.parse(fs.readFileSync(p,'utf8')); console.log(s.result||'UNKNOWN')")"
+          REASON="$(node -e "const fs=require('fs'); const p=process.env.RUNNER_TEMP+'/automation-result.json'; if(!fs.existsSync(p)){console.log('');process.exit(0)} const s=JSON.parse(fs.readFileSync(p,'utf8')); console.log(s.reason||'')")"
+          SNAPSHOT_ID="$(node -e "const fs=require('fs'); const p=process.env.RUNNER_TEMP+'/automation-result.json'; if(!fs.existsSync(p)){console.log('');process.exit(0)} const s=JSON.parse(fs.readFileSync(p,'utf8')); console.log(s.snapshotId||'')")"
+          ROUND="$(node -e "const fs=require('fs'); const p=process.env.RUNNER_TEMP+'/automation-result.json'; if(!fs.existsSync(p)){console.log('');process.exit(0)} const s=JSON.parse(fs.readFileSync(p,'utf8')); console.log(s.round||'')")"
+          AUDIT_STATUS="$(node -e "const fs=require('fs'); const p=process.env.RUNNER_TEMP+'/automation-result.json'; if(!fs.existsSync(p)){console.log('executed');process.exit(0)} const s=JSON.parse(fs.readFileSync(p,'utf8')); console.log(s.auditStatus||'executed')")"
+          ALLOWED="$(node -e "const fs=require('fs'); const p=process.env.RUNNER_TEMP+'/validate-changes.json'; if(!fs.existsSync(p)){console.log('UNKNOWN');process.exit(0)} const s=JSON.parse(fs.readFileSync(p,'utf8')); console.log(s.allowedChanges ?? 'UNKNOWN')")"
+          DISALLOWED="$(node -e "const fs=require('fs'); const p=process.env.RUNNER_TEMP+'/validate-changes.json'; if(!fs.existsSync(p)){console.log('UNKNOWN');process.exit(0)} const s=JSON.parse(fs.readFileSync(p,'utf8')); console.log(s.disallowedChanges ?? 'UNKNOWN')")"
+          IGNORED="$(node -e "const fs=require('fs'); const p=process.env.RUNNER_TEMP+'/validate-changes.json'; if(!fs.existsSync(p)){console.log('UNKNOWN');process.exit(0)} const s=JSON.parse(fs.readFileSync(p,'utf8')); console.log(s.ignoredVolatileChangesCount ?? 'UNKNOWN')")"
+          MATERIAL="$(node -e "const fs=require('fs'); const p=process.env.RUNNER_TEMP+'/validate-changes.json'; if(!fs.existsSync(p)){console.log('UNKNOWN');process.exit(0)} const s=JSON.parse(fs.readFileSync(p,'utf8')); console.log(s.materialChanges ?? 'UNKNOWN')")"
           {
             echo "## Live Snapshot Capture"
-            echo "- backendVersion: 4.5.3"
+            echo "- backendVersion: 4.5.4"
             echo "- season: $SEASON"
+            echo "- round: $ROUND"
             echo "- result: $RESULT"
             echo "- reason: $REASON"
             echo "- snapshotCreated: $([[ -n "$SNAPSHOT_ID" ]] && echo true || echo false)"
             echo "- snapshotId: $SNAPSHOT_ID"
-            echo "- auditStatus: executed"
+            echo "- auditStatus: $AUDIT_STATUS"
             echo "- allowedChanges: $ALLOWED"
             echo "- disallowedChanges: $DISALLOWED"
+            echo "- ignoredVolatileChanges: $IGNORED"
+            echo "- materialChanges: $MATERIAL"
             echo "- commitCreated: decided by git diff"
             echo "- pushPerformed: false when dry_run=true or no commit"
-            echo "- productionAutomationStatus: PARTIALLY_READY"
+            echo "- productionAutomationStatus: READY"
           } >> "$GITHUB_STEP_SUMMARY"
