@@ -1,5 +1,20 @@
 # Changelog
 
+## 4.5.0 - 2026-07-12
+
+- Cria o sistema oficial de snapshots vivos pre-rodada.
+- Adiciona schema `live-pre-round-snapshot/v1`.
+- Coleta dados reais de `/mercado/status`, `/atletas/mercado` e `/partidas`.
+- Registra `capturedAt`, `marketClosingAt`, `capturePhase` e `isValidPreRoundSnapshot`.
+- Persiste snapshots imutaveis em `data/live-snapshots`.
+- Adiciona manifest por rodada, escrita atomica e hash SHA-256 canonico.
+- Adiciona auditoria de integridade de snapshots.
+- Executa o motor `flutter-parity-engine/4.3.1` somente quando a captura e valida pre-fechamento.
+- Mantem elenco pessoal como `NOT_APPLICABLE` e Comparador como `NOT_EVALUATED`.
+- Adiciona scripts `live:snapshot:capture` e `live:snapshot:audit`.
+- Adiciona endpoints somente leitura `/live-snapshots`.
+- Nao altera Flutter, formulas, pesos, backtests anteriores, deploy ou git remoto.
+
 ## 4.3.2 - 2026-07-12
 
 - Audita fontes publicas para status pre-rodada, dados recentes, scouts historicos e campos ausentes.

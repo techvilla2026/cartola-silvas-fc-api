@@ -6,9 +6,12 @@ const { analyzeScoutDivergences } = require("./src/historical/reconstruction/sco
 const { BacktestRepository } = require("./src/backtest/repository");
 const { EnrichedHistoricalRepository } = require("./src/historical/enrichment/enrichedRepository");
 const { buildEnrichedAudit } = require("./src/historical/enrichment/audit");
+const { LiveSnapshotRepository } = require("./src/liveSnapshot/repositories/fileRepository");
+const { auditLiveSnapshots, coverage: liveSnapshotCoverage, findSnapshot } = require("./src/liveSnapshot/services/audit");
+const { parseLiveRound, parseSnapshotId } = require("./src/liveSnapshot/domain/validation");
 
 const SERVICE_NAME = "cartola-silvas-fc-api";
-const BACKEND_VERSION = "4.3.2";
+const BACKEND_VERSION = "4.5.0";
 const DEFAULT_PORT = 3000;
 const CARTOLA_API_BASE_URL = "https://api.cartolafc.globo.com";
 const DEFAULT_TIMEOUT_MS = 8000;
@@ -217,6 +220,7 @@ function createApp(options = {}) {
   app.locals.historicalRepository = options.historicalRepository || new HistoricalDataRepository();
   app.locals.enrichedHistoricalRepository = options.enrichedHistoricalRepository || new EnrichedHistoricalRepository();
   app.locals.backtestRepository = options.backtestRepository || new BacktestRepository();
+  app.locals.liveSnapshotRepository = options.liveSnapshotRepository || new LiveSnapshotRepository();
 
   if (typeof app.locals.fetchImpl !== "function") {
     throw new Error("fetch nativo nao esta disponivel nesta versao do Node.");
@@ -736,6 +740,64 @@ function createApp(options = {}) {
     }
 
     return res.json(comparison);
+  });
+
+  app.get("/live-snapshots/:season/coverage", (req, res) => {
+    const season = parseSeason(req.params.season);
+    if (!season) return sendBadRequest(res, "INVALID_SEASON", "A temporada deve ser um ano valido.");
+    return res.json(liveSnapshotCoverage(app.locals.liveSnapshotRepository, season));
+  });
+
+  app.get("/live-snapshots/:season/rounds", (req, res) => {
+    const season = parseSeason(req.params.season);
+    if (!season) return sendBadRequest(res, "INVALID_SEASON", "A temporada deve ser um ano valido.");
+    return res.json({ season, rounds: app.locals.liveSnapshotRepository.listRounds(season) });
+  });
+
+  app.get("/live-snapshots/:season/round/:round/latest", (req, res) => {
+    const season = parseSeason(req.params.season);
+    const round = parseLiveRound(req.params.round);
+    if (!season) return sendBadRequest(res, "INVALID_SEASON", "A temporada deve ser um ano valido.");
+    if (!round) return sendBadRequest(res, "INVALID_ROUND", "A rodada deve ser um inteiro entre 1 e 38.");
+    const manifest = app.locals.liveSnapshotRepository.readManifest(season, round);
+    if (!manifest?.lastSnapshotId) return sendNotFound(res, "Snapshot nao encontrado.");
+    return res.json(app.locals.liveSnapshotRepository.readSnapshot(season, round, manifest.lastSnapshotId));
+  });
+
+  app.get("/live-snapshots/:season/round/:round/latest-valid-pre-round", (req, res) => {
+    const season = parseSeason(req.params.season);
+    const round = parseLiveRound(req.params.round);
+    if (!season) return sendBadRequest(res, "INVALID_SEASON", "A temporada deve ser um ano valido.");
+    if (!round) return sendBadRequest(res, "INVALID_ROUND", "A rodada deve ser um inteiro entre 1 e 38.");
+    const manifest = app.locals.liveSnapshotRepository.readManifest(season, round);
+    if (!manifest?.lastValidPreRoundSnapshotId) return sendNotFound(res, "Snapshot pre-rodada valido nao encontrado.");
+    return res.json(app.locals.liveSnapshotRepository.readSnapshot(season, round, manifest.lastValidPreRoundSnapshotId));
+  });
+
+  app.get("/live-snapshots/:season/round/:round", (req, res) => {
+    const season = parseSeason(req.params.season);
+    const round = parseLiveRound(req.params.round);
+    if (!season) return sendBadRequest(res, "INVALID_SEASON", "A temporada deve ser um ano valido.");
+    if (!round) return sendBadRequest(res, "INVALID_ROUND", "A rodada deve ser um inteiro entre 1 e 38.");
+    const manifest = app.locals.liveSnapshotRepository.readManifest(season, round);
+    if (!manifest) return sendNotFound(res, "Manifest de snapshots nao encontrado.");
+    return res.json(manifest);
+  });
+
+  app.get("/live-snapshots/:season/snapshot/:snapshotId", (req, res) => {
+    const season = parseSeason(req.params.season);
+    const snapshotId = parseSnapshotId(req.params.snapshotId);
+    if (!season) return sendBadRequest(res, "INVALID_SEASON", "A temporada deve ser um ano valido.");
+    if (!snapshotId) return sendBadRequest(res, "INVALID_SNAPSHOT_ID", "snapshotId invalido.");
+    const snapshot = findSnapshot(app.locals.liveSnapshotRepository, season, snapshotId);
+    if (!snapshot) return sendNotFound(res, "Snapshot nao encontrado.");
+    return res.json(snapshot);
+  });
+
+  app.get("/live-snapshots/:season/integrity", (req, res) => {
+    const season = parseSeason(req.params.season);
+    if (!season) return sendBadRequest(res, "INVALID_SEASON", "A temporada deve ser um ano valido.");
+    return res.json(auditLiveSnapshots(app.locals.liveSnapshotRepository, season));
   });
 
   app.use((req, res) => {

@@ -4,6 +4,8 @@ Backend proxy do Cartola FC para o aplicativo Meu Time Ideal Web.
 
 Este servidor evita que a versao Web do app Flutter precise chamar diretamente `https://api.cartolafc.globo.com` a partir do navegador, reduzindo problemas de CORS. As rotas retornam dados reais da API oficial do Cartola FC, sem mocks, fallbacks ficticios ou alteracao silenciosa do conteudo recebido.
 
+A Build 4.5.0 adiciona snapshots vivos pre-rodada em `live-pre-round-snapshot/v1`, com captura temporal, hash SHA-256, manifest imutavel e auditoria.
+
 ## Endpoints
 
 ### `GET /`
@@ -14,7 +16,7 @@ Retorna informacoes basicas do servico:
 {
   "service": "cartola-silvas-fc-api",
   "status": "online",
-  "version": "4.3.2",
+  "version": "4.5.0",
   "focus": "Brasileirao/Cartola FC"
 }
 ```
@@ -299,6 +301,9 @@ Documentacao:
 - `docs/historical-enrichment-method.md`
 - `docs/backtest-4.3.2-report.md`
 - `docs/backtest-4.3.0-vs-4.3.1-vs-4.3.2.md`
+- `docs/live-pre-round-snapshot-architecture.md`
+- `docs/live-snapshot-operations.md`
+- `docs/live-snapshot-automation-plan.md`
 
 ## Backtest
 
@@ -309,6 +314,7 @@ data/backtests/2026/build-4.3.0/
 data/backtests/2026/build-4.3.1/
 data/backtests/2026/build-4.3.2/
 data/historical/2026-enriched/
+data/live-snapshots/2026/
 ```
 
 Endpoints:
@@ -341,6 +347,36 @@ Endpoints:
 - `GET /backtests/2026/build/4.3.2/metrics/captain`
 - `GET /backtests/2026/build/4.3.2/metrics/score-bands`
 - `GET /backtests/2026/compare/all`
+
+## Snapshots vivos pre-rodada
+
+Executar dry-run:
+
+```bash
+npm run live:snapshot:capture -- --season=2026 --dry-run
+```
+
+Capturar snapshot local:
+
+```bash
+npm run live:snapshot:capture -- --season=2026
+```
+
+Auditar integridade:
+
+```bash
+npm run live:snapshot:audit -- --season=2026
+```
+
+Endpoints:
+
+- `GET /live-snapshots/2026/coverage`
+- `GET /live-snapshots/2026/rounds`
+- `GET /live-snapshots/2026/round/:round`
+- `GET /live-snapshots/2026/round/:round/latest`
+- `GET /live-snapshots/2026/round/:round/latest-valid-pre-round`
+- `GET /live-snapshots/2026/snapshot/:snapshotId`
+- `GET /live-snapshots/2026/integrity`
 
 ## Tratamento de erros
 
