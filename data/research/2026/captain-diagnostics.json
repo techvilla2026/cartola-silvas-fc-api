@@ -1,0 +1,910 @@
+{
+  "schemaVersion": "captain-policy-diagnostics/v1",
+  "generatedAt": "2026-07-14T00:40:07.104Z",
+  "season": 2026,
+  "engineVersion": "flutter-parity-enriched-engine/4.3.2",
+  "researchEngineVersion": "engine-research-lab/4.7.0",
+  "dataFingerprint": "2d848a23d8c8ee067ac3bccd0072f360b727a334ebc0e33ff9d6cdf907fd9686",
+  "configFingerprint": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+  "codeVersion": "4.7.0",
+  "sourceBuildId": "build-4.3.2",
+  "inputRounds": [
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18
+  ],
+  "evaluatedRounds": [
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18
+  ],
+  "warnings": [
+    "Status pre-rodada permaneceu indisponivel.",
+    "Scouts historicos permaneceram desativados como oficiais.",
+    "Dados recentes sao reconstruidos apenas de rodadas anteriores."
+  ],
+  "limitations": [
+    "Sem status historico seguro.",
+    "Sem lineupProbabilityBeforeRound.",
+    "Sem Comparador historico por falta de elenco real do usuario."
+  ],
+  "temporalPolicy": {
+    "decisionsFrozenBeforePostRoundComparison": true,
+    "onlyPreviousRoundsForWalkForward": true,
+    "oracleUsedForEvaluationOnly": true,
+    "futureLeakageAllowed": false
+  },
+  "officialPolicyId": "official",
+  "policies": {
+    "official": {
+      "rounds": 17,
+      "averageActual": 4.2455,
+      "averageGapToBest": 7.1545,
+      "bestRate": 0.1176,
+      "top3Rate": 0.2941,
+      "temporalStatus": "PRE_ROUND_SAFE"
+    },
+    "highestPrediction": {
+      "rounds": 17,
+      "averageActual": 4.6235,
+      "averageGapToBest": 6.6941,
+      "bestRate": 0.1765,
+      "top3Rate": 0.5294,
+      "temporalStatus": "PRE_ROUND_SAFE"
+    },
+    "highestAnalysis": {
+      "rounds": 17,
+      "averageActual": 3.9588,
+      "averageGapToBest": 7.3588,
+      "bestRate": 0.0588,
+      "top3Rate": 0.4118,
+      "temporalStatus": "PRE_ROUND_SAFE"
+    },
+    "highestAverage": {
+      "rounds": 17,
+      "averageActual": 5.0706,
+      "averageGapToBest": 6.2471,
+      "bestRate": 0.2353,
+      "top3Rate": 0.5294,
+      "temporalStatus": "PRE_ROUND_SAFE"
+    },
+    "oracleBestActual": {
+      "rounds": 17,
+      "averageActual": 11.3176,
+      "averageGapToBest": 0,
+      "bestRate": 1,
+      "top3Rate": 1,
+      "temporalStatus": "ORACLE_EVALUATION_ONLY"
+    }
+  },
+  "rounds": [
+    {
+      "official": {
+        "round": 2,
+        "athleteId": 103767,
+        "actualPoints": 2.4,
+        "gapToBest": 14.1,
+        "wasBest": false,
+        "wasTop3": false,
+        "temporalStatus": "PRE_ROUND_POLICY"
+      },
+      "highestPrediction": {
+        "round": 2,
+        "athleteId": 103767,
+        "actualPoints": 2.4,
+        "gapToBest": 14.1,
+        "wasBest": false,
+        "wasTop3": false,
+        "temporalStatus": "PRE_ROUND_POLICY"
+      },
+      "highestAnalysis": {
+        "round": 2,
+        "athleteId": 94968,
+        "actualPoints": 8.9,
+        "gapToBest": 7.6,
+        "wasBest": false,
+        "wasTop3": true,
+        "temporalStatus": "PRE_ROUND_POLICY"
+      },
+      "highestAverage": {
+        "round": 2,
+        "athleteId": 107231,
+        "actualPoints": 16.5,
+        "gapToBest": 0,
+        "wasBest": true,
+        "wasTop3": true,
+        "temporalStatus": "PRE_ROUND_POLICY"
+      },
+      "oracleBestActual": {
+        "round": 2,
+        "athleteId": 107231,
+        "actualPoints": 16.5,
+        "gapToBest": 0,
+        "wasBest": true,
+        "wasTop3": true,
+        "temporalStatus": "ORACLE_EVALUATION_ONLY"
+      }
+    },
+    {
+      "official": {
+        "round": 3,
+        "athleteId": 105563,
+        "actualPoints": 0.7,
+        "gapToBest": 14.2,
+        "wasBest": false,
+        "wasTop3": false,
+        "temporalStatus": "PRE_ROUND_POLICY"
+      },
+      "highestPrediction": {
+        "round": 3,
+        "athleteId": 105563,
+        "actualPoints": 0.7,
+        "gapToBest": 14.2,
+        "wasBest": false,
+        "wasTop3": false,
+        "temporalStatus": "PRE_ROUND_POLICY"
+      },
+      "highestAnalysis": {
+        "round": 3,
+        "athleteId": 107231,
+        "actualPoints": 3.5,
+        "gapToBest": 11.4,
+        "wasBest": false,
+        "wasTop3": false,
+        "temporalStatus": "PRE_ROUND_POLICY"
+      },
+      "highestAverage": {
+        "round": 3,
+        "athleteId": 105563,
+        "actualPoints": 0.7,
+        "gapToBest": 14.2,
+        "wasBest": false,
+        "wasTop3": false,
+        "temporalStatus": "PRE_ROUND_POLICY"
+      },
+      "oracleBestActual": {
+        "round": 3,
+        "athleteId": 89274,
+        "actualPoints": 14.9,
+        "gapToBest": 0,
+        "wasBest": true,
+        "wasTop3": true,
+        "temporalStatus": "ORACLE_EVALUATION_ONLY"
+      }
+    },
+    {
+      "official": {
+        "round": 4,
+        "athleteId": 117910,
+        "actualPoints": 0.2,
+        "gapToBest": 4.6,
+        "wasBest": false,
+        "wasTop3": false,
+        "temporalStatus": "PRE_ROUND_POLICY"
+      },
+      "highestPrediction": {
+        "round": 4,
+        "athleteId": 117910,
+        "actualPoints": 0.2,
+        "gapToBest": 4.6,
+        "wasBest": false,
+        "wasTop3": false,
+        "temporalStatus": "PRE_ROUND_POLICY"
+      },
+      "highestAnalysis": {
+        "round": 4,
+        "athleteId": 117910,
+        "actualPoints": 0.2,
+        "gapToBest": 4.6,
+        "wasBest": false,
+        "wasTop3": false,
+        "temporalStatus": "PRE_ROUND_POLICY"
+      },
+      "highestAverage": {
+        "round": 4,
+        "athleteId": 117910,
+        "actualPoints": 0.2,
+        "gapToBest": 4.6,
+        "wasBest": false,
+        "wasTop3": false,
+        "temporalStatus": "PRE_ROUND_POLICY"
+      },
+      "oracleBestActual": {
+        "round": 4,
+        "athleteId": 143193,
+        "actualPoints": 4.8,
+        "gapToBest": 0,
+        "wasBest": true,
+        "wasTop3": true,
+        "temporalStatus": "ORACLE_EVALUATION_ONLY"
+      }
+    },
+    {
+      "official": {
+        "round": 5,
+        "athleteId": null,
+        "actualPoints": null,
+        "gapToBest": null,
+        "wasBest": false,
+        "wasTop3": false,
+        "temporalStatus": "PRE_ROUND_POLICY"
+      },
+      "highestPrediction": {
+        "round": 5,
+        "athleteId": 105531,
+        "actualPoints": 5.4,
+        "gapToBest": 0,
+        "wasBest": true,
+        "wasTop3": true,
+        "temporalStatus": "PRE_ROUND_POLICY"
+      },
+      "highestAnalysis": {
+        "round": 5,
+        "athleteId": 105531,
+        "actualPoints": 5.4,
+        "gapToBest": 0,
+        "wasBest": true,
+        "wasTop3": true,
+        "temporalStatus": "PRE_ROUND_POLICY"
+      },
+      "highestAverage": {
+        "round": 5,
+        "athleteId": 105531,
+        "actualPoints": 5.4,
+        "gapToBest": 0,
+        "wasBest": true,
+        "wasTop3": true,
+        "temporalStatus": "PRE_ROUND_POLICY"
+      },
+      "oracleBestActual": {
+        "round": 5,
+        "athleteId": 105531,
+        "actualPoints": 5.4,
+        "gapToBest": 0,
+        "wasBest": true,
+        "wasTop3": true,
+        "temporalStatus": "ORACLE_EVALUATION_ONLY"
+      }
+    },
+    {
+      "official": {
+        "round": 6,
+        "athleteId": 63007,
+        "actualPoints": 3.7,
+        "gapToBest": 5.2,
+        "wasBest": false,
+        "wasTop3": true,
+        "temporalStatus": "PRE_ROUND_POLICY"
+      },
+      "highestPrediction": {
+        "round": 6,
+        "athleteId": 63007,
+        "actualPoints": 3.7,
+        "gapToBest": 5.2,
+        "wasBest": false,
+        "wasTop3": true,
+        "temporalStatus": "PRE_ROUND_POLICY"
+      },
+      "highestAnalysis": {
+        "round": 6,
+        "athleteId": 63007,
+        "actualPoints": 3.7,
+        "gapToBest": 5.2,
+        "wasBest": false,
+        "wasTop3": true,
+        "temporalStatus": "PRE_ROUND_POLICY"
+      },
+      "highestAverage": {
+        "round": 6,
+        "athleteId": 63007,
+        "actualPoints": 3.7,
+        "gapToBest": 5.2,
+        "wasBest": false,
+        "wasTop3": true,
+        "temporalStatus": "PRE_ROUND_POLICY"
+      },
+      "oracleBestActual": {
+        "round": 6,
+        "athleteId": 104118,
+        "actualPoints": 8.9,
+        "gapToBest": 0,
+        "wasBest": true,
+        "wasTop3": true,
+        "temporalStatus": "ORACLE_EVALUATION_ONLY"
+      }
+    },
+    {
+      "official": {
+        "round": 7,
+        "athleteId": null,
+        "actualPoints": null,
+        "gapToBest": null,
+        "wasBest": false,
+        "wasTop3": false,
+        "temporalStatus": "PRE_ROUND_POLICY"
+      },
+      "highestPrediction": {
+        "round": 7,
+        "athleteId": 114802,
+        "actualPoints": 2.1,
+        "gapToBest": 9.1,
+        "wasBest": false,
+        "wasTop3": false,
+        "temporalStatus": "PRE_ROUND_POLICY"
+      },
+      "highestAnalysis": {
+        "round": 7,
+        "athleteId": 114802,
+        "actualPoints": 2.1,
+        "gapToBest": 9.1,
+        "wasBest": false,
+        "wasTop3": false,
+        "temporalStatus": "PRE_ROUND_POLICY"
+      },
+      "highestAverage": {
+        "round": 7,
+        "athleteId": 114802,
+        "actualPoints": 2.1,
+        "gapToBest": 9.1,
+        "wasBest": false,
+        "wasTop3": false,
+        "temporalStatus": "PRE_ROUND_POLICY"
+      },
+      "oracleBestActual": {
+        "round": 7,
+        "athleteId": 107231,
+        "actualPoints": 11.2,
+        "gapToBest": 0,
+        "wasBest": true,
+        "wasTop3": true,
+        "temporalStatus": "ORACLE_EVALUATION_ONLY"
+      }
+    },
+    {
+      "official": {
+        "round": 8,
+        "athleteId": 132412,
+        "actualPoints": 1.7,
+        "gapToBest": 10.3,
+        "wasBest": false,
+        "wasTop3": false,
+        "temporalStatus": "PRE_ROUND_POLICY"
+      },
+      "highestPrediction": {
+        "round": 8,
+        "athleteId": 132412,
+        "actualPoints": 1.7,
+        "gapToBest": 10.3,
+        "wasBest": false,
+        "wasTop3": false,
+        "temporalStatus": "PRE_ROUND_POLICY"
+      },
+      "highestAnalysis": {
+        "round": 8,
+        "athleteId": 132412,
+        "actualPoints": 1.7,
+        "gapToBest": 10.3,
+        "wasBest": false,
+        "wasTop3": false,
+        "temporalStatus": "PRE_ROUND_POLICY"
+      },
+      "highestAverage": {
+        "round": 8,
+        "athleteId": 132412,
+        "actualPoints": 1.7,
+        "gapToBest": 10.3,
+        "wasBest": false,
+        "wasTop3": false,
+        "temporalStatus": "PRE_ROUND_POLICY"
+      },
+      "oracleBestActual": {
+        "round": 8,
+        "athleteId": 116065,
+        "actualPoints": 12,
+        "gapToBest": 0,
+        "wasBest": true,
+        "wasTop3": true,
+        "temporalStatus": "ORACLE_EVALUATION_ONLY"
+      }
+    },
+    {
+      "official": {
+        "round": 9,
+        "athleteId": 63007,
+        "actualPoints": 7.8,
+        "gapToBest": 0,
+        "wasBest": true,
+        "wasTop3": true,
+        "temporalStatus": "PRE_ROUND_POLICY"
+      },
+      "highestPrediction": {
+        "round": 9,
+        "athleteId": 63007,
+        "actualPoints": 7.8,
+        "gapToBest": 0,
+        "wasBest": true,
+        "wasTop3": true,
+        "temporalStatus": "PRE_ROUND_POLICY"
+      },
+      "highestAnalysis": {
+        "round": 9,
+        "athleteId": 63008,
+        "actualPoints": -1.4,
+        "gapToBest": 9.2,
+        "wasBest": false,
+        "wasTop3": false,
+        "temporalStatus": "PRE_ROUND_POLICY"
+      },
+      "highestAverage": {
+        "round": 9,
+        "athleteId": 63007,
+        "actualPoints": 7.8,
+        "gapToBest": 0,
+        "wasBest": true,
+        "wasTop3": true,
+        "temporalStatus": "PRE_ROUND_POLICY"
+      },
+      "oracleBestActual": {
+        "round": 9,
+        "athleteId": 63007,
+        "actualPoints": 7.8,
+        "gapToBest": 0,
+        "wasBest": true,
+        "wasTop3": true,
+        "temporalStatus": "ORACLE_EVALUATION_ONLY"
+      }
+    },
+    {
+      "official": {
+        "round": 10,
+        "athleteId": 105213,
+        "actualPoints": 5,
+        "gapToBest": 2.2,
+        "wasBest": false,
+        "wasTop3": true,
+        "temporalStatus": "PRE_ROUND_POLICY"
+      },
+      "highestPrediction": {
+        "round": 10,
+        "athleteId": 105213,
+        "actualPoints": 5,
+        "gapToBest": 2.2,
+        "wasBest": false,
+        "wasTop3": true,
+        "temporalStatus": "PRE_ROUND_POLICY"
+      },
+      "highestAnalysis": {
+        "round": 10,
+        "athleteId": 116065,
+        "actualPoints": 3.2,
+        "gapToBest": 4,
+        "wasBest": false,
+        "wasTop3": false,
+        "temporalStatus": "PRE_ROUND_POLICY"
+      },
+      "highestAverage": {
+        "round": 10,
+        "athleteId": 105213,
+        "actualPoints": 5,
+        "gapToBest": 2.2,
+        "wasBest": false,
+        "wasTop3": true,
+        "temporalStatus": "PRE_ROUND_POLICY"
+      },
+      "oracleBestActual": {
+        "round": 10,
+        "athleteId": 99815,
+        "actualPoints": 7.2,
+        "gapToBest": 0,
+        "wasBest": true,
+        "wasTop3": true,
+        "temporalStatus": "ORACLE_EVALUATION_ONLY"
+      }
+    },
+    {
+      "official": {
+        "round": 11,
+        "athleteId": 63007,
+        "actualPoints": 5.3,
+        "gapToBest": 5.8,
+        "wasBest": false,
+        "wasTop3": true,
+        "temporalStatus": "PRE_ROUND_POLICY"
+      },
+      "highestPrediction": {
+        "round": 11,
+        "athleteId": 63007,
+        "actualPoints": 5.3,
+        "gapToBest": 5.8,
+        "wasBest": false,
+        "wasTop3": true,
+        "temporalStatus": "PRE_ROUND_POLICY"
+      },
+      "highestAnalysis": {
+        "round": 11,
+        "athleteId": 123648,
+        "actualPoints": 2.8,
+        "gapToBest": 8.3,
+        "wasBest": false,
+        "wasTop3": false,
+        "temporalStatus": "PRE_ROUND_POLICY"
+      },
+      "highestAverage": {
+        "round": 11,
+        "athleteId": 63007,
+        "actualPoints": 5.3,
+        "gapToBest": 5.8,
+        "wasBest": false,
+        "wasTop3": true,
+        "temporalStatus": "PRE_ROUND_POLICY"
+      },
+      "oracleBestActual": {
+        "round": 11,
+        "athleteId": 107231,
+        "actualPoints": 11.1,
+        "gapToBest": 0,
+        "wasBest": true,
+        "wasTop3": true,
+        "temporalStatus": "ORACLE_EVALUATION_ONLY"
+      }
+    },
+    {
+      "official": {
+        "round": 12,
+        "athleteId": null,
+        "actualPoints": null,
+        "gapToBest": null,
+        "wasBest": false,
+        "wasTop3": false,
+        "temporalStatus": "PRE_ROUND_POLICY"
+      },
+      "highestPrediction": {
+        "round": 12,
+        "athleteId": 63007,
+        "actualPoints": 7.5,
+        "gapToBest": 2.5,
+        "wasBest": false,
+        "wasTop3": true,
+        "temporalStatus": "PRE_ROUND_POLICY"
+      },
+      "highestAnalysis": {
+        "round": 12,
+        "athleteId": 94583,
+        "actualPoints": 7.9,
+        "gapToBest": 2.1,
+        "wasBest": false,
+        "wasTop3": true,
+        "temporalStatus": "PRE_ROUND_POLICY"
+      },
+      "highestAverage": {
+        "round": 12,
+        "athleteId": 118844,
+        "actualPoints": 1,
+        "gapToBest": 9,
+        "wasBest": false,
+        "wasTop3": false,
+        "temporalStatus": "PRE_ROUND_POLICY"
+      },
+      "oracleBestActual": {
+        "round": 12,
+        "athleteId": 107231,
+        "actualPoints": 10,
+        "gapToBest": 0,
+        "wasBest": true,
+        "wasTop3": true,
+        "temporalStatus": "ORACLE_EVALUATION_ONLY"
+      }
+    },
+    {
+      "official": {
+        "round": 13,
+        "athleteId": 107231,
+        "actualPoints": 19.9,
+        "gapToBest": 0,
+        "wasBest": true,
+        "wasTop3": true,
+        "temporalStatus": "PRE_ROUND_POLICY"
+      },
+      "highestPrediction": {
+        "round": 13,
+        "athleteId": 107231,
+        "actualPoints": 19.9,
+        "gapToBest": 0,
+        "wasBest": true,
+        "wasTop3": true,
+        "temporalStatus": "PRE_ROUND_POLICY"
+      },
+      "highestAnalysis": {
+        "round": 13,
+        "athleteId": 116706,
+        "actualPoints": 4.3,
+        "gapToBest": 15.6,
+        "wasBest": false,
+        "wasTop3": false,
+        "temporalStatus": "PRE_ROUND_POLICY"
+      },
+      "highestAverage": {
+        "round": 13,
+        "athleteId": 107231,
+        "actualPoints": 19.9,
+        "gapToBest": 0,
+        "wasBest": true,
+        "wasTop3": true,
+        "temporalStatus": "PRE_ROUND_POLICY"
+      },
+      "oracleBestActual": {
+        "round": 13,
+        "athleteId": 107231,
+        "actualPoints": 19.9,
+        "gapToBest": 0,
+        "wasBest": true,
+        "wasTop3": true,
+        "temporalStatus": "ORACLE_EVALUATION_ONLY"
+      }
+    },
+    {
+      "official": {
+        "round": 14,
+        "athleteId": 102906,
+        "actualPoints": -2,
+        "gapToBest": 13.8,
+        "wasBest": false,
+        "wasTop3": false,
+        "temporalStatus": "PRE_ROUND_POLICY"
+      },
+      "highestPrediction": {
+        "round": 14,
+        "athleteId": 102906,
+        "actualPoints": -2,
+        "gapToBest": 13.8,
+        "wasBest": false,
+        "wasTop3": false,
+        "temporalStatus": "PRE_ROUND_POLICY"
+      },
+      "highestAnalysis": {
+        "round": 14,
+        "athleteId": 107231,
+        "actualPoints": 5.3,
+        "gapToBest": 6.5,
+        "wasBest": false,
+        "wasTop3": true,
+        "temporalStatus": "PRE_ROUND_POLICY"
+      },
+      "highestAverage": {
+        "round": 14,
+        "athleteId": 102906,
+        "actualPoints": -2,
+        "gapToBest": 13.8,
+        "wasBest": false,
+        "wasTop3": false,
+        "temporalStatus": "PRE_ROUND_POLICY"
+      },
+      "oracleBestActual": {
+        "round": 14,
+        "athleteId": 94583,
+        "actualPoints": 11.8,
+        "gapToBest": 0,
+        "wasBest": true,
+        "wasTop3": true,
+        "temporalStatus": "ORACLE_EVALUATION_ONLY"
+      }
+    },
+    {
+      "official": {
+        "round": 15,
+        "athleteId": 107231,
+        "actualPoints": 2,
+        "gapToBest": 8.5,
+        "wasBest": false,
+        "wasTop3": false,
+        "temporalStatus": "PRE_ROUND_POLICY"
+      },
+      "highestPrediction": {
+        "round": 15,
+        "athleteId": 107231,
+        "actualPoints": 2,
+        "gapToBest": 8.5,
+        "wasBest": false,
+        "wasTop3": false,
+        "temporalStatus": "PRE_ROUND_POLICY"
+      },
+      "highestAnalysis": {
+        "round": 15,
+        "athleteId": 107231,
+        "actualPoints": 2,
+        "gapToBest": 8.5,
+        "wasBest": false,
+        "wasTop3": false,
+        "temporalStatus": "PRE_ROUND_POLICY"
+      },
+      "highestAverage": {
+        "round": 15,
+        "athleteId": 107231,
+        "actualPoints": 2,
+        "gapToBest": 8.5,
+        "wasBest": false,
+        "wasTop3": false,
+        "temporalStatus": "PRE_ROUND_POLICY"
+      },
+      "oracleBestActual": {
+        "round": 15,
+        "athleteId": 63007,
+        "actualPoints": 10.5,
+        "gapToBest": 0,
+        "wasBest": true,
+        "wasTop3": true,
+        "temporalStatus": "ORACLE_EVALUATION_ONLY"
+      }
+    },
+    {
+      "official": {
+        "round": 16,
+        "athleteId": null,
+        "actualPoints": null,
+        "gapToBest": null,
+        "wasBest": false,
+        "wasTop3": false,
+        "temporalStatus": "PRE_ROUND_POLICY"
+      },
+      "highestPrediction": {
+        "round": 16,
+        "athleteId": 63007,
+        "actualPoints": 3.9,
+        "gapToBest": 7.6,
+        "wasBest": false,
+        "wasTop3": false,
+        "temporalStatus": "PRE_ROUND_POLICY"
+      },
+      "highestAnalysis": {
+        "round": 16,
+        "athleteId": 107093,
+        "actualPoints": 4.7,
+        "gapToBest": 6.8,
+        "wasBest": false,
+        "wasTop3": false,
+        "temporalStatus": "PRE_ROUND_POLICY"
+      },
+      "highestAverage": {
+        "round": 16,
+        "athleteId": 63007,
+        "actualPoints": 3.9,
+        "gapToBest": 7.6,
+        "wasBest": false,
+        "wasTop3": false,
+        "temporalStatus": "PRE_ROUND_POLICY"
+      },
+      "oracleBestActual": {
+        "round": 16,
+        "athleteId": 99815,
+        "actualPoints": 11.5,
+        "gapToBest": 0,
+        "wasBest": true,
+        "wasTop3": true,
+        "temporalStatus": "ORACLE_EVALUATION_ONLY"
+      }
+    },
+    {
+      "official": {
+        "round": 17,
+        "athleteId": null,
+        "actualPoints": null,
+        "gapToBest": null,
+        "wasBest": false,
+        "wasTop3": false,
+        "temporalStatus": "PRE_ROUND_POLICY"
+      },
+      "highestPrediction": {
+        "round": 17,
+        "athleteId": 94583,
+        "actualPoints": 2.1,
+        "gapToBest": 6.4,
+        "wasBest": false,
+        "wasTop3": true,
+        "temporalStatus": "PRE_ROUND_POLICY"
+      },
+      "highestAnalysis": {
+        "round": 17,
+        "athleteId": 94583,
+        "actualPoints": 2.1,
+        "gapToBest": 6.4,
+        "wasBest": false,
+        "wasTop3": true,
+        "temporalStatus": "PRE_ROUND_POLICY"
+      },
+      "highestAverage": {
+        "round": 17,
+        "athleteId": 94583,
+        "actualPoints": 2.1,
+        "gapToBest": 6.4,
+        "wasBest": false,
+        "wasTop3": true,
+        "temporalStatus": "PRE_ROUND_POLICY"
+      },
+      "oracleBestActual": {
+        "round": 17,
+        "athleteId": 105531,
+        "actualPoints": 8.5,
+        "gapToBest": 0,
+        "wasBest": true,
+        "wasTop3": true,
+        "temporalStatus": "ORACLE_EVALUATION_ONLY"
+      }
+    },
+    {
+      "official": {
+        "round": 18,
+        "athleteId": null,
+        "actualPoints": null,
+        "gapToBest": null,
+        "wasBest": false,
+        "wasTop3": false,
+        "temporalStatus": "PRE_ROUND_POLICY"
+      },
+      "highestPrediction": {
+        "round": 18,
+        "athleteId": 143193,
+        "actualPoints": 10.9,
+        "gapToBest": 9.5,
+        "wasBest": false,
+        "wasTop3": true,
+        "temporalStatus": "PRE_ROUND_POLICY"
+      },
+      "highestAnalysis": {
+        "round": 18,
+        "athleteId": 143193,
+        "actualPoints": 10.9,
+        "gapToBest": 9.5,
+        "wasBest": false,
+        "wasTop3": true,
+        "temporalStatus": "PRE_ROUND_POLICY"
+      },
+      "highestAverage": {
+        "round": 18,
+        "athleteId": 143193,
+        "actualPoints": 10.9,
+        "gapToBest": 9.5,
+        "wasBest": false,
+        "wasTop3": true,
+        "temporalStatus": "PRE_ROUND_POLICY"
+      },
+      "oracleBestActual": {
+        "round": 18,
+        "athleteId": 94583,
+        "actualPoints": 20.4,
+        "gapToBest": 0,
+        "wasBest": true,
+        "wasTop3": true,
+        "temporalStatus": "ORACLE_EVALUATION_ONLY"
+      }
+    }
+  ],
+  "warning": "oracleBestActual e apenas baseline de avaliacao e nunca candidato de producao."
+}

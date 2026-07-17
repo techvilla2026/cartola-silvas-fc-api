@@ -1,0 +1,257 @@
+{
+  "schemaVersion": "engine-experiments-summary/v1",
+  "generatedAt": "2026-07-14T00:40:09.237Z",
+  "season": 2026,
+  "engineVersion": "flutter-parity-enriched-engine/4.3.2",
+  "researchEngineVersion": "engine-research-lab/4.7.0",
+  "dataFingerprint": "2d848a23d8c8ee067ac3bccd0072f360b727a334ebc0e33ff9d6cdf907fd9686",
+  "configFingerprint": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+  "codeVersion": "4.7.0",
+  "sourceBuildId": "build-4.3.2",
+  "inputRounds": [
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18
+  ],
+  "evaluatedRounds": [
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18
+  ],
+  "warnings": [
+    "Status pre-rodada permaneceu indisponivel.",
+    "Scouts historicos permaneceram desativados como oficiais.",
+    "Dados recentes sao reconstruidos apenas de rodadas anteriores."
+  ],
+  "limitations": [
+    "Sem status historico seguro.",
+    "Sem lineupProbabilityBeforeRound.",
+    "Sem Comparador historico por falta de elenco real do usuario."
+  ],
+  "temporalPolicy": {
+    "decisionsFrozenBeforePostRoundComparison": true,
+    "onlyPreviousRoundsForWalkForward": true,
+    "oracleUsedForEvaluationOnly": true,
+    "futureLeakageAllowed": false
+  },
+  "status": "OFFLINE_ONLY",
+  "candidates": [
+    {
+      "candidateId": "bias-correction-walk-forward",
+      "description": "Corrige a previsao pelo vies medio observado apenas em rodadas anteriores.",
+      "summary": {
+        "error": {
+          "count": 4840,
+          "mae": 2.9355,
+          "rmse": 3.9321,
+          "bias": -0.0116,
+          "medianAbsoluteError": 2.2919,
+          "p75AbsoluteError": 3.813,
+          "p90AbsoluteError": 6.1977,
+          "p95AbsoluteError": 8.1067,
+          "within1": 0.2155,
+          "within2": 0.4411,
+          "within3": 0.6322,
+          "within5": 0.8421,
+          "above5ErrorRate": 0.1579,
+          "above10ErrorRate": 0.0269
+        },
+        "ranking": {
+          "count": 4840,
+          "spearman": 0.6946,
+          "kendall": null,
+          "kendallStatus": "SKIPPED_TOO_MANY_PAIRS",
+          "at5": {
+            "precision": 0,
+            "recall": 0,
+            "hitRate": 1,
+            "ndcg": 0.086
+          },
+          "at10": {
+            "precision": 0,
+            "recall": 0,
+            "hitRate": 1,
+            "ndcg": 0.1041
+          },
+          "at20": {
+            "precision": 0.35,
+            "recall": 0.3889,
+            "hitRate": 0.95,
+            "ndcg": 0.1512
+          }
+        }
+      },
+      "delta": {
+        "mae": 0.0721,
+        "rmse": -0.1048,
+        "bias": 0.8256
+      },
+      "robustness": {
+        "status": "EVALUATED",
+        "iterations": 200,
+        "meanDeltaMae": 0.0822,
+        "ci95": [
+          0.0822,
+          0.0822
+        ],
+        "deterministicSeed": "round-index-lcg-37-17"
+      },
+      "productionImpact": "NONE"
+    },
+    {
+      "candidateId": "home-away-bias-walk-forward",
+      "description": "Corrige vies por mando usando apenas rodadas anteriores.",
+      "summary": {
+        "error": {
+          "count": 4840,
+          "mae": 2.9375,
+          "rmse": 3.9329,
+          "bias": -0.0121,
+          "medianAbsoluteError": 2.2851,
+          "p75AbsoluteError": 3.8754,
+          "p90AbsoluteError": 6.2131,
+          "p95AbsoluteError": 8.169,
+          "within1": 0.2194,
+          "within2": 0.4465,
+          "within3": 0.63,
+          "within5": 0.8426,
+          "above5ErrorRate": 0.1574,
+          "above10ErrorRate": 0.0267
+        },
+        "ranking": {
+          "count": 4840,
+          "spearman": 0.7098,
+          "kendall": null,
+          "kendallStatus": "SKIPPED_TOO_MANY_PAIRS",
+          "at5": {
+            "precision": 0,
+            "recall": 0,
+            "hitRate": 1,
+            "ndcg": 0.086
+          },
+          "at10": {
+            "precision": 0,
+            "recall": 0,
+            "hitRate": 1,
+            "ndcg": 0.0984
+          },
+          "at20": {
+            "precision": 0.4,
+            "recall": 0.4444,
+            "hitRate": 0.95,
+            "ndcg": 0.1509
+          }
+        }
+      },
+      "delta": {
+        "mae": 0.0741,
+        "rmse": -0.104,
+        "bias": 0.8251
+      },
+      "robustness": {
+        "status": "EVALUATED",
+        "iterations": 200,
+        "meanDeltaMae": 0.0842,
+        "ci95": [
+          0.0842,
+          0.0842
+        ],
+        "deterministicSeed": "round-index-lcg-37-17"
+      },
+      "productionImpact": "NONE"
+    },
+    {
+      "candidateId": "price-band-bias-walk-forward",
+      "description": "Corrige vies por faixa de preco usando apenas rodadas anteriores.",
+      "summary": {
+        "error": {
+          "count": 4840,
+          "mae": 2.9385,
+          "rmse": 3.9105,
+          "bias": 0.0096,
+          "medianAbsoluteError": 2.3285,
+          "p75AbsoluteError": 3.7627,
+          "p90AbsoluteError": 6.1138,
+          "p95AbsoluteError": 7.9953,
+          "within1": 0.2087,
+          "within2": 0.4258,
+          "within3": 0.6335,
+          "within5": 0.8477,
+          "above5ErrorRate": 0.1523,
+          "above10ErrorRate": 0.0262
+        },
+        "ranking": {
+          "count": 4840,
+          "spearman": 0.691,
+          "kendall": null,
+          "kendallStatus": "SKIPPED_TOO_MANY_PAIRS",
+          "at5": {
+            "precision": 0,
+            "recall": 0,
+            "hitRate": 1,
+            "ndcg": 0.1919
+          },
+          "at10": {
+            "precision": 0,
+            "recall": 0,
+            "hitRate": 1,
+            "ndcg": 0.1544
+          },
+          "at20": {
+            "precision": 0.15,
+            "recall": 0.1667,
+            "hitRate": 0.95,
+            "ndcg": 0.1831
+          }
+        }
+      },
+      "delta": {
+        "mae": 0.0751,
+        "rmse": -0.1264,
+        "bias": 0.8468
+      },
+      "robustness": {
+        "status": "EVALUATED",
+        "iterations": 200,
+        "meanDeltaMae": 0.0852,
+        "ci95": [
+          0.0852,
+          0.0852
+        ],
+        "deterministicSeed": "round-index-lcg-37-17"
+      },
+      "productionImpact": "NONE"
+    }
+  ],
+  "officialEngineChanged": false,
+  "shadowModePrepared": true,
+  "shadowModeActive": false
+}

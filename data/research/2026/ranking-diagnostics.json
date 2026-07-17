@@ -1,0 +1,622 @@
+{
+  "schemaVersion": "engine-ranking-diagnostics/v1",
+  "generatedAt": "2026-07-14T00:40:07.013Z",
+  "season": 2026,
+  "engineVersion": "flutter-parity-enriched-engine/4.3.2",
+  "researchEngineVersion": "engine-research-lab/4.7.0",
+  "dataFingerprint": "2d848a23d8c8ee067ac3bccd0072f360b727a334ebc0e33ff9d6cdf907fd9686",
+  "configFingerprint": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+  "codeVersion": "4.7.0",
+  "sourceBuildId": "build-4.3.2",
+  "inputRounds": [
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18
+  ],
+  "evaluatedRounds": [
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18
+  ],
+  "warnings": [
+    "Status pre-rodada permaneceu indisponivel.",
+    "Scouts historicos permaneceram desativados como oficiais.",
+    "Dados recentes sao reconstruidos apenas de rodadas anteriores."
+  ],
+  "limitations": [
+    "Sem status historico seguro.",
+    "Sem lineupProbabilityBeforeRound.",
+    "Sem Comparador historico por falta de elenco real do usuario."
+  ],
+  "temporalPolicy": {
+    "decisionsFrozenBeforePostRoundComparison": true,
+    "onlyPreviousRoundsForWalkForward": true,
+    "oracleUsedForEvaluationOnly": true,
+    "futureLeakageAllowed": false
+  },
+  "overall": {
+    "count": 5126,
+    "spearman": 0.7014,
+    "kendall": null,
+    "kendallStatus": "SKIPPED_TOO_MANY_PAIRS",
+    "at5": {
+      "precision": 0.2,
+      "recall": 0.2,
+      "hitRate": 1,
+      "ndcg": 0.1829
+    },
+    "at10": {
+      "precision": 0.1,
+      "recall": 0.1,
+      "hitRate": 1,
+      "ndcg": 0.1965
+    },
+    "at20": {
+      "precision": 0.35,
+      "recall": 0.3889,
+      "hitRate": 1,
+      "ndcg": 0.1868
+    }
+  },
+  "byRound": {
+    "10": {
+      "count": 317,
+      "spearman": 0.2057,
+      "kendall": 0.1429,
+      "kendallStatus": "EVALUATED",
+      "at5": {
+        "precision": 0,
+        "recall": 0,
+        "hitRate": 0.4,
+        "ndcg": 0.1732
+      },
+      "at10": {
+        "precision": 0,
+        "recall": 0,
+        "hitRate": 0.4,
+        "ndcg": 0.2159
+      },
+      "at20": {
+        "precision": 0.1,
+        "recall": 0.1,
+        "hitRate": 0.4,
+        "ndcg": 0.2848
+      }
+    },
+    "11": {
+      "count": 312,
+      "spearman": 0.3507,
+      "kendall": 0.2507,
+      "kendallStatus": "EVALUATED",
+      "at5": {
+        "precision": 0,
+        "recall": 0,
+        "hitRate": 0.8,
+        "ndcg": 0.3523
+      },
+      "at10": {
+        "precision": 0,
+        "recall": 0,
+        "hitRate": 0.5,
+        "ndcg": 0.3251
+      },
+      "at20": {
+        "precision": 0.15,
+        "recall": 0.15,
+        "hitRate": 0.4,
+        "ndcg": 0.3181
+      }
+    },
+    "12": {
+      "count": 318,
+      "spearman": 0.3149,
+      "kendall": 0.2183,
+      "kendallStatus": "EVALUATED",
+      "at5": {
+        "precision": 0,
+        "recall": 0,
+        "hitRate": 0.4,
+        "ndcg": 0.1958
+      },
+      "at10": {
+        "precision": 0,
+        "recall": 0,
+        "hitRate": 0.4,
+        "ndcg": 0.2568
+      },
+      "at20": {
+        "precision": 0.1,
+        "recall": 0.1,
+        "hitRate": 0.45,
+        "ndcg": 0.3281
+      }
+    },
+    "13": {
+      "count": 313,
+      "spearman": 0.2687,
+      "kendall": 0.1881,
+      "kendallStatus": "EVALUATED",
+      "at5": {
+        "precision": 0.4,
+        "recall": 0.4,
+        "hitRate": 0.4,
+        "ndcg": 0.6126
+      },
+      "at10": {
+        "precision": 0.3,
+        "recall": 0.3,
+        "hitRate": 0.5,
+        "ndcg": 0.6157
+      },
+      "at20": {
+        "precision": 0.3,
+        "recall": 0.3,
+        "hitRate": 0.65,
+        "ndcg": 0.6527
+      }
+    },
+    "14": {
+      "count": 313,
+      "spearman": 0.1819,
+      "kendall": 0.1276,
+      "kendallStatus": "EVALUATED",
+      "at5": {
+        "precision": 0,
+        "recall": 0,
+        "hitRate": 0.6,
+        "ndcg": 0.2489
+      },
+      "at10": {
+        "precision": 0,
+        "recall": 0,
+        "hitRate": 0.4,
+        "ndcg": 0.2136
+      },
+      "at20": {
+        "precision": 0.05,
+        "recall": 0.05,
+        "hitRate": 0.35,
+        "ndcg": 0.2338
+      }
+    },
+    "15": {
+      "count": 312,
+      "spearman": 0.2259,
+      "kendall": 0.1569,
+      "kendallStatus": "EVALUATED",
+      "at5": {
+        "precision": 0,
+        "recall": 0,
+        "hitRate": 0.2,
+        "ndcg": 0.213
+      },
+      "at10": {
+        "precision": 0,
+        "recall": 0,
+        "hitRate": 0.5,
+        "ndcg": 0.3116
+      },
+      "at20": {
+        "precision": 0.15,
+        "recall": 0.15,
+        "hitRate": 0.4,
+        "ndcg": 0.3556
+      }
+    },
+    "16": {
+      "count": 312,
+      "spearman": 0.2982,
+      "kendall": 0.2117,
+      "kendallStatus": "EVALUATED",
+      "at5": {
+        "precision": 0,
+        "recall": 0,
+        "hitRate": 0.4,
+        "ndcg": 0.2432
+      },
+      "at10": {
+        "precision": 0.1,
+        "recall": 0.1,
+        "hitRate": 0.7,
+        "ndcg": 0.3485
+      },
+      "at20": {
+        "precision": 0.25,
+        "recall": 0.25,
+        "hitRate": 0.8,
+        "ndcg": 0.4382
+      }
+    },
+    "17": {
+      "count": 313,
+      "spearman": 0.2289,
+      "kendall": 0.1614,
+      "kendallStatus": "EVALUATED",
+      "at5": {
+        "precision": 0,
+        "recall": 0,
+        "hitRate": 0.2,
+        "ndcg": 0.1828
+      },
+      "at10": {
+        "precision": 0.1,
+        "recall": 0.1,
+        "hitRate": 0.2,
+        "ndcg": 0.2314
+      },
+      "at20": {
+        "precision": 0.1,
+        "recall": 0.1,
+        "hitRate": 0.35,
+        "ndcg": 0.2673
+      }
+    },
+    "18": {
+      "count": 317,
+      "spearman": 0.3604,
+      "kendall": 0.2489,
+      "kendallStatus": "EVALUATED",
+      "at5": {
+        "precision": 0.2,
+        "recall": 0.2,
+        "hitRate": 1,
+        "ndcg": 0.5832
+      },
+      "at10": {
+        "precision": 0.1,
+        "recall": 0.1,
+        "hitRate": 0.7,
+        "ndcg": 0.4887
+      },
+      "at20": {
+        "precision": 0.2,
+        "recall": 0.2,
+        "hitRate": 0.65,
+        "ndcg": 0.5332
+      }
+    },
+    "02": {
+      "count": 286,
+      "spearman": 0.2532,
+      "kendall": 0.1883,
+      "kendallStatus": "EVALUATED",
+      "at5": {
+        "precision": 0.2,
+        "recall": 0.2,
+        "hitRate": 0.4,
+        "ndcg": 0.3799
+      },
+      "at10": {
+        "precision": 0.1,
+        "recall": 0.1,
+        "hitRate": 0.4,
+        "ndcg": 0.362
+      },
+      "at20": {
+        "precision": 0.15,
+        "recall": 0.15,
+        "hitRate": 0.35,
+        "ndcg": 0.4122
+      }
+    },
+    "03": {
+      "count": 282,
+      "spearman": 0.1769,
+      "kendall": 0.1268,
+      "kendallStatus": "EVALUATED",
+      "at5": {
+        "precision": 0,
+        "recall": 0,
+        "hitRate": 0,
+        "ndcg": 0.1358
+      },
+      "at10": {
+        "precision": 0.1,
+        "recall": 0.1,
+        "hitRate": 0.3,
+        "ndcg": 0.2726
+      },
+      "at20": {
+        "precision": 0.1,
+        "recall": 0.1,
+        "hitRate": 0.35,
+        "ndcg": 0.2651
+      }
+    },
+    "04": {
+      "count": 219,
+      "spearman": 0.25,
+      "kendall": 0.1806,
+      "kendallStatus": "EVALUATED",
+      "at5": {
+        "precision": 0,
+        "recall": 0,
+        "hitRate": 0,
+        "ndcg": 0.0758
+      },
+      "at10": {
+        "precision": 0.3,
+        "recall": 0.3,
+        "hitRate": 0.4,
+        "ndcg": 0.2638
+      },
+      "at20": {
+        "precision": 0.25,
+        "recall": 0.25,
+        "hitRate": 0.35,
+        "ndcg": 0.3176
+      }
+    },
+    "05": {
+      "count": 252,
+      "spearman": 0.1814,
+      "kendall": 0.1261,
+      "kendallStatus": "EVALUATED",
+      "at5": {
+        "precision": 0,
+        "recall": 0,
+        "hitRate": 0.4,
+        "ndcg": 0.2387
+      },
+      "at10": {
+        "precision": 0.1,
+        "recall": 0.1,
+        "hitRate": 0.4,
+        "ndcg": 0.2876
+      },
+      "at20": {
+        "precision": 0.25,
+        "recall": 0.25,
+        "hitRate": 0.5,
+        "ndcg": 0.384
+      }
+    },
+    "06": {
+      "count": 316,
+      "spearman": 0.2028,
+      "kendall": 0.1413,
+      "kendallStatus": "EVALUATED",
+      "at5": {
+        "precision": 0,
+        "recall": 0,
+        "hitRate": 0.2,
+        "ndcg": 0.2933
+      },
+      "at10": {
+        "precision": 0,
+        "recall": 0,
+        "hitRate": 0.3,
+        "ndcg": 0.2845
+      },
+      "at20": {
+        "precision": 0.1,
+        "recall": 0.1,
+        "hitRate": 0.25,
+        "ndcg": 0.2995
+      }
+    },
+    "07": {
+      "count": 313,
+      "spearman": 0.2821,
+      "kendall": 0.1968,
+      "kendallStatus": "EVALUATED",
+      "at5": {
+        "precision": 0,
+        "recall": 0,
+        "hitRate": 0.4,
+        "ndcg": 0.2979
+      },
+      "at10": {
+        "precision": 0.1,
+        "recall": 0.1,
+        "hitRate": 0.4,
+        "ndcg": 0.3547
+      },
+      "at20": {
+        "precision": 0.25,
+        "recall": 0.25,
+        "hitRate": 0.45,
+        "ndcg": 0.4089
+      }
+    },
+    "08": {
+      "count": 315,
+      "spearman": 0.2371,
+      "kendall": 0.1658,
+      "kendallStatus": "EVALUATED",
+      "at5": {
+        "precision": 0,
+        "recall": 0,
+        "hitRate": 0.4,
+        "ndcg": 0.3066
+      },
+      "at10": {
+        "precision": 0.1,
+        "recall": 0.1,
+        "hitRate": 0.5,
+        "ndcg": 0.3845
+      },
+      "at20": {
+        "precision": 0.2,
+        "recall": 0.2,
+        "hitRate": 0.45,
+        "ndcg": 0.4129
+      }
+    },
+    "09": {
+      "count": 316,
+      "spearman": 0.2152,
+      "kendall": 0.1514,
+      "kendallStatus": "EVALUATED",
+      "at5": {
+        "precision": 0,
+        "recall": 0,
+        "hitRate": 0.2,
+        "ndcg": 0.2472
+      },
+      "at10": {
+        "precision": 0.1,
+        "recall": 0.1,
+        "hitRate": 0.3,
+        "ndcg": 0.2813
+      },
+      "at20": {
+        "precision": 0.2,
+        "recall": 0.2,
+        "hitRate": 0.3,
+        "ndcg": 0.3085
+      }
+    }
+  },
+  "byPosition": {
+    "GOL": {
+      "count": 331,
+      "spearman": 0.3128,
+      "kendall": 0.0003,
+      "kendallStatus": "EVALUATED",
+      "at5": {
+        "precision": 0,
+        "recall": 0,
+        "hitRate": 0.8,
+        "ndcg": 0.2028
+      },
+      "at10": {
+        "precision": 0.2,
+        "recall": 0.25,
+        "hitRate": 0.9,
+        "ndcg": 0.2293
+      },
+      "at20": {
+        "precision": 0.6,
+        "recall": 1,
+        "hitRate": 0.85,
+        "ndcg": 0.2039
+      }
+    },
+    "ATA": {
+      "count": 1423,
+      "spearman": 0.7636,
+      "kendall": null,
+      "kendallStatus": "SKIPPED_TOO_MANY_PAIRS",
+      "at5": {
+        "precision": 0.4,
+        "recall": 0.4,
+        "hitRate": 1,
+        "ndcg": 0.0858
+      },
+      "at10": {
+        "precision": 0.6,
+        "recall": 0.6,
+        "hitRate": 1,
+        "ndcg": 0.2022
+      },
+      "at20": {
+        "precision": 0.6,
+        "recall": 0.6667,
+        "hitRate": 1,
+        "ndcg": 0.1668
+      }
+    },
+    "MEI": {
+      "count": 1799,
+      "spearman": 0.7258,
+      "kendall": null,
+      "kendallStatus": "SKIPPED_TOO_MANY_PAIRS",
+      "at5": {
+        "precision": 0.6,
+        "recall": 0.6,
+        "hitRate": 1,
+        "ndcg": 0.2659
+      },
+      "at10": {
+        "precision": 0.3,
+        "recall": 0.3333,
+        "hitRate": 1,
+        "ndcg": 0.2536
+      },
+      "at20": {
+        "precision": 0.45,
+        "recall": 0.5,
+        "hitRate": 1,
+        "ndcg": 0.3035
+      }
+    },
+    "LAT": {
+      "count": 792,
+      "spearman": 0.6317,
+      "kendall": null,
+      "kendallStatus": "SKIPPED_TOO_MANY_PAIRS",
+      "at5": {
+        "precision": 0.2,
+        "recall": 0.25,
+        "hitRate": 1,
+        "ndcg": 0.298
+      },
+      "at10": {
+        "precision": 0.1,
+        "recall": 0.125,
+        "hitRate": 1,
+        "ndcg": 0.2762
+      },
+      "at20": {
+        "precision": 0.65,
+        "recall": 0.8667,
+        "hitRate": 0.95,
+        "ndcg": 0.2892
+      }
+    },
+    "ZAG": {
+      "count": 781,
+      "spearman": 0.6424,
+      "kendall": null,
+      "kendallStatus": "SKIPPED_TOO_MANY_PAIRS",
+      "at5": {
+        "precision": 0,
+        "recall": 0,
+        "hitRate": 1,
+        "ndcg": 0.1599
+      },
+      "at10": {
+        "precision": 0.3,
+        "recall": 0.3333,
+        "hitRate": 1,
+        "ndcg": 0.1858
+      },
+      "at20": {
+        "precision": 0.3,
+        "recall": 0.3333,
+        "hitRate": 1,
+        "ndcg": 0.1911
+      }
+    }
+  },
+  "relevanceDefinition": "actualPoints >= 5 para HitRate; top-K real para Precision/Recall."
+}

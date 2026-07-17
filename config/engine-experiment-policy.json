@@ -1,0 +1,31 @@
+{
+  "schemaVersion": "engine-promotion-gate/v1",
+  "build": "4.7.0",
+  "promotionEnabled": false,
+  "allowedStates": [
+    "REJECTED",
+    "INSUFFICIENT_EVIDENCE",
+    "PROMISING",
+    "ELIGIBLE_FOR_SHADOW_TEST"
+  ],
+  "thresholds": {
+    "minEvaluatedRounds": 18,
+    "minMaeImprovement": 0.05,
+    "maxBootstrapCiUpperDeltaMae": 0,
+    "minRankingSpearmanImprovement": 0
+  },
+  "shadowModeContract": {
+    "prepared": true,
+    "active": false,
+    "writesToProduction": false,
+    "canInfluenceFlutter": false,
+    "requiresManualBuildBeforeActivation": true
+  },
+  "forbiddenActions": [
+    "PROMOTE_AUTOMATICALLY",
+    "CHANGE_OFFICIAL_ENGINE",
+    "CHANGE_FLUTTER_ENGINE",
+    "REWRITE_HISTORICAL_DATA",
+    "MUTATE_LIVE_SNAPSHOTS"
+  ]
+}

@@ -1,6 +1,6 @@
 {
   "name": "cartola-silvas-fc-api",
-  "version": "4.5.4",
+  "version": "4.7.0",
   "description": "Backend proxy Cartola FC para o Meu Time Ideal Web",
   "main": "server.js",
   "scripts": {
@@ -29,7 +29,20 @@
     "live:snapshot:auto": "node scripts/live-snapshot-auto.js",
     "live:snapshot:storage-check": "node scripts/live-snapshot-storage-check.js",
     "live:snapshot:validate-changes": "node scripts/live-snapshot-validate-changes.js",
-    "live:snapshot:workflow-simulate": "node scripts/live-snapshot-workflow-simulate.js"
+    "live:snapshot:workflow-simulate": "node scripts/live-snapshot-workflow-simulate.js",
+    "storage-check": "node scripts/live-snapshot-storage-check.js --season=2026",
+    "audit": "node scripts/live-snapshot-audit.js --season=2026",
+    "research:audit": "node scripts/research.js audit --season=2026",
+    "research:diagnostics": "node scripts/research.js diagnostics --season=2026",
+    "research:ranking": "node scripts/research.js ranking --season=2026",
+    "research:ideal-team": "node scripts/research.js ideal-team --season=2026",
+    "research:captain": "node scripts/research.js captain --season=2026",
+    "research:ablation": "node scripts/research.js ablation --season=2026",
+    "research:experiments": "node scripts/research.js experiments --season=2026",
+    "research:walk-forward": "node scripts/research.js walk-forward --season=2026",
+    "research:promotion-gate": "node scripts/research.js promotion-gate --season=2026",
+    "research:all": "node scripts/research.js all --season=2026",
+    "research:check": "node scripts/research.js check --season=2026"
   },
   "engines": {
     "node": ">=18"

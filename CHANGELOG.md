@@ -1,5 +1,16 @@
 # Changelog
 
+## 4.7.0 - 2026-07-14
+
+- Adiciona laboratorio historico offline do motor com artefatos versionados em `data/research/2026`.
+- Adiciona auditoria `historical-engine-audit/v1` sobre cobertura, vazamento temporal, determinismo e duplicatas.
+- Adiciona diagnosticos de erro, ranking, time ideal, capitao, ablation, experimentos walk-forward e promotion gate.
+- Adiciona candidatos offline conservadores com treino/calibracao somente por rodadas anteriores.
+- Adiciona `config/engine-experiment-policy.json` com estados permitidos e promocao automatica desativada.
+- Adiciona endpoints somente leitura `/research/*`, sem computacao pesada por requisicao.
+- Adiciona scripts `research:*`, aliases `storage-check` e `audit`, e documentacao em `docs/engine-research-lab.md`.
+- Mantem motor oficial, Flutter, snapshots vivos, dados historicos, backtests anteriores, GitHub Actions, commit, push e deploy sem alteracao operacional.
+
 ## 4.5.4 - 2026-07-12
 
 - Corrige falso `disallowedChanges` no resumo do workflow movendo arquivos temporarios para `$RUNNER_TEMP`.

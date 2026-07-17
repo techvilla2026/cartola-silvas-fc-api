@@ -556,7 +556,7 @@ test("production-health, storage-health e automation-lock sao sanitizados", asyn
 
     assert.equal(production.status, 200);
     assert.equal(production.body.productionAutomationStatus, "READY");
-    assert.equal(production.body.backendVersion, "4.5.4");
+    assert.equal(production.body.backendVersion, "4.7.0");
     assert.equal(JSON.stringify(production.body).includes(repository.baseDir), false);
     assert.equal(storage.status, 200);
     assert.equal(storage.body.assumptions.PRODUCTION_PERSISTENCE_SAFE, true);

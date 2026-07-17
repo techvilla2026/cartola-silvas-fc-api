@@ -1,0 +1,113 @@
+{
+  "schemaVersion": "engine-research-health/v1",
+  "generatedAt": "2026-07-14T00:40:09.251Z",
+  "season": 2026,
+  "engineVersion": "flutter-parity-enriched-engine/4.3.2",
+  "researchEngineVersion": "engine-research-lab/4.7.0",
+  "dataFingerprint": "2d848a23d8c8ee067ac3bccd0072f360b727a334ebc0e33ff9d6cdf907fd9686",
+  "configFingerprint": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+  "codeVersion": "4.7.0",
+  "sourceBuildId": "build-4.3.2",
+  "inputRounds": [
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18
+  ],
+  "evaluatedRounds": [
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18
+  ],
+  "warnings": [
+    "Status pre-rodada permaneceu indisponivel.",
+    "Scouts historicos permaneceram desativados como oficiais.",
+    "Dados recentes sao reconstruidos apenas de rodadas anteriores."
+  ],
+  "limitations": [
+    "Sem status historico seguro.",
+    "Sem lineupProbabilityBeforeRound.",
+    "Sem Comparador historico por falta de elenco real do usuario."
+  ],
+  "temporalPolicy": {
+    "decisionsFrozenBeforePostRoundComparison": true,
+    "onlyPreviousRoundsForWalkForward": true,
+    "oracleUsedForEvaluationOnly": true,
+    "futureLeakageAllowed": false
+  },
+  "status": "PASS",
+  "artifacts": {
+    "audit": {
+      "schemaVersion": "historical-engine-audit/v1",
+      "status": "PASS",
+      "dataFingerprint": "2d848a23d8c8ee067ac3bccd0072f360b727a334ebc0e33ff9d6cdf907fd9686"
+    },
+    "engineDiagnostics": {
+      "schemaVersion": "engine-error-diagnostics/v1",
+      "status": "PERSISTED",
+      "dataFingerprint": "2d848a23d8c8ee067ac3bccd0072f360b727a334ebc0e33ff9d6cdf907fd9686"
+    },
+    "rankingDiagnostics": {
+      "schemaVersion": "engine-ranking-diagnostics/v1",
+      "status": "PERSISTED",
+      "dataFingerprint": "2d848a23d8c8ee067ac3bccd0072f360b727a334ebc0e33ff9d6cdf907fd9686"
+    },
+    "idealTeamDiagnostics": {
+      "schemaVersion": "ideal-team-diagnostics/v1",
+      "status": "PERSISTED",
+      "dataFingerprint": "2d848a23d8c8ee067ac3bccd0072f360b727a334ebc0e33ff9d6cdf907fd9686"
+    },
+    "captainDiagnostics": {
+      "schemaVersion": "captain-policy-diagnostics/v1",
+      "status": "PERSISTED",
+      "dataFingerprint": "2d848a23d8c8ee067ac3bccd0072f360b727a334ebc0e33ff9d6cdf907fd9686"
+    },
+    "ablationStudy": {
+      "schemaVersion": "engine-ablation-study/v1",
+      "status": "OFFLINE_ONLY",
+      "dataFingerprint": "2d848a23d8c8ee067ac3bccd0072f360b727a334ebc0e33ff9d6cdf907fd9686"
+    },
+    "experimentsSummary": {
+      "schemaVersion": "engine-experiments-summary/v1",
+      "status": "OFFLINE_ONLY",
+      "dataFingerprint": "2d848a23d8c8ee067ac3bccd0072f360b727a334ebc0e33ff9d6cdf907fd9686"
+    },
+    "promotionGate": {
+      "schemaVersion": "engine-promotion-gate/v1",
+      "status": "PERSISTED",
+      "dataFingerprint": "2d848a23d8c8ee067ac3bccd0072f360b727a334ebc0e33ff9d6cdf907fd9686"
+    }
+  },
+  "missingMetadataKeys": [],
+  "readOnlyEndpointsPrepared": true,
+  "heavyComputationOnRequest": false,
+  "productionSnapshotMutation": false,
+  "productionEngineMutation": false
+}

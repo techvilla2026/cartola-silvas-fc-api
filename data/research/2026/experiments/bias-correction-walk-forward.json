@@ -1,0 +1,469 @@
+{
+  "schemaVersion": "walk-forward-experiment/v1",
+  "generatedAt": "2026-07-14T00:40:07.800Z",
+  "season": 2026,
+  "engineVersion": "flutter-parity-enriched-engine/4.3.2",
+  "researchEngineVersion": "engine-research-lab/4.7.0",
+  "dataFingerprint": "2d848a23d8c8ee067ac3bccd0072f360b727a334ebc0e33ff9d6cdf907fd9686",
+  "configFingerprint": "d88b682d47167a14fa99a540d1351d45d53f4b0356be61aa1d20e89a658bade5",
+  "codeVersion": "4.7.0",
+  "sourceBuildId": "build-4.3.2",
+  "inputRounds": [
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18
+  ],
+  "evaluatedRounds": [
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18
+  ],
+  "warnings": [
+    "Status pre-rodada permaneceu indisponivel.",
+    "Scouts historicos permaneceram desativados como oficiais.",
+    "Dados recentes sao reconstruidos apenas de rodadas anteriores."
+  ],
+  "limitations": [
+    "Sem status historico seguro.",
+    "Sem lineupProbabilityBeforeRound.",
+    "Sem Comparador historico por falta de elenco real do usuario."
+  ],
+  "temporalPolicy": {
+    "decisionsFrozenBeforePostRoundComparison": true,
+    "onlyPreviousRoundsForWalkForward": true,
+    "oracleUsedForEvaluationOnly": true,
+    "futureLeakageAllowed": false
+  },
+  "candidateId": "bias-correction-walk-forward",
+  "status": "OFFLINE_ONLY",
+  "trainPolicy": "Somente rodadas anteriores a rodada avaliada.",
+  "leakageStatus": "PASS",
+  "rounds": [
+    {
+      "round": 2,
+      "status": "SKIPPED_INSUFFICIENT_PREVIOUS_ROUNDS"
+    },
+    {
+      "round": 3,
+      "status": "EVALUATED",
+      "metrics": {
+        "count": 282,
+        "mae": 3.4087,
+        "rmse": 4.6664,
+        "bias": -0.2224,
+        "medianAbsoluteError": 2.4815,
+        "p75AbsoluteError": 4.8157,
+        "p90AbsoluteError": 8.0752,
+        "p95AbsoluteError": 10.5733,
+        "within1": 0.2305,
+        "within2": 0.4255,
+        "within3": 0.5922,
+        "within5": 0.7589,
+        "above5ErrorRate": 0.2411,
+        "above10ErrorRate": 0.0638
+      }
+    },
+    {
+      "round": 4,
+      "status": "EVALUATED",
+      "metrics": {
+        "count": 219,
+        "mae": 2.8929,
+        "rmse": 4.0502,
+        "bias": 0.4056,
+        "medianAbsoluteError": 1.9081,
+        "p75AbsoluteError": 3.9081,
+        "p90AbsoluteError": 6.0881,
+        "p95AbsoluteError": 8.5465,
+        "within1": 0.2694,
+        "within2": 0.5114,
+        "within3": 0.6575,
+        "within5": 0.8311,
+        "above5ErrorRate": 0.1689,
+        "above10ErrorRate": 0.0365
+      }
+    },
+    {
+      "round": 5,
+      "status": "EVALUATED",
+      "metrics": {
+        "count": 252,
+        "mae": 3.1095,
+        "rmse": 4.1115,
+        "bias": -0.1182,
+        "medianAbsoluteError": 2.379,
+        "p75AbsoluteError": 4.479,
+        "p90AbsoluteError": 6.721,
+        "p95AbsoluteError": 8.2471,
+        "within1": 0.2143,
+        "within2": 0.4365,
+        "within3": 0.6111,
+        "within5": 0.7897,
+        "above5ErrorRate": 0.2103,
+        "above10ErrorRate": 0.0238
+      }
+    },
+    {
+      "round": 6,
+      "status": "EVALUATED",
+      "metrics": {
+        "count": 316,
+        "mae": 2.9595,
+        "rmse": 3.8684,
+        "bias": 0.4181,
+        "medianAbsoluteError": 2.2923,
+        "p75AbsoluteError": 4.2923,
+        "p90AbsoluteError": 6.3577,
+        "p95AbsoluteError": 8.0327,
+        "within1": 0.2247,
+        "within2": 0.4525,
+        "within3": 0.6171,
+        "within5": 0.8259,
+        "above5ErrorRate": 0.1741,
+        "above10ErrorRate": 0.0158
+      }
+    },
+    {
+      "round": 7,
+      "status": "EVALUATED",
+      "metrics": {
+        "count": 313,
+        "mae": 2.8253,
+        "rmse": 3.6172,
+        "bias": 0.1636,
+        "medianAbsoluteError": 2.2898,
+        "p75AbsoluteError": 3.8102,
+        "p90AbsoluteError": 5.8539,
+        "p95AbsoluteError": 7.142,
+        "within1": 0.1853,
+        "within2": 0.4441,
+        "within3": 0.623,
+        "within5": 0.8626,
+        "above5ErrorRate": 0.1374,
+        "above10ErrorRate": 0.0128
+      }
+    },
+    {
+      "round": 8,
+      "status": "EVALUATED",
+      "metrics": {
+        "count": 315,
+        "mae": 2.7219,
+        "rmse": 3.6732,
+        "bias": 0.0532,
+        "medianAbsoluteError": 2.1795,
+        "p75AbsoluteError": 3.6795,
+        "p90AbsoluteError": 5.6405,
+        "p95AbsoluteError": 6.8382,
+        "within1": 0.2635,
+        "within2": 0.4667,
+        "within3": 0.6508,
+        "within5": 0.8571,
+        "above5ErrorRate": 0.1429,
+        "above10ErrorRate": 0.0222
+      }
+    },
+    {
+      "round": 9,
+      "status": "EVALUATED",
+      "metrics": {
+        "count": 316,
+        "mae": 3.1358,
+        "rmse": 4.2739,
+        "bias": -0.3805,
+        "medianAbsoluteError": 2.3711,
+        "p75AbsoluteError": 4.2289,
+        "p90AbsoluteError": 6.5789,
+        "p95AbsoluteError": 8.5855,
+        "within1": 0.2215,
+        "within2": 0.4335,
+        "within3": 0.6139,
+        "within5": 0.8038,
+        "above5ErrorRate": 0.1962,
+        "above10ErrorRate": 0.038
+      }
+    },
+    {
+      "round": 10,
+      "status": "EVALUATED",
+      "metrics": {
+        "count": 317,
+        "mae": 2.8036,
+        "rmse": 3.7416,
+        "bias": 0.1527,
+        "medianAbsoluteError": 2.3234,
+        "p75AbsoluteError": 3.6766,
+        "p90AbsoluteError": 5.6953,
+        "p95AbsoluteError": 6.7166,
+        "within1": 0.2208,
+        "within2": 0.4353,
+        "within3": 0.6309,
+        "within5": 0.8423,
+        "above5ErrorRate": 0.1577,
+        "above10ErrorRate": 0.0095
+      }
+    },
+    {
+      "round": 11,
+      "status": "EVALUATED",
+      "metrics": {
+        "count": 312,
+        "mae": 2.6744,
+        "rmse": 3.4523,
+        "bias": 0.168,
+        "medianAbsoluteError": 2.1951,
+        "p75AbsoluteError": 3.4951,
+        "p90AbsoluteError": 5.7039,
+        "p95AbsoluteError": 7.1905,
+        "within1": 0.2115,
+        "within2": 0.4519,
+        "within3": 0.6955,
+        "within5": 0.8686,
+        "above5ErrorRate": 0.1314,
+        "above10ErrorRate": 0.0096
+      }
+    },
+    {
+      "round": 12,
+      "status": "EVALUATED",
+      "metrics": {
+        "count": 318,
+        "mae": 2.9418,
+        "rmse": 3.9393,
+        "bias": -0.0646,
+        "medianAbsoluteError": 2.287,
+        "p75AbsoluteError": 3.787,
+        "p90AbsoluteError": 6.1548,
+        "p95AbsoluteError": 8.1909,
+        "within1": 0.1761,
+        "within2": 0.4277,
+        "within3": 0.6415,
+        "within5": 0.8585,
+        "above5ErrorRate": 0.1415,
+        "above10ErrorRate": 0.0252
+      }
+    },
+    {
+      "round": 13,
+      "status": "EVALUATED",
+      "metrics": {
+        "count": 313,
+        "mae": 2.837,
+        "rmse": 3.73,
+        "bias": -0.1933,
+        "medianAbsoluteError": 2.2067,
+        "p75AbsoluteError": 3.6933,
+        "p90AbsoluteError": 5.5867,
+        "p95AbsoluteError": 7.7013,
+        "within1": 0.2045,
+        "within2": 0.4473,
+        "within3": 0.6358,
+        "within5": 0.8722,
+        "above5ErrorRate": 0.1278,
+        "above10ErrorRate": 0.0192
+      }
+    },
+    {
+      "round": 14,
+      "status": "EVALUATED",
+      "metrics": {
+        "count": 313,
+        "mae": 3.0748,
+        "rmse": 4.0536,
+        "bias": 0.0991,
+        "medianAbsoluteError": 2.4103,
+        "p75AbsoluteError": 4.0897,
+        "p90AbsoluteError": 6.4738,
+        "p95AbsoluteError": 8.9297,
+        "within1": 0.1949,
+        "within2": 0.3962,
+        "within3": 0.6198,
+        "within5": 0.8371,
+        "above5ErrorRate": 0.1629,
+        "above10ErrorRate": 0.0383
+      }
+    },
+    {
+      "round": 15,
+      "status": "EVALUATED",
+      "metrics": {
+        "count": 312,
+        "mae": 2.8198,
+        "rmse": 3.667,
+        "bias": 0.092,
+        "medianAbsoluteError": 2.3523,
+        "p75AbsoluteError": 3.7262,
+        "p90AbsoluteError": 5.6877,
+        "p95AbsoluteError": 7.3977,
+        "within1": 0.2244,
+        "within2": 0.4263,
+        "within3": 0.5994,
+        "within5": 0.8654,
+        "above5ErrorRate": 0.1346,
+        "above10ErrorRate": 0.0192
+      }
+    },
+    {
+      "round": 16,
+      "status": "EVALUATED",
+      "metrics": {
+        "count": 312,
+        "mae": 2.8051,
+        "rmse": 3.9697,
+        "bias": 0.0499,
+        "medianAbsoluteError": 2.1,
+        "p75AbsoluteError": 3.6273,
+        "p90AbsoluteError": 5.4037,
+        "p95AbsoluteError": 7.9846,
+        "within1": 0.2532,
+        "within2": 0.4872,
+        "within3": 0.6538,
+        "within5": 0.875,
+        "above5ErrorRate": 0.125,
+        "above10ErrorRate": 0.0256
+      }
+    },
+    {
+      "round": 17,
+      "status": "EVALUATED",
+      "metrics": {
+        "count": 313,
+        "mae": 3.0808,
+        "rmse": 4.0032,
+        "bias": -0.2206,
+        "medianAbsoluteError": 2.4919,
+        "p75AbsoluteError": 3.8081,
+        "p90AbsoluteError": 6.5719,
+        "p95AbsoluteError": 8.5481,
+        "within1": 0.1725,
+        "within2": 0.3866,
+        "within3": 0.623,
+        "within5": 0.8371,
+        "above5ErrorRate": 0.1629,
+        "above10ErrorRate": 0.0351
+      }
+    },
+    {
+      "round": 18,
+      "status": "EVALUATED",
+      "metrics": {
+        "count": 317,
+        "mae": 2.9436,
+        "rmse": 4.08,
+        "bias": -0.4991,
+        "medianAbsoluteError": 2.2063,
+        "p75AbsoluteError": 3.5063,
+        "p90AbsoluteError": 5.8813,
+        "p95AbsoluteError": 8.6137,
+        "within1": 0.1987,
+        "within2": 0.4479,
+        "within3": 0.6498,
+        "within5": 0.8675,
+        "above5ErrorRate": 0.1325,
+        "above10ErrorRate": 0.041
+      }
+    }
+  ],
+  "summary": {
+    "error": {
+      "count": 4840,
+      "mae": 2.9355,
+      "rmse": 3.9321,
+      "bias": -0.0116,
+      "medianAbsoluteError": 2.2919,
+      "p75AbsoluteError": 3.813,
+      "p90AbsoluteError": 6.1977,
+      "p95AbsoluteError": 8.1067,
+      "within1": 0.2155,
+      "within2": 0.4411,
+      "within3": 0.6322,
+      "within5": 0.8421,
+      "above5ErrorRate": 0.1579,
+      "above10ErrorRate": 0.0269
+    },
+    "ranking": {
+      "count": 4840,
+      "spearman": 0.6946,
+      "kendall": null,
+      "kendallStatus": "SKIPPED_TOO_MANY_PAIRS",
+      "at5": {
+        "precision": 0,
+        "recall": 0,
+        "hitRate": 1,
+        "ndcg": 0.086
+      },
+      "at10": {
+        "precision": 0,
+        "recall": 0,
+        "hitRate": 1,
+        "ndcg": 0.1041
+      },
+      "at20": {
+        "precision": 0.35,
+        "recall": 0.3889,
+        "hitRate": 0.95,
+        "ndcg": 0.1512
+      }
+    }
+  },
+  "description": "Corrige a previsao pelo vies medio observado apenas em rodadas anteriores.",
+  "officialBaseline": {
+    "count": 5126,
+    "mae": 2.8634,
+    "rmse": 4.0369,
+    "bias": -0.8372,
+    "medianAbsoluteError": 2,
+    "p75AbsoluteError": 3.8,
+    "p90AbsoluteError": 6.7,
+    "p95AbsoluteError": 8.7,
+    "within1": 0.2862,
+    "within2": 0.507,
+    "within3": 0.6695,
+    "within5": 0.8352,
+    "above5ErrorRate": 0.1648,
+    "above10ErrorRate": 0.032
+  },
+  "robustness": {
+    "status": "EVALUATED",
+    "iterations": 200,
+    "meanDeltaMae": 0.0822,
+    "ci95": [
+      0.0822,
+      0.0822
+    ],
+    "deterministicSeed": "round-index-lcg-37-17"
+  },
+  "delta": {
+    "mae": 0.0721,
+    "rmse": -0.1048,
+    "bias": 0.8256
+  }
+}

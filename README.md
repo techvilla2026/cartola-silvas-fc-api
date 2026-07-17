@@ -4,7 +4,7 @@ Backend proxy do Cartola FC para o aplicativo Meu Time Ideal Web.
 
 Este servidor evita que a versao Web do app Flutter precise chamar diretamente `https://api.cartolafc.globo.com` a partir do navegador, reduzindo problemas de CORS. As rotas retornam dados reais da API oficial do Cartola FC, sem mocks, fallbacks ficticios ou alteracao silenciosa do conteudo recebido.
 
-A Build 4.5.4 fecha a automacao de producao dos snapshots vivos pre-rodada em `live-pre-round-snapshot/v1`, com GitHub Actions horario, commit automatico controlado, persistencia oficial por Git, Render Auto-Deploy On Commit confirmado e saude de producao `READY`.
+A Build 4.7.0 adiciona o laboratorio historico offline do motor, com auditoria, diagnosticos, experimentos walk-forward e promotion gate somente leitura. A automacao de producao dos snapshots vivos pre-rodada permanece em `READY`.
 
 ## Endpoints
 
@@ -16,7 +16,7 @@ Retorna informacoes basicas do servico:
 {
   "service": "cartola-silvas-fc-api",
   "status": "online",
-  "version": "4.5.4",
+  "version": "4.7.0",
   "focus": "Brasileirao/Cartola FC"
 }
 ```
@@ -170,6 +170,66 @@ npm test
 
 Os testes usam `node:test` e `assert` nativos.
 
+## Laboratorio historico do motor
+
+A Build 4.7.0 gera artefatos de pesquisa offline a partir dos resultados reais ja persistidos em `data/backtests/2026/build-4.3.2`. O laboratorio nao altera formulas, pesos, Flutter, snapshots vivos, backtests existentes ou dados historicos fonte.
+
+Gerar todos os artefatos:
+
+```bash
+npm run research:all
+```
+
+Verificar contratos persistidos:
+
+```bash
+npm run research:check
+```
+
+Comandos individuais:
+
+```bash
+npm run research:audit
+npm run research:diagnostics
+npm run research:ranking
+npm run research:ideal-team
+npm run research:captain
+npm run research:ablation
+npm run research:experiments
+npm run research:walk-forward
+npm run research:promotion-gate
+```
+
+Artefatos persistidos:
+
+```text
+data/research/2026/audit.json
+data/research/2026/engine-diagnostics.json
+data/research/2026/ranking-diagnostics.json
+data/research/2026/ideal-team-diagnostics.json
+data/research/2026/captain-diagnostics.json
+data/research/2026/ablation-study.json
+data/research/2026/experiments-summary.json
+data/research/2026/promotion-gate.json
+data/research/2026/research-health.json
+data/research/2026/experiments/{candidateId}.json
+```
+
+Endpoints somente leitura:
+
+- `GET /research/engine-audit`
+- `GET /research/engine-diagnostics`
+- `GET /research/ranking-diagnostics`
+- `GET /research/ideal-team-diagnostics`
+- `GET /research/captain-diagnostics`
+- `GET /research/ablation-study`
+- `GET /research/experiments`
+- `GET /research/experiments/:candidateId`
+- `GET /research/promotion-gate`
+- `GET /research/research-health`
+
+O promotion gate usa `config/engine-experiment-policy.json`, permite apenas `REJECTED`, `INSUFFICIENT_EVIDENCE`, `PROMISING` e `ELIGIBLE_FOR_SHADOW_TEST`, e nunca retorna `PROMOTED` nesta build.
+
 ## Dados historicos
 
 A Build 4.3.0 adicionou o primeiro backtest historico real do backend para o Brasileirao/Cartola FC 2026. A Build 4.3.1 adicionou o motor de paridade com as regras auditadas do Flutter. A Build 4.3.2 adiciona um dataset historico enriquecido com forma recente reconstruida somente a partir de rodadas anteriores, sem alterar formulas, pesos ou o Flutter.
@@ -314,6 +374,7 @@ Documentacao:
 - `docs/live-snapshot-automatic-commit-policy.md`
 - `docs/live-snapshot-production-activation-checklist.md`
 - `docs/live-snapshot-production-ready.md`
+- `docs/engine-research-lab.md`
 
 ## Backtest
 

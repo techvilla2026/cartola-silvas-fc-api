@@ -11,9 +11,10 @@ const { auditLiveSnapshots, coverage: liveSnapshotCoverage, findSnapshot } = req
 const { parseLiveRound, parseSnapshotId } = require("./src/liveSnapshot/domain/validation");
 const { storageHealth } = require("./src/liveSnapshot/services/storageHealth");
 const { buildProductionHealth } = require("./src/liveSnapshot/services/productionHealth");
+const { ResearchRepository } = require("./src/research/repository");
 
 const SERVICE_NAME = "cartola-silvas-fc-api";
-const BACKEND_VERSION = "4.5.4";
+const BACKEND_VERSION = "4.7.0";
 const DEFAULT_PORT = 3000;
 const CARTOLA_API_BASE_URL = "https://api.cartolafc.globo.com";
 const DEFAULT_TIMEOUT_MS = 8000;
@@ -238,6 +239,7 @@ function createApp(options = {}) {
   app.locals.enrichedHistoricalRepository = options.enrichedHistoricalRepository || new EnrichedHistoricalRepository();
   app.locals.backtestRepository = options.backtestRepository || new BacktestRepository();
   app.locals.liveSnapshotRepository = options.liveSnapshotRepository || new LiveSnapshotRepository();
+  app.locals.researchRepository = options.researchRepository || new ResearchRepository();
 
   if (typeof app.locals.fetchImpl !== "function") {
     throw new Error("fetch nativo nao esta disponivel nesta versao do Node.");
@@ -898,6 +900,61 @@ function createApp(options = {}) {
     const status = app.locals.liveSnapshotRepository.readAutomationStatus(season);
     if (!status) return sendNotFound(res, "Status de automacao nao encontrado.");
     return res.json(status);
+  });
+
+  function sendResearchFile(req, res, relativePath, notFoundMessage) {
+    const season = 2026;
+    const data = app.locals.researchRepository.readJson(season, relativePath);
+
+    if (!data) {
+      return sendNotFound(res, notFoundMessage);
+    }
+
+    return res.json(data);
+  }
+
+  app.get("/research/engine-audit", (req, res) => {
+    return sendResearchFile(req, res, "audit.json", "Auditoria de pesquisa nao encontrada. Execute npm run research:audit.");
+  });
+
+  app.get("/research/engine-diagnostics", (req, res) => {
+    return sendResearchFile(req, res, "engine-diagnostics.json", "Diagnostico do motor nao encontrado. Execute npm run research:diagnostics.");
+  });
+
+  app.get("/research/ranking-diagnostics", (req, res) => {
+    return sendResearchFile(req, res, "ranking-diagnostics.json", "Diagnostico de ranking nao encontrado. Execute npm run research:ranking.");
+  });
+
+  app.get("/research/ideal-team-diagnostics", (req, res) => {
+    return sendResearchFile(req, res, "ideal-team-diagnostics.json", "Diagnostico do time ideal nao encontrado. Execute npm run research:ideal-team.");
+  });
+
+  app.get("/research/captain-diagnostics", (req, res) => {
+    return sendResearchFile(req, res, "captain-diagnostics.json", "Diagnostico de capitao nao encontrado. Execute npm run research:captain.");
+  });
+
+  app.get("/research/ablation-study", (req, res) => {
+    return sendResearchFile(req, res, "ablation-study.json", "Estudo de ablation nao encontrado. Execute npm run research:ablation.");
+  });
+
+  app.get("/research/experiments", (req, res) => {
+    return sendResearchFile(req, res, "experiments-summary.json", "Resumo de experimentos nao encontrado. Execute npm run research:experiments.");
+  });
+
+  app.get("/research/experiments/:candidateId", (req, res) => {
+    const candidateId = String(req.params.candidateId || "").trim();
+    if (!/^[a-z0-9-]+$/.test(candidateId)) {
+      return sendBadRequest(res, "INVALID_CANDIDATE_ID", "candidateId invalido.");
+    }
+    return sendResearchFile(req, res, `experiments/${candidateId}.json`, "Experimento nao encontrado.");
+  });
+
+  app.get("/research/promotion-gate", (req, res) => {
+    return sendResearchFile(req, res, "promotion-gate.json", "Promotion gate nao encontrado. Execute npm run research:promotion-gate.");
+  });
+
+  app.get("/research/research-health", (req, res) => {
+    return sendResearchFile(req, res, "research-health.json", "Health do laboratorio de pesquisa nao encontrado. Execute npm run research:check.");
   });
 
   app.use((req, res) => {

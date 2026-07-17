@@ -1,0 +1,241 @@
+{
+  "schemaVersion": "engine-ablation-study/v1",
+  "generatedAt": "2026-07-14T00:40:07.147Z",
+  "season": 2026,
+  "engineVersion": "flutter-parity-enriched-engine/4.3.2",
+  "researchEngineVersion": "engine-research-lab/4.7.0",
+  "dataFingerprint": "2d848a23d8c8ee067ac3bccd0072f360b727a334ebc0e33ff9d6cdf907fd9686",
+  "configFingerprint": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+  "codeVersion": "4.7.0",
+  "sourceBuildId": "build-4.3.2",
+  "inputRounds": [
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18
+  ],
+  "evaluatedRounds": [
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18
+  ],
+  "warnings": [
+    "Status pre-rodada permaneceu indisponivel.",
+    "Scouts historicos permaneceram desativados como oficiais.",
+    "Dados recentes sao reconstruidos apenas de rodadas anteriores."
+  ],
+  "limitations": [
+    "Sem status historico seguro.",
+    "Sem lineupProbabilityBeforeRound.",
+    "Sem Comparador historico por falta de elenco real do usuario."
+  ],
+  "temporalPolicy": {
+    "decisionsFrozenBeforePostRoundComparison": true,
+    "onlyPreviousRoundsForWalkForward": true,
+    "oracleUsedForEvaluationOnly": true,
+    "futureLeakageAllowed": false
+  },
+  "status": "OFFLINE_ONLY",
+  "officialFormulaChanged": false,
+  "factors": {
+    "official": {
+      "error": {
+        "count": 5126,
+        "mae": 2.8634,
+        "rmse": 4.0369,
+        "bias": -0.8372,
+        "medianAbsoluteError": 2,
+        "p75AbsoluteError": 3.8,
+        "p90AbsoluteError": 6.7,
+        "p95AbsoluteError": 8.7,
+        "within1": 0.2862,
+        "within2": 0.507,
+        "within3": 0.6695,
+        "within5": 0.8352,
+        "above5ErrorRate": 0.1648,
+        "above10ErrorRate": 0.032
+      },
+      "ranking": {
+        "count": 5126,
+        "spearman": 0.7014,
+        "kendall": null,
+        "kendallStatus": "SKIPPED_TOO_MANY_PAIRS",
+        "at5": {
+          "precision": 0.2,
+          "recall": 0.2,
+          "hitRate": 1,
+          "ndcg": 0.1829
+        },
+        "at10": {
+          "precision": 0.1,
+          "recall": 0.1,
+          "hitRate": 1,
+          "ndcg": 0.1965
+        },
+        "at20": {
+          "precision": 0.35,
+          "recall": 0.3889,
+          "hitRate": 1,
+          "ndcg": 0.1868
+        }
+      }
+    },
+    "noHomeBonus": {
+      "error": {
+        "count": 5126,
+        "mae": 2.8812,
+        "rmse": 4.0971,
+        "bias": -1.0367,
+        "medianAbsoluteError": 2,
+        "p75AbsoluteError": 3.8,
+        "p90AbsoluteError": 6.8,
+        "p95AbsoluteError": 8.9,
+        "within1": 0.2899,
+        "within2": 0.5158,
+        "within3": 0.6686,
+        "within5": 0.8301,
+        "above5ErrorRate": 0.1699,
+        "above10ErrorRate": 0.0341
+      },
+      "ranking": {
+        "count": 5126,
+        "spearman": 0.6871,
+        "kendall": null,
+        "kendallStatus": "SKIPPED_TOO_MANY_PAIRS",
+        "at5": {
+          "precision": 0.2,
+          "recall": 0.2,
+          "hitRate": 1,
+          "ndcg": 0.1965
+        },
+        "at10": {
+          "precision": 0.1,
+          "recall": 0.1,
+          "hitRate": 1,
+          "ndcg": 0.2059
+        },
+        "at20": {
+          "precision": 0.35,
+          "recall": 0.3889,
+          "hitRate": 1,
+          "ndcg": 0.1934
+        }
+      }
+    },
+    "averageOnly": {
+      "error": {
+        "count": 5126,
+        "mae": 2.8493,
+        "rmse": 4.0603,
+        "bias": -1.108,
+        "medianAbsoluteError": 1.9705,
+        "p75AbsoluteError": 3.775,
+        "p90AbsoluteError": 6.6765,
+        "p95AbsoluteError": 8.81,
+        "within1": 0.2821,
+        "within2": 0.5099,
+        "within3": 0.667,
+        "within5": 0.833,
+        "above5ErrorRate": 0.167,
+        "above10ErrorRate": 0.0341
+      },
+      "ranking": {
+        "count": 5126,
+        "spearman": 0.6858,
+        "kendall": null,
+        "kendallStatus": "SKIPPED_TOO_MANY_PAIRS",
+        "at5": {
+          "precision": 0.2,
+          "recall": 0.2,
+          "hitRate": 1,
+          "ndcg": 0.1965
+        },
+        "at10": {
+          "precision": 0.1,
+          "recall": 0.1,
+          "hitRate": 1,
+          "ndcg": 0.2059
+        },
+        "at20": {
+          "precision": 0.35,
+          "recall": 0.3889,
+          "hitRate": 1,
+          "ndcg": 0.1936
+        }
+      }
+    },
+    "neutralPriceValueSignal": {
+      "error": {
+        "count": 5126,
+        "mae": 2.8634,
+        "rmse": 4.0369,
+        "bias": -0.8372,
+        "medianAbsoluteError": 2,
+        "p75AbsoluteError": 3.8,
+        "p90AbsoluteError": 6.7,
+        "p95AbsoluteError": 8.7,
+        "within1": 0.2862,
+        "within2": 0.507,
+        "within3": 0.6695,
+        "within5": 0.8352,
+        "above5ErrorRate": 0.1648,
+        "above10ErrorRate": 0.032
+      },
+      "ranking": {
+        "count": 5126,
+        "spearman": 0.7014,
+        "kendall": null,
+        "kendallStatus": "SKIPPED_TOO_MANY_PAIRS",
+        "at5": {
+          "precision": 0.2,
+          "recall": 0.2,
+          "hitRate": 1,
+          "ndcg": 0.1829
+        },
+        "at10": {
+          "precision": 0.1,
+          "recall": 0.1,
+          "hitRate": 1,
+          "ndcg": 0.1965
+        },
+        "at20": {
+          "precision": 0.35,
+          "recall": 0.3889,
+          "hitRate": 1,
+          "ndcg": 0.1868
+        }
+      }
+    }
+  },
+  "notes": [
+    "Ablacoes usam transformacoes offline sobre artefatos congelados.",
+    "neutralPriceValueSignal fica sem efeito direto na previsao porque preco atua na Nota/seleção, nao na formula de predictedPoints persistida."
+  ]
+}

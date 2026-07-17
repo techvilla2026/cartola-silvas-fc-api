@@ -1,0 +1,118 @@
+{
+  "schemaVersion": "engine-promotion-gate/v1",
+  "generatedAt": "2026-07-14T00:40:09.240Z",
+  "season": 2026,
+  "engineVersion": "flutter-parity-enriched-engine/4.3.2",
+  "researchEngineVersion": "engine-research-lab/4.7.0",
+  "dataFingerprint": "2d848a23d8c8ee067ac3bccd0072f360b727a334ebc0e33ff9d6cdf907fd9686",
+  "configFingerprint": "804965b11c18da89b654fda846018e3a2e634e6cae1310368f6d05bb8c120b4e",
+  "codeVersion": "4.7.0",
+  "sourceBuildId": "build-4.3.2",
+  "inputRounds": [
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18
+  ],
+  "evaluatedRounds": [
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18
+  ],
+  "warnings": [
+    "Status pre-rodada permaneceu indisponivel.",
+    "Scouts historicos permaneceram desativados como oficiais.",
+    "Dados recentes sao reconstruidos apenas de rodadas anteriores."
+  ],
+  "limitations": [
+    "Sem status historico seguro.",
+    "Sem lineupProbabilityBeforeRound.",
+    "Sem Comparador historico por falta de elenco real do usuario."
+  ],
+  "temporalPolicy": {
+    "decisionsFrozenBeforePostRoundComparison": true,
+    "onlyPreviousRoundsForWalkForward": true,
+    "oracleUsedForEvaluationOnly": true,
+    "futureLeakageAllowed": false
+  },
+  "allowedStates": [
+    "REJECTED",
+    "INSUFFICIENT_EVIDENCE",
+    "PROMISING",
+    "ELIGIBLE_FOR_SHADOW_TEST"
+  ],
+  "forbiddenStates": [
+    "PROMOTED"
+  ],
+  "shadowModeContract": {
+    "prepared": true,
+    "active": false,
+    "writesToProduction": false,
+    "canInfluenceFlutter": false,
+    "requiresManualBuildBeforeActivation": true
+  },
+  "decisions": [
+    {
+      "candidateId": "bias-correction-walk-forward",
+      "state": "INSUFFICIENT_EVIDENCE",
+      "promoted": false,
+      "reasons": [
+        "MIN_ROUNDS_NOT_MET",
+        "MAE_NOT_IMPROVED",
+        "ROBUSTNESS_CI_NOT_CONFIRMED",
+        "PROMOTION_DISABLED_BY_BUILD_4_7_0"
+      ]
+    },
+    {
+      "candidateId": "home-away-bias-walk-forward",
+      "state": "INSUFFICIENT_EVIDENCE",
+      "promoted": false,
+      "reasons": [
+        "MIN_ROUNDS_NOT_MET",
+        "MAE_NOT_IMPROVED",
+        "ROBUSTNESS_CI_NOT_CONFIRMED",
+        "PROMOTION_DISABLED_BY_BUILD_4_7_0"
+      ]
+    },
+    {
+      "candidateId": "price-band-bias-walk-forward",
+      "state": "INSUFFICIENT_EVIDENCE",
+      "promoted": false,
+      "reasons": [
+        "MIN_ROUNDS_NOT_MET",
+        "MAE_NOT_IMPROVED",
+        "ROBUSTNESS_CI_NOT_CONFIRMED",
+        "PROMOTION_DISABLED_BY_BUILD_4_7_0"
+      ]
+    }
+  ],
+  "finalStatus": "NO_PROMOTION",
+  "productionEngineChanged": false
+}
