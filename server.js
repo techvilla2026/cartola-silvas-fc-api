@@ -14,21 +14,19 @@ const { buildProductionHealth } = require("./src/liveSnapshot/services/productio
 const { ResearchRepository } = require("./src/research/repository");
 
 const SERVICE_NAME = "cartola-silvas-fc-api";
-const BACKEND_VERSION = "4.7.0";
+const BACKEND_VERSION = "4.7.1";
 const DEFAULT_PORT = 3000;
 const CARTOLA_API_BASE_URL = "https://api.cartolafc.globo.com";
 const DEFAULT_TIMEOUT_MS = 8000;
+const PUBLIC_APP_ORIGIN = "https://meutimeideal.netlify.app";
+const LEGACY_PUBLIC_APP_ORIGIN = "https://utimeideal.netlify.app";
+const CORS_ALLOWED_METHODS = "GET,OPTIONS";
+const CORS_ALLOWED_HEADERS = "Accept,Content-Type,Authorization,X-Requested-With";
+const CORS_MAX_AGE_SECONDS = "86400";
 
 const DEFAULT_ALLOWED_ORIGINS = [
-  "http://localhost:3000",
-  "http://localhost:5173",
-  "http://localhost:8080",
-  "http://localhost:5000",
-  "http://127.0.0.1:3000",
-  "http://127.0.0.1:5173",
-  "http://127.0.0.1:8080",
-  "http://127.0.0.1:5000",
-  "https://utimeideal.netlify.app"
+  PUBLIC_APP_ORIGIN,
+  LEGACY_PUBLIC_APP_ORIGIN
 ];
 
 function parseAllowedOrigins(value) {
@@ -43,10 +41,15 @@ function parseAllowedOrigins(value) {
 function isLocalhostOrigin(origin) {
   try {
     const url = new URL(origin);
-    return ["localhost", "127.0.0.1", "::1"].includes(url.hostname);
+    return ["http:", "https:"].includes(url.protocol) && ["localhost", "127.0.0.1", "::1"].includes(url.hostname);
   } catch {
     return false;
   }
+}
+
+function isAllowedCorsOrigin(origin, allowedOrigins) {
+  if (!origin) return false;
+  return allowedOrigins.has(origin) || isLocalhostOrigin(origin);
 }
 
 function createCorsMiddleware(allowedOrigins) {
@@ -55,12 +58,12 @@ function createCorsMiddleware(allowedOrigins) {
   return function corsMiddleware(req, res, next) {
     const origin = req.headers.origin;
 
-    if (origin && (allowed.has(origin) || isLocalhostOrigin(origin))) {
+    if (isAllowedCorsOrigin(origin, allowed)) {
       res.setHeader("Access-Control-Allow-Origin", origin);
       res.setHeader("Vary", "Origin");
-      res.setHeader("Access-Control-Allow-Methods", "GET,OPTIONS");
-      res.setHeader("Access-Control-Allow-Headers", "Content-Type,Authorization");
-      res.setHeader("Access-Control-Max-Age", "86400");
+      res.setHeader("Access-Control-Allow-Methods", CORS_ALLOWED_METHODS);
+      res.setHeader("Access-Control-Allow-Headers", CORS_ALLOWED_HEADERS);
+      res.setHeader("Access-Control-Max-Age", CORS_MAX_AGE_SECONDS);
     }
 
     if (req.method === "OPTIONS") {
@@ -999,6 +1002,7 @@ if (require.main === module) {
 module.exports = {
   createApp,
   parseAllowedOrigins,
+  isAllowedCorsOrigin,
   DEFAULT_ALLOWED_ORIGINS,
   BACKEND_VERSION
 };

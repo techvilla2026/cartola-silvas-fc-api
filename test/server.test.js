@@ -8,6 +8,7 @@ const test = require("node:test");
 
 const { createApp } = require("../server");
 const { HistoricalDataRepository } = require("../src/historical/repositories/fileRepository");
+const { ResearchRepository } = require("../src/research/repository");
 
 async function request(app, path, options = {}) {
   const server = http.createServer(app);
@@ -41,7 +42,7 @@ test("GET / retorna informacoes do servico", async () => {
   assert.equal(response.status, 200);
   assert.equal(response.body.service, "cartola-silvas-fc-api");
   assert.equal(response.body.status, "online");
-  assert.equal(response.body.version, "4.7.0");
+  assert.equal(response.body.version, "4.7.1");
   assert.equal(response.body.focus, "Brasileirao/Cartola FC");
   assert.equal(response.body.cartola, undefined);
 });
@@ -76,12 +77,85 @@ test("CORS permite origem publica configurada", async () => {
   const app = createApp({ fetchImpl: fetch });
   const response = await request(app, "/", {
     headers: {
+      Origin: "https://meutimeideal.netlify.app"
+    }
+  });
+
+  assert.equal(response.status, 200);
+  assert.equal(response.headers.get("access-control-allow-origin"), "https://meutimeideal.netlify.app");
+});
+
+test("CORS preserva origem legada configurada", async () => {
+  const app = createApp({ fetchImpl: fetch });
+  const response = await request(app, "/", {
+    headers: {
       Origin: "https://utimeideal.netlify.app"
     }
   });
 
   assert.equal(response.status, 200);
   assert.equal(response.headers.get("access-control-allow-origin"), "https://utimeideal.netlify.app");
+});
+
+test("CORS permite localhost com porta variavel", async () => {
+  const app = createApp({ fetchImpl: fetch });
+  const response = await request(app, "/", {
+    headers: {
+      Origin: "http://localhost:61234"
+    }
+  });
+
+  assert.equal(response.status, 200);
+  assert.equal(response.headers.get("access-control-allow-origin"), "http://localhost:61234");
+});
+
+test("CORS permite 127.0.0.1 com porta variavel", async () => {
+  const app = createApp({ fetchImpl: fetch });
+  const response = await request(app, "/", {
+    headers: {
+      Origin: "http://127.0.0.1:61235"
+    }
+  });
+
+  assert.equal(response.status, 200);
+  assert.equal(response.headers.get("access-control-allow-origin"), "http://127.0.0.1:61235");
+});
+
+test("CORS rejeita origem desconhecida sem bloquear a resposta servidor-servidor", async () => {
+  const app = createApp({ fetchImpl: fetch });
+  const response = await request(app, "/", {
+    headers: {
+      Origin: "https://exemplo-nao-autorizado.com"
+    }
+  });
+
+  assert.equal(response.status, 200);
+  assert.equal(response.headers.get("access-control-allow-origin"), null);
+});
+
+test("requisicao sem Origin continua funcionando sem cabecalho CORS", async () => {
+  const app = createApp({ fetchImpl: fetch });
+  const response = await request(app, "/");
+
+  assert.equal(response.status, 200);
+  assert.equal(response.headers.get("access-control-allow-origin"), null);
+});
+
+test("OPTIONS do Netlify responde preflight sem autenticacao", async () => {
+  const app = createApp({ fetchImpl: fetch });
+  const response = await request(app, "/cartola/times?q=Silvas", {
+    method: "OPTIONS",
+    headers: {
+      Origin: "https://meutimeideal.netlify.app",
+      "Access-Control-Request-Method": "GET",
+      "Access-Control-Request-Headers": "content-type"
+    }
+  });
+
+  assert.equal(response.status, 204);
+  assert.equal(response.headers.get("access-control-allow-origin"), "https://meutimeideal.netlify.app");
+  assert.equal(response.headers.get("access-control-allow-methods"), "GET,OPTIONS");
+  assert.match(response.headers.get("access-control-allow-headers"), /Content-Type/);
 });
 
 test("proxy retorna erro consistente quando API Cartola falha", async () => {
@@ -114,6 +188,25 @@ test("proxy de times usa query trimada e codificada", async () => {
   assert.deepEqual(response.body, { times: [] });
 });
 
+test("GET /cartola/times com Origin do Netlify preserva CORS", async () => {
+  const fetchImpl = async () => {
+    return new Response(JSON.stringify({ times: [{ time_id: 16068219 }] }), {
+      status: 200,
+      headers: { "content-type": "application/json" }
+    });
+  };
+  const app = createApp({ fetchImpl });
+  const response = await request(app, "/cartola/times?q=Silvas", {
+    headers: {
+      Origin: "https://meutimeideal.netlify.app"
+    }
+  });
+
+  assert.equal(response.status, 200);
+  assert.equal(response.headers.get("access-control-allow-origin"), "https://meutimeideal.netlify.app");
+  assert.equal(response.body.times[0].time_id, 16068219);
+});
+
 test("GET /cartola/time com timeId valido retorna elenco recebido do upstream", async () => {
   const upstreamBody = {
     time: { time_id: 16068219, nome: "Silvas FC" },
@@ -139,6 +232,25 @@ test("GET /cartola/time com timeId valido retorna elenco recebido do upstream", 
   assert.deepEqual(response.body, upstreamBody);
   assert.equal(response.body.mock, undefined);
   assert.equal(response.body.fallback, undefined);
+});
+
+test("GET /cartola/time/:id com Origin do Netlify preserva CORS", async () => {
+  const fetchImpl = async () => {
+    return new Response(JSON.stringify({ time: { time_id: 16068219 }, atletas: [] }), {
+      status: 200,
+      headers: { "content-type": "application/json" }
+    });
+  };
+  const app = createApp({ fetchImpl });
+  const response = await request(app, "/cartola/time/16068219", {
+    headers: {
+      Origin: "https://meutimeideal.netlify.app"
+    }
+  });
+
+  assert.equal(response.status, 200);
+  assert.equal(response.headers.get("access-control-allow-origin"), "https://meutimeideal.netlify.app");
+  assert.equal(response.body.time.time_id, 16068219);
 });
 
 test("GET /cartola/time sem timeId retorna 400", async () => {
@@ -238,6 +350,22 @@ test("proxy de time trata falha de rede", async () => {
   assert.equal(response.body.atletas, undefined);
 });
 
+test("erro upstream com Origin do Netlify mantem CORS", async () => {
+  const fetchImpl = async () => {
+    throw new Error("network unavailable");
+  };
+  const app = createApp({ fetchImpl });
+  const response = await request(app, "/cartola/status", {
+    headers: {
+      Origin: "https://meutimeideal.netlify.app"
+    }
+  });
+
+  assert.equal(response.status, 502);
+  assert.equal(response.headers.get("access-control-allow-origin"), "https://meutimeideal.netlify.app");
+  assert.equal(response.body.error.code, "UPSTREAM_REQUEST_FAILED");
+});
+
 test("proxy de time trata JSON invalido do upstream", async () => {
   const fetchImpl = async () => {
     return new Response("{invalid-json", {
@@ -260,6 +388,34 @@ test("GET /historical/:season/round/:round retorna 404 para rodada inexistente",
 
   assert.equal(response.status, 404);
   assert.equal(response.body.error.code, "NOT_FOUND");
+});
+
+test("resposta 404 com Origin do Netlify mantem CORS", async () => {
+  const app = createApp({ fetchImpl: fetch });
+  const response = await request(app, "/rota-inexistente", {
+    headers: {
+      Origin: "https://meutimeideal.netlify.app"
+    }
+  });
+
+  assert.equal(response.status, 404);
+  assert.equal(response.headers.get("access-control-allow-origin"), "https://meutimeideal.netlify.app");
+  assert.equal(response.body.error.code, "NOT_FOUND");
+});
+
+test("endpoint research continua funcionando com Origin do Netlify", async () => {
+  const repository = new ResearchRepository({ baseDir: fs.mkdtempSync(path.join(os.tmpdir(), "research-")) });
+  repository.writeJson(2026, "research-health.json", { schemaVersion: "engine-research-health/v1", status: "PASS" });
+  const app = createApp({ fetchImpl: fetch, researchRepository: repository });
+  const response = await request(app, "/research/research-health", {
+    headers: {
+      Origin: "https://meutimeideal.netlify.app"
+    }
+  });
+
+  assert.equal(response.status, 200);
+  assert.equal(response.headers.get("access-control-allow-origin"), "https://meutimeideal.netlify.app");
+  assert.equal(response.body.status, "PASS");
 });
 
 test("GET /historical/:season/round/:round retorna 400 para rodada invalida", async () => {

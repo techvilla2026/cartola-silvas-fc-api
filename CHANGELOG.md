@@ -1,5 +1,15 @@
 # Changelog
 
+## 4.7.1 - 2026-07-16
+
+- Corrige a allowlist CORS do app publicado para `https://meutimeideal.netlify.app`.
+- Preserva a origem legada `https://utimeideal.netlify.app` por compatibilidade.
+- Mantem `localhost` e `127.0.0.1` com portas variaveis para desenvolvimento.
+- Centraliza metodos, headers e max-age do preflight em constantes do servidor.
+- Amplia headers permitidos para `Accept`, `Content-Type`, `Authorization` e `X-Requested-With`.
+- Adiciona testes de CORS para Netlify, localhost, 127.0.0.1, origem desconhecida, requisicao sem `Origin`, preflight, rotas de busca, 404, erro upstream, research e endpoints existentes.
+- Nao altera Flutter, motor oficial, formulas, snapshots, dados historicos, backtests, commit, push ou deploy.
+
 ## 4.7.0 - 2026-07-14
 
 - Adiciona laboratorio historico offline do motor com artefatos versionados em `data/research/2026`.

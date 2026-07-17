@@ -4,7 +4,7 @@ Backend proxy do Cartola FC para o aplicativo Meu Time Ideal Web.
 
 Este servidor evita que a versao Web do app Flutter precise chamar diretamente `https://api.cartolafc.globo.com` a partir do navegador, reduzindo problemas de CORS. As rotas retornam dados reais da API oficial do Cartola FC, sem mocks, fallbacks ficticios ou alteracao silenciosa do conteudo recebido.
 
-A Build 4.7.0 adiciona o laboratorio historico offline do motor, com auditoria, diagnosticos, experimentos walk-forward e promotion gate somente leitura. A automacao de producao dos snapshots vivos pre-rodada permanece em `READY`.
+A Build 4.7.1 corrige a comunicacao CORS do Flutter Web publicado no Netlify com o backend Render, preservando o laboratorio historico offline da Build 4.7.0 e a automacao de snapshots vivos em `READY`.
 
 ## Endpoints
 
@@ -16,7 +16,7 @@ Retorna informacoes basicas do servico:
 {
   "service": "cartola-silvas-fc-api",
   "status": "online",
-  "version": "4.7.0",
+  "version": "4.7.1",
   "focus": "Brasileirao/Cartola FC"
 }
 ```
@@ -132,8 +132,10 @@ Retorna a analise agregada das divergencias de scouts.
 O CORS permite explicitamente origens locais de desenvolvimento e o dominio publico atual:
 
 ```text
-https://utimeideal.netlify.app
+https://meutimeideal.netlify.app
 ```
+
+O dominio legado `https://utimeideal.netlify.app` permanece permitido por compatibilidade. Origens locais `localhost` e `127.0.0.1` sao aceitas com portas variaveis. Requisicoes sem `Origin`, como chamadas servidor-servidor ou abertura direta no navegador, continuam funcionando sem cabecalho CORS.
 
 Para adicionar outros dominios sem alterar o codigo, use a variavel de ambiente `ALLOWED_ORIGINS` com valores separados por virgula:
 
