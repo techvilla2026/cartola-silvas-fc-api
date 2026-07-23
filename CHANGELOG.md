@@ -1,5 +1,30 @@
 # Changelog
 
+## 5.2.0 - 2026-07-23
+
+- Enriquece o contexto real da rodada com indices internos deterministas de forca ofensiva, forca defensiva, SG, risco de sofrer gol e oportunidade ofensiva.
+- Calcula forma recente em janela de cinco jogos oficiais anteriores ao confronto, com separacao casa/fora, descanso e prevencao de vazamento temporal.
+- Expõe contexto por partida e por atleta para goleiros, defensores, meias e atacantes, sem alterar a Previsao SLVS oficial ou a selecao final.
+- Adiciona diagnostico read-only `/diagnostics/team-context`, incluindo comparacao de goleiros reais quando presentes no mercado atual.
+- Adiciona contratos read-only para 4-5-1 e para reservas/Reserva de Luxo, mantendo campos `null` quando a API publica nao fornece regra oficial.
+- Mantem Brasileirao como unica competicao integrada; Copa do Brasil, Libertadores e Sul-Americana continuam indisponiveis sem fonte validada.
+- Mantem provaveis, desfalques, lesoes, xG, odds e risco de rodizio confirmado como indisponiveis; `rotationRiskIndex` e apenas estimativa interna de calendario.
+- Atualiza documentacao em `docs/build-5.2.0-real-context.md` e preserva todos os endpoints anteriores.
+- Nao altera Flutter, backend externo, Motor SLVS oficial, formulas, snapshots historicos, Research Lab, commit, push ou deploy.
+
+## 5.0.0 - 2026-07-21
+
+- Cria a camada `real-round-context-engine/5.0.0` para contexto real da rodada.
+- Normaliza partidas reais do Brasileirao a partir de `/partidas` e mercado atual a partir de `/mercado/status`.
+- Adiciona endpoints read-only `/brasileirao/round-context`, `/brasileirao/results`, `/brasileirao/team-context/:teamId`, `/brasileirao/calendar-context/:teamId` e `/brasileirao/player-context-contract`.
+- Adiciona avaliacao read-only `/research/real-round-evaluation` com previsoes historicas congeladas antes dos resultados.
+- Adiciona `/research/context-feature-diagnostics` com candidatos offline de contexto, sem promocao automatica.
+- Prepara contratos para Copa do Brasil, Libertadores, Sul-Americana, desfalques, provaveis escalacoes e titularidade sem inventar dados.
+- Adiciona sinais explicaveis de congestionamento, descanso, forma recente e casa/fora quando ha amostra real suficiente.
+- Documenta cache, fallback stale, prevencao de vazamento temporal e limites em `docs/real-round-context-architecture.md`.
+- Atualiza o promotion gate para Build 5.0.0 mantendo promocao automatica bloqueada.
+- Nao altera Flutter, Motor SLVS oficial, formulas, snapshots, backtests antigos, commit, push ou deploy.
+
 ## 4.7.1 - 2026-07-16
 
 - Corrige a allowlist CORS do app publicado para `https://meutimeideal.netlify.app`.

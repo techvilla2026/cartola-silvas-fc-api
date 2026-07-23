@@ -7,7 +7,7 @@ const { ResearchRepository } = require("./repository");
 
 const SEASON = 2026;
 const SOURCE_BUILD_ID = "build-4.3.2";
-const RESEARCH_ENGINE_VERSION = "engine-research-lab/4.7.0";
+const RESEARCH_ENGINE_VERSION = "engine-research-lab/5.0.0";
 const ROUND_FILE = (round) => `rounds/round-${String(round).padStart(2, "0")}.json`;
 const REQUIRED_METADATA_KEYS = [
   "schemaVersion",
@@ -255,7 +255,7 @@ function baseMeta(schemaVersion, source, extra = {}) {
     researchEngineVersion: RESEARCH_ENGINE_VERSION,
     dataFingerprint: fingerprint(dataBasis),
     configFingerprint: fingerprint(extra.config || {}),
-    codeVersion: "4.7.0",
+    codeVersion: "5.0.0",
     sourceBuildId: source.summary.buildId,
     inputRounds,
     evaluatedRounds: inputRounds,
@@ -652,7 +652,15 @@ function buildExperimentsSummary(source, experiments) {
     })),
     officialEngineChanged: false,
     shadowModePrepared: true,
-    shadowModeActive: false
+    shadowModeActive: false,
+    contextCandidatesPrepared: [
+      "context-home-away-candidate",
+      "context-recent-form-candidate",
+      "context-rest-candidate",
+      "context-fixture-congestion-candidate",
+      "context-combined-candidate"
+    ],
+    contextCandidatesStatus: "PREPARED_FOR_OFFLINE_RESEARCH_NOT_ACTIVE_IN_OFFICIAL_ENGINE"
   });
 }
 
@@ -681,7 +689,7 @@ function buildPromotionGate(source, experiments, policy = readPromotionPolicy())
         enoughRounds ? "MIN_ROUNDS_OK" : "MIN_ROUNDS_NOT_MET",
         improvement ? "MAE_IMPROVED" : "MAE_NOT_IMPROVED",
         robust ? "ROBUSTNESS_CI_OK" : "ROBUSTNESS_CI_NOT_CONFIRMED",
-        "PROMOTION_DISABLED_BY_BUILD_4_7_0"
+        "PROMOTION_DISABLED_BY_BUILD_5_0_0"
       ]
     };
   });

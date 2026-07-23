@@ -12,9 +12,21 @@ const { parseLiveRound, parseSnapshotId } = require("./src/liveSnapshot/domain/v
 const { storageHealth } = require("./src/liveSnapshot/services/storageHealth");
 const { buildProductionHealth } = require("./src/liveSnapshot/services/productionHealth");
 const { ResearchRepository } = require("./src/research/repository");
+const {
+  buildCalendarContext,
+  buildContextFeatureDiagnostics,
+  buildPlayerContextContract,
+  buildRealRoundEvaluation,
+  buildResults,
+  buildRoundContext,
+  buildTeamContext,
+  buildTeamContextDiagnostic,
+  buildReserveRulesContract,
+  buildFormationContract
+} = require("./src/realRoundContext/service");
 
 const SERVICE_NAME = "cartola-silvas-fc-api";
-const BACKEND_VERSION = "4.7.1";
+const BACKEND_VERSION = "5.2.0";
 const DEFAULT_PORT = 3000;
 const CARTOLA_API_BASE_URL = "https://api.cartolafc.globo.com";
 const DEFAULT_TIMEOUT_MS = 8000;
@@ -958,6 +970,102 @@ function createApp(options = {}) {
 
   app.get("/research/research-health", (req, res) => {
     return sendResearchFile(req, res, "research-health.json", "Health do laboratorio de pesquisa nao encontrado. Execute npm run research:check.");
+  });
+
+  function parseTeamIdParam(value) {
+    return isPositiveInteger(String(value || "").trim()) ? Number(value) : null;
+  }
+
+  function realContextOptions(req) {
+    return {
+      fetchImpl: req.app.locals.fetchImpl,
+      timeoutMs: req.app.locals.timeoutMs,
+      liveSnapshotRepository: req.app.locals.liveSnapshotRepository,
+      historicalRepository: req.app.locals.historicalRepository,
+      backtestRepository: req.app.locals.backtestRepository,
+      season: 2026
+    };
+  }
+
+  app.get("/brasileirao/round-context", async (req, res, next) => {
+    try {
+      return res.json(await buildRoundContext(realContextOptions(req)));
+    } catch (error) {
+      return next(error);
+    }
+  });
+
+  app.get("/brasileirao/results", async (req, res, next) => {
+    try {
+      return res.json(await buildResults(realContextOptions(req)));
+    } catch (error) {
+      return next(error);
+    }
+  });
+
+  app.get("/brasileirao/team-context/:teamId", async (req, res, next) => {
+    const teamId = parseTeamIdParam(req.params.teamId);
+    if (!teamId) return sendBadRequest(res, "INVALID_TEAM_ID", "teamId deve ser um inteiro positivo.");
+
+    try {
+      return res.json(await buildTeamContext({ ...realContextOptions(req), teamId }));
+    } catch (error) {
+      return next(error);
+    }
+  });
+
+  app.get("/brasileirao/calendar-context/:teamId", async (req, res, next) => {
+    const teamId = parseTeamIdParam(req.params.teamId);
+    if (!teamId) return sendBadRequest(res, "INVALID_TEAM_ID", "teamId deve ser um inteiro positivo.");
+
+    try {
+      return res.json(await buildCalendarContext({ ...realContextOptions(req), teamId }));
+    } catch (error) {
+      return next(error);
+    }
+  });
+
+  app.get("/brasileirao/player-context-contract", (req, res) => {
+    return res.json(buildPlayerContextContract());
+  });
+
+  app.get("/brasileirao/formation-contract", (req, res) => {
+    return res.json(buildFormationContract());
+  });
+
+  app.get("/cartola/reserve-rules-contract", (req, res) => {
+    return res.json(buildReserveRulesContract());
+  });
+
+  app.get("/diagnostics/team-context", async (req, res, next) => {
+    const rawMatchId = typeof req.query.matchId === "string" ? req.query.matchId.trim() : "";
+    const rawHomeClubId = typeof (req.query.homeClubId || req.query.homeTeamId) === "string" ? String(req.query.homeClubId || req.query.homeTeamId).trim() : "";
+    const rawAwayClubId = typeof (req.query.awayClubId || req.query.awayTeamId) === "string" ? String(req.query.awayClubId || req.query.awayTeamId).trim() : "";
+    if (rawMatchId && !isPositiveInteger(rawMatchId)) return sendBadRequest(res, "INVALID_MATCH_ID", "matchId deve ser um inteiro positivo.");
+    if ((rawHomeClubId && !isPositiveInteger(rawHomeClubId)) || (rawAwayClubId && !isPositiveInteger(rawAwayClubId))) {
+      return sendBadRequest(res, "INVALID_CLUB_ID", "homeClubId e awayClubId devem ser inteiros positivos.");
+    }
+    if (Boolean(rawHomeClubId) !== Boolean(rawAwayClubId)) {
+      return sendBadRequest(res, "INCOMPLETE_FIXTURE_QUERY", "Informe homeClubId e awayClubId juntos.");
+    }
+    try {
+      return res.json(await buildTeamContextDiagnostic({
+        ...realContextOptions(req),
+        matchId: rawMatchId ? Number(rawMatchId) : null,
+        homeClubId: rawHomeClubId ? Number(rawHomeClubId) : null,
+        awayClubId: rawAwayClubId ? Number(rawAwayClubId) : null
+      }));
+    } catch (error) {
+      return next(error);
+    }
+  });
+
+  app.get("/research/real-round-evaluation", (req, res) => {
+    return res.json(buildRealRoundEvaluation({ season: 2026, backtestRepository: backtestRepositoryForBuild("4.3.2") }));
+  });
+
+  app.get("/research/context-feature-diagnostics", (req, res) => {
+    return res.json(buildContextFeatureDiagnostics({ season: 2026, backtestRepository: backtestRepositoryForBuild("4.3.2") }));
   });
 
   app.use((req, res) => {

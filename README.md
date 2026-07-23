@@ -4,7 +4,7 @@ Backend proxy do Cartola FC para o aplicativo Meu Time Ideal Web.
 
 Este servidor evita que a versao Web do app Flutter precise chamar diretamente `https://api.cartolafc.globo.com` a partir do navegador, reduzindo problemas de CORS. As rotas retornam dados reais da API oficial do Cartola FC, sem mocks, fallbacks ficticios ou alteracao silenciosa do conteudo recebido.
 
-A Build 4.7.1 corrige a comunicacao CORS do Flutter Web publicado no Netlify com o backend Render, preservando o laboratorio historico offline da Build 4.7.0 e a automacao de snapshots vivos em `READY`.
+A Build 5.2.0 enriquece a camada de contexto real da rodada para o Brasileirao, preservando CORS Netlify, laboratorio historico offline e automacao de snapshots vivos em `READY`. Os indices abaixo sao sinais internos SLVS explicaveis; nao sao probabilidades oficiais.
 
 ## Endpoints
 
@@ -16,7 +16,7 @@ Retorna informacoes basicas do servico:
 {
   "service": "cartola-silvas-fc-api",
   "status": "online",
-  "version": "4.7.1",
+  "version": "5.2.0",
   "focus": "Brasileirao/Cartola FC"
 }
 ```
@@ -90,6 +90,34 @@ Exemplo:
 ```bash
 curl "http://localhost:3000/cartola/time/16068219"
 ```
+
+### `GET /diagnostics/team-context`
+
+Diagnostico read-only de um confronto real. Aceita `matchId` ou o par
+`homeClubId` + `awayClubId`. Retorna forca ofensiva/defensiva, forma recente,
+desempenho casa/fora, descanso, congestionamento, risco de rodizio como
+estimativa SLVS, SG estimate, risco de sofrer gol e oportunidade ofensiva.
+
+Exemplo:
+
+```bash
+curl "http://localhost:3000/diagnostics/team-context?homeClubId=263&awayClubId=277"
+```
+
+O diagnostico tambem inclui comparacao de goleiros encontrados no mercado real
+(incluindo Ivan, Pedro Rangel, Everson, Rossi e Carlos Miguel quando presentes),
+sem criar jogadores ausentes.
+
+### `GET /brasileirao/formation-contract`
+
+Contrato read-only das formacoes que o Flutter pode consumir. Inclui 4-3-3,
+4-4-2, 3-4-3, 3-5-2, 5-3-2 e 4-5-1. O backend nao monta times nesta build.
+
+### `GET /cartola/reserve-rules-contract`
+
+Explicita o que o endpoint publico do Cartola fornece sobre reservas e o que
+continua indisponivel. Quantidade, posicoes permitidas, substituicao e Reserva
+de Luxo permanecem `null` enquanto nao houver uma fonte oficial versionada.
 
 ### `GET /historical/2026/coverage`
 
@@ -231,6 +259,35 @@ Endpoints somente leitura:
 - `GET /research/research-health`
 
 O promotion gate usa `config/engine-experiment-policy.json`, permite apenas `REJECTED`, `INSUFFICIENT_EVIDENCE`, `PROMISING` e `ELIGIBLE_FOR_SHADOW_TEST`, e nunca retorna `PROMOTED` nesta build.
+
+## Contexto real da rodada
+
+A Build 5.2.0 adiciona endpoints read-only para transformar dados reais disponiveis em contexto estruturado para evolucao futura do Motor SLVS. Estes sinais nao alteram a nota oficial, os pesos ou as formulas atuais.
+
+Endpoints:
+
+- `GET /brasileirao/round-context`
+- `GET /brasileirao/results`
+- `GET /brasileirao/team-context/:teamId`
+- `GET /brasileirao/calendar-context/:teamId`
+- `GET /brasileirao/player-context-contract`
+- `GET /brasileirao/formation-contract`
+- `GET /cartola/reserve-rules-contract`
+- `GET /diagnostics/team-context`
+- `GET /research/real-round-evaluation`
+- `GET /research/context-feature-diagnostics`
+
+Fonte real integrada nesta fase:
+
+- Cartola FC API publica `/partidas`
+- Cartola FC API publica `/mercado/status`
+- Dados historicos locais e backtests congelados apenas para avaliacao sem vazamento
+
+Copa do Brasil, Libertadores, Sul-Americana, desfalques, provaveis escalacoes e titularidade ficam com contrato preparado e status `UNAVAILABLE_SOURCE_NOT_CONFIGURED` quando nao houver fonte confiavel.
+
+Documentacao:
+
+- `docs/real-round-context-architecture.md`
 
 ## Dados historicos
 
@@ -377,6 +434,7 @@ Documentacao:
 - `docs/live-snapshot-production-activation-checklist.md`
 - `docs/live-snapshot-production-ready.md`
 - `docs/engine-research-lab.md`
+- `docs/real-round-context-architecture.md`
 
 ## Backtest
 

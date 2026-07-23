@@ -1,6 +1,6 @@
 {
   "schemaVersion": "engine-promotion-gate/v1",
-  "build": "4.7.0",
+  "build": "5.0.0",
   "promotionEnabled": false,
   "allowedStates": [
     "REJECTED",

@@ -42,7 +42,7 @@ test("GET / retorna informacoes do servico", async () => {
   assert.equal(response.status, 200);
   assert.equal(response.body.service, "cartola-silvas-fc-api");
   assert.equal(response.body.status, "online");
-  assert.equal(response.body.version, "4.7.1");
+  assert.equal(response.body.version, "5.2.0");
   assert.equal(response.body.focus, "Brasileirao/Cartola FC");
   assert.equal(response.body.cartola, undefined);
 });

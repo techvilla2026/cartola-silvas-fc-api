@@ -11,7 +11,7 @@ async function readJsonResponse(response, endpoint) {
   }
 }
 
-async function fetchCartolaJson({ fetchImpl, endpoint, timeoutMs = 8000, userAgent = "cartola-silvas-fc-api/4.5.0" }) {
+async function fetchCartolaJson({ fetchImpl, endpoint, timeoutMs = 8000, userAgent = "cartola-silvas-fc-api/5.2.0" }) {
   const controller = new AbortController();
   const timeout = setTimeout(() => controller.abort(), timeoutMs);
 
