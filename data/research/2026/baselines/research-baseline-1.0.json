@@ -1,0 +1,2951 @@
+{
+  "baselineId": "RESEARCH_BASELINE_1_0",
+  "schemaVersion": "research-baseline/v1",
+  "projectVersion": "5.2.8",
+  "season": 2026,
+  "createdAt": "2026-07-24T17:19:47.472Z",
+  "buildVersion": "5.2.8",
+  "status": "VALID",
+  "description": "Research Baseline 1.0: frozen scientific reference for future Research Lab comparisons.",
+  "sourceCommit": "d01562942dcd1450f196647d7f8f7520d8ac45ba",
+  "sourceWorkingTreeState": "DIRTY",
+  "workingTree": {
+    "modifiedFiles": [
+      "HANGELOG.md",
+      "README.md",
+      "data/research/2026/ablation-study.json",
+      "data/research/2026/audit.json",
+      "data/research/2026/captain-diagnostics.json",
+      "data/research/2026/engine-diagnostics.json",
+      "data/research/2026/experiments-summary.json",
+      "data/research/2026/experiments/bias-correction-walk-forward.json",
+      "data/research/2026/experiments/home-away-bias-walk-forward.json",
+      "data/research/2026/experiments/price-band-bias-walk-forward.json",
+      "data/research/2026/ideal-team-diagnostics.json",
+      "data/research/2026/promotion-gate.json",
+      "data/research/2026/ranking-diagnostics.json",
+      "data/research/2026/research-health.json",
+      "package-lock.json",
+      "package.json",
+      "server.js",
+      "test/liveSnapshot.test.js",
+      "test/server.test.js"
+    ],
+    "newFiles": [
+      "data/research/2026/availability-calibration.json",
+      "data/research/2026/ground-truth-topk-audit.json",
+      "data/research/2026/ground-truth-validation.json",
+      "data/research/2026/multi-round-calibration.json",
+      "data/research/2026/round-19-validation.json",
+      "data/research/2026/slvs-evidence-dashboard.json",
+      "docs/research/",
+      "scripts/research-availability-calibration.js",
+      "scripts/research-baseline.js",
+      "scripts/research-evidence-dashboard.js",
+      "scripts/research-ground-truth-validation.js",
+      "scripts/research-multi-round-calibration.js",
+      "scripts/research-round-validation.js",
+      "src/research/availabilityCalibration.js",
+      "src/research/evidenceDashboard.js",
+      "src/research/groundTruthValidation.js",
+      "src/research/multiRoundCalibration.js",
+      "src/research/researchBaseline.js",
+      "src/research/roundValidation.js",
+      "test/availabilityCalibration.test.js",
+      "test/evidenceDashboard.test.js",
+      "test/groundTruthValidation.test.js",
+      "test/multiRoundCalibration.test.js",
+      "test/researchBaseline.test.js",
+      "test/roundValidation.test.js"
+    ],
+    "removedFiles": [],
+    "changedFiles": [
+      "HANGELOG.md",
+      "README.md",
+      "data/research/2026/ablation-study.json",
+      "data/research/2026/audit.json",
+      "data/research/2026/captain-diagnostics.json",
+      "data/research/2026/engine-diagnostics.json",
+      "data/research/2026/experiments-summary.json",
+      "data/research/2026/experiments/bias-correction-walk-forward.json",
+      "data/research/2026/experiments/home-away-bias-walk-forward.json",
+      "data/research/2026/experiments/price-band-bias-walk-forward.json",
+      "data/research/2026/ideal-team-diagnostics.json",
+      "data/research/2026/promotion-gate.json",
+      "data/research/2026/ranking-diagnostics.json",
+      "data/research/2026/research-health.json",
+      "package-lock.json",
+      "package.json",
+      "server.js",
+      "test/liveSnapshot.test.js",
+      "test/server.test.js",
+      "data/research/2026/availability-calibration.json",
+      "data/research/2026/ground-truth-topk-audit.json",
+      "data/research/2026/ground-truth-validation.json",
+      "data/research/2026/multi-round-calibration.json",
+      "data/research/2026/round-19-validation.json",
+      "data/research/2026/slvs-evidence-dashboard.json",
+      "docs/research/",
+      "scripts/research-availability-calibration.js",
+      "scripts/research-baseline.js",
+      "scripts/research-evidence-dashboard.js",
+      "scripts/research-ground-truth-validation.js",
+      "scripts/research-multi-round-calibration.js",
+      "scripts/research-round-validation.js",
+      "src/research/availabilityCalibration.js",
+      "src/research/evidenceDashboard.js",
+      "src/research/groundTruthValidation.js",
+      "src/research/multiRoundCalibration.js",
+      "src/research/researchBaseline.js",
+      "src/research/roundValidation.js",
+      "test/availabilityCalibration.test.js",
+      "test/evidenceDashboard.test.js",
+      "test/groundTruthValidation.test.js",
+      "test/multiRoundCalibration.test.js",
+      "test/researchBaseline.test.js",
+      "test/roundValidation.test.js"
+    ],
+    "changedFileCount": 44,
+    "generatedAt": "2026-07-24T17:19:47.472Z"
+  },
+  "sourceArtifacts": [
+    {
+      "path": "data/research/2026/round-19-validation.json",
+      "sha256": "319a8f1ddeed2d4f41edc1a4fb5a5cea2502cdd04aaa2cf08f9ad68980857fe8",
+      "rawSha256": "25dd84104cccb4848a59076d15753b961315b690861ef26756370addb5c721e0",
+      "required": true,
+      "roleInBaseline": "REQUIRED_SOURCE",
+      "validationStatus": "PRESENT"
+    },
+    {
+      "path": "data/research/2026/multi-round-calibration.json",
+      "sha256": "ccfdc3046a762bd31cb0afcfcde2e9f3dfb16bfbf6054b8045354c622990d25a",
+      "rawSha256": "eaab090a77d0281cee06f860c8ea0c205e07bf1d46fa5aab26d29ef68072f933",
+      "required": true,
+      "roleInBaseline": "REQUIRED_SOURCE",
+      "validationStatus": "PRESENT"
+    },
+    {
+      "path": "data/research/2026/availability-calibration.json",
+      "sha256": "0c2494d59bff7b0293ba54c949ba22add39f41cdbbc1b2cf2b81aa7403f44678",
+      "rawSha256": "f36055c78eefb84341b5af3177dfd2bef72bea39c2f8786df36b307db80d1358",
+      "required": true,
+      "roleInBaseline": "REQUIRED_SOURCE",
+      "validationStatus": "PRESENT"
+    },
+    {
+      "path": "data/research/2026/slvs-evidence-dashboard.json",
+      "sha256": "8f0da9713441ed1a60f914c5601efeb10909a4db7fb313c0267de036c388171f",
+      "rawSha256": "823e489c0503080e993bce7bc68d5bc19b61761902dc75815d030acb568d695e",
+      "required": true,
+      "roleInBaseline": "REQUIRED_BASELINE_CONSUMER",
+      "validationStatus": "PRESENT"
+    },
+    {
+      "path": "data/research/2026/ground-truth-validation.json",
+      "sha256": "509e7ca7ea38be93e2bbf1692475901b7776ea3fafa82e881d7b3b175c008d00",
+      "rawSha256": "9c7ff2317a5da51523be52e7906b313408f296e7347533aa15890da477c62f1b",
+      "required": true,
+      "roleInBaseline": "REQUIRED_SOURCE",
+      "validationStatus": "PRESENT"
+    },
+    {
+      "path": "data/research/2026/ground-truth-topk-audit.json",
+      "sha256": "2e073309ece9f0f0fa31de7077f3fe4035d451e15f6cea86cb7fcc42a9aabfcf",
+      "rawSha256": "66a420a8f60667c936151aa844abc25ca6c92859a1d2ebb233dc023a729aa9f3",
+      "required": true,
+      "roleInBaseline": "REQUIRED_SOURCE",
+      "validationStatus": "PRESENT"
+    },
+    {
+      "path": "data/research/2026/ranking-diagnostics.json",
+      "sha256": "466e6cd6e09210361b962f0d7ae7ef0dfe67adfe86731125a3a860af7ef394f1",
+      "rawSha256": "800e49ed8daf7f1f3b0b8ed8830e57297022d51a0f41f1936f4f8345814c941d",
+      "required": true,
+      "roleInBaseline": "REQUIRED_SOURCE",
+      "validationStatus": "PRESENT"
+    },
+    {
+      "path": "data/research/2026/ideal-team-diagnostics.json",
+      "sha256": "a2419440c70d218c62c4b1b7f9b3305ad164ee876655960ce9a071dc3ee1c8b5",
+      "rawSha256": "6f87e5d485ea93c333b1d05c5a0f1f18e234e7ae4e10db70d5a2459ff6af210b",
+      "required": true,
+      "roleInBaseline": "REQUIRED_SOURCE",
+      "validationStatus": "PRESENT"
+    },
+    {
+      "path": "data/research/2026/captain-diagnostics.json",
+      "sha256": "f5d36b3bfbb3cc0f0395743e191a2bbf5d3722db71f62ecd43380ad237538e6f",
+      "rawSha256": "abf2bd032e8d675791172ce84767ad14388286725d6bf21052690913891e8d9a",
+      "required": true,
+      "roleInBaseline": "REQUIRED_SOURCE",
+      "validationStatus": "PRESENT"
+    },
+    {
+      "path": "data/research/2026/promotion-gate.json",
+      "sha256": "b2e6e5aa5790d0117b693d334ed1283089af51ebb019d8d26d7918781ec3c7e8",
+      "rawSha256": "6179095c1c3efbd698ab7cb353ccadf779226032696e2b2df0a71c4aa6da21be",
+      "required": true,
+      "roleInBaseline": "REQUIRED_SOURCE",
+      "validationStatus": "PRESENT"
+    },
+    {
+      "path": "data/research/2026/research-health.json",
+      "sha256": "144466352fce1743014290fd12a02a66ce444de09b6f6a3bf9a524ad383c792a",
+      "rawSha256": "6e465069152754b37347c868f8b04b1b4f81ca7af4aeb81952dd889db320eb78",
+      "required": true,
+      "roleInBaseline": "REQUIRED_SOURCE",
+      "validationStatus": "PRESENT"
+    },
+    {
+      "path": "data/research/2026/audit.json",
+      "sha256": "1fde134f5c50f01127c1e73a9ecaec03698cc376f821944364557090661122b8",
+      "rawSha256": "de5dd502fdd5fedfc92fa3e4a452d9d7d35cbefbc9ddde578ddc573b0c53f8c3",
+      "required": true,
+      "roleInBaseline": "REQUIRED_SOURCE",
+      "validationStatus": "PRESENT"
+    },
+    {
+      "path": "data/research/2026/experiments-summary.json",
+      "sha256": "3b23400807d724e7610a7cd74fc02e22ba964fb932f8f8a105d7c9bf3e22621f",
+      "rawSha256": "26e4b3afd5e16f5ba9f2eb1330a0fb017fa956d0742baa3a7012adba4eb3859b",
+      "required": true,
+      "roleInBaseline": "REQUIRED_SOURCE",
+      "validationStatus": "PRESENT"
+    },
+    {
+      "path": "data/research/2026/engine-diagnostics.json",
+      "sha256": "653b5032d2ff56d0208891875c9b7ea8a2e8c605cab61d50d4a7f58b62e2c7b9",
+      "rawSha256": "284b04f8814046abcaaf839a8298b6fa78a8e7de03b0fddaf2184d2e9f0d23ac",
+      "required": true,
+      "roleInBaseline": "REQUIRED_SOURCE",
+      "validationStatus": "PRESENT"
+    },
+    {
+      "path": "data/research/2026/ablation-study.json",
+      "sha256": "1bd4bae61a52010acc0b3bcc37a4aa00c68a6b9d3cd79a869b096e01c2831129",
+      "rawSha256": "9eebf5e14043b2d729d4d91fe1bed139559249dce9d73a73dc1801344ac4c5b5",
+      "required": true,
+      "roleInBaseline": "REQUIRED_SOURCE",
+      "validationStatus": "PRESENT"
+    },
+    {
+      "path": "data/research/2026/experiments/bias-correction-walk-forward.json",
+      "sha256": "b1be83e3fe8e9790088d2034a8890d08e786905dd312243ee1d20393460614a2",
+      "rawSha256": "64d11e0efe37ed5c77087f4d7a5e39146fa457891733cf8d41004228ecbdc5e1",
+      "required": false,
+      "roleInBaseline": "OPTIONAL_CONTEXT",
+      "validationStatus": "PRESENT"
+    },
+    {
+      "path": "data/research/2026/experiments/home-away-bias-walk-forward.json",
+      "sha256": "29c596da3798ca9055bf26c09138278e1ab76d92a6d49b570757f5c699c88073",
+      "rawSha256": "d53a1d42bbf59dac9d46e8d60fe9ad9ea72863dcf96ef27d84085df1d2a215ea",
+      "required": false,
+      "roleInBaseline": "OPTIONAL_CONTEXT",
+      "validationStatus": "PRESENT"
+    },
+    {
+      "path": "data/research/2026/experiments/price-band-bias-walk-forward.json",
+      "sha256": "b6e257eeb4e31b7d01026de22684fecf6cff2ad1b7d23b6328898da633b40ed8",
+      "rawSha256": "01407db33fa09f9d3a4c64a2546e40477fa431063d047834041dd44c9c427eab",
+      "required": false,
+      "roleInBaseline": "OPTIONAL_CONTEXT",
+      "validationStatus": "PRESENT"
+    }
+  ],
+  "evaluatedRounds": [
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18
+  ],
+  "excludedRounds": [
+    {
+      "round": 1,
+      "reason": "ROUND_1_NOT_READY_FOR_PRE_ROUND_BACKTEST"
+    },
+    {
+      "round": 19,
+      "reason": "ROUND_19_CONTROL_CASE_CONTRACT_DIFFERS_FROM_HISTORICAL_BASELINE"
+    }
+  ],
+  "roundInventory": [
+    {
+      "round": 1,
+      "preRoundReady": true,
+      "postRoundReady": true,
+      "targetReady": true,
+      "rankingReady": false,
+      "captainReady": false,
+      "xiReady": false,
+      "scoreReady": true,
+      "includedInBaseline": false,
+      "evidenceType": "EXCLUDED",
+      "exclusionReason": "ROUND_1_NOT_READY_FOR_PRE_ROUND_BACKTEST"
+    },
+    {
+      "round": 2,
+      "preRoundReady": true,
+      "postRoundReady": true,
+      "targetReady": true,
+      "rankingReady": true,
+      "captainReady": true,
+      "xiReady": true,
+      "scoreReady": true,
+      "includedInBaseline": true,
+      "evidenceType": "HISTORICAL_BASELINE",
+      "exclusionReason": null
+    },
+    {
+      "round": 3,
+      "preRoundReady": true,
+      "postRoundReady": true,
+      "targetReady": true,
+      "rankingReady": true,
+      "captainReady": true,
+      "xiReady": true,
+      "scoreReady": true,
+      "includedInBaseline": true,
+      "evidenceType": "HISTORICAL_BASELINE",
+      "exclusionReason": null
+    },
+    {
+      "round": 4,
+      "preRoundReady": true,
+      "postRoundReady": true,
+      "targetReady": true,
+      "rankingReady": true,
+      "captainReady": true,
+      "xiReady": true,
+      "scoreReady": true,
+      "includedInBaseline": true,
+      "evidenceType": "HISTORICAL_BASELINE",
+      "exclusionReason": null
+    },
+    {
+      "round": 5,
+      "preRoundReady": true,
+      "postRoundReady": true,
+      "targetReady": true,
+      "rankingReady": true,
+      "captainReady": true,
+      "xiReady": true,
+      "scoreReady": true,
+      "includedInBaseline": true,
+      "evidenceType": "HISTORICAL_BASELINE",
+      "exclusionReason": null
+    },
+    {
+      "round": 6,
+      "preRoundReady": true,
+      "postRoundReady": true,
+      "targetReady": true,
+      "rankingReady": true,
+      "captainReady": true,
+      "xiReady": true,
+      "scoreReady": true,
+      "includedInBaseline": true,
+      "evidenceType": "HISTORICAL_BASELINE",
+      "exclusionReason": null
+    },
+    {
+      "round": 7,
+      "preRoundReady": true,
+      "postRoundReady": true,
+      "targetReady": true,
+      "rankingReady": true,
+      "captainReady": true,
+      "xiReady": true,
+      "scoreReady": true,
+      "includedInBaseline": true,
+      "evidenceType": "HISTORICAL_BASELINE",
+      "exclusionReason": null
+    },
+    {
+      "round": 8,
+      "preRoundReady": true,
+      "postRoundReady": true,
+      "targetReady": true,
+      "rankingReady": true,
+      "captainReady": true,
+      "xiReady": true,
+      "scoreReady": true,
+      "includedInBaseline": true,
+      "evidenceType": "HISTORICAL_BASELINE",
+      "exclusionReason": null
+    },
+    {
+      "round": 9,
+      "preRoundReady": true,
+      "postRoundReady": true,
+      "targetReady": true,
+      "rankingReady": true,
+      "captainReady": true,
+      "xiReady": true,
+      "scoreReady": true,
+      "includedInBaseline": true,
+      "evidenceType": "HISTORICAL_BASELINE",
+      "exclusionReason": null
+    },
+    {
+      "round": 10,
+      "preRoundReady": true,
+      "postRoundReady": true,
+      "targetReady": true,
+      "rankingReady": true,
+      "captainReady": true,
+      "xiReady": true,
+      "scoreReady": true,
+      "includedInBaseline": true,
+      "evidenceType": "HISTORICAL_BASELINE",
+      "exclusionReason": null
+    },
+    {
+      "round": 11,
+      "preRoundReady": true,
+      "postRoundReady": true,
+      "targetReady": true,
+      "rankingReady": true,
+      "captainReady": true,
+      "xiReady": true,
+      "scoreReady": true,
+      "includedInBaseline": true,
+      "evidenceType": "HISTORICAL_BASELINE",
+      "exclusionReason": null
+    },
+    {
+      "round": 12,
+      "preRoundReady": true,
+      "postRoundReady": true,
+      "targetReady": true,
+      "rankingReady": true,
+      "captainReady": true,
+      "xiReady": true,
+      "scoreReady": true,
+      "includedInBaseline": true,
+      "evidenceType": "HISTORICAL_BASELINE",
+      "exclusionReason": null
+    },
+    {
+      "round": 13,
+      "preRoundReady": true,
+      "postRoundReady": true,
+      "targetReady": true,
+      "rankingReady": true,
+      "captainReady": true,
+      "xiReady": true,
+      "scoreReady": true,
+      "includedInBaseline": true,
+      "evidenceType": "HISTORICAL_BASELINE",
+      "exclusionReason": null
+    },
+    {
+      "round": 14,
+      "preRoundReady": true,
+      "postRoundReady": true,
+      "targetReady": true,
+      "rankingReady": true,
+      "captainReady": true,
+      "xiReady": true,
+      "scoreReady": true,
+      "includedInBaseline": true,
+      "evidenceType": "HISTORICAL_BASELINE",
+      "exclusionReason": null
+    },
+    {
+      "round": 15,
+      "preRoundReady": true,
+      "postRoundReady": true,
+      "targetReady": true,
+      "rankingReady": true,
+      "captainReady": true,
+      "xiReady": true,
+      "scoreReady": true,
+      "includedInBaseline": true,
+      "evidenceType": "HISTORICAL_BASELINE",
+      "exclusionReason": null
+    },
+    {
+      "round": 16,
+      "preRoundReady": true,
+      "postRoundReady": true,
+      "targetReady": true,
+      "rankingReady": true,
+      "captainReady": true,
+      "xiReady": true,
+      "scoreReady": true,
+      "includedInBaseline": true,
+      "evidenceType": "HISTORICAL_BASELINE",
+      "exclusionReason": null
+    },
+    {
+      "round": 17,
+      "preRoundReady": true,
+      "postRoundReady": true,
+      "targetReady": true,
+      "rankingReady": true,
+      "captainReady": true,
+      "xiReady": true,
+      "scoreReady": true,
+      "includedInBaseline": true,
+      "evidenceType": "HISTORICAL_BASELINE",
+      "exclusionReason": null
+    },
+    {
+      "round": 18,
+      "preRoundReady": true,
+      "postRoundReady": true,
+      "targetReady": true,
+      "rankingReady": true,
+      "captainReady": true,
+      "xiReady": true,
+      "scoreReady": true,
+      "includedInBaseline": true,
+      "evidenceType": "HISTORICAL_BASELINE",
+      "exclusionReason": null
+    },
+    {
+      "round": 19,
+      "preRoundReady": false,
+      "postRoundReady": false,
+      "targetReady": false,
+      "rankingReady": false,
+      "captainReady": false,
+      "xiReady": false,
+      "scoreReady": false,
+      "includedInBaseline": false,
+      "evidenceType": "ROUND_19_CONTROL_CASE",
+      "exclusionReason": "ROUND_19_CONTROL_CASE_CONTRACT_DIFFERS_FROM_HISTORICAL_BASELINE"
+    }
+  ],
+  "modelsIncluded": [
+    {
+      "modelId": "OFFICIAL_ENGINE",
+      "label": "Motor SLVS oficial",
+      "sourceBuild": "base",
+      "officialOrExperimental": "OFFICIAL",
+      "category": "engine",
+      "formulaFingerprint": "ad1e0be5a5407e908f19f58bf8229ada45c1c0f168f914896be0a00274c0994e",
+      "configFingerprint": "1a844d961f2cfc43488699e765106c291f0edb001abe52c738df4d27c0efab3a",
+      "metrics": [
+        "health",
+        "productionMutation"
+      ],
+      "roundsEvaluated": null,
+      "sampleSize": null,
+      "promotionState": "OFFICIAL",
+      "evidenceScore": null,
+      "knownLimitations": []
+    },
+    {
+      "modelId": "CLEAN_SHEET_V1",
+      "label": "Clean Sheet V1",
+      "sourceBuild": "5.2.3",
+      "officialOrExperimental": "OFFICIAL",
+      "category": "clean_sheet",
+      "formulaFingerprint": "edfdd30d9eaa3550f3675b18fb0bf0df544357e7eef16d56130f0c306a2b7b19",
+      "configFingerprint": "836dc708eba674d813e2234cfd20ecffa88ba35f2100f8449c4708a4f7ef4e15",
+      "metrics": [
+        "Top1",
+        "Top3",
+        "Top5",
+        "avgRankActualSG"
+      ],
+      "roundsEvaluated": 17,
+      "sampleSize": null,
+      "promotionState": "OFFICIAL",
+      "evidenceScore": null,
+      "knownLimitations": [
+        "Indice interno, nao probabilidade."
+      ]
+    },
+    {
+      "modelId": "CLEAN_SHEET_V2",
+      "label": "Clean Sheet V2",
+      "sourceBuild": "5.2.3",
+      "officialOrExperimental": "EXPERIMENTAL",
+      "category": "clean_sheet",
+      "formulaFingerprint": "fa6bdc7284f0e8a20f9194840a771c1a2db6ab3f36e2b777f723e8d3def8cc0e",
+      "configFingerprint": "51a4b55b1730c2cd913a79aacec6ef161764bb11b5a0dce7f684c6babd37f20f",
+      "metrics": [
+        "Top1",
+        "Top3",
+        "Top5",
+        "avgRankActualSG"
+      ],
+      "roundsEvaluated": 17,
+      "sampleSize": null,
+      "promotionState": "EXPERIMENTAL",
+      "evidenceScore": 17,
+      "knownLimitations": [
+        "Candidato shadow; sem promocao automatica.",
+        "Amostra ainda exige validacao fora do laboratorio."
+      ]
+    },
+    {
+      "modelId": "GOL_OFFICIAL",
+      "label": "GOL oficial",
+      "sourceBuild": "base",
+      "officialOrExperimental": "OFFICIAL",
+      "category": "position",
+      "formulaFingerprint": "1687950f4746ba5d39b95760b250e393d89c2dd24e89e5263955198da946dfc8",
+      "configFingerprint": "142eedd4a1d0770cf531b0a7a58ff030d4c179c786804792d05a4d678affb796",
+      "metrics": [
+        "health",
+        "productionMutation"
+      ],
+      "roundsEvaluated": null,
+      "sampleSize": null,
+      "promotionState": "OFFICIAL",
+      "evidenceScore": null,
+      "knownLimitations": []
+    },
+    {
+      "modelId": "GOL_V2",
+      "label": "GOL V2",
+      "sourceBuild": "5.2.4",
+      "officialOrExperimental": "EXPERIMENTAL",
+      "category": "position",
+      "formulaFingerprint": "8c39911441f52e33289fe763de96f2a916303eddef2e0be41bb669666ccbe050",
+      "configFingerprint": "64987b836e6d733d6d8dc90fb7ca9cc85d627fec5fdde33c5cf329a78de99f5a",
+      "metrics": [
+        "Top1 real points mean",
+        "Top3 real points mean",
+        "Top5 real points mean"
+      ],
+      "roundsEvaluated": 17,
+      "sampleSize": null,
+      "promotionState": "EXPERIMENTAL",
+      "evidenceScore": 59,
+      "knownLimitations": [
+        "Candidato shadow; sem promocao automatica.",
+        "Amostra ainda exige validacao fora do laboratorio."
+      ]
+    },
+    {
+      "modelId": "LAT_OFFICIAL",
+      "label": "LAT oficial",
+      "sourceBuild": "base",
+      "officialOrExperimental": "OFFICIAL",
+      "category": "position",
+      "formulaFingerprint": "375df33e3df3fd29170c35e5c96fde3414cf6ff0b23a495a2259e99a14348e0f",
+      "configFingerprint": "7b5abc7e3fd215a0d82171d8aa8d9952f31322758e6d2520add7d32f17a1e9a7",
+      "metrics": [
+        "health",
+        "productionMutation"
+      ],
+      "roundsEvaluated": null,
+      "sampleSize": null,
+      "promotionState": "OFFICIAL",
+      "evidenceScore": null,
+      "knownLimitations": []
+    },
+    {
+      "modelId": "LAT_V2",
+      "label": "LAT V2",
+      "sourceBuild": "5.2.4",
+      "officialOrExperimental": "EXPERIMENTAL",
+      "category": "position",
+      "formulaFingerprint": "b7dfc8ac73068654a0785588de7523daccac8ede371abb469ecb7cd4fdb2a584",
+      "configFingerprint": "3ac5d2e8904ad84c310c45d58fdc3a74a7a4c71cd8f2629576d5f5b0e8a7937c",
+      "metrics": [
+        "Top1 real points mean",
+        "Top3 real points mean",
+        "Top5 real points mean"
+      ],
+      "roundsEvaluated": 17,
+      "sampleSize": null,
+      "promotionState": "REJECTED",
+      "evidenceScore": 49,
+      "knownLimitations": [
+        "Candidato shadow; sem promocao automatica.",
+        "Amostra ainda exige validacao fora do laboratorio."
+      ]
+    },
+    {
+      "modelId": "ZAG_OFFICIAL",
+      "label": "ZAG oficial",
+      "sourceBuild": "base",
+      "officialOrExperimental": "OFFICIAL",
+      "category": "position",
+      "formulaFingerprint": "c5287cff1610524f8f6efe372371530ab0323cfe78fed53ad409a40b91e45148",
+      "configFingerprint": "2b0d7fdd9c72a12dc679bad2b26a33d02d45260d5ea86defd583eb9fe3d45d3d",
+      "metrics": [
+        "health",
+        "productionMutation"
+      ],
+      "roundsEvaluated": null,
+      "sampleSize": null,
+      "promotionState": "OFFICIAL",
+      "evidenceScore": null,
+      "knownLimitations": []
+    },
+    {
+      "modelId": "ZAG_V2",
+      "label": "ZAG V2",
+      "sourceBuild": "5.2.4",
+      "officialOrExperimental": "EXPERIMENTAL",
+      "category": "position",
+      "formulaFingerprint": "4089ded3dfb5432bef7f0bb8d9fb9e5d800fcea31440e943b681b5003593d18d",
+      "configFingerprint": "b61e9ae76a36d827050192074993f85a6d5e4487471d1756a908427e315d425c",
+      "metrics": [
+        "Top1 real points mean",
+        "Top3 real points mean",
+        "Top5 real points mean"
+      ],
+      "roundsEvaluated": 17,
+      "sampleSize": null,
+      "promotionState": "EXPERIMENTAL",
+      "evidenceScore": 33,
+      "knownLimitations": [
+        "Candidato shadow; sem promocao automatica.",
+        "Amostra ainda exige validacao fora do laboratorio."
+      ]
+    },
+    {
+      "modelId": "MEI_OFFICIAL",
+      "label": "MEI oficial",
+      "sourceBuild": "base",
+      "officialOrExperimental": "OFFICIAL",
+      "category": "position",
+      "formulaFingerprint": "e55d8dd1d28896cbb4721dbb7d8bc68cb8cf3aceee181675898f6eb3bd30768c",
+      "configFingerprint": "2e91a929078da5e9238510f60697958380181b2ed9ca1793fba5490cb603c853",
+      "metrics": [
+        "health",
+        "productionMutation"
+      ],
+      "roundsEvaluated": null,
+      "sampleSize": null,
+      "promotionState": "OFFICIAL",
+      "evidenceScore": null,
+      "knownLimitations": []
+    },
+    {
+      "modelId": "MEI_V2",
+      "label": "MEI V2",
+      "sourceBuild": "5.2.4",
+      "officialOrExperimental": "EXPERIMENTAL",
+      "category": "position",
+      "formulaFingerprint": "9e2f44c8e703078f65be43a30b6d2ade3b9fc76c9d4ca4800cfabf252382a7a7",
+      "configFingerprint": "38c5645107489c95251e47f563230858da63b08b569e99fdc704e4dca549a7f7",
+      "metrics": [
+        "Top1 real points mean",
+        "Top3 real points mean",
+        "Top5 real points mean"
+      ],
+      "roundsEvaluated": 17,
+      "sampleSize": null,
+      "promotionState": "EXPERIMENTAL",
+      "evidenceScore": 85,
+      "knownLimitations": [
+        "Candidato shadow; sem promocao automatica.",
+        "Amostra ainda exige validacao fora do laboratorio."
+      ]
+    },
+    {
+      "modelId": "ATA_OFFICIAL",
+      "label": "ATA oficial",
+      "sourceBuild": "base",
+      "officialOrExperimental": "OFFICIAL",
+      "category": "position",
+      "formulaFingerprint": "9abf103bee52d1c47c109f16103de4697a5997a48333a2a5d685df512821ea5f",
+      "configFingerprint": "45f39b1543f59c70dbc7ced8bc484815ad6711351845ada816bd95d027e180a4",
+      "metrics": [
+        "health",
+        "productionMutation"
+      ],
+      "roundsEvaluated": null,
+      "sampleSize": null,
+      "promotionState": "OFFICIAL",
+      "evidenceScore": null,
+      "knownLimitations": []
+    },
+    {
+      "modelId": "ATA_V2",
+      "label": "ATA V2",
+      "sourceBuild": "5.2.4",
+      "officialOrExperimental": "EXPERIMENTAL",
+      "category": "position",
+      "formulaFingerprint": "eb64ea68a280f4a3208d199613500b44c6e4b3ef9624e56c01c41e39b7f7feb3",
+      "configFingerprint": "c3a390b3c6282d33d260aa6d1312f06f411fbb5b264e797b00106cc847cd6f02",
+      "metrics": [
+        "Top1 real points mean",
+        "Top3 real points mean",
+        "Top5 real points mean"
+      ],
+      "roundsEvaluated": 17,
+      "sampleSize": null,
+      "promotionState": "REJECTED",
+      "evidenceScore": 23,
+      "knownLimitations": [
+        "Candidato shadow; sem promocao automatica.",
+        "Amostra ainda exige validacao fora do laboratorio."
+      ]
+    },
+    {
+      "modelId": "TEC_OFFICIAL",
+      "label": "TEC oficial",
+      "sourceBuild": "base",
+      "officialOrExperimental": "OFFICIAL",
+      "category": "position",
+      "formulaFingerprint": "2da2942a01e0c573914682452839b8938e02cfcadf5466c5e122c1dd487e85e9",
+      "configFingerprint": "8ec151f4acbad5e1bc20c26433a5b8519c09b14c865251334820c3e17ba17cc2",
+      "metrics": [
+        "health",
+        "productionMutation"
+      ],
+      "roundsEvaluated": null,
+      "sampleSize": null,
+      "promotionState": "OFFICIAL",
+      "evidenceScore": null,
+      "knownLimitations": []
+    },
+    {
+      "modelId": "TEC_V2",
+      "label": "TEC V2",
+      "sourceBuild": "5.2.4",
+      "officialOrExperimental": "EXPERIMENTAL",
+      "category": "position",
+      "formulaFingerprint": "51e3938f610216a5347c2f932fc94f3fc751c08f534e8e1031dea5a672e3c23a",
+      "configFingerprint": "fd377a8f1ae1207ce01ec3fb345e0f83d5eb94195f1b0178e1f2a39011bbd50f",
+      "metrics": [
+        "Top1 real points mean",
+        "Top3 real points mean",
+        "Top5 real points mean"
+      ],
+      "roundsEvaluated": 17,
+      "sampleSize": null,
+      "promotionState": "REJECTED",
+      "evidenceScore": 27,
+      "knownLimitations": [
+        "Candidato shadow; sem promocao automatica.",
+        "Amostra ainda exige validacao fora do laboratorio."
+      ]
+    },
+    {
+      "modelId": "CAPTAIN_OFFICIAL",
+      "label": "Capitao oficial",
+      "sourceBuild": "base",
+      "officialOrExperimental": "OFFICIAL",
+      "category": "captain",
+      "formulaFingerprint": "96cc007378f3b81d8e672ec5cef9a426b18eb4602dc2b91f731ea0899dc8b448",
+      "configFingerprint": "1af1e8dc6023d65480c5dda9a7f2581c07b72451debd3164ae44503ba200e5ab",
+      "metrics": [
+        "captainActualPoints",
+        "captainDidPlay"
+      ],
+      "roundsEvaluated": null,
+      "sampleSize": null,
+      "promotionState": "OFFICIAL",
+      "evidenceScore": null,
+      "knownLimitations": []
+    },
+    {
+      "modelId": "CAPTAIN_V2",
+      "label": "Capitao V2",
+      "sourceBuild": "5.2.4",
+      "officialOrExperimental": "EXPERIMENTAL",
+      "category": "captain",
+      "formulaFingerprint": "2a06fdfbbf30f385b30a8862d906068c4c0bff7ff8b675de779227cc33c0cef0",
+      "configFingerprint": "5fc9353a99e520f553a80343ea03478ac7c5e127420ae17bd89bb2eff90fab7b",
+      "metrics": [
+        "Top1 real points mean",
+        "Top3 real points mean",
+        "Top5 real points mean"
+      ],
+      "roundsEvaluated": 17,
+      "sampleSize": null,
+      "promotionState": "EXPERIMENTAL",
+      "evidenceScore": 49,
+      "knownLimitations": [
+        "Candidato shadow; sem promocao automatica.",
+        "Amostra ainda exige validacao fora do laboratorio."
+      ]
+    },
+    {
+      "modelId": "AVAILABILITY_V1",
+      "label": "Availability V1",
+      "sourceBuild": "5.2.5",
+      "officialOrExperimental": "EXPERIMENTAL",
+      "category": "availability",
+      "formulaFingerprint": "95ce5b1a2cc2c14168736505cd6a5b06e21cc11ae2b4e6a9a0c2b7fb32809fe0",
+      "configFingerprint": "697878b8812cb2386057a15413c62207e93d1ba6eefd4e655efc00beddac8081",
+      "metrics": [
+        "DidNotPlayRate",
+        "actualPoints",
+        "didNotPlayCount"
+      ],
+      "roundsEvaluated": null,
+      "sampleSize": 5126,
+      "promotionState": "REJECTED",
+      "evidenceScore": 29,
+      "knownLimitations": [
+        "Target historico TopK nao reproduziu DidNotPlayRate da Rodada 19.",
+        "Status pre-rodada majoritariamente indisponivel."
+      ]
+    },
+    {
+      "modelId": "RANKING_AVAILABILITY_AWARE",
+      "label": "Ranking availability-aware",
+      "sourceBuild": "5.2.5",
+      "officialOrExperimental": "EXPERIMENTAL",
+      "category": "availability",
+      "formulaFingerprint": "c892618b6381ef381e1ee3eed299fb41e4813c68c5ac7c5376db69f0f221014d",
+      "configFingerprint": "2c39d67bdcc3ee7ec0b50c7f067013ea6dbea293792f0a736db2e8da62f1c8c7",
+      "metrics": [
+        "DidNotPlayRate",
+        "actualPoints",
+        "didNotPlayCount"
+      ],
+      "roundsEvaluated": null,
+      "sampleSize": 5126,
+      "promotionState": "REJECTED",
+      "evidenceScore": 39,
+      "knownLimitations": [
+        "Target historico TopK nao reproduziu DidNotPlayRate da Rodada 19.",
+        "Status pre-rodada majoritariamente indisponivel."
+      ]
+    },
+    {
+      "modelId": "CAPTAIN_AVAILABILITY_AWARE",
+      "label": "Capitao availability-aware",
+      "sourceBuild": "5.2.5",
+      "officialOrExperimental": "EXPERIMENTAL",
+      "category": "captain",
+      "formulaFingerprint": "0ee3ebf28a06b2eb784e679388b4f146badc381f27a6319b117c36075755db9b",
+      "configFingerprint": "3996beb5a2caff1c7f68c884dda3836273aa344a7a537a4cd63ca8799a02a866",
+      "metrics": [
+        "DidNotPlayRate",
+        "actualPoints",
+        "didNotPlayCount"
+      ],
+      "roundsEvaluated": null,
+      "sampleSize": 5126,
+      "promotionState": "REJECTED",
+      "evidenceScore": 39,
+      "knownLimitations": [
+        "Target historico TopK nao reproduziu DidNotPlayRate da Rodada 19.",
+        "Status pre-rodada majoritariamente indisponivel."
+      ]
+    },
+    {
+      "modelId": "XI_AVAILABILITY_AWARE",
+      "label": "XI availability-aware",
+      "sourceBuild": "5.2.5",
+      "officialOrExperimental": "EXPERIMENTAL",
+      "category": "ideal_team",
+      "formulaFingerprint": "73acf8f4015a4d50886dd2ec0961fd411627d16477a10403a0d3315bf2e077fa",
+      "configFingerprint": "3fc3524dce79faececd09fbc6f397ffc0edad584d3f866db7ef2f665e2550511",
+      "metrics": [
+        "DidNotPlayRate",
+        "actualPoints",
+        "didNotPlayCount"
+      ],
+      "roundsEvaluated": null,
+      "sampleSize": 5126,
+      "promotionState": "REJECTED",
+      "evidenceScore": 63,
+      "knownLimitations": [
+        "Target historico TopK nao reproduziu DidNotPlayRate da Rodada 19.",
+        "Status pre-rodada majoritariamente indisponivel."
+      ]
+    },
+    {
+      "modelId": "FORMATION_OFFICIAL",
+      "label": "Formacao oficial",
+      "sourceBuild": "base",
+      "officialOrExperimental": "OFFICIAL",
+      "category": "formation",
+      "formulaFingerprint": "7d36ab84025bf6511b7282b3c704f3c95c63dc81bc7723801b7565bed13d4a5e",
+      "configFingerprint": "480c3d83aa4307c020de28e5a7198c5d1d78871a6c4bdfc6497c9bcdcda3b707",
+      "metrics": [
+        "hitRate",
+        "regret"
+      ],
+      "roundsEvaluated": 17,
+      "sampleSize": null,
+      "promotionState": "OFFICIAL",
+      "evidenceScore": null,
+      "knownLimitations": []
+    },
+    {
+      "modelId": "FORMATION_SHADOW",
+      "label": "Formacao shadow",
+      "sourceBuild": "5.2.4",
+      "officialOrExperimental": "EXPERIMENTAL",
+      "category": "formation",
+      "formulaFingerprint": "8a103253d231619bd61a051f551e7cde214c1170b2708168e56f39cc58ef8304",
+      "configFingerprint": "58c5d589ef92e3d1a00c1f75cce7bae296769498babd47c1ff6b4d50e05c5b64",
+      "metrics": [
+        "hitRate",
+        "regret"
+      ],
+      "roundsEvaluated": 17,
+      "sampleSize": null,
+      "promotionState": "EXPERIMENTAL",
+      "evidenceScore": 45,
+      "knownLimitations": []
+    }
+  ],
+  "officialEngineVersion": "slvs-evidence-dashboard/5.2.6",
+  "targetDefinitionVersion": "PARTICIPATION_TARGET_V1",
+  "targetDefinition": {
+    "targetDefinitionVersion": "PARTICIPATION_TARGET_V1",
+    "canonicalSource": "post.players[].played",
+    "hierarchy": [
+      "post.players[].played",
+      "presence in post-round snapshot",
+      "gamesDelta",
+      "actualPoints",
+      "scouts",
+      "legacy enteredField"
+    ],
+    "rules": {
+      "DID_PLAY": "played === true",
+      "DID_NOT_PLAY": "played === false",
+      "SCORE_UNAVAILABLE": "played exists but point score cannot be validated for points evaluation",
+      "TARGET_MISSING": "played absent and complementary signals are insufficient",
+      "TARGET_AMBIGUOUS": "participation signals conflict without a trustworthy canonical source"
+    },
+    "complementarySignals": [
+      "gamesDelta",
+      "actualPoints",
+      "scouts",
+      "post snapshot presence",
+      "legacy enteredField"
+    ],
+    "guardrails": [
+      "actualPoints = 0 does not mean DID_NOT_PLAY",
+      "actualPoints < 0 can be DID_PLAY",
+      "actualPoints = null does not define participation alone",
+      "gamesDelta is complementary",
+      "empty scouts do not define absence"
+    ]
+  },
+  "metricsDefinitionVersion": "RESEARCH_METRICS_V1",
+  "denominators": {
+    "known": {
+      "top1": 85,
+      "top3": 255,
+      "top5": 425,
+      "top10": 850,
+      "timeIdeal": 113,
+      "captain": 11
+    },
+    "byRound": [
+      {
+        "round": 2,
+        "byPosition": {
+          "1": {
+            "top1": 1,
+            "top3": 3,
+            "top5": 5,
+            "top10": 10
+          },
+          "2": {
+            "top1": 1,
+            "top3": 3,
+            "top5": 5,
+            "top10": 10
+          },
+          "3": {
+            "top1": 1,
+            "top3": 3,
+            "top5": 5,
+            "top10": 10
+          },
+          "4": {
+            "top1": 1,
+            "top3": 3,
+            "top5": 5,
+            "top10": 10
+          },
+          "5": {
+            "top1": 1,
+            "top3": 3,
+            "top5": 5,
+            "top10": 10
+          }
+        }
+      },
+      {
+        "round": 3,
+        "byPosition": {
+          "1": {
+            "top1": 1,
+            "top3": 3,
+            "top5": 5,
+            "top10": 10
+          },
+          "2": {
+            "top1": 1,
+            "top3": 3,
+            "top5": 5,
+            "top10": 10
+          },
+          "3": {
+            "top1": 1,
+            "top3": 3,
+            "top5": 5,
+            "top10": 10
+          },
+          "4": {
+            "top1": 1,
+            "top3": 3,
+            "top5": 5,
+            "top10": 10
+          },
+          "5": {
+            "top1": 1,
+            "top3": 3,
+            "top5": 5,
+            "top10": 10
+          }
+        }
+      },
+      {
+        "round": 4,
+        "byPosition": {
+          "1": {
+            "top1": 1,
+            "top3": 3,
+            "top5": 5,
+            "top10": 10
+          },
+          "2": {
+            "top1": 1,
+            "top3": 3,
+            "top5": 5,
+            "top10": 10
+          },
+          "3": {
+            "top1": 1,
+            "top3": 3,
+            "top5": 5,
+            "top10": 10
+          },
+          "4": {
+            "top1": 1,
+            "top3": 3,
+            "top5": 5,
+            "top10": 10
+          },
+          "5": {
+            "top1": 1,
+            "top3": 3,
+            "top5": 5,
+            "top10": 10
+          }
+        }
+      },
+      {
+        "round": 5,
+        "byPosition": {
+          "1": {
+            "top1": 1,
+            "top3": 3,
+            "top5": 5,
+            "top10": 10
+          },
+          "2": {
+            "top1": 1,
+            "top3": 3,
+            "top5": 5,
+            "top10": 10
+          },
+          "3": {
+            "top1": 1,
+            "top3": 3,
+            "top5": 5,
+            "top10": 10
+          },
+          "4": {
+            "top1": 1,
+            "top3": 3,
+            "top5": 5,
+            "top10": 10
+          },
+          "5": {
+            "top1": 1,
+            "top3": 3,
+            "top5": 5,
+            "top10": 10
+          }
+        }
+      },
+      {
+        "round": 6,
+        "byPosition": {
+          "1": {
+            "top1": 1,
+            "top3": 3,
+            "top5": 5,
+            "top10": 10
+          },
+          "2": {
+            "top1": 1,
+            "top3": 3,
+            "top5": 5,
+            "top10": 10
+          },
+          "3": {
+            "top1": 1,
+            "top3": 3,
+            "top5": 5,
+            "top10": 10
+          },
+          "4": {
+            "top1": 1,
+            "top3": 3,
+            "top5": 5,
+            "top10": 10
+          },
+          "5": {
+            "top1": 1,
+            "top3": 3,
+            "top5": 5,
+            "top10": 10
+          }
+        }
+      },
+      {
+        "round": 7,
+        "byPosition": {
+          "1": {
+            "top1": 1,
+            "top3": 3,
+            "top5": 5,
+            "top10": 10
+          },
+          "2": {
+            "top1": 1,
+            "top3": 3,
+            "top5": 5,
+            "top10": 10
+          },
+          "3": {
+            "top1": 1,
+            "top3": 3,
+            "top5": 5,
+            "top10": 10
+          },
+          "4": {
+            "top1": 1,
+            "top3": 3,
+            "top5": 5,
+            "top10": 10
+          },
+          "5": {
+            "top1": 1,
+            "top3": 3,
+            "top5": 5,
+            "top10": 10
+          }
+        }
+      },
+      {
+        "round": 8,
+        "byPosition": {
+          "1": {
+            "top1": 1,
+            "top3": 3,
+            "top5": 5,
+            "top10": 10
+          },
+          "2": {
+            "top1": 1,
+            "top3": 3,
+            "top5": 5,
+            "top10": 10
+          },
+          "3": {
+            "top1": 1,
+            "top3": 3,
+            "top5": 5,
+            "top10": 10
+          },
+          "4": {
+            "top1": 1,
+            "top3": 3,
+            "top5": 5,
+            "top10": 10
+          },
+          "5": {
+            "top1": 1,
+            "top3": 3,
+            "top5": 5,
+            "top10": 10
+          }
+        }
+      },
+      {
+        "round": 9,
+        "byPosition": {
+          "1": {
+            "top1": 1,
+            "top3": 3,
+            "top5": 5,
+            "top10": 10
+          },
+          "2": {
+            "top1": 1,
+            "top3": 3,
+            "top5": 5,
+            "top10": 10
+          },
+          "3": {
+            "top1": 1,
+            "top3": 3,
+            "top5": 5,
+            "top10": 10
+          },
+          "4": {
+            "top1": 1,
+            "top3": 3,
+            "top5": 5,
+            "top10": 10
+          },
+          "5": {
+            "top1": 1,
+            "top3": 3,
+            "top5": 5,
+            "top10": 10
+          }
+        }
+      },
+      {
+        "round": 10,
+        "byPosition": {
+          "1": {
+            "top1": 1,
+            "top3": 3,
+            "top5": 5,
+            "top10": 10
+          },
+          "2": {
+            "top1": 1,
+            "top3": 3,
+            "top5": 5,
+            "top10": 10
+          },
+          "3": {
+            "top1": 1,
+            "top3": 3,
+            "top5": 5,
+            "top10": 10
+          },
+          "4": {
+            "top1": 1,
+            "top3": 3,
+            "top5": 5,
+            "top10": 10
+          },
+          "5": {
+            "top1": 1,
+            "top3": 3,
+            "top5": 5,
+            "top10": 10
+          }
+        }
+      },
+      {
+        "round": 11,
+        "byPosition": {
+          "1": {
+            "top1": 1,
+            "top3": 3,
+            "top5": 5,
+            "top10": 10
+          },
+          "2": {
+            "top1": 1,
+            "top3": 3,
+            "top5": 5,
+            "top10": 10
+          },
+          "3": {
+            "top1": 1,
+            "top3": 3,
+            "top5": 5,
+            "top10": 10
+          },
+          "4": {
+            "top1": 1,
+            "top3": 3,
+            "top5": 5,
+            "top10": 10
+          },
+          "5": {
+            "top1": 1,
+            "top3": 3,
+            "top5": 5,
+            "top10": 10
+          }
+        }
+      },
+      {
+        "round": 12,
+        "byPosition": {
+          "1": {
+            "top1": 1,
+            "top3": 3,
+            "top5": 5,
+            "top10": 10
+          },
+          "2": {
+            "top1": 1,
+            "top3": 3,
+            "top5": 5,
+            "top10": 10
+          },
+          "3": {
+            "top1": 1,
+            "top3": 3,
+            "top5": 5,
+            "top10": 10
+          },
+          "4": {
+            "top1": 1,
+            "top3": 3,
+            "top5": 5,
+            "top10": 10
+          },
+          "5": {
+            "top1": 1,
+            "top3": 3,
+            "top5": 5,
+            "top10": 10
+          }
+        }
+      },
+      {
+        "round": 13,
+        "byPosition": {
+          "1": {
+            "top1": 1,
+            "top3": 3,
+            "top5": 5,
+            "top10": 10
+          },
+          "2": {
+            "top1": 1,
+            "top3": 3,
+            "top5": 5,
+            "top10": 10
+          },
+          "3": {
+            "top1": 1,
+            "top3": 3,
+            "top5": 5,
+            "top10": 10
+          },
+          "4": {
+            "top1": 1,
+            "top3": 3,
+            "top5": 5,
+            "top10": 10
+          },
+          "5": {
+            "top1": 1,
+            "top3": 3,
+            "top5": 5,
+            "top10": 10
+          }
+        }
+      },
+      {
+        "round": 14,
+        "byPosition": {
+          "1": {
+            "top1": 1,
+            "top3": 3,
+            "top5": 5,
+            "top10": 10
+          },
+          "2": {
+            "top1": 1,
+            "top3": 3,
+            "top5": 5,
+            "top10": 10
+          },
+          "3": {
+            "top1": 1,
+            "top3": 3,
+            "top5": 5,
+            "top10": 10
+          },
+          "4": {
+            "top1": 1,
+            "top3": 3,
+            "top5": 5,
+            "top10": 10
+          },
+          "5": {
+            "top1": 1,
+            "top3": 3,
+            "top5": 5,
+            "top10": 10
+          }
+        }
+      },
+      {
+        "round": 15,
+        "byPosition": {
+          "1": {
+            "top1": 1,
+            "top3": 3,
+            "top5": 5,
+            "top10": 10
+          },
+          "2": {
+            "top1": 1,
+            "top3": 3,
+            "top5": 5,
+            "top10": 10
+          },
+          "3": {
+            "top1": 1,
+            "top3": 3,
+            "top5": 5,
+            "top10": 10
+          },
+          "4": {
+            "top1": 1,
+            "top3": 3,
+            "top5": 5,
+            "top10": 10
+          },
+          "5": {
+            "top1": 1,
+            "top3": 3,
+            "top5": 5,
+            "top10": 10
+          }
+        }
+      },
+      {
+        "round": 16,
+        "byPosition": {
+          "1": {
+            "top1": 1,
+            "top3": 3,
+            "top5": 5,
+            "top10": 10
+          },
+          "2": {
+            "top1": 1,
+            "top3": 3,
+            "top5": 5,
+            "top10": 10
+          },
+          "3": {
+            "top1": 1,
+            "top3": 3,
+            "top5": 5,
+            "top10": 10
+          },
+          "4": {
+            "top1": 1,
+            "top3": 3,
+            "top5": 5,
+            "top10": 10
+          },
+          "5": {
+            "top1": 1,
+            "top3": 3,
+            "top5": 5,
+            "top10": 10
+          }
+        }
+      },
+      {
+        "round": 17,
+        "byPosition": {
+          "1": {
+            "top1": 1,
+            "top3": 3,
+            "top5": 5,
+            "top10": 10
+          },
+          "2": {
+            "top1": 1,
+            "top3": 3,
+            "top5": 5,
+            "top10": 10
+          },
+          "3": {
+            "top1": 1,
+            "top3": 3,
+            "top5": 5,
+            "top10": 10
+          },
+          "4": {
+            "top1": 1,
+            "top3": 3,
+            "top5": 5,
+            "top10": 10
+          },
+          "5": {
+            "top1": 1,
+            "top3": 3,
+            "top5": 5,
+            "top10": 10
+          }
+        }
+      },
+      {
+        "round": 18,
+        "byPosition": {
+          "1": {
+            "top1": 1,
+            "top3": 3,
+            "top5": 5,
+            "top10": 10
+          },
+          "2": {
+            "top1": 1,
+            "top3": 3,
+            "top5": 5,
+            "top10": 10
+          },
+          "3": {
+            "top1": 1,
+            "top3": 3,
+            "top5": 5,
+            "top10": 10
+          },
+          "4": {
+            "top1": 1,
+            "top3": 3,
+            "top5": 5,
+            "top10": 10
+          },
+          "5": {
+            "top1": 1,
+            "top3": 3,
+            "top5": 5,
+            "top10": 10
+          }
+        }
+      }
+    ]
+  },
+  "knownResults": {
+    "groundTruth": {
+      "evidenceType": "HISTORICAL_BASELINE",
+      "total": 12524,
+      "DID_PLAY": 5469,
+      "DID_NOT_PLAY": 7055,
+      "TARGET_MISSING": 0,
+      "TARGET_AMBIGUOUS": 0
+    },
+    "auditedTopK": {
+      "top1": {
+        "evidenceType": "HISTORICAL_BASELINE",
+        "selectedCount": 85,
+        "didNotPlayRate": 0
+      },
+      "top3": {
+        "evidenceType": "HISTORICAL_BASELINE",
+        "selectedCount": 255,
+        "didNotPlayRate": 0
+      },
+      "top5": {
+        "evidenceType": "HISTORICAL_BASELINE",
+        "selectedCount": 425,
+        "didNotPlayRate": 0
+      },
+      "top10": {
+        "evidenceType": "HISTORICAL_BASELINE",
+        "selectedCount": 850,
+        "didNotPlayRate": 0
+      },
+      "timeIdeal": {
+        "evidenceType": "HISTORICAL_BASELINE",
+        "selectedCount": 113,
+        "didNotPlayRate": 0
+      },
+      "captain": {
+        "evidenceType": "HISTORICAL_BASELINE",
+        "selectedCount": 11,
+        "didNotPlayRate": 0
+      }
+    },
+    "cleanSheet": {
+      "evidenceType": "HISTORICAL_BASELINE",
+      "V1": {
+        "top1": 0.2941,
+        "top3": 0.2941,
+        "top5": 0.2706
+      },
+      "V2": {
+        "top1": 0.2353,
+        "top3": 0.2941,
+        "top5": 0.2588
+      }
+    },
+    "formationAccuracy": {
+      "evidenceType": "HISTORICAL_BASELINE",
+      "value": 0.5882,
+      "rounds": 17
+    },
+    "round19": {
+      "evidenceType": "ROUND_19_CONTROL_CASE",
+      "officialXI": {
+        "formation": "4-3-3",
+        "predictedPoints": 76.5,
+        "actualPoints": 83.3,
+        "didNotPlayCount": 5,
+        "players": [
+          {
+            "athleteId": 99815,
+            "name": "Jhon Adolfo Arias Andrade",
+            "clubId": 275,
+            "positionId": 4,
+            "position": "MEI",
+            "predictedPoints": 4.5,
+            "actualPoints": null,
+            "enteredField": false,
+            "didPlayActual": false,
+            "didNotPlayActual": true,
+            "participationReliabilityScore": 79.275,
+            "availabilityConfidence": "HIGH_CONFIDENCE_TO_PLAY",
+            "availabilityAdjustedScore": null,
+            "participationFeatures": {
+              "matchesAvailableBeforeRound": 16,
+              "matchesEnteredFieldBeforeRound": 13,
+              "recentParticipationRate": 0.8,
+              "allParticipationRate": 0.8125,
+              "recentStartsRate": null,
+              "startsSourceStatus": "UNAVAILABLE_SOURCE_NOT_CONFIGURED",
+              "minutesRecent": null,
+              "minutesSourceStatus": "UNAVAILABLE_SOURCE_NOT_CONFIGURED",
+              "consecutiveDidNotPlay": 1,
+              "consecutivePlayed": 0,
+              "sampleSize": 16,
+              "statusSignalAvailable": false,
+              "statusBeforeRound": null,
+              "gamesBeforeRound": 13,
+              "homeAway": "AWAY",
+              "opponent": 294
+            },
+            "availabilityReasons": [
+              "recentParticipationRate=0.8",
+              "allParticipationRate=0.8125",
+              "consecutiveDidNotPlay=1",
+              "consecutivePlayed=0",
+              "sampleSize=16"
+            ]
+          },
+          {
+            "athleteId": 147192,
+            "name": "Claudio Henrique de Jesus Passos",
+            "clubId": 293,
+            "positionId": 2,
+            "position": "LAT",
+            "predictedPoints": 7.6,
+            "actualPoints": 16.9,
+            "enteredField": true,
+            "didPlayActual": true,
+            "didNotPlayActual": false,
+            "participationReliabilityScore": 68.3,
+            "availabilityConfidence": "MEDIUM_CONFIDENCE_TO_PLAY",
+            "availabilityAdjustedScore": null,
+            "participationFeatures": {
+              "matchesAvailableBeforeRound": 12,
+              "matchesEnteredFieldBeforeRound": 3,
+              "recentParticipationRate": 0.6,
+              "allParticipationRate": 0.25,
+              "recentStartsRate": null,
+              "startsSourceStatus": "UNAVAILABLE_SOURCE_NOT_CONFIGURED",
+              "minutesRecent": null,
+              "minutesSourceStatus": "UNAVAILABLE_SOURCE_NOT_CONFIGURED",
+              "consecutiveDidNotPlay": 0,
+              "consecutivePlayed": 3,
+              "sampleSize": 12,
+              "statusSignalAvailable": false,
+              "statusBeforeRound": null,
+              "gamesBeforeRound": 3,
+              "homeAway": "AWAY",
+              "opponent": 276
+            },
+            "availabilityReasons": [
+              "recentParticipationRate=0.6",
+              "allParticipationRate=0.25",
+              "consecutiveDidNotPlay=0",
+              "consecutivePlayed=3",
+              "sampleSize=12"
+            ]
+          },
+          {
+            "athleteId": 130209,
+            "name": "Carlos Renê de Sousa Ferreira - Souza",
+            "clubId": 287,
+            "positionId": 5,
+            "position": "ATA",
+            "predictedPoints": 7,
+            "actualPoints": 18.1,
+            "enteredField": true,
+            "didPlayActual": true,
+            "didNotPlayActual": false,
+            "participationReliabilityScore": 100,
+            "availabilityConfidence": "HIGH_CONFIDENCE_TO_PLAY",
+            "availabilityAdjustedScore": null,
+            "participationFeatures": {
+              "matchesAvailableBeforeRound": 10,
+              "matchesEnteredFieldBeforeRound": 10,
+              "recentParticipationRate": 1,
+              "allParticipationRate": 1,
+              "recentStartsRate": null,
+              "startsSourceStatus": "UNAVAILABLE_SOURCE_NOT_CONFIGURED",
+              "minutesRecent": null,
+              "minutesSourceStatus": "UNAVAILABLE_SOURCE_NOT_CONFIGURED",
+              "consecutiveDidNotPlay": 0,
+              "consecutivePlayed": 10,
+              "sampleSize": 10,
+              "statusSignalAvailable": false,
+              "statusBeforeRound": null,
+              "gamesBeforeRound": 10,
+              "homeAway": "HOME",
+              "opponent": 267
+            },
+            "availabilityReasons": [
+              "recentParticipationRate=1",
+              "allParticipationRate=1",
+              "consecutiveDidNotPlay=0",
+              "consecutivePlayed=10",
+              "sampleSize=10"
+            ]
+          },
+          {
+            "athleteId": 63007,
+            "name": "Neymar da Silva Santos Júnior",
+            "clubId": 277,
+            "positionId": 4,
+            "position": "MEI",
+            "predictedPoints": 6.9,
+            "actualPoints": null,
+            "enteredField": false,
+            "didPlayActual": false,
+            "didNotPlayActual": true,
+            "participationReliabilityScore": 35.9768,
+            "availabilityConfidence": "LOW_CONFIDENCE_TO_PLAY",
+            "availabilityAdjustedScore": null,
+            "participationFeatures": {
+              "matchesAvailableBeforeRound": 18,
+              "matchesEnteredFieldBeforeRound": 8,
+              "recentParticipationRate": 0.4,
+              "allParticipationRate": 0.4444,
+              "recentStartsRate": null,
+              "startsSourceStatus": "UNAVAILABLE_SOURCE_NOT_CONFIGURED",
+              "minutesRecent": null,
+              "minutesSourceStatus": "UNAVAILABLE_SOURCE_NOT_CONFIGURED",
+              "consecutiveDidNotPlay": 2,
+              "consecutivePlayed": 0,
+              "sampleSize": 18,
+              "statusSignalAvailable": false,
+              "statusBeforeRound": null,
+              "gamesBeforeRound": 8,
+              "homeAway": "AWAY",
+              "opponent": 263
+            },
+            "availabilityReasons": [
+              "recentParticipationRate=0.4",
+              "allParticipationRate=0.4444",
+              "consecutiveDidNotPlay=2",
+              "consecutivePlayed=0",
+              "sampleSize=18"
+            ]
+          },
+          {
+            "athleteId": 107231,
+            "name": "Danilo dos Santos de Oliveira",
+            "clubId": 263,
+            "positionId": 4,
+            "position": "MEI",
+            "predictedPoints": 7.8,
+            "actualPoints": null,
+            "enteredField": false,
+            "didPlayActual": false,
+            "didNotPlayActual": true,
+            "participationReliabilityScore": 40.8674,
+            "availabilityConfidence": "LOW_CONFIDENCE_TO_PLAY",
+            "availabilityAdjustedScore": null,
+            "participationFeatures": {
+              "matchesAvailableBeforeRound": 18,
+              "matchesEnteredFieldBeforeRound": 12,
+              "recentParticipationRate": 0.4,
+              "allParticipationRate": 0.6667,
+              "recentStartsRate": null,
+              "startsSourceStatus": "UNAVAILABLE_SOURCE_NOT_CONFIGURED",
+              "minutesRecent": null,
+              "minutesSourceStatus": "UNAVAILABLE_SOURCE_NOT_CONFIGURED",
+              "consecutiveDidNotPlay": 3,
+              "consecutivePlayed": 0,
+              "sampleSize": 18,
+              "statusSignalAvailable": false,
+              "statusBeforeRound": null,
+              "gamesBeforeRound": 12,
+              "homeAway": "HOME",
+              "opponent": 277
+            },
+            "availabilityReasons": [
+              "recentParticipationRate=0.4",
+              "allParticipationRate=0.6667",
+              "consecutiveDidNotPlay=3",
+              "consecutivePlayed=0",
+              "sampleSize=18"
+            ]
+          },
+          {
+            "athleteId": 105531,
+            "name": "Matheus Lima Beltrão Oliveira Valin",
+            "clubId": 264,
+            "positionId": 2,
+            "position": "LAT",
+            "predictedPoints": 6.7,
+            "actualPoints": 6.8,
+            "enteredField": true,
+            "didPlayActual": true,
+            "didNotPlayActual": false,
+            "participationReliabilityScore": 100,
+            "availabilityConfidence": "HIGH_CONFIDENCE_TO_PLAY",
+            "availabilityAdjustedScore": null,
+            "participationFeatures": {
+              "matchesAvailableBeforeRound": 18,
+              "matchesEnteredFieldBeforeRound": 14,
+              "recentParticipationRate": 1,
+              "allParticipationRate": 0.7778,
+              "recentStartsRate": null,
+              "startsSourceStatus": "UNAVAILABLE_SOURCE_NOT_CONFIGURED",
+              "minutesRecent": null,
+              "minutesSourceStatus": "UNAVAILABLE_SOURCE_NOT_CONFIGURED",
+              "consecutiveDidNotPlay": 0,
+              "consecutivePlayed": 8,
+              "sampleSize": 18,
+              "statusSignalAvailable": false,
+              "statusBeforeRound": null,
+              "gamesBeforeRound": 14,
+              "homeAway": "HOME",
+              "opponent": 364
+            },
+            "availabilityReasons": [
+              "recentParticipationRate=1",
+              "allParticipationRate=0.7778",
+              "consecutiveDidNotPlay=0",
+              "consecutivePlayed=8",
+              "sampleSize=18"
+            ]
+          },
+          {
+            "athleteId": 125488,
+            "name": "João Pedro de Sousa Rodrigues - Tchoca",
+            "clubId": 264,
+            "positionId": 3,
+            "position": "ZAG",
+            "predictedPoints": 6.7,
+            "actualPoints": null,
+            "enteredField": false,
+            "didPlayActual": false,
+            "didNotPlayActual": true,
+            "participationReliabilityScore": 0,
+            "availabilityConfidence": "LOW_CONFIDENCE_TO_PLAY",
+            "availabilityAdjustedScore": null,
+            "participationFeatures": {
+              "matchesAvailableBeforeRound": 18,
+              "matchesEnteredFieldBeforeRound": 2,
+              "recentParticipationRate": 0,
+              "allParticipationRate": 0.1111,
+              "recentStartsRate": null,
+              "startsSourceStatus": "UNAVAILABLE_SOURCE_NOT_CONFIGURED",
+              "minutesRecent": null,
+              "minutesSourceStatus": "UNAVAILABLE_SOURCE_NOT_CONFIGURED",
+              "consecutiveDidNotPlay": 11,
+              "consecutivePlayed": 0,
+              "sampleSize": 18,
+              "statusSignalAvailable": false,
+              "statusBeforeRound": null,
+              "gamesBeforeRound": 2,
+              "homeAway": "HOME",
+              "opponent": 364
+            },
+            "availabilityReasons": [
+              "recentParticipationRate=0",
+              "allParticipationRate=0.1111",
+              "consecutiveDidNotPlay=11",
+              "consecutivePlayed=0",
+              "sampleSize=18"
+            ]
+          },
+          {
+            "athleteId": 88136,
+            "name": "Ivan Quaresma da Silva",
+            "clubId": 364,
+            "positionId": 1,
+            "position": "GOL",
+            "predictedPoints": 8.4,
+            "actualPoints": 10.2,
+            "enteredField": true,
+            "didPlayActual": true,
+            "didNotPlayActual": false,
+            "participationReliabilityScore": 42.8232,
+            "availabilityConfidence": "LOW_CONFIDENCE_TO_PLAY",
+            "availabilityAdjustedScore": null,
+            "participationFeatures": {
+              "matchesAvailableBeforeRound": 18,
+              "matchesEnteredFieldBeforeRound": 1,
+              "recentParticipationRate": 0.2,
+              "allParticipationRate": 0.0556,
+              "recentStartsRate": null,
+              "startsSourceStatus": "UNAVAILABLE_SOURCE_NOT_CONFIGURED",
+              "minutesRecent": null,
+              "minutesSourceStatus": "UNAVAILABLE_SOURCE_NOT_CONFIGURED",
+              "consecutiveDidNotPlay": 0,
+              "consecutivePlayed": 1,
+              "sampleSize": 18,
+              "statusSignalAvailable": false,
+              "statusBeforeRound": null,
+              "gamesBeforeRound": 1,
+              "homeAway": "AWAY",
+              "opponent": 264
+            },
+            "availabilityReasons": [
+              "recentParticipationRate=0.2",
+              "allParticipationRate=0.0556",
+              "consecutiveDidNotPlay=0",
+              "consecutivePlayed=1",
+              "sampleSize=18"
+            ]
+          },
+          {
+            "athleteId": 143193,
+            "name": "Kevin Stiven Viveros Rodallega",
+            "clubId": 293,
+            "positionId": 5,
+            "position": "ATA",
+            "predictedPoints": 6.9,
+            "actualPoints": 10.9,
+            "enteredField": true,
+            "didPlayActual": true,
+            "didNotPlayActual": false,
+            "participationReliabilityScore": 98.7326,
+            "availabilityConfidence": "HIGH_CONFIDENCE_TO_PLAY",
+            "availabilityAdjustedScore": null,
+            "participationFeatures": {
+              "matchesAvailableBeforeRound": 18,
+              "matchesEnteredFieldBeforeRound": 15,
+              "recentParticipationRate": 0.8,
+              "allParticipationRate": 0.8333,
+              "recentStartsRate": null,
+              "startsSourceStatus": "UNAVAILABLE_SOURCE_NOT_CONFIGURED",
+              "minutesRecent": null,
+              "minutesSourceStatus": "UNAVAILABLE_SOURCE_NOT_CONFIGURED",
+              "consecutiveDidNotPlay": 0,
+              "consecutivePlayed": 3,
+              "sampleSize": 18,
+              "statusSignalAvailable": false,
+              "statusBeforeRound": null,
+              "gamesBeforeRound": 15,
+              "homeAway": "AWAY",
+              "opponent": 276
+            },
+            "availabilityReasons": [
+              "recentParticipationRate=0.8",
+              "allParticipationRate=0.8333",
+              "consecutiveDidNotPlay=0",
+              "consecutivePlayed=3",
+              "sampleSize=18"
+            ]
+          },
+          {
+            "athleteId": 63354,
+            "name": "Rodrigo Modesto da Silva Moledo",
+            "clubId": 294,
+            "positionId": 3,
+            "position": "ZAG",
+            "predictedPoints": 6.8,
+            "actualPoints": null,
+            "enteredField": false,
+            "didPlayActual": false,
+            "didNotPlayActual": true,
+            "participationReliabilityScore": 28.6442,
+            "availabilityConfidence": "LOW_CONFIDENCE_TO_PLAY",
+            "availabilityAdjustedScore": null,
+            "participationFeatures": {
+              "matchesAvailableBeforeRound": 18,
+              "matchesEnteredFieldBeforeRound": 2,
+              "recentParticipationRate": 0.4,
+              "allParticipationRate": 0.1111,
+              "recentStartsRate": null,
+              "startsSourceStatus": "UNAVAILABLE_SOURCE_NOT_CONFIGURED",
+              "minutesRecent": null,
+              "minutesSourceStatus": "UNAVAILABLE_SOURCE_NOT_CONFIGURED",
+              "consecutiveDidNotPlay": 2,
+              "consecutivePlayed": 0,
+              "sampleSize": 18,
+              "statusSignalAvailable": false,
+              "statusBeforeRound": null,
+              "gamesBeforeRound": 2,
+              "homeAway": "HOME",
+              "opponent": 275
+            },
+            "availabilityReasons": [
+              "recentParticipationRate=0.4",
+              "allParticipationRate=0.1111",
+              "consecutiveDidNotPlay=2",
+              "consecutivePlayed=0",
+              "sampleSize=18"
+            ]
+          },
+          {
+            "athleteId": 94583,
+            "name": "Pedro Guilherme Abreu dos Santos",
+            "clubId": 262,
+            "positionId": 5,
+            "position": "ATA",
+            "predictedPoints": 7.2,
+            "actualPoints": 20.4,
+            "enteredField": true,
+            "didPlayActual": true,
+            "didNotPlayActual": false,
+            "participationReliabilityScore": 100,
+            "availabilityConfidence": "HIGH_CONFIDENCE_TO_PLAY",
+            "availabilityAdjustedScore": null,
+            "participationFeatures": {
+              "matchesAvailableBeforeRound": 18,
+              "matchesEnteredFieldBeforeRound": 16,
+              "recentParticipationRate": 1,
+              "allParticipationRate": 0.8889,
+              "recentStartsRate": null,
+              "startsSourceStatus": "UNAVAILABLE_SOURCE_NOT_CONFIGURED",
+              "minutesRecent": null,
+              "minutesSourceStatus": "UNAVAILABLE_SOURCE_NOT_CONFIGURED",
+              "consecutiveDidNotPlay": 0,
+              "consecutivePlayed": 14,
+              "sampleSize": 18,
+              "statusSignalAvailable": false,
+              "statusBeforeRound": null,
+              "gamesBeforeRound": 16,
+              "homeAway": "AWAY",
+              "opponent": 315
+            },
+            "availabilityReasons": [
+              "recentParticipationRate=1",
+              "allParticipationRate=0.8889",
+              "consecutiveDidNotPlay=0",
+              "consecutivePlayed=14",
+              "sampleSize=18"
+            ]
+          }
+        ]
+      },
+      "availabilityAwareXI": {
+        "formation": "4-3-3",
+        "predictedPoints": 68.5,
+        "actualPoints": 93.1,
+        "didNotPlayCount": 1,
+        "players": [
+          {
+            "athleteId": 88136,
+            "name": "Ivan Quaresma da Silva",
+            "clubId": 364,
+            "positionId": 1,
+            "position": "GOL",
+            "predictedPoints": 8.4,
+            "actualPoints": 10.2,
+            "enteredField": true,
+            "didPlayActual": true,
+            "didNotPlayActual": false,
+            "participationReliabilityScore": 42.8232,
+            "availabilityConfidence": "LOW_CONFIDENCE_TO_PLAY",
+            "availabilityAdjustedScore": 5.0387,
+            "participationFeatures": {
+              "matchesAvailableBeforeRound": 18,
+              "matchesEnteredFieldBeforeRound": 1,
+              "recentParticipationRate": 0.2,
+              "allParticipationRate": 0.0556,
+              "recentStartsRate": null,
+              "startsSourceStatus": "UNAVAILABLE_SOURCE_NOT_CONFIGURED",
+              "minutesRecent": null,
+              "minutesSourceStatus": "UNAVAILABLE_SOURCE_NOT_CONFIGURED",
+              "consecutiveDidNotPlay": 0,
+              "consecutivePlayed": 1,
+              "sampleSize": 18,
+              "statusSignalAvailable": false,
+              "statusBeforeRound": null,
+              "gamesBeforeRound": 1,
+              "homeAway": "AWAY",
+              "opponent": 264
+            },
+            "availabilityReasons": [
+              "recentParticipationRate=0.2",
+              "allParticipationRate=0.0556",
+              "consecutiveDidNotPlay=0",
+              "consecutivePlayed=1",
+              "sampleSize=18"
+            ]
+          },
+          {
+            "athleteId": 105531,
+            "name": "Matheus Lima Beltrão Oliveira Valin",
+            "clubId": 264,
+            "positionId": 2,
+            "position": "LAT",
+            "predictedPoints": 6.7,
+            "actualPoints": 6.8,
+            "enteredField": true,
+            "didPlayActual": true,
+            "didNotPlayActual": false,
+            "participationReliabilityScore": 100,
+            "availabilityConfidence": "HIGH_CONFIDENCE_TO_PLAY",
+            "availabilityAdjustedScore": 6.7,
+            "participationFeatures": {
+              "matchesAvailableBeforeRound": 18,
+              "matchesEnteredFieldBeforeRound": 14,
+              "recentParticipationRate": 1,
+              "allParticipationRate": 0.7778,
+              "recentStartsRate": null,
+              "startsSourceStatus": "UNAVAILABLE_SOURCE_NOT_CONFIGURED",
+              "minutesRecent": null,
+              "minutesSourceStatus": "UNAVAILABLE_SOURCE_NOT_CONFIGURED",
+              "consecutiveDidNotPlay": 0,
+              "consecutivePlayed": 8,
+              "sampleSize": 18,
+              "statusSignalAvailable": false,
+              "statusBeforeRound": null,
+              "gamesBeforeRound": 14,
+              "homeAway": "HOME",
+              "opponent": 364
+            },
+            "availabilityReasons": [
+              "recentParticipationRate=1",
+              "allParticipationRate=0.7778",
+              "consecutiveDidNotPlay=0",
+              "consecutivePlayed=8",
+              "sampleSize=18"
+            ]
+          },
+          {
+            "athleteId": 147192,
+            "name": "Claudio Henrique de Jesus Passos",
+            "clubId": 293,
+            "positionId": 2,
+            "position": "LAT",
+            "predictedPoints": 7.6,
+            "actualPoints": 16.9,
+            "enteredField": true,
+            "didPlayActual": true,
+            "didNotPlayActual": false,
+            "participationReliabilityScore": 68.3,
+            "availabilityConfidence": "MEDIUM_CONFIDENCE_TO_PLAY",
+            "availabilityAdjustedScore": 6.5159,
+            "participationFeatures": {
+              "matchesAvailableBeforeRound": 12,
+              "matchesEnteredFieldBeforeRound": 3,
+              "recentParticipationRate": 0.6,
+              "allParticipationRate": 0.25,
+              "recentStartsRate": null,
+              "startsSourceStatus": "UNAVAILABLE_SOURCE_NOT_CONFIGURED",
+              "minutesRecent": null,
+              "minutesSourceStatus": "UNAVAILABLE_SOURCE_NOT_CONFIGURED",
+              "consecutiveDidNotPlay": 0,
+              "consecutivePlayed": 3,
+              "sampleSize": 12,
+              "statusSignalAvailable": false,
+              "statusBeforeRound": null,
+              "gamesBeforeRound": 3,
+              "homeAway": "AWAY",
+              "opponent": 276
+            },
+            "availabilityReasons": [
+              "recentParticipationRate=0.6",
+              "allParticipationRate=0.25",
+              "consecutiveDidNotPlay=0",
+              "consecutivePlayed=3",
+              "sampleSize=12"
+            ]
+          },
+          {
+            "athleteId": 124661,
+            "name": "Ivan Ramiro Román Hurtado",
+            "clubId": 282,
+            "positionId": 3,
+            "position": "ZAG",
+            "predictedPoints": 4.5,
+            "actualPoints": 6.4,
+            "enteredField": true,
+            "didPlayActual": true,
+            "didNotPlayActual": false,
+            "participationReliabilityScore": 56.5326,
+            "availabilityConfidence": "MEDIUM_CONFIDENCE_TO_PLAY",
+            "availabilityAdjustedScore": 3.6198,
+            "participationFeatures": {
+              "matchesAvailableBeforeRound": 18,
+              "matchesEnteredFieldBeforeRound": 6,
+              "recentParticipationRate": 0.4,
+              "allParticipationRate": 0.3333,
+              "recentStartsRate": null,
+              "startsSourceStatus": "UNAVAILABLE_SOURCE_NOT_CONFIGURED",
+              "minutesRecent": null,
+              "minutesSourceStatus": "UNAVAILABLE_SOURCE_NOT_CONFIGURED",
+              "consecutiveDidNotPlay": 0,
+              "consecutivePlayed": 1,
+              "sampleSize": 18,
+              "statusSignalAvailable": false,
+              "statusBeforeRound": null,
+              "gamesBeforeRound": 6,
+              "homeAway": "HOME",
+              "opponent": 265
+            },
+            "availabilityReasons": [
+              "recentParticipationRate=0.4",
+              "allParticipationRate=0.3333",
+              "consecutiveDidNotPlay=0",
+              "consecutivePlayed=1",
+              "sampleSize=18"
+            ]
+          },
+          {
+            "athleteId": 69208,
+            "name": "Gabriel Armando de Abreu",
+            "clubId": 264,
+            "positionId": 3,
+            "position": "ZAG",
+            "predictedPoints": 3.7,
+            "actualPoints": 2.8,
+            "enteredField": true,
+            "didPlayActual": true,
+            "didNotPlayActual": false,
+            "participationReliabilityScore": 93.2884,
+            "availabilityConfidence": "HIGH_CONFIDENCE_TO_PLAY",
+            "availabilityAdjustedScore": 3.5883,
+            "participationFeatures": {
+              "matchesAvailableBeforeRound": 18,
+              "matchesEnteredFieldBeforeRound": 13,
+              "recentParticipationRate": 0.8,
+              "allParticipationRate": 0.7222,
+              "recentStartsRate": null,
+              "startsSourceStatus": "UNAVAILABLE_SOURCE_NOT_CONFIGURED",
+              "minutesRecent": null,
+              "minutesSourceStatus": "UNAVAILABLE_SOURCE_NOT_CONFIGURED",
+              "consecutiveDidNotPlay": 0,
+              "consecutivePlayed": 2,
+              "sampleSize": 18,
+              "statusSignalAvailable": false,
+              "statusBeforeRound": null,
+              "gamesBeforeRound": 13,
+              "homeAway": "HOME",
+              "opponent": 364
+            },
+            "availabilityReasons": [
+              "recentParticipationRate=0.8",
+              "allParticipationRate=0.7222",
+              "consecutiveDidNotPlay=0",
+              "consecutivePlayed=2",
+              "sampleSize=18"
+            ]
+          },
+          {
+            "athleteId": 107231,
+            "name": "Danilo dos Santos de Oliveira",
+            "clubId": 263,
+            "positionId": 4,
+            "position": "MEI",
+            "predictedPoints": 7.8,
+            "actualPoints": null,
+            "enteredField": false,
+            "didPlayActual": false,
+            "didNotPlayActual": true,
+            "participationReliabilityScore": 40.8674,
+            "availabilityConfidence": "LOW_CONFIDENCE_TO_PLAY",
+            "availabilityAdjustedScore": 4.5244,
+            "participationFeatures": {
+              "matchesAvailableBeforeRound": 18,
+              "matchesEnteredFieldBeforeRound": 12,
+              "recentParticipationRate": 0.4,
+              "allParticipationRate": 0.6667,
+              "recentStartsRate": null,
+              "startsSourceStatus": "UNAVAILABLE_SOURCE_NOT_CONFIGURED",
+              "minutesRecent": null,
+              "minutesSourceStatus": "UNAVAILABLE_SOURCE_NOT_CONFIGURED",
+              "consecutiveDidNotPlay": 3,
+              "consecutivePlayed": 0,
+              "sampleSize": 18,
+              "statusSignalAvailable": false,
+              "statusBeforeRound": null,
+              "gamesBeforeRound": 12,
+              "homeAway": "HOME",
+              "opponent": 277
+            },
+            "availabilityReasons": [
+              "recentParticipationRate=0.4",
+              "allParticipationRate=0.6667",
+              "consecutiveDidNotPlay=3",
+              "consecutivePlayed=0",
+              "sampleSize=18"
+            ]
+          },
+          {
+            "athleteId": 89837,
+            "name": "Luciano Federico Acosta",
+            "clubId": 266,
+            "positionId": 4,
+            "position": "MEI",
+            "predictedPoints": 4.4,
+            "actualPoints": 2.7,
+            "enteredField": true,
+            "didPlayActual": true,
+            "didNotPlayActual": false,
+            "participationReliabilityScore": 100,
+            "availabilityConfidence": "HIGH_CONFIDENCE_TO_PLAY",
+            "availabilityAdjustedScore": 4.4,
+            "participationFeatures": {
+              "matchesAvailableBeforeRound": 18,
+              "matchesEnteredFieldBeforeRound": 14,
+              "recentParticipationRate": 0.8,
+              "allParticipationRate": 0.7778,
+              "recentStartsRate": null,
+              "startsSourceStatus": "UNAVAILABLE_SOURCE_NOT_CONFIGURED",
+              "minutesRecent": null,
+              "minutesSourceStatus": "UNAVAILABLE_SOURCE_NOT_CONFIGURED",
+              "consecutiveDidNotPlay": 0,
+              "consecutivePlayed": 4,
+              "sampleSize": 18,
+              "statusSignalAvailable": false,
+              "statusBeforeRound": null,
+              "gamesBeforeRound": 14,
+              "homeAway": "HOME",
+              "opponent": 280
+            },
+            "availabilityReasons": [
+              "recentParticipationRate=0.8",
+              "allParticipationRate=0.7778",
+              "consecutiveDidNotPlay=0",
+              "consecutivePlayed=4",
+              "sampleSize=18"
+            ]
+          },
+          {
+            "athleteId": 141451,
+            "name": "Allan Andrade Elias",
+            "clubId": 275,
+            "positionId": 4,
+            "position": "MEI",
+            "predictedPoints": 4.3,
+            "actualPoints": -2.1,
+            "enteredField": true,
+            "didPlayActual": true,
+            "didNotPlayActual": false,
+            "participationReliabilityScore": 98.1768,
+            "availabilityConfidence": "HIGH_CONFIDENCE_TO_PLAY",
+            "availabilityAdjustedScore": 4.2647,
+            "participationFeatures": {
+              "matchesAvailableBeforeRound": 18,
+              "matchesEnteredFieldBeforeRound": 17,
+              "recentParticipationRate": 0.8,
+              "allParticipationRate": 0.9444,
+              "recentStartsRate": null,
+              "startsSourceStatus": "UNAVAILABLE_SOURCE_NOT_CONFIGURED",
+              "minutesRecent": null,
+              "minutesSourceStatus": "UNAVAILABLE_SOURCE_NOT_CONFIGURED",
+              "consecutiveDidNotPlay": 0,
+              "consecutivePlayed": 2,
+              "sampleSize": 18,
+              "statusSignalAvailable": false,
+              "statusBeforeRound": null,
+              "gamesBeforeRound": 17,
+              "homeAway": "AWAY",
+              "opponent": 294
+            },
+            "availabilityReasons": [
+              "recentParticipationRate=0.8",
+              "allParticipationRate=0.9444",
+              "consecutiveDidNotPlay=0",
+              "consecutivePlayed=2",
+              "sampleSize=18"
+            ]
+          },
+          {
+            "athleteId": 94583,
+            "name": "Pedro Guilherme Abreu dos Santos",
+            "clubId": 262,
+            "positionId": 5,
+            "position": "ATA",
+            "predictedPoints": 7.2,
+            "actualPoints": 20.4,
+            "enteredField": true,
+            "didPlayActual": true,
+            "didNotPlayActual": false,
+            "participationReliabilityScore": 100,
+            "availabilityConfidence": "HIGH_CONFIDENCE_TO_PLAY",
+            "availabilityAdjustedScore": 7.2,
+            "participationFeatures": {
+              "matchesAvailableBeforeRound": 18,
+              "matchesEnteredFieldBeforeRound": 16,
+              "recentParticipationRate": 1,
+              "allParticipationRate": 0.8889,
+              "recentStartsRate": null,
+              "startsSourceStatus": "UNAVAILABLE_SOURCE_NOT_CONFIGURED",
+              "minutesRecent": null,
+              "minutesSourceStatus": "UNAVAILABLE_SOURCE_NOT_CONFIGURED",
+              "consecutiveDidNotPlay": 0,
+              "consecutivePlayed": 14,
+              "sampleSize": 18,
+              "statusSignalAvailable": false,
+              "statusBeforeRound": null,
+              "gamesBeforeRound": 16,
+              "homeAway": "AWAY",
+              "opponent": 315
+            },
+            "availabilityReasons": [
+              "recentParticipationRate=1",
+              "allParticipationRate=0.8889",
+              "consecutiveDidNotPlay=0",
+              "consecutivePlayed=14",
+              "sampleSize=18"
+            ]
+          },
+          {
+            "athleteId": 130209,
+            "name": "Carlos Renê de Sousa Ferreira - Souza",
+            "clubId": 287,
+            "positionId": 5,
+            "position": "ATA",
+            "predictedPoints": 7,
+            "actualPoints": 18.1,
+            "enteredField": true,
+            "didPlayActual": true,
+            "didNotPlayActual": false,
+            "participationReliabilityScore": 100,
+            "availabilityConfidence": "HIGH_CONFIDENCE_TO_PLAY",
+            "availabilityAdjustedScore": 7,
+            "participationFeatures": {
+              "matchesAvailableBeforeRound": 10,
+              "matchesEnteredFieldBeforeRound": 10,
+              "recentParticipationRate": 1,
+              "allParticipationRate": 1,
+              "recentStartsRate": null,
+              "startsSourceStatus": "UNAVAILABLE_SOURCE_NOT_CONFIGURED",
+              "minutesRecent": null,
+              "minutesSourceStatus": "UNAVAILABLE_SOURCE_NOT_CONFIGURED",
+              "consecutiveDidNotPlay": 0,
+              "consecutivePlayed": 10,
+              "sampleSize": 10,
+              "statusSignalAvailable": false,
+              "statusBeforeRound": null,
+              "gamesBeforeRound": 10,
+              "homeAway": "HOME",
+              "opponent": 267
+            },
+            "availabilityReasons": [
+              "recentParticipationRate=1",
+              "allParticipationRate=1",
+              "consecutiveDidNotPlay=0",
+              "consecutivePlayed=10",
+              "sampleSize=10"
+            ]
+          },
+          {
+            "athleteId": 143193,
+            "name": "Kevin Stiven Viveros Rodallega",
+            "clubId": 293,
+            "positionId": 5,
+            "position": "ATA",
+            "predictedPoints": 6.9,
+            "actualPoints": 10.9,
+            "enteredField": true,
+            "didPlayActual": true,
+            "didNotPlayActual": false,
+            "participationReliabilityScore": 98.7326,
+            "availabilityConfidence": "HIGH_CONFIDENCE_TO_PLAY",
+            "availabilityAdjustedScore": 6.8606,
+            "participationFeatures": {
+              "matchesAvailableBeforeRound": 18,
+              "matchesEnteredFieldBeforeRound": 15,
+              "recentParticipationRate": 0.8,
+              "allParticipationRate": 0.8333,
+              "recentStartsRate": null,
+              "startsSourceStatus": "UNAVAILABLE_SOURCE_NOT_CONFIGURED",
+              "minutesRecent": null,
+              "minutesSourceStatus": "UNAVAILABLE_SOURCE_NOT_CONFIGURED",
+              "consecutiveDidNotPlay": 0,
+              "consecutivePlayed": 3,
+              "sampleSize": 18,
+              "statusSignalAvailable": false,
+              "statusBeforeRound": null,
+              "gamesBeforeRound": 15,
+              "homeAway": "AWAY",
+              "opponent": 276
+            },
+            "availabilityReasons": [
+              "recentParticipationRate=0.8",
+              "allParticipationRate=0.8333",
+              "consecutiveDidNotPlay=0",
+              "consecutivePlayed=3",
+              "sampleSize=18"
+            ]
+          }
+        ]
+      },
+      "deltaPoints": 9.8,
+      "deltaDidNotPlay": -4,
+      "officialCaptain": {
+        "athleteId": 107231,
+        "name": "Danilo dos Santos de Oliveira",
+        "clubId": 263,
+        "positionId": 4,
+        "position": "MEI",
+        "predictedPoints": 7.8,
+        "actualPoints": null,
+        "enteredField": false,
+        "didPlayActual": false,
+        "didNotPlayActual": true,
+        "participationReliabilityScore": 40.8674,
+        "availabilityConfidence": "LOW_CONFIDENCE_TO_PLAY",
+        "availabilityAdjustedScore": null,
+        "participationFeatures": {
+          "matchesAvailableBeforeRound": 18,
+          "matchesEnteredFieldBeforeRound": 12,
+          "recentParticipationRate": 0.4,
+          "allParticipationRate": 0.6667,
+          "recentStartsRate": null,
+          "startsSourceStatus": "UNAVAILABLE_SOURCE_NOT_CONFIGURED",
+          "minutesRecent": null,
+          "minutesSourceStatus": "UNAVAILABLE_SOURCE_NOT_CONFIGURED",
+          "consecutiveDidNotPlay": 3,
+          "consecutivePlayed": 0,
+          "sampleSize": 18,
+          "statusSignalAvailable": false,
+          "statusBeforeRound": null,
+          "gamesBeforeRound": 12,
+          "homeAway": "HOME",
+          "opponent": 277
+        },
+        "availabilityReasons": [
+          "recentParticipationRate=0.4",
+          "allParticipationRate=0.6667",
+          "consecutiveDidNotPlay=3",
+          "consecutivePlayed=0",
+          "sampleSize=18"
+        ]
+      },
+      "availabilityAwareCaptain": {
+        "athleteId": 94583,
+        "name": "Pedro Guilherme Abreu dos Santos",
+        "clubId": 262,
+        "positionId": 5,
+        "position": "ATA",
+        "predictedPoints": 7.2,
+        "actualPoints": 20.4,
+        "enteredField": true,
+        "didPlayActual": true,
+        "didNotPlayActual": false,
+        "participationReliabilityScore": 100,
+        "availabilityConfidence": "HIGH_CONFIDENCE_TO_PLAY",
+        "availabilityAdjustedScore": 7.2,
+        "participationFeatures": {
+          "matchesAvailableBeforeRound": 18,
+          "matchesEnteredFieldBeforeRound": 16,
+          "recentParticipationRate": 1,
+          "allParticipationRate": 0.8889,
+          "recentStartsRate": null,
+          "startsSourceStatus": "UNAVAILABLE_SOURCE_NOT_CONFIGURED",
+          "minutesRecent": null,
+          "minutesSourceStatus": "UNAVAILABLE_SOURCE_NOT_CONFIGURED",
+          "consecutiveDidNotPlay": 0,
+          "consecutivePlayed": 14,
+          "sampleSize": 18,
+          "statusSignalAvailable": false,
+          "statusBeforeRound": null,
+          "gamesBeforeRound": 16,
+          "homeAway": "AWAY",
+          "opponent": 315
+        },
+        "availabilityReasons": [
+          "recentParticipationRate=1",
+          "allParticipationRate=0.8889",
+          "consecutiveDidNotPlay=0",
+          "consecutivePlayed=14",
+          "sampleSize=18"
+        ]
+      }
+    }
+  },
+  "baselineScorecard": {
+    "GROUND_TRUTH": {
+      "status": "PARTIALLY_RELIABLE",
+      "score": 75,
+      "metricType": "internal_index",
+      "probability": false,
+      "supportingEvidence": [
+        "post.players[].played coverage is complete"
+      ],
+      "limitations": [
+        "Semantic raw-signal divergences remain documented"
+      ],
+      "blockingIssues": []
+    },
+    "DATA_COVERAGE": {
+      "status": "PASS",
+      "score": 100,
+      "metricType": "internal_index",
+      "probability": false,
+      "supportingEvidence": [
+        "15/15 required artifacts present"
+      ],
+      "limitations": [],
+      "blockingIssues": []
+    },
+    "LEAKAGE_SAFETY": {
+      "status": "PASS",
+      "score": 100,
+      "metricType": "internal_index",
+      "probability": false,
+      "supportingEvidence": [
+        "No post-game TopK filter or inner join found"
+      ],
+      "limitations": [],
+      "blockingIssues": []
+    },
+    "REPRODUCIBILITY": {
+      "status": "PASS",
+      "score": 90,
+      "metricType": "internal_index",
+      "probability": false,
+      "supportingEvidence": [
+        "Hashes and fingerprints persisted"
+      ],
+      "limitations": [
+        "Working tree may be DIRTY before commit"
+      ],
+      "blockingIssues": []
+    },
+    "OFFICIAL_ENGINE": {
+      "status": "FROZEN",
+      "score": 100,
+      "metricType": "internal_index",
+      "probability": false,
+      "supportingEvidence": [
+        "Official engine unchanged"
+      ],
+      "limitations": [],
+      "blockingIssues": []
+    },
+    "POSITION_MODELS": {
+      "status": "SHADOW_ONLY",
+      "score": 70,
+      "metricType": "internal_index",
+      "probability": false,
+      "supportingEvidence": [
+        "Position V2 models included as frozen references"
+      ],
+      "limitations": [
+        "No model promotable"
+      ],
+      "blockingIssues": []
+    },
+    "CAPTAIN": {
+      "status": "SHADOW_ONLY",
+      "score": 70,
+      "metricType": "internal_index",
+      "probability": false,
+      "supportingEvidence": [
+        "Captain V2 and availability-aware captain included"
+      ],
+      "limitations": [
+        "R19 is a control case only"
+      ],
+      "blockingIssues": []
+    },
+    "XI": {
+      "status": "SHADOW_ONLY",
+      "score": 70,
+      "metricType": "internal_index",
+      "probability": false,
+      "supportingEvidence": [
+        "XI availability-aware included"
+      ],
+      "limitations": [
+        "R19 is not mixed into historical baseline"
+      ],
+      "blockingIssues": []
+    },
+    "AVAILABILITY": {
+      "status": "PARTIAL",
+      "score": 65,
+      "metricType": "internal_index",
+      "probability": false,
+      "supportingEvidence": [
+        "Availability V1 included"
+      ],
+      "limitations": [
+        "Target reliability is partial"
+      ],
+      "blockingIssues": []
+    },
+    "CLEAN_SHEET": {
+      "status": "PARTIAL",
+      "score": 70,
+      "metricType": "internal_index",
+      "probability": false,
+      "supportingEvidence": [
+        "Clean Sheet V1/V2 historical metrics frozen"
+      ],
+      "limitations": [
+        "V2 is worse in Top1 and Top5"
+      ],
+      "blockingIssues": []
+    },
+    "FORMATION": {
+      "status": "PARTIAL",
+      "score": 70,
+      "metricType": "internal_index",
+      "probability": false,
+      "supportingEvidence": [
+        "Formation accuracy frozen at 17 rounds"
+      ],
+      "limitations": [],
+      "blockingIssues": []
+    },
+    "PROMOTION_READINESS": {
+      "status": "FROZEN_NO_PROMOTION",
+      "score": 80,
+      "metricType": "internal_index",
+      "probability": false,
+      "supportingEvidence": [
+        "Promotion Gate state preserved"
+      ],
+      "limitations": [],
+      "blockingIssues": []
+    }
+  },
+  "baselineComparisonContract": {
+    "contractId": "baselineComparisonContract",
+    "requiredFields": [
+      "candidateId",
+      "baselineId",
+      "candidateBuild",
+      "candidateFingerprint",
+      "baselineFingerprint",
+      "sameRounds",
+      "sameTargets",
+      "sameMetrics",
+      "sameDenominators",
+      "sameEligibilityRules",
+      "sameFormationRules",
+      "sameCaptainEligibility",
+      "leakageStatus",
+      "comparable",
+      "nonComparableReasons"
+    ],
+    "essentialChecks": [
+      "sameRounds",
+      "sameTargets",
+      "sameMetrics",
+      "sameDenominators",
+      "sameEligibilityRules",
+      "sameFormationRules",
+      "sameCaptainEligibility",
+      "leakageStatus"
+    ],
+    "nonComparableWhen": [
+      "round set differs",
+      "target definition differs",
+      "metric definition differs",
+      "denominator differs",
+      "eligibility rule differs",
+      "formation rule differs",
+      "captain eligibility differs",
+      "leakageStatus is not PASS",
+      "candidate or baseline fingerprint is missing"
+    ]
+  },
+  "invalidationPolicy": {
+    "invalidatesWhen": [
+      "target changes",
+      "canonical classification changes",
+      "snapshots are corrected",
+      "relevant new rounds are included",
+      "official formula changes",
+      "eligibility rules change",
+      "denominators change",
+      "incompatible schema changes",
+      "leakage is discovered",
+      "required artifact is corrupted",
+      "hash diverges"
+    ],
+    "doesNotInvalidateWhen": [
+      "documentation changes",
+      "read-only endpoint is added",
+      "visual correction",
+      "new experimental candidate only compares against the baseline"
+    ]
+  },
+  "dataFingerprint": "c59e393eca39f905a9a766721f9d76d83fc45c4c1440a1611e68e0534aa72031",
+  "targetFingerprint": "4c3a465e769759d694ca4ad81b4f682b4f85a4066395e635c6b19778d981622c",
+  "metricsFingerprint": "8b15dd32cbc7a993db5bd1dc623e9f868393368b5d7151c622902d4e4c17fd7f",
+  "modelsFingerprint": "c9ffb726eccfdca8bc44de4b07c1415e403c2634472beab656ca62ca1d427b60",
+  "codeFingerprint": "9e5842e68f6ff68d21555c420617d94937d142141de81b21bf10f9da08a78218",
+  "baselineFingerprint": "22d3da9953f7e7f8c167422768fceea9c7a1689e3eb0b2720ead4e36dc31850e",
+  "codeFiles": [
+    {
+      "path": "server.js",
+      "exists": true,
+      "sha256": "0e2124f7ec1331dd29800f6ce36216250e3d9f41a9ec0bb8b90ab066ac8a58c5"
+    },
+    {
+      "path": "package.json",
+      "exists": true,
+      "sha256": "85ad5e4b96007d35312a654f3c2a67dcade34bed38522779737f596a60b14960"
+    },
+    {
+      "path": "src/research/researchBaseline.js",
+      "exists": true,
+      "sha256": "31f63c83d2babc8364c1ff4030ea51af8b908a7d728324e62ebba1ee616ad92e"
+    },
+    {
+      "path": "src/research/evidenceDashboard.js",
+      "exists": true,
+      "sha256": "0c5b0d407ca8f60451743b86a6dcab15d84db446bd58e51b8ba7c64cd1e998f7"
+    },
+    {
+      "path": "src/research/groundTruthValidation.js",
+      "exists": true,
+      "sha256": "f89d9b9921129a63798a830ca492a13deb4a197048b6dead7239dd392856509a"
+    }
+  ],
+  "limitations": [
+    "Working tree is expected to be DIRTY until the research builds are committed.",
+    "Participation target is partially reliable because raw signals diverge semantically from post.players[].played.",
+    "Round 19 is a live control case and is not mixed into historical metrics.",
+    "Scores are internal indexes and not probabilities."
+  ],
+  "immutablePolicy": {
+    "baselineImmutable": true,
+    "afterValid": "Do not overwrite RESEARCH_BASELINE_1_0 silently.",
+    "withoutForce": "If an existing VALID baseline differs, fail clearly.",
+    "withForce": "Do not overwrite Baseline 1.0; create a new baselineId or DRAFT revision."
+  },
+  "researchFreezeStatus": "ACTIVE",
+  "promotionGateStateChanged": false,
+  "blockingIssues": [],
+  "validation": {
+    "status": "PASS",
+    "checkedAt": "2026-07-24T17:19:47.472Z",
+    "blockingIssues": []
+  }
+}

@@ -1,12 +1,12 @@
 {
   "schemaVersion": "historical-engine-audit/v1",
-  "generatedAt": "2026-07-14T00:40:06.571Z",
+  "generatedAt": "2026-07-21T16:17:28.904Z",
   "season": 2026,
   "engineVersion": "flutter-parity-enriched-engine/4.3.2",
-  "researchEngineVersion": "engine-research-lab/4.7.0",
+  "researchEngineVersion": "engine-research-lab/5.0.0",
   "dataFingerprint": "2d848a23d8c8ee067ac3bccd0072f360b727a334ebc0e33ff9d6cdf907fd9686",
   "configFingerprint": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
-  "codeVersion": "4.7.0",
+  "codeVersion": "5.0.0",
   "sourceBuildId": "build-4.3.2",
   "inputRounds": [
     2,

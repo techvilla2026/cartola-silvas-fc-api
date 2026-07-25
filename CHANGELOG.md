@@ -1,5 +1,100 @@
 # Changelog
 
+## 5.2.12 - 2026-07-24
+
+- Adiciona avaliacao prospectiva para snapshots `PRE_MATCH_AVAILABILITY_SOURCE_V1`, usando somente `post.players[].played` como outcome canonico.
+- Cria auto-captura pre-deadline com janelas `PRIMARY` e `FINAL`, idempotencia, dry-run, reason codes e bloqueio pos-deadline.
+- Adiciona status de risco `CAPTURE_AT_RISK` e `MISSED_CAPTURE`.
+- Adiciona `npm run research:auto-capture-pre-match`.
+- Adiciona endpoints read-only `/research/pre-match-availability/capture-status`, `/evaluation/:round` e `/comparison/:round`.
+- Atualiza o Painel de Evidencias com avaliacao prospectiva, status de captura, risco, threshold 0.45 experimental e proxima acao.
+- Mantem Flutter, motor oficial, formulas, `AVAILABILITY_V1`, `AVAILABILITY_V2_CALIBRATED`, threshold oficial 0.50, baseline, snapshots/backtests originais, Promotion State, commit, push e deploy sem alteracao.
+
+## 5.2.11 - 2026-07-24
+
+- Adiciona `PRE_MATCH_AVAILABILITY_SOURCE_V1` para capturas prospectivas de disponibilidade pre-jogo.
+- Integra fontes publicas ja usadas pelo projeto: `/mercado/status`, `/atletas/mercado` e `/partidas`.
+- Cria snapshots imutaveis em `data/research/2026/pre-match-availability` com deadline, prova temporal, fingerprint SHA-256, cobertura e previsoes congeladas V1/V2.
+- Adiciona entrada manual curada opcional com audit trail em `data/research/2026/manual-pre-match-input`.
+- Cria registry `data/research/2026/prospective-availability-controls.json` para controles prospectivos.
+- Adiciona scripts `research:capture-pre-match` e `research:evaluate-pre-match`.
+- Adiciona endpoints read-only `/research/pre-match-availability`, `/latest`, `/round/:round`, `/coverage` e `/research/prospective-controls`.
+- Atualiza o Painel de Evidencias com fonte pre-jogo, ultima captura, fingerprint, cobertura, controles prospectivos e status experimental do threshold 0.45.
+- Mantem Flutter, motor oficial, formulas, `AVAILABILITY_V1`, `AVAILABILITY_V2_CALIBRATED`, baseline, snapshots/backtests originais, Promotion State, commit, push e deploy sem alteracao.
+
+## 5.2.10 - 2026-07-24
+
+- Adiciona a camada `AVAILABILITY_SIGNALS_V1` para inventario e contrato temporal de sinais pre-jogo.
+- Cria `data/research/2026/availability-signals.json` com dataset por jogador-rodada, matriz de cobertura, qualidade, FN/FP, thresholds, auditoria externa e controle R19.
+- Adiciona `npm run research:availability-signals` e endpoints read-only `/research/availability-signals`, `/coverage`, `/false-negatives` e `/thresholds`.
+- Atualiza o Painel de Evidencias para mostrar sinais seguros/bloqueados, cobertura, erros V2, thresholds e a proxima prioridade de fonte pre-jogo versionada.
+- Nao cria `AVAILABILITY_V3` nem promove `AVAILABILITY_V2_SIGNAL_AUGMENTED`; sinais incrementais seguros ainda nao possuem cobertura historica/timestamp suficiente.
+- Mantem Flutter, motor oficial, formulas, `AVAILABILITY_V1`, `AVAILABILITY_V2_CALIBRATED`, snapshots, backtests originais, baseline congelada, commit, push e deploy sem alteracao.
+
+## 5.2.9 - 2026-07-24
+
+- Adiciona recalibracao experimental `AVAILABILITY_V2_CALIBRATED` contra `RESEARCH_BASELINE_1_0`.
+- Cria `data/research/2026/availability-recalibration.json` com metricas binarias, Brier, log loss, ROC-AUC, PR-AUC, ECE, reliability bins, FP/FN e impacto downstream.
+- Adiciona `npm run research:availability-recalibration` e endpoint read-only `GET /research/availability-recalibration`.
+- Atualiza o Painel de Evidencias para mostrar experimento atual de Availability, comparacao com baseline e recomendacao.
+- Mantem `AVAILABILITY_V1`, Promotion Gate, Flutter, motor oficial, formulas, snapshots, backtests originais, commit, push e deploy sem alteracao.
+
+## 5.2.8 - 2026-07-24
+
+- Cria a Research Baseline 1.0 (`RESEARCH_BASELINE_1_0`) como linha de base cientifica congelada.
+- Adiciona artefatos `data/research/2026/baselines/research-baseline-1.0*.json` com manifesto, metricas, target audit e fingerprints.
+- Adiciona comandos `npm run research:baseline` e `npm run research:baseline:check`.
+- Adiciona endpoints read-only `GET /research/baseline`, `/research/baseline/manifest`, `/research/baseline/metrics` e `/research/baseline/validity`.
+- Atualiza o Painel de Evidencias para exibir baseline ativa, validade, fingerprint e readiness de comparacao.
+- Mantem Promotion Gate, Flutter, motor oficial, formulas, snapshots congelados, backtests originais, commit, push e deploy sem alteracao.
+
+## 5.2.7 - 2026-07-23
+
+- Adiciona auditoria Ground Truth Validation para target historico de participacao e denominadores TopK.
+- Cria `data/research/2026/ground-truth-validation.json` e `data/research/2026/ground-truth-topk-audit.json`.
+- Cria relatorios `docs/research/build-5.2.7-ground-truth-validation.md` e `docs/research/round-19-ground-truth-audit.md`.
+- Adiciona endpoints read-only `GET /research/ground-truth-validation` e `GET /research/ground-truth-topk-audit`.
+- Atualiza o Painel de Evidencias para incorporar o estado de confiabilidade do target auditado sem alterar Promotion Gate.
+- Mantem Flutter, motor oficial, formulas, snapshots congelados, backtests originais, commit, push e deploy sem alteracao.
+
+## 5.2.6 - 2026-07-23
+
+- Adiciona Painel de Evidencias SLVS em `data/research/2026/slvs-evidence-dashboard.json`.
+- Consolida catalogo de modelos, evidenceRecords, scorecards, qualidade dos dados, auditoria do target de participacao e promotion gate central.
+- Cria endpoint read-only `GET /research/evidence-dashboard`.
+- Cria relatorio `docs/research/build-5.2.6-evidence-dashboard.md`.
+- Adiciona comando `npm run research:evidence-dashboard`.
+- Mantem Motor SLVS oficial, Flutter, formulas, snapshots, backtests historicos, commit, push e deploy sem alteracao.
+
+## 5.2.5 - 2026-07-23
+
+- Adiciona calibracao experimental de disponibilidade pre-rodada em `data/research/2026/availability-calibration.json`.
+- Cria `participationReliabilityScore` como indice interno SLVS, `probability=false`, sem chamar de probabilidade de titularidade.
+- Adiciona `AVAILABILITY_V1`, ranking availability-aware, capitain availability-aware, XI availability-aware e diagnosticos de erro de disponibilidade.
+- Cria endpoint read-only `GET /research/availability-calibration`.
+- Cria relatorios `docs/research/build-5.2.5-availability-learning.md` e `docs/research/round-19-availability-learning.md`.
+- Mantem Motor SLVS oficial, Flutter, formulas, snapshots, backtests historicos, commit, push e deploy sem alteracao.
+
+## 5.2.4 - 2026-07-23
+
+- Adiciona calibracao multirrodada experimental em `data/research/2026/multi-round-calibration.json`.
+- Cria relatorio `docs/research/build-5.2.4-multi-round-learning.md`.
+- Adiciona endpoint read-only `GET /research/multi-round-calibration`.
+- Corrige a auditoria de capitao: somente ATA e MEI entram como elegiveis; GOL/LAT/ZAG/TEC sao rejeitados.
+- Adiciona Shadow Mode por posicao, auditoria de GOL, `dataQualityScore` explicavel, separacao de N/A pos-jogo, Capture Rate, TopPotentialCaptureRate e promotion gate por candidato.
+- Mantem Motor SLVS oficial, formulas, Flutter, snapshots, backtests historicos, commit, push e deploy sem alteracao.
+
+## 5.2.3 - 2026-07-23
+
+- Adiciona validacao walk-forward da Rodada 19 no Research Lab.
+- Cria `data/research/2026/round-19-validation.json` e `docs/research/round-19-learning-report.md`.
+- Adiciona endpoint read-only `GET /research/round-validation/:round`.
+- Corrige a semantica do ranking de SG com `metricType=internal_index`, `probability=false`, `displayRecommendation=score`, `rawScore` preservado e `displayScore` limitado a 95.
+- Adiciona `matchupStrengthGap` em escala interna de -100 a +100 e candidato offline `cleanSheetIndexV2`.
+- Audita CAM, Flamengo, ranking SG V1/V2, aprendizado por posicao, caso Ivan, formacoes, Time Ideal e Best Possible XI.
+- Explicita contratos para diferenciais sem ownership, valorizacao historica, custo-beneficio e promotion gate `REJECTED`/`EXPERIMENTAL`/`PROMOTABLE`.
+- Mantem Motor SLVS oficial, Flutter, formulas de producao, snapshots existentes, backtests historicos, commit, push e deploy sem alteracao.
+
 ## 5.2.0 - 2026-07-23
 
 - Enriquece o contexto real da rodada com indices internos deterministas de forca ofensiva, forca defensiva, SG, risco de sofrer gol e oportunidade ofensiva.

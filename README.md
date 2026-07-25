@@ -4,7 +4,7 @@ Backend proxy do Cartola FC para o aplicativo Meu Time Ideal Web.
 
 Este servidor evita que a versao Web do app Flutter precise chamar diretamente `https://api.cartolafc.globo.com` a partir do navegador, reduzindo problemas de CORS. As rotas retornam dados reais da API oficial do Cartola FC, sem mocks, fallbacks ficticios ou alteracao silenciosa do conteudo recebido.
 
-A Build 5.2.0 enriquece a camada de contexto real da rodada para o Brasileirao, preservando CORS Netlify, laboratorio historico offline e automacao de snapshots vivos em `READY`. Os indices abaixo sao sinais internos SLVS explicaveis; nao sao probabilidades oficiais.
+A Build 5.2.12 adiciona avaliacao prospectiva da fonte pre-jogo e auto-captura segura antes do deadline, preservando CORS Netlify, laboratorio historico offline, Motor SLVS oficial, `AVAILABILITY_V1`, `AVAILABILITY_V2_CALIBRATED`, threshold oficial 0.50 e automacao de snapshots vivos em `READY`. Os indices abaixo sao sinais internos SLVS explicaveis; nao sao probabilidades oficiais.
 
 ## Endpoints
 
@@ -16,7 +16,7 @@ Retorna informacoes basicas do servico:
 {
   "service": "cartola-silvas-fc-api",
   "status": "online",
-  "version": "5.2.0",
+  "version": "5.2.12",
   "focus": "Brasileirao/Cartola FC"
 }
 ```
@@ -228,6 +228,10 @@ npm run research:ablation
 npm run research:experiments
 npm run research:walk-forward
 npm run research:promotion-gate
+npm run research:multi-round-calibration
+npm run research:availability-calibration
+npm run research:evidence-dashboard
+npm run research:ground-truth-validation
 ```
 
 Artefatos persistidos:
@@ -242,6 +246,11 @@ data/research/2026/ablation-study.json
 data/research/2026/experiments-summary.json
 data/research/2026/promotion-gate.json
 data/research/2026/research-health.json
+data/research/2026/multi-round-calibration.json
+data/research/2026/availability-calibration.json
+data/research/2026/slvs-evidence-dashboard.json
+data/research/2026/ground-truth-validation.json
+data/research/2026/ground-truth-topk-audit.json
 data/research/2026/experiments/{candidateId}.json
 ```
 
@@ -257,6 +266,12 @@ Endpoints somente leitura:
 - `GET /research/experiments/:candidateId`
 - `GET /research/promotion-gate`
 - `GET /research/research-health`
+- `GET /research/round-validation/:round`
+- `GET /research/multi-round-calibration`
+- `GET /research/availability-calibration`
+- `GET /research/evidence-dashboard`
+- `GET /research/ground-truth-validation`
+- `GET /research/ground-truth-topk-audit`
 
 O promotion gate usa `config/engine-experiment-policy.json`, permite apenas `REJECTED`, `INSUFFICIENT_EVIDENCE`, `PROMISING` e `ELIGIBLE_FOR_SHADOW_TEST`, e nunca retorna `PROMOTED` nesta build.
 
@@ -276,6 +291,7 @@ Endpoints:
 - `GET /diagnostics/team-context`
 - `GET /research/real-round-evaluation`
 - `GET /research/context-feature-diagnostics`
+- `GET /research/round-validation/:round`
 
 Fonte real integrada nesta fase:
 
@@ -288,6 +304,306 @@ Copa do Brasil, Libertadores, Sul-Americana, desfalques, provaveis escalacoes e 
 Documentacao:
 
 - `docs/real-round-context-architecture.md`
+
+## Research Lab 5.2.12
+
+A Build 5.2.12 audita o snapshot prospectivo R20, cria avaliacao que usa apenas `post.players[].played` quando o outcome existir e adiciona auto-captura idempotente com janelas `PRIMARY` e `FINAL`.
+
+Comandos:
+
+```bash
+npm run research:auto-capture-pre-match -- --dry-run
+npm run research:evaluate-pre-match -- --round=20
+```
+
+Endpoints read-only:
+
+```text
+GET /research/pre-match-availability/capture-status
+GET /research/pre-match-availability/evaluation/:round
+GET /research/pre-match-availability/comparison/:round
+```
+
+Documentacao:
+
+```text
+docs/research/build-5.2.12-prospective-availability-evaluation.md
+docs/research/pre-match-auto-capture.md
+```
+
+O threshold `0.45` permanece apenas experimental; o threshold oficial `0.50` nao foi alterado.
+
+## Research Lab 5.2.11
+
+A Build 5.2.11 cria o contrato `PRE_MATCH_AVAILABILITY_SOURCE_V1` para capturas prospectivas de disponibilidade antes do deadline da rodada. A fonte integrada usa endpoints publicos do Cartola ja presentes no backend: `/mercado/status`, `/atletas/mercado` e `/partidas`; entrada manual curada fica opcional e auditavel.
+
+Artefatos:
+
+```text
+data/research/2026/pre-match-availability/
+data/research/2026/manual-pre-match-input/
+data/research/2026/prospective-availability-controls.json
+docs/research/build-5.2.11-pre-match-availability-source.md
+docs/research/pre-match-availability-source-v1.md
+```
+
+Comandos:
+
+```bash
+npm run research:capture-pre-match -- --round=20
+npm run research:evaluate-pre-match -- --round=20
+```
+
+Endpoints read-only:
+
+```text
+GET /research/pre-match-availability
+GET /research/pre-match-availability/latest
+GET /research/pre-match-availability/round/:round
+GET /research/pre-match-availability/coverage
+GET /research/prospective-controls
+```
+
+Cada snapshot salva `capturedAt`, `roundDeadline`, `captureRelationToDeadline`, `minutesBeforeDeadline`, `snapshotFingerprint`, lista de fontes, cobertura e previsoes congeladas de pesquisa: `probabilityV1`, `probabilityV2`, decisao V2 threshold 0.50 e decisao experimental V2 threshold 0.45. O threshold oficial nao muda.
+
+## Research Lab 5.2.10
+
+A Build 5.2.10 cria o contrato `AVAILABILITY_SIGNALS_V1` e o artefato `availability-signals.json` para inventariar sinais pre-jogo de disponibilidade. O contrato classifica cada sinal como `SAFE_PRE_MATCH`, `UNSAFE_POST_MATCH`, `UNKNOWN_TIMING` ou `MISSING`, bloqueando sinais pos-jogo e sem timestamp seguro.
+
+Artefatos:
+
+```text
+data/research/2026/availability-signals.json
+docs/research/build-5.2.10-availability-signals.md
+docs/research/availability-signals-v1.md
+```
+
+Comando:
+
+```bash
+npm run research:availability-signals
+```
+
+Endpoints read-only:
+
+```text
+GET /research/availability-signals
+GET /research/availability-signals/coverage
+GET /research/availability-signals/false-negatives
+GET /research/availability-signals/thresholds
+```
+
+O artefato registra matriz de cobertura, dataset estruturado por temporada/rodada/atleta, analise dos falsos negativos e falsos positivos da V2, grid de thresholds, auditoria de fontes externas e controle prospectivo da R19. Nenhum modelo e promovido automaticamente; `AVAILABILITY_V2_SIGNAL_AUGMENTED` nao foi criado por falta de sinais incrementais seguros com cobertura historica suficiente.
+
+## Research Lab 5.2.9
+
+A Build 5.2.9 cria a variante experimental `AVAILABILITY_V2_CALIBRATED`. Ela usa a `RESEARCH_BASELINE_1_0` como contrato de comparacao, preserva `AVAILABILITY_V1` e avalia calibração probabilistica de `DID_PLAY` vs `DID_NOT_PLAY` com split temporal.
+
+Artefatos:
+
+```text
+data/research/2026/availability-recalibration.json
+docs/research/build-5.2.9-availability-recalibration.md
+```
+
+Comando:
+
+```bash
+npm run research:availability-recalibration
+```
+
+Endpoint read-only:
+
+```text
+GET /research/availability-recalibration
+```
+
+A avaliacao usa treino nas rodadas 2-13 e validacao nas rodadas 14-18. Nenhum modelo e promovido automaticamente; a recomendacao final fica persistida no artefato.
+
+## Research Lab 5.2.8
+
+A Build 5.2.8 cria a linha de base cientifica congelada `RESEARCH_BASELINE_1_0`. Ela registra referencias, hashes, fingerprints, rodadas, targets, metricas, modelos, denominadores e estados do Promotion Gate sem copiar datasets em massa.
+
+Artefatos:
+
+```text
+data/research/2026/baselines/research-baseline-1.0.json
+data/research/2026/baselines/research-baseline-1.0-manifest.json
+data/research/2026/baselines/research-baseline-1.0-metrics.json
+data/research/2026/baselines/research-baseline-1.0-target-audit.json
+docs/research/build-5.2.8-research-baseline-1.0.md
+docs/research/research-baseline-policy.md
+```
+
+Comandos:
+
+```bash
+npm run research:baseline
+npm run research:baseline:check
+```
+
+Endpoints read-only:
+
+```text
+GET /research/baseline
+GET /research/baseline/manifest
+GET /research/baseline/metrics
+GET /research/baseline/validity
+```
+
+A baseline usa `PARTICIPATION_TARGET_V1`, `RESEARCH_METRICS_V1`, `post.players[].played` como fonte canonica de participacao e congela os denominadores auditados: Top1 85, Top3 255, Top5 425, Top10 850, Time Ideal 113 e Capitao 11. A Rodada 19 permanece separada como `ROUND_19_CONTROL_CASE`.
+
+## Research Lab 5.2.7
+
+A Build 5.2.7 cria uma auditoria read-only do ground truth historico de participacao. Ela reconstrói Top1/Top3/Top5/Top10, Time Ideal e capitao com atletas congelados antes do pos-jogo, fazendo left join por `athleteId` e preservando denominadores mesmo quando o target esta ausente.
+
+Gerar artefatos e relatorios:
+
+```bash
+npm run research:ground-truth-validation
+```
+
+Artefatos:
+
+```text
+data/research/2026/ground-truth-validation.json
+data/research/2026/ground-truth-topk-audit.json
+docs/research/build-5.2.7-ground-truth-validation.md
+docs/research/round-19-ground-truth-audit.md
+```
+
+Endpoints somente leitura:
+
+- `GET /research/ground-truth-validation`
+- `GET /research/ground-truth-topk-audit`
+
+Contratos adicionados:
+
+- `DID_PLAY`, `DID_NOT_PLAY`, `SCORE_UNAVAILABLE`, `TARGET_MISSING` e `TARGET_AMBIGUOUS` sao classificacoes canonicas.
+- `actualPoints=null` sozinho nao define que o atleta nao jogou.
+- `actualPoints=0` ou negativo pode ser `DID_PLAY`.
+- `gamesDelta` e scouts sao evidencias complementares, nao fonte unica da verdade.
+- Artefatos antigos permanecem preservados; a auditoria cria arquivos separados.
+
+## Research Lab 5.2.6
+
+A Build 5.2.6 cria o Painel de Evidencias SLVS para consolidar o motor oficial, candidatos experimentais, qualidade dos dados, evidencias positivas/negativas/inconclusivas, limitacoes e Promotion Gate central. Nenhum candidato e promovido automaticamente.
+
+Gerar o artefato e o relatorio:
+
+```bash
+npm run research:evidence-dashboard
+```
+
+Artefatos:
+
+```text
+data/research/2026/slvs-evidence-dashboard.json
+docs/research/build-5.2.6-evidence-dashboard.md
+```
+
+Endpoint somente leitura:
+
+- `GET /research/evidence-dashboard`
+
+Contratos adicionados:
+
+- `evidenceRecord` padroniza `POSITIVE`, `NEGATIVE`, `INCONCLUSIVE` e `DATA_LIMITATION`.
+- `overallEvidenceScore` e indice interno, `probability=false`, e nao promove modelos.
+- Evidencia isolada da Rodada 19 fica separada de evidencia multirrodada.
+- Ausencia de artefato ou campo fica `DATA_NOT_AVAILABLE`, nunca zero inventado.
+- A proxima prioridade de pesquisa e sugerida em modo read-only.
+
+## Research Lab 5.2.5
+
+A Build 5.2.5 cria `AVAILABILITY_V1` em Shadow Mode para separar potencial tecnico de confiabilidade de participacao. O `participationReliabilityScore` e indice interno SLVS em escala 0-100, com `metricType=internal_index` e `probability=false`; ele nao e probabilidade de jogar nem de titularidade.
+
+Gerar o artefato e os relatorios:
+
+```bash
+npm run research:availability-calibration
+```
+
+Artefatos:
+
+```text
+data/research/2026/availability-calibration.json
+docs/research/build-5.2.5-availability-learning.md
+docs/research/round-19-availability-learning.md
+```
+
+Endpoint somente leitura:
+
+- `GET /research/availability-calibration`
+
+Contratos adicionados:
+
+- Rodada N usa somente historico de participacao ate N-1.
+- `didPlayActual` e `didNotPlayActual` entram apenas como target de avaliacao.
+- `INSUFFICIENT_DATA` nao e tratado como baixa confiabilidade.
+- Sinais ausentes como titularidade, minutos, lesao, suspensao e provavel escalacao permanecem indisponiveis.
+- Nenhuma regra nominal e nenhuma promocao automatica entram no motor oficial.
+
+## Research Lab 5.2.4
+
+A Build 5.2.4 cria uma calibracao multirrodada experimental para auditar capitao, SG V1/V2, Shadow Mode por posicao, N/A pos-jogo, dataQualityScore, Time Ideal, Capture Rate e promotion gate. Ela nao altera o Motor SLVS oficial, formulas, snapshots, backtests historicos ou Flutter.
+
+Gerar o artefato e o relatorio:
+
+```bash
+npm run research:multi-round-calibration
+```
+
+Artefatos:
+
+```text
+data/research/2026/multi-round-calibration.json
+docs/research/build-5.2.4-multi-round-learning.md
+```
+
+Endpoint somente leitura:
+
+- `GET /research/multi-round-calibration`
+
+Contratos adicionados:
+
+- Capitao experimental aceita apenas ATA e MEI; GOL, LAT, ZAG e TEC sao inelegiveis.
+- N/A pos-jogo separa `PRE_MATCH_ELIGIBLE`, `POST_MATCH_DID_NOT_PLAY` e `POST_MATCH_SCORE_UNAVAILABLE`.
+- Shadow Mode por posicao compara ranking oficial congelado com candidatos V2 sem promocao automatica.
+- Best Predicted XI e Best Actual XI usam apenas jogadores elegiveis pre-rodada; pontos reais entram somente como alvo.
+- Promotion gate continua bloqueando promocao automatica para o motor oficial.
+
+## Research Lab 5.2.3
+
+A Build 5.2.3 cria a validacao walk-forward da Rodada 19 como laboratorio de calibracao historica. A previsao usa apenas snapshots capturados antes de cada jogo; resultados reais entram somente depois como alvo de avaliacao.
+
+Gerar o artefato e o relatorio:
+
+```bash
+npm run research:round-validation
+```
+
+Artefatos:
+
+```text
+data/research/2026/round-19-validation.json
+docs/research/round-19-learning-report.md
+```
+
+Endpoint somente leitura:
+
+- `GET /research/round-validation/19`
+
+Contratos adicionados:
+
+- `cleanSheetIndexV1` e `cleanSheetIndexV2` retornam indice interno, nao probabilidade.
+- `displayScore` limita a exibicao a 95 e preserva `rawScore`.
+- `matchupStrengthGap` usa escala interna de -100 a +100.
+- Diferenciais reais exigem ownership/popularidade; sem isso `differentialEligibilityAvailable=false`.
+- Valorizacao sem modelo futuro e exposta como `valueType=historical_variation`.
+- Custo-beneficio exige qualidade minima, previsao disponivel e status elegivel.
+- Best Possible XI e melhor formacao real sao benchmarks pos-rodada.
+- Promotion gate permite `REJECTED`, `EXPERIMENTAL` e `PROMOTABLE`, sem promocao automatica.
 
 ## Dados historicos
 

@@ -1,0 +1,6509 @@
+{
+  "schemaVersion": "round-validation-research/v1",
+  "generatedAt": "2026-07-23T15:49:58.410Z",
+  "season": 2026,
+  "round": 19,
+  "engineVersion": "round-validation-research-lab/5.2.3",
+  "sourceBuildId": "build-4.3.2",
+  "officialEngineImpact": false,
+  "productionPromotion": false,
+  "temporalPolicy": {
+    "leakageStatus": "PASS",
+    "predictionsUseOnlySnapshotsCapturedBeforeMatch": true,
+    "actualResultsUsedOnlyAsTargets": true,
+    "bestPossibleUsedOnlyAfterRound": true
+  },
+  "cleanSheetMetricMetadata": {
+    "metricType": "internal_index",
+    "probability": false,
+    "displayRecommendation": "score",
+    "scale": "0-100",
+    "description": "Indice interno SLVS; nao representa probabilidade."
+  },
+  "predictionSnapshot": {
+    "round": 19,
+    "manifestSnapshotCount": 32,
+    "finalPreCloseSnapshotId": "live-2026-r19-20260721220905-7bbb2b68",
+    "matchSnapshots": {
+      "346535": {
+        "snapshotId": "live-2026-r19-20260717225759-cc13cbb3",
+        "capturedAt": "2026-07-17T22:57:59.346Z",
+        "sourceStatus": "PRE_MATCH_SNAPSHOT"
+      },
+      "346536": {
+        "snapshotId": "live-2026-r19-20260716221111-4f1c74ba",
+        "capturedAt": "2026-07-16T22:11:11.110Z",
+        "sourceStatus": "PRE_MATCH_SNAPSHOT"
+      },
+      "346537": {
+        "snapshotId": "live-2026-r19-20260721220905-7bbb2b68",
+        "capturedAt": "2026-07-21T22:09:05.150Z",
+        "sourceStatus": "PRE_MATCH_SNAPSHOT"
+      },
+      "346538": {
+        "snapshotId": "live-2026-r19-20260721220905-7bbb2b68",
+        "capturedAt": "2026-07-21T22:09:05.150Z",
+        "sourceStatus": "PRE_MATCH_SNAPSHOT"
+      },
+      "346539": {
+        "snapshotId": "live-2026-r19-20260717225759-cc13cbb3",
+        "capturedAt": "2026-07-17T22:57:59.346Z",
+        "sourceStatus": "PRE_MATCH_SNAPSHOT"
+      },
+      "346540": {
+        "snapshotId": "live-2026-r19-20260721220905-7bbb2b68",
+        "capturedAt": "2026-07-21T22:09:05.150Z",
+        "sourceStatus": "PRE_MATCH_SNAPSHOT"
+      },
+      "346541": {
+        "snapshotId": "live-2026-r19-20260721220905-7bbb2b68",
+        "capturedAt": "2026-07-21T22:09:05.150Z",
+        "sourceStatus": "PRE_MATCH_SNAPSHOT"
+      },
+      "346542": {
+        "snapshotId": "live-2026-r19-20260721220905-7bbb2b68",
+        "capturedAt": "2026-07-21T22:09:05.150Z",
+        "sourceStatus": "PRE_MATCH_SNAPSHOT"
+      },
+      "346543": {
+        "snapshotId": "live-2026-r19-20260716221111-4f1c74ba",
+        "capturedAt": "2026-07-16T22:11:11.110Z",
+        "sourceStatus": "PRE_MATCH_SNAPSHOT"
+      },
+      "346544": {
+        "snapshotId": "live-2026-r19-20260721220905-7bbb2b68",
+        "capturedAt": "2026-07-21T22:09:05.150Z",
+        "sourceStatus": "PRE_MATCH_SNAPSHOT"
+      }
+    }
+  },
+  "actualResults": [
+    {
+      "matchId": 346536,
+      "startsAt": "2026-07-16T22:30:00.000Z",
+      "homeClubId": 263,
+      "awayClubId": 277,
+      "homeScore": 2,
+      "awayScore": 1,
+      "status": "FINISHED",
+      "finished": true
+    },
+    {
+      "matchId": 346543,
+      "startsAt": "2026-07-16T22:30:00.000Z",
+      "homeClubId": 287,
+      "awayClubId": 267,
+      "homeScore": 1,
+      "awayScore": 0,
+      "status": "FINISHED",
+      "finished": true
+    },
+    {
+      "matchId": 346535,
+      "startsAt": "2026-07-17T23:00:00.000Z",
+      "homeClubId": 266,
+      "awayClubId": 280,
+      "homeScore": 1,
+      "awayScore": 1,
+      "status": "FINISHED",
+      "finished": true
+    },
+    {
+      "matchId": 346539,
+      "startsAt": "2026-07-17T23:00:00.000Z",
+      "homeClubId": 2305,
+      "awayClubId": 284,
+      "homeScore": 2,
+      "awayScore": 1,
+      "status": "FINISHED",
+      "finished": true
+    },
+    {
+      "matchId": 346540,
+      "startsAt": "2026-07-21T22:30:00.000Z",
+      "homeClubId": 282,
+      "awayClubId": 265,
+      "homeScore": 1,
+      "awayScore": 1,
+      "status": "FINISHED",
+      "finished": true
+    },
+    {
+      "matchId": 346542,
+      "startsAt": "2026-07-22T22:30:00.000Z",
+      "homeClubId": 294,
+      "awayClubId": 275,
+      "homeScore": 1,
+      "awayScore": 3,
+      "status": "FINISHED",
+      "finished": true
+    },
+    {
+      "matchId": 346537,
+      "startsAt": "2026-07-23T00:30:00.000Z",
+      "homeClubId": 276,
+      "awayClubId": 293,
+      "homeScore": 1,
+      "awayScore": 2,
+      "status": "FINISHED",
+      "finished": true
+    },
+    {
+      "matchId": 346541,
+      "startsAt": "2026-07-23T00:30:00.000Z",
+      "homeClubId": 285,
+      "awayClubId": 283,
+      "homeScore": 1,
+      "awayScore": 2,
+      "status": "FINISHED",
+      "finished": true
+    },
+    {
+      "matchId": 346544,
+      "startsAt": "2026-07-23T00:30:00.000Z",
+      "homeClubId": 315,
+      "awayClubId": 262,
+      "homeScore": 0,
+      "awayScore": 4,
+      "status": "FINISHED",
+      "finished": true
+    },
+    {
+      "matchId": 346538,
+      "startsAt": "2026-07-23T22:30:00.000Z",
+      "homeClubId": 264,
+      "awayClubId": 364,
+      "homeScore": null,
+      "awayScore": null,
+      "status": "CRIADA",
+      "finished": false
+    }
+  ],
+  "rankingEvaluation": {
+    "rankingBeforeMatchV1": [
+      {
+        "matchId": 346538,
+        "startsAt": "2026-07-23T22:30:00.000Z",
+        "teamId": 264,
+        "teamName": "COR",
+        "opponentId": 364,
+        "opponentName": "REM",
+        "homeAway": "HOME",
+        "predictionTimestamp": "2026-07-21T22:09:05.150Z",
+        "availableDataCutoff": "2026-07-21T22:09:05.150Z",
+        "defensiveStrength": 67.888,
+        "opponentOffensiveStrength": 61.3341,
+        "cleanSheetIndexV1": {
+          "rawScore": 63.3326,
+          "displayScore": 63,
+          "metadata": {
+            "metricType": "internal_index",
+            "probability": false,
+            "displayRecommendation": "score",
+            "scale": "0-100",
+            "description": "Indice interno SLVS; nao representa probabilidade."
+          }
+        },
+        "cleanSheetIndexV2": {
+          "rawScore": 64.0457,
+          "displayScore": 64,
+          "metadata": {
+            "metricType": "internal_index",
+            "probability": false,
+            "displayRecommendation": "score",
+            "scale": "0-100",
+            "description": "Indice interno SLVS; nao representa probabilidade."
+          }
+        },
+        "concedingRisk": 39.973,
+        "matchupStrengthGap": 18.3713,
+        "leagueStrengthContext": 72.828,
+        "leagueContext": {
+          "team": {
+            "teamId": 264,
+            "points": 24,
+            "wins": 6,
+            "draws": 6,
+            "losses": 6,
+            "goalsFor": 18,
+            "goalsAgainst": 19,
+            "goalDifference": -1,
+            "gamesPlayed": 18,
+            "leaguePosition": 12,
+            "pointsPerGame": 1.333
+          },
+          "opponent": {
+            "teamId": 364,
+            "points": 18,
+            "wins": 4,
+            "draws": 6,
+            "losses": 8,
+            "goalsFor": 21,
+            "goalsAgainst": 29,
+            "goalDifference": -8,
+            "gamesPlayed": 18,
+            "leaguePosition": 19,
+            "pointsPerGame": 1
+          }
+        },
+        "recentForm": {
+          "sampleSize": 5,
+          "wins": 3,
+          "draws": 0,
+          "losses": 2,
+          "goalsFor": 9,
+          "goalsAgainst": 8,
+          "averageGoalsFor": 1.8,
+          "averageGoalsAgainst": 1.6,
+          "formIndex": 60,
+          "results": [
+            "L",
+            "W",
+            "L",
+            "W",
+            "W"
+          ]
+        },
+        "opponentRecentForm": {
+          "sampleSize": 5,
+          "wins": 3,
+          "draws": 1,
+          "losses": 1,
+          "goalsFor": 8,
+          "goalsAgainst": 6,
+          "averageGoalsFor": 1.6,
+          "averageGoalsAgainst": 1.2,
+          "formIndex": 66.6667,
+          "results": [
+            "W",
+            "D",
+            "W",
+            "L",
+            "W"
+          ]
+        },
+        "homeAwayPerformance": {
+          "homeAway": "HOME",
+          "sampleSize": 9,
+          "averageGoalsFor": 1,
+          "averageGoalsAgainst": 0.8889,
+          "index": 59.6665
+        },
+        "sample": {
+          "teamMatchesBeforeCutoff": 18,
+          "opponentMatchesBeforeCutoff": 18
+        },
+        "actualResult": null,
+        "cleanSheetActual": null,
+        "rankV1": 1,
+        "rankV2": 4
+      },
+      {
+        "matchId": 346540,
+        "startsAt": "2026-07-21T22:30:00.000Z",
+        "teamId": 282,
+        "teamName": "CAM",
+        "opponentId": 265,
+        "opponentName": "BAH",
+        "homeAway": "HOME",
+        "predictionTimestamp": "2026-07-21T22:09:05.150Z",
+        "availableDataCutoff": "2026-07-21T22:09:05.150Z",
+        "defensiveStrength": 64.444,
+        "opponentOffensiveStrength": 61.9611,
+        "cleanSheetIndexV1": {
+          "rawScore": 61.7447,
+          "displayScore": 62,
+          "metadata": {
+            "metricType": "internal_index",
+            "probability": false,
+            "displayRecommendation": "score",
+            "scale": "0-100",
+            "description": "Indice interno SLVS; nao representa probabilidade."
+          }
+        },
+        "cleanSheetIndexV2": {
+          "rawScore": 58.3461,
+          "displayScore": 58,
+          "metadata": {
+            "metricType": "internal_index",
+            "probability": false,
+            "displayRecommendation": "score",
+            "scale": "0-100",
+            "description": "Indice interno SLVS; nao representa probabilidade."
+          }
+        },
+        "concedingRisk": 41.5232,
+        "matchupStrengthGap": 11.1399,
+        "leagueStrengthContext": 36.764,
+        "leagueContext": {
+          "team": {
+            "teamId": 282,
+            "points": 24,
+            "wins": 7,
+            "draws": 3,
+            "losses": 8,
+            "goalsFor": 22,
+            "goalsAgainst": 23,
+            "goalDifference": -1,
+            "gamesPlayed": 18,
+            "leaguePosition": 11,
+            "pointsPerGame": 1.333
+          },
+          "opponent": {
+            "teamId": 265,
+            "points": 26,
+            "wins": 7,
+            "draws": 5,
+            "losses": 5,
+            "goalsFor": 25,
+            "goalsAgainst": 23,
+            "goalDifference": 2,
+            "gamesPlayed": 17,
+            "leaguePosition": 6,
+            "pointsPerGame": 1.529
+          }
+        },
+        "recentForm": {
+          "sampleSize": 5,
+          "wins": 3,
+          "draws": 1,
+          "losses": 1,
+          "goalsFor": 8,
+          "goalsAgainst": 4,
+          "averageGoalsFor": 1.6,
+          "averageGoalsAgainst": 0.8,
+          "formIndex": 66.6667,
+          "results": [
+            "W",
+            "D",
+            "W",
+            "L",
+            "W"
+          ]
+        },
+        "opponentRecentForm": {
+          "sampleSize": 5,
+          "wins": 1,
+          "draws": 2,
+          "losses": 2,
+          "goalsFor": 8,
+          "goalsAgainst": 9,
+          "averageGoalsFor": 1.6,
+          "averageGoalsAgainst": 1.8,
+          "formIndex": 33.3333,
+          "results": [
+            "D",
+            "L",
+            "D",
+            "L",
+            "W"
+          ]
+        },
+        "homeAwayPerformance": {
+          "homeAway": "HOME",
+          "sampleSize": 8,
+          "averageGoalsFor": 1.625,
+          "averageGoalsAgainst": 1.5,
+          "index": 61.75
+        },
+        "sample": {
+          "teamMatchesBeforeCutoff": 18,
+          "opponentMatchesBeforeCutoff": 17
+        },
+        "actualResult": {
+          "homeScore": 1,
+          "awayScore": 1,
+          "goalsAgainst": 1
+        },
+        "cleanSheetActual": false,
+        "rankV1": 2,
+        "rankV2": 10,
+        "evaluatedRankV1": 1,
+        "evaluatedRankV2": 9
+      },
+      {
+        "matchId": 346539,
+        "startsAt": "2026-07-17T23:00:00.000Z",
+        "teamId": 2305,
+        "teamName": "MIR",
+        "opponentId": 284,
+        "opponentName": "GRE",
+        "homeAway": "HOME",
+        "predictionTimestamp": "2026-07-17T22:57:59.346Z",
+        "availableDataCutoff": "2026-07-17T22:57:59.346Z",
+        "defensiveStrength": 58.764,
+        "opponentOffensiveStrength": 53.3331,
+        "cleanSheetIndexV1": {
+          "rawScore": 58.9251,
+          "displayScore": 59,
+          "metadata": {
+            "metricType": "internal_index",
+            "probability": false,
+            "displayRecommendation": "score",
+            "scale": "0-100",
+            "description": "Indice interno SLVS; nao representa probabilidade."
+          }
+        },
+        "cleanSheetIndexV2": {
+          "rawScore": 59.581,
+          "displayScore": 60,
+          "metadata": {
+            "metricType": "internal_index",
+            "probability": false,
+            "displayRecommendation": "score",
+            "scale": "0-100",
+            "description": "Indice interno SLVS; nao representa probabilidade."
+          }
+        },
+        "concedingRisk": 38.7658,
+        "matchupStrengthGap": 4.3521,
+        "leagueStrengthContext": 37.583999999999996,
+        "leagueContext": {
+          "team": {
+            "teamId": 2305,
+            "points": 16,
+            "wins": 4,
+            "draws": 4,
+            "losses": 9,
+            "goalsFor": 18,
+            "goalsAgainst": 24,
+            "goalDifference": -6,
+            "gamesPlayed": 17,
+            "leaguePosition": 19,
+            "pointsPerGame": 0.941
+          },
+          "opponent": {
+            "teamId": 284,
+            "points": 21,
+            "wins": 5,
+            "draws": 6,
+            "losses": 7,
+            "goalsFor": 20,
+            "goalsAgainst": 23,
+            "goalDifference": -3,
+            "gamesPlayed": 18,
+            "leaguePosition": 15,
+            "pointsPerGame": 1.167
+          }
+        },
+        "recentForm": {
+          "sampleSize": 5,
+          "wins": 2,
+          "draws": 1,
+          "losses": 2,
+          "goalsFor": 5,
+          "goalsAgainst": 6,
+          "averageGoalsFor": 1,
+          "averageGoalsAgainst": 1.2,
+          "formIndex": 46.6667,
+          "results": [
+            "W",
+            "D",
+            "L",
+            "W",
+            "L"
+          ]
+        },
+        "opponentRecentForm": {
+          "sampleSize": 5,
+          "wins": 1,
+          "draws": 2,
+          "losses": 2,
+          "goalsFor": 5,
+          "goalsAgainst": 7,
+          "averageGoalsFor": 1,
+          "averageGoalsAgainst": 1.4,
+          "formIndex": 33.3333,
+          "results": [
+            "D",
+            "L",
+            "D",
+            "W",
+            "L"
+          ]
+        },
+        "homeAwayPerformance": {
+          "homeAway": "HOME",
+          "sampleSize": 9,
+          "averageGoalsFor": 1.2222,
+          "averageGoalsAgainst": 1.2222,
+          "index": 58.6666
+        },
+        "sample": {
+          "teamMatchesBeforeCutoff": 17,
+          "opponentMatchesBeforeCutoff": 18
+        },
+        "actualResult": {
+          "homeScore": 2,
+          "awayScore": 1,
+          "goalsAgainst": 1
+        },
+        "cleanSheetActual": false,
+        "rankV1": 3,
+        "rankV2": 7,
+        "evaluatedRankV1": 2,
+        "evaluatedRankV2": 6
+      },
+      {
+        "matchId": 346541,
+        "startsAt": "2026-07-23T00:30:00.000Z",
+        "teamId": 285,
+        "teamName": "INT",
+        "opponentId": 283,
+        "opponentName": "CRU",
+        "homeAway": "HOME",
+        "predictionTimestamp": "2026-07-21T22:09:05.150Z",
+        "availableDataCutoff": "2026-07-21T22:09:05.150Z",
+        "defensiveStrength": 62.556,
+        "opponentOffensiveStrength": 62.6659,
+        "cleanSheetIndexV1": {
+          "rawScore": 58.4005,
+          "displayScore": 58,
+          "metadata": {
+            "metricType": "internal_index",
+            "probability": false,
+            "displayRecommendation": "score",
+            "scale": "0-100",
+            "description": "Indice interno SLVS; nao representa probabilidade."
+          }
+        },
+        "cleanSheetIndexV2": {
+          "rawScore": 58.5874,
+          "displayScore": 59,
+          "metadata": {
+            "metricType": "internal_index",
+            "probability": false,
+            "displayRecommendation": "score",
+            "scale": "0-100",
+            "description": "Indice interno SLVS; nao representa probabilidade."
+          }
+        },
+        "concedingRisk": 42.5716,
+        "matchupStrengthGap": 4.8127,
+        "leagueStrengthContext": 49.644000000000005,
+        "leagueContext": {
+          "team": {
+            "teamId": 285,
+            "points": 21,
+            "wins": 5,
+            "draws": 6,
+            "losses": 7,
+            "goalsFor": 21,
+            "goalsAgainst": 22,
+            "goalDifference": -1,
+            "gamesPlayed": 18,
+            "leaguePosition": 14,
+            "pointsPerGame": 1.167
+          },
+          "opponent": {
+            "teamId": 283,
+            "points": 24,
+            "wins": 6,
+            "draws": 6,
+            "losses": 6,
+            "goalsFor": 24,
+            "goalsAgainst": 28,
+            "goalDifference": -4,
+            "gamesPlayed": 18,
+            "leaguePosition": 13,
+            "pointsPerGame": 1.333
+          }
+        },
+        "recentForm": {
+          "sampleSize": 5,
+          "wins": 2,
+          "draws": 1,
+          "losses": 2,
+          "goalsFor": 9,
+          "goalsAgainst": 8,
+          "averageGoalsFor": 1.8,
+          "averageGoalsAgainst": 1.6,
+          "formIndex": 46.6667,
+          "results": [
+            "W",
+            "D",
+            "W",
+            "L",
+            "L"
+          ]
+        },
+        "opponentRecentForm": {
+          "sampleSize": 5,
+          "wins": 2,
+          "draws": 2,
+          "losses": 1,
+          "goalsFor": 7,
+          "goalsAgainst": 7,
+          "averageGoalsFor": 1.4,
+          "averageGoalsAgainst": 1.4,
+          "formIndex": 53.3333,
+          "results": [
+            "L",
+            "W",
+            "D",
+            "W",
+            "D"
+          ]
+        },
+        "homeAwayPerformance": {
+          "homeAway": "HOME",
+          "sampleSize": 9,
+          "averageGoalsFor": 1.2222,
+          "averageGoalsAgainst": 1,
+          "index": 61.9996
+        },
+        "sample": {
+          "teamMatchesBeforeCutoff": 18,
+          "opponentMatchesBeforeCutoff": 18
+        },
+        "actualResult": {
+          "homeScore": 1,
+          "awayScore": 2,
+          "goalsAgainst": 2
+        },
+        "cleanSheetActual": false,
+        "rankV1": 4,
+        "rankV2": 9,
+        "evaluatedRankV1": 3,
+        "evaluatedRankV2": 8
+      },
+      {
+        "matchId": 346544,
+        "startsAt": "2026-07-23T00:30:00.000Z",
+        "teamId": 262,
+        "teamName": "FLA",
+        "opponentId": 315,
+        "opponentName": "CHA",
+        "homeAway": "AWAY",
+        "predictionTimestamp": "2026-07-21T22:09:05.150Z",
+        "availableDataCutoff": "2026-07-21T22:09:05.150Z",
+        "defensiveStrength": 69.176,
+        "opponentOffensiveStrength": 45.3333,
+        "cleanSheetIndexV1": {
+          "rawScore": 58.2389,
+          "displayScore": 58,
+          "metadata": {
+            "metricType": "internal_index",
+            "probability": false,
+            "displayRecommendation": "score",
+            "scale": "0-100",
+            "description": "Indice interno SLVS; nao representa probabilidade."
+          }
+        },
+        "cleanSheetIndexV2": {
+          "rawScore": 77.3273,
+          "displayScore": 77,
+          "metadata": {
+            "metricType": "internal_index",
+            "probability": false,
+            "displayRecommendation": "score",
+            "scale": "0-100",
+            "description": "Indice interno SLVS; nao representa probabilidade."
+          }
+        },
+        "concedingRisk": 40.7217,
+        "matchupStrengthGap": 69.7166,
+        "leagueStrengthContext": 100,
+        "leagueContext": {
+          "team": {
+            "teamId": 262,
+            "points": 34,
+            "wins": 10,
+            "draws": 4,
+            "losses": 3,
+            "goalsFor": 31,
+            "goalsAgainst": 16,
+            "goalDifference": 15,
+            "gamesPlayed": 17,
+            "leaguePosition": 2,
+            "pointsPerGame": 2
+          },
+          "opponent": {
+            "teamId": 315,
+            "points": 9,
+            "wins": 1,
+            "draws": 6,
+            "losses": 10,
+            "goalsFor": 17,
+            "goalsAgainst": 33,
+            "goalDifference": -16,
+            "gamesPlayed": 17,
+            "leaguePosition": 20,
+            "pointsPerGame": 0.529
+          }
+        },
+        "recentForm": {
+          "sampleSize": 5,
+          "wins": 2,
+          "draws": 2,
+          "losses": 1,
+          "goalsFor": 7,
+          "goalsAgainst": 6,
+          "averageGoalsFor": 1.4,
+          "averageGoalsAgainst": 1.2,
+          "formIndex": 53.3333,
+          "results": [
+            "D",
+            "W",
+            "D",
+            "L",
+            "W"
+          ]
+        },
+        "opponentRecentForm": {
+          "sampleSize": 5,
+          "wins": 0,
+          "draws": 1,
+          "losses": 4,
+          "goalsFor": 5,
+          "goalsAgainst": 9,
+          "averageGoalsFor": 1,
+          "averageGoalsAgainst": 1.8,
+          "formIndex": 6.6667,
+          "results": [
+            "L",
+            "D",
+            "L",
+            "L",
+            "L"
+          ]
+        },
+        "homeAwayPerformance": {
+          "homeAway": "AWAY",
+          "sampleSize": 9,
+          "averageGoalsFor": 1.6667,
+          "averageGoalsAgainst": 1,
+          "index": 70.0006
+        },
+        "sample": {
+          "teamMatchesBeforeCutoff": 17,
+          "opponentMatchesBeforeCutoff": 17
+        },
+        "actualResult": {
+          "homeScore": 0,
+          "awayScore": 4,
+          "goalsAgainst": 0
+        },
+        "cleanSheetActual": true,
+        "rankV1": 5,
+        "rankV2": 1,
+        "evaluatedRankV1": 4,
+        "evaluatedRankV2": 1
+      },
+      {
+        "matchId": 346543,
+        "startsAt": "2026-07-16T22:30:00.000Z",
+        "teamId": 287,
+        "teamName": "VIT",
+        "opponentId": 267,
+        "opponentName": "VAS",
+        "homeAway": "HOME",
+        "predictionTimestamp": "2026-07-16T22:11:11.110Z",
+        "availableDataCutoff": "2026-07-16T22:11:11.110Z",
+        "defensiveStrength": 57.588,
+        "opponentOffensiveStrength": 54.6661,
+        "cleanSheetIndexV1": {
+          "rawScore": 57.8196,
+          "displayScore": 58,
+          "metadata": {
+            "metricType": "internal_index",
+            "probability": false,
+            "displayRecommendation": "score",
+            "scale": "0-100",
+            "description": "Indice interno SLVS; nao representa probabilidade."
+          }
+        },
+        "cleanSheetIndexV2": {
+          "rawScore": 65.3463,
+          "displayScore": 65,
+          "metadata": {
+            "metricType": "internal_index",
+            "probability": false,
+            "displayRecommendation": "score",
+            "scale": "0-100",
+            "description": "Indice interno SLVS; nao representa probabilidade."
+          }
+        },
+        "concedingRisk": 39.9106,
+        "matchupStrengthGap": 20.0967,
+        "leagueStrengthContext": 61.728,
+        "leagueContext": {
+          "team": {
+            "teamId": 287,
+            "points": 22,
+            "wins": 6,
+            "draws": 4,
+            "losses": 7,
+            "goalsFor": 21,
+            "goalsAgainst": 25,
+            "goalDifference": -4,
+            "gamesPlayed": 17,
+            "leaguePosition": 13,
+            "pointsPerGame": 1.294
+          },
+          "opponent": {
+            "teamId": 267,
+            "points": 20,
+            "wins": 5,
+            "draws": 5,
+            "losses": 8,
+            "goalsFor": 22,
+            "goalsAgainst": 29,
+            "goalDifference": -7,
+            "gamesPlayed": 18,
+            "leaguePosition": 17,
+            "pointsPerGame": 1.111
+          }
+        },
+        "recentForm": {
+          "sampleSize": 5,
+          "wins": 2,
+          "draws": 1,
+          "losses": 2,
+          "goalsFor": 9,
+          "goalsAgainst": 8,
+          "averageGoalsFor": 1.8,
+          "averageGoalsAgainst": 1.6,
+          "formIndex": 46.6667,
+          "results": [
+            "W",
+            "D",
+            "L",
+            "W",
+            "L"
+          ]
+        },
+        "opponentRecentForm": {
+          "sampleSize": 5,
+          "wins": 1,
+          "draws": 1,
+          "losses": 3,
+          "goalsFor": 4,
+          "goalsAgainst": 10,
+          "averageGoalsFor": 0.8,
+          "averageGoalsAgainst": 2,
+          "formIndex": 26.6667,
+          "results": [
+            "D",
+            "W",
+            "L",
+            "L",
+            "L"
+          ]
+        },
+        "homeAwayPerformance": {
+          "homeAway": "HOME",
+          "sampleSize": 8,
+          "averageGoalsFor": 1.75,
+          "averageGoalsAgainst": 0.375,
+          "index": 80.875
+        },
+        "sample": {
+          "teamMatchesBeforeCutoff": 17,
+          "opponentMatchesBeforeCutoff": 18
+        },
+        "actualResult": {
+          "homeScore": 1,
+          "awayScore": 0,
+          "goalsAgainst": 0
+        },
+        "cleanSheetActual": true,
+        "rankV1": 6,
+        "rankV2": 3,
+        "evaluatedRankV1": 5,
+        "evaluatedRankV2": 3
+      },
+      {
+        "matchId": 346542,
+        "startsAt": "2026-07-22T22:30:00.000Z",
+        "teamId": 275,
+        "teamName": "PAL",
+        "opponentId": 294,
+        "opponentName": "CFC",
+        "homeAway": "AWAY",
+        "predictionTimestamp": "2026-07-21T22:09:05.150Z",
+        "availableDataCutoff": "2026-07-21T22:09:05.150Z",
+        "defensiveStrength": 74.556,
+        "opponentOffensiveStrength": 61.3325,
+        "cleanSheetIndexV1": {
+          "rawScore": 57.3338,
+          "displayScore": 57,
+          "metadata": {
+            "metricType": "internal_index",
+            "probability": false,
+            "displayRecommendation": "score",
+            "scale": "0-100",
+            "description": "Indice interno SLVS; nao representa probabilidade."
+          }
+        },
+        "cleanSheetIndexV2": {
+          "rawScore": 67.8216,
+          "displayScore": 68,
+          "metadata": {
+            "metricType": "internal_index",
+            "probability": false,
+            "displayRecommendation": "score",
+            "scale": "0-100",
+            "description": "Indice interno SLVS; nao representa probabilidade."
+          }
+        },
+        "concedingRisk": 47.6383,
+        "matchupStrengthGap": 31.2146,
+        "leagueStrengthContext": 91.544,
+        "leagueContext": {
+          "team": {
+            "teamId": 275,
+            "points": 41,
+            "wins": 12,
+            "draws": 5,
+            "losses": 1,
+            "goalsFor": 30,
+            "goalsAgainst": 13,
+            "goalDifference": 17,
+            "gamesPlayed": 18,
+            "leaguePosition": 1,
+            "pointsPerGame": 2.278
+          },
+          "opponent": {
+            "teamId": 294,
+            "points": 26,
+            "wins": 7,
+            "draws": 5,
+            "losses": 6,
+            "goalsFor": 24,
+            "goalsAgainst": 24,
+            "goalDifference": 0,
+            "gamesPlayed": 18,
+            "leaguePosition": 7,
+            "pointsPerGame": 1.444
+          }
+        },
+        "recentForm": {
+          "sampleSize": 5,
+          "wins": 2,
+          "draws": 3,
+          "losses": 0,
+          "goalsFor": 7,
+          "goalsAgainst": 3,
+          "averageGoalsFor": 1.4,
+          "averageGoalsAgainst": 0.6,
+          "formIndex": 60,
+          "results": [
+            "D",
+            "D",
+            "D",
+            "W",
+            "W"
+          ]
+        },
+        "opponentRecentForm": {
+          "sampleSize": 5,
+          "wins": 2,
+          "draws": 1,
+          "losses": 2,
+          "goalsFor": 9,
+          "goalsAgainst": 11,
+          "averageGoalsFor": 1.8,
+          "averageGoalsAgainst": 2.2,
+          "formIndex": 46.6667,
+          "results": [
+            "L",
+            "D",
+            "W",
+            "W",
+            "L"
+          ]
+        },
+        "homeAwayPerformance": {
+          "homeAway": "AWAY",
+          "sampleSize": 9,
+          "averageGoalsFor": 1.5556,
+          "averageGoalsAgainst": 0.7778,
+          "index": 71.3338
+        },
+        "sample": {
+          "teamMatchesBeforeCutoff": 18,
+          "opponentMatchesBeforeCutoff": 18
+        },
+        "actualResult": {
+          "homeScore": 1,
+          "awayScore": 3,
+          "goalsAgainst": 1
+        },
+        "cleanSheetActual": false,
+        "rankV1": 7,
+        "rankV2": 2,
+        "evaluatedRankV1": 6,
+        "evaluatedRankV2": 2
+      },
+      {
+        "matchId": 346535,
+        "startsAt": "2026-07-17T23:00:00.000Z",
+        "teamId": 280,
+        "teamName": "RBB",
+        "opponentId": 266,
+        "opponentName": "FLU",
+        "homeAway": "AWAY",
+        "predictionTimestamp": "2026-07-17T22:57:59.346Z",
+        "availableDataCutoff": "2026-07-17T22:57:59.346Z",
+        "defensiveStrength": 70.888,
+        "opponentOffensiveStrength": 64.0011,
+        "cleanSheetIndexV1": {
+          "rawScore": 56.3325,
+          "displayScore": 56,
+          "metadata": {
+            "metricType": "internal_index",
+            "probability": false,
+            "displayRecommendation": "score",
+            "scale": "0-100",
+            "description": "Indice interno SLVS; nao representa probabilidade."
+          }
+        },
+        "cleanSheetIndexV2": {
+          "rawScore": 62.7833,
+          "displayScore": 63,
+          "metadata": {
+            "metricType": "internal_index",
+            "probability": false,
+            "displayRecommendation": "score",
+            "scale": "0-100",
+            "description": "Indice interno SLVS; nao representa probabilidade."
+          }
+        },
+        "concedingRisk": 50.3898,
+        "matchupStrengthGap": 7.5727,
+        "leagueStrengthContext": 46.824000000000005,
+        "leagueContext": {
+          "team": {
+            "teamId": 280,
+            "points": 29,
+            "wins": 9,
+            "draws": 2,
+            "losses": 7,
+            "goalsFor": 25,
+            "goalsAgainst": 19,
+            "goalDifference": 6,
+            "gamesPlayed": 18,
+            "leaguePosition": 5,
+            "pointsPerGame": 1.611
+          },
+          "opponent": {
+            "teamId": 266,
+            "points": 31,
+            "wins": 9,
+            "draws": 4,
+            "losses": 5,
+            "goalsFor": 28,
+            "goalsAgainst": 23,
+            "goalDifference": 5,
+            "gamesPlayed": 18,
+            "leaguePosition": 3,
+            "pointsPerGame": 1.722
+          }
+        },
+        "recentForm": {
+          "sampleSize": 5,
+          "wins": 4,
+          "draws": 0,
+          "losses": 1,
+          "goalsFor": 10,
+          "goalsAgainst": 4,
+          "averageGoalsFor": 2,
+          "averageGoalsAgainst": 0.8,
+          "formIndex": 80,
+          "results": [
+            "W",
+            "L",
+            "W",
+            "W",
+            "W"
+          ]
+        },
+        "opponentRecentForm": {
+          "sampleSize": 5,
+          "wins": 1,
+          "draws": 2,
+          "losses": 2,
+          "goalsFor": 5,
+          "goalsAgainst": 7,
+          "averageGoalsFor": 1,
+          "averageGoalsAgainst": 1.4,
+          "formIndex": 33.3333,
+          "results": [
+            "L",
+            "D",
+            "W",
+            "L",
+            "D"
+          ]
+        },
+        "homeAwayPerformance": {
+          "homeAway": "AWAY",
+          "sampleSize": 9,
+          "averageGoalsFor": 1,
+          "averageGoalsAgainst": 1.1111,
+          "index": 56.3335
+        },
+        "sample": {
+          "teamMatchesBeforeCutoff": 18,
+          "opponentMatchesBeforeCutoff": 18
+        },
+        "actualResult": {
+          "homeScore": 1,
+          "awayScore": 1,
+          "goalsAgainst": 1
+        },
+        "cleanSheetActual": false,
+        "rankV1": 8,
+        "rankV2": 6,
+        "evaluatedRankV1": 7,
+        "evaluatedRankV2": 5
+      },
+      {
+        "matchId": 346537,
+        "startsAt": "2026-07-23T00:30:00.000Z",
+        "teamId": 293,
+        "teamName": "CAP",
+        "opponentId": 276,
+        "opponentName": "SAO",
+        "homeAway": "AWAY",
+        "predictionTimestamp": "2026-07-21T22:09:05.150Z",
+        "availableDataCutoff": "2026-07-21T22:09:05.150Z",
+        "defensiveStrength": 68,
+        "opponentOffensiveStrength": 53.3339,
+        "cleanSheetIndexV1": {
+          "rawScore": 55.1332,
+          "displayScore": 55,
+          "metadata": {
+            "metricType": "internal_index",
+            "probability": false,
+            "displayRecommendation": "score",
+            "scale": "0-100",
+            "description": "Indice interno SLVS; nao representa probabilidade."
+          }
+        },
+        "cleanSheetIndexV2": {
+          "rawScore": 63.8493,
+          "displayScore": 64,
+          "metadata": {
+            "metricType": "internal_index",
+            "probability": false,
+            "displayRecommendation": "score",
+            "scale": "0-100",
+            "description": "Indice interno SLVS; nao representa probabilidade."
+          }
+        },
+        "concedingRisk": 45.5336,
+        "matchupStrengthGap": 15.1458,
+        "leagueStrengthContext": 61.948,
+        "leagueContext": {
+          "team": {
+            "teamId": 293,
+            "points": 30,
+            "wins": 9,
+            "draws": 3,
+            "losses": 6,
+            "goalsFor": 24,
+            "goalsAgainst": 18,
+            "goalDifference": 6,
+            "gamesPlayed": 18,
+            "leaguePosition": 5,
+            "pointsPerGame": 1.667
+          },
+          "opponent": {
+            "teamId": 276,
+            "points": 25,
+            "wins": 7,
+            "draws": 4,
+            "losses": 7,
+            "goalsFor": 23,
+            "goalsAgainst": 20,
+            "goalDifference": 3,
+            "gamesPlayed": 18,
+            "leaguePosition": 8,
+            "pointsPerGame": 1.389
+          }
+        },
+        "recentForm": {
+          "sampleSize": 5,
+          "wins": 2,
+          "draws": 2,
+          "losses": 1,
+          "goalsFor": 4,
+          "goalsAgainst": 3,
+          "averageGoalsFor": 0.8,
+          "averageGoalsAgainst": 0.6,
+          "formIndex": 53.3333,
+          "results": [
+            "D",
+            "L",
+            "D",
+            "W",
+            "W"
+          ]
+        },
+        "opponentRecentForm": {
+          "sampleSize": 5,
+          "wins": 0,
+          "draws": 2,
+          "losses": 3,
+          "goalsFor": 6,
+          "goalsAgainst": 9,
+          "averageGoalsFor": 1.2,
+          "averageGoalsAgainst": 1.8,
+          "formIndex": 13.3333,
+          "results": [
+            "D",
+            "L",
+            "L",
+            "D",
+            "L"
+          ]
+        },
+        "homeAwayPerformance": {
+          "homeAway": "AWAY",
+          "sampleSize": 8,
+          "averageGoalsFor": 0.875,
+          "averageGoalsAgainst": 1.5,
+          "index": 48.25
+        },
+        "sample": {
+          "teamMatchesBeforeCutoff": 18,
+          "opponentMatchesBeforeCutoff": 18
+        },
+        "actualResult": {
+          "homeScore": 1,
+          "awayScore": 2,
+          "goalsAgainst": 1
+        },
+        "cleanSheetActual": false,
+        "rankV1": 9,
+        "rankV2": 5,
+        "evaluatedRankV1": 8,
+        "evaluatedRankV2": 4
+      },
+      {
+        "matchId": 346542,
+        "startsAt": "2026-07-22T22:30:00.000Z",
+        "teamId": 294,
+        "teamName": "CFC",
+        "opponentId": 275,
+        "opponentName": "PAL",
+        "homeAway": "HOME",
+        "predictionTimestamp": "2026-07-21T22:09:05.150Z",
+        "availableDataCutoff": "2026-07-21T22:09:05.150Z",
+        "defensiveStrength": 60.334,
+        "opponentOffensiveStrength": 72.0008,
+        "cleanSheetIndexV1": {
+          "rawScore": 54.2668,
+          "displayScore": 54,
+          "metadata": {
+            "metricType": "internal_index",
+            "probability": false,
+            "displayRecommendation": "score",
+            "scale": "0-100",
+            "description": "Indice interno SLVS; nao representa probabilidade."
+          }
+        },
+        "cleanSheetIndexV2": {
+          "rawScore": 47.9022,
+          "displayScore": 48,
+          "metadata": {
+            "metricType": "internal_index",
+            "probability": false,
+            "displayRecommendation": "score",
+            "scale": "0-100",
+            "description": "Indice interno SLVS; nao representa probabilidade."
+          }
+        },
+        "concedingRisk": 48.4835,
+        "matchupStrengthGap": -31.1212,
+        "leagueStrengthContext": 8.456,
+        "leagueContext": {
+          "team": {
+            "teamId": 294,
+            "points": 26,
+            "wins": 7,
+            "draws": 5,
+            "losses": 6,
+            "goalsFor": 24,
+            "goalsAgainst": 24,
+            "goalDifference": 0,
+            "gamesPlayed": 18,
+            "leaguePosition": 7,
+            "pointsPerGame": 1.444
+          },
+          "opponent": {
+            "teamId": 275,
+            "points": 41,
+            "wins": 12,
+            "draws": 5,
+            "losses": 1,
+            "goalsFor": 30,
+            "goalsAgainst": 13,
+            "goalDifference": 17,
+            "gamesPlayed": 18,
+            "leaguePosition": 1,
+            "pointsPerGame": 2.278
+          }
+        },
+        "recentForm": {
+          "sampleSize": 5,
+          "wins": 2,
+          "draws": 1,
+          "losses": 2,
+          "goalsFor": 9,
+          "goalsAgainst": 11,
+          "averageGoalsFor": 1.8,
+          "averageGoalsAgainst": 2.2,
+          "formIndex": 46.6667,
+          "results": [
+            "L",
+            "D",
+            "W",
+            "W",
+            "L"
+          ]
+        },
+        "opponentRecentForm": {
+          "sampleSize": 5,
+          "wins": 2,
+          "draws": 3,
+          "losses": 0,
+          "goalsFor": 7,
+          "goalsAgainst": 3,
+          "averageGoalsFor": 1.4,
+          "averageGoalsAgainst": 0.6,
+          "formIndex": 60,
+          "results": [
+            "D",
+            "D",
+            "D",
+            "W",
+            "W"
+          ]
+        },
+        "homeAwayPerformance": {
+          "homeAway": "HOME",
+          "sampleSize": 8,
+          "averageGoalsFor": 1.25,
+          "averageGoalsAgainst": 1,
+          "index": 62.5
+        },
+        "sample": {
+          "teamMatchesBeforeCutoff": 18,
+          "opponentMatchesBeforeCutoff": 18
+        },
+        "actualResult": {
+          "homeScore": 1,
+          "awayScore": 3,
+          "goalsAgainst": 3
+        },
+        "cleanSheetActual": false,
+        "rankV1": 10,
+        "rankV2": 18,
+        "evaluatedRankV1": 9,
+        "evaluatedRankV2": 16
+      },
+      {
+        "matchId": 346537,
+        "startsAt": "2026-07-23T00:30:00.000Z",
+        "teamId": 276,
+        "teamName": "SAO",
+        "opponentId": 293,
+        "opponentName": "CAP",
+        "homeAway": "HOME",
+        "predictionTimestamp": "2026-07-21T22:09:05.150Z",
+        "availableDataCutoff": "2026-07-21T22:09:05.150Z",
+        "defensiveStrength": 59.778,
+        "opponentOffensiveStrength": 62.6659,
+        "cleanSheetIndexV1": {
+          "rawScore": 53.4004,
+          "displayScore": 53,
+          "metadata": {
+            "metricType": "internal_index",
+            "probability": false,
+            "displayRecommendation": "score",
+            "scale": "0-100",
+            "description": "Indice interno SLVS; nao representa probabilidade."
+          }
+        },
+        "cleanSheetIndexV2": {
+          "rawScore": 56.5061,
+          "displayScore": 57,
+          "metadata": {
+            "metricType": "internal_index",
+            "probability": false,
+            "displayRecommendation": "score",
+            "scale": "0-100",
+            "description": "Indice interno SLVS; nao representa probabilidade."
+          }
+        },
+        "concedingRisk": 43.5439,
+        "matchupStrengthGap": -14.4392,
+        "leagueStrengthContext": 38.052,
+        "leagueContext": {
+          "team": {
+            "teamId": 276,
+            "points": 25,
+            "wins": 7,
+            "draws": 4,
+            "losses": 7,
+            "goalsFor": 23,
+            "goalsAgainst": 20,
+            "goalDifference": 3,
+            "gamesPlayed": 18,
+            "leaguePosition": 8,
+            "pointsPerGame": 1.389
+          },
+          "opponent": {
+            "teamId": 293,
+            "points": 30,
+            "wins": 9,
+            "draws": 3,
+            "losses": 6,
+            "goalsFor": 24,
+            "goalsAgainst": 18,
+            "goalDifference": 6,
+            "gamesPlayed": 18,
+            "leaguePosition": 5,
+            "pointsPerGame": 1.667
+          }
+        },
+        "recentForm": {
+          "sampleSize": 5,
+          "wins": 0,
+          "draws": 2,
+          "losses": 3,
+          "goalsFor": 6,
+          "goalsAgainst": 9,
+          "averageGoalsFor": 1.2,
+          "averageGoalsAgainst": 1.8,
+          "formIndex": 13.3333,
+          "results": [
+            "D",
+            "L",
+            "L",
+            "D",
+            "L"
+          ]
+        },
+        "opponentRecentForm": {
+          "sampleSize": 5,
+          "wins": 2,
+          "draws": 2,
+          "losses": 1,
+          "goalsFor": 4,
+          "goalsAgainst": 3,
+          "averageGoalsFor": 0.8,
+          "averageGoalsAgainst": 0.6,
+          "formIndex": 53.3333,
+          "results": [
+            "D",
+            "L",
+            "D",
+            "W",
+            "W"
+          ]
+        },
+        "homeAwayPerformance": {
+          "homeAway": "HOME",
+          "sampleSize": 8,
+          "averageGoalsFor": 1.75,
+          "averageGoalsAgainst": 0.75,
+          "index": 75.25
+        },
+        "sample": {
+          "teamMatchesBeforeCutoff": 18,
+          "opponentMatchesBeforeCutoff": 18
+        },
+        "actualResult": {
+          "homeScore": 1,
+          "awayScore": 2,
+          "goalsAgainst": 2
+        },
+        "cleanSheetActual": false,
+        "rankV1": 11,
+        "rankV2": 11,
+        "evaluatedRankV1": 10,
+        "evaluatedRankV2": 10
+      },
+      {
+        "matchId": 346535,
+        "startsAt": "2026-07-17T23:00:00.000Z",
+        "teamId": 266,
+        "teamName": "FLU",
+        "opponentId": 280,
+        "opponentName": "RBB",
+        "homeAway": "HOME",
+        "predictionTimestamp": "2026-07-17T22:57:59.346Z",
+        "availableDataCutoff": "2026-07-17T22:57:59.346Z",
+        "defensiveStrength": 59.444,
+        "opponentOffensiveStrength": 69.3336,
+        "cleanSheetIndexV1": {
+          "rawScore": 53.1997,
+          "displayScore": 53,
+          "metadata": {
+            "metricType": "internal_index",
+            "probability": false,
+            "displayRecommendation": "score",
+            "scale": "0-100",
+            "description": "Indice interno SLVS; nao representa probabilidade."
+          }
+        },
+        "cleanSheetIndexV2": {
+          "rawScore": 52.5832,
+          "displayScore": 53,
+          "metadata": {
+            "metricType": "internal_index",
+            "probability": false,
+            "displayRecommendation": "score",
+            "scale": "0-100",
+            "description": "Indice interno SLVS; nao representa probabilidade."
+          }
+        },
+        "concedingRisk": 47.3281,
+        "matchupStrengthGap": -7.7529,
+        "leagueStrengthContext": 53.175999999999995,
+        "leagueContext": {
+          "team": {
+            "teamId": 266,
+            "points": 31,
+            "wins": 9,
+            "draws": 4,
+            "losses": 5,
+            "goalsFor": 28,
+            "goalsAgainst": 23,
+            "goalDifference": 5,
+            "gamesPlayed": 18,
+            "leaguePosition": 3,
+            "pointsPerGame": 1.722
+          },
+          "opponent": {
+            "teamId": 280,
+            "points": 29,
+            "wins": 9,
+            "draws": 2,
+            "losses": 7,
+            "goalsFor": 25,
+            "goalsAgainst": 19,
+            "goalDifference": 6,
+            "gamesPlayed": 18,
+            "leaguePosition": 5,
+            "pointsPerGame": 1.611
+          }
+        },
+        "recentForm": {
+          "sampleSize": 5,
+          "wins": 1,
+          "draws": 2,
+          "losses": 2,
+          "goalsFor": 5,
+          "goalsAgainst": 7,
+          "averageGoalsFor": 1,
+          "averageGoalsAgainst": 1.4,
+          "formIndex": 33.3333,
+          "results": [
+            "L",
+            "D",
+            "W",
+            "L",
+            "D"
+          ]
+        },
+        "opponentRecentForm": {
+          "sampleSize": 5,
+          "wins": 4,
+          "draws": 0,
+          "losses": 1,
+          "goalsFor": 10,
+          "goalsAgainst": 4,
+          "averageGoalsFor": 2,
+          "averageGoalsAgainst": 0.8,
+          "formIndex": 80,
+          "results": [
+            "W",
+            "L",
+            "W",
+            "W",
+            "W"
+          ]
+        },
+        "homeAwayPerformance": {
+          "homeAway": "HOME",
+          "sampleSize": 9,
+          "averageGoalsFor": 1.8889,
+          "averageGoalsAgainst": 1.1111,
+          "index": 72.3337
+        },
+        "sample": {
+          "teamMatchesBeforeCutoff": 18,
+          "opponentMatchesBeforeCutoff": 18
+        },
+        "actualResult": {
+          "homeScore": 1,
+          "awayScore": 1,
+          "goalsAgainst": 1
+        },
+        "cleanSheetActual": false,
+        "rankV1": 12,
+        "rankV2": 15,
+        "evaluatedRankV1": 11,
+        "evaluatedRankV2": 14
+      },
+      {
+        "matchId": 346538,
+        "startsAt": "2026-07-23T22:30:00.000Z",
+        "teamId": 364,
+        "teamName": "REM",
+        "opponentId": 264,
+        "opponentName": "COR",
+        "homeAway": "AWAY",
+        "predictionTimestamp": "2026-07-21T22:09:05.150Z",
+        "availableDataCutoff": "2026-07-21T22:09:05.150Z",
+        "defensiveStrength": 57.778,
+        "opponentOffensiveStrength": 56,
+        "cleanSheetIndexV1": {
+          "rawScore": 49.5335,
+          "displayScore": 50,
+          "metadata": {
+            "metricType": "internal_index",
+            "probability": false,
+            "displayRecommendation": "score",
+            "scale": "0-100",
+            "description": "Indice interno SLVS; nao representa probabilidade."
+          }
+        },
+        "cleanSheetIndexV2": {
+          "rawScore": 50.7289,
+          "displayScore": 51,
+          "metadata": {
+            "metricType": "internal_index",
+            "probability": false,
+            "displayRecommendation": "score",
+            "scale": "0-100",
+            "description": "Indice interno SLVS; nao representa probabilidade."
+          }
+        },
+        "concedingRisk": 50.5777,
+        "matchupStrengthGap": -17.8713,
+        "leagueStrengthContext": 27.171999999999997,
+        "leagueContext": {
+          "team": {
+            "teamId": 364,
+            "points": 18,
+            "wins": 4,
+            "draws": 6,
+            "losses": 8,
+            "goalsFor": 21,
+            "goalsAgainst": 29,
+            "goalDifference": -8,
+            "gamesPlayed": 18,
+            "leaguePosition": 19,
+            "pointsPerGame": 1
+          },
+          "opponent": {
+            "teamId": 264,
+            "points": 24,
+            "wins": 6,
+            "draws": 6,
+            "losses": 6,
+            "goalsFor": 18,
+            "goalsAgainst": 19,
+            "goalDifference": -1,
+            "gamesPlayed": 18,
+            "leaguePosition": 12,
+            "pointsPerGame": 1.333
+          }
+        },
+        "recentForm": {
+          "sampleSize": 5,
+          "wins": 3,
+          "draws": 1,
+          "losses": 1,
+          "goalsFor": 8,
+          "goalsAgainst": 6,
+          "averageGoalsFor": 1.6,
+          "averageGoalsAgainst": 1.2,
+          "formIndex": 66.6667,
+          "results": [
+            "W",
+            "D",
+            "W",
+            "L",
+            "W"
+          ]
+        },
+        "opponentRecentForm": {
+          "sampleSize": 5,
+          "wins": 3,
+          "draws": 0,
+          "losses": 2,
+          "goalsFor": 9,
+          "goalsAgainst": 8,
+          "averageGoalsFor": 1.8,
+          "averageGoalsAgainst": 1.6,
+          "formIndex": 60,
+          "results": [
+            "L",
+            "W",
+            "L",
+            "W",
+            "W"
+          ]
+        },
+        "homeAwayPerformance": {
+          "homeAway": "AWAY",
+          "sampleSize": 9,
+          "averageGoalsFor": 1.1111,
+          "averageGoalsAgainst": 2,
+          "index": 44.9998
+        },
+        "sample": {
+          "teamMatchesBeforeCutoff": 18,
+          "opponentMatchesBeforeCutoff": 18
+        },
+        "actualResult": null,
+        "cleanSheetActual": null,
+        "rankV1": 13,
+        "rankV2": 16
+      },
+      {
+        "matchId": 346536,
+        "startsAt": "2026-07-16T22:30:00.000Z",
+        "teamId": 263,
+        "teamName": "BOT",
+        "opponentId": 277,
+        "opponentName": "SAN",
+        "homeAway": "HOME",
+        "predictionTimestamp": "2026-07-16T22:11:11.110Z",
+        "availableDataCutoff": "2026-07-16T22:11:11.110Z",
+        "defensiveStrength": 48.53,
+        "opponentOffensiveStrength": 63.9989,
+        "cleanSheetIndexV1": {
+          "rawScore": 48.2517,
+          "displayScore": 48,
+          "metadata": {
+            "metricType": "internal_index",
+            "probability": false,
+            "displayRecommendation": "score",
+            "scale": "0-100",
+            "description": "Indice interno SLVS; nao representa probabilidade."
+          }
+        },
+        "cleanSheetIndexV2": {
+          "rawScore": 54.2045,
+          "displayScore": 54,
+          "metadata": {
+            "metricType": "internal_index",
+            "probability": false,
+            "displayRecommendation": "score",
+            "scale": "0-100",
+            "description": "Indice interno SLVS; nao representa probabilidade."
+          }
+        },
+        "concedingRisk": 48.2139,
+        "matchupStrengthGap": 7.465,
+        "leagueStrengthContext": 59.532,
+        "leagueContext": {
+          "team": {
+            "teamId": 263,
+            "points": 22,
+            "wins": 6,
+            "draws": 4,
+            "losses": 7,
+            "goalsFor": 31,
+            "goalsAgainst": 31,
+            "goalDifference": 0,
+            "gamesPlayed": 17,
+            "leaguePosition": 12,
+            "pointsPerGame": 1.294
+          },
+          "opponent": {
+            "teamId": 277,
+            "points": 21,
+            "wins": 5,
+            "draws": 6,
+            "losses": 7,
+            "goalsFor": 26,
+            "goalsAgainst": 29,
+            "goalDifference": -3,
+            "gamesPlayed": 18,
+            "leaguePosition": 15,
+            "pointsPerGame": 1.167
+          }
+        },
+        "recentForm": {
+          "sampleSize": 5,
+          "wins": 1,
+          "draws": 2,
+          "losses": 2,
+          "goalsFor": 7,
+          "goalsAgainst": 7,
+          "averageGoalsFor": 1.4,
+          "averageGoalsAgainst": 1.4,
+          "formIndex": 33.3333,
+          "results": [
+            "L",
+            "D",
+            "W",
+            "D",
+            "L"
+          ]
+        },
+        "opponentRecentForm": {
+          "sampleSize": 5,
+          "wins": 2,
+          "draws": 1,
+          "losses": 2,
+          "goalsFor": 8,
+          "goalsAgainst": 8,
+          "averageGoalsFor": 1.6,
+          "averageGoalsAgainst": 1.6,
+          "formIndex": 46.6667,
+          "results": [
+            "D",
+            "W",
+            "L",
+            "L",
+            "W"
+          ]
+        },
+        "homeAwayPerformance": {
+          "homeAway": "HOME",
+          "sampleSize": 7,
+          "averageGoalsFor": 2.1429,
+          "averageGoalsAgainst": 1.7143,
+          "index": 67.8577
+        },
+        "sample": {
+          "teamMatchesBeforeCutoff": 17,
+          "opponentMatchesBeforeCutoff": 18
+        },
+        "actualResult": {
+          "homeScore": 2,
+          "awayScore": 1,
+          "goalsAgainst": 1
+        },
+        "cleanSheetActual": false,
+        "rankV1": 14,
+        "rankV2": 12,
+        "evaluatedRankV1": 12,
+        "evaluatedRankV2": 11
+      },
+      {
+        "matchId": 346539,
+        "startsAt": "2026-07-17T23:00:00.000Z",
+        "teamId": 284,
+        "teamName": "GRE",
+        "opponentId": 2305,
+        "opponentName": "MIR",
+        "homeAway": "AWAY",
+        "predictionTimestamp": "2026-07-17T22:57:59.346Z",
+        "availableDataCutoff": "2026-07-17T22:57:59.346Z",
+        "defensiveStrength": 59.444,
+        "opponentOffensiveStrength": 54.7445,
+        "cleanSheetIndexV1": {
+          "rawScore": 47.5764,
+          "displayScore": 48,
+          "metadata": {
+            "metricType": "internal_index",
+            "probability": false,
+            "displayRecommendation": "score",
+            "scale": "0-100",
+            "description": "Indice interno SLVS; nao representa probabilidade."
+          }
+        },
+        "cleanSheetIndexV2": {
+          "rawScore": 59.154,
+          "displayScore": 59,
+          "metadata": {
+            "metricType": "internal_index",
+            "probability": false,
+            "displayRecommendation": "score",
+            "scale": "0-100",
+            "description": "Indice interno SLVS; nao representa probabilidade."
+          }
+        },
+        "concedingRisk": 49.3041,
+        "matchupStrengthGap": -3.7443,
+        "leagueStrengthContext": 62.416000000000004,
+        "leagueContext": {
+          "team": {
+            "teamId": 284,
+            "points": 21,
+            "wins": 5,
+            "draws": 6,
+            "losses": 7,
+            "goalsFor": 20,
+            "goalsAgainst": 23,
+            "goalDifference": -3,
+            "gamesPlayed": 18,
+            "leaguePosition": 15,
+            "pointsPerGame": 1.167
+          },
+          "opponent": {
+            "teamId": 2305,
+            "points": 16,
+            "wins": 4,
+            "draws": 4,
+            "losses": 9,
+            "goalsFor": 18,
+            "goalsAgainst": 24,
+            "goalDifference": -6,
+            "gamesPlayed": 17,
+            "leaguePosition": 19,
+            "pointsPerGame": 0.941
+          }
+        },
+        "recentForm": {
+          "sampleSize": 5,
+          "wins": 1,
+          "draws": 2,
+          "losses": 2,
+          "goalsFor": 5,
+          "goalsAgainst": 7,
+          "averageGoalsFor": 1,
+          "averageGoalsAgainst": 1.4,
+          "formIndex": 33.3333,
+          "results": [
+            "D",
+            "L",
+            "D",
+            "W",
+            "L"
+          ]
+        },
+        "opponentRecentForm": {
+          "sampleSize": 5,
+          "wins": 2,
+          "draws": 1,
+          "losses": 2,
+          "goalsFor": 5,
+          "goalsAgainst": 6,
+          "averageGoalsFor": 1,
+          "averageGoalsAgainst": 1.2,
+          "formIndex": 46.6667,
+          "results": [
+            "W",
+            "D",
+            "L",
+            "W",
+            "L"
+          ]
+        },
+        "homeAwayPerformance": {
+          "homeAway": "AWAY",
+          "sampleSize": 9,
+          "averageGoalsFor": 0.5556,
+          "averageGoalsAgainst": 1.3333,
+          "index": 45.0013
+        },
+        "sample": {
+          "teamMatchesBeforeCutoff": 18,
+          "opponentMatchesBeforeCutoff": 17
+        },
+        "actualResult": {
+          "homeScore": 2,
+          "awayScore": 1,
+          "goalsAgainst": 2
+        },
+        "cleanSheetActual": false,
+        "rankV1": 15,
+        "rankV2": 8,
+        "evaluatedRankV1": 13,
+        "evaluatedRankV2": 7
+      },
+      {
+        "matchId": 346541,
+        "startsAt": "2026-07-23T00:30:00.000Z",
+        "teamId": 283,
+        "teamName": "CRU",
+        "opponentId": 285,
+        "opponentName": "INT",
+        "homeAway": "AWAY",
+        "predictionTimestamp": "2026-07-21T22:09:05.150Z",
+        "availableDataCutoff": "2026-07-21T22:09:05.150Z",
+        "defensiveStrength": 56.888,
+        "opponentOffensiveStrength": 57.3341,
+        "cleanSheetIndexV1": {
+          "rawScore": 47.2659,
+          "displayScore": 47,
+          "metadata": {
+            "metricType": "internal_index",
+            "probability": false,
+            "displayRecommendation": "score",
+            "scale": "0-100",
+            "description": "Indice interno SLVS; nao representa probabilidade."
+          }
+        },
+        "cleanSheetIndexV2": {
+          "rawScore": 53.3828,
+          "displayScore": 53,
+          "metadata": {
+            "metricType": "internal_index",
+            "probability": false,
+            "displayRecommendation": "score",
+            "scale": "0-100",
+            "description": "Indice interno SLVS; nao representa probabilidade."
+          }
+        },
+        "concedingRisk": 51.623,
+        "matchupStrengthGap": -4.8461,
+        "leagueStrengthContext": 50.355999999999995,
+        "leagueContext": {
+          "team": {
+            "teamId": 283,
+            "points": 24,
+            "wins": 6,
+            "draws": 6,
+            "losses": 6,
+            "goalsFor": 24,
+            "goalsAgainst": 28,
+            "goalDifference": -4,
+            "gamesPlayed": 18,
+            "leaguePosition": 13,
+            "pointsPerGame": 1.333
+          },
+          "opponent": {
+            "teamId": 285,
+            "points": 21,
+            "wins": 5,
+            "draws": 6,
+            "losses": 7,
+            "goalsFor": 21,
+            "goalsAgainst": 22,
+            "goalDifference": -1,
+            "gamesPlayed": 18,
+            "leaguePosition": 14,
+            "pointsPerGame": 1.167
+          }
+        },
+        "recentForm": {
+          "sampleSize": 5,
+          "wins": 2,
+          "draws": 2,
+          "losses": 1,
+          "goalsFor": 7,
+          "goalsAgainst": 7,
+          "averageGoalsFor": 1.4,
+          "averageGoalsAgainst": 1.4,
+          "formIndex": 53.3333,
+          "results": [
+            "L",
+            "W",
+            "D",
+            "W",
+            "D"
+          ]
+        },
+        "opponentRecentForm": {
+          "sampleSize": 5,
+          "wins": 2,
+          "draws": 1,
+          "losses": 2,
+          "goalsFor": 9,
+          "goalsAgainst": 8,
+          "averageGoalsFor": 1.8,
+          "averageGoalsAgainst": 1.6,
+          "formIndex": 46.6667,
+          "results": [
+            "W",
+            "D",
+            "W",
+            "L",
+            "L"
+          ]
+        },
+        "homeAwayPerformance": {
+          "homeAway": "AWAY",
+          "sampleSize": 8,
+          "averageGoalsFor": 1,
+          "averageGoalsAgainst": 2,
+          "index": 43
+        },
+        "sample": {
+          "teamMatchesBeforeCutoff": 18,
+          "opponentMatchesBeforeCutoff": 18
+        },
+        "actualResult": {
+          "homeScore": 1,
+          "awayScore": 2,
+          "goalsAgainst": 1
+        },
+        "cleanSheetActual": false,
+        "rankV1": 16,
+        "rankV2": 14,
+        "evaluatedRankV1": 14,
+        "evaluatedRankV2": 13
+      },
+      {
+        "matchId": 346540,
+        "startsAt": "2026-07-21T22:30:00.000Z",
+        "teamId": 265,
+        "teamName": "BAH",
+        "opponentId": 282,
+        "opponentName": "CAM",
+        "homeAway": "AWAY",
+        "predictionTimestamp": "2026-07-21T22:09:05.150Z",
+        "availableDataCutoff": "2026-07-21T22:09:05.150Z",
+        "defensiveStrength": 57.942,
+        "opponentOffensiveStrength": 62.6661,
+        "cleanSheetIndexV1": {
+          "rawScore": 44.2987,
+          "displayScore": 44,
+          "metadata": {
+            "metricType": "internal_index",
+            "probability": false,
+            "displayRecommendation": "score",
+            "scale": "0-100",
+            "description": "Indice interno SLVS; nao representa probabilidade."
+          }
+        },
+        "cleanSheetIndexV2": {
+          "rawScore": 54.1784,
+          "displayScore": 54,
+          "metadata": {
+            "metricType": "internal_index",
+            "probability": false,
+            "displayRecommendation": "score",
+            "scale": "0-100",
+            "description": "Indice interno SLVS; nao representa probabilidade."
+          }
+        },
+        "concedingRisk": 54.1867,
+        "matchupStrengthGap": -11.2743,
+        "leagueStrengthContext": 63.236,
+        "leagueContext": {
+          "team": {
+            "teamId": 265,
+            "points": 26,
+            "wins": 7,
+            "draws": 5,
+            "losses": 5,
+            "goalsFor": 25,
+            "goalsAgainst": 23,
+            "goalDifference": 2,
+            "gamesPlayed": 17,
+            "leaguePosition": 6,
+            "pointsPerGame": 1.529
+          },
+          "opponent": {
+            "teamId": 282,
+            "points": 24,
+            "wins": 7,
+            "draws": 3,
+            "losses": 8,
+            "goalsFor": 22,
+            "goalsAgainst": 23,
+            "goalDifference": -1,
+            "gamesPlayed": 18,
+            "leaguePosition": 11,
+            "pointsPerGame": 1.333
+          }
+        },
+        "recentForm": {
+          "sampleSize": 5,
+          "wins": 1,
+          "draws": 2,
+          "losses": 2,
+          "goalsFor": 8,
+          "goalsAgainst": 9,
+          "averageGoalsFor": 1.6,
+          "averageGoalsAgainst": 1.8,
+          "formIndex": 33.3333,
+          "results": [
+            "D",
+            "L",
+            "D",
+            "L",
+            "W"
+          ]
+        },
+        "opponentRecentForm": {
+          "sampleSize": 5,
+          "wins": 3,
+          "draws": 1,
+          "losses": 1,
+          "goalsFor": 8,
+          "goalsAgainst": 4,
+          "averageGoalsFor": 1.6,
+          "averageGoalsAgainst": 0.8,
+          "formIndex": 66.6667,
+          "results": [
+            "W",
+            "D",
+            "W",
+            "L",
+            "W"
+          ]
+        },
+        "homeAwayPerformance": {
+          "homeAway": "AWAY",
+          "sampleSize": 8,
+          "averageGoalsFor": 1.375,
+          "averageGoalsAgainst": 1.625,
+          "index": 55.375
+        },
+        "sample": {
+          "teamMatchesBeforeCutoff": 17,
+          "opponentMatchesBeforeCutoff": 18
+        },
+        "actualResult": {
+          "homeScore": 1,
+          "awayScore": 1,
+          "goalsAgainst": 1
+        },
+        "cleanSheetActual": false,
+        "rankV1": 17,
+        "rankV2": 13,
+        "evaluatedRankV1": 15,
+        "evaluatedRankV2": 12
+      },
+      {
+        "matchId": 346536,
+        "startsAt": "2026-07-16T22:30:00.000Z",
+        "teamId": 277,
+        "teamName": "SAN",
+        "opponentId": 263,
+        "opponentName": "BOT",
+        "homeAway": "AWAY",
+        "predictionTimestamp": "2026-07-16T22:11:11.110Z",
+        "availableDataCutoff": "2026-07-16T22:11:11.110Z",
+        "defensiveStrength": 54.778,
+        "opponentOffensiveStrength": 70.4307,
+        "cleanSheetIndexV1": {
+          "rawScore": 41.4043,
+          "displayScore": 41,
+          "metadata": {
+            "metricType": "internal_index",
+            "probability": false,
+            "displayRecommendation": "score",
+            "scale": "0-100",
+            "description": "Indice interno SLVS; nao representa probabilidade."
+          }
+        },
+        "cleanSheetIndexV2": {
+          "rawScore": 50.3706,
+          "displayScore": 50,
+          "metadata": {
+            "metricType": "internal_index",
+            "probability": false,
+            "displayRecommendation": "score",
+            "scale": "0-100",
+            "description": "Indice interno SLVS; nao representa probabilidade."
+          }
+        },
+        "concedingRisk": 59.5646,
+        "matchupStrengthGap": -9.3322,
+        "leagueStrengthContext": 40.468,
+        "leagueContext": {
+          "team": {
+            "teamId": 277,
+            "points": 21,
+            "wins": 5,
+            "draws": 6,
+            "losses": 7,
+            "goalsFor": 26,
+            "goalsAgainst": 29,
+            "goalDifference": -3,
+            "gamesPlayed": 18,
+            "leaguePosition": 15,
+            "pointsPerGame": 1.167
+          },
+          "opponent": {
+            "teamId": 263,
+            "points": 22,
+            "wins": 6,
+            "draws": 4,
+            "losses": 7,
+            "goalsFor": 31,
+            "goalsAgainst": 31,
+            "goalDifference": 0,
+            "gamesPlayed": 17,
+            "leaguePosition": 12,
+            "pointsPerGame": 1.294
+          }
+        },
+        "recentForm": {
+          "sampleSize": 5,
+          "wins": 2,
+          "draws": 1,
+          "losses": 2,
+          "goalsFor": 8,
+          "goalsAgainst": 8,
+          "averageGoalsFor": 1.6,
+          "averageGoalsAgainst": 1.6,
+          "formIndex": 46.6667,
+          "results": [
+            "D",
+            "W",
+            "L",
+            "L",
+            "W"
+          ]
+        },
+        "opponentRecentForm": {
+          "sampleSize": 5,
+          "wins": 1,
+          "draws": 2,
+          "losses": 2,
+          "goalsFor": 7,
+          "goalsAgainst": 7,
+          "averageGoalsFor": 1.4,
+          "averageGoalsAgainst": 1.4,
+          "formIndex": 33.3333,
+          "results": [
+            "L",
+            "D",
+            "W",
+            "D",
+            "L"
+          ]
+        },
+        "homeAwayPerformance": {
+          "homeAway": "AWAY",
+          "sampleSize": 8,
+          "averageGoalsFor": 1.375,
+          "averageGoalsAgainst": 2.125,
+          "index": 47.875
+        },
+        "sample": {
+          "teamMatchesBeforeCutoff": 18,
+          "opponentMatchesBeforeCutoff": 17
+        },
+        "actualResult": {
+          "homeScore": 2,
+          "awayScore": 1,
+          "goalsAgainst": 2
+        },
+        "cleanSheetActual": false,
+        "rankV1": 18,
+        "rankV2": 17,
+        "evaluatedRankV1": 16,
+        "evaluatedRankV2": 15
+      },
+      {
+        "matchId": 346543,
+        "startsAt": "2026-07-16T22:30:00.000Z",
+        "teamId": 267,
+        "teamName": "VAS",
+        "opponentId": 287,
+        "opponentName": "VIT",
+        "homeAway": "AWAY",
+        "predictionTimestamp": "2026-07-16T22:11:11.110Z",
+        "availableDataCutoff": "2026-07-16T22:11:11.110Z",
+        "defensiveStrength": 51.778,
+        "opponentOffensiveStrength": 58.9805,
+        "cleanSheetIndexV1": {
+          "rawScore": 41.0393,
+          "displayScore": 41,
+          "metadata": {
+            "metricType": "internal_index",
+            "probability": false,
+            "displayRecommendation": "score",
+            "scale": "0-100",
+            "description": "Indice interno SLVS; nao representa probabilidade."
+          }
+        },
+        "cleanSheetIndexV2": {
+          "rawScore": 47.5665,
+          "displayScore": 48,
+          "metadata": {
+            "metricType": "internal_index",
+            "probability": false,
+            "displayRecommendation": "score",
+            "scale": "0-100",
+            "description": "Indice interno SLVS; nao representa probabilidade."
+          }
+        },
+        "concedingRisk": 54.317,
+        "matchupStrengthGap": -20.3535,
+        "leagueStrengthContext": 38.272,
+        "leagueContext": {
+          "team": {
+            "teamId": 267,
+            "points": 20,
+            "wins": 5,
+            "draws": 5,
+            "losses": 8,
+            "goalsFor": 22,
+            "goalsAgainst": 29,
+            "goalDifference": -7,
+            "gamesPlayed": 18,
+            "leaguePosition": 17,
+            "pointsPerGame": 1.111
+          },
+          "opponent": {
+            "teamId": 287,
+            "points": 22,
+            "wins": 6,
+            "draws": 4,
+            "losses": 7,
+            "goalsFor": 21,
+            "goalsAgainst": 25,
+            "goalDifference": -4,
+            "gamesPlayed": 17,
+            "leaguePosition": 13,
+            "pointsPerGame": 1.294
+          }
+        },
+        "recentForm": {
+          "sampleSize": 5,
+          "wins": 1,
+          "draws": 1,
+          "losses": 3,
+          "goalsFor": 4,
+          "goalsAgainst": 10,
+          "averageGoalsFor": 0.8,
+          "averageGoalsAgainst": 2,
+          "formIndex": 26.6667,
+          "results": [
+            "D",
+            "W",
+            "L",
+            "L",
+            "L"
+          ]
+        },
+        "opponentRecentForm": {
+          "sampleSize": 5,
+          "wins": 2,
+          "draws": 1,
+          "losses": 2,
+          "goalsFor": 9,
+          "goalsAgainst": 8,
+          "averageGoalsFor": 1.8,
+          "averageGoalsAgainst": 1.6,
+          "formIndex": 46.6667,
+          "results": [
+            "W",
+            "D",
+            "L",
+            "W",
+            "L"
+          ]
+        },
+        "homeAwayPerformance": {
+          "homeAway": "AWAY",
+          "sampleSize": 8,
+          "averageGoalsFor": 1.25,
+          "averageGoalsAgainst": 2,
+          "index": 47.5
+        },
+        "sample": {
+          "teamMatchesBeforeCutoff": 18,
+          "opponentMatchesBeforeCutoff": 17
+        },
+        "actualResult": {
+          "homeScore": 1,
+          "awayScore": 0,
+          "goalsAgainst": 1
+        },
+        "cleanSheetActual": false,
+        "rankV1": 19,
+        "rankV2": 19,
+        "evaluatedRankV1": 17,
+        "evaluatedRankV2": 17
+      },
+      {
+        "matchId": 346544,
+        "startsAt": "2026-07-23T00:30:00.000Z",
+        "teamId": 315,
+        "teamName": "CHA",
+        "opponentId": 262,
+        "opponentName": "FLA",
+        "homeAway": "HOME",
+        "predictionTimestamp": "2026-07-21T22:09:05.150Z",
+        "availableDataCutoff": "2026-07-21T22:09:05.150Z",
+        "defensiveStrength": 42.176,
+        "opponentOffensiveStrength": 74.4307,
+        "cleanSheetIndexV1": {
+          "rawScore": 38.6431,
+          "displayScore": 39,
+          "metadata": {
+            "metricType": "internal_index",
+            "probability": false,
+            "displayRecommendation": "score",
+            "scale": "0-100",
+            "description": "Indice interno SLVS; nao representa probabilidade."
+          }
+        },
+        "cleanSheetIndexV2": {
+          "rawScore": 34.6934,
+          "displayScore": 35,
+          "metadata": {
+            "metricType": "internal_index",
+            "probability": false,
+            "displayRecommendation": "score",
+            "scale": "0-100",
+            "description": "Indice interno SLVS; nao representa probabilidade."
+          }
+        },
+        "concedingRisk": 56.1753,
+        "matchupStrengthGap": -70.2214,
+        "leagueStrengthContext": 0,
+        "leagueContext": {
+          "team": {
+            "teamId": 315,
+            "points": 9,
+            "wins": 1,
+            "draws": 6,
+            "losses": 10,
+            "goalsFor": 17,
+            "goalsAgainst": 33,
+            "goalDifference": -16,
+            "gamesPlayed": 17,
+            "leaguePosition": 20,
+            "pointsPerGame": 0.529
+          },
+          "opponent": {
+            "teamId": 262,
+            "points": 34,
+            "wins": 10,
+            "draws": 4,
+            "losses": 3,
+            "goalsFor": 31,
+            "goalsAgainst": 16,
+            "goalDifference": 15,
+            "gamesPlayed": 17,
+            "leaguePosition": 2,
+            "pointsPerGame": 2
+          }
+        },
+        "recentForm": {
+          "sampleSize": 5,
+          "wins": 0,
+          "draws": 1,
+          "losses": 4,
+          "goalsFor": 5,
+          "goalsAgainst": 9,
+          "averageGoalsFor": 1,
+          "averageGoalsAgainst": 1.8,
+          "formIndex": 6.6667,
+          "results": [
+            "L",
+            "D",
+            "L",
+            "L",
+            "L"
+          ]
+        },
+        "opponentRecentForm": {
+          "sampleSize": 5,
+          "wins": 2,
+          "draws": 2,
+          "losses": 1,
+          "goalsFor": 7,
+          "goalsAgainst": 6,
+          "averageGoalsFor": 1.4,
+          "averageGoalsAgainst": 1.2,
+          "formIndex": 53.3333,
+          "results": [
+            "D",
+            "W",
+            "D",
+            "L",
+            "W"
+          ]
+        },
+        "homeAwayPerformance": {
+          "homeAway": "HOME",
+          "sampleSize": 9,
+          "averageGoalsFor": 1.4444,
+          "averageGoalsAgainst": 2.2222,
+          "index": 47.6662
+        },
+        "sample": {
+          "teamMatchesBeforeCutoff": 17,
+          "opponentMatchesBeforeCutoff": 17
+        },
+        "actualResult": {
+          "homeScore": 0,
+          "awayScore": 4,
+          "goalsAgainst": 4
+        },
+        "cleanSheetActual": false,
+        "rankV1": 20,
+        "rankV2": 20,
+        "evaluatedRankV1": 18,
+        "evaluatedRankV2": 18
+      }
+    ],
+    "rankingBeforeMatchV2": [
+      {
+        "matchId": 346544,
+        "startsAt": "2026-07-23T00:30:00.000Z",
+        "teamId": 262,
+        "teamName": "FLA",
+        "opponentId": 315,
+        "opponentName": "CHA",
+        "homeAway": "AWAY",
+        "predictionTimestamp": "2026-07-21T22:09:05.150Z",
+        "availableDataCutoff": "2026-07-21T22:09:05.150Z",
+        "defensiveStrength": 69.176,
+        "opponentOffensiveStrength": 45.3333,
+        "cleanSheetIndexV1": {
+          "rawScore": 58.2389,
+          "displayScore": 58,
+          "metadata": {
+            "metricType": "internal_index",
+            "probability": false,
+            "displayRecommendation": "score",
+            "scale": "0-100",
+            "description": "Indice interno SLVS; nao representa probabilidade."
+          }
+        },
+        "cleanSheetIndexV2": {
+          "rawScore": 77.3273,
+          "displayScore": 77,
+          "metadata": {
+            "metricType": "internal_index",
+            "probability": false,
+            "displayRecommendation": "score",
+            "scale": "0-100",
+            "description": "Indice interno SLVS; nao representa probabilidade."
+          }
+        },
+        "concedingRisk": 40.7217,
+        "matchupStrengthGap": 69.7166,
+        "leagueStrengthContext": 100,
+        "leagueContext": {
+          "team": {
+            "teamId": 262,
+            "points": 34,
+            "wins": 10,
+            "draws": 4,
+            "losses": 3,
+            "goalsFor": 31,
+            "goalsAgainst": 16,
+            "goalDifference": 15,
+            "gamesPlayed": 17,
+            "leaguePosition": 2,
+            "pointsPerGame": 2
+          },
+          "opponent": {
+            "teamId": 315,
+            "points": 9,
+            "wins": 1,
+            "draws": 6,
+            "losses": 10,
+            "goalsFor": 17,
+            "goalsAgainst": 33,
+            "goalDifference": -16,
+            "gamesPlayed": 17,
+            "leaguePosition": 20,
+            "pointsPerGame": 0.529
+          }
+        },
+        "recentForm": {
+          "sampleSize": 5,
+          "wins": 2,
+          "draws": 2,
+          "losses": 1,
+          "goalsFor": 7,
+          "goalsAgainst": 6,
+          "averageGoalsFor": 1.4,
+          "averageGoalsAgainst": 1.2,
+          "formIndex": 53.3333,
+          "results": [
+            "D",
+            "W",
+            "D",
+            "L",
+            "W"
+          ]
+        },
+        "opponentRecentForm": {
+          "sampleSize": 5,
+          "wins": 0,
+          "draws": 1,
+          "losses": 4,
+          "goalsFor": 5,
+          "goalsAgainst": 9,
+          "averageGoalsFor": 1,
+          "averageGoalsAgainst": 1.8,
+          "formIndex": 6.6667,
+          "results": [
+            "L",
+            "D",
+            "L",
+            "L",
+            "L"
+          ]
+        },
+        "homeAwayPerformance": {
+          "homeAway": "AWAY",
+          "sampleSize": 9,
+          "averageGoalsFor": 1.6667,
+          "averageGoalsAgainst": 1,
+          "index": 70.0006
+        },
+        "sample": {
+          "teamMatchesBeforeCutoff": 17,
+          "opponentMatchesBeforeCutoff": 17
+        },
+        "actualResult": {
+          "homeScore": 0,
+          "awayScore": 4,
+          "goalsAgainst": 0
+        },
+        "cleanSheetActual": true,
+        "rankV1": 5,
+        "rankV2": 1,
+        "evaluatedRankV1": 4,
+        "evaluatedRankV2": 1
+      },
+      {
+        "matchId": 346542,
+        "startsAt": "2026-07-22T22:30:00.000Z",
+        "teamId": 275,
+        "teamName": "PAL",
+        "opponentId": 294,
+        "opponentName": "CFC",
+        "homeAway": "AWAY",
+        "predictionTimestamp": "2026-07-21T22:09:05.150Z",
+        "availableDataCutoff": "2026-07-21T22:09:05.150Z",
+        "defensiveStrength": 74.556,
+        "opponentOffensiveStrength": 61.3325,
+        "cleanSheetIndexV1": {
+          "rawScore": 57.3338,
+          "displayScore": 57,
+          "metadata": {
+            "metricType": "internal_index",
+            "probability": false,
+            "displayRecommendation": "score",
+            "scale": "0-100",
+            "description": "Indice interno SLVS; nao representa probabilidade."
+          }
+        },
+        "cleanSheetIndexV2": {
+          "rawScore": 67.8216,
+          "displayScore": 68,
+          "metadata": {
+            "metricType": "internal_index",
+            "probability": false,
+            "displayRecommendation": "score",
+            "scale": "0-100",
+            "description": "Indice interno SLVS; nao representa probabilidade."
+          }
+        },
+        "concedingRisk": 47.6383,
+        "matchupStrengthGap": 31.2146,
+        "leagueStrengthContext": 91.544,
+        "leagueContext": {
+          "team": {
+            "teamId": 275,
+            "points": 41,
+            "wins": 12,
+            "draws": 5,
+            "losses": 1,
+            "goalsFor": 30,
+            "goalsAgainst": 13,
+            "goalDifference": 17,
+            "gamesPlayed": 18,
+            "leaguePosition": 1,
+            "pointsPerGame": 2.278
+          },
+          "opponent": {
+            "teamId": 294,
+            "points": 26,
+            "wins": 7,
+            "draws": 5,
+            "losses": 6,
+            "goalsFor": 24,
+            "goalsAgainst": 24,
+            "goalDifference": 0,
+            "gamesPlayed": 18,
+            "leaguePosition": 7,
+            "pointsPerGame": 1.444
+          }
+        },
+        "recentForm": {
+          "sampleSize": 5,
+          "wins": 2,
+          "draws": 3,
+          "losses": 0,
+          "goalsFor": 7,
+          "goalsAgainst": 3,
+          "averageGoalsFor": 1.4,
+          "averageGoalsAgainst": 0.6,
+          "formIndex": 60,
+          "results": [
+            "D",
+            "D",
+            "D",
+            "W",
+            "W"
+          ]
+        },
+        "opponentRecentForm": {
+          "sampleSize": 5,
+          "wins": 2,
+          "draws": 1,
+          "losses": 2,
+          "goalsFor": 9,
+          "goalsAgainst": 11,
+          "averageGoalsFor": 1.8,
+          "averageGoalsAgainst": 2.2,
+          "formIndex": 46.6667,
+          "results": [
+            "L",
+            "D",
+            "W",
+            "W",
+            "L"
+          ]
+        },
+        "homeAwayPerformance": {
+          "homeAway": "AWAY",
+          "sampleSize": 9,
+          "averageGoalsFor": 1.5556,
+          "averageGoalsAgainst": 0.7778,
+          "index": 71.3338
+        },
+        "sample": {
+          "teamMatchesBeforeCutoff": 18,
+          "opponentMatchesBeforeCutoff": 18
+        },
+        "actualResult": {
+          "homeScore": 1,
+          "awayScore": 3,
+          "goalsAgainst": 1
+        },
+        "cleanSheetActual": false,
+        "rankV1": 7,
+        "rankV2": 2,
+        "evaluatedRankV1": 6,
+        "evaluatedRankV2": 2
+      },
+      {
+        "matchId": 346543,
+        "startsAt": "2026-07-16T22:30:00.000Z",
+        "teamId": 287,
+        "teamName": "VIT",
+        "opponentId": 267,
+        "opponentName": "VAS",
+        "homeAway": "HOME",
+        "predictionTimestamp": "2026-07-16T22:11:11.110Z",
+        "availableDataCutoff": "2026-07-16T22:11:11.110Z",
+        "defensiveStrength": 57.588,
+        "opponentOffensiveStrength": 54.6661,
+        "cleanSheetIndexV1": {
+          "rawScore": 57.8196,
+          "displayScore": 58,
+          "metadata": {
+            "metricType": "internal_index",
+            "probability": false,
+            "displayRecommendation": "score",
+            "scale": "0-100",
+            "description": "Indice interno SLVS; nao representa probabilidade."
+          }
+        },
+        "cleanSheetIndexV2": {
+          "rawScore": 65.3463,
+          "displayScore": 65,
+          "metadata": {
+            "metricType": "internal_index",
+            "probability": false,
+            "displayRecommendation": "score",
+            "scale": "0-100",
+            "description": "Indice interno SLVS; nao representa probabilidade."
+          }
+        },
+        "concedingRisk": 39.9106,
+        "matchupStrengthGap": 20.0967,
+        "leagueStrengthContext": 61.728,
+        "leagueContext": {
+          "team": {
+            "teamId": 287,
+            "points": 22,
+            "wins": 6,
+            "draws": 4,
+            "losses": 7,
+            "goalsFor": 21,
+            "goalsAgainst": 25,
+            "goalDifference": -4,
+            "gamesPlayed": 17,
+            "leaguePosition": 13,
+            "pointsPerGame": 1.294
+          },
+          "opponent": {
+            "teamId": 267,
+            "points": 20,
+            "wins": 5,
+            "draws": 5,
+            "losses": 8,
+            "goalsFor": 22,
+            "goalsAgainst": 29,
+            "goalDifference": -7,
+            "gamesPlayed": 18,
+            "leaguePosition": 17,
+            "pointsPerGame": 1.111
+          }
+        },
+        "recentForm": {
+          "sampleSize": 5,
+          "wins": 2,
+          "draws": 1,
+          "losses": 2,
+          "goalsFor": 9,
+          "goalsAgainst": 8,
+          "averageGoalsFor": 1.8,
+          "averageGoalsAgainst": 1.6,
+          "formIndex": 46.6667,
+          "results": [
+            "W",
+            "D",
+            "L",
+            "W",
+            "L"
+          ]
+        },
+        "opponentRecentForm": {
+          "sampleSize": 5,
+          "wins": 1,
+          "draws": 1,
+          "losses": 3,
+          "goalsFor": 4,
+          "goalsAgainst": 10,
+          "averageGoalsFor": 0.8,
+          "averageGoalsAgainst": 2,
+          "formIndex": 26.6667,
+          "results": [
+            "D",
+            "W",
+            "L",
+            "L",
+            "L"
+          ]
+        },
+        "homeAwayPerformance": {
+          "homeAway": "HOME",
+          "sampleSize": 8,
+          "averageGoalsFor": 1.75,
+          "averageGoalsAgainst": 0.375,
+          "index": 80.875
+        },
+        "sample": {
+          "teamMatchesBeforeCutoff": 17,
+          "opponentMatchesBeforeCutoff": 18
+        },
+        "actualResult": {
+          "homeScore": 1,
+          "awayScore": 0,
+          "goalsAgainst": 0
+        },
+        "cleanSheetActual": true,
+        "rankV1": 6,
+        "rankV2": 3,
+        "evaluatedRankV1": 5,
+        "evaluatedRankV2": 3
+      },
+      {
+        "matchId": 346538,
+        "startsAt": "2026-07-23T22:30:00.000Z",
+        "teamId": 264,
+        "teamName": "COR",
+        "opponentId": 364,
+        "opponentName": "REM",
+        "homeAway": "HOME",
+        "predictionTimestamp": "2026-07-21T22:09:05.150Z",
+        "availableDataCutoff": "2026-07-21T22:09:05.150Z",
+        "defensiveStrength": 67.888,
+        "opponentOffensiveStrength": 61.3341,
+        "cleanSheetIndexV1": {
+          "rawScore": 63.3326,
+          "displayScore": 63,
+          "metadata": {
+            "metricType": "internal_index",
+            "probability": false,
+            "displayRecommendation": "score",
+            "scale": "0-100",
+            "description": "Indice interno SLVS; nao representa probabilidade."
+          }
+        },
+        "cleanSheetIndexV2": {
+          "rawScore": 64.0457,
+          "displayScore": 64,
+          "metadata": {
+            "metricType": "internal_index",
+            "probability": false,
+            "displayRecommendation": "score",
+            "scale": "0-100",
+            "description": "Indice interno SLVS; nao representa probabilidade."
+          }
+        },
+        "concedingRisk": 39.973,
+        "matchupStrengthGap": 18.3713,
+        "leagueStrengthContext": 72.828,
+        "leagueContext": {
+          "team": {
+            "teamId": 264,
+            "points": 24,
+            "wins": 6,
+            "draws": 6,
+            "losses": 6,
+            "goalsFor": 18,
+            "goalsAgainst": 19,
+            "goalDifference": -1,
+            "gamesPlayed": 18,
+            "leaguePosition": 12,
+            "pointsPerGame": 1.333
+          },
+          "opponent": {
+            "teamId": 364,
+            "points": 18,
+            "wins": 4,
+            "draws": 6,
+            "losses": 8,
+            "goalsFor": 21,
+            "goalsAgainst": 29,
+            "goalDifference": -8,
+            "gamesPlayed": 18,
+            "leaguePosition": 19,
+            "pointsPerGame": 1
+          }
+        },
+        "recentForm": {
+          "sampleSize": 5,
+          "wins": 3,
+          "draws": 0,
+          "losses": 2,
+          "goalsFor": 9,
+          "goalsAgainst": 8,
+          "averageGoalsFor": 1.8,
+          "averageGoalsAgainst": 1.6,
+          "formIndex": 60,
+          "results": [
+            "L",
+            "W",
+            "L",
+            "W",
+            "W"
+          ]
+        },
+        "opponentRecentForm": {
+          "sampleSize": 5,
+          "wins": 3,
+          "draws": 1,
+          "losses": 1,
+          "goalsFor": 8,
+          "goalsAgainst": 6,
+          "averageGoalsFor": 1.6,
+          "averageGoalsAgainst": 1.2,
+          "formIndex": 66.6667,
+          "results": [
+            "W",
+            "D",
+            "W",
+            "L",
+            "W"
+          ]
+        },
+        "homeAwayPerformance": {
+          "homeAway": "HOME",
+          "sampleSize": 9,
+          "averageGoalsFor": 1,
+          "averageGoalsAgainst": 0.8889,
+          "index": 59.6665
+        },
+        "sample": {
+          "teamMatchesBeforeCutoff": 18,
+          "opponentMatchesBeforeCutoff": 18
+        },
+        "actualResult": null,
+        "cleanSheetActual": null,
+        "rankV1": 1,
+        "rankV2": 4
+      },
+      {
+        "matchId": 346537,
+        "startsAt": "2026-07-23T00:30:00.000Z",
+        "teamId": 293,
+        "teamName": "CAP",
+        "opponentId": 276,
+        "opponentName": "SAO",
+        "homeAway": "AWAY",
+        "predictionTimestamp": "2026-07-21T22:09:05.150Z",
+        "availableDataCutoff": "2026-07-21T22:09:05.150Z",
+        "defensiveStrength": 68,
+        "opponentOffensiveStrength": 53.3339,
+        "cleanSheetIndexV1": {
+          "rawScore": 55.1332,
+          "displayScore": 55,
+          "metadata": {
+            "metricType": "internal_index",
+            "probability": false,
+            "displayRecommendation": "score",
+            "scale": "0-100",
+            "description": "Indice interno SLVS; nao representa probabilidade."
+          }
+        },
+        "cleanSheetIndexV2": {
+          "rawScore": 63.8493,
+          "displayScore": 64,
+          "metadata": {
+            "metricType": "internal_index",
+            "probability": false,
+            "displayRecommendation": "score",
+            "scale": "0-100",
+            "description": "Indice interno SLVS; nao representa probabilidade."
+          }
+        },
+        "concedingRisk": 45.5336,
+        "matchupStrengthGap": 15.1458,
+        "leagueStrengthContext": 61.948,
+        "leagueContext": {
+          "team": {
+            "teamId": 293,
+            "points": 30,
+            "wins": 9,
+            "draws": 3,
+            "losses": 6,
+            "goalsFor": 24,
+            "goalsAgainst": 18,
+            "goalDifference": 6,
+            "gamesPlayed": 18,
+            "leaguePosition": 5,
+            "pointsPerGame": 1.667
+          },
+          "opponent": {
+            "teamId": 276,
+            "points": 25,
+            "wins": 7,
+            "draws": 4,
+            "losses": 7,
+            "goalsFor": 23,
+            "goalsAgainst": 20,
+            "goalDifference": 3,
+            "gamesPlayed": 18,
+            "leaguePosition": 8,
+            "pointsPerGame": 1.389
+          }
+        },
+        "recentForm": {
+          "sampleSize": 5,
+          "wins": 2,
+          "draws": 2,
+          "losses": 1,
+          "goalsFor": 4,
+          "goalsAgainst": 3,
+          "averageGoalsFor": 0.8,
+          "averageGoalsAgainst": 0.6,
+          "formIndex": 53.3333,
+          "results": [
+            "D",
+            "L",
+            "D",
+            "W",
+            "W"
+          ]
+        },
+        "opponentRecentForm": {
+          "sampleSize": 5,
+          "wins": 0,
+          "draws": 2,
+          "losses": 3,
+          "goalsFor": 6,
+          "goalsAgainst": 9,
+          "averageGoalsFor": 1.2,
+          "averageGoalsAgainst": 1.8,
+          "formIndex": 13.3333,
+          "results": [
+            "D",
+            "L",
+            "L",
+            "D",
+            "L"
+          ]
+        },
+        "homeAwayPerformance": {
+          "homeAway": "AWAY",
+          "sampleSize": 8,
+          "averageGoalsFor": 0.875,
+          "averageGoalsAgainst": 1.5,
+          "index": 48.25
+        },
+        "sample": {
+          "teamMatchesBeforeCutoff": 18,
+          "opponentMatchesBeforeCutoff": 18
+        },
+        "actualResult": {
+          "homeScore": 1,
+          "awayScore": 2,
+          "goalsAgainst": 1
+        },
+        "cleanSheetActual": false,
+        "rankV1": 9,
+        "rankV2": 5,
+        "evaluatedRankV1": 8,
+        "evaluatedRankV2": 4
+      },
+      {
+        "matchId": 346535,
+        "startsAt": "2026-07-17T23:00:00.000Z",
+        "teamId": 280,
+        "teamName": "RBB",
+        "opponentId": 266,
+        "opponentName": "FLU",
+        "homeAway": "AWAY",
+        "predictionTimestamp": "2026-07-17T22:57:59.346Z",
+        "availableDataCutoff": "2026-07-17T22:57:59.346Z",
+        "defensiveStrength": 70.888,
+        "opponentOffensiveStrength": 64.0011,
+        "cleanSheetIndexV1": {
+          "rawScore": 56.3325,
+          "displayScore": 56,
+          "metadata": {
+            "metricType": "internal_index",
+            "probability": false,
+            "displayRecommendation": "score",
+            "scale": "0-100",
+            "description": "Indice interno SLVS; nao representa probabilidade."
+          }
+        },
+        "cleanSheetIndexV2": {
+          "rawScore": 62.7833,
+          "displayScore": 63,
+          "metadata": {
+            "metricType": "internal_index",
+            "probability": false,
+            "displayRecommendation": "score",
+            "scale": "0-100",
+            "description": "Indice interno SLVS; nao representa probabilidade."
+          }
+        },
+        "concedingRisk": 50.3898,
+        "matchupStrengthGap": 7.5727,
+        "leagueStrengthContext": 46.824000000000005,
+        "leagueContext": {
+          "team": {
+            "teamId": 280,
+            "points": 29,
+            "wins": 9,
+            "draws": 2,
+            "losses": 7,
+            "goalsFor": 25,
+            "goalsAgainst": 19,
+            "goalDifference": 6,
+            "gamesPlayed": 18,
+            "leaguePosition": 5,
+            "pointsPerGame": 1.611
+          },
+          "opponent": {
+            "teamId": 266,
+            "points": 31,
+            "wins": 9,
+            "draws": 4,
+            "losses": 5,
+            "goalsFor": 28,
+            "goalsAgainst": 23,
+            "goalDifference": 5,
+            "gamesPlayed": 18,
+            "leaguePosition": 3,
+            "pointsPerGame": 1.722
+          }
+        },
+        "recentForm": {
+          "sampleSize": 5,
+          "wins": 4,
+          "draws": 0,
+          "losses": 1,
+          "goalsFor": 10,
+          "goalsAgainst": 4,
+          "averageGoalsFor": 2,
+          "averageGoalsAgainst": 0.8,
+          "formIndex": 80,
+          "results": [
+            "W",
+            "L",
+            "W",
+            "W",
+            "W"
+          ]
+        },
+        "opponentRecentForm": {
+          "sampleSize": 5,
+          "wins": 1,
+          "draws": 2,
+          "losses": 2,
+          "goalsFor": 5,
+          "goalsAgainst": 7,
+          "averageGoalsFor": 1,
+          "averageGoalsAgainst": 1.4,
+          "formIndex": 33.3333,
+          "results": [
+            "L",
+            "D",
+            "W",
+            "L",
+            "D"
+          ]
+        },
+        "homeAwayPerformance": {
+          "homeAway": "AWAY",
+          "sampleSize": 9,
+          "averageGoalsFor": 1,
+          "averageGoalsAgainst": 1.1111,
+          "index": 56.3335
+        },
+        "sample": {
+          "teamMatchesBeforeCutoff": 18,
+          "opponentMatchesBeforeCutoff": 18
+        },
+        "actualResult": {
+          "homeScore": 1,
+          "awayScore": 1,
+          "goalsAgainst": 1
+        },
+        "cleanSheetActual": false,
+        "rankV1": 8,
+        "rankV2": 6,
+        "evaluatedRankV1": 7,
+        "evaluatedRankV2": 5
+      },
+      {
+        "matchId": 346539,
+        "startsAt": "2026-07-17T23:00:00.000Z",
+        "teamId": 2305,
+        "teamName": "MIR",
+        "opponentId": 284,
+        "opponentName": "GRE",
+        "homeAway": "HOME",
+        "predictionTimestamp": "2026-07-17T22:57:59.346Z",
+        "availableDataCutoff": "2026-07-17T22:57:59.346Z",
+        "defensiveStrength": 58.764,
+        "opponentOffensiveStrength": 53.3331,
+        "cleanSheetIndexV1": {
+          "rawScore": 58.9251,
+          "displayScore": 59,
+          "metadata": {
+            "metricType": "internal_index",
+            "probability": false,
+            "displayRecommendation": "score",
+            "scale": "0-100",
+            "description": "Indice interno SLVS; nao representa probabilidade."
+          }
+        },
+        "cleanSheetIndexV2": {
+          "rawScore": 59.581,
+          "displayScore": 60,
+          "metadata": {
+            "metricType": "internal_index",
+            "probability": false,
+            "displayRecommendation": "score",
+            "scale": "0-100",
+            "description": "Indice interno SLVS; nao representa probabilidade."
+          }
+        },
+        "concedingRisk": 38.7658,
+        "matchupStrengthGap": 4.3521,
+        "leagueStrengthContext": 37.583999999999996,
+        "leagueContext": {
+          "team": {
+            "teamId": 2305,
+            "points": 16,
+            "wins": 4,
+            "draws": 4,
+            "losses": 9,
+            "goalsFor": 18,
+            "goalsAgainst": 24,
+            "goalDifference": -6,
+            "gamesPlayed": 17,
+            "leaguePosition": 19,
+            "pointsPerGame": 0.941
+          },
+          "opponent": {
+            "teamId": 284,
+            "points": 21,
+            "wins": 5,
+            "draws": 6,
+            "losses": 7,
+            "goalsFor": 20,
+            "goalsAgainst": 23,
+            "goalDifference": -3,
+            "gamesPlayed": 18,
+            "leaguePosition": 15,
+            "pointsPerGame": 1.167
+          }
+        },
+        "recentForm": {
+          "sampleSize": 5,
+          "wins": 2,
+          "draws": 1,
+          "losses": 2,
+          "goalsFor": 5,
+          "goalsAgainst": 6,
+          "averageGoalsFor": 1,
+          "averageGoalsAgainst": 1.2,
+          "formIndex": 46.6667,
+          "results": [
+            "W",
+            "D",
+            "L",
+            "W",
+            "L"
+          ]
+        },
+        "opponentRecentForm": {
+          "sampleSize": 5,
+          "wins": 1,
+          "draws": 2,
+          "losses": 2,
+          "goalsFor": 5,
+          "goalsAgainst": 7,
+          "averageGoalsFor": 1,
+          "averageGoalsAgainst": 1.4,
+          "formIndex": 33.3333,
+          "results": [
+            "D",
+            "L",
+            "D",
+            "W",
+            "L"
+          ]
+        },
+        "homeAwayPerformance": {
+          "homeAway": "HOME",
+          "sampleSize": 9,
+          "averageGoalsFor": 1.2222,
+          "averageGoalsAgainst": 1.2222,
+          "index": 58.6666
+        },
+        "sample": {
+          "teamMatchesBeforeCutoff": 17,
+          "opponentMatchesBeforeCutoff": 18
+        },
+        "actualResult": {
+          "homeScore": 2,
+          "awayScore": 1,
+          "goalsAgainst": 1
+        },
+        "cleanSheetActual": false,
+        "rankV1": 3,
+        "rankV2": 7,
+        "evaluatedRankV1": 2,
+        "evaluatedRankV2": 6
+      },
+      {
+        "matchId": 346539,
+        "startsAt": "2026-07-17T23:00:00.000Z",
+        "teamId": 284,
+        "teamName": "GRE",
+        "opponentId": 2305,
+        "opponentName": "MIR",
+        "homeAway": "AWAY",
+        "predictionTimestamp": "2026-07-17T22:57:59.346Z",
+        "availableDataCutoff": "2026-07-17T22:57:59.346Z",
+        "defensiveStrength": 59.444,
+        "opponentOffensiveStrength": 54.7445,
+        "cleanSheetIndexV1": {
+          "rawScore": 47.5764,
+          "displayScore": 48,
+          "metadata": {
+            "metricType": "internal_index",
+            "probability": false,
+            "displayRecommendation": "score",
+            "scale": "0-100",
+            "description": "Indice interno SLVS; nao representa probabilidade."
+          }
+        },
+        "cleanSheetIndexV2": {
+          "rawScore": 59.154,
+          "displayScore": 59,
+          "metadata": {
+            "metricType": "internal_index",
+            "probability": false,
+            "displayRecommendation": "score",
+            "scale": "0-100",
+            "description": "Indice interno SLVS; nao representa probabilidade."
+          }
+        },
+        "concedingRisk": 49.3041,
+        "matchupStrengthGap": -3.7443,
+        "leagueStrengthContext": 62.416000000000004,
+        "leagueContext": {
+          "team": {
+            "teamId": 284,
+            "points": 21,
+            "wins": 5,
+            "draws": 6,
+            "losses": 7,
+            "goalsFor": 20,
+            "goalsAgainst": 23,
+            "goalDifference": -3,
+            "gamesPlayed": 18,
+            "leaguePosition": 15,
+            "pointsPerGame": 1.167
+          },
+          "opponent": {
+            "teamId": 2305,
+            "points": 16,
+            "wins": 4,
+            "draws": 4,
+            "losses": 9,
+            "goalsFor": 18,
+            "goalsAgainst": 24,
+            "goalDifference": -6,
+            "gamesPlayed": 17,
+            "leaguePosition": 19,
+            "pointsPerGame": 0.941
+          }
+        },
+        "recentForm": {
+          "sampleSize": 5,
+          "wins": 1,
+          "draws": 2,
+          "losses": 2,
+          "goalsFor": 5,
+          "goalsAgainst": 7,
+          "averageGoalsFor": 1,
+          "averageGoalsAgainst": 1.4,
+          "formIndex": 33.3333,
+          "results": [
+            "D",
+            "L",
+            "D",
+            "W",
+            "L"
+          ]
+        },
+        "opponentRecentForm": {
+          "sampleSize": 5,
+          "wins": 2,
+          "draws": 1,
+          "losses": 2,
+          "goalsFor": 5,
+          "goalsAgainst": 6,
+          "averageGoalsFor": 1,
+          "averageGoalsAgainst": 1.2,
+          "formIndex": 46.6667,
+          "results": [
+            "W",
+            "D",
+            "L",
+            "W",
+            "L"
+          ]
+        },
+        "homeAwayPerformance": {
+          "homeAway": "AWAY",
+          "sampleSize": 9,
+          "averageGoalsFor": 0.5556,
+          "averageGoalsAgainst": 1.3333,
+          "index": 45.0013
+        },
+        "sample": {
+          "teamMatchesBeforeCutoff": 18,
+          "opponentMatchesBeforeCutoff": 17
+        },
+        "actualResult": {
+          "homeScore": 2,
+          "awayScore": 1,
+          "goalsAgainst": 2
+        },
+        "cleanSheetActual": false,
+        "rankV1": 15,
+        "rankV2": 8,
+        "evaluatedRankV1": 13,
+        "evaluatedRankV2": 7
+      },
+      {
+        "matchId": 346541,
+        "startsAt": "2026-07-23T00:30:00.000Z",
+        "teamId": 285,
+        "teamName": "INT",
+        "opponentId": 283,
+        "opponentName": "CRU",
+        "homeAway": "HOME",
+        "predictionTimestamp": "2026-07-21T22:09:05.150Z",
+        "availableDataCutoff": "2026-07-21T22:09:05.150Z",
+        "defensiveStrength": 62.556,
+        "opponentOffensiveStrength": 62.6659,
+        "cleanSheetIndexV1": {
+          "rawScore": 58.4005,
+          "displayScore": 58,
+          "metadata": {
+            "metricType": "internal_index",
+            "probability": false,
+            "displayRecommendation": "score",
+            "scale": "0-100",
+            "description": "Indice interno SLVS; nao representa probabilidade."
+          }
+        },
+        "cleanSheetIndexV2": {
+          "rawScore": 58.5874,
+          "displayScore": 59,
+          "metadata": {
+            "metricType": "internal_index",
+            "probability": false,
+            "displayRecommendation": "score",
+            "scale": "0-100",
+            "description": "Indice interno SLVS; nao representa probabilidade."
+          }
+        },
+        "concedingRisk": 42.5716,
+        "matchupStrengthGap": 4.8127,
+        "leagueStrengthContext": 49.644000000000005,
+        "leagueContext": {
+          "team": {
+            "teamId": 285,
+            "points": 21,
+            "wins": 5,
+            "draws": 6,
+            "losses": 7,
+            "goalsFor": 21,
+            "goalsAgainst": 22,
+            "goalDifference": -1,
+            "gamesPlayed": 18,
+            "leaguePosition": 14,
+            "pointsPerGame": 1.167
+          },
+          "opponent": {
+            "teamId": 283,
+            "points": 24,
+            "wins": 6,
+            "draws": 6,
+            "losses": 6,
+            "goalsFor": 24,
+            "goalsAgainst": 28,
+            "goalDifference": -4,
+            "gamesPlayed": 18,
+            "leaguePosition": 13,
+            "pointsPerGame": 1.333
+          }
+        },
+        "recentForm": {
+          "sampleSize": 5,
+          "wins": 2,
+          "draws": 1,
+          "losses": 2,
+          "goalsFor": 9,
+          "goalsAgainst": 8,
+          "averageGoalsFor": 1.8,
+          "averageGoalsAgainst": 1.6,
+          "formIndex": 46.6667,
+          "results": [
+            "W",
+            "D",
+            "W",
+            "L",
+            "L"
+          ]
+        },
+        "opponentRecentForm": {
+          "sampleSize": 5,
+          "wins": 2,
+          "draws": 2,
+          "losses": 1,
+          "goalsFor": 7,
+          "goalsAgainst": 7,
+          "averageGoalsFor": 1.4,
+          "averageGoalsAgainst": 1.4,
+          "formIndex": 53.3333,
+          "results": [
+            "L",
+            "W",
+            "D",
+            "W",
+            "D"
+          ]
+        },
+        "homeAwayPerformance": {
+          "homeAway": "HOME",
+          "sampleSize": 9,
+          "averageGoalsFor": 1.2222,
+          "averageGoalsAgainst": 1,
+          "index": 61.9996
+        },
+        "sample": {
+          "teamMatchesBeforeCutoff": 18,
+          "opponentMatchesBeforeCutoff": 18
+        },
+        "actualResult": {
+          "homeScore": 1,
+          "awayScore": 2,
+          "goalsAgainst": 2
+        },
+        "cleanSheetActual": false,
+        "rankV1": 4,
+        "rankV2": 9,
+        "evaluatedRankV1": 3,
+        "evaluatedRankV2": 8
+      },
+      {
+        "matchId": 346540,
+        "startsAt": "2026-07-21T22:30:00.000Z",
+        "teamId": 282,
+        "teamName": "CAM",
+        "opponentId": 265,
+        "opponentName": "BAH",
+        "homeAway": "HOME",
+        "predictionTimestamp": "2026-07-21T22:09:05.150Z",
+        "availableDataCutoff": "2026-07-21T22:09:05.150Z",
+        "defensiveStrength": 64.444,
+        "opponentOffensiveStrength": 61.9611,
+        "cleanSheetIndexV1": {
+          "rawScore": 61.7447,
+          "displayScore": 62,
+          "metadata": {
+            "metricType": "internal_index",
+            "probability": false,
+            "displayRecommendation": "score",
+            "scale": "0-100",
+            "description": "Indice interno SLVS; nao representa probabilidade."
+          }
+        },
+        "cleanSheetIndexV2": {
+          "rawScore": 58.3461,
+          "displayScore": 58,
+          "metadata": {
+            "metricType": "internal_index",
+            "probability": false,
+            "displayRecommendation": "score",
+            "scale": "0-100",
+            "description": "Indice interno SLVS; nao representa probabilidade."
+          }
+        },
+        "concedingRisk": 41.5232,
+        "matchupStrengthGap": 11.1399,
+        "leagueStrengthContext": 36.764,
+        "leagueContext": {
+          "team": {
+            "teamId": 282,
+            "points": 24,
+            "wins": 7,
+            "draws": 3,
+            "losses": 8,
+            "goalsFor": 22,
+            "goalsAgainst": 23,
+            "goalDifference": -1,
+            "gamesPlayed": 18,
+            "leaguePosition": 11,
+            "pointsPerGame": 1.333
+          },
+          "opponent": {
+            "teamId": 265,
+            "points": 26,
+            "wins": 7,
+            "draws": 5,
+            "losses": 5,
+            "goalsFor": 25,
+            "goalsAgainst": 23,
+            "goalDifference": 2,
+            "gamesPlayed": 17,
+            "leaguePosition": 6,
+            "pointsPerGame": 1.529
+          }
+        },
+        "recentForm": {
+          "sampleSize": 5,
+          "wins": 3,
+          "draws": 1,
+          "losses": 1,
+          "goalsFor": 8,
+          "goalsAgainst": 4,
+          "averageGoalsFor": 1.6,
+          "averageGoalsAgainst": 0.8,
+          "formIndex": 66.6667,
+          "results": [
+            "W",
+            "D",
+            "W",
+            "L",
+            "W"
+          ]
+        },
+        "opponentRecentForm": {
+          "sampleSize": 5,
+          "wins": 1,
+          "draws": 2,
+          "losses": 2,
+          "goalsFor": 8,
+          "goalsAgainst": 9,
+          "averageGoalsFor": 1.6,
+          "averageGoalsAgainst": 1.8,
+          "formIndex": 33.3333,
+          "results": [
+            "D",
+            "L",
+            "D",
+            "L",
+            "W"
+          ]
+        },
+        "homeAwayPerformance": {
+          "homeAway": "HOME",
+          "sampleSize": 8,
+          "averageGoalsFor": 1.625,
+          "averageGoalsAgainst": 1.5,
+          "index": 61.75
+        },
+        "sample": {
+          "teamMatchesBeforeCutoff": 18,
+          "opponentMatchesBeforeCutoff": 17
+        },
+        "actualResult": {
+          "homeScore": 1,
+          "awayScore": 1,
+          "goalsAgainst": 1
+        },
+        "cleanSheetActual": false,
+        "rankV1": 2,
+        "rankV2": 10,
+        "evaluatedRankV1": 1,
+        "evaluatedRankV2": 9
+      },
+      {
+        "matchId": 346537,
+        "startsAt": "2026-07-23T00:30:00.000Z",
+        "teamId": 276,
+        "teamName": "SAO",
+        "opponentId": 293,
+        "opponentName": "CAP",
+        "homeAway": "HOME",
+        "predictionTimestamp": "2026-07-21T22:09:05.150Z",
+        "availableDataCutoff": "2026-07-21T22:09:05.150Z",
+        "defensiveStrength": 59.778,
+        "opponentOffensiveStrength": 62.6659,
+        "cleanSheetIndexV1": {
+          "rawScore": 53.4004,
+          "displayScore": 53,
+          "metadata": {
+            "metricType": "internal_index",
+            "probability": false,
+            "displayRecommendation": "score",
+            "scale": "0-100",
+            "description": "Indice interno SLVS; nao representa probabilidade."
+          }
+        },
+        "cleanSheetIndexV2": {
+          "rawScore": 56.5061,
+          "displayScore": 57,
+          "metadata": {
+            "metricType": "internal_index",
+            "probability": false,
+            "displayRecommendation": "score",
+            "scale": "0-100",
+            "description": "Indice interno SLVS; nao representa probabilidade."
+          }
+        },
+        "concedingRisk": 43.5439,
+        "matchupStrengthGap": -14.4392,
+        "leagueStrengthContext": 38.052,
+        "leagueContext": {
+          "team": {
+            "teamId": 276,
+            "points": 25,
+            "wins": 7,
+            "draws": 4,
+            "losses": 7,
+            "goalsFor": 23,
+            "goalsAgainst": 20,
+            "goalDifference": 3,
+            "gamesPlayed": 18,
+            "leaguePosition": 8,
+            "pointsPerGame": 1.389
+          },
+          "opponent": {
+            "teamId": 293,
+            "points": 30,
+            "wins": 9,
+            "draws": 3,
+            "losses": 6,
+            "goalsFor": 24,
+            "goalsAgainst": 18,
+            "goalDifference": 6,
+            "gamesPlayed": 18,
+            "leaguePosition": 5,
+            "pointsPerGame": 1.667
+          }
+        },
+        "recentForm": {
+          "sampleSize": 5,
+          "wins": 0,
+          "draws": 2,
+          "losses": 3,
+          "goalsFor": 6,
+          "goalsAgainst": 9,
+          "averageGoalsFor": 1.2,
+          "averageGoalsAgainst": 1.8,
+          "formIndex": 13.3333,
+          "results": [
+            "D",
+            "L",
+            "L",
+            "D",
+            "L"
+          ]
+        },
+        "opponentRecentForm": {
+          "sampleSize": 5,
+          "wins": 2,
+          "draws": 2,
+          "losses": 1,
+          "goalsFor": 4,
+          "goalsAgainst": 3,
+          "averageGoalsFor": 0.8,
+          "averageGoalsAgainst": 0.6,
+          "formIndex": 53.3333,
+          "results": [
+            "D",
+            "L",
+            "D",
+            "W",
+            "W"
+          ]
+        },
+        "homeAwayPerformance": {
+          "homeAway": "HOME",
+          "sampleSize": 8,
+          "averageGoalsFor": 1.75,
+          "averageGoalsAgainst": 0.75,
+          "index": 75.25
+        },
+        "sample": {
+          "teamMatchesBeforeCutoff": 18,
+          "opponentMatchesBeforeCutoff": 18
+        },
+        "actualResult": {
+          "homeScore": 1,
+          "awayScore": 2,
+          "goalsAgainst": 2
+        },
+        "cleanSheetActual": false,
+        "rankV1": 11,
+        "rankV2": 11,
+        "evaluatedRankV1": 10,
+        "evaluatedRankV2": 10
+      },
+      {
+        "matchId": 346536,
+        "startsAt": "2026-07-16T22:30:00.000Z",
+        "teamId": 263,
+        "teamName": "BOT",
+        "opponentId": 277,
+        "opponentName": "SAN",
+        "homeAway": "HOME",
+        "predictionTimestamp": "2026-07-16T22:11:11.110Z",
+        "availableDataCutoff": "2026-07-16T22:11:11.110Z",
+        "defensiveStrength": 48.53,
+        "opponentOffensiveStrength": 63.9989,
+        "cleanSheetIndexV1": {
+          "rawScore": 48.2517,
+          "displayScore": 48,
+          "metadata": {
+            "metricType": "internal_index",
+            "probability": false,
+            "displayRecommendation": "score",
+            "scale": "0-100",
+            "description": "Indice interno SLVS; nao representa probabilidade."
+          }
+        },
+        "cleanSheetIndexV2": {
+          "rawScore": 54.2045,
+          "displayScore": 54,
+          "metadata": {
+            "metricType": "internal_index",
+            "probability": false,
+            "displayRecommendation": "score",
+            "scale": "0-100",
+            "description": "Indice interno SLVS; nao representa probabilidade."
+          }
+        },
+        "concedingRisk": 48.2139,
+        "matchupStrengthGap": 7.465,
+        "leagueStrengthContext": 59.532,
+        "leagueContext": {
+          "team": {
+            "teamId": 263,
+            "points": 22,
+            "wins": 6,
+            "draws": 4,
+            "losses": 7,
+            "goalsFor": 31,
+            "goalsAgainst": 31,
+            "goalDifference": 0,
+            "gamesPlayed": 17,
+            "leaguePosition": 12,
+            "pointsPerGame": 1.294
+          },
+          "opponent": {
+            "teamId": 277,
+            "points": 21,
+            "wins": 5,
+            "draws": 6,
+            "losses": 7,
+            "goalsFor": 26,
+            "goalsAgainst": 29,
+            "goalDifference": -3,
+            "gamesPlayed": 18,
+            "leaguePosition": 15,
+            "pointsPerGame": 1.167
+          }
+        },
+        "recentForm": {
+          "sampleSize": 5,
+          "wins": 1,
+          "draws": 2,
+          "losses": 2,
+          "goalsFor": 7,
+          "goalsAgainst": 7,
+          "averageGoalsFor": 1.4,
+          "averageGoalsAgainst": 1.4,
+          "formIndex": 33.3333,
+          "results": [
+            "L",
+            "D",
+            "W",
+            "D",
+            "L"
+          ]
+        },
+        "opponentRecentForm": {
+          "sampleSize": 5,
+          "wins": 2,
+          "draws": 1,
+          "losses": 2,
+          "goalsFor": 8,
+          "goalsAgainst": 8,
+          "averageGoalsFor": 1.6,
+          "averageGoalsAgainst": 1.6,
+          "formIndex": 46.6667,
+          "results": [
+            "D",
+            "W",
+            "L",
+            "L",
+            "W"
+          ]
+        },
+        "homeAwayPerformance": {
+          "homeAway": "HOME",
+          "sampleSize": 7,
+          "averageGoalsFor": 2.1429,
+          "averageGoalsAgainst": 1.7143,
+          "index": 67.8577
+        },
+        "sample": {
+          "teamMatchesBeforeCutoff": 17,
+          "opponentMatchesBeforeCutoff": 18
+        },
+        "actualResult": {
+          "homeScore": 2,
+          "awayScore": 1,
+          "goalsAgainst": 1
+        },
+        "cleanSheetActual": false,
+        "rankV1": 14,
+        "rankV2": 12,
+        "evaluatedRankV1": 12,
+        "evaluatedRankV2": 11
+      },
+      {
+        "matchId": 346540,
+        "startsAt": "2026-07-21T22:30:00.000Z",
+        "teamId": 265,
+        "teamName": "BAH",
+        "opponentId": 282,
+        "opponentName": "CAM",
+        "homeAway": "AWAY",
+        "predictionTimestamp": "2026-07-21T22:09:05.150Z",
+        "availableDataCutoff": "2026-07-21T22:09:05.150Z",
+        "defensiveStrength": 57.942,
+        "opponentOffensiveStrength": 62.6661,
+        "cleanSheetIndexV1": {
+          "rawScore": 44.2987,
+          "displayScore": 44,
+          "metadata": {
+            "metricType": "internal_index",
+            "probability": false,
+            "displayRecommendation": "score",
+            "scale": "0-100",
+            "description": "Indice interno SLVS; nao representa probabilidade."
+          }
+        },
+        "cleanSheetIndexV2": {
+          "rawScore": 54.1784,
+          "displayScore": 54,
+          "metadata": {
+            "metricType": "internal_index",
+            "probability": false,
+            "displayRecommendation": "score",
+            "scale": "0-100",
+            "description": "Indice interno SLVS; nao representa probabilidade."
+          }
+        },
+        "concedingRisk": 54.1867,
+        "matchupStrengthGap": -11.2743,
+        "leagueStrengthContext": 63.236,
+        "leagueContext": {
+          "team": {
+            "teamId": 265,
+            "points": 26,
+            "wins": 7,
+            "draws": 5,
+            "losses": 5,
+            "goalsFor": 25,
+            "goalsAgainst": 23,
+            "goalDifference": 2,
+            "gamesPlayed": 17,
+            "leaguePosition": 6,
+            "pointsPerGame": 1.529
+          },
+          "opponent": {
+            "teamId": 282,
+            "points": 24,
+            "wins": 7,
+            "draws": 3,
+            "losses": 8,
+            "goalsFor": 22,
+            "goalsAgainst": 23,
+            "goalDifference": -1,
+            "gamesPlayed": 18,
+            "leaguePosition": 11,
+            "pointsPerGame": 1.333
+          }
+        },
+        "recentForm": {
+          "sampleSize": 5,
+          "wins": 1,
+          "draws": 2,
+          "losses": 2,
+          "goalsFor": 8,
+          "goalsAgainst": 9,
+          "averageGoalsFor": 1.6,
+          "averageGoalsAgainst": 1.8,
+          "formIndex": 33.3333,
+          "results": [
+            "D",
+            "L",
+            "D",
+            "L",
+            "W"
+          ]
+        },
+        "opponentRecentForm": {
+          "sampleSize": 5,
+          "wins": 3,
+          "draws": 1,
+          "losses": 1,
+          "goalsFor": 8,
+          "goalsAgainst": 4,
+          "averageGoalsFor": 1.6,
+          "averageGoalsAgainst": 0.8,
+          "formIndex": 66.6667,
+          "results": [
+            "W",
+            "D",
+            "W",
+            "L",
+            "W"
+          ]
+        },
+        "homeAwayPerformance": {
+          "homeAway": "AWAY",
+          "sampleSize": 8,
+          "averageGoalsFor": 1.375,
+          "averageGoalsAgainst": 1.625,
+          "index": 55.375
+        },
+        "sample": {
+          "teamMatchesBeforeCutoff": 17,
+          "opponentMatchesBeforeCutoff": 18
+        },
+        "actualResult": {
+          "homeScore": 1,
+          "awayScore": 1,
+          "goalsAgainst": 1
+        },
+        "cleanSheetActual": false,
+        "rankV1": 17,
+        "rankV2": 13,
+        "evaluatedRankV1": 15,
+        "evaluatedRankV2": 12
+      },
+      {
+        "matchId": 346541,
+        "startsAt": "2026-07-23T00:30:00.000Z",
+        "teamId": 283,
+        "teamName": "CRU",
+        "opponentId": 285,
+        "opponentName": "INT",
+        "homeAway": "AWAY",
+        "predictionTimestamp": "2026-07-21T22:09:05.150Z",
+        "availableDataCutoff": "2026-07-21T22:09:05.150Z",
+        "defensiveStrength": 56.888,
+        "opponentOffensiveStrength": 57.3341,
+        "cleanSheetIndexV1": {
+          "rawScore": 47.2659,
+          "displayScore": 47,
+          "metadata": {
+            "metricType": "internal_index",
+            "probability": false,
+            "displayRecommendation": "score",
+            "scale": "0-100",
+            "description": "Indice interno SLVS; nao representa probabilidade."
+          }
+        },
+        "cleanSheetIndexV2": {
+          "rawScore": 53.3828,
+          "displayScore": 53,
+          "metadata": {
+            "metricType": "internal_index",
+            "probability": false,
+            "displayRecommendation": "score",
+            "scale": "0-100",
+            "description": "Indice interno SLVS; nao representa probabilidade."
+          }
+        },
+        "concedingRisk": 51.623,
+        "matchupStrengthGap": -4.8461,
+        "leagueStrengthContext": 50.355999999999995,
+        "leagueContext": {
+          "team": {
+            "teamId": 283,
+            "points": 24,
+            "wins": 6,
+            "draws": 6,
+            "losses": 6,
+            "goalsFor": 24,
+            "goalsAgainst": 28,
+            "goalDifference": -4,
+            "gamesPlayed": 18,
+            "leaguePosition": 13,
+            "pointsPerGame": 1.333
+          },
+          "opponent": {
+            "teamId": 285,
+            "points": 21,
+            "wins": 5,
+            "draws": 6,
+            "losses": 7,
+            "goalsFor": 21,
+            "goalsAgainst": 22,
+            "goalDifference": -1,
+            "gamesPlayed": 18,
+            "leaguePosition": 14,
+            "pointsPerGame": 1.167
+          }
+        },
+        "recentForm": {
+          "sampleSize": 5,
+          "wins": 2,
+          "draws": 2,
+          "losses": 1,
+          "goalsFor": 7,
+          "goalsAgainst": 7,
+          "averageGoalsFor": 1.4,
+          "averageGoalsAgainst": 1.4,
+          "formIndex": 53.3333,
+          "results": [
+            "L",
+            "W",
+            "D",
+            "W",
+            "D"
+          ]
+        },
+        "opponentRecentForm": {
+          "sampleSize": 5,
+          "wins": 2,
+          "draws": 1,
+          "losses": 2,
+          "goalsFor": 9,
+          "goalsAgainst": 8,
+          "averageGoalsFor": 1.8,
+          "averageGoalsAgainst": 1.6,
+          "formIndex": 46.6667,
+          "results": [
+            "W",
+            "D",
+            "W",
+            "L",
+            "L"
+          ]
+        },
+        "homeAwayPerformance": {
+          "homeAway": "AWAY",
+          "sampleSize": 8,
+          "averageGoalsFor": 1,
+          "averageGoalsAgainst": 2,
+          "index": 43
+        },
+        "sample": {
+          "teamMatchesBeforeCutoff": 18,
+          "opponentMatchesBeforeCutoff": 18
+        },
+        "actualResult": {
+          "homeScore": 1,
+          "awayScore": 2,
+          "goalsAgainst": 1
+        },
+        "cleanSheetActual": false,
+        "rankV1": 16,
+        "rankV2": 14,
+        "evaluatedRankV1": 14,
+        "evaluatedRankV2": 13
+      },
+      {
+        "matchId": 346535,
+        "startsAt": "2026-07-17T23:00:00.000Z",
+        "teamId": 266,
+        "teamName": "FLU",
+        "opponentId": 280,
+        "opponentName": "RBB",
+        "homeAway": "HOME",
+        "predictionTimestamp": "2026-07-17T22:57:59.346Z",
+        "availableDataCutoff": "2026-07-17T22:57:59.346Z",
+        "defensiveStrength": 59.444,
+        "opponentOffensiveStrength": 69.3336,
+        "cleanSheetIndexV1": {
+          "rawScore": 53.1997,
+          "displayScore": 53,
+          "metadata": {
+            "metricType": "internal_index",
+            "probability": false,
+            "displayRecommendation": "score",
+            "scale": "0-100",
+            "description": "Indice interno SLVS; nao representa probabilidade."
+          }
+        },
+        "cleanSheetIndexV2": {
+          "rawScore": 52.5832,
+          "displayScore": 53,
+          "metadata": {
+            "metricType": "internal_index",
+            "probability": false,
+            "displayRecommendation": "score",
+            "scale": "0-100",
+            "description": "Indice interno SLVS; nao representa probabilidade."
+          }
+        },
+        "concedingRisk": 47.3281,
+        "matchupStrengthGap": -7.7529,
+        "leagueStrengthContext": 53.175999999999995,
+        "leagueContext": {
+          "team": {
+            "teamId": 266,
+            "points": 31,
+            "wins": 9,
+            "draws": 4,
+            "losses": 5,
+            "goalsFor": 28,
+            "goalsAgainst": 23,
+            "goalDifference": 5,
+            "gamesPlayed": 18,
+            "leaguePosition": 3,
+            "pointsPerGame": 1.722
+          },
+          "opponent": {
+            "teamId": 280,
+            "points": 29,
+            "wins": 9,
+            "draws": 2,
+            "losses": 7,
+            "goalsFor": 25,
+            "goalsAgainst": 19,
+            "goalDifference": 6,
+            "gamesPlayed": 18,
+            "leaguePosition": 5,
+            "pointsPerGame": 1.611
+          }
+        },
+        "recentForm": {
+          "sampleSize": 5,
+          "wins": 1,
+          "draws": 2,
+          "losses": 2,
+          "goalsFor": 5,
+          "goalsAgainst": 7,
+          "averageGoalsFor": 1,
+          "averageGoalsAgainst": 1.4,
+          "formIndex": 33.3333,
+          "results": [
+            "L",
+            "D",
+            "W",
+            "L",
+            "D"
+          ]
+        },
+        "opponentRecentForm": {
+          "sampleSize": 5,
+          "wins": 4,
+          "draws": 0,
+          "losses": 1,
+          "goalsFor": 10,
+          "goalsAgainst": 4,
+          "averageGoalsFor": 2,
+          "averageGoalsAgainst": 0.8,
+          "formIndex": 80,
+          "results": [
+            "W",
+            "L",
+            "W",
+            "W",
+            "W"
+          ]
+        },
+        "homeAwayPerformance": {
+          "homeAway": "HOME",
+          "sampleSize": 9,
+          "averageGoalsFor": 1.8889,
+          "averageGoalsAgainst": 1.1111,
+          "index": 72.3337
+        },
+        "sample": {
+          "teamMatchesBeforeCutoff": 18,
+          "opponentMatchesBeforeCutoff": 18
+        },
+        "actualResult": {
+          "homeScore": 1,
+          "awayScore": 1,
+          "goalsAgainst": 1
+        },
+        "cleanSheetActual": false,
+        "rankV1": 12,
+        "rankV2": 15,
+        "evaluatedRankV1": 11,
+        "evaluatedRankV2": 14
+      },
+      {
+        "matchId": 346538,
+        "startsAt": "2026-07-23T22:30:00.000Z",
+        "teamId": 364,
+        "teamName": "REM",
+        "opponentId": 264,
+        "opponentName": "COR",
+        "homeAway": "AWAY",
+        "predictionTimestamp": "2026-07-21T22:09:05.150Z",
+        "availableDataCutoff": "2026-07-21T22:09:05.150Z",
+        "defensiveStrength": 57.778,
+        "opponentOffensiveStrength": 56,
+        "cleanSheetIndexV1": {
+          "rawScore": 49.5335,
+          "displayScore": 50,
+          "metadata": {
+            "metricType": "internal_index",
+            "probability": false,
+            "displayRecommendation": "score",
+            "scale": "0-100",
+            "description": "Indice interno SLVS; nao representa probabilidade."
+          }
+        },
+        "cleanSheetIndexV2": {
+          "rawScore": 50.7289,
+          "displayScore": 51,
+          "metadata": {
+            "metricType": "internal_index",
+            "probability": false,
+            "displayRecommendation": "score",
+            "scale": "0-100",
+            "description": "Indice interno SLVS; nao representa probabilidade."
+          }
+        },
+        "concedingRisk": 50.5777,
+        "matchupStrengthGap": -17.8713,
+        "leagueStrengthContext": 27.171999999999997,
+        "leagueContext": {
+          "team": {
+            "teamId": 364,
+            "points": 18,
+            "wins": 4,
+            "draws": 6,
+            "losses": 8,
+            "goalsFor": 21,
+            "goalsAgainst": 29,
+            "goalDifference": -8,
+            "gamesPlayed": 18,
+            "leaguePosition": 19,
+            "pointsPerGame": 1
+          },
+          "opponent": {
+            "teamId": 264,
+            "points": 24,
+            "wins": 6,
+            "draws": 6,
+            "losses": 6,
+            "goalsFor": 18,
+            "goalsAgainst": 19,
+            "goalDifference": -1,
+            "gamesPlayed": 18,
+            "leaguePosition": 12,
+            "pointsPerGame": 1.333
+          }
+        },
+        "recentForm": {
+          "sampleSize": 5,
+          "wins": 3,
+          "draws": 1,
+          "losses": 1,
+          "goalsFor": 8,
+          "goalsAgainst": 6,
+          "averageGoalsFor": 1.6,
+          "averageGoalsAgainst": 1.2,
+          "formIndex": 66.6667,
+          "results": [
+            "W",
+            "D",
+            "W",
+            "L",
+            "W"
+          ]
+        },
+        "opponentRecentForm": {
+          "sampleSize": 5,
+          "wins": 3,
+          "draws": 0,
+          "losses": 2,
+          "goalsFor": 9,
+          "goalsAgainst": 8,
+          "averageGoalsFor": 1.8,
+          "averageGoalsAgainst": 1.6,
+          "formIndex": 60,
+          "results": [
+            "L",
+            "W",
+            "L",
+            "W",
+            "W"
+          ]
+        },
+        "homeAwayPerformance": {
+          "homeAway": "AWAY",
+          "sampleSize": 9,
+          "averageGoalsFor": 1.1111,
+          "averageGoalsAgainst": 2,
+          "index": 44.9998
+        },
+        "sample": {
+          "teamMatchesBeforeCutoff": 18,
+          "opponentMatchesBeforeCutoff": 18
+        },
+        "actualResult": null,
+        "cleanSheetActual": null,
+        "rankV1": 13,
+        "rankV2": 16
+      },
+      {
+        "matchId": 346536,
+        "startsAt": "2026-07-16T22:30:00.000Z",
+        "teamId": 277,
+        "teamName": "SAN",
+        "opponentId": 263,
+        "opponentName": "BOT",
+        "homeAway": "AWAY",
+        "predictionTimestamp": "2026-07-16T22:11:11.110Z",
+        "availableDataCutoff": "2026-07-16T22:11:11.110Z",
+        "defensiveStrength": 54.778,
+        "opponentOffensiveStrength": 70.4307,
+        "cleanSheetIndexV1": {
+          "rawScore": 41.4043,
+          "displayScore": 41,
+          "metadata": {
+            "metricType": "internal_index",
+            "probability": false,
+            "displayRecommendation": "score",
+            "scale": "0-100",
+            "description": "Indice interno SLVS; nao representa probabilidade."
+          }
+        },
+        "cleanSheetIndexV2": {
+          "rawScore": 50.3706,
+          "displayScore": 50,
+          "metadata": {
+            "metricType": "internal_index",
+            "probability": false,
+            "displayRecommendation": "score",
+            "scale": "0-100",
+            "description": "Indice interno SLVS; nao representa probabilidade."
+          }
+        },
+        "concedingRisk": 59.5646,
+        "matchupStrengthGap": -9.3322,
+        "leagueStrengthContext": 40.468,
+        "leagueContext": {
+          "team": {
+            "teamId": 277,
+            "points": 21,
+            "wins": 5,
+            "draws": 6,
+            "losses": 7,
+            "goalsFor": 26,
+            "goalsAgainst": 29,
+            "goalDifference": -3,
+            "gamesPlayed": 18,
+            "leaguePosition": 15,
+            "pointsPerGame": 1.167
+          },
+          "opponent": {
+            "teamId": 263,
+            "points": 22,
+            "wins": 6,
+            "draws": 4,
+            "losses": 7,
+            "goalsFor": 31,
+            "goalsAgainst": 31,
+            "goalDifference": 0,
+            "gamesPlayed": 17,
+            "leaguePosition": 12,
+            "pointsPerGame": 1.294
+          }
+        },
+        "recentForm": {
+          "sampleSize": 5,
+          "wins": 2,
+          "draws": 1,
+          "losses": 2,
+          "goalsFor": 8,
+          "goalsAgainst": 8,
+          "averageGoalsFor": 1.6,
+          "averageGoalsAgainst": 1.6,
+          "formIndex": 46.6667,
+          "results": [
+            "D",
+            "W",
+            "L",
+            "L",
+            "W"
+          ]
+        },
+        "opponentRecentForm": {
+          "sampleSize": 5,
+          "wins": 1,
+          "draws": 2,
+          "losses": 2,
+          "goalsFor": 7,
+          "goalsAgainst": 7,
+          "averageGoalsFor": 1.4,
+          "averageGoalsAgainst": 1.4,
+          "formIndex": 33.3333,
+          "results": [
+            "L",
+            "D",
+            "W",
+            "D",
+            "L"
+          ]
+        },
+        "homeAwayPerformance": {
+          "homeAway": "AWAY",
+          "sampleSize": 8,
+          "averageGoalsFor": 1.375,
+          "averageGoalsAgainst": 2.125,
+          "index": 47.875
+        },
+        "sample": {
+          "teamMatchesBeforeCutoff": 18,
+          "opponentMatchesBeforeCutoff": 17
+        },
+        "actualResult": {
+          "homeScore": 2,
+          "awayScore": 1,
+          "goalsAgainst": 2
+        },
+        "cleanSheetActual": false,
+        "rankV1": 18,
+        "rankV2": 17,
+        "evaluatedRankV1": 16,
+        "evaluatedRankV2": 15
+      },
+      {
+        "matchId": 346542,
+        "startsAt": "2026-07-22T22:30:00.000Z",
+        "teamId": 294,
+        "teamName": "CFC",
+        "opponentId": 275,
+        "opponentName": "PAL",
+        "homeAway": "HOME",
+        "predictionTimestamp": "2026-07-21T22:09:05.150Z",
+        "availableDataCutoff": "2026-07-21T22:09:05.150Z",
+        "defensiveStrength": 60.334,
+        "opponentOffensiveStrength": 72.0008,
+        "cleanSheetIndexV1": {
+          "rawScore": 54.2668,
+          "displayScore": 54,
+          "metadata": {
+            "metricType": "internal_index",
+            "probability": false,
+            "displayRecommendation": "score",
+            "scale": "0-100",
+            "description": "Indice interno SLVS; nao representa probabilidade."
+          }
+        },
+        "cleanSheetIndexV2": {
+          "rawScore": 47.9022,
+          "displayScore": 48,
+          "metadata": {
+            "metricType": "internal_index",
+            "probability": false,
+            "displayRecommendation": "score",
+            "scale": "0-100",
+            "description": "Indice interno SLVS; nao representa probabilidade."
+          }
+        },
+        "concedingRisk": 48.4835,
+        "matchupStrengthGap": -31.1212,
+        "leagueStrengthContext": 8.456,
+        "leagueContext": {
+          "team": {
+            "teamId": 294,
+            "points": 26,
+            "wins": 7,
+            "draws": 5,
+            "losses": 6,
+            "goalsFor": 24,
+            "goalsAgainst": 24,
+            "goalDifference": 0,
+            "gamesPlayed": 18,
+            "leaguePosition": 7,
+            "pointsPerGame": 1.444
+          },
+          "opponent": {
+            "teamId": 275,
+            "points": 41,
+            "wins": 12,
+            "draws": 5,
+            "losses": 1,
+            "goalsFor": 30,
+            "goalsAgainst": 13,
+            "goalDifference": 17,
+            "gamesPlayed": 18,
+            "leaguePosition": 1,
+            "pointsPerGame": 2.278
+          }
+        },
+        "recentForm": {
+          "sampleSize": 5,
+          "wins": 2,
+          "draws": 1,
+          "losses": 2,
+          "goalsFor": 9,
+          "goalsAgainst": 11,
+          "averageGoalsFor": 1.8,
+          "averageGoalsAgainst": 2.2,
+          "formIndex": 46.6667,
+          "results": [
+            "L",
+            "D",
+            "W",
+            "W",
+            "L"
+          ]
+        },
+        "opponentRecentForm": {
+          "sampleSize": 5,
+          "wins": 2,
+          "draws": 3,
+          "losses": 0,
+          "goalsFor": 7,
+          "goalsAgainst": 3,
+          "averageGoalsFor": 1.4,
+          "averageGoalsAgainst": 0.6,
+          "formIndex": 60,
+          "results": [
+            "D",
+            "D",
+            "D",
+            "W",
+            "W"
+          ]
+        },
+        "homeAwayPerformance": {
+          "homeAway": "HOME",
+          "sampleSize": 8,
+          "averageGoalsFor": 1.25,
+          "averageGoalsAgainst": 1,
+          "index": 62.5
+        },
+        "sample": {
+          "teamMatchesBeforeCutoff": 18,
+          "opponentMatchesBeforeCutoff": 18
+        },
+        "actualResult": {
+          "homeScore": 1,
+          "awayScore": 3,
+          "goalsAgainst": 3
+        },
+        "cleanSheetActual": false,
+        "rankV1": 10,
+        "rankV2": 18,
+        "evaluatedRankV1": 9,
+        "evaluatedRankV2": 16
+      },
+      {
+        "matchId": 346543,
+        "startsAt": "2026-07-16T22:30:00.000Z",
+        "teamId": 267,
+        "teamName": "VAS",
+        "opponentId": 287,
+        "opponentName": "VIT",
+        "homeAway": "AWAY",
+        "predictionTimestamp": "2026-07-16T22:11:11.110Z",
+        "availableDataCutoff": "2026-07-16T22:11:11.110Z",
+        "defensiveStrength": 51.778,
+        "opponentOffensiveStrength": 58.9805,
+        "cleanSheetIndexV1": {
+          "rawScore": 41.0393,
+          "displayScore": 41,
+          "metadata": {
+            "metricType": "internal_index",
+            "probability": false,
+            "displayRecommendation": "score",
+            "scale": "0-100",
+            "description": "Indice interno SLVS; nao representa probabilidade."
+          }
+        },
+        "cleanSheetIndexV2": {
+          "rawScore": 47.5665,
+          "displayScore": 48,
+          "metadata": {
+            "metricType": "internal_index",
+            "probability": false,
+            "displayRecommendation": "score",
+            "scale": "0-100",
+            "description": "Indice interno SLVS; nao representa probabilidade."
+          }
+        },
+        "concedingRisk": 54.317,
+        "matchupStrengthGap": -20.3535,
+        "leagueStrengthContext": 38.272,
+        "leagueContext": {
+          "team": {
+            "teamId": 267,
+            "points": 20,
+            "wins": 5,
+            "draws": 5,
+            "losses": 8,
+            "goalsFor": 22,
+            "goalsAgainst": 29,
+            "goalDifference": -7,
+            "gamesPlayed": 18,
+            "leaguePosition": 17,
+            "pointsPerGame": 1.111
+          },
+          "opponent": {
+            "teamId": 287,
+            "points": 22,
+            "wins": 6,
+            "draws": 4,
+            "losses": 7,
+            "goalsFor": 21,
+            "goalsAgainst": 25,
+            "goalDifference": -4,
+            "gamesPlayed": 17,
+            "leaguePosition": 13,
+            "pointsPerGame": 1.294
+          }
+        },
+        "recentForm": {
+          "sampleSize": 5,
+          "wins": 1,
+          "draws": 1,
+          "losses": 3,
+          "goalsFor": 4,
+          "goalsAgainst": 10,
+          "averageGoalsFor": 0.8,
+          "averageGoalsAgainst": 2,
+          "formIndex": 26.6667,
+          "results": [
+            "D",
+            "W",
+            "L",
+            "L",
+            "L"
+          ]
+        },
+        "opponentRecentForm": {
+          "sampleSize": 5,
+          "wins": 2,
+          "draws": 1,
+          "losses": 2,
+          "goalsFor": 9,
+          "goalsAgainst": 8,
+          "averageGoalsFor": 1.8,
+          "averageGoalsAgainst": 1.6,
+          "formIndex": 46.6667,
+          "results": [
+            "W",
+            "D",
+            "L",
+            "W",
+            "L"
+          ]
+        },
+        "homeAwayPerformance": {
+          "homeAway": "AWAY",
+          "sampleSize": 8,
+          "averageGoalsFor": 1.25,
+          "averageGoalsAgainst": 2,
+          "index": 47.5
+        },
+        "sample": {
+          "teamMatchesBeforeCutoff": 18,
+          "opponentMatchesBeforeCutoff": 17
+        },
+        "actualResult": {
+          "homeScore": 1,
+          "awayScore": 0,
+          "goalsAgainst": 1
+        },
+        "cleanSheetActual": false,
+        "rankV1": 19,
+        "rankV2": 19,
+        "evaluatedRankV1": 17,
+        "evaluatedRankV2": 17
+      },
+      {
+        "matchId": 346544,
+        "startsAt": "2026-07-23T00:30:00.000Z",
+        "teamId": 315,
+        "teamName": "CHA",
+        "opponentId": 262,
+        "opponentName": "FLA",
+        "homeAway": "HOME",
+        "predictionTimestamp": "2026-07-21T22:09:05.150Z",
+        "availableDataCutoff": "2026-07-21T22:09:05.150Z",
+        "defensiveStrength": 42.176,
+        "opponentOffensiveStrength": 74.4307,
+        "cleanSheetIndexV1": {
+          "rawScore": 38.6431,
+          "displayScore": 39,
+          "metadata": {
+            "metricType": "internal_index",
+            "probability": false,
+            "displayRecommendation": "score",
+            "scale": "0-100",
+            "description": "Indice interno SLVS; nao representa probabilidade."
+          }
+        },
+        "cleanSheetIndexV2": {
+          "rawScore": 34.6934,
+          "displayScore": 35,
+          "metadata": {
+            "metricType": "internal_index",
+            "probability": false,
+            "displayRecommendation": "score",
+            "scale": "0-100",
+            "description": "Indice interno SLVS; nao representa probabilidade."
+          }
+        },
+        "concedingRisk": 56.1753,
+        "matchupStrengthGap": -70.2214,
+        "leagueStrengthContext": 0,
+        "leagueContext": {
+          "team": {
+            "teamId": 315,
+            "points": 9,
+            "wins": 1,
+            "draws": 6,
+            "losses": 10,
+            "goalsFor": 17,
+            "goalsAgainst": 33,
+            "goalDifference": -16,
+            "gamesPlayed": 17,
+            "leaguePosition": 20,
+            "pointsPerGame": 0.529
+          },
+          "opponent": {
+            "teamId": 262,
+            "points": 34,
+            "wins": 10,
+            "draws": 4,
+            "losses": 3,
+            "goalsFor": 31,
+            "goalsAgainst": 16,
+            "goalDifference": 15,
+            "gamesPlayed": 17,
+            "leaguePosition": 2,
+            "pointsPerGame": 2
+          }
+        },
+        "recentForm": {
+          "sampleSize": 5,
+          "wins": 0,
+          "draws": 1,
+          "losses": 4,
+          "goalsFor": 5,
+          "goalsAgainst": 9,
+          "averageGoalsFor": 1,
+          "averageGoalsAgainst": 1.8,
+          "formIndex": 6.6667,
+          "results": [
+            "L",
+            "D",
+            "L",
+            "L",
+            "L"
+          ]
+        },
+        "opponentRecentForm": {
+          "sampleSize": 5,
+          "wins": 2,
+          "draws": 2,
+          "losses": 1,
+          "goalsFor": 7,
+          "goalsAgainst": 6,
+          "averageGoalsFor": 1.4,
+          "averageGoalsAgainst": 1.2,
+          "formIndex": 53.3333,
+          "results": [
+            "D",
+            "W",
+            "D",
+            "L",
+            "W"
+          ]
+        },
+        "homeAwayPerformance": {
+          "homeAway": "HOME",
+          "sampleSize": 9,
+          "averageGoalsFor": 1.4444,
+          "averageGoalsAgainst": 2.2222,
+          "index": 47.6662
+        },
+        "sample": {
+          "teamMatchesBeforeCutoff": 17,
+          "opponentMatchesBeforeCutoff": 17
+        },
+        "actualResult": {
+          "homeScore": 0,
+          "awayScore": 4,
+          "goalsAgainst": 4
+        },
+        "cleanSheetActual": false,
+        "rankV1": 20,
+        "rankV2": 20,
+        "evaluatedRankV1": 18,
+        "evaluatedRankV2": 18
+      }
+    ],
+    "camAudit": {
+      "matchId": 346540,
+      "startsAt": "2026-07-21T22:30:00.000Z",
+      "teamId": 282,
+      "teamName": "CAM",
+      "opponentId": 265,
+      "opponentName": "BAH",
+      "homeAway": "HOME",
+      "predictionTimestamp": "2026-07-21T22:09:05.150Z",
+      "availableDataCutoff": "2026-07-21T22:09:05.150Z",
+      "defensiveStrength": 64.444,
+      "opponentOffensiveStrength": 61.9611,
+      "cleanSheetIndexV1": {
+        "rawScore": 61.7447,
+        "displayScore": 62,
+        "metadata": {
+          "metricType": "internal_index",
+          "probability": false,
+          "displayRecommendation": "score",
+          "scale": "0-100",
+          "description": "Indice interno SLVS; nao representa probabilidade."
+        }
+      },
+      "cleanSheetIndexV2": {
+        "rawScore": 58.3461,
+        "displayScore": 58,
+        "metadata": {
+          "metricType": "internal_index",
+          "probability": false,
+          "displayRecommendation": "score",
+          "scale": "0-100",
+          "description": "Indice interno SLVS; nao representa probabilidade."
+        }
+      },
+      "concedingRisk": 41.5232,
+      "matchupStrengthGap": 11.1399,
+      "leagueStrengthContext": 36.764,
+      "leagueContext": {
+        "team": {
+          "teamId": 282,
+          "points": 24,
+          "wins": 7,
+          "draws": 3,
+          "losses": 8,
+          "goalsFor": 22,
+          "goalsAgainst": 23,
+          "goalDifference": -1,
+          "gamesPlayed": 18,
+          "leaguePosition": 11,
+          "pointsPerGame": 1.333
+        },
+        "opponent": {
+          "teamId": 265,
+          "points": 26,
+          "wins": 7,
+          "draws": 5,
+          "losses": 5,
+          "goalsFor": 25,
+          "goalsAgainst": 23,
+          "goalDifference": 2,
+          "gamesPlayed": 17,
+          "leaguePosition": 6,
+          "pointsPerGame": 1.529
+        }
+      },
+      "recentForm": {
+        "sampleSize": 5,
+        "wins": 3,
+        "draws": 1,
+        "losses": 1,
+        "goalsFor": 8,
+        "goalsAgainst": 4,
+        "averageGoalsFor": 1.6,
+        "averageGoalsAgainst": 0.8,
+        "formIndex": 66.6667,
+        "results": [
+          "W",
+          "D",
+          "W",
+          "L",
+          "W"
+        ]
+      },
+      "opponentRecentForm": {
+        "sampleSize": 5,
+        "wins": 1,
+        "draws": 2,
+        "losses": 2,
+        "goalsFor": 8,
+        "goalsAgainst": 9,
+        "averageGoalsFor": 1.6,
+        "averageGoalsAgainst": 1.8,
+        "formIndex": 33.3333,
+        "results": [
+          "D",
+          "L",
+          "D",
+          "L",
+          "W"
+        ]
+      },
+      "homeAwayPerformance": {
+        "homeAway": "HOME",
+        "sampleSize": 8,
+        "averageGoalsFor": 1.625,
+        "averageGoalsAgainst": 1.5,
+        "index": 61.75
+      },
+      "sample": {
+        "teamMatchesBeforeCutoff": 18,
+        "opponentMatchesBeforeCutoff": 17
+      },
+      "actualResult": {
+        "homeScore": 1,
+        "awayScore": 1,
+        "goalsAgainst": 1
+      },
+      "cleanSheetActual": false,
+      "rankV1": 2,
+      "rankV2": 10,
+      "evaluatedRankV1": 1,
+      "evaluatedRankV2": 9,
+      "explanation": [
+        "A formula V1 privilegia defesa propria recente, baixa forca ofensiva adversaria, mando e forma recente.",
+        "CAM recebeu a colocacao calculada abaixo pelos inputs congelados antes do jogo; o placar real foi anexado somente depois como target."
+      ]
+    },
+    "flamengoAudit": {
+      "matchId": 346544,
+      "startsAt": "2026-07-23T00:30:00.000Z",
+      "teamId": 262,
+      "teamName": "FLA",
+      "opponentId": 315,
+      "opponentName": "CHA",
+      "homeAway": "AWAY",
+      "predictionTimestamp": "2026-07-21T22:09:05.150Z",
+      "availableDataCutoff": "2026-07-21T22:09:05.150Z",
+      "defensiveStrength": 69.176,
+      "opponentOffensiveStrength": 45.3333,
+      "cleanSheetIndexV1": {
+        "rawScore": 58.2389,
+        "displayScore": 58,
+        "metadata": {
+          "metricType": "internal_index",
+          "probability": false,
+          "displayRecommendation": "score",
+          "scale": "0-100",
+          "description": "Indice interno SLVS; nao representa probabilidade."
+        }
+      },
+      "cleanSheetIndexV2": {
+        "rawScore": 77.3273,
+        "displayScore": 77,
+        "metadata": {
+          "metricType": "internal_index",
+          "probability": false,
+          "displayRecommendation": "score",
+          "scale": "0-100",
+          "description": "Indice interno SLVS; nao representa probabilidade."
+        }
+      },
+      "concedingRisk": 40.7217,
+      "matchupStrengthGap": 69.7166,
+      "leagueStrengthContext": 100,
+      "leagueContext": {
+        "team": {
+          "teamId": 262,
+          "points": 34,
+          "wins": 10,
+          "draws": 4,
+          "losses": 3,
+          "goalsFor": 31,
+          "goalsAgainst": 16,
+          "goalDifference": 15,
+          "gamesPlayed": 17,
+          "leaguePosition": 2,
+          "pointsPerGame": 2
+        },
+        "opponent": {
+          "teamId": 315,
+          "points": 9,
+          "wins": 1,
+          "draws": 6,
+          "losses": 10,
+          "goalsFor": 17,
+          "goalsAgainst": 33,
+          "goalDifference": -16,
+          "gamesPlayed": 17,
+          "leaguePosition": 20,
+          "pointsPerGame": 0.529
+        }
+      },
+      "recentForm": {
+        "sampleSize": 5,
+        "wins": 2,
+        "draws": 2,
+        "losses": 1,
+        "goalsFor": 7,
+        "goalsAgainst": 6,
+        "averageGoalsFor": 1.4,
+        "averageGoalsAgainst": 1.2,
+        "formIndex": 53.3333,
+        "results": [
+          "D",
+          "W",
+          "D",
+          "L",
+          "W"
+        ]
+      },
+      "opponentRecentForm": {
+        "sampleSize": 5,
+        "wins": 0,
+        "draws": 1,
+        "losses": 4,
+        "goalsFor": 5,
+        "goalsAgainst": 9,
+        "averageGoalsFor": 1,
+        "averageGoalsAgainst": 1.8,
+        "formIndex": 6.6667,
+        "results": [
+          "L",
+          "D",
+          "L",
+          "L",
+          "L"
+        ]
+      },
+      "homeAwayPerformance": {
+        "homeAway": "AWAY",
+        "sampleSize": 9,
+        "averageGoalsFor": 1.6667,
+        "averageGoalsAgainst": 1,
+        "index": 70.0006
+      },
+      "sample": {
+        "teamMatchesBeforeCutoff": 17,
+        "opponentMatchesBeforeCutoff": 17
+      },
+      "actualResult": {
+        "homeScore": 0,
+        "awayScore": 4,
+        "goalsAgainst": 0
+      },
+      "cleanSheetActual": true,
+      "rankV1": 5,
+      "rankV2": 1,
+      "evaluatedRankV1": 4,
+      "evaluatedRankV2": 1,
+      "oldFormulaRank": 5,
+      "candidateFormulaRank": 1
+    }
+  },
+  "positionEvaluation": {
+    "round19": {
+      "GOL": {
+        "top5": [
+          {
+            "rank": 1,
+            "athleteId": 88136,
+            "name": "Ivan Quaresma da Silva",
+            "clubId": 364,
+            "predictedPoints": 8.4,
+            "actualPoints": 10.2,
+            "enteredField": true,
+            "dataQualityScore": 14.45
+          },
+          {
+            "rank": 2,
+            "athleteId": 121823,
+            "name": "Kauê Vinicius de Souza Camargo",
+            "clubId": 264,
+            "predictedPoints": 7.9,
+            "actualPoints": null,
+            "enteredField": false,
+            "dataQualityScore": 14.45
+          },
+          {
+            "rank": 3,
+            "athleteId": 68872,
+            "name": "Marcelo Lomba do Nascimento",
+            "clubId": 275,
+            "predictedPoints": 7.3,
+            "actualPoints": 8.9,
+            "enteredField": true,
+            "dataQualityScore": 14.45
+          },
+          {
+            "rank": 4,
+            "athleteId": 104118,
+            "name": "Lucas Willians Assis Arcanjo",
+            "clubId": 287,
+            "predictedPoints": 4.6,
+            "actualPoints": null,
+            "enteredField": false,
+            "dataQualityScore": 34.85
+          },
+          {
+            "rank": 5,
+            "athleteId": 72018,
+            "name": "Tiago Luis Volpi",
+            "clubId": 280,
+            "predictedPoints": 4.2,
+            "actualPoints": 8.3,
+            "enteredField": true,
+            "dataQualityScore": 34.85
+          }
+        ],
+        "meanActualPointsByRank": {
+          "1": 10.2,
+          "2": null,
+          "3": 8.9,
+          "4": null,
+          "5": 8.3
+        },
+        "medianActualTop5": 8.9,
+        "meanActualTop5": 9.1333,
+        "hitRateTop5": 0.6,
+        "top1Actual": 10.2,
+        "correlationScoreActual": 0.888
+      },
+      "LAT": {
+        "top5": [
+          {
+            "rank": 1,
+            "athleteId": 147192,
+            "name": "Claudio Henrique de Jesus Passos",
+            "clubId": 293,
+            "predictedPoints": 7.6,
+            "actualPoints": 16.9,
+            "enteredField": true,
+            "dataQualityScore": 23.8
+          },
+          {
+            "rank": 2,
+            "athleteId": 105531,
+            "name": "Matheus Lima Beltrão Oliveira Valin",
+            "clubId": 264,
+            "predictedPoints": 6.7,
+            "actualPoints": 6.8,
+            "enteredField": true,
+            "dataQualityScore": 38.25
+          },
+          {
+            "rank": 3,
+            "athleteId": 107093,
+            "name": "Luciano Batista da Silva Júnior",
+            "clubId": 265,
+            "predictedPoints": 6.3,
+            "actualPoints": null,
+            "enteredField": false,
+            "dataQualityScore": 38.25
+          },
+          {
+            "rank": 4,
+            "athleteId": 94968,
+            "name": "Luis Antônio da Rocha Júnior",
+            "clubId": 280,
+            "predictedPoints": 6.2,
+            "actualPoints": 10.2,
+            "enteredField": true,
+            "dataQualityScore": 38.25
+          },
+          {
+            "rank": 5,
+            "athleteId": 116065,
+            "name": "Luís Eduardo Soares da Silva",
+            "clubId": 267,
+            "predictedPoints": 6.1,
+            "actualPoints": 12,
+            "enteredField": true,
+            "dataQualityScore": 38.25
+          }
+        ],
+        "meanActualPointsByRank": {
+          "1": 16.9,
+          "2": 6.8,
+          "3": null,
+          "4": 10.2,
+          "5": 12
+        },
+        "medianActualTop5": 11.1,
+        "meanActualTop5": 11.475,
+        "hitRateTop5": 0.8,
+        "top1Actual": 16.9,
+        "correlationScoreActual": 0.601
+      },
+      "ZAG": {
+        "top5": [
+          {
+            "rank": 1,
+            "athleteId": 63354,
+            "name": "Rodrigo Modesto da Silva Moledo",
+            "clubId": 294,
+            "predictedPoints": 6.8,
+            "actualPoints": null,
+            "enteredField": false,
+            "dataQualityScore": 14.45
+          },
+          {
+            "rank": 2,
+            "athleteId": 125488,
+            "name": "João Pedro de Sousa Rodrigues - Tchoca",
+            "clubId": 264,
+            "predictedPoints": 6.7,
+            "actualPoints": null,
+            "enteredField": false,
+            "dataQualityScore": 14.45
+          },
+          {
+            "rank": 3,
+            "athleteId": 124661,
+            "name": "Ivan Ramiro Román Hurtado",
+            "clubId": 282,
+            "predictedPoints": 4.5,
+            "actualPoints": 6.4,
+            "enteredField": true,
+            "dataQualityScore": 29.75
+          },
+          {
+            "rank": 4,
+            "athleteId": 140492,
+            "name": "João Victor de Souza Cunha",
+            "clubId": 262,
+            "predictedPoints": 4.5,
+            "actualPoints": 6.5,
+            "enteredField": true,
+            "dataQualityScore": 14.45
+          },
+          {
+            "rank": 5,
+            "athleteId": 63008,
+            "name": "Rafael Toloi",
+            "clubId": 276,
+            "predictedPoints": 3.8,
+            "actualPoints": null,
+            "enteredField": false,
+            "dataQualityScore": 23.8
+          }
+        ],
+        "meanActualPointsByRank": {
+          "1": null,
+          "2": null,
+          "3": 6.4,
+          "4": 6.5,
+          "5": null
+        },
+        "medianActualTop5": 6.45,
+        "meanActualTop5": 6.45,
+        "hitRateTop5": 0.4,
+        "top1Actual": null,
+        "correlationScoreActual": null
+      },
+      "MEI": {
+        "top5": [
+          {
+            "rank": 1,
+            "athleteId": 107231,
+            "name": "Danilo dos Santos de Oliveira",
+            "clubId": 263,
+            "predictedPoints": 7.8,
+            "actualPoints": null,
+            "enteredField": false,
+            "dataQualityScore": 38.25
+          },
+          {
+            "rank": 2,
+            "athleteId": 63007,
+            "name": "Neymar da Silva Santos Júnior",
+            "clubId": 277,
+            "predictedPoints": 6.9,
+            "actualPoints": null,
+            "enteredField": false,
+            "dataQualityScore": 33.15
+          },
+          {
+            "rank": 3,
+            "athleteId": 87863,
+            "name": "Giorgian Daniel de Arrascaeta Benedetti",
+            "clubId": 262,
+            "predictedPoints": 4.5,
+            "actualPoints": null,
+            "enteredField": false,
+            "dataQualityScore": 33.15
+          },
+          {
+            "rank": 4,
+            "athleteId": 94930,
+            "name": "Lucas Tolentino Coelho de Lima",
+            "clubId": 262,
+            "predictedPoints": 4.5,
+            "actualPoints": null,
+            "enteredField": false,
+            "dataQualityScore": 38.25
+          },
+          {
+            "rank": 5,
+            "athleteId": 99815,
+            "name": "Jhon Adolfo Arias Andrade",
+            "clubId": 275,
+            "predictedPoints": 4.5,
+            "actualPoints": null,
+            "enteredField": false,
+            "dataQualityScore": 38.25
+          }
+        ],
+        "meanActualPointsByRank": {
+          "1": null,
+          "2": null,
+          "3": null,
+          "4": null,
+          "5": null
+        },
+        "medianActualTop5": null,
+        "meanActualTop5": null,
+        "hitRateTop5": 0,
+        "top1Actual": null,
+        "correlationScoreActual": null
+      },
+      "ATA": {
+        "top5": [
+          {
+            "rank": 1,
+            "athleteId": 94583,
+            "name": "Pedro Guilherme Abreu dos Santos",
+            "clubId": 262,
+            "predictedPoints": 7.2,
+            "actualPoints": 20.4,
+            "enteredField": true,
+            "dataQualityScore": 38.25
+          },
+          {
+            "rank": 2,
+            "athleteId": 130209,
+            "name": "Carlos Renê de Sousa Ferreira - Souza",
+            "clubId": 287,
+            "predictedPoints": 7,
+            "actualPoints": 18.1,
+            "enteredField": true,
+            "dataQualityScore": 38.25
+          },
+          {
+            "rank": 3,
+            "athleteId": 102928,
+            "name": "Agustín Canobbio Graviz",
+            "clubId": 266,
+            "predictedPoints": 6.9,
+            "actualPoints": null,
+            "enteredField": false,
+            "dataQualityScore": 38.25
+          },
+          {
+            "rank": 4,
+            "athleteId": 143193,
+            "name": "Kevin Stiven Viveros Rodallega",
+            "clubId": 293,
+            "predictedPoints": 6.9,
+            "actualPoints": 10.9,
+            "enteredField": true,
+            "dataQualityScore": 38.25
+          },
+          {
+            "rank": 5,
+            "athleteId": 110759,
+            "name": "John Kennedy Batista de Souza",
+            "clubId": 266,
+            "predictedPoints": 6.4,
+            "actualPoints": 10,
+            "enteredField": true,
+            "dataQualityScore": 38.25
+          }
+        ],
+        "meanActualPointsByRank": {
+          "1": 20.4,
+          "2": 18.1,
+          "3": null,
+          "4": 10.9,
+          "5": 10
+        },
+        "medianActualTop5": 14.5,
+        "meanActualTop5": 14.85,
+        "hitRateTop5": 0.8,
+        "top1Actual": 20.4,
+        "correlationScoreActual": 0.8348
+      },
+      "TEC": {
+        "top5": [],
+        "meanActualPointsByRank": {},
+        "medianActualTop5": null,
+        "meanActualTop5": null,
+        "hitRateTop5": null,
+        "top1Actual": null,
+        "correlationScoreActual": null
+      }
+    },
+    "candidateWeights": {
+      "GOL": [
+        "predictionPoints",
+        "recentAverage",
+        "cleanSheetContext",
+        "concedingRisk",
+        "opponentStrength",
+        "saves/scouts",
+        "homeAway",
+        "sampleConfidence"
+      ],
+      "LAT": [
+        "cleanSheetContext",
+        "attackingContribution",
+        "scouts",
+        "opponentStrength",
+        "matchupGap"
+      ],
+      "ZAG": [
+        "cleanSheetContext",
+        "scouts",
+        "opponentStrength",
+        "matchupGap"
+      ],
+      "MEI": [
+        "offensiveOpportunity",
+        "predictionPoints",
+        "form",
+        "opponentDefense",
+        "matchupGap"
+      ],
+      "ATA": [
+        "offensiveOpportunity",
+        "predictionPoints",
+        "form",
+        "opponentDefense",
+        "matchupGap"
+      ],
+      "TEC": [
+        "teamStrength",
+        "matchupGap",
+        "form",
+        "homeAway"
+      ]
+    },
+    "ivanCaseStudy": [
+      {
+        "name": "Ivan",
+        "status": "FOUND",
+        "athleteId": 88136,
+        "rankingBeforeRound": 1,
+        "predictedPoints": 8.4,
+        "scoreBeforeRound": 47.1,
+        "dataQualityScore": 14.45,
+        "actualPoints": 10.2,
+        "enteredField": true,
+        "researchQuestion": "Peso maior em media/previsao individual ou em contexto defensivo teria produzido melhor escolha?",
+        "manualRemovalApplied": false
+      },
+      {
+        "name": "Everson",
+        "status": "FOUND",
+        "athleteId": 72294,
+        "rankingBeforeRound": 11,
+        "predictedPoints": 3.5,
+        "scoreBeforeRound": 33.7,
+        "dataQualityScore": 31.45,
+        "actualPoints": 14.6,
+        "enteredField": true,
+        "researchQuestion": "Peso maior em media/previsao individual ou em contexto defensivo teria produzido melhor escolha?",
+        "manualRemovalApplied": false
+      },
+      {
+        "name": "Rossi",
+        "status": "FOUND",
+        "athleteId": 99552,
+        "rankingBeforeRound": 13,
+        "predictedPoints": 3.5,
+        "scoreBeforeRound": 32.7,
+        "dataQualityScore": 34.85,
+        "actualPoints": 7.6,
+        "enteredField": true,
+        "researchQuestion": "Peso maior em media/previsao individual ou em contexto defensivo teria produzido melhor escolha?",
+        "manualRemovalApplied": false
+      },
+      {
+        "name": "Pedro Rangel",
+        "status": "NOT_FOUND_IN_ROUND_19_PREDICTIONS"
+      },
+      {
+        "name": "Carlos Miguel",
+        "status": "FOUND",
+        "athleteId": 104084,
+        "rankingBeforeRound": 14,
+        "predictedPoints": 3.5,
+        "scoreBeforeRound": 32.9,
+        "dataQualityScore": 34.85,
+        "actualPoints": null,
+        "enteredField": false,
+        "researchQuestion": "Peso maior em media/previsao individual ou em contexto defensivo teria produzido melhor escolha?",
+        "manualRemovalApplied": false
+      }
+    ]
+  },
+  "cleanSheetEvaluation": {
+    "round19": {
+      "v1": {
+        "evaluated": 18,
+        "actualCleanSheets": 2,
+        "top1": {
+          "k": 1,
+          "hits": 0,
+          "evaluated": 1,
+          "accuracy": 0,
+          "precision": 0,
+          "recall": 0
+        },
+        "top3": {
+          "k": 3,
+          "hits": 0,
+          "evaluated": 3,
+          "accuracy": 0,
+          "precision": 0,
+          "recall": 0
+        },
+        "top5": {
+          "k": 5,
+          "hits": 2,
+          "evaluated": 5,
+          "accuracy": 0.4,
+          "precision": 0.4,
+          "recall": 1
+        },
+        "brierScore": null,
+        "brierScoreStatus": "NOT_APPLICABLE_INTERNAL_INDEX_NOT_PROBABILITY"
+      },
+      "v2": {
+        "evaluated": 18,
+        "actualCleanSheets": 2,
+        "top1": {
+          "k": 1,
+          "hits": 1,
+          "evaluated": 1,
+          "accuracy": 1,
+          "precision": 1,
+          "recall": 0.5
+        },
+        "top3": {
+          "k": 3,
+          "hits": 2,
+          "evaluated": 3,
+          "accuracy": 0.6667,
+          "precision": 0.6667,
+          "recall": 1
+        },
+        "top5": {
+          "k": 5,
+          "hits": 2,
+          "evaluated": 5,
+          "accuracy": 0.4,
+          "precision": 0.4,
+          "recall": 1
+        },
+        "brierScore": null,
+        "brierScoreStatus": "NOT_APPLICABLE_INTERNAL_INDEX_NOT_PROBABILITY"
+      },
+      "top5V1": [
+        {
+          "rankV1": 1,
+          "rankV2": 4,
+          "evaluatedRankV1": null,
+          "evaluatedRankV2": null,
+          "teamId": 264,
+          "teamName": "COR",
+          "opponentId": 364,
+          "opponentName": "REM",
+          "homeAway": "HOME",
+          "rawScoreV1": 63.3326,
+          "displayScoreV1": 63,
+          "rawScoreV2": 64.0457,
+          "displayScoreV2": 64,
+          "cleanSheetActual": null,
+          "actualResult": null
+        },
+        {
+          "rankV1": 2,
+          "rankV2": 10,
+          "evaluatedRankV1": 1,
+          "evaluatedRankV2": 9,
+          "teamId": 282,
+          "teamName": "CAM",
+          "opponentId": 265,
+          "opponentName": "BAH",
+          "homeAway": "HOME",
+          "rawScoreV1": 61.7447,
+          "displayScoreV1": 62,
+          "rawScoreV2": 58.3461,
+          "displayScoreV2": 58,
+          "cleanSheetActual": false,
+          "actualResult": {
+            "homeScore": 1,
+            "awayScore": 1,
+            "goalsAgainst": 1
+          }
+        },
+        {
+          "rankV1": 3,
+          "rankV2": 7,
+          "evaluatedRankV1": 2,
+          "evaluatedRankV2": 6,
+          "teamId": 2305,
+          "teamName": "MIR",
+          "opponentId": 284,
+          "opponentName": "GRE",
+          "homeAway": "HOME",
+          "rawScoreV1": 58.9251,
+          "displayScoreV1": 59,
+          "rawScoreV2": 59.581,
+          "displayScoreV2": 60,
+          "cleanSheetActual": false,
+          "actualResult": {
+            "homeScore": 2,
+            "awayScore": 1,
+            "goalsAgainst": 1
+          }
+        },
+        {
+          "rankV1": 4,
+          "rankV2": 9,
+          "evaluatedRankV1": 3,
+          "evaluatedRankV2": 8,
+          "teamId": 285,
+          "teamName": "INT",
+          "opponentId": 283,
+          "opponentName": "CRU",
+          "homeAway": "HOME",
+          "rawScoreV1": 58.4005,
+          "displayScoreV1": 58,
+          "rawScoreV2": 58.5874,
+          "displayScoreV2": 59,
+          "cleanSheetActual": false,
+          "actualResult": {
+            "homeScore": 1,
+            "awayScore": 2,
+            "goalsAgainst": 2
+          }
+        },
+        {
+          "rankV1": 5,
+          "rankV2": 1,
+          "evaluatedRankV1": 4,
+          "evaluatedRankV2": 1,
+          "teamId": 262,
+          "teamName": "FLA",
+          "opponentId": 315,
+          "opponentName": "CHA",
+          "homeAway": "AWAY",
+          "rawScoreV1": 58.2389,
+          "displayScoreV1": 58,
+          "rawScoreV2": 77.3273,
+          "displayScoreV2": 77,
+          "cleanSheetActual": true,
+          "actualResult": {
+            "homeScore": 0,
+            "awayScore": 4,
+            "goalsAgainst": 0
+          }
+        }
+      ],
+      "top5V2": [
+        {
+          "rankV1": 5,
+          "rankV2": 1,
+          "evaluatedRankV1": 4,
+          "evaluatedRankV2": 1,
+          "teamId": 262,
+          "teamName": "FLA",
+          "opponentId": 315,
+          "opponentName": "CHA",
+          "homeAway": "AWAY",
+          "rawScoreV1": 58.2389,
+          "displayScoreV1": 58,
+          "rawScoreV2": 77.3273,
+          "displayScoreV2": 77,
+          "cleanSheetActual": true,
+          "actualResult": {
+            "homeScore": 0,
+            "awayScore": 4,
+            "goalsAgainst": 0
+          }
+        },
+        {
+          "rankV1": 7,
+          "rankV2": 2,
+          "evaluatedRankV1": 6,
+          "evaluatedRankV2": 2,
+          "teamId": 275,
+          "teamName": "PAL",
+          "opponentId": 294,
+          "opponentName": "CFC",
+          "homeAway": "AWAY",
+          "rawScoreV1": 57.3338,
+          "displayScoreV1": 57,
+          "rawScoreV2": 67.8216,
+          "displayScoreV2": 68,
+          "cleanSheetActual": false,
+          "actualResult": {
+            "homeScore": 1,
+            "awayScore": 3,
+            "goalsAgainst": 1
+          }
+        },
+        {
+          "rankV1": 6,
+          "rankV2": 3,
+          "evaluatedRankV1": 5,
+          "evaluatedRankV2": 3,
+          "teamId": 287,
+          "teamName": "VIT",
+          "opponentId": 267,
+          "opponentName": "VAS",
+          "homeAway": "HOME",
+          "rawScoreV1": 57.8196,
+          "displayScoreV1": 58,
+          "rawScoreV2": 65.3463,
+          "displayScoreV2": 65,
+          "cleanSheetActual": true,
+          "actualResult": {
+            "homeScore": 1,
+            "awayScore": 0,
+            "goalsAgainst": 0
+          }
+        },
+        {
+          "rankV1": 1,
+          "rankV2": 4,
+          "evaluatedRankV1": null,
+          "evaluatedRankV2": null,
+          "teamId": 264,
+          "teamName": "COR",
+          "opponentId": 364,
+          "opponentName": "REM",
+          "homeAway": "HOME",
+          "rawScoreV1": 63.3326,
+          "displayScoreV1": 63,
+          "rawScoreV2": 64.0457,
+          "displayScoreV2": 64,
+          "cleanSheetActual": null,
+          "actualResult": null
+        },
+        {
+          "rankV1": 9,
+          "rankV2": 5,
+          "evaluatedRankV1": 8,
+          "evaluatedRankV2": 4,
+          "teamId": 293,
+          "teamName": "CAP",
+          "opponentId": 276,
+          "opponentName": "SAO",
+          "homeAway": "AWAY",
+          "rawScoreV1": 55.1332,
+          "displayScoreV1": 55,
+          "rawScoreV2": 63.8493,
+          "displayScoreV2": 64,
+          "cleanSheetActual": false,
+          "actualResult": {
+            "homeScore": 1,
+            "awayScore": 2,
+            "goalsAgainst": 1
+          }
+        }
+      ]
+    },
+    "historicalBacktest": {
+      "summary": {
+        "v1": {
+          "evaluated": 334,
+          "actualCleanSheets": 77,
+          "top1": {
+            "k": 1,
+            "hits": 0,
+            "evaluated": 1,
+            "accuracy": 0,
+            "precision": 0,
+            "recall": 0
+          },
+          "top3": {
+            "k": 3,
+            "hits": 1,
+            "evaluated": 3,
+            "accuracy": 0.3333,
+            "precision": 0.3333,
+            "recall": 0.013
+          },
+          "top5": {
+            "k": 5,
+            "hits": 2,
+            "evaluated": 5,
+            "accuracy": 0.4,
+            "precision": 0.4,
+            "recall": 0.026
+          },
+          "brierScore": null,
+          "brierScoreStatus": "NOT_APPLICABLE_INTERNAL_INDEX_NOT_PROBABILITY"
+        },
+        "v2": {
+          "evaluated": 334,
+          "actualCleanSheets": 77,
+          "top1": {
+            "k": 1,
+            "hits": 0,
+            "evaluated": 1,
+            "accuracy": 0,
+            "precision": 0,
+            "recall": 0
+          },
+          "top3": {
+            "k": 3,
+            "hits": 1,
+            "evaluated": 3,
+            "accuracy": 0.3333,
+            "precision": 0.3333,
+            "recall": 0.013
+          },
+          "top5": {
+            "k": 5,
+            "hits": 2,
+            "evaluated": 5,
+            "accuracy": 0.4,
+            "precision": 0.4,
+            "recall": 0.026
+          },
+          "brierScore": null,
+          "brierScoreStatus": "NOT_APPLICABLE_INTERNAL_INDEX_NOT_PROBABILITY"
+        }
+      },
+      "roundsEvaluated": 17
+    }
+  },
+  "formationEvaluation": {
+    "formations": [
+      {
+        "formation": "4-3-3",
+        "predictedPoints": 76.5,
+        "actualPointsOfPredictedTeam": 72.4,
+        "bestPossibleActualPoints": 190.4,
+        "selectedAthleteIds": [
+          88136,
+          147192,
+          105531,
+          63354,
+          125488,
+          107231,
+          63007,
+          87863,
+          94583,
+          130209,
+          102928
+        ],
+        "oracleAthleteIds": [
+          72294,
+          147192,
+          97795,
+          72605,
+          91772,
+          145744,
+          115025,
+          96610,
+          98873,
+          94583,
+          130209
+        ]
+      },
+      {
+        "formation": "4-4-2",
+        "predictedPoints": 74.1,
+        "actualPointsOfPredictedTeam": 72.4,
+        "bestPossibleActualPoints": 183.5,
+        "selectedAthleteIds": [
+          88136,
+          147192,
+          105531,
+          63354,
+          125488,
+          107231,
+          63007,
+          87863,
+          94930,
+          94583,
+          130209
+        ],
+        "oracleAthleteIds": [
+          72294,
+          147192,
+          97795,
+          72605,
+          91772,
+          145744,
+          115025,
+          96610,
+          128431,
+          98873,
+          94583
+        ]
+      },
+      {
+        "formation": "4-5-1",
+        "predictedPoints": 71.6,
+        "actualPointsOfPredictedTeam": 54.3,
+        "bestPossibleActualPoints": 174,
+        "selectedAthleteIds": [
+          88136,
+          147192,
+          105531,
+          63354,
+          125488,
+          107231,
+          63007,
+          87863,
+          94930,
+          99815,
+          94583
+        ],
+        "oracleAthleteIds": [
+          72294,
+          147192,
+          97795,
+          72605,
+          91772,
+          145744,
+          115025,
+          96610,
+          128431,
+          126471,
+          98873
+        ]
+      },
+      {
+        "formation": "3-4-3",
+        "predictedPoints": 71.2,
+        "actualPointsOfPredictedTeam": 55.1,
+        "bestPossibleActualPoints": 178.4,
+        "selectedAthleteIds": [
+          88136,
+          63354,
+          125488,
+          124661,
+          107231,
+          63007,
+          87863,
+          94930,
+          94583,
+          130209,
+          102928
+        ],
+        "oracleAthleteIds": [
+          72294,
+          72605,
+          91772,
+          92087,
+          145744,
+          115025,
+          96610,
+          128431,
+          98873,
+          94583,
+          130209
+        ]
+      },
+      {
+        "formation": "3-5-2",
+        "predictedPoints": 68.8,
+        "actualPointsOfPredictedTeam": 55.1,
+        "bestPossibleActualPoints": 171.2,
+        "selectedAthleteIds": [
+          88136,
+          63354,
+          125488,
+          124661,
+          107231,
+          63007,
+          87863,
+          94930,
+          99815,
+          94583,
+          130209
+        ],
+        "oracleAthleteIds": [
+          72294,
+          72605,
+          91772,
+          92087,
+          145744,
+          115025,
+          96610,
+          128431,
+          126471,
+          98873,
+          94583
+        ]
+      },
+      {
+        "formation": "5-3-2",
+        "predictedPoints": 74.1,
+        "actualPointsOfPredictedTeam": 78.8,
+        "bestPossibleActualPoints": 182.7,
+        "selectedAthleteIds": [
+          88136,
+          147192,
+          105531,
+          63354,
+          125488,
+          124661,
+          107231,
+          63007,
+          87863,
+          94583,
+          130209
+        ],
+        "oracleAthleteIds": [
+          72294,
+          147192,
+          97795,
+          72605,
+          91772,
+          92087,
+          145744,
+          115025,
+          96610,
+          98873,
+          94583
+        ]
+      }
+    ],
+    "predictedBestFormation": "4-3-3",
+    "actualBestFormation": "4-3-3",
+    "recommendationHit": true
+  },
+  "idealTeamEvaluation": {
+    "timeSelectedBeforeRound": [
+      {
+        "athleteId": 99815,
+        "name": "Jhon Adolfo Arias Andrade",
+        "positionId": 4,
+        "predictedPoints": 4.5,
+        "actualPoints": null
+      },
+      {
+        "athleteId": 147192,
+        "name": "Claudio Henrique de Jesus Passos",
+        "positionId": 2,
+        "predictedPoints": 7.6,
+        "actualPoints": 16.9
+      },
+      {
+        "athleteId": 130209,
+        "name": "Carlos Renê de Sousa Ferreira - Souza",
+        "positionId": 5,
+        "predictedPoints": 7,
+        "actualPoints": 18.1
+      },
+      {
+        "athleteId": 63007,
+        "name": "Neymar da Silva Santos Júnior",
+        "positionId": 4,
+        "predictedPoints": 6.9,
+        "actualPoints": null
+      },
+      {
+        "athleteId": 107231,
+        "name": "Danilo dos Santos de Oliveira",
+        "positionId": 4,
+        "predictedPoints": 7.8,
+        "actualPoints": null
+      },
+      {
+        "athleteId": 105531,
+        "name": "Matheus Lima Beltrão Oliveira Valin",
+        "positionId": 2,
+        "predictedPoints": 6.7,
+        "actualPoints": 6.8
+      },
+      {
+        "athleteId": 125488,
+        "name": "João Pedro de Sousa Rodrigues - Tchoca",
+        "positionId": 3,
+        "predictedPoints": 6.7,
+        "actualPoints": null
+      },
+      {
+        "athleteId": 88136,
+        "name": "Ivan Quaresma da Silva",
+        "positionId": 1,
+        "predictedPoints": 8.4,
+        "actualPoints": 10.2
+      },
+      {
+        "athleteId": 143193,
+        "name": "Kevin Stiven Viveros Rodallega",
+        "positionId": 5,
+        "predictedPoints": 6.9,
+        "actualPoints": 10.9
+      },
+      {
+        "athleteId": 63354,
+        "name": "Rodrigo Modesto da Silva Moledo",
+        "positionId": 3,
+        "predictedPoints": 6.8,
+        "actualPoints": null
+      },
+      {
+        "athleteId": 94583,
+        "name": "Pedro Guilherme Abreu dos Santos",
+        "positionId": 5,
+        "predictedPoints": 7.2,
+        "actualPoints": 20.4
+      }
+    ],
+    "predictedPoints": 76.5,
+    "contextualScore": 510.3,
+    "actualPoints": 83.3,
+    "difference": 6.8,
+    "bestPossibleTeamAfterRound": [
+      {
+        "athleteId": 72294,
+        "name": "Everson Felipe Marques Pires",
+        "positionId": 1,
+        "actualPoints": 14.6
+      },
+      {
+        "athleteId": 147192,
+        "name": "Claudio Henrique de Jesus Passos",
+        "positionId": 2,
+        "actualPoints": 16.9
+      },
+      {
+        "athleteId": 97795,
+        "name": "Marcelo Rodrigues Souza",
+        "positionId": 2,
+        "actualPoints": 16.7
+      },
+      {
+        "athleteId": 72605,
+        "name": "Vitor Hugo Franchescoli de Souza",
+        "positionId": 3,
+        "actualPoints": 14.5
+      },
+      {
+        "athleteId": 91772,
+        "name": "David de Duarte Macedo",
+        "positionId": 3,
+        "actualPoints": 11.9
+      },
+      {
+        "athleteId": 145744,
+        "name": "André Luiz Santos Dias",
+        "positionId": 4,
+        "actualPoints": 18.4
+      },
+      {
+        "athleteId": 115025,
+        "name": "Miguel Àngel Terceros",
+        "positionId": 4,
+        "actualPoints": 17.1
+      },
+      {
+        "athleteId": 96610,
+        "name": "Matheus Fellipe Costa Pereira",
+        "positionId": 4,
+        "actualPoints": 15.8
+      },
+      {
+        "athleteId": 98873,
+        "name": "Samuel Dias Lino",
+        "positionId": 5,
+        "actualPoints": 26
+      },
+      {
+        "athleteId": 94583,
+        "name": "Pedro Guilherme Abreu dos Santos",
+        "positionId": 5,
+        "actualPoints": 20.4
+      },
+      {
+        "athleteId": 130209,
+        "name": "Carlos Renê de Sousa Ferreira - Souza",
+        "positionId": 5,
+        "actualPoints": 18.1
+      }
+    ],
+    "actualPointsBestPossible": 190.4,
+    "captureRate": 0.4375,
+    "bestPossibleTemporalStatus": "ORACLE_BENCHMARK_POST_ROUND_ONLY"
+  },
+  "contracts": {
+    "differentialEligibilityAvailable": false,
+    "differentialLabelPolicy": "DO_NOT_CALL_DIFFERENTIAL_WITHOUT_OWNERSHIP",
+    "valueType": "historical_variation",
+    "valuationForecastAvailable": false,
+    "costBenefitEligibility": {
+      "minimumDataQuality": 30,
+      "predictionAvailable": true,
+      "statusEligible": true,
+      "missingPredictionPolicy": "EXCLUDE_NOT_ZERO"
+    },
+    "promotionGate": {
+      "allowedStates": [
+        "REJECTED",
+        "EXPERIMENTAL",
+        "PROMOTABLE"
+      ],
+      "state": "EXPERIMENTAL",
+      "promoted": false,
+      "reasons": [
+        "Candidato V2 permanece em Research Lab.",
+        "Amostra da Rodada 19 isolada nao promove formula.",
+        "Sem alteracao no Motor SLVS oficial."
+      ]
+    }
+  },
+  "limitations": [
+    "Rodada 19 ainda pode ter jogo nao encerrado na API oficial.",
+    "Sem dado confiavel de ownership/popularidade; diferenciais reais ficam indisponiveis.",
+    "Pontuacao de atletas da Rodada 19 vem do snapshot/live market disponivel, nao de fonte historica final imutavel.",
+    "CleanSheetIndex e indice interno, nao probabilidade."
+  ],
+  "artifacts": {
+    "persistedAt": "data/research/2026/round-19-validation.json",
+    "report": "docs/research/round-19-learning-report.md"
+  },
+  "officialMatchesSourceStatus": "LIVE_UPSTREAM"
+}

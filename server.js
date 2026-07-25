@@ -12,6 +12,7 @@ const { parseLiveRound, parseSnapshotId } = require("./src/liveSnapshot/domain/v
 const { storageHealth } = require("./src/liveSnapshot/services/storageHealth");
 const { buildProductionHealth } = require("./src/liveSnapshot/services/productionHealth");
 const { ResearchRepository } = require("./src/research/repository");
+const { PreMatchAvailabilityRepository, buildCaptureStatus } = require("./src/research/preMatchAvailabilitySource");
 const {
   buildCalendarContext,
   buildContextFeatureDiagnostics,
@@ -26,7 +27,7 @@ const {
 } = require("./src/realRoundContext/service");
 
 const SERVICE_NAME = "cartola-silvas-fc-api";
-const BACKEND_VERSION = "5.2.0";
+const BACKEND_VERSION = "5.2.12";
 const DEFAULT_PORT = 3000;
 const CARTOLA_API_BASE_URL = "https://api.cartolafc.globo.com";
 const DEFAULT_TIMEOUT_MS = 8000;
@@ -255,6 +256,7 @@ function createApp(options = {}) {
   app.locals.backtestRepository = options.backtestRepository || new BacktestRepository();
   app.locals.liveSnapshotRepository = options.liveSnapshotRepository || new LiveSnapshotRepository();
   app.locals.researchRepository = options.researchRepository || new ResearchRepository();
+  app.locals.preMatchAvailabilityRepository = options.preMatchAvailabilityRepository || new PreMatchAvailabilityRepository({ researchRepository: app.locals.researchRepository });
 
   if (typeof app.locals.fetchImpl !== "function") {
     throw new Error("fetch nativo nao esta disponivel nesta versao do Node.");
@@ -970,6 +972,213 @@ function createApp(options = {}) {
 
   app.get("/research/research-health", (req, res) => {
     return sendResearchFile(req, res, "research-health.json", "Health do laboratorio de pesquisa nao encontrado. Execute npm run research:check.");
+  });
+
+  app.get("/research/round-validation/:round", (req, res) => {
+    const round = parseRound(req.params.round);
+    if (!round) return sendBadRequest(res, "INVALID_ROUND", "A rodada deve ser um inteiro entre 1 e 38.");
+
+    const existing = app.locals.researchRepository.readJson(2026, `round-${round}-validation.json`);
+    if (existing) return res.json(existing);
+    return sendNotFound(res, "Validacao da rodada nao encontrada. Execute npm run research:round-validation para a Rodada 19.");
+  });
+
+  app.get("/research/multi-round-calibration", (req, res) => {
+    return sendResearchFile(req, res, "multi-round-calibration.json", "Calibracao multirrodada nao encontrada. Execute npm run research:multi-round-calibration.");
+  });
+
+  app.get("/research/availability-calibration", (req, res) => {
+    return sendResearchFile(req, res, "availability-calibration.json", "Calibracao de disponibilidade nao encontrada. Execute npm run research:availability-calibration.");
+  });
+
+  app.get("/research/availability-recalibration", (req, res) => {
+    return sendResearchFile(req, res, "availability-recalibration.json", "Recalibracao de disponibilidade nao encontrada. Execute npm run research:availability-recalibration.");
+  });
+
+  app.get("/research/availability-signals", (req, res) => {
+    return sendResearchFile(req, res, "availability-signals.json", "Sinais de disponibilidade nao encontrados. Execute npm run research:availability-signals.");
+  });
+
+  app.get("/research/availability-signals/coverage", (req, res) => {
+    const artifact = app.locals.researchRepository.readJson(2026, "availability-signals.json");
+    if (!artifact) return sendNotFound(res, "Cobertura de sinais de disponibilidade nao encontrada. Execute npm run research:availability-signals.");
+    return res.json({
+      schemaVersion: "availability-signals-coverage/v1",
+      generatedAt: artifact.generatedAt,
+      season: artifact.season,
+      contractVersion: artifact.availabilitySignalsContract?.version || null,
+      coverageMatrix: artifact.coverageMatrix,
+      qualityAnalysis: artifact.qualityAnalysis
+    });
+  });
+
+  app.get("/research/availability-signals/false-negatives", (req, res) => {
+    const artifact = app.locals.researchRepository.readJson(2026, "availability-signals.json");
+    if (!artifact) return sendNotFound(res, "Analise de falsos negativos de disponibilidade nao encontrada. Execute npm run research:availability-signals.");
+    return res.json({
+      schemaVersion: "availability-signals-errors/v1",
+      generatedAt: artifact.generatedAt,
+      season: artifact.season,
+      falsePositiveFalseNegative: artifact.falsePositiveFalseNegative
+    });
+  });
+
+  app.get("/research/availability-signals/thresholds", (req, res) => {
+    const artifact = app.locals.researchRepository.readJson(2026, "availability-signals.json");
+    if (!artifact) return sendNotFound(res, "Analise de thresholds de disponibilidade nao encontrada. Execute npm run research:availability-signals.");
+    return res.json({
+      schemaVersion: "availability-signals-thresholds/v1",
+      generatedAt: artifact.generatedAt,
+      season: artifact.season,
+      thresholds: artifact.thresholds,
+      experimentalAugmentedModel: artifact.experimentalAugmentedModel
+    });
+  });
+
+  app.get("/research/pre-match-availability", (req, res) => {
+    const snapshots = app.locals.preMatchAvailabilityRepository.listSnapshots(2026).map((snapshot) => ({
+      captureId: snapshot.captureId,
+      season: snapshot.season,
+      round: snapshot.round,
+      capturedAt: snapshot.capturedAt,
+      deadline: snapshot.roundDeadline,
+      temporalSafety: snapshot.temporalSafety,
+      fingerprint: snapshot.snapshotFingerprint,
+      coverage: snapshot.coverage
+    }));
+    return res.json({
+      schemaVersion: "pre-match-availability-index/v1",
+      season: 2026,
+      count: snapshots.length,
+      snapshots
+    });
+  });
+
+  app.get("/research/pre-match-availability/latest", (req, res) => {
+    const snapshot = app.locals.preMatchAvailabilityRepository.latestSnapshot(2026);
+    if (!snapshot) return sendNotFound(res, "Nenhum snapshot pre-jogo de disponibilidade encontrado. Execute npm run research:capture-pre-match.");
+    return res.json(snapshot);
+  });
+
+  app.get("/research/pre-match-availability/round/:round", (req, res) => {
+    const round = parseRound(req.params.round);
+    if (!round) return sendValidationError(res, "INVALID_ROUND", "round deve ser um inteiro positivo.");
+    const snapshots = app.locals.preMatchAvailabilityRepository.listSnapshots(2026, round);
+    if (!snapshots.length) return sendNotFound(res, "Snapshot pre-jogo de disponibilidade nao encontrado para a rodada.");
+    return res.json({
+      schemaVersion: "pre-match-availability-round/v1",
+      season: 2026,
+      round,
+      count: snapshots.length,
+      snapshots
+    });
+  });
+
+  app.get("/research/pre-match-availability/coverage", (req, res) => {
+    const latest = app.locals.preMatchAvailabilityRepository.latestSnapshot(2026);
+    if (!latest) return sendNotFound(res, "Cobertura pre-jogo de disponibilidade nao encontrada. Execute npm run research:capture-pre-match.");
+    return res.json({
+      schemaVersion: "pre-match-availability-coverage/v1",
+      season: latest.season,
+      round: latest.round,
+      captureId: latest.captureId,
+      capturedAt: latest.capturedAt,
+      deadline: latest.roundDeadline,
+      temporalSafety: latest.temporalSafety,
+      coverage: latest.coverage
+    });
+  });
+
+  app.get("/research/pre-match-availability/capture-status", (req, res) => {
+    return res.json(buildCaptureStatus({
+      season: 2026,
+      repository: app.locals.preMatchAvailabilityRepository
+    }));
+  });
+
+  app.get("/research/pre-match-availability/evaluation/:round", (req, res) => {
+    const round = parseRound(req.params.round);
+    if (!round) return sendValidationError(res, "INVALID_ROUND", "round deve ser um inteiro positivo.");
+    const latest = app.locals.preMatchAvailabilityRepository.selectEvaluationSnapshot(2026, round);
+    if (!latest) return sendNotFound(res, "Snapshot prospectivo nao encontrado para a rodada.");
+    const artifactPath = `pre-match-availability-evaluations/round-${String(round).padStart(2, "0")}-${latest.captureId}.json`;
+    const artifact = app.locals.researchRepository.readJson(2026, artifactPath);
+    if (!artifact) return res.json({
+      schemaVersion: "pre-match-availability-evaluation-status/v1",
+      season: 2026,
+      round,
+      captureId: latest.captureId,
+      status: "PENDING_OUTCOME",
+      reason: "Avaliacao ainda nao foi executada ou outcome ainda nao esta disponivel."
+    });
+    return res.json(artifact);
+  });
+
+  app.get("/research/pre-match-availability/comparison/:round", (req, res) => {
+    const round = parseRound(req.params.round);
+    if (!round) return sendValidationError(res, "INVALID_ROUND", "round deve ser um inteiro positivo.");
+    const latest = app.locals.preMatchAvailabilityRepository.selectEvaluationSnapshot(2026, round);
+    if (!latest) return sendNotFound(res, "Snapshot prospectivo nao encontrado para a rodada.");
+    const artifactPath = `pre-match-availability-evaluations/round-${String(round).padStart(2, "0")}-${latest.captureId}.json`;
+    const artifact = app.locals.researchRepository.readJson(2026, artifactPath);
+    if (!artifact) return sendNotFound(res, "Comparacao prospectiva nao encontrada. Execute npm run research:evaluate-pre-match.");
+    return res.json({
+      schemaVersion: "pre-match-availability-comparison/v1",
+      season: 2026,
+      round,
+      captureId: latest.captureId,
+      status: artifact.status,
+      metrics: artifact.metrics,
+      threshold045ResearchStatus: artifact.threshold045ResearchStatus || "INSUFFICIENT_SAMPLE",
+      tradeoff: artifact.errors?.tradeoff || null,
+      segments: artifact.segments || null
+    });
+  });
+
+  app.get("/research/prospective-controls", (req, res) => {
+    return res.json(app.locals.preMatchAvailabilityRepository.readControls(2026));
+  });
+
+  app.get("/research/evidence-dashboard", (req, res) => {
+    return sendResearchFile(req, res, "slvs-evidence-dashboard.json", "Painel de evidencias SLVS nao encontrado. Execute npm run research:evidence-dashboard.");
+  });
+
+  app.get("/research/ground-truth-validation", (req, res) => {
+    return sendResearchFile(req, res, "ground-truth-validation.json", "Ground truth validation nao encontrada. Execute npm run research:ground-truth-validation.");
+  });
+
+  app.get("/research/ground-truth-topk-audit", (req, res) => {
+    return sendResearchFile(req, res, "ground-truth-topk-audit.json", "Ground truth TopK audit nao encontrado. Execute npm run research:ground-truth-validation.");
+  });
+
+  app.get("/research/baseline", (req, res) => {
+    return sendResearchFile(req, res, "baselines/research-baseline-1.0.json", "Research Baseline 1.0 nao encontrada. Execute npm run research:baseline.");
+  });
+
+  app.get("/research/baseline/manifest", (req, res) => {
+    return sendResearchFile(req, res, "baselines/research-baseline-1.0-manifest.json", "Manifesto da Research Baseline 1.0 nao encontrado. Execute npm run research:baseline.");
+  });
+
+  app.get("/research/baseline/metrics", (req, res) => {
+    return sendResearchFile(req, res, "baselines/research-baseline-1.0-metrics.json", "Metricas da Research Baseline 1.0 nao encontradas. Execute npm run research:baseline.");
+  });
+
+  app.get("/research/baseline/validity", (req, res) => {
+    const baseline = app.locals.researchRepository.readJson(2026, "baselines/research-baseline-1.0.json");
+
+    if (!baseline) {
+      return sendNotFound(res, "Research Baseline 1.0 nao encontrada. Execute npm run research:baseline.");
+    }
+
+    return res.json({
+      baselineId: baseline.baselineId,
+      status: baseline.status,
+      validation: baseline.validation || null,
+      baselineFingerprint: baseline.baselineFingerprint || null,
+      blockingIssues: baseline.blockingIssues || [],
+      immutablePolicy: baseline.immutablePolicy || null,
+      researchFreezeStatus: baseline.researchFreezeStatus || null
+    });
   });
 
   function parseTeamIdParam(value) {

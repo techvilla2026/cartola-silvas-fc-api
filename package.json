@@ -1,6 +1,6 @@
 {
   "name": "cartola-silvas-fc-api",
-  "version": "5.2.0",
+  "version": "5.2.12",
   "description": "Backend proxy Cartola FC para o Meu Time Ideal Web",
   "main": "server.js",
   "scripts": {
@@ -42,7 +42,19 @@
     "research:walk-forward": "node scripts/research.js walk-forward --season=2026",
     "research:promotion-gate": "node scripts/research.js promotion-gate --season=2026",
     "research:all": "node scripts/research.js all --season=2026",
-    "research:check": "node scripts/research.js check --season=2026"
+    "research:check": "node scripts/research.js check --season=2026",
+    "research:round-validation": "node scripts/research-round-validation.js --season=2026 --round=19",
+    "research:multi-round-calibration": "node scripts/research-multi-round-calibration.js --season=2026 --round=19",
+    "research:availability-calibration": "node scripts/research-availability-calibration.js --season=2026 --round=19",
+    "research:evidence-dashboard": "node scripts/research-evidence-dashboard.js --season=2026",
+    "research:ground-truth-validation": "node scripts/research-ground-truth-validation.js --season=2026",
+    "research:baseline": "node scripts/research-baseline.js --season=2026",
+    "research:baseline:check": "node scripts/research-baseline.js check --season=2026",
+    "research:availability-recalibration": "node scripts/research-availability-recalibration.js --season=2026",
+    "research:availability-signals": "node scripts/research-availability-signals.js --season=2026",
+    "research:capture-pre-match": "node scripts/research-capture-pre-match.js --season=2026",
+    "research:evaluate-pre-match": "node scripts/research-evaluate-pre-match.js --season=2026",
+    "research:auto-capture-pre-match": "node scripts/research-auto-capture-pre-match.js --season=2026"
   },
   "engines": {
     "node": ">=18"

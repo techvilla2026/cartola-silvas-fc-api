@@ -1,0 +1,2558 @@
+{
+  "schemaVersion": "ground-truth-validation/v1",
+  "season": 2026,
+  "generatedAt": "2026-07-24T23:58:23.259Z",
+  "engineVersion": "ground-truth-validation/5.2.7",
+  "definitions": {
+    "DID_PLAY": "DID_PLAY",
+    "DID_NOT_PLAY": "DID_NOT_PLAY",
+    "SCORE_UNAVAILABLE": "SCORE_UNAVAILABLE",
+    "TARGET_MISSING": "TARGET_MISSING",
+    "TARGET_AMBIGUOUS": "TARGET_AMBIGUOUS",
+    "POST_MATCH_RECORD_MISSING": "POST_MATCH_RECORD_MISSING",
+    "PLAYER_NOT_IN_POST_SNAPSHOT": "PLAYER_NOT_IN_POST_SNAPSHOT",
+    "PLAYER_REMOVED_FROM_MARKET": "PLAYER_REMOVED_FROM_MARKET",
+    "PLAYER_INELIGIBLE_PRE_ROUND": "PLAYER_INELIGIBLE_PRE_ROUND",
+    "PLAYER_ELIGIBLE_PRE_ROUND": "PLAYER_ELIGIBLE_PRE_ROUND"
+  },
+  "targetSummary": {
+    "totalRecords": 12524,
+    "byClassification": {
+      "DID_PLAY": 5469,
+      "DID_NOT_PLAY": 7055
+    },
+    "didNotPlayCases": 7055,
+    "didNotPlayEligiblePreRound": 6931,
+    "didNotPlayIneligiblePreRound": 124,
+    "didNotPlayPostRecordMissing": 0,
+    "didNotPlayActualPointsNull": 0,
+    "didNotPlayActualPointsZero": 7040,
+    "didNotPlayWithScoutEvent": 3346,
+    "didNotPlayGamesDeltaOne": 0,
+    "didNotPlayGamesDeltaZero": 6931,
+    "didPlayPointsZero": 449,
+    "didPlayPointsNegative": 557,
+    "contradictoryCases": 7055
+  },
+  "targetProvenanceSample": [
+    {
+      "season": 2026,
+      "round": 2,
+      "athleteId": 37656,
+      "athleteName": "Fábio Deivson Lopes Maciel",
+      "clubId": 266,
+      "postClubId": 266,
+      "positionId": 1,
+      "preRoundEligibility": "PLAYER_ELIGIBLE_PRE_ROUND",
+      "preRoundSnapshotId": null,
+      "postRoundSnapshotId": "historical-2026-round-function round(value, digits = 4) {\n  const number = finite(value);\n  return number === null ? null : Number(number.toFixed(digits));\n}-post-round",
+      "sourceFields": {
+        "actualPoints": "post.players[].points",
+        "enteredField": "post.players[].played",
+        "scouts": "post.players[].scouts",
+        "gamesBeforeRound": "pre.players[].gamesBeforeRound",
+        "gamesAfterRound": "post.players[].games"
+      },
+      "sourceArtifacts": {
+        "preRound": "data/historical/2026/round-02/pre-round.json",
+        "postRound": "data/historical/2026/round-02/post-round.json"
+      },
+      "actualPointsRaw": 5.5,
+      "enteredFieldRaw": true,
+      "scoutsRaw": {
+        "DE": 7,
+        "FS": 1,
+        "GS": 2
+      },
+      "scoutsState": "SCOUTS_WITH_EVENT",
+      "gamesBeforeRound": 1,
+      "gamesAfterRound": 2,
+      "gamesDelta": 1,
+      "targetClassification": "DID_PLAY",
+      "classificationReason": "Campo post.players[].played=true.",
+      "confidence": "HIGH",
+      "generatedAt": "2026-07-24T23:58:23.259Z"
+    },
+    {
+      "season": 2026,
+      "round": 2,
+      "athleteId": 39148,
+      "athleteName": "Givanildo Vieira de Souza",
+      "clubId": 282,
+      "postClubId": 282,
+      "positionId": 5,
+      "preRoundEligibility": "PLAYER_ELIGIBLE_PRE_ROUND",
+      "preRoundSnapshotId": null,
+      "postRoundSnapshotId": "historical-2026-round-function round(value, digits = 4) {\n  const number = finite(value);\n  return number === null ? null : Number(number.toFixed(digits));\n}-post-round",
+      "sourceFields": {
+        "actualPoints": "post.players[].points",
+        "enteredField": "post.players[].played",
+        "scouts": "post.players[].scouts",
+        "gamesBeforeRound": "pre.players[].gamesBeforeRound",
+        "gamesAfterRound": "post.players[].games"
+      },
+      "sourceArtifacts": {
+        "preRound": "data/historical/2026/round-02/pre-round.json",
+        "postRound": "data/historical/2026/round-02/post-round.json"
+      },
+      "actualPointsRaw": 2.4,
+      "enteredFieldRaw": true,
+      "scoutsRaw": {
+        "DS": 1,
+        "FC": 1,
+        "FF": 4,
+        "FS": 7,
+        "I": 2
+      },
+      "scoutsState": "SCOUTS_WITH_EVENT",
+      "gamesBeforeRound": 1,
+      "gamesAfterRound": 2,
+      "gamesDelta": 1,
+      "targetClassification": "DID_PLAY",
+      "classificationReason": "Campo post.players[].played=true.",
+      "confidence": "HIGH",
+      "generatedAt": "2026-07-24T23:58:23.259Z"
+    },
+    {
+      "season": 2026,
+      "round": 2,
+      "athleteId": 39656,
+      "athleteName": "Alan Steven Franco Palma",
+      "clubId": 282,
+      "postClubId": 282,
+      "positionId": 4,
+      "preRoundEligibility": "PLAYER_ELIGIBLE_PRE_ROUND",
+      "preRoundSnapshotId": null,
+      "postRoundSnapshotId": "historical-2026-round-function round(value, digits = 4) {\n  const number = finite(value);\n  return number === null ? null : Number(number.toFixed(digits));\n}-post-round",
+      "sourceFields": {
+        "actualPoints": "post.players[].points",
+        "enteredField": "post.players[].played",
+        "scouts": "post.players[].scouts",
+        "gamesBeforeRound": "pre.players[].gamesBeforeRound",
+        "gamesAfterRound": "post.players[].games"
+      },
+      "sourceArtifacts": {
+        "preRound": "data/historical/2026/round-02/pre-round.json",
+        "postRound": "data/historical/2026/round-02/post-round.json"
+      },
+      "actualPointsRaw": 0.2,
+      "enteredFieldRaw": true,
+      "scoutsRaw": {
+        "CA": 1,
+        "DS": 1,
+        "FC": 3,
+        "FS": 1
+      },
+      "scoutsState": "SCOUTS_WITH_EVENT",
+      "gamesBeforeRound": 1,
+      "gamesAfterRound": 2,
+      "gamesDelta": 1,
+      "targetClassification": "DID_PLAY",
+      "classificationReason": "Campo post.players[].played=true.",
+      "confidence": "HIGH",
+      "generatedAt": "2026-07-24T23:58:23.259Z"
+    },
+    {
+      "season": 2026,
+      "round": 2,
+      "athleteId": 39850,
+      "athleteName": "Vagner Carmo Mancini",
+      "clubId": 280,
+      "postClubId": 280,
+      "positionId": 6,
+      "preRoundEligibility": "PLAYER_ELIGIBLE_PRE_ROUND",
+      "preRoundSnapshotId": null,
+      "postRoundSnapshotId": "historical-2026-round-function round(value, digits = 4) {\n  const number = finite(value);\n  return number === null ? null : Number(number.toFixed(digits));\n}-post-round",
+      "sourceFields": {
+        "actualPoints": "post.players[].points",
+        "enteredField": "post.players[].played",
+        "scouts": "post.players[].scouts",
+        "gamesBeforeRound": "pre.players[].gamesBeforeRound",
+        "gamesAfterRound": "post.players[].games"
+      },
+      "sourceArtifacts": {
+        "preRound": "data/historical/2026/round-02/pre-round.json",
+        "postRound": "data/historical/2026/round-02/post-round.json"
+      },
+      "actualPointsRaw": 6.95,
+      "enteredFieldRaw": true,
+      "scoutsRaw": {
+        "V": 2
+      },
+      "scoutsState": "SCOUTS_WITH_EVENT",
+      "gamesBeforeRound": 1,
+      "gamesAfterRound": 2,
+      "gamesDelta": 1,
+      "targetClassification": "DID_PLAY",
+      "classificationReason": "Campo post.players[].played=true.",
+      "confidence": "HIGH",
+      "generatedAt": "2026-07-24T23:58:23.259Z"
+    },
+    {
+      "season": 2026,
+      "round": 2,
+      "athleteId": 40990,
+      "athleteName": "Dorival Silvestre Júnior",
+      "clubId": 264,
+      "postClubId": 264,
+      "positionId": 6,
+      "preRoundEligibility": "PLAYER_ELIGIBLE_PRE_ROUND",
+      "preRoundSnapshotId": null,
+      "postRoundSnapshotId": "historical-2026-round-function round(value, digits = 4) {\n  const number = finite(value);\n  return number === null ? null : Number(number.toFixed(digits));\n}-post-round",
+      "sourceFields": {
+        "actualPoints": "post.players[].points",
+        "enteredField": "post.players[].played",
+        "scouts": "post.players[].scouts",
+        "gamesBeforeRound": "pre.players[].gamesBeforeRound",
+        "gamesAfterRound": "post.players[].games"
+      },
+      "sourceArtifacts": {
+        "preRound": "data/historical/2026/round-02/pre-round.json",
+        "postRound": "data/historical/2026/round-02/post-round.json"
+      },
+      "actualPointsRaw": 0,
+      "enteredFieldRaw": false,
+      "scoutsRaw": {},
+      "scoutsState": "SCOUTS_EMPTY_OBJECT",
+      "gamesBeforeRound": 1,
+      "gamesAfterRound": 1,
+      "gamesDelta": 0,
+      "targetClassification": "DID_NOT_PLAY",
+      "classificationReason": "Campo post.players[].played=false em contexto pos-rodada valido.",
+      "confidence": "HIGH",
+      "generatedAt": "2026-07-24T23:58:23.259Z"
+    },
+    {
+      "season": 2026,
+      "round": 2,
+      "athleteId": 42135,
+      "athleteName": "Willian Borges da Silva",
+      "clubId": 284,
+      "postClubId": 284,
+      "positionId": 4,
+      "preRoundEligibility": "PLAYER_ELIGIBLE_PRE_ROUND",
+      "preRoundSnapshotId": null,
+      "postRoundSnapshotId": "historical-2026-round-function round(value, digits = 4) {\n  const number = finite(value);\n  return number === null ? null : Number(number.toFixed(digits));\n}-post-round",
+      "sourceFields": {
+        "actualPoints": "post.players[].points",
+        "enteredField": "post.players[].played",
+        "scouts": "post.players[].scouts",
+        "gamesBeforeRound": "pre.players[].gamesBeforeRound",
+        "gamesAfterRound": "post.players[].games"
+      },
+      "sourceArtifacts": {
+        "preRound": "data/historical/2026/round-02/pre-round.json",
+        "postRound": "data/historical/2026/round-02/post-round.json"
+      },
+      "actualPointsRaw": 5.2,
+      "enteredFieldRaw": true,
+      "scoutsRaw": {
+        "DS": 2,
+        "FC": 1,
+        "FD": 1,
+        "FS": 2
+      },
+      "scoutsState": "SCOUTS_WITH_EVENT",
+      "gamesBeforeRound": 1,
+      "gamesAfterRound": 2,
+      "gamesDelta": 1,
+      "targetClassification": "DID_PLAY",
+      "classificationReason": "Campo post.players[].played=true.",
+      "confidence": "HIGH",
+      "generatedAt": "2026-07-24T23:58:23.259Z"
+    },
+    {
+      "season": 2026,
+      "round": 2,
+      "athleteId": 42222,
+      "athleteName": "Osvaldo Lourenço Filho",
+      "clubId": 287,
+      "postClubId": 287,
+      "positionId": 5,
+      "preRoundEligibility": "PLAYER_ELIGIBLE_PRE_ROUND",
+      "preRoundSnapshotId": null,
+      "postRoundSnapshotId": "historical-2026-round-function round(value, digits = 4) {\n  const number = finite(value);\n  return number === null ? null : Number(number.toFixed(digits));\n}-post-round",
+      "sourceFields": {
+        "actualPoints": "post.players[].points",
+        "enteredField": "post.players[].played",
+        "scouts": "post.players[].scouts",
+        "gamesBeforeRound": "pre.players[].gamesBeforeRound",
+        "gamesAfterRound": "post.players[].games"
+      },
+      "sourceArtifacts": {
+        "preRound": "data/historical/2026/round-02/pre-round.json",
+        "postRound": "data/historical/2026/round-02/post-round.json"
+      },
+      "actualPointsRaw": 0,
+      "enteredFieldRaw": false,
+      "scoutsRaw": {
+        "FF": 1
+      },
+      "scoutsState": "SCOUTS_WITH_EVENT",
+      "gamesBeforeRound": 1,
+      "gamesAfterRound": 1,
+      "gamesDelta": 0,
+      "targetClassification": "DID_NOT_PLAY",
+      "classificationReason": "Campo post.players[].played=false em contexto pos-rodada valido.",
+      "confidence": "HIGH",
+      "generatedAt": "2026-07-24T23:58:23.259Z"
+    },
+    {
+      "season": 2026,
+      "round": 2,
+      "athleteId": 42234,
+      "athleteName": "Cássio Roberto Ramos",
+      "clubId": 283,
+      "postClubId": 283,
+      "positionId": 1,
+      "preRoundEligibility": "PLAYER_ELIGIBLE_PRE_ROUND",
+      "preRoundSnapshotId": null,
+      "postRoundSnapshotId": "historical-2026-round-function round(value, digits = 4) {\n  const number = finite(value);\n  return number === null ? null : Number(number.toFixed(digits));\n}-post-round",
+      "sourceFields": {
+        "actualPoints": "post.players[].points",
+        "enteredField": "post.players[].played",
+        "scouts": "post.players[].scouts",
+        "gamesBeforeRound": "pre.players[].gamesBeforeRound",
+        "gamesAfterRound": "post.players[].games"
+      },
+      "sourceArtifacts": {
+        "preRound": "data/historical/2026/round-02/pre-round.json",
+        "postRound": "data/historical/2026/round-02/post-round.json"
+      },
+      "actualPointsRaw": -2,
+      "enteredFieldRaw": true,
+      "scoutsRaw": {
+        "DE": 1,
+        "GS": 6
+      },
+      "scoutsState": "SCOUTS_WITH_EVENT",
+      "gamesBeforeRound": 1,
+      "gamesAfterRound": 2,
+      "gamesDelta": 1,
+      "targetClassification": "DID_PLAY",
+      "classificationReason": "Campo post.players[].played=true.",
+      "confidence": "HIGH",
+      "generatedAt": "2026-07-24T23:58:23.259Z"
+    },
+    {
+      "season": 2026,
+      "round": 2,
+      "athleteId": 42500,
+      "athleteName": "Fagner Conserva Lemos",
+      "clubId": 283,
+      "postClubId": 283,
+      "positionId": 2,
+      "preRoundEligibility": "PLAYER_ELIGIBLE_PRE_ROUND",
+      "preRoundSnapshotId": null,
+      "postRoundSnapshotId": "historical-2026-round-function round(value, digits = 4) {\n  const number = finite(value);\n  return number === null ? null : Number(number.toFixed(digits));\n}-post-round",
+      "sourceFields": {
+        "actualPoints": "post.players[].points",
+        "enteredField": "post.players[].played",
+        "scouts": "post.players[].scouts",
+        "gamesBeforeRound": "pre.players[].gamesBeforeRound",
+        "gamesAfterRound": "post.players[].games"
+      },
+      "sourceArtifacts": {
+        "preRound": "data/historical/2026/round-02/pre-round.json",
+        "postRound": "data/historical/2026/round-02/post-round.json"
+      },
+      "actualPointsRaw": 1.5,
+      "enteredFieldRaw": true,
+      "scoutsRaw": {
+        "DS": 2,
+        "FC": 2
+      },
+      "scoutsState": "SCOUTS_WITH_EVENT",
+      "gamesBeforeRound": 1,
+      "gamesAfterRound": 2,
+      "gamesDelta": 1,
+      "targetClassification": "DID_PLAY",
+      "classificationReason": "Campo post.players[].played=true.",
+      "confidence": "HIGH",
+      "generatedAt": "2026-07-24T23:58:23.259Z"
+    },
+    {
+      "season": 2026,
+      "round": 2,
+      "athleteId": 45125,
+      "athleteName": "Adenor Leonardo Bachi",
+      "clubId": 283,
+      "postClubId": 283,
+      "positionId": 6,
+      "preRoundEligibility": "PLAYER_ELIGIBLE_PRE_ROUND",
+      "preRoundSnapshotId": null,
+      "postRoundSnapshotId": "historical-2026-round-function round(value, digits = 4) {\n  const number = finite(value);\n  return number === null ? null : Number(number.toFixed(digits));\n}-post-round",
+      "sourceFields": {
+        "actualPoints": "post.players[].points",
+        "enteredField": "post.players[].played",
+        "scouts": "post.players[].scouts",
+        "gamesBeforeRound": "pre.players[].gamesBeforeRound",
+        "gamesAfterRound": "post.players[].games"
+      },
+      "sourceArtifacts": {
+        "preRound": "data/historical/2026/round-02/pre-round.json",
+        "postRound": "data/historical/2026/round-02/post-round.json"
+      },
+      "actualPointsRaw": 4.15,
+      "enteredFieldRaw": true,
+      "scoutsRaw": {},
+      "scoutsState": "SCOUTS_EMPTY_OBJECT",
+      "gamesBeforeRound": 1,
+      "gamesAfterRound": 2,
+      "gamesDelta": 1,
+      "targetClassification": "DID_PLAY",
+      "classificationReason": "Campo post.players[].played=true.",
+      "confidence": "HIGH",
+      "generatedAt": "2026-07-24T23:58:23.259Z"
+    },
+    {
+      "season": 2026,
+      "round": 2,
+      "athleteId": 50742,
+      "athleteName": "Gabriel Christoni Leite",
+      "clubId": 294,
+      "postClubId": 294,
+      "positionId": 1,
+      "preRoundEligibility": "PLAYER_ELIGIBLE_PRE_ROUND",
+      "preRoundSnapshotId": null,
+      "postRoundSnapshotId": "historical-2026-round-function round(value, digits = 4) {\n  const number = finite(value);\n  return number === null ? null : Number(number.toFixed(digits));\n}-post-round",
+      "sourceFields": {
+        "actualPoints": "post.players[].points",
+        "enteredField": "post.players[].played",
+        "scouts": "post.players[].scouts",
+        "gamesBeforeRound": "pre.players[].gamesBeforeRound",
+        "gamesAfterRound": "post.players[].games"
+      },
+      "sourceArtifacts": {
+        "preRound": "data/historical/2026/round-02/pre-round.json",
+        "postRound": "data/historical/2026/round-02/post-round.json"
+      },
+      "actualPointsRaw": 0,
+      "enteredFieldRaw": false,
+      "scoutsRaw": {},
+      "scoutsState": "SCOUTS_EMPTY_OBJECT",
+      "gamesBeforeRound": 0,
+      "gamesAfterRound": 0,
+      "gamesDelta": 0,
+      "targetClassification": "DID_NOT_PLAY",
+      "classificationReason": "Campo post.players[].played=false em contexto pos-rodada valido.",
+      "confidence": "HIGH",
+      "generatedAt": "2026-07-24T23:58:23.259Z"
+    },
+    {
+      "season": 2026,
+      "round": 2,
+      "athleteId": 51413,
+      "athleteName": "Walter Leandro Capeloza Artune",
+      "clubId": 2305,
+      "postClubId": 2305,
+      "positionId": 1,
+      "preRoundEligibility": "PLAYER_ELIGIBLE_PRE_ROUND",
+      "preRoundSnapshotId": null,
+      "postRoundSnapshotId": "historical-2026-round-function round(value, digits = 4) {\n  const number = finite(value);\n  return number === null ? null : Number(number.toFixed(digits));\n}-post-round",
+      "sourceFields": {
+        "actualPoints": "post.players[].points",
+        "enteredField": "post.players[].played",
+        "scouts": "post.players[].scouts",
+        "gamesBeforeRound": "pre.players[].gamesBeforeRound",
+        "gamesAfterRound": "post.players[].games"
+      },
+      "sourceArtifacts": {
+        "preRound": "data/historical/2026/round-02/pre-round.json",
+        "postRound": "data/historical/2026/round-02/post-round.json"
+      },
+      "actualPointsRaw": 4.5,
+      "enteredFieldRaw": true,
+      "scoutsRaw": {
+        "DE": 9,
+        "GS": 3
+      },
+      "scoutsState": "SCOUTS_WITH_EVENT",
+      "gamesBeforeRound": 1,
+      "gamesAfterRound": 2,
+      "gamesDelta": 1,
+      "targetClassification": "DID_PLAY",
+      "classificationReason": "Campo post.players[].played=true.",
+      "confidence": "HIGH",
+      "generatedAt": "2026-07-24T23:58:23.259Z"
+    },
+    {
+      "season": 2026,
+      "round": 2,
+      "athleteId": 51772,
+      "athleteName": "Everton Augusto de Barros Ribeiro",
+      "clubId": 265,
+      "postClubId": 265,
+      "positionId": 4,
+      "preRoundEligibility": "PLAYER_ELIGIBLE_PRE_ROUND",
+      "preRoundSnapshotId": null,
+      "postRoundSnapshotId": "historical-2026-round-function round(value, digits = 4) {\n  const number = finite(value);\n  return number === null ? null : Number(number.toFixed(digits));\n}-post-round",
+      "sourceFields": {
+        "actualPoints": "post.players[].points",
+        "enteredField": "post.players[].played",
+        "scouts": "post.players[].scouts",
+        "gamesBeforeRound": "pre.players[].gamesBeforeRound",
+        "gamesAfterRound": "post.players[].games"
+      },
+      "sourceArtifacts": {
+        "preRound": "data/historical/2026/round-02/pre-round.json",
+        "postRound": "data/historical/2026/round-02/post-round.json"
+      },
+      "actualPointsRaw": 1.8,
+      "enteredFieldRaw": true,
+      "scoutsRaw": {
+        "DS": 1,
+        "FF": 1,
+        "FS": 2
+      },
+      "scoutsState": "SCOUTS_WITH_EVENT",
+      "gamesBeforeRound": 1,
+      "gamesAfterRound": 2,
+      "gamesDelta": 1,
+      "targetClassification": "DID_PLAY",
+      "classificationReason": "Campo post.players[].played=true.",
+      "confidence": "HIGH",
+      "generatedAt": "2026-07-24T23:58:23.259Z"
+    },
+    {
+      "season": 2026,
+      "round": 2,
+      "athleteId": 61987,
+      "athleteName": "Alex Sandro Lobo Silva",
+      "clubId": 262,
+      "postClubId": 262,
+      "positionId": 2,
+      "preRoundEligibility": "PLAYER_ELIGIBLE_PRE_ROUND",
+      "preRoundSnapshotId": null,
+      "postRoundSnapshotId": "historical-2026-round-function round(value, digits = 4) {\n  const number = finite(value);\n  return number === null ? null : Number(number.toFixed(digits));\n}-post-round",
+      "sourceFields": {
+        "actualPoints": "post.players[].points",
+        "enteredField": "post.players[].played",
+        "scouts": "post.players[].scouts",
+        "gamesBeforeRound": "pre.players[].gamesBeforeRound",
+        "gamesAfterRound": "post.players[].games"
+      },
+      "sourceArtifacts": {
+        "preRound": "data/historical/2026/round-02/pre-round.json",
+        "postRound": "data/historical/2026/round-02/post-round.json"
+      },
+      "actualPointsRaw": 4.5,
+      "enteredFieldRaw": true,
+      "scoutsRaw": {
+        "DS": 2,
+        "FC": 1,
+        "FF": 1,
+        "FS": 4
+      },
+      "scoutsState": "SCOUTS_WITH_EVENT",
+      "gamesBeforeRound": 1,
+      "gamesAfterRound": 2,
+      "gamesDelta": 1,
+      "targetClassification": "DID_PLAY",
+      "classificationReason": "Campo post.players[].played=true.",
+      "confidence": "HIGH",
+      "generatedAt": "2026-07-24T23:58:23.259Z"
+    },
+    {
+      "season": 2026,
+      "round": 2,
+      "athleteId": 62977,
+      "athleteName": "Paulo Henrique Chagas de Lima",
+      "clubId": 266,
+      "postClubId": 266,
+      "positionId": 4,
+      "preRoundEligibility": "PLAYER_ELIGIBLE_PRE_ROUND",
+      "preRoundSnapshotId": null,
+      "postRoundSnapshotId": "historical-2026-round-function round(value, digits = 4) {\n  const number = finite(value);\n  return number === null ? null : Number(number.toFixed(digits));\n}-post-round",
+      "sourceFields": {
+        "actualPoints": "post.players[].points",
+        "enteredField": "post.players[].played",
+        "scouts": "post.players[].scouts",
+        "gamesBeforeRound": "pre.players[].gamesBeforeRound",
+        "gamesAfterRound": "post.players[].games"
+      },
+      "sourceArtifacts": {
+        "preRound": "data/historical/2026/round-02/pre-round.json",
+        "postRound": "data/historical/2026/round-02/post-round.json"
+      },
+      "actualPointsRaw": 0,
+      "enteredFieldRaw": true,
+      "scoutsRaw": {
+        "FC": 1
+      },
+      "scoutsState": "SCOUTS_WITH_EVENT",
+      "gamesBeforeRound": 1,
+      "gamesAfterRound": 2,
+      "gamesDelta": 1,
+      "targetClassification": "DID_PLAY",
+      "classificationReason": "Campo post.players[].played=true.",
+      "confidence": "HIGH",
+      "generatedAt": "2026-07-24T23:58:23.259Z"
+    },
+    {
+      "season": 2026,
+      "round": 2,
+      "athleteId": 63007,
+      "athleteName": "Neymar da Silva Santos Júnior",
+      "clubId": 277,
+      "postClubId": 277,
+      "positionId": 4,
+      "preRoundEligibility": "PLAYER_ELIGIBLE_PRE_ROUND",
+      "preRoundSnapshotId": null,
+      "postRoundSnapshotId": "historical-2026-round-function round(value, digits = 4) {\n  const number = finite(value);\n  return number === null ? null : Number(number.toFixed(digits));\n}-post-round",
+      "sourceFields": {
+        "actualPoints": "post.players[].points",
+        "enteredField": "post.players[].played",
+        "scouts": "post.players[].scouts",
+        "gamesBeforeRound": "pre.players[].gamesBeforeRound",
+        "gamesAfterRound": "post.players[].games"
+      },
+      "sourceArtifacts": {
+        "preRound": "data/historical/2026/round-02/pre-round.json",
+        "postRound": "data/historical/2026/round-02/post-round.json"
+      },
+      "actualPointsRaw": 0,
+      "enteredFieldRaw": false,
+      "scoutsRaw": {},
+      "scoutsState": "SCOUTS_EMPTY_OBJECT",
+      "gamesBeforeRound": 0,
+      "gamesAfterRound": 0,
+      "gamesDelta": 0,
+      "targetClassification": "DID_NOT_PLAY",
+      "classificationReason": "Campo post.players[].played=false em contexto pos-rodada valido.",
+      "confidence": "HIGH",
+      "generatedAt": "2026-07-24T23:58:23.259Z"
+    },
+    {
+      "season": 2026,
+      "round": 2,
+      "athleteId": 63008,
+      "athleteName": "Rafael Toloi",
+      "clubId": 276,
+      "postClubId": 276,
+      "positionId": 3,
+      "preRoundEligibility": "PLAYER_ELIGIBLE_PRE_ROUND",
+      "preRoundSnapshotId": null,
+      "postRoundSnapshotId": "historical-2026-round-function round(value, digits = 4) {\n  const number = finite(value);\n  return number === null ? null : Number(number.toFixed(digits));\n}-post-round",
+      "sourceFields": {
+        "actualPoints": "post.players[].points",
+        "enteredField": "post.players[].played",
+        "scouts": "post.players[].scouts",
+        "gamesBeforeRound": "pre.players[].gamesBeforeRound",
+        "gamesAfterRound": "post.players[].games"
+      },
+      "sourceArtifacts": {
+        "preRound": "data/historical/2026/round-02/pre-round.json",
+        "postRound": "data/historical/2026/round-02/post-round.json"
+      },
+      "actualPointsRaw": 0,
+      "enteredFieldRaw": false,
+      "scoutsRaw": {},
+      "scoutsState": "SCOUTS_EMPTY_OBJECT",
+      "gamesBeforeRound": 0,
+      "gamesAfterRound": 0,
+      "gamesDelta": 0,
+      "targetClassification": "DID_NOT_PLAY",
+      "classificationReason": "Campo post.players[].played=false em contexto pos-rodada valido.",
+      "confidence": "HIGH",
+      "generatedAt": "2026-07-24T23:58:23.259Z"
+    },
+    {
+      "season": 2026,
+      "round": 2,
+      "athleteId": 63013,
+      "athleteName": "Marcos Luis Rocha Aquino",
+      "clubId": 284,
+      "postClubId": 284,
+      "positionId": 2,
+      "preRoundEligibility": "PLAYER_ELIGIBLE_PRE_ROUND",
+      "preRoundSnapshotId": null,
+      "postRoundSnapshotId": "historical-2026-round-function round(value, digits = 4) {\n  const number = finite(value);\n  return number === null ? null : Number(number.toFixed(digits));\n}-post-round",
+      "sourceFields": {
+        "actualPoints": "post.players[].points",
+        "enteredField": "post.players[].played",
+        "scouts": "post.players[].scouts",
+        "gamesBeforeRound": "pre.players[].gamesBeforeRound",
+        "gamesAfterRound": "post.players[].games"
+      },
+      "sourceArtifacts": {
+        "preRound": "data/historical/2026/round-02/pre-round.json",
+        "postRound": "data/historical/2026/round-02/post-round.json"
+      },
+      "actualPointsRaw": 0,
+      "enteredFieldRaw": false,
+      "scoutsRaw": {},
+      "scoutsState": "SCOUTS_EMPTY_OBJECT",
+      "gamesBeforeRound": 1,
+      "gamesAfterRound": 1,
+      "gamesDelta": 0,
+      "targetClassification": "DID_NOT_PLAY",
+      "classificationReason": "Campo post.players[].played=false em contexto pos-rodada valido.",
+      "confidence": "HIGH",
+      "generatedAt": "2026-07-24T23:58:23.259Z"
+    },
+    {
+      "season": 2026,
+      "round": 2,
+      "athleteId": 63289,
+      "athleteName": "Edenílson Andrade dos Santos",
+      "clubId": 284,
+      "postClubId": 284,
+      "positionId": 4,
+      "preRoundEligibility": "PLAYER_ELIGIBLE_PRE_ROUND",
+      "preRoundSnapshotId": null,
+      "postRoundSnapshotId": "historical-2026-round-function round(value, digits = 4) {\n  const number = finite(value);\n  return number === null ? null : Number(number.toFixed(digits));\n}-post-round",
+      "sourceFields": {
+        "actualPoints": "post.players[].points",
+        "enteredField": "post.players[].played",
+        "scouts": "post.players[].scouts",
+        "gamesBeforeRound": "pre.players[].gamesBeforeRound",
+        "gamesAfterRound": "post.players[].games"
+      },
+      "sourceArtifacts": {
+        "preRound": "data/historical/2026/round-02/pre-round.json",
+        "postRound": "data/historical/2026/round-02/post-round.json"
+      },
+      "actualPointsRaw": 8,
+      "enteredFieldRaw": true,
+      "scoutsRaw": {
+        "DS": 1,
+        "FC": 1,
+        "FF": 1,
+        "FS": 1,
+        "G": 1
+      },
+      "scoutsState": "SCOUTS_WITH_EVENT",
+      "gamesBeforeRound": 1,
+      "gamesAfterRound": 2,
+      "gamesDelta": 1,
+      "targetClassification": "DID_PLAY",
+      "classificationReason": "Campo post.players[].played=true.",
+      "confidence": "HIGH",
+      "generatedAt": "2026-07-24T23:58:23.259Z"
+    },
+    {
+      "season": 2026,
+      "round": 2,
+      "athleteId": 63354,
+      "athleteName": "Rodrigo Modesto da Silva Moledo",
+      "clubId": 294,
+      "postClubId": 294,
+      "positionId": 3,
+      "preRoundEligibility": "PLAYER_ELIGIBLE_PRE_ROUND",
+      "preRoundSnapshotId": null,
+      "postRoundSnapshotId": "historical-2026-round-function round(value, digits = 4) {\n  const number = finite(value);\n  return number === null ? null : Number(number.toFixed(digits));\n}-post-round",
+      "sourceFields": {
+        "actualPoints": "post.players[].points",
+        "enteredField": "post.players[].played",
+        "scouts": "post.players[].scouts",
+        "gamesBeforeRound": "pre.players[].gamesBeforeRound",
+        "gamesAfterRound": "post.players[].games"
+      },
+      "sourceArtifacts": {
+        "preRound": "data/historical/2026/round-02/pre-round.json",
+        "postRound": "data/historical/2026/round-02/post-round.json"
+      },
+      "actualPointsRaw": 0,
+      "enteredFieldRaw": false,
+      "scoutsRaw": {},
+      "scoutsState": "SCOUTS_EMPTY_OBJECT",
+      "gamesBeforeRound": 0,
+      "gamesAfterRound": 0,
+      "gamesDelta": 0,
+      "targetClassification": "DID_NOT_PLAY",
+      "classificationReason": "Campo post.players[].played=false em contexto pos-rodada valido.",
+      "confidence": "HIGH",
+      "generatedAt": "2026-07-24T23:58:23.259Z"
+    },
+    {
+      "season": 2026,
+      "round": 2,
+      "athleteId": 68685,
+      "athleteName": "Alan Patrick Lourenço",
+      "clubId": 285,
+      "postClubId": 285,
+      "positionId": 4,
+      "preRoundEligibility": "PLAYER_ELIGIBLE_PRE_ROUND",
+      "preRoundSnapshotId": null,
+      "postRoundSnapshotId": "historical-2026-round-function round(value, digits = 4) {\n  const number = finite(value);\n  return number === null ? null : Number(number.toFixed(digits));\n}-post-round",
+      "sourceFields": {
+        "actualPoints": "post.players[].points",
+        "enteredField": "post.players[].played",
+        "scouts": "post.players[].scouts",
+        "gamesBeforeRound": "pre.players[].gamesBeforeRound",
+        "gamesAfterRound": "post.players[].games"
+      },
+      "sourceArtifacts": {
+        "preRound": "data/historical/2026/round-02/pre-round.json",
+        "postRound": "data/historical/2026/round-02/post-round.json"
+      },
+      "actualPointsRaw": 2,
+      "enteredFieldRaw": true,
+      "scoutsRaw": {
+        "FC": 1,
+        "FD": 1,
+        "FF": 2,
+        "FS": 5
+      },
+      "scoutsState": "SCOUTS_WITH_EVENT",
+      "gamesBeforeRound": 1,
+      "gamesAfterRound": 2,
+      "gamesDelta": 1,
+      "targetClassification": "DID_PLAY",
+      "classificationReason": "Campo post.players[].played=true.",
+      "confidence": "HIGH",
+      "generatedAt": "2026-07-24T23:58:23.259Z"
+    },
+    {
+      "season": 2026,
+      "round": 2,
+      "athleteId": 68708,
+      "athleteName": "Carlos Eduardo de Oliveira Alves",
+      "clubId": 2305,
+      "postClubId": 2305,
+      "positionId": 4,
+      "preRoundEligibility": "PLAYER_ELIGIBLE_PRE_ROUND",
+      "preRoundSnapshotId": null,
+      "postRoundSnapshotId": "historical-2026-round-function round(value, digits = 4) {\n  const number = finite(value);\n  return number === null ? null : Number(number.toFixed(digits));\n}-post-round",
+      "sourceFields": {
+        "actualPoints": "post.players[].points",
+        "enteredField": "post.players[].played",
+        "scouts": "post.players[].scouts",
+        "gamesBeforeRound": "pre.players[].gamesBeforeRound",
+        "gamesAfterRound": "post.players[].games"
+      },
+      "sourceArtifacts": {
+        "preRound": "data/historical/2026/round-02/pre-round.json",
+        "postRound": "data/historical/2026/round-02/post-round.json"
+      },
+      "actualPointsRaw": 2.5,
+      "enteredFieldRaw": true,
+      "scoutsRaw": {
+        "DS": 1,
+        "FC": 5,
+        "FS": 3,
+        "G": 1
+      },
+      "scoutsState": "SCOUTS_WITH_EVENT",
+      "gamesBeforeRound": 1,
+      "gamesAfterRound": 2,
+      "gamesDelta": 1,
+      "targetClassification": "DID_PLAY",
+      "classificationReason": "Campo post.players[].played=true.",
+      "confidence": "HIGH",
+      "generatedAt": "2026-07-24T23:58:23.259Z"
+    },
+    {
+      "season": 2026,
+      "round": 2,
+      "athleteId": 68806,
+      "athleteName": "Norberto Murara Neto",
+      "clubId": 263,
+      "postClubId": 263,
+      "positionId": 1,
+      "preRoundEligibility": "PLAYER_ELIGIBLE_PRE_ROUND",
+      "preRoundSnapshotId": null,
+      "postRoundSnapshotId": "historical-2026-round-function round(value, digits = 4) {\n  const number = finite(value);\n  return number === null ? null : Number(number.toFixed(digits));\n}-post-round",
+      "sourceFields": {
+        "actualPoints": "post.players[].points",
+        "enteredField": "post.players[].played",
+        "scouts": "post.players[].scouts",
+        "gamesBeforeRound": "pre.players[].gamesBeforeRound",
+        "gamesAfterRound": "post.players[].games"
+      },
+      "sourceArtifacts": {
+        "preRound": "data/historical/2026/round-02/pre-round.json",
+        "postRound": "data/historical/2026/round-02/post-round.json"
+      },
+      "actualPointsRaw": -1.1,
+      "enteredFieldRaw": true,
+      "scoutsRaw": {
+        "DE": 7,
+        "GS": 5,
+        "SG": 1
+      },
+      "scoutsState": "SCOUTS_WITH_EVENT",
+      "gamesBeforeRound": 1,
+      "gamesAfterRound": 2,
+      "gamesDelta": 1,
+      "targetClassification": "DID_PLAY",
+      "classificationReason": "Campo post.players[].played=true.",
+      "confidence": "HIGH",
+      "generatedAt": "2026-07-24T23:58:23.259Z"
+    },
+    {
+      "season": 2026,
+      "round": 2,
+      "athleteId": 68822,
+      "athleteName": "Rafael de Carvalho Santos",
+      "clubId": 315,
+      "postClubId": 315,
+      "positionId": 1,
+      "preRoundEligibility": "PLAYER_ELIGIBLE_PRE_ROUND",
+      "preRoundSnapshotId": null,
+      "postRoundSnapshotId": "historical-2026-round-function round(value, digits = 4) {\n  const number = finite(value);\n  return number === null ? null : Number(number.toFixed(digits));\n}-post-round",
+      "sourceFields": {
+        "actualPoints": "post.players[].points",
+        "enteredField": "post.players[].played",
+        "scouts": "post.players[].scouts",
+        "gamesBeforeRound": "pre.players[].gamesBeforeRound",
+        "gamesAfterRound": "post.players[].games"
+      },
+      "sourceArtifacts": {
+        "preRound": "data/historical/2026/round-02/pre-round.json",
+        "postRound": "data/historical/2026/round-02/post-round.json"
+      },
+      "actualPointsRaw": 0,
+      "enteredFieldRaw": false,
+      "scoutsRaw": {},
+      "scoutsState": "SCOUTS_EMPTY_OBJECT",
+      "gamesBeforeRound": 0,
+      "gamesAfterRound": 0,
+      "gamesDelta": 0,
+      "targetClassification": "DID_NOT_PLAY",
+      "classificationReason": "Campo post.players[].played=false em contexto pos-rodada valido.",
+      "confidence": "HIGH",
+      "generatedAt": "2026-07-24T23:58:23.259Z"
+    },
+    {
+      "season": 2026,
+      "round": 2,
+      "athleteId": 68872,
+      "athleteName": "Marcelo Lomba do Nascimento",
+      "clubId": 275,
+      "postClubId": 275,
+      "positionId": 1,
+      "preRoundEligibility": "PLAYER_ELIGIBLE_PRE_ROUND",
+      "preRoundSnapshotId": null,
+      "postRoundSnapshotId": "historical-2026-round-function round(value, digits = 4) {\n  const number = finite(value);\n  return number === null ? null : Number(number.toFixed(digits));\n}-post-round",
+      "sourceFields": {
+        "actualPoints": "post.players[].points",
+        "enteredField": "post.players[].played",
+        "scouts": "post.players[].scouts",
+        "gamesBeforeRound": "pre.players[].gamesBeforeRound",
+        "gamesAfterRound": "post.players[].games"
+      },
+      "sourceArtifacts": {
+        "preRound": "data/historical/2026/round-02/pre-round.json",
+        "postRound": "data/historical/2026/round-02/post-round.json"
+      },
+      "actualPointsRaw": 0,
+      "enteredFieldRaw": false,
+      "scoutsRaw": {},
+      "scoutsState": "SCOUTS_EMPTY_OBJECT",
+      "gamesBeforeRound": 0,
+      "gamesAfterRound": 0,
+      "gamesDelta": 0,
+      "targetClassification": "DID_NOT_PLAY",
+      "classificationReason": "Campo post.players[].played=false em contexto pos-rodada valido.",
+      "confidence": "HIGH",
+      "generatedAt": "2026-07-24T23:58:23.259Z"
+    },
+    {
+      "season": 2026,
+      "round": 2,
+      "athleteId": 68899,
+      "athleteName": "Philippe Coutinho Correia",
+      "clubId": 267,
+      "postClubId": 267,
+      "positionId": 4,
+      "preRoundEligibility": "PLAYER_ELIGIBLE_PRE_ROUND",
+      "preRoundSnapshotId": null,
+      "postRoundSnapshotId": "historical-2026-round-function round(value, digits = 4) {\n  const number = finite(value);\n  return number === null ? null : Number(number.toFixed(digits));\n}-post-round",
+      "sourceFields": {
+        "actualPoints": "post.players[].points",
+        "enteredField": "post.players[].played",
+        "scouts": "post.players[].scouts",
+        "gamesBeforeRound": "pre.players[].gamesBeforeRound",
+        "gamesAfterRound": "post.players[].games"
+      },
+      "sourceArtifacts": {
+        "preRound": "data/historical/2026/round-02/pre-round.json",
+        "postRound": "data/historical/2026/round-02/post-round.json"
+      },
+      "actualPointsRaw": 11.4,
+      "enteredFieldRaw": true,
+      "scoutsRaw": {
+        "DS": 1,
+        "FD": 5,
+        "FF": 4,
+        "FS": 1,
+        "FT": 1,
+        "G": 1
+      },
+      "scoutsState": "SCOUTS_WITH_EVENT",
+      "gamesBeforeRound": 1,
+      "gamesAfterRound": 2,
+      "gamesDelta": 1,
+      "targetClassification": "DID_PLAY",
+      "classificationReason": "Campo post.players[].played=true.",
+      "confidence": "HIGH",
+      "generatedAt": "2026-07-24T23:58:23.259Z"
+    },
+    {
+      "season": 2026,
+      "round": 2,
+      "athleteId": 68920,
+      "athleteName": "Eduardo Pereira Rodrigues",
+      "clubId": 282,
+      "postClubId": 282,
+      "positionId": 5,
+      "preRoundEligibility": "PLAYER_ELIGIBLE_PRE_ROUND",
+      "preRoundSnapshotId": null,
+      "postRoundSnapshotId": "historical-2026-round-function round(value, digits = 4) {\n  const number = finite(value);\n  return number === null ? null : Number(number.toFixed(digits));\n}-post-round",
+      "sourceFields": {
+        "actualPoints": "post.players[].points",
+        "enteredField": "post.players[].played",
+        "scouts": "post.players[].scouts",
+        "gamesBeforeRound": "pre.players[].gamesBeforeRound",
+        "gamesAfterRound": "post.players[].games"
+      },
+      "sourceArtifacts": {
+        "preRound": "data/historical/2026/round-02/pre-round.json",
+        "postRound": "data/historical/2026/round-02/post-round.json"
+      },
+      "actualPointsRaw": 0.5,
+      "enteredFieldRaw": true,
+      "scoutsRaw": {
+        "DS": 1,
+        "FC": 1,
+        "FF": 1,
+        "FS": 2
+      },
+      "scoutsState": "SCOUTS_WITH_EVENT",
+      "gamesBeforeRound": 1,
+      "gamesAfterRound": 2,
+      "gamesDelta": 1,
+      "targetClassification": "DID_PLAY",
+      "classificationReason": "Campo post.players[].played=true.",
+      "confidence": "HIGH",
+      "generatedAt": "2026-07-24T23:58:23.259Z"
+    },
+    {
+      "season": 2026,
+      "round": 2,
+      "athleteId": 68928,
+      "athleteName": "Rafael Pires Monteiro",
+      "clubId": 276,
+      "postClubId": 276,
+      "positionId": 1,
+      "preRoundEligibility": "PLAYER_ELIGIBLE_PRE_ROUND",
+      "preRoundSnapshotId": null,
+      "postRoundSnapshotId": "historical-2026-round-function round(value, digits = 4) {\n  const number = finite(value);\n  return number === null ? null : Number(number.toFixed(digits));\n}-post-round",
+      "sourceFields": {
+        "actualPoints": "post.players[].points",
+        "enteredField": "post.players[].played",
+        "scouts": "post.players[].scouts",
+        "gamesBeforeRound": "pre.players[].gamesBeforeRound",
+        "gamesAfterRound": "post.players[].games"
+      },
+      "sourceArtifacts": {
+        "preRound": "data/historical/2026/round-02/pre-round.json",
+        "postRound": "data/historical/2026/round-02/post-round.json"
+      },
+      "actualPointsRaw": 2.9,
+      "enteredFieldRaw": true,
+      "scoutsRaw": {
+        "DE": 7,
+        "GS": 2
+      },
+      "scoutsState": "SCOUTS_WITH_EVENT",
+      "gamesBeforeRound": 1,
+      "gamesAfterRound": 2,
+      "gamesDelta": 1,
+      "targetClassification": "DID_PLAY",
+      "classificationReason": "Campo post.players[].played=true.",
+      "confidence": "HIGH",
+      "generatedAt": "2026-07-24T23:58:23.259Z"
+    },
+    {
+      "season": 2026,
+      "round": 2,
+      "athleteId": 68938,
+      "athleteName": "Giovanni Augusto Oliveira Cardoso",
+      "clubId": 315,
+      "postClubId": 315,
+      "positionId": 4,
+      "preRoundEligibility": "PLAYER_ELIGIBLE_PRE_ROUND",
+      "preRoundSnapshotId": null,
+      "postRoundSnapshotId": "historical-2026-round-function round(value, digits = 4) {\n  const number = finite(value);\n  return number === null ? null : Number(number.toFixed(digits));\n}-post-round",
+      "sourceFields": {
+        "actualPoints": "post.players[].points",
+        "enteredField": "post.players[].played",
+        "scouts": "post.players[].scouts",
+        "gamesBeforeRound": "pre.players[].gamesBeforeRound",
+        "gamesAfterRound": "post.players[].games"
+      },
+      "sourceArtifacts": {
+        "preRound": "data/historical/2026/round-02/pre-round.json",
+        "postRound": "data/historical/2026/round-02/post-round.json"
+      },
+      "actualPointsRaw": 0.9,
+      "enteredFieldRaw": true,
+      "scoutsRaw": {
+        "DS": 1,
+        "FC": 3,
+        "FS": 4
+      },
+      "scoutsState": "SCOUTS_WITH_EVENT",
+      "gamesBeforeRound": 1,
+      "gamesAfterRound": 2,
+      "gamesDelta": 1,
+      "targetClassification": "DID_PLAY",
+      "classificationReason": "Campo post.players[].played=true.",
+      "confidence": "HIGH",
+      "generatedAt": "2026-07-24T23:58:23.259Z"
+    },
+    {
+      "season": 2026,
+      "round": 2,
+      "athleteId": 68952,
+      "athleteName": "Mário Sérgio Santos Costa",
+      "clubId": 287,
+      "postClubId": 287,
+      "positionId": 5,
+      "preRoundEligibility": "PLAYER_ELIGIBLE_PRE_ROUND",
+      "preRoundSnapshotId": null,
+      "postRoundSnapshotId": "historical-2026-round-function round(value, digits = 4) {\n  const number = finite(value);\n  return number === null ? null : Number(number.toFixed(digits));\n}-post-round",
+      "sourceFields": {
+        "actualPoints": "post.players[].points",
+        "enteredField": "post.players[].played",
+        "scouts": "post.players[].scouts",
+        "gamesBeforeRound": "pre.players[].gamesBeforeRound",
+        "gamesAfterRound": "post.players[].games"
+      },
+      "sourceArtifacts": {
+        "preRound": "data/historical/2026/round-02/pre-round.json",
+        "postRound": "data/historical/2026/round-02/post-round.json"
+      },
+      "actualPointsRaw": 0,
+      "enteredFieldRaw": false,
+      "scoutsRaw": {},
+      "scoutsState": "SCOUTS_EMPTY_OBJECT",
+      "gamesBeforeRound": 0,
+      "gamesAfterRound": 0,
+      "gamesDelta": 0,
+      "targetClassification": "DID_NOT_PLAY",
+      "classificationReason": "Campo post.players[].played=false em contexto pos-rodada valido.",
+      "confidence": "HIGH",
+      "generatedAt": "2026-07-24T23:58:23.259Z"
+    },
+    {
+      "season": 2026,
+      "round": 2,
+      "athleteId": 68996,
+      "athleteName": "Willian José da Silva",
+      "clubId": 265,
+      "postClubId": 265,
+      "positionId": 5,
+      "preRoundEligibility": "PLAYER_ELIGIBLE_PRE_ROUND",
+      "preRoundSnapshotId": null,
+      "postRoundSnapshotId": "historical-2026-round-function round(value, digits = 4) {\n  const number = finite(value);\n  return number === null ? null : Number(number.toFixed(digits));\n}-post-round",
+      "sourceFields": {
+        "actualPoints": "post.players[].points",
+        "enteredField": "post.players[].played",
+        "scouts": "post.players[].scouts",
+        "gamesBeforeRound": "pre.players[].gamesBeforeRound",
+        "gamesAfterRound": "post.players[].games"
+      },
+      "sourceArtifacts": {
+        "preRound": "data/historical/2026/round-02/pre-round.json",
+        "postRound": "data/historical/2026/round-02/post-round.json"
+      },
+      "actualPointsRaw": 0.8,
+      "enteredFieldRaw": true,
+      "scoutsRaw": {
+        "DS": 1,
+        "FF": 1,
+        "G": 1
+      },
+      "scoutsState": "SCOUTS_WITH_EVENT",
+      "gamesBeforeRound": 1,
+      "gamesAfterRound": 2,
+      "gamesDelta": 1,
+      "targetClassification": "DID_PLAY",
+      "classificationReason": "Campo post.players[].played=true.",
+      "confidence": "HIGH",
+      "generatedAt": "2026-07-24T23:58:23.259Z"
+    },
+    {
+      "season": 2026,
+      "round": 2,
+      "athleteId": 69012,
+      "athleteName": "Aderbar Melo dos Santos Neto",
+      "clubId": 293,
+      "postClubId": 293,
+      "positionId": 1,
+      "preRoundEligibility": "PLAYER_ELIGIBLE_PRE_ROUND",
+      "preRoundSnapshotId": null,
+      "postRoundSnapshotId": "historical-2026-round-function round(value, digits = 4) {\n  const number = finite(value);\n  return number === null ? null : Number(number.toFixed(digits));\n}-post-round",
+      "sourceFields": {
+        "actualPoints": "post.players[].points",
+        "enteredField": "post.players[].played",
+        "scouts": "post.players[].scouts",
+        "gamesBeforeRound": "pre.players[].gamesBeforeRound",
+        "gamesAfterRound": "post.players[].games"
+      },
+      "sourceArtifacts": {
+        "preRound": "data/historical/2026/round-02/pre-round.json",
+        "postRound": "data/historical/2026/round-02/post-round.json"
+      },
+      "actualPointsRaw": 0,
+      "enteredFieldRaw": false,
+      "scoutsRaw": {
+        "DE": 5,
+        "SG": 1
+      },
+      "scoutsState": "SCOUTS_WITH_EVENT",
+      "gamesBeforeRound": 1,
+      "gamesAfterRound": 1,
+      "gamesDelta": 0,
+      "targetClassification": "DID_NOT_PLAY",
+      "classificationReason": "Campo post.players[].played=false em contexto pos-rodada valido.",
+      "confidence": "HIGH",
+      "generatedAt": "2026-07-24T23:58:23.259Z"
+    },
+    {
+      "season": 2026,
+      "round": 2,
+      "athleteId": 69140,
+      "athleteName": "Allan Marques Loureiro",
+      "clubId": 263,
+      "postClubId": 263,
+      "positionId": 4,
+      "preRoundEligibility": "PLAYER_ELIGIBLE_PRE_ROUND",
+      "preRoundSnapshotId": null,
+      "postRoundSnapshotId": "historical-2026-round-function round(value, digits = 4) {\n  const number = finite(value);\n  return number === null ? null : Number(number.toFixed(digits));\n}-post-round",
+      "sourceFields": {
+        "actualPoints": "post.players[].points",
+        "enteredField": "post.players[].played",
+        "scouts": "post.players[].scouts",
+        "gamesBeforeRound": "pre.players[].gamesBeforeRound",
+        "gamesAfterRound": "post.players[].games"
+      },
+      "sourceArtifacts": {
+        "preRound": "data/historical/2026/round-02/pre-round.json",
+        "postRound": "data/historical/2026/round-02/post-round.json"
+      },
+      "actualPointsRaw": -0.8,
+      "enteredFieldRaw": true,
+      "scoutsRaw": {
+        "CA": 2,
+        "DS": 1,
+        "FC": 2,
+        "FF": 2,
+        "FS": 3
+      },
+      "scoutsState": "SCOUTS_WITH_EVENT",
+      "gamesBeforeRound": 1,
+      "gamesAfterRound": 2,
+      "gamesDelta": 1,
+      "targetClassification": "DID_PLAY",
+      "classificationReason": "Campo post.players[].played=true.",
+      "confidence": "HIGH",
+      "generatedAt": "2026-07-24T23:58:23.259Z"
+    },
+    {
+      "season": 2026,
+      "round": 2,
+      "athleteId": 69208,
+      "athleteName": "Gabriel Armando de Abreu",
+      "clubId": 264,
+      "postClubId": 264,
+      "positionId": 3,
+      "preRoundEligibility": "PLAYER_ELIGIBLE_PRE_ROUND",
+      "preRoundSnapshotId": null,
+      "postRoundSnapshotId": "historical-2026-round-function round(value, digits = 4) {\n  const number = finite(value);\n  return number === null ? null : Number(number.toFixed(digits));\n}-post-round",
+      "sourceFields": {
+        "actualPoints": "post.players[].points",
+        "enteredField": "post.players[].played",
+        "scouts": "post.players[].scouts",
+        "gamesBeforeRound": "pre.players[].gamesBeforeRound",
+        "gamesAfterRound": "post.players[].games"
+      },
+      "sourceArtifacts": {
+        "preRound": "data/historical/2026/round-02/pre-round.json",
+        "postRound": "data/historical/2026/round-02/post-round.json"
+      },
+      "actualPointsRaw": 0,
+      "enteredFieldRaw": false,
+      "scoutsRaw": {
+        "FC": 1
+      },
+      "scoutsState": "SCOUTS_WITH_EVENT",
+      "gamesBeforeRound": 1,
+      "gamesAfterRound": 1,
+      "gamesDelta": 0,
+      "targetClassification": "DID_NOT_PLAY",
+      "classificationReason": "Campo post.players[].played=false em contexto pos-rodada valido.",
+      "confidence": "HIGH",
+      "generatedAt": "2026-07-24T23:58:23.259Z"
+    },
+    {
+      "season": 2026,
+      "round": 2,
+      "athleteId": 69783,
+      "athleteName": "Danilo Luiz da Silva",
+      "clubId": 262,
+      "postClubId": 262,
+      "positionId": 3,
+      "preRoundEligibility": "PLAYER_ELIGIBLE_PRE_ROUND",
+      "preRoundSnapshotId": null,
+      "postRoundSnapshotId": "historical-2026-round-function round(value, digits = 4) {\n  const number = finite(value);\n  return number === null ? null : Number(number.toFixed(digits));\n}-post-round",
+      "sourceFields": {
+        "actualPoints": "post.players[].points",
+        "enteredField": "post.players[].played",
+        "scouts": "post.players[].scouts",
+        "gamesBeforeRound": "pre.players[].gamesBeforeRound",
+        "gamesAfterRound": "post.players[].games"
+      },
+      "sourceArtifacts": {
+        "preRound": "data/historical/2026/round-02/pre-round.json",
+        "postRound": "data/historical/2026/round-02/post-round.json"
+      },
+      "actualPointsRaw": 0,
+      "enteredFieldRaw": false,
+      "scoutsRaw": {},
+      "scoutsState": "SCOUTS_EMPTY_OBJECT",
+      "gamesBeforeRound": 0,
+      "gamesAfterRound": 0,
+      "gamesDelta": 0,
+      "targetClassification": "DID_NOT_PLAY",
+      "classificationReason": "Campo post.players[].played=false em contexto pos-rodada valido.",
+      "confidence": "HIGH",
+      "generatedAt": "2026-07-24T23:58:23.259Z"
+    },
+    {
+      "season": 2026,
+      "round": 2,
+      "athleteId": 70164,
+      "athleteName": "Lucas Rodrigues Moura da Silva",
+      "clubId": 276,
+      "postClubId": 276,
+      "positionId": 4,
+      "preRoundEligibility": "PLAYER_ELIGIBLE_PRE_ROUND",
+      "preRoundSnapshotId": null,
+      "postRoundSnapshotId": "historical-2026-round-function round(value, digits = 4) {\n  const number = finite(value);\n  return number === null ? null : Number(number.toFixed(digits));\n}-post-round",
+      "sourceFields": {
+        "actualPoints": "post.players[].points",
+        "enteredField": "post.players[].played",
+        "scouts": "post.players[].scouts",
+        "gamesBeforeRound": "pre.players[].gamesBeforeRound",
+        "gamesAfterRound": "post.players[].games"
+      },
+      "sourceArtifacts": {
+        "preRound": "data/historical/2026/round-02/pre-round.json",
+        "postRound": "data/historical/2026/round-02/post-round.json"
+      },
+      "actualPointsRaw": 6.7,
+      "enteredFieldRaw": true,
+      "scoutsRaw": {
+        "A": 1,
+        "FC": 1,
+        "FD": 1,
+        "FS": 1
+      },
+      "scoutsState": "SCOUTS_WITH_EVENT",
+      "gamesBeforeRound": 1,
+      "gamesAfterRound": 2,
+      "gamesDelta": 1,
+      "targetClassification": "DID_PLAY",
+      "classificationReason": "Campo post.players[].played=true.",
+      "confidence": "HIGH",
+      "generatedAt": "2026-07-24T23:58:23.259Z"
+    },
+    {
+      "season": 2026,
+      "round": 2,
+      "athleteId": 70360,
+      "athleteName": "Eduardo Colcenti Antunes",
+      "clubId": 280,
+      "postClubId": 280,
+      "positionId": 5,
+      "preRoundEligibility": "PLAYER_ELIGIBLE_PRE_ROUND",
+      "preRoundSnapshotId": null,
+      "postRoundSnapshotId": "historical-2026-round-function round(value, digits = 4) {\n  const number = finite(value);\n  return number === null ? null : Number(number.toFixed(digits));\n}-post-round",
+      "sourceFields": {
+        "actualPoints": "post.players[].points",
+        "enteredField": "post.players[].played",
+        "scouts": "post.players[].scouts",
+        "gamesBeforeRound": "pre.players[].gamesBeforeRound",
+        "gamesAfterRound": "post.players[].games"
+      },
+      "sourceArtifacts": {
+        "preRound": "data/historical/2026/round-02/pre-round.json",
+        "postRound": "data/historical/2026/round-02/post-round.json"
+      },
+      "actualPointsRaw": 1,
+      "enteredFieldRaw": true,
+      "scoutsRaw": {
+        "DS": 1,
+        "FD": 2,
+        "FS": 2
+      },
+      "scoutsState": "SCOUTS_WITH_EVENT",
+      "gamesBeforeRound": 1,
+      "gamesAfterRound": 2,
+      "gamesDelta": 1,
+      "targetClassification": "DID_PLAY",
+      "classificationReason": "Campo post.players[].played=true.",
+      "confidence": "HIGH",
+      "generatedAt": "2026-07-24T23:58:23.259Z"
+    },
+    {
+      "season": 2026,
+      "round": 2,
+      "athleteId": 70449,
+      "athleteName": "Gabriel Vasconcelos Ferreira",
+      "clubId": 287,
+      "postClubId": 287,
+      "positionId": 1,
+      "preRoundEligibility": "PLAYER_ELIGIBLE_PRE_ROUND",
+      "preRoundSnapshotId": null,
+      "postRoundSnapshotId": "historical-2026-round-function round(value, digits = 4) {\n  const number = finite(value);\n  return number === null ? null : Number(number.toFixed(digits));\n}-post-round",
+      "sourceFields": {
+        "actualPoints": "post.players[].points",
+        "enteredField": "post.players[].played",
+        "scouts": "post.players[].scouts",
+        "gamesBeforeRound": "pre.players[].gamesBeforeRound",
+        "gamesAfterRound": "post.players[].games"
+      },
+      "sourceArtifacts": {
+        "preRound": "data/historical/2026/round-02/pre-round.json",
+        "postRound": "data/historical/2026/round-02/post-round.json"
+      },
+      "actualPointsRaw": -2.4,
+      "enteredFieldRaw": true,
+      "scoutsRaw": {
+        "DE": 3,
+        "FS": 1,
+        "GS": 5,
+        "SG": 1
+      },
+      "scoutsState": "SCOUTS_WITH_EVENT",
+      "gamesBeforeRound": 1,
+      "gamesAfterRound": 2,
+      "gamesDelta": 1,
+      "targetClassification": "DID_PLAY",
+      "classificationReason": "Campo post.players[].played=true.",
+      "confidence": "HIGH",
+      "generatedAt": "2026-07-24T23:58:23.259Z"
+    },
+    {
+      "season": 2026,
+      "round": 2,
+      "athleteId": 70592,
+      "athleteName": "Felipe Anderson Pereira Gomes",
+      "clubId": 275,
+      "postClubId": 275,
+      "positionId": 4,
+      "preRoundEligibility": "PLAYER_ELIGIBLE_PRE_ROUND",
+      "preRoundSnapshotId": null,
+      "postRoundSnapshotId": "historical-2026-round-function round(value, digits = 4) {\n  const number = finite(value);\n  return number === null ? null : Number(number.toFixed(digits));\n}-post-round",
+      "sourceFields": {
+        "actualPoints": "post.players[].points",
+        "enteredField": "post.players[].played",
+        "scouts": "post.players[].scouts",
+        "gamesBeforeRound": "pre.players[].gamesBeforeRound",
+        "gamesAfterRound": "post.players[].games"
+      },
+      "sourceArtifacts": {
+        "preRound": "data/historical/2026/round-02/pre-round.json",
+        "postRound": "data/historical/2026/round-02/post-round.json"
+      },
+      "actualPointsRaw": 0,
+      "enteredFieldRaw": false,
+      "scoutsRaw": {},
+      "scoutsState": "SCOUTS_EMPTY_OBJECT",
+      "gamesBeforeRound": 0,
+      "gamesAfterRound": 0,
+      "gamesDelta": 0,
+      "targetClassification": "DID_NOT_PLAY",
+      "classificationReason": "Campo post.players[].played=false em contexto pos-rodada valido.",
+      "confidence": "HIGH",
+      "generatedAt": "2026-07-24T23:58:23.259Z"
+    },
+    {
+      "season": 2026,
+      "round": 2,
+      "athleteId": 70666,
+      "athleteName": "Marllon Gonçalves Jerônimo Borges",
+      "clubId": 364,
+      "postClubId": 364,
+      "positionId": 3,
+      "preRoundEligibility": "PLAYER_ELIGIBLE_PRE_ROUND",
+      "preRoundSnapshotId": null,
+      "postRoundSnapshotId": "historical-2026-round-function round(value, digits = 4) {\n  const number = finite(value);\n  return number === null ? null : Number(number.toFixed(digits));\n}-post-round",
+      "sourceFields": {
+        "actualPoints": "post.players[].points",
+        "enteredField": "post.players[].played",
+        "scouts": "post.players[].scouts",
+        "gamesBeforeRound": "pre.players[].gamesBeforeRound",
+        "gamesAfterRound": "post.players[].games"
+      },
+      "sourceArtifacts": {
+        "preRound": "data/historical/2026/round-02/pre-round.json",
+        "postRound": "data/historical/2026/round-02/post-round.json"
+      },
+      "actualPointsRaw": 2.4,
+      "enteredFieldRaw": true,
+      "scoutsRaw": {
+        "DS": 4,
+        "FC": 2,
+        "FS": 1
+      },
+      "scoutsState": "SCOUTS_WITH_EVENT",
+      "gamesBeforeRound": 1,
+      "gamesAfterRound": 2,
+      "gamesDelta": 1,
+      "targetClassification": "DID_PLAY",
+      "classificationReason": "Campo post.players[].played=true.",
+      "confidence": "HIGH",
+      "generatedAt": "2026-07-24T23:58:23.259Z"
+    },
+    {
+      "season": 2026,
+      "round": 2,
+      "athleteId": 70800,
+      "athleteName": "Jorge Sampaoli",
+      "clubId": 282,
+      "postClubId": 282,
+      "positionId": 6,
+      "preRoundEligibility": "PLAYER_ELIGIBLE_PRE_ROUND",
+      "preRoundSnapshotId": null,
+      "postRoundSnapshotId": "historical-2026-round-function round(value, digits = 4) {\n  const number = finite(value);\n  return number === null ? null : Number(number.toFixed(digits));\n}-post-round",
+      "sourceFields": {
+        "actualPoints": "post.players[].points",
+        "enteredField": "post.players[].played",
+        "scouts": "post.players[].scouts",
+        "gamesBeforeRound": "pre.players[].gamesBeforeRound",
+        "gamesAfterRound": "post.players[].games"
+      },
+      "sourceArtifacts": {
+        "preRound": "data/historical/2026/round-02/pre-round.json",
+        "postRound": "data/historical/2026/round-02/post-round.json"
+      },
+      "actualPointsRaw": 2.63,
+      "enteredFieldRaw": true,
+      "scoutsRaw": {},
+      "scoutsState": "SCOUTS_EMPTY_OBJECT",
+      "gamesBeforeRound": 1,
+      "gamesAfterRound": 2,
+      "gamesDelta": 1,
+      "targetClassification": "DID_PLAY",
+      "classificationReason": "Campo post.players[].played=true.",
+      "confidence": "HIGH",
+      "generatedAt": "2026-07-24T23:58:23.259Z"
+    },
+    {
+      "season": 2026,
+      "round": 2,
+      "athleteId": 70944,
+      "athleteName": "Bruno Henrique Corsini",
+      "clubId": 285,
+      "postClubId": 285,
+      "positionId": 4,
+      "preRoundEligibility": "PLAYER_ELIGIBLE_PRE_ROUND",
+      "preRoundSnapshotId": null,
+      "postRoundSnapshotId": "historical-2026-round-function round(value, digits = 4) {\n  const number = finite(value);\n  return number === null ? null : Number(number.toFixed(digits));\n}-post-round",
+      "sourceFields": {
+        "actualPoints": "post.players[].points",
+        "enteredField": "post.players[].played",
+        "scouts": "post.players[].scouts",
+        "gamesBeforeRound": "pre.players[].gamesBeforeRound",
+        "gamesAfterRound": "post.players[].games"
+      },
+      "sourceArtifacts": {
+        "preRound": "data/historical/2026/round-02/pre-round.json",
+        "postRound": "data/historical/2026/round-02/post-round.json"
+      },
+      "actualPointsRaw": 1.4,
+      "enteredFieldRaw": true,
+      "scoutsRaw": {
+        "DS": 1,
+        "FC": 3,
+        "FD": 1,
+        "FF": 1,
+        "FS": 2
+      },
+      "scoutsState": "SCOUTS_WITH_EVENT",
+      "gamesBeforeRound": 1,
+      "gamesAfterRound": 2,
+      "gamesDelta": 1,
+      "targetClassification": "DID_PLAY",
+      "classificationReason": "Campo post.players[].played=true.",
+      "confidence": "HIGH",
+      "generatedAt": "2026-07-24T23:58:23.259Z"
+    },
+    {
+      "season": 2026,
+      "round": 2,
+      "athleteId": 70958,
+      "athleteName": "Jean Carlos Vicente",
+      "clubId": 315,
+      "postClubId": 315,
+      "positionId": 4,
+      "preRoundEligibility": "PLAYER_ELIGIBLE_PRE_ROUND",
+      "preRoundSnapshotId": null,
+      "postRoundSnapshotId": "historical-2026-round-function round(value, digits = 4) {\n  const number = finite(value);\n  return number === null ? null : Number(number.toFixed(digits));\n}-post-round",
+      "sourceFields": {
+        "actualPoints": "post.players[].points",
+        "enteredField": "post.players[].played",
+        "scouts": "post.players[].scouts",
+        "gamesBeforeRound": "pre.players[].gamesBeforeRound",
+        "gamesAfterRound": "post.players[].games"
+      },
+      "sourceArtifacts": {
+        "preRound": "data/historical/2026/round-02/pre-round.json",
+        "postRound": "data/historical/2026/round-02/post-round.json"
+      },
+      "actualPointsRaw": 8.5,
+      "enteredFieldRaw": true,
+      "scoutsRaw": {
+        "A": 1,
+        "FS": 1,
+        "G": 2
+      },
+      "scoutsState": "SCOUTS_WITH_EVENT",
+      "gamesBeforeRound": 1,
+      "gamesAfterRound": 2,
+      "gamesDelta": 1,
+      "targetClassification": "DID_PLAY",
+      "classificationReason": "Campo post.players[].played=true.",
+      "confidence": "HIGH",
+      "generatedAt": "2026-07-24T23:58:23.259Z"
+    },
+    {
+      "season": 2026,
+      "round": 2,
+      "athleteId": 71043,
+      "athleteName": "Leonardo da Silva Vieira",
+      "clubId": 315,
+      "postClubId": 315,
+      "positionId": 1,
+      "preRoundEligibility": "PLAYER_ELIGIBLE_PRE_ROUND",
+      "preRoundSnapshotId": null,
+      "postRoundSnapshotId": "historical-2026-round-function round(value, digits = 4) {\n  const number = finite(value);\n  return number === null ? null : Number(number.toFixed(digits));\n}-post-round",
+      "sourceFields": {
+        "actualPoints": "post.players[].points",
+        "enteredField": "post.players[].played",
+        "scouts": "post.players[].scouts",
+        "gamesBeforeRound": "pre.players[].gamesBeforeRound",
+        "gamesAfterRound": "post.players[].games"
+      },
+      "sourceArtifacts": {
+        "preRound": "data/historical/2026/round-02/pre-round.json",
+        "postRound": "data/historical/2026/round-02/post-round.json"
+      },
+      "actualPointsRaw": 13,
+      "enteredFieldRaw": true,
+      "scoutsRaw": {
+        "CA": 1,
+        "DE": 14,
+        "FS": 2,
+        "GS": 3
+      },
+      "scoutsState": "SCOUTS_WITH_EVENT",
+      "gamesBeforeRound": 1,
+      "gamesAfterRound": 2,
+      "gamesDelta": 1,
+      "targetClassification": "DID_PLAY",
+      "classificationReason": "Campo post.players[].played=true.",
+      "confidence": "HIGH",
+      "generatedAt": "2026-07-24T23:58:23.259Z"
+    },
+    {
+      "season": 2026,
+      "round": 2,
+      "athleteId": 71123,
+      "athleteName": "Thiago Henrique Mendes Ribeiro",
+      "clubId": 267,
+      "postClubId": 267,
+      "positionId": 4,
+      "preRoundEligibility": "PLAYER_ELIGIBLE_PRE_ROUND",
+      "preRoundSnapshotId": null,
+      "postRoundSnapshotId": "historical-2026-round-function round(value, digits = 4) {\n  const number = finite(value);\n  return number === null ? null : Number(number.toFixed(digits));\n}-post-round",
+      "sourceFields": {
+        "actualPoints": "post.players[].points",
+        "enteredField": "post.players[].played",
+        "scouts": "post.players[].scouts",
+        "gamesBeforeRound": "pre.players[].gamesBeforeRound",
+        "gamesAfterRound": "post.players[].games"
+      },
+      "sourceArtifacts": {
+        "preRound": "data/historical/2026/round-02/pre-round.json",
+        "postRound": "data/historical/2026/round-02/post-round.json"
+      },
+      "actualPointsRaw": 4,
+      "enteredFieldRaw": true,
+      "scoutsRaw": {
+        "DS": 3,
+        "FS": 8
+      },
+      "scoutsState": "SCOUTS_WITH_EVENT",
+      "gamesBeforeRound": 1,
+      "gamesAfterRound": 2,
+      "gamesDelta": 1,
+      "targetClassification": "DID_PLAY",
+      "classificationReason": "Campo post.players[].played=true.",
+      "confidence": "HIGH",
+      "generatedAt": "2026-07-24T23:58:23.259Z"
+    },
+    {
+      "season": 2026,
+      "round": 2,
+      "athleteId": 71227,
+      "athleteName": "Maicon Pereira Roque",
+      "clubId": 294,
+      "postClubId": 294,
+      "positionId": 3,
+      "preRoundEligibility": "PLAYER_ELIGIBLE_PRE_ROUND",
+      "preRoundSnapshotId": null,
+      "postRoundSnapshotId": "historical-2026-round-function round(value, digits = 4) {\n  const number = finite(value);\n  return number === null ? null : Number(number.toFixed(digits));\n}-post-round",
+      "sourceFields": {
+        "actualPoints": "post.players[].points",
+        "enteredField": "post.players[].played",
+        "scouts": "post.players[].scouts",
+        "gamesBeforeRound": "pre.players[].gamesBeforeRound",
+        "gamesAfterRound": "post.players[].games"
+      },
+      "sourceArtifacts": {
+        "preRound": "data/historical/2026/round-02/pre-round.json",
+        "postRound": "data/historical/2026/round-02/post-round.json"
+      },
+      "actualPointsRaw": 0,
+      "enteredFieldRaw": true,
+      "scoutsRaw": {
+        "DS": 1,
+        "FC": 1,
+        "FS": 1
+      },
+      "scoutsState": "SCOUTS_WITH_EVENT",
+      "gamesBeforeRound": 1,
+      "gamesAfterRound": 2,
+      "gamesDelta": 1,
+      "targetClassification": "DID_PLAY",
+      "classificationReason": "Campo post.players[].played=true.",
+      "confidence": "HIGH",
+      "generatedAt": "2026-07-24T23:58:23.259Z"
+    },
+    {
+      "season": 2026,
+      "round": 2,
+      "athleteId": 71536,
+      "athleteName": "Luiz Gustavo Dias",
+      "clubId": 293,
+      "postClubId": 293,
+      "positionId": 4,
+      "preRoundEligibility": "PLAYER_ELIGIBLE_PRE_ROUND",
+      "preRoundSnapshotId": null,
+      "postRoundSnapshotId": "historical-2026-round-function round(value, digits = 4) {\n  const number = finite(value);\n  return number === null ? null : Number(number.toFixed(digits));\n}-post-round",
+      "sourceFields": {
+        "actualPoints": "post.players[].points",
+        "enteredField": "post.players[].played",
+        "scouts": "post.players[].scouts",
+        "gamesBeforeRound": "pre.players[].gamesBeforeRound",
+        "gamesAfterRound": "post.players[].games"
+      },
+      "sourceArtifacts": {
+        "preRound": "data/historical/2026/round-02/pre-round.json",
+        "postRound": "data/historical/2026/round-02/post-round.json"
+      },
+      "actualPointsRaw": 0,
+      "enteredFieldRaw": false,
+      "scoutsRaw": {},
+      "scoutsState": "SCOUTS_EMPTY_OBJECT",
+      "gamesBeforeRound": 0,
+      "gamesAfterRound": 0,
+      "gamesDelta": 0,
+      "targetClassification": "DID_NOT_PLAY",
+      "classificationReason": "Campo post.players[].played=false em contexto pos-rodada valido.",
+      "confidence": "HIGH",
+      "generatedAt": "2026-07-24T23:58:23.259Z"
+    },
+    {
+      "season": 2026,
+      "round": 2,
+      "athleteId": 71631,
+      "athleteName": "Weverton Pereira da Silva",
+      "clubId": 284,
+      "postClubId": 284,
+      "positionId": 1,
+      "preRoundEligibility": "PLAYER_ELIGIBLE_PRE_ROUND",
+      "preRoundSnapshotId": null,
+      "postRoundSnapshotId": "historical-2026-round-function round(value, digits = 4) {\n  const number = finite(value);\n  return number === null ? null : Number(number.toFixed(digits));\n}-post-round",
+      "sourceFields": {
+        "actualPoints": "post.players[].points",
+        "enteredField": "post.players[].played",
+        "scouts": "post.players[].scouts",
+        "gamesBeforeRound": "pre.players[].gamesBeforeRound",
+        "gamesAfterRound": "post.players[].games"
+      },
+      "sourceArtifacts": {
+        "preRound": "data/historical/2026/round-02/pre-round.json",
+        "postRound": "data/historical/2026/round-02/post-round.json"
+      },
+      "actualPointsRaw": -1.7,
+      "enteredFieldRaw": true,
+      "scoutsRaw": {
+        "DE": 5,
+        "GS": 5
+      },
+      "scoutsState": "SCOUTS_WITH_EVENT",
+      "gamesBeforeRound": 1,
+      "gamesAfterRound": 2,
+      "gamesDelta": 1,
+      "targetClassification": "DID_PLAY",
+      "classificationReason": "Campo post.players[].played=true.",
+      "confidence": "HIGH",
+      "generatedAt": "2026-07-24T23:58:23.259Z"
+    },
+    {
+      "season": 2026,
+      "round": 2,
+      "athleteId": 71684,
+      "athleteName": "Gustavo Raúl Gómez Portillo",
+      "clubId": 275,
+      "postClubId": 275,
+      "positionId": 3,
+      "preRoundEligibility": "PLAYER_ELIGIBLE_PRE_ROUND",
+      "preRoundSnapshotId": null,
+      "postRoundSnapshotId": "historical-2026-round-function round(value, digits = 4) {\n  const number = finite(value);\n  return number === null ? null : Number(number.toFixed(digits));\n}-post-round",
+      "sourceFields": {
+        "actualPoints": "post.players[].points",
+        "enteredField": "post.players[].played",
+        "scouts": "post.players[].scouts",
+        "gamesBeforeRound": "pre.players[].gamesBeforeRound",
+        "gamesAfterRound": "post.players[].games"
+      },
+      "sourceArtifacts": {
+        "preRound": "data/historical/2026/round-02/pre-round.json",
+        "postRound": "data/historical/2026/round-02/post-round.json"
+      },
+      "actualPointsRaw": 8.5,
+      "enteredFieldRaw": true,
+      "scoutsRaw": {
+        "DS": 1,
+        "FC": 3,
+        "FF": 1,
+        "FS": 2,
+        "G": 1
+      },
+      "scoutsState": "SCOUTS_WITH_EVENT",
+      "gamesBeforeRound": 1,
+      "gamesAfterRound": 2,
+      "gamesDelta": 1,
+      "targetClassification": "DID_PLAY",
+      "classificationReason": "Campo post.players[].played=true.",
+      "confidence": "HIGH",
+      "generatedAt": "2026-07-24T23:58:23.259Z"
+    },
+    {
+      "season": 2026,
+      "round": 2,
+      "athleteId": 71709,
+      "athleteName": "Gustavo Leonardo Cuellar Gallego",
+      "clubId": 284,
+      "postClubId": 284,
+      "positionId": 4,
+      "preRoundEligibility": "PLAYER_ELIGIBLE_PRE_ROUND",
+      "preRoundSnapshotId": null,
+      "postRoundSnapshotId": "historical-2026-round-function round(value, digits = 4) {\n  const number = finite(value);\n  return number === null ? null : Number(number.toFixed(digits));\n}-post-round",
+      "sourceFields": {
+        "actualPoints": "post.players[].points",
+        "enteredField": "post.players[].played",
+        "scouts": "post.players[].scouts",
+        "gamesBeforeRound": "pre.players[].gamesBeforeRound",
+        "gamesAfterRound": "post.players[].games"
+      },
+      "sourceArtifacts": {
+        "preRound": "data/historical/2026/round-02/pre-round.json",
+        "postRound": "data/historical/2026/round-02/post-round.json"
+      },
+      "actualPointsRaw": 0,
+      "enteredFieldRaw": false,
+      "scoutsRaw": {},
+      "scoutsState": "SCOUTS_EMPTY_OBJECT",
+      "gamesBeforeRound": 0,
+      "gamesAfterRound": 0,
+      "gamesDelta": 0,
+      "targetClassification": "DID_NOT_PLAY",
+      "classificationReason": "Campo post.players[].played=false em contexto pos-rodada valido.",
+      "confidence": "HIGH",
+      "generatedAt": "2026-07-24T23:58:23.259Z"
+    }
+  ],
+  "didNotPlayAudit": {
+    "total": 7055,
+    "byRound": {
+      "2": 398,
+      "3": 407,
+      "4": 471,
+      "5": 447,
+      "6": 388,
+      "7": 397,
+      "8": 399,
+      "9": 394,
+      "10": 406,
+      "11": 411,
+      "12": 406,
+      "13": 414,
+      "14": 415,
+      "15": 417,
+      "16": 421,
+      "17": 428,
+      "18": 436
+    },
+    "byPosition": {
+      "1": 949,
+      "2": 1126,
+      "3": 1222,
+      "4": 2083,
+      "5": 1653,
+      "6": 22
+    },
+    "byClub": {
+      "262": 379,
+      "263": 488,
+      "264": 349,
+      "265": 341,
+      "266": 298,
+      "267": 290,
+      "275": 227,
+      "276": 329,
+      "277": 348,
+      "280": 350,
+      "282": 277,
+      "283": 405,
+      "284": 359,
+      "285": 297,
+      "287": 473,
+      "293": 361,
+      "294": 359,
+      "315": 365,
+      "364": 471,
+      "2305": 289
+    },
+    "byEligibility": {
+      "PLAYER_ELIGIBLE_PRE_ROUND": 6931,
+      "PLAYER_INELIGIBLE_PRE_ROUND": 124
+    }
+  },
+  "joinAudit": {
+    "summary": {
+      "MATCHED_BY_ID": 12524
+    },
+    "rows": []
+  },
+  "gamesDeltaAudit": {
+    "GAMES_DELTA_1": 5434,
+    "GAMES_DELTA_0": 6931,
+    "GAMES_DELTA_MISSING": 159
+  },
+  "actualPointsAudit": {
+    "didPlayZero": 449,
+    "didPlayNegative": 557,
+    "didNotPlayNull": 0,
+    "didNotPlayZero": 7040,
+    "actualNullAloneDefinesParticipation": false
+  },
+  "scoutsAudit": {
+    "SCOUTS_WITH_EVENT": 8720,
+    "SCOUTS_EMPTY_OBJECT": 3804
+  },
+  "legacyVsAudited": {
+    "top1": {
+      "legacyValue": 0,
+      "auditedValue": 0,
+      "delta": 0,
+      "legacyDenominator": 17,
+      "auditedDenominator": 85,
+      "reason": "Legacy e Audited preservaram TopK selecionado; Audited explicita classificacoes adicionais."
+    },
+    "top3": {
+      "legacyValue": 0,
+      "auditedValue": 0,
+      "delta": 0,
+      "legacyDenominator": 51,
+      "auditedDenominator": 255,
+      "reason": "Legacy e Audited preservaram TopK selecionado; Audited explicita classificacoes adicionais."
+    },
+    "top5": {
+      "legacyValue": 0,
+      "auditedValue": 0,
+      "delta": 0,
+      "legacyDenominator": 85,
+      "auditedDenominator": 425,
+      "reason": "Legacy e Audited preservaram TopK selecionado; Audited explicita classificacoes adicionais."
+    }
+  },
+  "groundTruthReliability": {
+    "PARTICIPATION_TARGET": {
+      "coverage": 1,
+      "contradictions": 7055,
+      "missingRate": 0,
+      "ambiguousRate": 0,
+      "provenanceCoverage": 1,
+      "leakageStatus": "PASS",
+      "reliabilityState": "PARTIALLY_RELIABLE",
+      "reasons": [
+        "post.players[].played existe no historico 2-18."
+      ]
+    },
+    "ACTUAL_POINTS_TARGET": {
+      "coverage": 1,
+      "contradictions": 7055,
+      "missingRate": 0,
+      "ambiguousRate": 0,
+      "provenanceCoverage": 1,
+      "leakageStatus": "PASS",
+      "reliabilityState": "PARTIALLY_RELIABLE",
+      "reasons": [
+        "Pontuacao e target de participacao sao sinais separados."
+      ]
+    },
+    "TOPK_SELECTION": {
+      "coverage": 1,
+      "contradictions": 0,
+      "missingRate": 0,
+      "ambiguousRate": 0,
+      "provenanceCoverage": 1,
+      "leakageStatus": "PASS",
+      "reliabilityState": "RELIABLE",
+      "reasons": [
+        "TopK auditado por ranking pre-rodada com left join."
+      ]
+    },
+    "CAPTAIN_SELECTION": {
+      "coverage": 1,
+      "contradictions": 0,
+      "missingRate": 0,
+      "ambiguousRate": 0,
+      "provenanceCoverage": 1,
+      "leakageStatus": "PASS",
+      "reliabilityState": "RELIABLE",
+      "reasons": [
+        "Capitao preservado por athleteId."
+      ]
+    },
+    "XI_SELECTION": {
+      "coverage": 1,
+      "contradictions": 0,
+      "missingRate": 0,
+      "ambiguousRate": 0,
+      "provenanceCoverage": 1,
+      "leakageStatus": "PASS",
+      "reliabilityState": "RELIABLE",
+      "reasons": [
+        "XI preservado por athleteId."
+      ]
+    },
+    "POSITION_SHADOW": {
+      "coverage": 1,
+      "contradictions": 0,
+      "missingRate": 0,
+      "ambiguousRate": 0,
+      "provenanceCoverage": 1,
+      "leakageStatus": "PASS",
+      "reliabilityState": "RELIABLE",
+      "reasons": [
+        "TopK por posicao auditado."
+      ]
+    },
+    "AVAILABILITY_EVALUATION": {
+      "coverage": 1,
+      "contradictions": 0,
+      "missingRate": 0,
+      "ambiguousRate": 0,
+      "provenanceCoverage": 1,
+      "leakageStatus": "PASS",
+      "reliabilityState": "PARTIALLY_RELIABLE",
+      "reasons": [
+        "R19 live difere do historico 2-18; exige comparacao separada."
+      ]
+    }
+  },
+  "round19Control": {
+    "snapshotId": "live-2026-r19-20260721220905-7bbb2b68",
+    "cases": [
+      {
+        "season": 2026,
+        "round": 19,
+        "athleteId": 107231,
+        "athleteName": "Danilo dos Santos de Oliveira",
+        "clubId": 263,
+        "postClubId": 263,
+        "positionId": 4,
+        "preRoundEligibility": "PLAYER_ELIGIBLE_PRE_ROUND",
+        "preRoundSnapshotId": "live-2026-r19-20260721220905-7bbb2b68",
+        "postRoundSnapshotId": "live-2026-r19-20260721220905-7bbb2b68",
+        "sourceFields": {
+          "actualPoints": "post.players[].points",
+          "enteredField": "post.players[].played",
+          "scouts": "post.players[].scouts",
+          "gamesBeforeRound": "pre.players[].gamesBeforeRound",
+          "gamesAfterRound": "post.players[].games"
+        },
+        "sourceArtifacts": {
+          "preRound": "data/historical/2026/round-19/pre-round.json",
+          "postRound": "data/historical/2026/round-19/post-round.json"
+        },
+        "actualPointsRaw": 0,
+        "enteredFieldRaw": false,
+        "scoutsRaw": {
+          "A": 2,
+          "CA": 1,
+          "DS": 19,
+          "FC": 8,
+          "FD": 5,
+          "FF": 8,
+          "FS": 5,
+          "FT": 1,
+          "G": 7
+        },
+        "scoutsState": "SCOUTS_WITH_EVENT",
+        "gamesBeforeRound": 12,
+        "gamesAfterRound": null,
+        "gamesDelta": null,
+        "targetClassification": "DID_NOT_PLAY",
+        "classificationReason": "Campo post.players[].played=false em contexto pos-rodada valido.",
+        "confidence": "HIGH",
+        "generatedAt": "2026-07-24T23:58:23.259Z",
+        "searchedName": "Danilo dos Santos de Oliveira",
+        "ranking": 1,
+        "participationReliabilityScore": 40.8674,
+        "preservedInTopK": true,
+        "includedInDenominator": true
+      },
+      {
+        "season": 2026,
+        "round": 19,
+        "athleteId": 102928,
+        "athleteName": "Agustín Canobbio Graviz",
+        "clubId": 266,
+        "postClubId": 266,
+        "positionId": 5,
+        "preRoundEligibility": "PLAYER_ELIGIBLE_PRE_ROUND",
+        "preRoundSnapshotId": "live-2026-r19-20260721220905-7bbb2b68",
+        "postRoundSnapshotId": "live-2026-r19-20260721220905-7bbb2b68",
+        "sourceFields": {
+          "actualPoints": "post.players[].points",
+          "enteredField": "post.players[].played",
+          "scouts": "post.players[].scouts",
+          "gamesBeforeRound": "pre.players[].gamesBeforeRound",
+          "gamesAfterRound": "post.players[].games"
+        },
+        "sourceArtifacts": {
+          "preRound": "data/historical/2026/round-19/pre-round.json",
+          "postRound": "data/historical/2026/round-19/post-round.json"
+        },
+        "actualPointsRaw": 0,
+        "enteredFieldRaw": false,
+        "scoutsRaw": {
+          "A": 2,
+          "CA": 3,
+          "CV": 1,
+          "DS": 20,
+          "FC": 17,
+          "FD": 6,
+          "FF": 6,
+          "FS": 17,
+          "FT": 2,
+          "G": 4,
+          "I": 1
+        },
+        "scoutsState": "SCOUTS_WITH_EVENT",
+        "gamesBeforeRound": 11,
+        "gamesAfterRound": null,
+        "gamesDelta": null,
+        "targetClassification": "DID_NOT_PLAY",
+        "classificationReason": "Campo post.players[].played=false em contexto pos-rodada valido.",
+        "confidence": "HIGH",
+        "generatedAt": "2026-07-24T23:58:23.259Z",
+        "searchedName": "Canobbio",
+        "ranking": 3,
+        "participationReliabilityScore": 49.6442,
+        "preservedInTopK": true,
+        "includedInDenominator": true
+      },
+      {
+        "season": 2026,
+        "round": 19,
+        "athleteId": 130209,
+        "athleteName": "Carlos Renê de Sousa Ferreira - Souza",
+        "clubId": 287,
+        "postClubId": 287,
+        "positionId": 5,
+        "preRoundEligibility": "PLAYER_ELIGIBLE_PRE_ROUND",
+        "preRoundSnapshotId": "live-2026-r19-20260721220905-7bbb2b68",
+        "postRoundSnapshotId": "live-2026-r19-20260721220905-7bbb2b68",
+        "sourceFields": {
+          "actualPoints": "post.players[].points",
+          "enteredField": "post.players[].played",
+          "scouts": "post.players[].scouts",
+          "gamesBeforeRound": "pre.players[].gamesBeforeRound",
+          "gamesAfterRound": "post.players[].games"
+        },
+        "sourceArtifacts": {
+          "preRound": "data/historical/2026/round-19/pre-round.json",
+          "postRound": "data/historical/2026/round-19/post-round.json"
+        },
+        "actualPointsRaw": 18.1,
+        "enteredFieldRaw": true,
+        "scoutsRaw": {
+          "A": 1,
+          "CA": 2,
+          "DS": 8,
+          "FC": 10,
+          "FD": 9,
+          "FF": 4,
+          "FS": 23,
+          "FT": 1,
+          "G": 5,
+          "I": 1
+        },
+        "scoutsState": "SCOUTS_WITH_EVENT",
+        "gamesBeforeRound": 10,
+        "gamesAfterRound": null,
+        "gamesDelta": null,
+        "targetClassification": "DID_PLAY",
+        "classificationReason": "Campo post.players[].played=true.",
+        "confidence": "HIGH",
+        "generatedAt": "2026-07-24T23:58:23.259Z",
+        "searchedName": "Carlos Renê de Sousa Ferreira",
+        "ranking": 2,
+        "participationReliabilityScore": 100,
+        "preservedInTopK": true,
+        "includedInDenominator": true
+      },
+      {
+        "season": 2026,
+        "round": 19,
+        "athleteId": 121823,
+        "athleteName": "Kauê Vinicius de Souza Camargo",
+        "clubId": 264,
+        "postClubId": 264,
+        "positionId": 1,
+        "preRoundEligibility": "PLAYER_ELIGIBLE_PRE_ROUND",
+        "preRoundSnapshotId": "live-2026-r19-20260721220905-7bbb2b68",
+        "postRoundSnapshotId": "live-2026-r19-20260721220905-7bbb2b68",
+        "sourceFields": {
+          "actualPoints": "post.players[].points",
+          "enteredField": "post.players[].played",
+          "scouts": "post.players[].scouts",
+          "gamesBeforeRound": "pre.players[].gamesBeforeRound",
+          "gamesAfterRound": "post.players[].games"
+        },
+        "sourceArtifacts": {
+          "preRound": "data/historical/2026/round-19/pre-round.json",
+          "postRound": "data/historical/2026/round-19/post-round.json"
+        },
+        "actualPointsRaw": 0,
+        "enteredFieldRaw": false,
+        "scoutsRaw": {
+          "CA": 1,
+          "DE": 13,
+          "FS": 1,
+          "GS": 3,
+          "SG": 1
+        },
+        "scoutsState": "SCOUTS_WITH_EVENT",
+        "gamesBeforeRound": 2,
+        "gamesAfterRound": null,
+        "gamesDelta": null,
+        "targetClassification": "DID_NOT_PLAY",
+        "classificationReason": "Campo post.players[].played=false em contexto pos-rodada valido.",
+        "confidence": "HIGH",
+        "generatedAt": "2026-07-24T23:58:23.259Z",
+        "searchedName": "Kauê",
+        "ranking": 2,
+        "participationReliabilityScore": 0,
+        "preservedInTopK": true,
+        "includedInDenominator": true
+      },
+      {
+        "season": 2026,
+        "round": 19,
+        "athleteId": 104118,
+        "athleteName": "Lucas Willians Assis Arcanjo",
+        "clubId": 287,
+        "postClubId": 287,
+        "positionId": 1,
+        "preRoundEligibility": "PLAYER_ELIGIBLE_PRE_ROUND",
+        "preRoundSnapshotId": "live-2026-r19-20260721220905-7bbb2b68",
+        "postRoundSnapshotId": "live-2026-r19-20260721220905-7bbb2b68",
+        "sourceFields": {
+          "actualPoints": "post.players[].points",
+          "enteredField": "post.players[].played",
+          "scouts": "post.players[].scouts",
+          "gamesBeforeRound": "pre.players[].gamesBeforeRound",
+          "gamesAfterRound": "post.players[].games"
+        },
+        "sourceArtifacts": {
+          "preRound": "data/historical/2026/round-19/pre-round.json",
+          "postRound": "data/historical/2026/round-19/post-round.json"
+        },
+        "actualPointsRaw": 0,
+        "enteredFieldRaw": false,
+        "scoutsRaw": {
+          "CA": 1,
+          "DE": 43,
+          "DP": 2,
+          "GS": 15,
+          "PC": 1,
+          "SG": 5
+        },
+        "scoutsState": "SCOUTS_WITH_EVENT",
+        "gamesBeforeRound": 13,
+        "gamesAfterRound": null,
+        "gamesDelta": null,
+        "targetClassification": "DID_NOT_PLAY",
+        "classificationReason": "Campo post.players[].played=false em contexto pos-rodada valido.",
+        "confidence": "HIGH",
+        "generatedAt": "2026-07-24T23:58:23.259Z",
+        "searchedName": "Lucas Willians Assis Arcanjo",
+        "ranking": 4,
+        "participationReliabilityScore": 77.2884,
+        "preservedInTopK": true,
+        "includedInDenominator": true
+      },
+      {
+        "season": 2026,
+        "round": 19,
+        "athleteId": 88136,
+        "athleteName": "Ivan Quaresma da Silva",
+        "clubId": 364,
+        "postClubId": 364,
+        "positionId": 1,
+        "preRoundEligibility": "PLAYER_ELIGIBLE_PRE_ROUND",
+        "preRoundSnapshotId": "live-2026-r19-20260721220905-7bbb2b68",
+        "postRoundSnapshotId": "live-2026-r19-20260721220905-7bbb2b68",
+        "sourceFields": {
+          "actualPoints": "post.players[].points",
+          "enteredField": "post.players[].played",
+          "scouts": "post.players[].scouts",
+          "gamesBeforeRound": "pre.players[].gamesBeforeRound",
+          "gamesAfterRound": "post.players[].games"
+        },
+        "sourceArtifacts": {
+          "preRound": "data/historical/2026/round-19/pre-round.json",
+          "postRound": "data/historical/2026/round-19/post-round.json"
+        },
+        "actualPointsRaw": 10.2,
+        "enteredFieldRaw": true,
+        "scoutsRaw": {
+          "DE": 4,
+          "SG": 1
+        },
+        "scoutsState": "SCOUTS_WITH_EVENT",
+        "gamesBeforeRound": 1,
+        "gamesAfterRound": null,
+        "gamesDelta": null,
+        "targetClassification": "DID_PLAY",
+        "classificationReason": "Campo post.players[].played=true.",
+        "confidence": "HIGH",
+        "generatedAt": "2026-07-24T23:58:23.259Z",
+        "searchedName": "Ivan Quaresma",
+        "ranking": 1,
+        "participationReliabilityScore": null,
+        "preservedInTopK": true,
+        "includedInDenominator": true
+      },
+      {
+        "season": 2026,
+        "round": 19,
+        "athleteId": 68872,
+        "athleteName": "Marcelo Lomba do Nascimento",
+        "clubId": 275,
+        "postClubId": 275,
+        "positionId": 1,
+        "preRoundEligibility": "PLAYER_ELIGIBLE_PRE_ROUND",
+        "preRoundSnapshotId": "live-2026-r19-20260721220905-7bbb2b68",
+        "postRoundSnapshotId": "live-2026-r19-20260721220905-7bbb2b68",
+        "sourceFields": {
+          "actualPoints": "post.players[].points",
+          "enteredField": "post.players[].played",
+          "scouts": "post.players[].scouts",
+          "gamesBeforeRound": "pre.players[].gamesBeforeRound",
+          "gamesAfterRound": "post.players[].games"
+        },
+        "sourceArtifacts": {
+          "preRound": "data/historical/2026/round-19/pre-round.json",
+          "postRound": "data/historical/2026/round-19/post-round.json"
+        },
+        "actualPointsRaw": 8.9,
+        "enteredFieldRaw": true,
+        "scoutsRaw": {
+          "DE": 3,
+          "SG": 1
+        },
+        "scoutsState": "SCOUTS_WITH_EVENT",
+        "gamesBeforeRound": 1,
+        "gamesAfterRound": null,
+        "gamesDelta": null,
+        "targetClassification": "DID_PLAY",
+        "classificationReason": "Campo post.players[].played=true.",
+        "confidence": "HIGH",
+        "generatedAt": "2026-07-24T23:58:23.259Z",
+        "searchedName": "Marcelo Lomba",
+        "ranking": 3,
+        "participationReliabilityScore": null,
+        "preservedInTopK": true,
+        "includedInDenominator": true
+      },
+      {
+        "season": 2026,
+        "round": 19,
+        "athleteId": 72018,
+        "athleteName": "Tiago Luis Volpi",
+        "clubId": 280,
+        "postClubId": 280,
+        "positionId": 1,
+        "preRoundEligibility": "PLAYER_ELIGIBLE_PRE_ROUND",
+        "preRoundSnapshotId": "live-2026-r19-20260721220905-7bbb2b68",
+        "postRoundSnapshotId": "live-2026-r19-20260721220905-7bbb2b68",
+        "sourceFields": {
+          "actualPoints": "post.players[].points",
+          "enteredField": "post.players[].played",
+          "scouts": "post.players[].scouts",
+          "gamesBeforeRound": "pre.players[].gamesBeforeRound",
+          "gamesAfterRound": "post.players[].games"
+        },
+        "sourceArtifacts": {
+          "preRound": "data/historical/2026/round-19/pre-round.json",
+          "postRound": "data/historical/2026/round-19/post-round.json"
+        },
+        "actualPointsRaw": 8.3,
+        "enteredFieldRaw": true,
+        "scoutsRaw": {
+          "DE": 31,
+          "G": 2,
+          "GS": 11,
+          "SG": 4
+        },
+        "scoutsState": "SCOUTS_WITH_EVENT",
+        "gamesBeforeRound": 11,
+        "gamesAfterRound": null,
+        "gamesDelta": null,
+        "targetClassification": "DID_PLAY",
+        "classificationReason": "Campo post.players[].played=true.",
+        "confidence": "HIGH",
+        "generatedAt": "2026-07-24T23:58:23.259Z",
+        "searchedName": "Tiago Luis Volpi",
+        "ranking": 5,
+        "participationReliabilityScore": null,
+        "preservedInTopK": true,
+        "includedInDenominator": true
+      },
+      {
+        "season": 2026,
+        "round": 19,
+        "athleteId": 94583,
+        "athleteName": "Pedro Guilherme Abreu dos Santos",
+        "clubId": 262,
+        "postClubId": 262,
+        "positionId": 5,
+        "preRoundEligibility": "PLAYER_ELIGIBLE_PRE_ROUND",
+        "preRoundSnapshotId": "live-2026-r19-20260721220905-7bbb2b68",
+        "postRoundSnapshotId": "live-2026-r19-20260721220905-7bbb2b68",
+        "sourceFields": {
+          "actualPoints": "post.players[].points",
+          "enteredField": "post.players[].played",
+          "scouts": "post.players[].scouts",
+          "gamesBeforeRound": "pre.players[].gamesBeforeRound",
+          "gamesAfterRound": "post.players[].games"
+        },
+        "sourceArtifacts": {
+          "preRound": "data/historical/2026/round-19/pre-round.json",
+          "postRound": "data/historical/2026/round-19/post-round.json"
+        },
+        "actualPointsRaw": 20.4,
+        "enteredFieldRaw": true,
+        "scoutsRaw": {
+          "A": 4,
+          "CA": 1,
+          "DS": 11,
+          "FC": 9,
+          "FD": 8,
+          "FF": 8,
+          "FS": 17,
+          "FT": 1,
+          "G": 10,
+          "I": 3,
+          "PS": 1
+        },
+        "scoutsState": "SCOUTS_WITH_EVENT",
+        "gamesBeforeRound": 16,
+        "gamesAfterRound": null,
+        "gamesDelta": null,
+        "targetClassification": "DID_PLAY",
+        "classificationReason": "Campo post.players[].played=true.",
+        "confidence": "HIGH",
+        "generatedAt": "2026-07-24T23:58:23.259Z",
+        "searchedName": "Pedro Guilherme",
+        "ranking": 1,
+        "participationReliabilityScore": null,
+        "preservedInTopK": true,
+        "includedInDenominator": true
+      }
+    ],
+    "officialXI": {
+      "actualPoints": 83.3,
+      "didNotPlayCount": 5
+    },
+    "availabilityAwareXI": {
+      "actualPoints": 93.1,
+      "didNotPlayCount": 1
+    }
+  },
+  "filtersInvestigated": [
+    {
+      "file": "src/research/availabilityCalibration.js",
+      "function": "rankingMetrics/topMetrics",
+      "behavior": "Agregava selecoes ja montadas; nao removia TopK por post-target.",
+      "impact": "Sem alteracao de denominador TopK auditado.",
+      "correctness": "CORRECT",
+      "changesNumerator": false,
+      "changesDenominator": false
+    },
+    {
+      "file": "src/research/evidenceDashboard.js",
+      "function": "auditParticipationTarget",
+      "behavior": "Calculava TopK global legado por predictions e contava played=false por postMap.",
+      "impact": "Mostrou zero no TopK apesar de didNotPlay no universo.",
+      "correctness": "PARTIAL_METRIC_SCOPE",
+      "changesNumerator": false,
+      "changesDenominator": false
+    },
+    {
+      "file": "src/research/groundTruthValidation.js",
+      "function": "auditTopK",
+      "behavior": "Left join preserva todos os atletas selecionados.",
+      "impact": "Denominador explicito.",
+      "correctness": "CORRECT",
+      "changesNumerator": false,
+      "changesDenominator": false
+    }
+  ],
+  "conclusions": {
+    "previousDidPlayCalculation": "No backtest historico, actualPoints era usado como target de pontuacao; na 5.2.5 a auditoria passou a ler post.players[].played para participacao.",
+    "previousDidNotPlayCalculation": "No painel 5.2.6, DidNotPlayRate TopK legado era derivado de campos ausentes/enteredField nos predictions e ficou zero; o auditado usa left join com post.players[].played.",
+    "previousDefinitionCorrect": false,
+    "historicalTopKZeroReason": "O TopK global legado nao selecionou atletas com played=false; os 7055 didNotPlay existem no universo pos-rodada, mas ficam fora dos grupos TopK auditados.",
+    "postGameFilterFound": false,
+    "innerJoinFound": false,
+    "denominatorExclusionFound": false,
+    "oldMetricValid": "PARTIALLY_VALID_FOR_SELECTED_TOPK_ONLY",
+    "availabilityEvaluationStillValid": "VALID_AS_R19_CASE_STUDY_ONLY",
+    "codeCorrectionApplied": false,
+    "promotionStateChanged": false,
+    "nextResearchPriority": "FIX_TARGET_CLASSIFICATION"
+  },
+  "artifacts": {
+    "validation": "data/research/2026/ground-truth-validation.json",
+    "topkAudit": "data/research/2026/ground-truth-topk-audit.json",
+    "report": "docs/research/build-5.2.7-ground-truth-validation.md",
+    "round19Report": "docs/research/round-19-ground-truth-audit.md"
+  }
+}

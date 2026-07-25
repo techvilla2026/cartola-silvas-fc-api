@@ -1,0 +1,462 @@
+{
+  "schemaVersion": "research-baseline-metrics/v1",
+  "baselineId": "RESEARCH_BASELINE_1_0",
+  "metricsDefinitionVersion": "RESEARCH_METRICS_V1",
+  "metrics": [
+    {
+      "metricId": "MAE",
+      "label": "MAE",
+      "formulaDescription": "Mean absolute error between predicted and actual points.",
+      "numerator": "sum(abs(predictedPoints - actualPoints))",
+      "denominator": "records with known actualPoints",
+      "nullPolicy": "Preserve nulls; do not coerce missing values to zero.",
+      "applicableModels": [
+        "OFFICIAL_ENGINE",
+        "CLEAN_SHEET_V1",
+        "CLEAN_SHEET_V2",
+        "POSITION_MODELS",
+        "CAPTAIN_MODELS",
+        "XI_MODELS",
+        "FORMATION_MODELS",
+        "AVAILABILITY_MODELS"
+      ],
+      "metricType": "evaluation_metric",
+      "probability": false,
+      "limitations": []
+    },
+    {
+      "metricId": "RMSE",
+      "label": "RMSE",
+      "formulaDescription": "Root mean squared prediction error.",
+      "numerator": "sqrt(sum(error^2))",
+      "denominator": "records with known actualPoints",
+      "nullPolicy": "Preserve nulls; do not coerce missing values to zero.",
+      "applicableModels": [
+        "OFFICIAL_ENGINE",
+        "CLEAN_SHEET_V1",
+        "CLEAN_SHEET_V2",
+        "POSITION_MODELS",
+        "CAPTAIN_MODELS",
+        "XI_MODELS",
+        "FORMATION_MODELS",
+        "AVAILABILITY_MODELS"
+      ],
+      "metricType": "evaluation_metric",
+      "probability": false,
+      "limitations": []
+    },
+    {
+      "metricId": "BIAS",
+      "label": "Bias",
+      "formulaDescription": "Mean signed prediction error.",
+      "numerator": "sum(predictedPoints - actualPoints)",
+      "denominator": "records with known actualPoints",
+      "nullPolicy": "Preserve nulls; do not coerce missing values to zero.",
+      "applicableModels": [
+        "OFFICIAL_ENGINE",
+        "CLEAN_SHEET_V1",
+        "CLEAN_SHEET_V2",
+        "POSITION_MODELS",
+        "CAPTAIN_MODELS",
+        "XI_MODELS",
+        "FORMATION_MODELS",
+        "AVAILABILITY_MODELS"
+      ],
+      "metricType": "evaluation_metric",
+      "probability": false,
+      "limitations": []
+    },
+    {
+      "metricId": "SPEARMAN",
+      "label": "Spearman",
+      "formulaDescription": "Rank correlation between predicted and actual ordering.",
+      "numerator": "rank covariance",
+      "denominator": "comparable ranked records",
+      "nullPolicy": "Preserve nulls; do not coerce missing values to zero.",
+      "applicableModels": [
+        "OFFICIAL_ENGINE",
+        "CLEAN_SHEET_V1",
+        "CLEAN_SHEET_V2",
+        "POSITION_MODELS",
+        "CAPTAIN_MODELS",
+        "XI_MODELS",
+        "FORMATION_MODELS",
+        "AVAILABILITY_MODELS"
+      ],
+      "metricType": "evaluation_metric",
+      "probability": false,
+      "limitations": []
+    },
+    {
+      "metricId": "KENDALL",
+      "label": "Kendall",
+      "formulaDescription": "Pairwise rank agreement.",
+      "numerator": "concordant - discordant pairs",
+      "denominator": "comparable ranked pairs",
+      "nullPolicy": "Preserve nulls; do not coerce missing values to zero.",
+      "applicableModels": [
+        "OFFICIAL_ENGINE",
+        "CLEAN_SHEET_V1",
+        "CLEAN_SHEET_V2",
+        "POSITION_MODELS",
+        "CAPTAIN_MODELS",
+        "XI_MODELS",
+        "FORMATION_MODELS",
+        "AVAILABILITY_MODELS"
+      ],
+      "metricType": "evaluation_metric",
+      "probability": false,
+      "limitations": []
+    },
+    {
+      "metricId": "PRECISION_AT_K",
+      "label": "Precision@K",
+      "formulaDescription": "Share of selected TopK records that match the desired outcome.",
+      "numerator": "hits inside K",
+      "denominator": "selected records inside K",
+      "nullPolicy": "Preserve nulls; do not coerce missing values to zero.",
+      "applicableModels": [
+        "RANKING_MODELS"
+      ],
+      "metricType": "evaluation_metric",
+      "probability": false,
+      "limitations": []
+    },
+    {
+      "metricId": "TOP1_HIT_RATE",
+      "label": "Top1 hit rate",
+      "formulaDescription": "Top1 success rate.",
+      "numerator": "rounds where Top1 hits",
+      "denominator": "evaluated rounds",
+      "nullPolicy": "Preserve nulls; do not coerce missing values to zero.",
+      "applicableModels": [
+        "CLEAN_SHEET_MODELS",
+        "RANKING_MODELS"
+      ],
+      "metricType": "evaluation_metric",
+      "probability": false,
+      "limitations": []
+    },
+    {
+      "metricId": "TOP3_HIT_RATE",
+      "label": "Top3 hit rate",
+      "formulaDescription": "Top3 success rate.",
+      "numerator": "rounds where target is inside Top3",
+      "denominator": "evaluated rounds",
+      "nullPolicy": "Preserve nulls; do not coerce missing values to zero.",
+      "applicableModels": [
+        "CLEAN_SHEET_MODELS",
+        "RANKING_MODELS"
+      ],
+      "metricType": "evaluation_metric",
+      "probability": false,
+      "limitations": []
+    },
+    {
+      "metricId": "TOP5_HIT_RATE",
+      "label": "Top5 hit rate",
+      "formulaDescription": "Top5 success rate.",
+      "numerator": "rounds where target is inside Top5",
+      "denominator": "evaluated rounds",
+      "nullPolicy": "Preserve nulls; do not coerce missing values to zero.",
+      "applicableModels": [
+        "CLEAN_SHEET_MODELS",
+        "RANKING_MODELS"
+      ],
+      "metricType": "evaluation_metric",
+      "probability": false,
+      "limitations": []
+    },
+    {
+      "metricId": "TOP10_HIT_RATE",
+      "label": "Top10 hit rate",
+      "formulaDescription": "Top10 success rate.",
+      "numerator": "rounds where target is inside Top10",
+      "denominator": "evaluated rounds",
+      "nullPolicy": "Preserve nulls; do not coerce missing values to zero.",
+      "applicableModels": [
+        "RANKING_MODELS"
+      ],
+      "metricType": "evaluation_metric",
+      "probability": false,
+      "limitations": []
+    },
+    {
+      "metricId": "ACTUAL_POINTS_MEAN",
+      "label": "actualPointsMean",
+      "formulaDescription": "Mean actual points for selected records.",
+      "numerator": "sum(actualPoints)",
+      "denominator": "selected records with known actualPoints",
+      "nullPolicy": "Preserve nulls; do not coerce missing values to zero.",
+      "applicableModels": [
+        "OFFICIAL_ENGINE",
+        "CLEAN_SHEET_V1",
+        "CLEAN_SHEET_V2",
+        "POSITION_MODELS",
+        "CAPTAIN_MODELS",
+        "XI_MODELS",
+        "FORMATION_MODELS",
+        "AVAILABILITY_MODELS"
+      ],
+      "metricType": "evaluation_metric",
+      "probability": false,
+      "limitations": []
+    },
+    {
+      "metricId": "PREDICTED_POINTS_MEAN",
+      "label": "predictedPointsMean",
+      "formulaDescription": "Mean predicted points for selected records.",
+      "numerator": "sum(predictedPoints)",
+      "denominator": "selected records",
+      "nullPolicy": "Preserve nulls; do not coerce missing values to zero.",
+      "applicableModels": [
+        "OFFICIAL_ENGINE",
+        "CLEAN_SHEET_V1",
+        "CLEAN_SHEET_V2",
+        "POSITION_MODELS",
+        "CAPTAIN_MODELS",
+        "XI_MODELS",
+        "FORMATION_MODELS",
+        "AVAILABILITY_MODELS"
+      ],
+      "metricType": "evaluation_metric",
+      "probability": false,
+      "limitations": []
+    },
+    {
+      "metricId": "DID_NOT_PLAY_RATE_ALL_SELECTED",
+      "label": "DidNotPlayRateAllSelected",
+      "formulaDescription": "Share of all selected records classified DID_NOT_PLAY.",
+      "numerator": "DID_NOT_PLAY selected",
+      "denominator": "all selected records",
+      "nullPolicy": "Preserve nulls; do not coerce missing values to zero.",
+      "applicableModels": [
+        "RANKING_MODELS",
+        "XI_MODELS",
+        "CAPTAIN_MODELS"
+      ],
+      "metricType": "evaluation_metric",
+      "probability": false,
+      "limitations": []
+    },
+    {
+      "metricId": "DID_NOT_PLAY_RATE_KNOWN_TARGETS",
+      "label": "DidNotPlayRateKnownTargets",
+      "formulaDescription": "Share of selected known-target records classified DID_NOT_PLAY.",
+      "numerator": "DID_NOT_PLAY selected",
+      "denominator": "selected records excluding missing/ambiguous target",
+      "nullPolicy": "Preserve nulls; do not coerce missing values to zero.",
+      "applicableModels": [
+        "RANKING_MODELS",
+        "XI_MODELS",
+        "CAPTAIN_MODELS"
+      ],
+      "metricType": "evaluation_metric",
+      "probability": false,
+      "limitations": []
+    },
+    {
+      "metricId": "SCORE_UNAVAILABLE_RATE",
+      "label": "ScoreUnavailableRate",
+      "formulaDescription": "Share of selected records with unavailable score.",
+      "numerator": "SCORE_UNAVAILABLE selected",
+      "denominator": "all selected records",
+      "nullPolicy": "Preserve nulls; do not coerce missing values to zero.",
+      "applicableModels": [
+        "OFFICIAL_ENGINE",
+        "CLEAN_SHEET_V1",
+        "CLEAN_SHEET_V2",
+        "POSITION_MODELS",
+        "CAPTAIN_MODELS",
+        "XI_MODELS",
+        "FORMATION_MODELS",
+        "AVAILABILITY_MODELS"
+      ],
+      "metricType": "evaluation_metric",
+      "probability": false,
+      "limitations": []
+    },
+    {
+      "metricId": "TARGET_MISSING_RATE",
+      "label": "TargetMissingRate",
+      "formulaDescription": "Share of selected records with missing target.",
+      "numerator": "TARGET_MISSING selected",
+      "denominator": "all selected records",
+      "nullPolicy": "Preserve nulls; do not coerce missing values to zero.",
+      "applicableModels": [
+        "OFFICIAL_ENGINE",
+        "CLEAN_SHEET_V1",
+        "CLEAN_SHEET_V2",
+        "POSITION_MODELS",
+        "CAPTAIN_MODELS",
+        "XI_MODELS",
+        "FORMATION_MODELS",
+        "AVAILABILITY_MODELS"
+      ],
+      "metricType": "evaluation_metric",
+      "probability": false,
+      "limitations": []
+    },
+    {
+      "metricId": "TARGET_AMBIGUOUS_RATE",
+      "label": "TargetAmbiguousRate",
+      "formulaDescription": "Share of selected records with ambiguous target.",
+      "numerator": "TARGET_AMBIGUOUS selected",
+      "denominator": "all selected records",
+      "nullPolicy": "Preserve nulls; do not coerce missing values to zero.",
+      "applicableModels": [
+        "OFFICIAL_ENGINE",
+        "CLEAN_SHEET_V1",
+        "CLEAN_SHEET_V2",
+        "POSITION_MODELS",
+        "CAPTAIN_MODELS",
+        "XI_MODELS",
+        "FORMATION_MODELS",
+        "AVAILABILITY_MODELS"
+      ],
+      "metricType": "evaluation_metric",
+      "probability": false,
+      "limitations": []
+    },
+    {
+      "metricId": "CAPTURE_RATE",
+      "label": "Capture Rate",
+      "formulaDescription": "Share of actual best possible points captured by the selected XI.",
+      "numerator": "selected XI actual points",
+      "denominator": "best actual XI points",
+      "nullPolicy": "Preserve nulls; do not coerce missing values to zero.",
+      "applicableModels": [
+        "XI_MODELS"
+      ],
+      "metricType": "evaluation_metric",
+      "probability": false,
+      "limitations": []
+    },
+    {
+      "metricId": "TOP_POTENTIAL_CAPTURE_RATE",
+      "label": "TopPotentialCaptureRate",
+      "formulaDescription": "Capture using top potential pools.",
+      "numerator": "selected actual points in potential pool",
+      "denominator": "best available potential points",
+      "nullPolicy": "Preserve nulls; do not coerce missing values to zero.",
+      "applicableModels": [
+        "XI_MODELS"
+      ],
+      "metricType": "evaluation_metric",
+      "probability": false,
+      "limitations": []
+    },
+    {
+      "metricId": "FORMATION_ACCURACY",
+      "label": "Formation Accuracy",
+      "formulaDescription": "Share of rounds where recommended formation equals best actual formation.",
+      "numerator": "formation hits",
+      "denominator": "formation evaluated rounds",
+      "nullPolicy": "Preserve nulls; do not coerce missing values to zero.",
+      "applicableModels": [
+        "FORMATION_MODELS"
+      ],
+      "metricType": "evaluation_metric",
+      "probability": false,
+      "limitations": []
+    },
+    {
+      "metricId": "FORMATION_REGRET",
+      "label": "Formation Regret",
+      "formulaDescription": "Point loss versus best actual formation.",
+      "numerator": "best formation points - selected formation points",
+      "denominator": "formation evaluated rounds",
+      "nullPolicy": "Preserve nulls; do not coerce missing values to zero.",
+      "applicableModels": [
+        "FORMATION_MODELS"
+      ],
+      "metricType": "evaluation_metric",
+      "probability": false,
+      "limitations": []
+    },
+    {
+      "metricId": "CAPTAIN_DID_NOT_PLAY_RATE",
+      "label": "Captain DidNotPlayRate",
+      "formulaDescription": "Share of captains classified DID_NOT_PLAY.",
+      "numerator": "captains DID_NOT_PLAY",
+      "denominator": "captains selected",
+      "nullPolicy": "Preserve nulls; do not coerce missing values to zero.",
+      "applicableModels": [
+        "CAPTAIN_MODELS"
+      ],
+      "metricType": "evaluation_metric",
+      "probability": false,
+      "limitations": []
+    },
+    {
+      "metricId": "XI_DID_NOT_PLAY_COUNT",
+      "label": "XI DidNotPlayCount",
+      "formulaDescription": "Count of XI players classified DID_NOT_PLAY.",
+      "numerator": "DID_NOT_PLAY in XI",
+      "denominator": "selected XI",
+      "nullPolicy": "Preserve nulls; do not coerce missing values to zero.",
+      "applicableModels": [
+        "XI_MODELS"
+      ],
+      "metricType": "evaluation_metric",
+      "probability": false,
+      "limitations": []
+    },
+    {
+      "metricId": "EVIDENCE_SCORE",
+      "label": "evidenceScore",
+      "formulaDescription": "Internal evidence score, never a probability.",
+      "numerator": "weighted evidence signals",
+      "denominator": "internal scale 0-100",
+      "nullPolicy": "Preserve nulls; do not coerce missing values to zero.",
+      "applicableModels": [
+        "OFFICIAL_ENGINE",
+        "CLEAN_SHEET_V1",
+        "CLEAN_SHEET_V2",
+        "POSITION_MODELS",
+        "CAPTAIN_MODELS",
+        "XI_MODELS",
+        "FORMATION_MODELS",
+        "AVAILABILITY_MODELS"
+      ],
+      "metricType": "internal_index",
+      "probability": false,
+      "limitations": []
+    },
+    {
+      "metricId": "DATA_QUALITY_SCORE",
+      "label": "dataQualityScore",
+      "formulaDescription": "Internal data quality score.",
+      "numerator": "available required quality checks",
+      "denominator": "all required quality checks",
+      "nullPolicy": "Preserve nulls; do not coerce missing values to zero.",
+      "applicableModels": [
+        "OFFICIAL_ENGINE",
+        "CLEAN_SHEET_V1",
+        "CLEAN_SHEET_V2",
+        "POSITION_MODELS",
+        "CAPTAIN_MODELS",
+        "XI_MODELS",
+        "FORMATION_MODELS",
+        "AVAILABILITY_MODELS"
+      ],
+      "metricType": "internal_index",
+      "probability": false,
+      "limitations": []
+    },
+    {
+      "metricId": "PARTICIPATION_RELIABILITY_SCORE",
+      "label": "participationReliabilityScore",
+      "formulaDescription": "Internal participation reliability score.",
+      "numerator": "validated participation signals",
+      "denominator": "expected participation signals",
+      "nullPolicy": "Preserve nulls; do not coerce missing values to zero.",
+      "applicableModels": [
+        "AVAILABILITY_MODELS"
+      ],
+      "metricType": "internal_index",
+      "probability": false,
+      "limitations": []
+    }
+  ]
+}

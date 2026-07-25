@@ -1,0 +1,326 @@
+{
+  "schemaVersion": "research-baseline-target-audit/v1",
+  "baselineId": "RESEARCH_BASELINE_1_0",
+  "season": 2026,
+  "generatedAt": "2026-07-24T17:19:47.472Z",
+  "targetDefinitionVersion": "PARTICIPATION_TARGET_V1",
+  "canonicalSource": "post.players[].played",
+  "roundsAudited": [
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18
+  ],
+  "totalRecords": 12524,
+  "canonicalAvailable": 12524,
+  "byClassification": {
+    "DID_PLAY": 5469,
+    "DID_NOT_PLAY": 7055
+  },
+  "semanticDivergences": 10416,
+  "divergenceMatrix": [
+    {
+      "divergenceType": "PLAYED_FALSE_ACTUAL_POINTS_PRESENT",
+      "count": 7055,
+      "percentage": 0.563318,
+      "rounds": [
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18
+      ],
+      "positions": {
+        "1": 949,
+        "2": 1126,
+        "3": 1222,
+        "4": 2083,
+        "5": 1653,
+        "6": 22
+      },
+      "examples": [
+        {
+          "round": 2,
+          "athleteId": 40990,
+          "name": "Dorival Silvestre Júnior",
+          "positionId": 6,
+          "played": false,
+          "enteredFieldLegacy": null,
+          "actualPoints": 0,
+          "gamesDelta": 0,
+          "scoutsCount": 0,
+          "canonicalClassification": "DID_NOT_PLAY"
+        },
+        {
+          "round": 2,
+          "athleteId": 42222,
+          "name": "Osvaldo Lourenço Filho",
+          "positionId": 5,
+          "played": false,
+          "enteredFieldLegacy": null,
+          "actualPoints": 0,
+          "gamesDelta": 0,
+          "scoutsCount": 1,
+          "canonicalClassification": "DID_NOT_PLAY"
+        },
+        {
+          "round": 2,
+          "athleteId": 50742,
+          "name": "Gabriel Christoni Leite",
+          "positionId": 1,
+          "played": false,
+          "enteredFieldLegacy": null,
+          "actualPoints": 0,
+          "gamesDelta": 0,
+          "scoutsCount": 0,
+          "canonicalClassification": "DID_NOT_PLAY"
+        },
+        {
+          "round": 2,
+          "athleteId": 63007,
+          "name": "Neymar da Silva Santos Júnior",
+          "positionId": 4,
+          "played": false,
+          "enteredFieldLegacy": null,
+          "actualPoints": 0,
+          "gamesDelta": 0,
+          "scoutsCount": 0,
+          "canonicalClassification": "DID_NOT_PLAY"
+        },
+        {
+          "round": 2,
+          "athleteId": 63008,
+          "name": "Rafael Toloi",
+          "positionId": 3,
+          "played": false,
+          "enteredFieldLegacy": null,
+          "actualPoints": 0,
+          "gamesDelta": 0,
+          "scoutsCount": 0,
+          "canonicalClassification": "DID_NOT_PLAY"
+        }
+      ],
+      "severity": "HIGH",
+      "interpretation": "Raw point field can contain zero/cumulative values even when played=false.",
+      "impactOnMetrics": "Points cannot replace played as participation target."
+    },
+    {
+      "divergenceType": "PLAYED_FALSE_SCOUT_PRESENT",
+      "count": 3346,
+      "percentage": 0.267167,
+      "rounds": [
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18
+      ],
+      "positions": {
+        "1": 151,
+        "2": 617,
+        "3": 566,
+        "4": 1155,
+        "5": 845,
+        "6": 12
+      },
+      "examples": [
+        {
+          "round": 2,
+          "athleteId": 42222,
+          "name": "Osvaldo Lourenço Filho",
+          "positionId": 5,
+          "played": false,
+          "enteredFieldLegacy": null,
+          "actualPoints": 0,
+          "gamesDelta": 0,
+          "scoutsCount": 1,
+          "canonicalClassification": "DID_NOT_PLAY"
+        },
+        {
+          "round": 2,
+          "athleteId": 69012,
+          "name": "Aderbar Melo dos Santos Neto",
+          "positionId": 1,
+          "played": false,
+          "enteredFieldLegacy": null,
+          "actualPoints": 0,
+          "gamesDelta": 0,
+          "scoutsCount": 2,
+          "canonicalClassification": "DID_NOT_PLAY"
+        },
+        {
+          "round": 2,
+          "athleteId": 69208,
+          "name": "Gabriel Armando de Abreu",
+          "positionId": 3,
+          "played": false,
+          "enteredFieldLegacy": null,
+          "actualPoints": 0,
+          "gamesDelta": 0,
+          "scoutsCount": 1,
+          "canonicalClassification": "DID_NOT_PLAY"
+        },
+        {
+          "round": 2,
+          "athleteId": 77485,
+          "name": "André Martín Carrillo Díaz",
+          "positionId": 4,
+          "played": false,
+          "enteredFieldLegacy": null,
+          "actualPoints": 0,
+          "gamesDelta": 0,
+          "scoutsCount": 3,
+          "canonicalClassification": "DID_NOT_PLAY"
+        },
+        {
+          "round": 2,
+          "athleteId": 77656,
+          "name": "Cédric Ricardo Alves Soares",
+          "positionId": 2,
+          "played": false,
+          "enteredFieldLegacy": null,
+          "actualPoints": 0,
+          "gamesDelta": 0,
+          "scoutsCount": 2,
+          "canonicalClassification": "DID_NOT_PLAY"
+        }
+      ],
+      "severity": "MEDIUM",
+      "interpretation": "Scouts field is not a clean participation signal in this source.",
+      "impactOnMetrics": "Scout events remain complementary and excluded from canonical target."
+    },
+    {
+      "divergenceType": "PLAYED_FALSE_ACTUAL_POINTS_NON_ZERO",
+      "count": 15,
+      "percentage": 0.001198,
+      "rounds": [
+        4,
+        6,
+        7,
+        10,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18
+      ],
+      "positions": {
+        "1": 3,
+        "2": 2,
+        "3": 5,
+        "4": 1,
+        "5": 4
+      },
+      "examples": [
+        {
+          "round": 4,
+          "athleteId": 96831,
+          "name": "Carlos Moisés de Lima",
+          "positionId": 5,
+          "played": false,
+          "enteredFieldLegacy": null,
+          "actualPoints": -1,
+          "gamesDelta": 0,
+          "scoutsCount": 1,
+          "canonicalClassification": "DID_NOT_PLAY"
+        },
+        {
+          "round": 6,
+          "athleteId": 128433,
+          "name": "Johan Rojas Echavarría",
+          "positionId": 4,
+          "played": false,
+          "enteredFieldLegacy": null,
+          "actualPoints": -1,
+          "gamesDelta": 0,
+          "scoutsCount": 6,
+          "canonicalClassification": "DID_NOT_PLAY"
+        },
+        {
+          "round": 7,
+          "athleteId": 97468,
+          "name": "Fernando Marçal de Oliveira",
+          "positionId": 2,
+          "played": false,
+          "enteredFieldLegacy": null,
+          "actualPoints": -1,
+          "gamesDelta": 0,
+          "scoutsCount": 3,
+          "canonicalClassification": "DID_NOT_PLAY"
+        },
+        {
+          "round": 10,
+          "athleteId": 105373,
+          "name": "Gabriel Lehman Xavier - Lheman / Lhman",
+          "positionId": 3,
+          "played": false,
+          "enteredFieldLegacy": null,
+          "actualPoints": -1,
+          "gamesDelta": 0,
+          "scoutsCount": 6,
+          "canonicalClassification": "DID_NOT_PLAY"
+        },
+        {
+          "round": 10,
+          "athleteId": 146430,
+          "name": "Gabriel Pereira Justino",
+          "positionId": 3,
+          "played": false,
+          "enteredFieldLegacy": null,
+          "actualPoints": -1,
+          "gamesDelta": 0,
+          "scoutsCount": 3,
+          "canonicalClassification": "DID_NOT_PLAY"
+        }
+      ],
+      "severity": "HIGH",
+      "interpretation": "Non-zero points with played=false require source-level caution.",
+      "impactOnMetrics": "Would affect point evaluation if not separated from participation."
+    }
+  ],
+  "targetValidity": {
+    "canonicalSourceTrusted": true,
+    "invalidatesTarget": false,
+    "reliabilityState": "PARTIALLY_RELIABLE",
+    "interpretation": "Divergences confirm that raw complementary signals must not replace post.players[].played."
+  }
+}

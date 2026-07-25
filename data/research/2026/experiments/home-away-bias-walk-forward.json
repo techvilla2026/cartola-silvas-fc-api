@@ -1,12 +1,12 @@
 {
   "schemaVersion": "walk-forward-experiment/v1",
-  "generatedAt": "2026-07-14T00:40:08.316Z",
+  "generatedAt": "2026-07-21T16:17:31.557Z",
   "season": 2026,
   "engineVersion": "flutter-parity-enriched-engine/4.3.2",
-  "researchEngineVersion": "engine-research-lab/4.7.0",
+  "researchEngineVersion": "engine-research-lab/5.0.0",
   "dataFingerprint": "2d848a23d8c8ee067ac3bccd0072f360b727a334ebc0e33ff9d6cdf907fd9686",
   "configFingerprint": "32566bc0fd600eccd8610902ddf93402fdcde398342be5a3edcca451f0f40096",
-  "codeVersion": "4.7.0",
+  "codeVersion": "5.0.0",
   "sourceBuildId": "build-4.3.2",
   "inputRounds": [
     2,

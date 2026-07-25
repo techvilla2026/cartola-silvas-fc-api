@@ -1,0 +1,4148 @@
+{
+  "schemaVersion": "multi-round-calibration-research/v1",
+  "generatedAt": "2026-07-23T16:28:38.394Z",
+  "season": 2026,
+  "round": 19,
+  "engineVersion": "multi-round-calibration-research-lab/5.2.4",
+  "sourceBuildId": "build-4.3.2",
+  "officialEngineImpact": false,
+  "productionPromotion": false,
+  "temporalPolicy": {
+    "leakageStatus": "PASS",
+    "predictionsUsePreRoundSnapshotOnly": true,
+    "actualPointsUsedOnlyAsTargets": true,
+    "snapshotsWereNotRecalculated": true
+  },
+  "round19Closure": {
+    "checkedAt": "2026-07-23T16:28:38.394Z",
+    "closed": false,
+    "status": "CRIADA",
+    "match": {
+      "matchId": 346538,
+      "round": 19,
+      "homeClubId": 264,
+      "awayClubId": 364,
+      "startsAt": "2026-07-23T22:30:00.000Z",
+      "venue": "Neo Química Arena",
+      "homeScore": null,
+      "awayScore": null,
+      "status": "CRIADA"
+    }
+  },
+  "captainAudit": {
+    "build523Issue": "A Build 5.2.3 reportou Ivan como capitao ao ler o maior score geral do time ideal/posicao, sem aplicar a regra de elegibilidade do capitao. Ivan era GOL e nunca deveria ser candidato a capitao SLVS.",
+    "eligibilityPolicy": {
+      "allowedPositions": [
+        "ATA",
+        "MEI"
+      ],
+      "rejectedPositions": [
+        "GOL",
+        "LAT",
+        "ZAG",
+        "TEC"
+      ],
+      "noNameRules": true,
+      "ataPreference": "ATA recebe desempate pequeno; MEI vence quando o score pre-rodada fica claramente acima."
+    },
+    "top3": [
+      {
+        "athleteId": 107231,
+        "name": "Danilo dos Santos de Oliveira",
+        "clubId": 263,
+        "positionId": 4,
+        "position": "MEI",
+        "predictedPoints": 7.8,
+        "averageBeforeRound": 9.08,
+        "actualPoints": null,
+        "enteredField": false,
+        "dataQualityScore": 38.25,
+        "captainRank": 1,
+        "captainRole": "CAPTAIN",
+        "captainScore": 16.1941,
+        "eligibility": "ELIGIBLE_ATA_MEI_ONLY"
+      },
+      {
+        "athleteId": 130209,
+        "name": "Carlos Renê de Sousa Ferreira - Souza",
+        "clubId": 287,
+        "positionId": 5,
+        "position": "ATA",
+        "predictedPoints": 7,
+        "averageBeforeRound": 8.04,
+        "actualPoints": 18.1,
+        "enteredField": true,
+        "dataQualityScore": 38.25,
+        "captainRank": 2,
+        "captainRole": "VICE",
+        "captainScore": 15.4393,
+        "eligibility": "ELIGIBLE_ATA_MEI_ONLY"
+      },
+      {
+        "athleteId": 102928,
+        "name": "Agustín Canobbio Graviz",
+        "clubId": 266,
+        "positionId": 5,
+        "position": "ATA",
+        "predictedPoints": 6.9,
+        "averageBeforeRound": 7.94,
+        "actualPoints": null,
+        "enteredField": false,
+        "dataQualityScore": 38.25,
+        "captainRank": 3,
+        "captainRole": "THIRD_OPTION",
+        "captainScore": 15.2523,
+        "eligibility": "ELIGIBLE_ATA_MEI_ONLY"
+      }
+    ],
+    "captain": {
+      "athleteId": 107231,
+      "name": "Danilo dos Santos de Oliveira",
+      "clubId": 263,
+      "positionId": 4,
+      "position": "MEI",
+      "predictedPoints": 7.8,
+      "averageBeforeRound": 9.08,
+      "actualPoints": null,
+      "enteredField": false,
+      "dataQualityScore": 38.25,
+      "captainRank": 1,
+      "captainRole": "CAPTAIN",
+      "captainScore": 16.1941,
+      "eligibility": "ELIGIBLE_ATA_MEI_ONLY"
+    },
+    "vice": {
+      "athleteId": 130209,
+      "name": "Carlos Renê de Sousa Ferreira - Souza",
+      "clubId": 287,
+      "positionId": 5,
+      "position": "ATA",
+      "predictedPoints": 7,
+      "averageBeforeRound": 8.04,
+      "actualPoints": 18.1,
+      "enteredField": true,
+      "dataQualityScore": 38.25,
+      "captainRank": 2,
+      "captainRole": "VICE",
+      "captainScore": 15.4393,
+      "eligibility": "ELIGIBLE_ATA_MEI_ONLY"
+    },
+    "thirdOption": {
+      "athleteId": 102928,
+      "name": "Agustín Canobbio Graviz",
+      "clubId": 266,
+      "positionId": 5,
+      "position": "ATA",
+      "predictedPoints": 6.9,
+      "averageBeforeRound": 7.94,
+      "actualPoints": null,
+      "enteredField": false,
+      "dataQualityScore": 38.25,
+      "captainRank": 3,
+      "captainRole": "THIRD_OPTION",
+      "captainScore": 15.2523,
+      "eligibility": "ELIGIBLE_ATA_MEI_ONLY"
+    },
+    "temporalPolicy": "Somente previsao, nota, media, forma recente e qualidade pre-rodada entram no ranking; actualPoints aparece apenas como alvo posterior."
+  },
+  "cleanSheetBacktest": {
+    "validRounds": 17,
+    "validTeamRows": 334,
+    "validMatches": 167,
+    "v1": {
+      "top1": 0.2941,
+      "top3": 0.2941,
+      "top5": 0.2706,
+      "averageRankOfActualCleanSheetTeams": 8.8831,
+      "falseDefensiveFavorites": 12,
+      "stability": {
+        "distinctTop1Teams": 8
+      }
+    },
+    "v2": {
+      "top1": 0.2353,
+      "top3": 0.2941,
+      "top5": 0.2588,
+      "averageRankOfActualCleanSheetTeams": 9.2987,
+      "falseDefensiveFavorites": 13,
+      "stability": {
+        "distinctTop1Teams": 10
+      }
+    },
+    "v2ConsistentImprovement": false,
+    "v2Status": "EXPERIMENTAL"
+  },
+  "shadowMode": {
+    "round19": {
+      "GOL": {
+        "modelId": "GOL_V2",
+        "status": "EXPERIMENTAL",
+        "officialTop5": [
+          {
+            "athleteId": 88136,
+            "name": "Ivan Quaresma da Silva",
+            "clubId": 364,
+            "positionId": 1,
+            "position": "GOL",
+            "predictedPoints": 8.4,
+            "averageBeforeRound": 10.2,
+            "actualPoints": 10.2,
+            "enteredField": true,
+            "dataQualityScore": 14.45,
+            "rank": 1,
+            "officialScore": 8.4,
+            "availabilityStatus": "POST_MATCH_SCORE_AVAILABLE",
+            "dataQualityV2": {
+              "score": 55,
+              "level": "MEDIUM",
+              "factors": {
+                "prediction": "AVAILABLE",
+                "average": "AVAILABLE",
+                "recentForm": "MISSING_OR_UNSAFE",
+                "status": "MISSING_OR_UNSAFE",
+                "matchContext": "AVAILABLE",
+                "teamContext": "AVAILABLE",
+                "scouts": "MISSING_OR_UNSAFE",
+                "sampleSize": "MISSING_OR_UNSAFE"
+              },
+              "penalties": [
+                "recentForm",
+                "status",
+                "scouts",
+                "sampleSize"
+              ],
+              "nullPolicy": "Campos null permanecem null; a penalidade reduz confianca, nao substitui o dado por zero."
+            }
+          },
+          {
+            "athleteId": 121823,
+            "name": "Kauê Vinicius de Souza Camargo",
+            "clubId": 264,
+            "positionId": 1,
+            "position": "GOL",
+            "predictedPoints": 7.9,
+            "averageBeforeRound": 9.2,
+            "actualPoints": null,
+            "enteredField": false,
+            "dataQualityScore": 14.45,
+            "rank": 2,
+            "officialScore": 7.9,
+            "availabilityStatus": "POST_MATCH_DID_NOT_PLAY",
+            "dataQualityV2": {
+              "score": 55,
+              "level": "MEDIUM",
+              "factors": {
+                "prediction": "AVAILABLE",
+                "average": "AVAILABLE",
+                "recentForm": "MISSING_OR_UNSAFE",
+                "status": "MISSING_OR_UNSAFE",
+                "matchContext": "AVAILABLE",
+                "teamContext": "AVAILABLE",
+                "scouts": "MISSING_OR_UNSAFE",
+                "sampleSize": "MISSING_OR_UNSAFE"
+              },
+              "penalties": [
+                "recentForm",
+                "status",
+                "scouts",
+                "sampleSize"
+              ],
+              "nullPolicy": "Campos null permanecem null; a penalidade reduz confianca, nao substitui o dado por zero."
+            }
+          },
+          {
+            "athleteId": 68872,
+            "name": "Marcelo Lomba do Nascimento",
+            "clubId": 275,
+            "positionId": 1,
+            "position": "GOL",
+            "predictedPoints": 7.3,
+            "averageBeforeRound": 8.9,
+            "actualPoints": 8.9,
+            "enteredField": true,
+            "dataQualityScore": 14.45,
+            "rank": 3,
+            "officialScore": 7.3,
+            "availabilityStatus": "POST_MATCH_SCORE_AVAILABLE",
+            "dataQualityV2": {
+              "score": 55,
+              "level": "MEDIUM",
+              "factors": {
+                "prediction": "AVAILABLE",
+                "average": "AVAILABLE",
+                "recentForm": "MISSING_OR_UNSAFE",
+                "status": "MISSING_OR_UNSAFE",
+                "matchContext": "AVAILABLE",
+                "teamContext": "AVAILABLE",
+                "scouts": "MISSING_OR_UNSAFE",
+                "sampleSize": "MISSING_OR_UNSAFE"
+              },
+              "penalties": [
+                "recentForm",
+                "status",
+                "scouts",
+                "sampleSize"
+              ],
+              "nullPolicy": "Campos null permanecem null; a penalidade reduz confianca, nao substitui o dado por zero."
+            }
+          },
+          {
+            "athleteId": 104118,
+            "name": "Lucas Willians Assis Arcanjo",
+            "clubId": 287,
+            "positionId": 1,
+            "position": "GOL",
+            "predictedPoints": 4.6,
+            "averageBeforeRound": 5.99,
+            "actualPoints": null,
+            "enteredField": false,
+            "dataQualityScore": 34.85,
+            "rank": 4,
+            "officialScore": 4.6,
+            "availabilityStatus": "POST_MATCH_DID_NOT_PLAY",
+            "dataQualityV2": {
+              "score": 65,
+              "level": "MEDIUM",
+              "factors": {
+                "prediction": "AVAILABLE",
+                "average": "AVAILABLE",
+                "recentForm": "MISSING_OR_UNSAFE",
+                "status": "MISSING_OR_UNSAFE",
+                "matchContext": "AVAILABLE",
+                "teamContext": "AVAILABLE",
+                "scouts": "MISSING_OR_UNSAFE",
+                "sampleSize": "AVAILABLE"
+              },
+              "penalties": [
+                "recentForm",
+                "status",
+                "scouts"
+              ],
+              "nullPolicy": "Campos null permanecem null; a penalidade reduz confianca, nao substitui o dado por zero."
+            }
+          },
+          {
+            "athleteId": 72018,
+            "name": "Tiago Luis Volpi",
+            "clubId": 280,
+            "positionId": 1,
+            "position": "GOL",
+            "predictedPoints": 4.2,
+            "averageBeforeRound": 5.95,
+            "actualPoints": 8.3,
+            "enteredField": true,
+            "dataQualityScore": 34.85,
+            "rank": 5,
+            "officialScore": 4.2,
+            "availabilityStatus": "POST_MATCH_SCORE_AVAILABLE",
+            "dataQualityV2": {
+              "score": 65,
+              "level": "MEDIUM",
+              "factors": {
+                "prediction": "AVAILABLE",
+                "average": "AVAILABLE",
+                "recentForm": "MISSING_OR_UNSAFE",
+                "status": "MISSING_OR_UNSAFE",
+                "matchContext": "AVAILABLE",
+                "teamContext": "AVAILABLE",
+                "scouts": "MISSING_OR_UNSAFE",
+                "sampleSize": "AVAILABLE"
+              },
+              "penalties": [
+                "recentForm",
+                "status",
+                "scouts"
+              ],
+              "nullPolicy": "Campos null permanecem null; a penalidade reduz confianca, nao substitui o dado por zero."
+            }
+          }
+        ],
+        "shadowTop5": [
+          {
+            "athleteId": 88136,
+            "name": "Ivan Quaresma da Silva",
+            "clubId": 364,
+            "positionId": 1,
+            "position": "GOL",
+            "predictedPoints": 8.4,
+            "averageBeforeRound": 10.2,
+            "actualPoints": 10.2,
+            "enteredField": true,
+            "dataQualityScore": 14.45,
+            "rank": 1,
+            "shadowScore": 8.526,
+            "availabilityStatus": "POST_MATCH_SCORE_AVAILABLE",
+            "dataQualityV2": {
+              "score": 55,
+              "level": "MEDIUM",
+              "factors": {
+                "prediction": "AVAILABLE",
+                "average": "AVAILABLE",
+                "recentForm": "MISSING_OR_UNSAFE",
+                "status": "MISSING_OR_UNSAFE",
+                "matchContext": "AVAILABLE",
+                "teamContext": "AVAILABLE",
+                "scouts": "MISSING_OR_UNSAFE",
+                "sampleSize": "MISSING_OR_UNSAFE"
+              },
+              "penalties": [
+                "recentForm",
+                "status",
+                "scouts",
+                "sampleSize"
+              ],
+              "nullPolicy": "Campos null permanecem null; a penalidade reduz confianca, nao substitui o dado por zero."
+            }
+          },
+          {
+            "athleteId": 121823,
+            "name": "Kauê Vinicius de Souza Camargo",
+            "clubId": 264,
+            "positionId": 1,
+            "position": "GOL",
+            "predictedPoints": 7.9,
+            "averageBeforeRound": 9.2,
+            "actualPoints": null,
+            "enteredField": false,
+            "dataQualityScore": 14.45,
+            "rank": 2,
+            "shadowScore": 8.296,
+            "availabilityStatus": "POST_MATCH_DID_NOT_PLAY",
+            "dataQualityV2": {
+              "score": 55,
+              "level": "MEDIUM",
+              "factors": {
+                "prediction": "AVAILABLE",
+                "average": "AVAILABLE",
+                "recentForm": "MISSING_OR_UNSAFE",
+                "status": "MISSING_OR_UNSAFE",
+                "matchContext": "AVAILABLE",
+                "teamContext": "AVAILABLE",
+                "scouts": "MISSING_OR_UNSAFE",
+                "sampleSize": "MISSING_OR_UNSAFE"
+              },
+              "penalties": [
+                "recentForm",
+                "status",
+                "scouts",
+                "sampleSize"
+              ],
+              "nullPolicy": "Campos null permanecem null; a penalidade reduz confianca, nao substitui o dado por zero."
+            }
+          },
+          {
+            "athleteId": 68872,
+            "name": "Marcelo Lomba do Nascimento",
+            "clubId": 275,
+            "positionId": 1,
+            "position": "GOL",
+            "predictedPoints": 7.3,
+            "averageBeforeRound": 8.9,
+            "actualPoints": 8.9,
+            "enteredField": true,
+            "dataQualityScore": 14.45,
+            "rank": 3,
+            "shadowScore": 7.517,
+            "availabilityStatus": "POST_MATCH_SCORE_AVAILABLE",
+            "dataQualityV2": {
+              "score": 55,
+              "level": "MEDIUM",
+              "factors": {
+                "prediction": "AVAILABLE",
+                "average": "AVAILABLE",
+                "recentForm": "MISSING_OR_UNSAFE",
+                "status": "MISSING_OR_UNSAFE",
+                "matchContext": "AVAILABLE",
+                "teamContext": "AVAILABLE",
+                "scouts": "MISSING_OR_UNSAFE",
+                "sampleSize": "MISSING_OR_UNSAFE"
+              },
+              "penalties": [
+                "recentForm",
+                "status",
+                "scouts",
+                "sampleSize"
+              ],
+              "nullPolicy": "Campos null permanecem null; a penalidade reduz confianca, nao substitui o dado por zero."
+            }
+          },
+          {
+            "athleteId": 104118,
+            "name": "Lucas Willians Assis Arcanjo",
+            "clubId": 287,
+            "positionId": 1,
+            "position": "GOL",
+            "predictedPoints": 4.6,
+            "averageBeforeRound": 5.99,
+            "actualPoints": null,
+            "enteredField": false,
+            "dataQualityScore": 34.85,
+            "rank": 4,
+            "shadowScore": 5.9443,
+            "availabilityStatus": "POST_MATCH_DID_NOT_PLAY",
+            "dataQualityV2": {
+              "score": 65,
+              "level": "MEDIUM",
+              "factors": {
+                "prediction": "AVAILABLE",
+                "average": "AVAILABLE",
+                "recentForm": "MISSING_OR_UNSAFE",
+                "status": "MISSING_OR_UNSAFE",
+                "matchContext": "AVAILABLE",
+                "teamContext": "AVAILABLE",
+                "scouts": "MISSING_OR_UNSAFE",
+                "sampleSize": "AVAILABLE"
+              },
+              "penalties": [
+                "recentForm",
+                "status",
+                "scouts"
+              ],
+              "nullPolicy": "Campos null permanecem null; a penalidade reduz confianca, nao substitui o dado por zero."
+            }
+          },
+          {
+            "athleteId": 72018,
+            "name": "Tiago Luis Volpi",
+            "clubId": 280,
+            "positionId": 1,
+            "position": "GOL",
+            "predictedPoints": 4.2,
+            "averageBeforeRound": 5.95,
+            "actualPoints": 8.3,
+            "enteredField": true,
+            "dataQualityScore": 34.85,
+            "rank": 5,
+            "shadowScore": 5.3875,
+            "availabilityStatus": "POST_MATCH_SCORE_AVAILABLE",
+            "dataQualityV2": {
+              "score": 65,
+              "level": "MEDIUM",
+              "factors": {
+                "prediction": "AVAILABLE",
+                "average": "AVAILABLE",
+                "recentForm": "MISSING_OR_UNSAFE",
+                "status": "MISSING_OR_UNSAFE",
+                "matchContext": "AVAILABLE",
+                "teamContext": "AVAILABLE",
+                "scouts": "MISSING_OR_UNSAFE",
+                "sampleSize": "AVAILABLE"
+              },
+              "penalties": [
+                "recentForm",
+                "status",
+                "scouts"
+              ],
+              "nullPolicy": "Campos null permanecem null; a penalidade reduz confianca, nao substitui o dado por zero."
+            }
+          }
+        ],
+        "officialMetrics": {
+          "top1": {
+            "k": 1,
+            "evaluated": 1,
+            "averageActualPoints": 10.2,
+            "topActualPoints": 10.2
+          },
+          "top3": {
+            "k": 3,
+            "evaluated": 2,
+            "averageActualPoints": 9.55,
+            "topActualPoints": 10.2
+          },
+          "top5": {
+            "k": 5,
+            "evaluated": 3,
+            "averageActualPoints": 9.1333,
+            "topActualPoints": 10.2
+          }
+        },
+        "shadowMetrics": {
+          "top1": {
+            "k": 1,
+            "evaluated": 1,
+            "averageActualPoints": 10.2,
+            "topActualPoints": 10.2
+          },
+          "top3": {
+            "k": 3,
+            "evaluated": 2,
+            "averageActualPoints": 9.55,
+            "topActualPoints": 10.2
+          },
+          "top5": {
+            "k": 5,
+            "evaluated": 3,
+            "averageActualPoints": 9.1333,
+            "topActualPoints": 10.2
+          }
+        }
+      },
+      "LAT": {
+        "modelId": "LAT_V2",
+        "status": "EXPERIMENTAL",
+        "officialTop5": [
+          {
+            "athleteId": 147192,
+            "name": "Claudio Henrique de Jesus Passos",
+            "clubId": 293,
+            "positionId": 2,
+            "position": "LAT",
+            "predictedPoints": 7.6,
+            "averageBeforeRound": 9.27,
+            "actualPoints": 16.9,
+            "enteredField": true,
+            "dataQualityScore": 23.8,
+            "rank": 1,
+            "officialScore": 7.6,
+            "availabilityStatus": "POST_MATCH_SCORE_AVAILABLE",
+            "dataQualityV2": {
+              "score": 65,
+              "level": "MEDIUM",
+              "factors": {
+                "prediction": "AVAILABLE",
+                "average": "AVAILABLE",
+                "recentForm": "MISSING_OR_UNSAFE",
+                "status": "MISSING_OR_UNSAFE",
+                "matchContext": "AVAILABLE",
+                "teamContext": "AVAILABLE",
+                "scouts": "MISSING_OR_UNSAFE",
+                "sampleSize": "AVAILABLE"
+              },
+              "penalties": [
+                "recentForm",
+                "status",
+                "scouts"
+              ],
+              "nullPolicy": "Campos null permanecem null; a penalidade reduz confianca, nao substitui o dado por zero."
+            }
+          },
+          {
+            "athleteId": 105531,
+            "name": "Matheus Lima Beltrão Oliveira Valin",
+            "clubId": 264,
+            "positionId": 2,
+            "position": "LAT",
+            "predictedPoints": 6.7,
+            "averageBeforeRound": 7.73,
+            "actualPoints": 6.8,
+            "enteredField": true,
+            "dataQualityScore": 38.25,
+            "rank": 2,
+            "officialScore": 6.7,
+            "availabilityStatus": "POST_MATCH_SCORE_AVAILABLE",
+            "dataQualityV2": {
+              "score": 65,
+              "level": "MEDIUM",
+              "factors": {
+                "prediction": "AVAILABLE",
+                "average": "AVAILABLE",
+                "recentForm": "MISSING_OR_UNSAFE",
+                "status": "MISSING_OR_UNSAFE",
+                "matchContext": "AVAILABLE",
+                "teamContext": "AVAILABLE",
+                "scouts": "MISSING_OR_UNSAFE",
+                "sampleSize": "AVAILABLE"
+              },
+              "penalties": [
+                "recentForm",
+                "status",
+                "scouts"
+              ],
+              "nullPolicy": "Campos null permanecem null; a penalidade reduz confianca, nao substitui o dado por zero."
+            }
+          },
+          {
+            "athleteId": 107093,
+            "name": "Luciano Batista da Silva Júnior",
+            "clubId": 265,
+            "positionId": 2,
+            "position": "LAT",
+            "predictedPoints": 6.3,
+            "averageBeforeRound": 7.73,
+            "actualPoints": null,
+            "enteredField": false,
+            "dataQualityScore": 38.25,
+            "rank": 3,
+            "officialScore": 6.3,
+            "availabilityStatus": "POST_MATCH_DID_NOT_PLAY",
+            "dataQualityV2": {
+              "score": 65,
+              "level": "MEDIUM",
+              "factors": {
+                "prediction": "AVAILABLE",
+                "average": "AVAILABLE",
+                "recentForm": "MISSING_OR_UNSAFE",
+                "status": "MISSING_OR_UNSAFE",
+                "matchContext": "AVAILABLE",
+                "teamContext": "AVAILABLE",
+                "scouts": "MISSING_OR_UNSAFE",
+                "sampleSize": "AVAILABLE"
+              },
+              "penalties": [
+                "recentForm",
+                "status",
+                "scouts"
+              ],
+              "nullPolicy": "Campos null permanecem null; a penalidade reduz confianca, nao substitui o dado por zero."
+            }
+          },
+          {
+            "athleteId": 94968,
+            "name": "Luis Antônio da Rocha Júnior",
+            "clubId": 280,
+            "positionId": 2,
+            "position": "LAT",
+            "predictedPoints": 6.2,
+            "averageBeforeRound": 7.52,
+            "actualPoints": 10.2,
+            "enteredField": true,
+            "dataQualityScore": 38.25,
+            "rank": 4,
+            "officialScore": 6.2,
+            "availabilityStatus": "POST_MATCH_SCORE_AVAILABLE",
+            "dataQualityV2": {
+              "score": 65,
+              "level": "MEDIUM",
+              "factors": {
+                "prediction": "AVAILABLE",
+                "average": "AVAILABLE",
+                "recentForm": "MISSING_OR_UNSAFE",
+                "status": "MISSING_OR_UNSAFE",
+                "matchContext": "AVAILABLE",
+                "teamContext": "AVAILABLE",
+                "scouts": "MISSING_OR_UNSAFE",
+                "sampleSize": "AVAILABLE"
+              },
+              "penalties": [
+                "recentForm",
+                "status",
+                "scouts"
+              ],
+              "nullPolicy": "Campos null permanecem null; a penalidade reduz confianca, nao substitui o dado por zero."
+            }
+          },
+          {
+            "athleteId": 116065,
+            "name": "Luís Eduardo Soares da Silva",
+            "clubId": 267,
+            "positionId": 2,
+            "position": "LAT",
+            "predictedPoints": 6.1,
+            "averageBeforeRound": 7.47,
+            "actualPoints": 12,
+            "enteredField": true,
+            "dataQualityScore": 38.25,
+            "rank": 5,
+            "officialScore": 6.1,
+            "availabilityStatus": "POST_MATCH_SCORE_AVAILABLE",
+            "dataQualityV2": {
+              "score": 65,
+              "level": "MEDIUM",
+              "factors": {
+                "prediction": "AVAILABLE",
+                "average": "AVAILABLE",
+                "recentForm": "MISSING_OR_UNSAFE",
+                "status": "MISSING_OR_UNSAFE",
+                "matchContext": "AVAILABLE",
+                "teamContext": "AVAILABLE",
+                "scouts": "MISSING_OR_UNSAFE",
+                "sampleSize": "AVAILABLE"
+              },
+              "penalties": [
+                "recentForm",
+                "status",
+                "scouts"
+              ],
+              "nullPolicy": "Campos null permanecem null; a penalidade reduz confianca, nao substitui o dado por zero."
+            }
+          }
+        ],
+        "shadowTop5": [
+          {
+            "athleteId": 147192,
+            "name": "Claudio Henrique de Jesus Passos",
+            "clubId": 293,
+            "positionId": 2,
+            "position": "LAT",
+            "predictedPoints": 7.6,
+            "averageBeforeRound": 9.27,
+            "actualPoints": 16.9,
+            "enteredField": true,
+            "dataQualityScore": 23.8,
+            "rank": 1,
+            "shadowScore": 7.859,
+            "availabilityStatus": "POST_MATCH_SCORE_AVAILABLE",
+            "dataQualityV2": {
+              "score": 65,
+              "level": "MEDIUM",
+              "factors": {
+                "prediction": "AVAILABLE",
+                "average": "AVAILABLE",
+                "recentForm": "MISSING_OR_UNSAFE",
+                "status": "MISSING_OR_UNSAFE",
+                "matchContext": "AVAILABLE",
+                "teamContext": "AVAILABLE",
+                "scouts": "MISSING_OR_UNSAFE",
+                "sampleSize": "AVAILABLE"
+              },
+              "penalties": [
+                "recentForm",
+                "status",
+                "scouts"
+              ],
+              "nullPolicy": "Campos null permanecem null; a penalidade reduz confianca, nao substitui o dado por zero."
+            }
+          },
+          {
+            "athleteId": 105531,
+            "name": "Matheus Lima Beltrão Oliveira Valin",
+            "clubId": 264,
+            "positionId": 2,
+            "position": "LAT",
+            "predictedPoints": 6.7,
+            "averageBeforeRound": 7.73,
+            "actualPoints": 6.8,
+            "enteredField": true,
+            "dataQualityScore": 38.25,
+            "rank": 2,
+            "shadowScore": 7.365,
+            "availabilityStatus": "POST_MATCH_SCORE_AVAILABLE",
+            "dataQualityV2": {
+              "score": 65,
+              "level": "MEDIUM",
+              "factors": {
+                "prediction": "AVAILABLE",
+                "average": "AVAILABLE",
+                "recentForm": "MISSING_OR_UNSAFE",
+                "status": "MISSING_OR_UNSAFE",
+                "matchContext": "AVAILABLE",
+                "teamContext": "AVAILABLE",
+                "scouts": "MISSING_OR_UNSAFE",
+                "sampleSize": "AVAILABLE"
+              },
+              "penalties": [
+                "recentForm",
+                "status",
+                "scouts"
+              ],
+              "nullPolicy": "Campos null permanecem null; a penalidade reduz confianca, nao substitui o dado por zero."
+            }
+          },
+          {
+            "athleteId": 107093,
+            "name": "Luciano Batista da Silva Júnior",
+            "clubId": 265,
+            "positionId": 2,
+            "position": "LAT",
+            "predictedPoints": 6.3,
+            "averageBeforeRound": 7.73,
+            "actualPoints": null,
+            "enteredField": false,
+            "dataQualityScore": 38.25,
+            "rank": 3,
+            "shadowScore": 6.783,
+            "availabilityStatus": "POST_MATCH_DID_NOT_PLAY",
+            "dataQualityV2": {
+              "score": 65,
+              "level": "MEDIUM",
+              "factors": {
+                "prediction": "AVAILABLE",
+                "average": "AVAILABLE",
+                "recentForm": "MISSING_OR_UNSAFE",
+                "status": "MISSING_OR_UNSAFE",
+                "matchContext": "AVAILABLE",
+                "teamContext": "AVAILABLE",
+                "scouts": "MISSING_OR_UNSAFE",
+                "sampleSize": "AVAILABLE"
+              },
+              "penalties": [
+                "recentForm",
+                "status",
+                "scouts"
+              ],
+              "nullPolicy": "Campos null permanecem null; a penalidade reduz confianca, nao substitui o dado por zero."
+            }
+          },
+          {
+            "athleteId": 94968,
+            "name": "Luis Antônio da Rocha Júnior",
+            "clubId": 280,
+            "positionId": 2,
+            "position": "LAT",
+            "predictedPoints": 6.2,
+            "averageBeforeRound": 7.52,
+            "actualPoints": 10.2,
+            "enteredField": true,
+            "dataQualityScore": 38.25,
+            "rank": 4,
+            "shadowScore": 6.662,
+            "availabilityStatus": "POST_MATCH_SCORE_AVAILABLE",
+            "dataQualityV2": {
+              "score": 65,
+              "level": "MEDIUM",
+              "factors": {
+                "prediction": "AVAILABLE",
+                "average": "AVAILABLE",
+                "recentForm": "MISSING_OR_UNSAFE",
+                "status": "MISSING_OR_UNSAFE",
+                "matchContext": "AVAILABLE",
+                "teamContext": "AVAILABLE",
+                "scouts": "MISSING_OR_UNSAFE",
+                "sampleSize": "AVAILABLE"
+              },
+              "penalties": [
+                "recentForm",
+                "status",
+                "scouts"
+              ],
+              "nullPolicy": "Campos null permanecem null; a penalidade reduz confianca, nao substitui o dado por zero."
+            }
+          },
+          {
+            "athleteId": 116065,
+            "name": "Luís Eduardo Soares da Silva",
+            "clubId": 267,
+            "positionId": 2,
+            "position": "LAT",
+            "predictedPoints": 6.1,
+            "averageBeforeRound": 7.47,
+            "actualPoints": 12,
+            "enteredField": true,
+            "dataQualityScore": 38.25,
+            "rank": 5,
+            "shadowScore": 6.589,
+            "availabilityStatus": "POST_MATCH_SCORE_AVAILABLE",
+            "dataQualityV2": {
+              "score": 65,
+              "level": "MEDIUM",
+              "factors": {
+                "prediction": "AVAILABLE",
+                "average": "AVAILABLE",
+                "recentForm": "MISSING_OR_UNSAFE",
+                "status": "MISSING_OR_UNSAFE",
+                "matchContext": "AVAILABLE",
+                "teamContext": "AVAILABLE",
+                "scouts": "MISSING_OR_UNSAFE",
+                "sampleSize": "AVAILABLE"
+              },
+              "penalties": [
+                "recentForm",
+                "status",
+                "scouts"
+              ],
+              "nullPolicy": "Campos null permanecem null; a penalidade reduz confianca, nao substitui o dado por zero."
+            }
+          }
+        ],
+        "officialMetrics": {
+          "top1": {
+            "k": 1,
+            "evaluated": 1,
+            "averageActualPoints": 16.9,
+            "topActualPoints": 16.9
+          },
+          "top3": {
+            "k": 3,
+            "evaluated": 2,
+            "averageActualPoints": 11.85,
+            "topActualPoints": 16.9
+          },
+          "top5": {
+            "k": 5,
+            "evaluated": 4,
+            "averageActualPoints": 11.475,
+            "topActualPoints": 16.9
+          }
+        },
+        "shadowMetrics": {
+          "top1": {
+            "k": 1,
+            "evaluated": 1,
+            "averageActualPoints": 16.9,
+            "topActualPoints": 16.9
+          },
+          "top3": {
+            "k": 3,
+            "evaluated": 2,
+            "averageActualPoints": 11.85,
+            "topActualPoints": 16.9
+          },
+          "top5": {
+            "k": 5,
+            "evaluated": 4,
+            "averageActualPoints": 11.475,
+            "topActualPoints": 16.9
+          }
+        }
+      },
+      "ZAG": {
+        "modelId": "ZAG_V2",
+        "status": "EXPERIMENTAL",
+        "officialTop5": [
+          {
+            "athleteId": 63354,
+            "name": "Rodrigo Modesto da Silva Moledo",
+            "clubId": 294,
+            "positionId": 3,
+            "position": "ZAG",
+            "predictedPoints": 6.8,
+            "averageBeforeRound": 7.75,
+            "actualPoints": null,
+            "enteredField": false,
+            "dataQualityScore": 14.45,
+            "rank": 1,
+            "officialScore": 6.8,
+            "availabilityStatus": "POST_MATCH_DID_NOT_PLAY",
+            "dataQualityV2": {
+              "score": 55,
+              "level": "MEDIUM",
+              "factors": {
+                "prediction": "AVAILABLE",
+                "average": "AVAILABLE",
+                "recentForm": "MISSING_OR_UNSAFE",
+                "status": "MISSING_OR_UNSAFE",
+                "matchContext": "AVAILABLE",
+                "teamContext": "AVAILABLE",
+                "scouts": "MISSING_OR_UNSAFE",
+                "sampleSize": "MISSING_OR_UNSAFE"
+              },
+              "penalties": [
+                "recentForm",
+                "status",
+                "scouts",
+                "sampleSize"
+              ],
+              "nullPolicy": "Campos null permanecem null; a penalidade reduz confianca, nao substitui o dado por zero."
+            }
+          },
+          {
+            "athleteId": 125488,
+            "name": "João Pedro de Sousa Rodrigues - Tchoca",
+            "clubId": 264,
+            "positionId": 3,
+            "position": "ZAG",
+            "predictedPoints": 6.7,
+            "averageBeforeRound": 7.7,
+            "actualPoints": null,
+            "enteredField": false,
+            "dataQualityScore": 14.45,
+            "rank": 2,
+            "officialScore": 6.7,
+            "availabilityStatus": "POST_MATCH_DID_NOT_PLAY",
+            "dataQualityV2": {
+              "score": 55,
+              "level": "MEDIUM",
+              "factors": {
+                "prediction": "AVAILABLE",
+                "average": "AVAILABLE",
+                "recentForm": "MISSING_OR_UNSAFE",
+                "status": "MISSING_OR_UNSAFE",
+                "matchContext": "AVAILABLE",
+                "teamContext": "AVAILABLE",
+                "scouts": "MISSING_OR_UNSAFE",
+                "sampleSize": "MISSING_OR_UNSAFE"
+              },
+              "penalties": [
+                "recentForm",
+                "status",
+                "scouts",
+                "sampleSize"
+              ],
+              "nullPolicy": "Campos null permanecem null; a penalidade reduz confianca, nao substitui o dado por zero."
+            }
+          },
+          {
+            "athleteId": 124661,
+            "name": "Ivan Ramiro Román Hurtado",
+            "clubId": 282,
+            "positionId": 3,
+            "position": "ZAG",
+            "predictedPoints": 4.5,
+            "averageBeforeRound": 5.92,
+            "actualPoints": 6.4,
+            "enteredField": true,
+            "dataQualityScore": 29.75,
+            "rank": 3,
+            "officialScore": 4.5,
+            "availabilityStatus": "POST_MATCH_SCORE_AVAILABLE",
+            "dataQualityV2": {
+              "score": 65,
+              "level": "MEDIUM",
+              "factors": {
+                "prediction": "AVAILABLE",
+                "average": "AVAILABLE",
+                "recentForm": "MISSING_OR_UNSAFE",
+                "status": "MISSING_OR_UNSAFE",
+                "matchContext": "AVAILABLE",
+                "teamContext": "AVAILABLE",
+                "scouts": "MISSING_OR_UNSAFE",
+                "sampleSize": "AVAILABLE"
+              },
+              "penalties": [
+                "recentForm",
+                "status",
+                "scouts"
+              ],
+              "nullPolicy": "Campos null permanecem null; a penalidade reduz confianca, nao substitui o dado por zero."
+            }
+          },
+          {
+            "athleteId": 140492,
+            "name": "João Victor de Souza Cunha",
+            "clubId": 262,
+            "positionId": 3,
+            "position": "ZAG",
+            "predictedPoints": 4.5,
+            "averageBeforeRound": 6.5,
+            "actualPoints": 6.5,
+            "enteredField": true,
+            "dataQualityScore": 14.45,
+            "rank": 4,
+            "officialScore": 4.5,
+            "availabilityStatus": "POST_MATCH_SCORE_AVAILABLE",
+            "dataQualityV2": {
+              "score": 55,
+              "level": "MEDIUM",
+              "factors": {
+                "prediction": "AVAILABLE",
+                "average": "AVAILABLE",
+                "recentForm": "MISSING_OR_UNSAFE",
+                "status": "MISSING_OR_UNSAFE",
+                "matchContext": "AVAILABLE",
+                "teamContext": "AVAILABLE",
+                "scouts": "MISSING_OR_UNSAFE",
+                "sampleSize": "MISSING_OR_UNSAFE"
+              },
+              "penalties": [
+                "recentForm",
+                "status",
+                "scouts",
+                "sampleSize"
+              ],
+              "nullPolicy": "Campos null permanecem null; a penalidade reduz confianca, nao substitui o dado por zero."
+            }
+          },
+          {
+            "athleteId": 63008,
+            "name": "Rafael Toloi",
+            "clubId": 276,
+            "positionId": 3,
+            "position": "ZAG",
+            "predictedPoints": 3.8,
+            "averageBeforeRound": 4.82,
+            "actualPoints": null,
+            "enteredField": false,
+            "dataQualityScore": 23.8,
+            "rank": 5,
+            "officialScore": 3.8,
+            "availabilityStatus": "POST_MATCH_DID_NOT_PLAY",
+            "dataQualityV2": {
+              "score": 65,
+              "level": "MEDIUM",
+              "factors": {
+                "prediction": "AVAILABLE",
+                "average": "AVAILABLE",
+                "recentForm": "MISSING_OR_UNSAFE",
+                "status": "MISSING_OR_UNSAFE",
+                "matchContext": "AVAILABLE",
+                "teamContext": "AVAILABLE",
+                "scouts": "MISSING_OR_UNSAFE",
+                "sampleSize": "AVAILABLE"
+              },
+              "penalties": [
+                "recentForm",
+                "status",
+                "scouts"
+              ],
+              "nullPolicy": "Campos null permanecem null; a penalidade reduz confianca, nao substitui o dado por zero."
+            }
+          }
+        ],
+        "shadowTop5": [
+          {
+            "athleteId": 63354,
+            "name": "Rodrigo Modesto da Silva Moledo",
+            "clubId": 294,
+            "positionId": 3,
+            "position": "ZAG",
+            "predictedPoints": 6.8,
+            "averageBeforeRound": 7.75,
+            "actualPoints": null,
+            "enteredField": false,
+            "dataQualityScore": 14.45,
+            "rank": 1,
+            "shadowScore": 6.993,
+            "availabilityStatus": "POST_MATCH_DID_NOT_PLAY",
+            "dataQualityV2": {
+              "score": 55,
+              "level": "MEDIUM",
+              "factors": {
+                "prediction": "AVAILABLE",
+                "average": "AVAILABLE",
+                "recentForm": "MISSING_OR_UNSAFE",
+                "status": "MISSING_OR_UNSAFE",
+                "matchContext": "AVAILABLE",
+                "teamContext": "AVAILABLE",
+                "scouts": "MISSING_OR_UNSAFE",
+                "sampleSize": "MISSING_OR_UNSAFE"
+              },
+              "penalties": [
+                "recentForm",
+                "status",
+                "scouts",
+                "sampleSize"
+              ],
+              "nullPolicy": "Campos null permanecem null; a penalidade reduz confianca, nao substitui o dado por zero."
+            }
+          },
+          {
+            "athleteId": 125488,
+            "name": "João Pedro de Sousa Rodrigues - Tchoca",
+            "clubId": 264,
+            "positionId": 3,
+            "position": "ZAG",
+            "predictedPoints": 6.7,
+            "averageBeforeRound": 7.7,
+            "actualPoints": null,
+            "enteredField": false,
+            "dataQualityScore": 14.45,
+            "rank": 2,
+            "shadowScore": 6.922,
+            "availabilityStatus": "POST_MATCH_DID_NOT_PLAY",
+            "dataQualityV2": {
+              "score": 55,
+              "level": "MEDIUM",
+              "factors": {
+                "prediction": "AVAILABLE",
+                "average": "AVAILABLE",
+                "recentForm": "MISSING_OR_UNSAFE",
+                "status": "MISSING_OR_UNSAFE",
+                "matchContext": "AVAILABLE",
+                "teamContext": "AVAILABLE",
+                "scouts": "MISSING_OR_UNSAFE",
+                "sampleSize": "MISSING_OR_UNSAFE"
+              },
+              "penalties": [
+                "recentForm",
+                "status",
+                "scouts",
+                "sampleSize"
+              ],
+              "nullPolicy": "Campos null permanecem null; a penalidade reduz confianca, nao substitui o dado por zero."
+            }
+          },
+          {
+            "athleteId": 124661,
+            "name": "Ivan Ramiro Román Hurtado",
+            "clubId": 282,
+            "positionId": 3,
+            "position": "ZAG",
+            "predictedPoints": 4.5,
+            "averageBeforeRound": 5.92,
+            "actualPoints": 6.4,
+            "enteredField": true,
+            "dataQualityScore": 29.75,
+            "rank": 3,
+            "shadowScore": 5.376,
+            "availabilityStatus": "POST_MATCH_SCORE_AVAILABLE",
+            "dataQualityV2": {
+              "score": 65,
+              "level": "MEDIUM",
+              "factors": {
+                "prediction": "AVAILABLE",
+                "average": "AVAILABLE",
+                "recentForm": "MISSING_OR_UNSAFE",
+                "status": "MISSING_OR_UNSAFE",
+                "matchContext": "AVAILABLE",
+                "teamContext": "AVAILABLE",
+                "scouts": "MISSING_OR_UNSAFE",
+                "sampleSize": "AVAILABLE"
+              },
+              "penalties": [
+                "recentForm",
+                "status",
+                "scouts"
+              ],
+              "nullPolicy": "Campos null permanecem null; a penalidade reduz confianca, nao substitui o dado por zero."
+            }
+          },
+          {
+            "athleteId": 140492,
+            "name": "João Victor de Souza Cunha",
+            "clubId": 262,
+            "positionId": 3,
+            "position": "ZAG",
+            "predictedPoints": 4.5,
+            "averageBeforeRound": 6.5,
+            "actualPoints": 6.5,
+            "enteredField": true,
+            "dataQualityScore": 14.45,
+            "rank": 4,
+            "shadowScore": 4.96,
+            "availabilityStatus": "POST_MATCH_SCORE_AVAILABLE",
+            "dataQualityV2": {
+              "score": 55,
+              "level": "MEDIUM",
+              "factors": {
+                "prediction": "AVAILABLE",
+                "average": "AVAILABLE",
+                "recentForm": "MISSING_OR_UNSAFE",
+                "status": "MISSING_OR_UNSAFE",
+                "matchContext": "AVAILABLE",
+                "teamContext": "AVAILABLE",
+                "scouts": "MISSING_OR_UNSAFE",
+                "sampleSize": "MISSING_OR_UNSAFE"
+              },
+              "penalties": [
+                "recentForm",
+                "status",
+                "scouts",
+                "sampleSize"
+              ],
+              "nullPolicy": "Campos null permanecem null; a penalidade reduz confianca, nao substitui o dado por zero."
+            }
+          },
+          {
+            "athleteId": 69208,
+            "name": "Gabriel Armando de Abreu",
+            "clubId": 264,
+            "positionId": 3,
+            "position": "ZAG",
+            "predictedPoints": 3.7,
+            "averageBeforeRound": 4.76,
+            "actualPoints": 2.8,
+            "enteredField": true,
+            "dataQualityScore": 34.85,
+            "rank": 5,
+            "shadowScore": 4.66,
+            "availabilityStatus": "POST_MATCH_SCORE_AVAILABLE",
+            "dataQualityV2": {
+              "score": 65,
+              "level": "MEDIUM",
+              "factors": {
+                "prediction": "AVAILABLE",
+                "average": "AVAILABLE",
+                "recentForm": "MISSING_OR_UNSAFE",
+                "status": "MISSING_OR_UNSAFE",
+                "matchContext": "AVAILABLE",
+                "teamContext": "AVAILABLE",
+                "scouts": "MISSING_OR_UNSAFE",
+                "sampleSize": "AVAILABLE"
+              },
+              "penalties": [
+                "recentForm",
+                "status",
+                "scouts"
+              ],
+              "nullPolicy": "Campos null permanecem null; a penalidade reduz confianca, nao substitui o dado por zero."
+            }
+          }
+        ],
+        "officialMetrics": {
+          "top1": {
+            "k": 1,
+            "evaluated": 0,
+            "averageActualPoints": null,
+            "topActualPoints": null
+          },
+          "top3": {
+            "k": 3,
+            "evaluated": 1,
+            "averageActualPoints": 6.4,
+            "topActualPoints": 6.4
+          },
+          "top5": {
+            "k": 5,
+            "evaluated": 2,
+            "averageActualPoints": 6.45,
+            "topActualPoints": 6.5
+          }
+        },
+        "shadowMetrics": {
+          "top1": {
+            "k": 1,
+            "evaluated": 0,
+            "averageActualPoints": null,
+            "topActualPoints": null
+          },
+          "top3": {
+            "k": 3,
+            "evaluated": 1,
+            "averageActualPoints": 6.4,
+            "topActualPoints": 6.4
+          },
+          "top5": {
+            "k": 5,
+            "evaluated": 3,
+            "averageActualPoints": 5.2333,
+            "topActualPoints": 6.5
+          }
+        }
+      },
+      "MEI": {
+        "modelId": "MEI_V2",
+        "status": "EXPERIMENTAL",
+        "officialTop5": [
+          {
+            "athleteId": 107231,
+            "name": "Danilo dos Santos de Oliveira",
+            "clubId": 263,
+            "positionId": 4,
+            "position": "MEI",
+            "predictedPoints": 7.8,
+            "averageBeforeRound": 9.08,
+            "actualPoints": null,
+            "enteredField": false,
+            "dataQualityScore": 38.25,
+            "rank": 1,
+            "officialScore": 7.8,
+            "availabilityStatus": "POST_MATCH_DID_NOT_PLAY",
+            "dataQualityV2": {
+              "score": 65,
+              "level": "MEDIUM",
+              "factors": {
+                "prediction": "AVAILABLE",
+                "average": "AVAILABLE",
+                "recentForm": "MISSING_OR_UNSAFE",
+                "status": "MISSING_OR_UNSAFE",
+                "matchContext": "AVAILABLE",
+                "teamContext": "AVAILABLE",
+                "scouts": "MISSING_OR_UNSAFE",
+                "sampleSize": "AVAILABLE"
+              },
+              "penalties": [
+                "recentForm",
+                "status",
+                "scouts"
+              ],
+              "nullPolicy": "Campos null permanecem null; a penalidade reduz confianca, nao substitui o dado por zero."
+            }
+          },
+          {
+            "athleteId": 63007,
+            "name": "Neymar da Silva Santos Júnior",
+            "clubId": 277,
+            "positionId": 4,
+            "position": "MEI",
+            "predictedPoints": 6.9,
+            "averageBeforeRound": 8.42,
+            "actualPoints": null,
+            "enteredField": false,
+            "dataQualityScore": 33.15,
+            "rank": 2,
+            "officialScore": 6.9,
+            "availabilityStatus": "POST_MATCH_DID_NOT_PLAY",
+            "dataQualityV2": {
+              "score": 65,
+              "level": "MEDIUM",
+              "factors": {
+                "prediction": "AVAILABLE",
+                "average": "AVAILABLE",
+                "recentForm": "MISSING_OR_UNSAFE",
+                "status": "MISSING_OR_UNSAFE",
+                "matchContext": "AVAILABLE",
+                "teamContext": "AVAILABLE",
+                "scouts": "MISSING_OR_UNSAFE",
+                "sampleSize": "AVAILABLE"
+              },
+              "penalties": [
+                "recentForm",
+                "status",
+                "scouts"
+              ],
+              "nullPolicy": "Campos null permanecem null; a penalidade reduz confianca, nao substitui o dado por zero."
+            }
+          },
+          {
+            "athleteId": 87863,
+            "name": "Giorgian Daniel de Arrascaeta Benedetti",
+            "clubId": 262,
+            "positionId": 4,
+            "position": "MEI",
+            "predictedPoints": 4.5,
+            "averageBeforeRound": 6.41,
+            "actualPoints": null,
+            "enteredField": false,
+            "dataQualityScore": 33.15,
+            "rank": 3,
+            "officialScore": 4.5,
+            "availabilityStatus": "POST_MATCH_DID_NOT_PLAY",
+            "dataQualityV2": {
+              "score": 65,
+              "level": "MEDIUM",
+              "factors": {
+                "prediction": "AVAILABLE",
+                "average": "AVAILABLE",
+                "recentForm": "MISSING_OR_UNSAFE",
+                "status": "MISSING_OR_UNSAFE",
+                "matchContext": "AVAILABLE",
+                "teamContext": "AVAILABLE",
+                "scouts": "MISSING_OR_UNSAFE",
+                "sampleSize": "AVAILABLE"
+              },
+              "penalties": [
+                "recentForm",
+                "status",
+                "scouts"
+              ],
+              "nullPolicy": "Campos null permanecem null; a penalidade reduz confianca, nao substitui o dado por zero."
+            }
+          },
+          {
+            "athleteId": 94930,
+            "name": "Lucas Tolentino Coelho de Lima",
+            "clubId": 262,
+            "positionId": 4,
+            "position": "MEI",
+            "predictedPoints": 4.5,
+            "averageBeforeRound": 6.46,
+            "actualPoints": null,
+            "enteredField": false,
+            "dataQualityScore": 38.25,
+            "rank": 4,
+            "officialScore": 4.5,
+            "availabilityStatus": "POST_MATCH_DID_NOT_PLAY",
+            "dataQualityV2": {
+              "score": 65,
+              "level": "MEDIUM",
+              "factors": {
+                "prediction": "AVAILABLE",
+                "average": "AVAILABLE",
+                "recentForm": "MISSING_OR_UNSAFE",
+                "status": "MISSING_OR_UNSAFE",
+                "matchContext": "AVAILABLE",
+                "teamContext": "AVAILABLE",
+                "scouts": "MISSING_OR_UNSAFE",
+                "sampleSize": "AVAILABLE"
+              },
+              "penalties": [
+                "recentForm",
+                "status",
+                "scouts"
+              ],
+              "nullPolicy": "Campos null permanecem null; a penalidade reduz confianca, nao substitui o dado por zero."
+            }
+          },
+          {
+            "athleteId": 99815,
+            "name": "Jhon Adolfo Arias Andrade",
+            "clubId": 275,
+            "positionId": 4,
+            "position": "MEI",
+            "predictedPoints": 4.5,
+            "averageBeforeRound": 6.49,
+            "actualPoints": null,
+            "enteredField": false,
+            "dataQualityScore": 38.25,
+            "rank": 5,
+            "officialScore": 4.5,
+            "availabilityStatus": "POST_MATCH_DID_NOT_PLAY",
+            "dataQualityV2": {
+              "score": 65,
+              "level": "MEDIUM",
+              "factors": {
+                "prediction": "AVAILABLE",
+                "average": "AVAILABLE",
+                "recentForm": "MISSING_OR_UNSAFE",
+                "status": "MISSING_OR_UNSAFE",
+                "matchContext": "AVAILABLE",
+                "teamContext": "AVAILABLE",
+                "scouts": "MISSING_OR_UNSAFE",
+                "sampleSize": "AVAILABLE"
+              },
+              "penalties": [
+                "recentForm",
+                "status",
+                "scouts"
+              ],
+              "nullPolicy": "Campos null permanecem null; a penalidade reduz confianca, nao substitui o dado por zero."
+            }
+          }
+        ],
+        "shadowTop5": [
+          {
+            "athleteId": 107231,
+            "name": "Danilo dos Santos de Oliveira",
+            "clubId": 263,
+            "positionId": 4,
+            "position": "MEI",
+            "predictedPoints": 7.8,
+            "averageBeforeRound": 9.08,
+            "actualPoints": null,
+            "enteredField": false,
+            "dataQualityScore": 38.25,
+            "rank": 1,
+            "shadowScore": 8.1344,
+            "availabilityStatus": "POST_MATCH_DID_NOT_PLAY",
+            "dataQualityV2": {
+              "score": 65,
+              "level": "MEDIUM",
+              "factors": {
+                "prediction": "AVAILABLE",
+                "average": "AVAILABLE",
+                "recentForm": "MISSING_OR_UNSAFE",
+                "status": "MISSING_OR_UNSAFE",
+                "matchContext": "AVAILABLE",
+                "teamContext": "AVAILABLE",
+                "scouts": "MISSING_OR_UNSAFE",
+                "sampleSize": "AVAILABLE"
+              },
+              "penalties": [
+                "recentForm",
+                "status",
+                "scouts"
+              ],
+              "nullPolicy": "Campos null permanecem null; a penalidade reduz confianca, nao substitui o dado por zero."
+            }
+          },
+          {
+            "athleteId": 63007,
+            "name": "Neymar da Silva Santos Júnior",
+            "clubId": 277,
+            "positionId": 4,
+            "position": "MEI",
+            "predictedPoints": 6.9,
+            "averageBeforeRound": 8.42,
+            "actualPoints": null,
+            "enteredField": false,
+            "dataQualityScore": 33.15,
+            "rank": 2,
+            "shadowScore": 7.3436,
+            "availabilityStatus": "POST_MATCH_DID_NOT_PLAY",
+            "dataQualityV2": {
+              "score": 65,
+              "level": "MEDIUM",
+              "factors": {
+                "prediction": "AVAILABLE",
+                "average": "AVAILABLE",
+                "recentForm": "MISSING_OR_UNSAFE",
+                "status": "MISSING_OR_UNSAFE",
+                "matchContext": "AVAILABLE",
+                "teamContext": "AVAILABLE",
+                "scouts": "MISSING_OR_UNSAFE",
+                "sampleSize": "AVAILABLE"
+              },
+              "penalties": [
+                "recentForm",
+                "status",
+                "scouts"
+              ],
+              "nullPolicy": "Campos null permanecem null; a penalidade reduz confianca, nao substitui o dado por zero."
+            }
+          },
+          {
+            "athleteId": 99815,
+            "name": "Jhon Adolfo Arias Andrade",
+            "clubId": 275,
+            "positionId": 4,
+            "position": "MEI",
+            "predictedPoints": 4.5,
+            "averageBeforeRound": 6.49,
+            "actualPoints": null,
+            "enteredField": false,
+            "dataQualityScore": 38.25,
+            "rank": 3,
+            "shadowScore": 5.2972,
+            "availabilityStatus": "POST_MATCH_DID_NOT_PLAY",
+            "dataQualityV2": {
+              "score": 65,
+              "level": "MEDIUM",
+              "factors": {
+                "prediction": "AVAILABLE",
+                "average": "AVAILABLE",
+                "recentForm": "MISSING_OR_UNSAFE",
+                "status": "MISSING_OR_UNSAFE",
+                "matchContext": "AVAILABLE",
+                "teamContext": "AVAILABLE",
+                "scouts": "MISSING_OR_UNSAFE",
+                "sampleSize": "AVAILABLE"
+              },
+              "penalties": [
+                "recentForm",
+                "status",
+                "scouts"
+              ],
+              "nullPolicy": "Campos null permanecem null; a penalidade reduz confianca, nao substitui o dado por zero."
+            }
+          },
+          {
+            "athleteId": 94930,
+            "name": "Lucas Tolentino Coelho de Lima",
+            "clubId": 262,
+            "positionId": 4,
+            "position": "MEI",
+            "predictedPoints": 4.5,
+            "averageBeforeRound": 6.46,
+            "actualPoints": null,
+            "enteredField": false,
+            "dataQualityScore": 38.25,
+            "rank": 4,
+            "shadowScore": 5.2888,
+            "availabilityStatus": "POST_MATCH_DID_NOT_PLAY",
+            "dataQualityV2": {
+              "score": 65,
+              "level": "MEDIUM",
+              "factors": {
+                "prediction": "AVAILABLE",
+                "average": "AVAILABLE",
+                "recentForm": "MISSING_OR_UNSAFE",
+                "status": "MISSING_OR_UNSAFE",
+                "matchContext": "AVAILABLE",
+                "teamContext": "AVAILABLE",
+                "scouts": "MISSING_OR_UNSAFE",
+                "sampleSize": "AVAILABLE"
+              },
+              "penalties": [
+                "recentForm",
+                "status",
+                "scouts"
+              ],
+              "nullPolicy": "Campos null permanecem null; a penalidade reduz confianca, nao substitui o dado por zero."
+            }
+          },
+          {
+            "athleteId": 87863,
+            "name": "Giorgian Daniel de Arrascaeta Benedetti",
+            "clubId": 262,
+            "positionId": 4,
+            "position": "MEI",
+            "predictedPoints": 4.5,
+            "averageBeforeRound": 6.41,
+            "actualPoints": null,
+            "enteredField": false,
+            "dataQualityScore": 33.15,
+            "rank": 5,
+            "shadowScore": 5.2598,
+            "availabilityStatus": "POST_MATCH_DID_NOT_PLAY",
+            "dataQualityV2": {
+              "score": 65,
+              "level": "MEDIUM",
+              "factors": {
+                "prediction": "AVAILABLE",
+                "average": "AVAILABLE",
+                "recentForm": "MISSING_OR_UNSAFE",
+                "status": "MISSING_OR_UNSAFE",
+                "matchContext": "AVAILABLE",
+                "teamContext": "AVAILABLE",
+                "scouts": "MISSING_OR_UNSAFE",
+                "sampleSize": "AVAILABLE"
+              },
+              "penalties": [
+                "recentForm",
+                "status",
+                "scouts"
+              ],
+              "nullPolicy": "Campos null permanecem null; a penalidade reduz confianca, nao substitui o dado por zero."
+            }
+          }
+        ],
+        "officialMetrics": {
+          "top1": {
+            "k": 1,
+            "evaluated": 0,
+            "averageActualPoints": null,
+            "topActualPoints": null
+          },
+          "top3": {
+            "k": 3,
+            "evaluated": 0,
+            "averageActualPoints": null,
+            "topActualPoints": null
+          },
+          "top5": {
+            "k": 5,
+            "evaluated": 0,
+            "averageActualPoints": null,
+            "topActualPoints": null
+          }
+        },
+        "shadowMetrics": {
+          "top1": {
+            "k": 1,
+            "evaluated": 0,
+            "averageActualPoints": null,
+            "topActualPoints": null
+          },
+          "top3": {
+            "k": 3,
+            "evaluated": 0,
+            "averageActualPoints": null,
+            "topActualPoints": null
+          },
+          "top5": {
+            "k": 5,
+            "evaluated": 0,
+            "averageActualPoints": null,
+            "topActualPoints": null
+          }
+        }
+      },
+      "ATA": {
+        "modelId": "ATA_V2",
+        "status": "EXPERIMENTAL",
+        "officialTop5": [
+          {
+            "athleteId": 94583,
+            "name": "Pedro Guilherme Abreu dos Santos",
+            "clubId": 262,
+            "positionId": 5,
+            "position": "ATA",
+            "predictedPoints": 7.2,
+            "averageBeforeRound": 8.82,
+            "actualPoints": 20.4,
+            "enteredField": true,
+            "dataQualityScore": 38.25,
+            "rank": 1,
+            "officialScore": 7.2,
+            "availabilityStatus": "POST_MATCH_SCORE_AVAILABLE",
+            "dataQualityV2": {
+              "score": 65,
+              "level": "MEDIUM",
+              "factors": {
+                "prediction": "AVAILABLE",
+                "average": "AVAILABLE",
+                "recentForm": "MISSING_OR_UNSAFE",
+                "status": "MISSING_OR_UNSAFE",
+                "matchContext": "AVAILABLE",
+                "teamContext": "AVAILABLE",
+                "scouts": "MISSING_OR_UNSAFE",
+                "sampleSize": "AVAILABLE"
+              },
+              "penalties": [
+                "recentForm",
+                "status",
+                "scouts"
+              ],
+              "nullPolicy": "Campos null permanecem null; a penalidade reduz confianca, nao substitui o dado por zero."
+            }
+          },
+          {
+            "athleteId": 130209,
+            "name": "Carlos Renê de Sousa Ferreira - Souza",
+            "clubId": 287,
+            "positionId": 5,
+            "position": "ATA",
+            "predictedPoints": 7,
+            "averageBeforeRound": 8.04,
+            "actualPoints": 18.1,
+            "enteredField": true,
+            "dataQualityScore": 38.25,
+            "rank": 2,
+            "officialScore": 7,
+            "availabilityStatus": "POST_MATCH_SCORE_AVAILABLE",
+            "dataQualityV2": {
+              "score": 65,
+              "level": "MEDIUM",
+              "factors": {
+                "prediction": "AVAILABLE",
+                "average": "AVAILABLE",
+                "recentForm": "MISSING_OR_UNSAFE",
+                "status": "MISSING_OR_UNSAFE",
+                "matchContext": "AVAILABLE",
+                "teamContext": "AVAILABLE",
+                "scouts": "MISSING_OR_UNSAFE",
+                "sampleSize": "AVAILABLE"
+              },
+              "penalties": [
+                "recentForm",
+                "status",
+                "scouts"
+              ],
+              "nullPolicy": "Campos null permanecem null; a penalidade reduz confianca, nao substitui o dado por zero."
+            }
+          },
+          {
+            "athleteId": 102928,
+            "name": "Agustín Canobbio Graviz",
+            "clubId": 266,
+            "positionId": 5,
+            "position": "ATA",
+            "predictedPoints": 6.9,
+            "averageBeforeRound": 7.94,
+            "actualPoints": null,
+            "enteredField": false,
+            "dataQualityScore": 38.25,
+            "rank": 3,
+            "officialScore": 6.9,
+            "availabilityStatus": "POST_MATCH_DID_NOT_PLAY",
+            "dataQualityV2": {
+              "score": 65,
+              "level": "MEDIUM",
+              "factors": {
+                "prediction": "AVAILABLE",
+                "average": "AVAILABLE",
+                "recentForm": "MISSING_OR_UNSAFE",
+                "status": "MISSING_OR_UNSAFE",
+                "matchContext": "AVAILABLE",
+                "teamContext": "AVAILABLE",
+                "scouts": "MISSING_OR_UNSAFE",
+                "sampleSize": "AVAILABLE"
+              },
+              "penalties": [
+                "recentForm",
+                "status",
+                "scouts"
+              ],
+              "nullPolicy": "Campos null permanecem null; a penalidade reduz confianca, nao substitui o dado por zero."
+            }
+          },
+          {
+            "athleteId": 143193,
+            "name": "Kevin Stiven Viveros Rodallega",
+            "clubId": 293,
+            "positionId": 5,
+            "position": "ATA",
+            "predictedPoints": 6.9,
+            "averageBeforeRound": 8.41,
+            "actualPoints": 10.9,
+            "enteredField": true,
+            "dataQualityScore": 38.25,
+            "rank": 4,
+            "officialScore": 6.9,
+            "availabilityStatus": "POST_MATCH_SCORE_AVAILABLE",
+            "dataQualityV2": {
+              "score": 65,
+              "level": "MEDIUM",
+              "factors": {
+                "prediction": "AVAILABLE",
+                "average": "AVAILABLE",
+                "recentForm": "MISSING_OR_UNSAFE",
+                "status": "MISSING_OR_UNSAFE",
+                "matchContext": "AVAILABLE",
+                "teamContext": "AVAILABLE",
+                "scouts": "MISSING_OR_UNSAFE",
+                "sampleSize": "AVAILABLE"
+              },
+              "penalties": [
+                "recentForm",
+                "status",
+                "scouts"
+              ],
+              "nullPolicy": "Campos null permanecem null; a penalidade reduz confianca, nao substitui o dado por zero."
+            }
+          },
+          {
+            "athleteId": 110759,
+            "name": "John Kennedy Batista de Souza",
+            "clubId": 266,
+            "positionId": 5,
+            "position": "ATA",
+            "predictedPoints": 6.4,
+            "averageBeforeRound": 7.3,
+            "actualPoints": 10,
+            "enteredField": true,
+            "dataQualityScore": 38.25,
+            "rank": 5,
+            "officialScore": 6.4,
+            "availabilityStatus": "POST_MATCH_SCORE_AVAILABLE",
+            "dataQualityV2": {
+              "score": 65,
+              "level": "MEDIUM",
+              "factors": {
+                "prediction": "AVAILABLE",
+                "average": "AVAILABLE",
+                "recentForm": "MISSING_OR_UNSAFE",
+                "status": "MISSING_OR_UNSAFE",
+                "matchContext": "AVAILABLE",
+                "teamContext": "AVAILABLE",
+                "scouts": "MISSING_OR_UNSAFE",
+                "sampleSize": "AVAILABLE"
+              },
+              "penalties": [
+                "recentForm",
+                "status",
+                "scouts"
+              ],
+              "nullPolicy": "Campos null permanecem null; a penalidade reduz confianca, nao substitui o dado por zero."
+            }
+          }
+        ],
+        "shadowTop5": [
+          {
+            "athleteId": 94583,
+            "name": "Pedro Guilherme Abreu dos Santos",
+            "clubId": 262,
+            "positionId": 5,
+            "position": "ATA",
+            "predictedPoints": 7.2,
+            "averageBeforeRound": 8.82,
+            "actualPoints": 20.4,
+            "enteredField": true,
+            "dataQualityScore": 38.25,
+            "rank": 1,
+            "shadowScore": 7.7452,
+            "availabilityStatus": "POST_MATCH_SCORE_AVAILABLE",
+            "dataQualityV2": {
+              "score": 65,
+              "level": "MEDIUM",
+              "factors": {
+                "prediction": "AVAILABLE",
+                "average": "AVAILABLE",
+                "recentForm": "MISSING_OR_UNSAFE",
+                "status": "MISSING_OR_UNSAFE",
+                "matchContext": "AVAILABLE",
+                "teamContext": "AVAILABLE",
+                "scouts": "MISSING_OR_UNSAFE",
+                "sampleSize": "AVAILABLE"
+              },
+              "penalties": [
+                "recentForm",
+                "status",
+                "scouts"
+              ],
+              "nullPolicy": "Campos null permanecem null; a penalidade reduz confianca, nao substitui o dado por zero."
+            }
+          },
+          {
+            "athleteId": 143193,
+            "name": "Kevin Stiven Viveros Rodallega",
+            "clubId": 293,
+            "positionId": 5,
+            "position": "ATA",
+            "predictedPoints": 6.9,
+            "averageBeforeRound": 8.41,
+            "actualPoints": 10.9,
+            "enteredField": true,
+            "dataQualityScore": 38.25,
+            "rank": 2,
+            "shadowScore": 7.4406,
+            "availabilityStatus": "POST_MATCH_SCORE_AVAILABLE",
+            "dataQualityV2": {
+              "score": 65,
+              "level": "MEDIUM",
+              "factors": {
+                "prediction": "AVAILABLE",
+                "average": "AVAILABLE",
+                "recentForm": "MISSING_OR_UNSAFE",
+                "status": "MISSING_OR_UNSAFE",
+                "matchContext": "AVAILABLE",
+                "teamContext": "AVAILABLE",
+                "scouts": "MISSING_OR_UNSAFE",
+                "sampleSize": "AVAILABLE"
+              },
+              "penalties": [
+                "recentForm",
+                "status",
+                "scouts"
+              ],
+              "nullPolicy": "Campos null permanecem null; a penalidade reduz confianca, nao substitui o dado por zero."
+            }
+          },
+          {
+            "athleteId": 130209,
+            "name": "Carlos Renê de Sousa Ferreira - Souza",
+            "clubId": 287,
+            "positionId": 5,
+            "position": "ATA",
+            "predictedPoints": 7,
+            "averageBeforeRound": 8.04,
+            "actualPoints": 18.1,
+            "enteredField": true,
+            "dataQualityScore": 38.25,
+            "rank": 3,
+            "shadowScore": 7.4104,
+            "availabilityStatus": "POST_MATCH_SCORE_AVAILABLE",
+            "dataQualityV2": {
+              "score": 65,
+              "level": "MEDIUM",
+              "factors": {
+                "prediction": "AVAILABLE",
+                "average": "AVAILABLE",
+                "recentForm": "MISSING_OR_UNSAFE",
+                "status": "MISSING_OR_UNSAFE",
+                "matchContext": "AVAILABLE",
+                "teamContext": "AVAILABLE",
+                "scouts": "MISSING_OR_UNSAFE",
+                "sampleSize": "AVAILABLE"
+              },
+              "penalties": [
+                "recentForm",
+                "status",
+                "scouts"
+              ],
+              "nullPolicy": "Campos null permanecem null; a penalidade reduz confianca, nao substitui o dado por zero."
+            }
+          },
+          {
+            "athleteId": 102928,
+            "name": "Agustín Canobbio Graviz",
+            "clubId": 266,
+            "positionId": 5,
+            "position": "ATA",
+            "predictedPoints": 6.9,
+            "averageBeforeRound": 7.94,
+            "actualPoints": null,
+            "enteredField": false,
+            "dataQualityScore": 38.25,
+            "rank": 4,
+            "shadowScore": 7.3184,
+            "availabilityStatus": "POST_MATCH_DID_NOT_PLAY",
+            "dataQualityV2": {
+              "score": 65,
+              "level": "MEDIUM",
+              "factors": {
+                "prediction": "AVAILABLE",
+                "average": "AVAILABLE",
+                "recentForm": "MISSING_OR_UNSAFE",
+                "status": "MISSING_OR_UNSAFE",
+                "matchContext": "AVAILABLE",
+                "teamContext": "AVAILABLE",
+                "scouts": "MISSING_OR_UNSAFE",
+                "sampleSize": "AVAILABLE"
+              },
+              "penalties": [
+                "recentForm",
+                "status",
+                "scouts"
+              ],
+              "nullPolicy": "Campos null permanecem null; a penalidade reduz confianca, nao substitui o dado por zero."
+            }
+          },
+          {
+            "athleteId": 110759,
+            "name": "John Kennedy Batista de Souza",
+            "clubId": 266,
+            "positionId": 5,
+            "position": "ATA",
+            "predictedPoints": 6.4,
+            "averageBeforeRound": 7.3,
+            "actualPoints": 10,
+            "enteredField": true,
+            "dataQualityScore": 38.25,
+            "rank": 5,
+            "shadowScore": 6.822,
+            "availabilityStatus": "POST_MATCH_SCORE_AVAILABLE",
+            "dataQualityV2": {
+              "score": 65,
+              "level": "MEDIUM",
+              "factors": {
+                "prediction": "AVAILABLE",
+                "average": "AVAILABLE",
+                "recentForm": "MISSING_OR_UNSAFE",
+                "status": "MISSING_OR_UNSAFE",
+                "matchContext": "AVAILABLE",
+                "teamContext": "AVAILABLE",
+                "scouts": "MISSING_OR_UNSAFE",
+                "sampleSize": "AVAILABLE"
+              },
+              "penalties": [
+                "recentForm",
+                "status",
+                "scouts"
+              ],
+              "nullPolicy": "Campos null permanecem null; a penalidade reduz confianca, nao substitui o dado por zero."
+            }
+          }
+        ],
+        "officialMetrics": {
+          "top1": {
+            "k": 1,
+            "evaluated": 1,
+            "averageActualPoints": 20.4,
+            "topActualPoints": 20.4
+          },
+          "top3": {
+            "k": 3,
+            "evaluated": 2,
+            "averageActualPoints": 19.25,
+            "topActualPoints": 20.4
+          },
+          "top5": {
+            "k": 5,
+            "evaluated": 4,
+            "averageActualPoints": 14.85,
+            "topActualPoints": 20.4
+          }
+        },
+        "shadowMetrics": {
+          "top1": {
+            "k": 1,
+            "evaluated": 1,
+            "averageActualPoints": 20.4,
+            "topActualPoints": 20.4
+          },
+          "top3": {
+            "k": 3,
+            "evaluated": 3,
+            "averageActualPoints": 16.4667,
+            "topActualPoints": 20.4
+          },
+          "top5": {
+            "k": 5,
+            "evaluated": 4,
+            "averageActualPoints": 14.85,
+            "topActualPoints": 20.4
+          }
+        }
+      },
+      "TEC": {
+        "modelId": "TEC_V2",
+        "status": "EXPERIMENTAL",
+        "officialTop5": [],
+        "shadowTop5": [],
+        "officialMetrics": {
+          "top1": {
+            "k": 1,
+            "evaluated": 0,
+            "averageActualPoints": null,
+            "topActualPoints": null
+          },
+          "top3": {
+            "k": 3,
+            "evaluated": 0,
+            "averageActualPoints": null,
+            "topActualPoints": null
+          },
+          "top5": {
+            "k": 5,
+            "evaluated": 0,
+            "averageActualPoints": null,
+            "topActualPoints": null
+          }
+        },
+        "shadowMetrics": {
+          "top1": {
+            "k": 1,
+            "evaluated": 0,
+            "averageActualPoints": null,
+            "topActualPoints": null
+          },
+          "top3": {
+            "k": 3,
+            "evaluated": 0,
+            "averageActualPoints": null,
+            "topActualPoints": null
+          },
+          "top5": {
+            "k": 5,
+            "evaluated": 0,
+            "averageActualPoints": null,
+            "topActualPoints": null
+          }
+        }
+      }
+    },
+    "multiRound": {
+      "byPosition": {
+        "GOL": {
+          "modelId": "GOL_V2",
+          "roundsEvaluated": 17,
+          "official": {
+            "top1": 3.8412,
+            "top3": 3.5686,
+            "top5": 3.6824
+          },
+          "shadow": {
+            "top1": 3.4,
+            "top3": 3.6549,
+            "top5": 3.7635
+          },
+          "improved": true
+        },
+        "LAT": {
+          "modelId": "LAT_V2",
+          "roundsEvaluated": 17,
+          "official": {
+            "top1": 6.0588,
+            "top3": 4.9804,
+            "top5": 5.4435
+          },
+          "shadow": {
+            "top1": 6.4765,
+            "top3": 5.0373,
+            "top5": 5.3471
+          },
+          "improved": false
+        },
+        "ZAG": {
+          "modelId": "ZAG_V2",
+          "roundsEvaluated": 17,
+          "official": {
+            "top1": 3.0647,
+            "top3": 2.8431,
+            "top5": 3.1094
+          },
+          "shadow": {
+            "top1": 3.0471,
+            "top3": 2.7392,
+            "top5": 3.1682
+          },
+          "improved": true
+        },
+        "MEI": {
+          "modelId": "MEI_V2",
+          "roundsEvaluated": 17,
+          "official": {
+            "top1": 4.7059,
+            "top3": 5.2902,
+            "top5": 4.72
+          },
+          "shadow": {
+            "top1": 5.5353,
+            "top3": 5.4353,
+            "top5": 4.7729
+          },
+          "improved": true
+        },
+        "ATA": {
+          "modelId": "ATA_V2",
+          "roundsEvaluated": 17,
+          "official": {
+            "top1": 3.9294,
+            "top3": 5.1882,
+            "top5": 6.1753
+          },
+          "shadow": {
+            "top1": 4.5471,
+            "top3": 4.8176,
+            "top5": 5.6647
+          },
+          "improved": false
+        },
+        "TEC": {
+          "modelId": "TEC_V2",
+          "roundsEvaluated": 0,
+          "official": {
+            "top1": null,
+            "top3": null,
+            "top5": null
+          },
+          "shadow": {
+            "top1": null,
+            "top3": null,
+            "top5": null
+          },
+          "improved": false
+        }
+      },
+      "improvedModels": [
+        "GOL_V2",
+        "ZAG_V2",
+        "MEI_V2"
+      ]
+    }
+  },
+  "goalkeeperAudit": {
+    "eversonExplanation": "Everson ficou #11 no ranking oficial porque a previsao pre-rodada dele era 3.5, abaixo de goleiros com maior media/previsao no snapshot. O Shadow V2 aumenta peso de media, forma, amostra e qualidade, sem regra nominal para Everson.",
+    "requestedPlayers": [
+      {
+        "athleteId": 88136,
+        "name": "Ivan Quaresma da Silva",
+        "clubId": 364,
+        "positionId": 1,
+        "position": "GOL",
+        "predictedPoints": 8.4,
+        "averageBeforeRound": 10.2,
+        "actualPoints": 10.2,
+        "enteredField": true,
+        "dataQualityScore": 14.45,
+        "status": "FOUND",
+        "officialRank": 1,
+        "shadowRank": 1,
+        "shadowScore": 8.526
+      },
+      {
+        "athleteId": 72294,
+        "name": "Everson Felipe Marques Pires",
+        "clubId": 282,
+        "positionId": 1,
+        "position": "GOL",
+        "predictedPoints": 3.5,
+        "averageBeforeRound": 4.47,
+        "actualPoints": 14.6,
+        "enteredField": true,
+        "dataQualityScore": 31.45,
+        "status": "FOUND",
+        "officialRank": 11,
+        "shadowRank": 8,
+        "shadowScore": 4.8539
+      },
+      {
+        "athleteId": 99552,
+        "name": "Agustín Daniel Rossi",
+        "clubId": 262,
+        "positionId": 1,
+        "position": "GOL",
+        "predictedPoints": 3.5,
+        "averageBeforeRound": 5.06,
+        "actualPoints": 7.6,
+        "enteredField": true,
+        "dataQualityScore": 34.85,
+        "status": "FOUND",
+        "officialRank": 13,
+        "shadowRank": 10,
+        "shadowScore": 4.7222
+      },
+      {
+        "name": "Pedro Rangel",
+        "status": "NOT_FOUND"
+      },
+      {
+        "athleteId": 104084,
+        "name": "Carlos Miguel dos Santos Pereira",
+        "clubId": 275,
+        "positionId": 1,
+        "position": "GOL",
+        "predictedPoints": 3.5,
+        "averageBeforeRound": 5.06,
+        "actualPoints": null,
+        "enteredField": false,
+        "dataQualityScore": 34.85,
+        "status": "FOUND",
+        "officialRank": 14,
+        "shadowRank": 11,
+        "shadowScore": 4.7222
+      }
+    ],
+    "officialVsShadowTop5": {
+      "modelId": "GOL_V2",
+      "status": "EXPERIMENTAL",
+      "officialTop5": [
+        {
+          "athleteId": 88136,
+          "name": "Ivan Quaresma da Silva",
+          "clubId": 364,
+          "positionId": 1,
+          "position": "GOL",
+          "predictedPoints": 8.4,
+          "averageBeforeRound": 10.2,
+          "actualPoints": 10.2,
+          "enteredField": true,
+          "dataQualityScore": 14.45,
+          "rank": 1,
+          "officialScore": 8.4,
+          "availabilityStatus": "POST_MATCH_SCORE_AVAILABLE",
+          "dataQualityV2": {
+            "score": 55,
+            "level": "MEDIUM",
+            "factors": {
+              "prediction": "AVAILABLE",
+              "average": "AVAILABLE",
+              "recentForm": "MISSING_OR_UNSAFE",
+              "status": "MISSING_OR_UNSAFE",
+              "matchContext": "AVAILABLE",
+              "teamContext": "AVAILABLE",
+              "scouts": "MISSING_OR_UNSAFE",
+              "sampleSize": "MISSING_OR_UNSAFE"
+            },
+            "penalties": [
+              "recentForm",
+              "status",
+              "scouts",
+              "sampleSize"
+            ],
+            "nullPolicy": "Campos null permanecem null; a penalidade reduz confianca, nao substitui o dado por zero."
+          }
+        },
+        {
+          "athleteId": 121823,
+          "name": "Kauê Vinicius de Souza Camargo",
+          "clubId": 264,
+          "positionId": 1,
+          "position": "GOL",
+          "predictedPoints": 7.9,
+          "averageBeforeRound": 9.2,
+          "actualPoints": null,
+          "enteredField": false,
+          "dataQualityScore": 14.45,
+          "rank": 2,
+          "officialScore": 7.9,
+          "availabilityStatus": "POST_MATCH_DID_NOT_PLAY",
+          "dataQualityV2": {
+            "score": 55,
+            "level": "MEDIUM",
+            "factors": {
+              "prediction": "AVAILABLE",
+              "average": "AVAILABLE",
+              "recentForm": "MISSING_OR_UNSAFE",
+              "status": "MISSING_OR_UNSAFE",
+              "matchContext": "AVAILABLE",
+              "teamContext": "AVAILABLE",
+              "scouts": "MISSING_OR_UNSAFE",
+              "sampleSize": "MISSING_OR_UNSAFE"
+            },
+            "penalties": [
+              "recentForm",
+              "status",
+              "scouts",
+              "sampleSize"
+            ],
+            "nullPolicy": "Campos null permanecem null; a penalidade reduz confianca, nao substitui o dado por zero."
+          }
+        },
+        {
+          "athleteId": 68872,
+          "name": "Marcelo Lomba do Nascimento",
+          "clubId": 275,
+          "positionId": 1,
+          "position": "GOL",
+          "predictedPoints": 7.3,
+          "averageBeforeRound": 8.9,
+          "actualPoints": 8.9,
+          "enteredField": true,
+          "dataQualityScore": 14.45,
+          "rank": 3,
+          "officialScore": 7.3,
+          "availabilityStatus": "POST_MATCH_SCORE_AVAILABLE",
+          "dataQualityV2": {
+            "score": 55,
+            "level": "MEDIUM",
+            "factors": {
+              "prediction": "AVAILABLE",
+              "average": "AVAILABLE",
+              "recentForm": "MISSING_OR_UNSAFE",
+              "status": "MISSING_OR_UNSAFE",
+              "matchContext": "AVAILABLE",
+              "teamContext": "AVAILABLE",
+              "scouts": "MISSING_OR_UNSAFE",
+              "sampleSize": "MISSING_OR_UNSAFE"
+            },
+            "penalties": [
+              "recentForm",
+              "status",
+              "scouts",
+              "sampleSize"
+            ],
+            "nullPolicy": "Campos null permanecem null; a penalidade reduz confianca, nao substitui o dado por zero."
+          }
+        },
+        {
+          "athleteId": 104118,
+          "name": "Lucas Willians Assis Arcanjo",
+          "clubId": 287,
+          "positionId": 1,
+          "position": "GOL",
+          "predictedPoints": 4.6,
+          "averageBeforeRound": 5.99,
+          "actualPoints": null,
+          "enteredField": false,
+          "dataQualityScore": 34.85,
+          "rank": 4,
+          "officialScore": 4.6,
+          "availabilityStatus": "POST_MATCH_DID_NOT_PLAY",
+          "dataQualityV2": {
+            "score": 65,
+            "level": "MEDIUM",
+            "factors": {
+              "prediction": "AVAILABLE",
+              "average": "AVAILABLE",
+              "recentForm": "MISSING_OR_UNSAFE",
+              "status": "MISSING_OR_UNSAFE",
+              "matchContext": "AVAILABLE",
+              "teamContext": "AVAILABLE",
+              "scouts": "MISSING_OR_UNSAFE",
+              "sampleSize": "AVAILABLE"
+            },
+            "penalties": [
+              "recentForm",
+              "status",
+              "scouts"
+            ],
+            "nullPolicy": "Campos null permanecem null; a penalidade reduz confianca, nao substitui o dado por zero."
+          }
+        },
+        {
+          "athleteId": 72018,
+          "name": "Tiago Luis Volpi",
+          "clubId": 280,
+          "positionId": 1,
+          "position": "GOL",
+          "predictedPoints": 4.2,
+          "averageBeforeRound": 5.95,
+          "actualPoints": 8.3,
+          "enteredField": true,
+          "dataQualityScore": 34.85,
+          "rank": 5,
+          "officialScore": 4.2,
+          "availabilityStatus": "POST_MATCH_SCORE_AVAILABLE",
+          "dataQualityV2": {
+            "score": 65,
+            "level": "MEDIUM",
+            "factors": {
+              "prediction": "AVAILABLE",
+              "average": "AVAILABLE",
+              "recentForm": "MISSING_OR_UNSAFE",
+              "status": "MISSING_OR_UNSAFE",
+              "matchContext": "AVAILABLE",
+              "teamContext": "AVAILABLE",
+              "scouts": "MISSING_OR_UNSAFE",
+              "sampleSize": "AVAILABLE"
+            },
+            "penalties": [
+              "recentForm",
+              "status",
+              "scouts"
+            ],
+            "nullPolicy": "Campos null permanecem null; a penalidade reduz confianca, nao substitui o dado por zero."
+          }
+        }
+      ],
+      "shadowTop5": [
+        {
+          "athleteId": 88136,
+          "name": "Ivan Quaresma da Silva",
+          "clubId": 364,
+          "positionId": 1,
+          "position": "GOL",
+          "predictedPoints": 8.4,
+          "averageBeforeRound": 10.2,
+          "actualPoints": 10.2,
+          "enteredField": true,
+          "dataQualityScore": 14.45,
+          "rank": 1,
+          "shadowScore": 8.526,
+          "availabilityStatus": "POST_MATCH_SCORE_AVAILABLE",
+          "dataQualityV2": {
+            "score": 55,
+            "level": "MEDIUM",
+            "factors": {
+              "prediction": "AVAILABLE",
+              "average": "AVAILABLE",
+              "recentForm": "MISSING_OR_UNSAFE",
+              "status": "MISSING_OR_UNSAFE",
+              "matchContext": "AVAILABLE",
+              "teamContext": "AVAILABLE",
+              "scouts": "MISSING_OR_UNSAFE",
+              "sampleSize": "MISSING_OR_UNSAFE"
+            },
+            "penalties": [
+              "recentForm",
+              "status",
+              "scouts",
+              "sampleSize"
+            ],
+            "nullPolicy": "Campos null permanecem null; a penalidade reduz confianca, nao substitui o dado por zero."
+          }
+        },
+        {
+          "athleteId": 121823,
+          "name": "Kauê Vinicius de Souza Camargo",
+          "clubId": 264,
+          "positionId": 1,
+          "position": "GOL",
+          "predictedPoints": 7.9,
+          "averageBeforeRound": 9.2,
+          "actualPoints": null,
+          "enteredField": false,
+          "dataQualityScore": 14.45,
+          "rank": 2,
+          "shadowScore": 8.296,
+          "availabilityStatus": "POST_MATCH_DID_NOT_PLAY",
+          "dataQualityV2": {
+            "score": 55,
+            "level": "MEDIUM",
+            "factors": {
+              "prediction": "AVAILABLE",
+              "average": "AVAILABLE",
+              "recentForm": "MISSING_OR_UNSAFE",
+              "status": "MISSING_OR_UNSAFE",
+              "matchContext": "AVAILABLE",
+              "teamContext": "AVAILABLE",
+              "scouts": "MISSING_OR_UNSAFE",
+              "sampleSize": "MISSING_OR_UNSAFE"
+            },
+            "penalties": [
+              "recentForm",
+              "status",
+              "scouts",
+              "sampleSize"
+            ],
+            "nullPolicy": "Campos null permanecem null; a penalidade reduz confianca, nao substitui o dado por zero."
+          }
+        },
+        {
+          "athleteId": 68872,
+          "name": "Marcelo Lomba do Nascimento",
+          "clubId": 275,
+          "positionId": 1,
+          "position": "GOL",
+          "predictedPoints": 7.3,
+          "averageBeforeRound": 8.9,
+          "actualPoints": 8.9,
+          "enteredField": true,
+          "dataQualityScore": 14.45,
+          "rank": 3,
+          "shadowScore": 7.517,
+          "availabilityStatus": "POST_MATCH_SCORE_AVAILABLE",
+          "dataQualityV2": {
+            "score": 55,
+            "level": "MEDIUM",
+            "factors": {
+              "prediction": "AVAILABLE",
+              "average": "AVAILABLE",
+              "recentForm": "MISSING_OR_UNSAFE",
+              "status": "MISSING_OR_UNSAFE",
+              "matchContext": "AVAILABLE",
+              "teamContext": "AVAILABLE",
+              "scouts": "MISSING_OR_UNSAFE",
+              "sampleSize": "MISSING_OR_UNSAFE"
+            },
+            "penalties": [
+              "recentForm",
+              "status",
+              "scouts",
+              "sampleSize"
+            ],
+            "nullPolicy": "Campos null permanecem null; a penalidade reduz confianca, nao substitui o dado por zero."
+          }
+        },
+        {
+          "athleteId": 104118,
+          "name": "Lucas Willians Assis Arcanjo",
+          "clubId": 287,
+          "positionId": 1,
+          "position": "GOL",
+          "predictedPoints": 4.6,
+          "averageBeforeRound": 5.99,
+          "actualPoints": null,
+          "enteredField": false,
+          "dataQualityScore": 34.85,
+          "rank": 4,
+          "shadowScore": 5.9443,
+          "availabilityStatus": "POST_MATCH_DID_NOT_PLAY",
+          "dataQualityV2": {
+            "score": 65,
+            "level": "MEDIUM",
+            "factors": {
+              "prediction": "AVAILABLE",
+              "average": "AVAILABLE",
+              "recentForm": "MISSING_OR_UNSAFE",
+              "status": "MISSING_OR_UNSAFE",
+              "matchContext": "AVAILABLE",
+              "teamContext": "AVAILABLE",
+              "scouts": "MISSING_OR_UNSAFE",
+              "sampleSize": "AVAILABLE"
+            },
+            "penalties": [
+              "recentForm",
+              "status",
+              "scouts"
+            ],
+            "nullPolicy": "Campos null permanecem null; a penalidade reduz confianca, nao substitui o dado por zero."
+          }
+        },
+        {
+          "athleteId": 72018,
+          "name": "Tiago Luis Volpi",
+          "clubId": 280,
+          "positionId": 1,
+          "position": "GOL",
+          "predictedPoints": 4.2,
+          "averageBeforeRound": 5.95,
+          "actualPoints": 8.3,
+          "enteredField": true,
+          "dataQualityScore": 34.85,
+          "rank": 5,
+          "shadowScore": 5.3875,
+          "availabilityStatus": "POST_MATCH_SCORE_AVAILABLE",
+          "dataQualityV2": {
+            "score": 65,
+            "level": "MEDIUM",
+            "factors": {
+              "prediction": "AVAILABLE",
+              "average": "AVAILABLE",
+              "recentForm": "MISSING_OR_UNSAFE",
+              "status": "MISSING_OR_UNSAFE",
+              "matchContext": "AVAILABLE",
+              "teamContext": "AVAILABLE",
+              "scouts": "MISSING_OR_UNSAFE",
+              "sampleSize": "AVAILABLE"
+            },
+            "penalties": [
+              "recentForm",
+              "status",
+              "scouts"
+            ],
+            "nullPolicy": "Campos null permanecem null; a penalidade reduz confianca, nao substitui o dado por zero."
+          }
+        }
+      ],
+      "officialMetrics": {
+        "top1": {
+          "k": 1,
+          "evaluated": 1,
+          "averageActualPoints": 10.2,
+          "topActualPoints": 10.2
+        },
+        "top3": {
+          "k": 3,
+          "evaluated": 2,
+          "averageActualPoints": 9.55,
+          "topActualPoints": 10.2
+        },
+        "top5": {
+          "k": 5,
+          "evaluated": 3,
+          "averageActualPoints": 9.1333,
+          "topActualPoints": 10.2
+        }
+      },
+      "shadowMetrics": {
+        "top1": {
+          "k": 1,
+          "evaluated": 1,
+          "averageActualPoints": 10.2,
+          "topActualPoints": 10.2
+        },
+        "top3": {
+          "k": 3,
+          "evaluated": 2,
+          "averageActualPoints": 9.55,
+          "topActualPoints": 10.2
+        },
+        "top5": {
+          "k": 5,
+          "evaluated": 3,
+          "averageActualPoints": 9.1333,
+          "topActualPoints": 10.2
+        }
+      }
+    }
+  },
+  "availabilityAudit": {
+    "statuses": [
+      "PRE_MATCH_ELIGIBLE",
+      "POST_MATCH_DID_NOT_PLAY",
+      "POST_MATCH_SCORE_UNAVAILABLE"
+    ],
+    "didNotPlayRateByPosition": {
+      "GOL": {
+        "total": 85,
+        "didNotPlay": 64,
+        "scoreUnavailable": 0,
+        "didNotPlayRate": 0.7529
+      },
+      "LAT": {
+        "total": 120,
+        "didNotPlay": 69,
+        "scoreUnavailable": 0,
+        "didNotPlayRate": 0.575
+      },
+      "ZAG": {
+        "total": 120,
+        "didNotPlay": 75,
+        "scoreUnavailable": 0,
+        "didNotPlayRate": 0.625
+      },
+      "MEI": {
+        "total": 226,
+        "didNotPlay": 124,
+        "scoreUnavailable": 0,
+        "didNotPlayRate": 0.5487
+      },
+      "ATA": {
+        "total": 187,
+        "didNotPlay": 104,
+        "scoreUnavailable": 0,
+        "didNotPlayRate": 0.5561
+      },
+      "TEC": {
+        "total": 0,
+        "didNotPlay": 0,
+        "scoreUnavailable": 0,
+        "didNotPlayRate": null
+      }
+    },
+    "meiNaInvestigation": {
+      "officialTop5": [
+        {
+          "athleteId": 107231,
+          "name": "Danilo dos Santos de Oliveira",
+          "clubId": 263,
+          "positionId": 4,
+          "position": "MEI",
+          "predictedPoints": 7.8,
+          "averageBeforeRound": 9.08,
+          "actualPoints": null,
+          "enteredField": false,
+          "dataQualityScore": 38.25,
+          "rank": 1,
+          "officialScore": 7.8,
+          "availabilityStatus": "POST_MATCH_DID_NOT_PLAY",
+          "dataQualityV2": {
+            "score": 65,
+            "level": "MEDIUM",
+            "factors": {
+              "prediction": "AVAILABLE",
+              "average": "AVAILABLE",
+              "recentForm": "MISSING_OR_UNSAFE",
+              "status": "MISSING_OR_UNSAFE",
+              "matchContext": "AVAILABLE",
+              "teamContext": "AVAILABLE",
+              "scouts": "MISSING_OR_UNSAFE",
+              "sampleSize": "AVAILABLE"
+            },
+            "penalties": [
+              "recentForm",
+              "status",
+              "scouts"
+            ],
+            "nullPolicy": "Campos null permanecem null; a penalidade reduz confianca, nao substitui o dado por zero."
+          }
+        },
+        {
+          "athleteId": 63007,
+          "name": "Neymar da Silva Santos Júnior",
+          "clubId": 277,
+          "positionId": 4,
+          "position": "MEI",
+          "predictedPoints": 6.9,
+          "averageBeforeRound": 8.42,
+          "actualPoints": null,
+          "enteredField": false,
+          "dataQualityScore": 33.15,
+          "rank": 2,
+          "officialScore": 6.9,
+          "availabilityStatus": "POST_MATCH_DID_NOT_PLAY",
+          "dataQualityV2": {
+            "score": 65,
+            "level": "MEDIUM",
+            "factors": {
+              "prediction": "AVAILABLE",
+              "average": "AVAILABLE",
+              "recentForm": "MISSING_OR_UNSAFE",
+              "status": "MISSING_OR_UNSAFE",
+              "matchContext": "AVAILABLE",
+              "teamContext": "AVAILABLE",
+              "scouts": "MISSING_OR_UNSAFE",
+              "sampleSize": "AVAILABLE"
+            },
+            "penalties": [
+              "recentForm",
+              "status",
+              "scouts"
+            ],
+            "nullPolicy": "Campos null permanecem null; a penalidade reduz confianca, nao substitui o dado por zero."
+          }
+        },
+        {
+          "athleteId": 87863,
+          "name": "Giorgian Daniel de Arrascaeta Benedetti",
+          "clubId": 262,
+          "positionId": 4,
+          "position": "MEI",
+          "predictedPoints": 4.5,
+          "averageBeforeRound": 6.41,
+          "actualPoints": null,
+          "enteredField": false,
+          "dataQualityScore": 33.15,
+          "rank": 3,
+          "officialScore": 4.5,
+          "availabilityStatus": "POST_MATCH_DID_NOT_PLAY",
+          "dataQualityV2": {
+            "score": 65,
+            "level": "MEDIUM",
+            "factors": {
+              "prediction": "AVAILABLE",
+              "average": "AVAILABLE",
+              "recentForm": "MISSING_OR_UNSAFE",
+              "status": "MISSING_OR_UNSAFE",
+              "matchContext": "AVAILABLE",
+              "teamContext": "AVAILABLE",
+              "scouts": "MISSING_OR_UNSAFE",
+              "sampleSize": "AVAILABLE"
+            },
+            "penalties": [
+              "recentForm",
+              "status",
+              "scouts"
+            ],
+            "nullPolicy": "Campos null permanecem null; a penalidade reduz confianca, nao substitui o dado por zero."
+          }
+        },
+        {
+          "athleteId": 94930,
+          "name": "Lucas Tolentino Coelho de Lima",
+          "clubId": 262,
+          "positionId": 4,
+          "position": "MEI",
+          "predictedPoints": 4.5,
+          "averageBeforeRound": 6.46,
+          "actualPoints": null,
+          "enteredField": false,
+          "dataQualityScore": 38.25,
+          "rank": 4,
+          "officialScore": 4.5,
+          "availabilityStatus": "POST_MATCH_DID_NOT_PLAY",
+          "dataQualityV2": {
+            "score": 65,
+            "level": "MEDIUM",
+            "factors": {
+              "prediction": "AVAILABLE",
+              "average": "AVAILABLE",
+              "recentForm": "MISSING_OR_UNSAFE",
+              "status": "MISSING_OR_UNSAFE",
+              "matchContext": "AVAILABLE",
+              "teamContext": "AVAILABLE",
+              "scouts": "MISSING_OR_UNSAFE",
+              "sampleSize": "AVAILABLE"
+            },
+            "penalties": [
+              "recentForm",
+              "status",
+              "scouts"
+            ],
+            "nullPolicy": "Campos null permanecem null; a penalidade reduz confianca, nao substitui o dado por zero."
+          }
+        },
+        {
+          "athleteId": 99815,
+          "name": "Jhon Adolfo Arias Andrade",
+          "clubId": 275,
+          "positionId": 4,
+          "position": "MEI",
+          "predictedPoints": 4.5,
+          "averageBeforeRound": 6.49,
+          "actualPoints": null,
+          "enteredField": false,
+          "dataQualityScore": 38.25,
+          "rank": 5,
+          "officialScore": 4.5,
+          "availabilityStatus": "POST_MATCH_DID_NOT_PLAY",
+          "dataQualityV2": {
+            "score": 65,
+            "level": "MEDIUM",
+            "factors": {
+              "prediction": "AVAILABLE",
+              "average": "AVAILABLE",
+              "recentForm": "MISSING_OR_UNSAFE",
+              "status": "MISSING_OR_UNSAFE",
+              "matchContext": "AVAILABLE",
+              "teamContext": "AVAILABLE",
+              "scouts": "MISSING_OR_UNSAFE",
+              "sampleSize": "AVAILABLE"
+            },
+            "penalties": [
+              "recentForm",
+              "status",
+              "scouts"
+            ],
+            "nullPolicy": "Campos null permanecem null; a penalidade reduz confianca, nao substitui o dado por zero."
+          }
+        }
+      ],
+      "conclusion": "MEI Top5 esta N/A porque o snapshot/live market da rodada nao trouxe pontuacao para esses atletas; parser preservou null e separou nao jogou de score indisponivel."
+    }
+  },
+  "idealTeamAudit": {
+    "officialSlvsXI": {
+      "formation": "4-3-3",
+      "predictedPoints": 76.5,
+      "actualPointsWithoutCaptain": 83.3,
+      "actualPointsWithCaptain": 93.5,
+      "captain": {
+        "athleteId": 88136,
+        "name": "Ivan Quaresma da Silva",
+        "clubId": 364,
+        "positionId": 1,
+        "position": "GOL",
+        "predictedPoints": 8.4,
+        "averageBeforeRound": 10.2,
+        "actualPoints": 10.2,
+        "enteredField": true,
+        "dataQualityScore": 14.45,
+        "officialCaptain": true
+      },
+      "players": [
+        {
+          "athleteId": 99815,
+          "name": "Jhon Adolfo Arias Andrade",
+          "clubId": 275,
+          "positionId": 4,
+          "position": "MEI",
+          "predictedPoints": 4.5,
+          "averageBeforeRound": 6.49,
+          "actualPoints": null,
+          "enteredField": false,
+          "dataQualityScore": 38.25,
+          "availabilityStatus": "POST_MATCH_DID_NOT_PLAY"
+        },
+        {
+          "athleteId": 147192,
+          "name": "Claudio Henrique de Jesus Passos",
+          "clubId": 293,
+          "positionId": 2,
+          "position": "LAT",
+          "predictedPoints": 7.6,
+          "averageBeforeRound": 9.27,
+          "actualPoints": 16.9,
+          "enteredField": true,
+          "dataQualityScore": 23.8,
+          "availabilityStatus": "POST_MATCH_SCORE_AVAILABLE"
+        },
+        {
+          "athleteId": 130209,
+          "name": "Carlos Renê de Sousa Ferreira - Souza",
+          "clubId": 287,
+          "positionId": 5,
+          "position": "ATA",
+          "predictedPoints": 7,
+          "averageBeforeRound": 8.04,
+          "actualPoints": 18.1,
+          "enteredField": true,
+          "dataQualityScore": 38.25,
+          "availabilityStatus": "POST_MATCH_SCORE_AVAILABLE"
+        },
+        {
+          "athleteId": 63007,
+          "name": "Neymar da Silva Santos Júnior",
+          "clubId": 277,
+          "positionId": 4,
+          "position": "MEI",
+          "predictedPoints": 6.9,
+          "averageBeforeRound": 8.42,
+          "actualPoints": null,
+          "enteredField": false,
+          "dataQualityScore": 33.15,
+          "availabilityStatus": "POST_MATCH_DID_NOT_PLAY"
+        },
+        {
+          "athleteId": 107231,
+          "name": "Danilo dos Santos de Oliveira",
+          "clubId": 263,
+          "positionId": 4,
+          "position": "MEI",
+          "predictedPoints": 7.8,
+          "averageBeforeRound": 9.08,
+          "actualPoints": null,
+          "enteredField": false,
+          "dataQualityScore": 38.25,
+          "availabilityStatus": "POST_MATCH_DID_NOT_PLAY"
+        },
+        {
+          "athleteId": 105531,
+          "name": "Matheus Lima Beltrão Oliveira Valin",
+          "clubId": 264,
+          "positionId": 2,
+          "position": "LAT",
+          "predictedPoints": 6.7,
+          "averageBeforeRound": 7.73,
+          "actualPoints": 6.8,
+          "enteredField": true,
+          "dataQualityScore": 38.25,
+          "availabilityStatus": "POST_MATCH_SCORE_AVAILABLE"
+        },
+        {
+          "athleteId": 125488,
+          "name": "João Pedro de Sousa Rodrigues - Tchoca",
+          "clubId": 264,
+          "positionId": 3,
+          "position": "ZAG",
+          "predictedPoints": 6.7,
+          "averageBeforeRound": 7.7,
+          "actualPoints": null,
+          "enteredField": false,
+          "dataQualityScore": 14.45,
+          "availabilityStatus": "POST_MATCH_DID_NOT_PLAY"
+        },
+        {
+          "athleteId": 88136,
+          "name": "Ivan Quaresma da Silva",
+          "clubId": 364,
+          "positionId": 1,
+          "position": "GOL",
+          "predictedPoints": 8.4,
+          "averageBeforeRound": 10.2,
+          "actualPoints": 10.2,
+          "enteredField": true,
+          "dataQualityScore": 14.45,
+          "availabilityStatus": "POST_MATCH_SCORE_AVAILABLE"
+        },
+        {
+          "athleteId": 143193,
+          "name": "Kevin Stiven Viveros Rodallega",
+          "clubId": 293,
+          "positionId": 5,
+          "position": "ATA",
+          "predictedPoints": 6.9,
+          "averageBeforeRound": 8.41,
+          "actualPoints": 10.9,
+          "enteredField": true,
+          "dataQualityScore": 38.25,
+          "availabilityStatus": "POST_MATCH_SCORE_AVAILABLE"
+        },
+        {
+          "athleteId": 63354,
+          "name": "Rodrigo Modesto da Silva Moledo",
+          "clubId": 294,
+          "positionId": 3,
+          "position": "ZAG",
+          "predictedPoints": 6.8,
+          "averageBeforeRound": 7.75,
+          "actualPoints": null,
+          "enteredField": false,
+          "dataQualityScore": 14.45,
+          "availabilityStatus": "POST_MATCH_DID_NOT_PLAY"
+        },
+        {
+          "athleteId": 94583,
+          "name": "Pedro Guilherme Abreu dos Santos",
+          "clubId": 262,
+          "positionId": 5,
+          "position": "ATA",
+          "predictedPoints": 7.2,
+          "averageBeforeRound": 8.82,
+          "actualPoints": 20.4,
+          "enteredField": true,
+          "dataQualityScore": 38.25,
+          "availabilityStatus": "POST_MATCH_SCORE_AVAILABLE"
+        }
+      ]
+    },
+    "bestPredictedXI": {
+      "formation": "4-3-3",
+      "predictedPoints": 76.5,
+      "actualPointsWithoutCaptain": 72.4,
+      "actualPointsWithCaptain": 72.4,
+      "captain": {
+        "athleteId": 107231,
+        "name": "Danilo dos Santos de Oliveira",
+        "clubId": 263,
+        "positionId": 4,
+        "position": "MEI",
+        "predictedPoints": 7.8,
+        "averageBeforeRound": 9.08,
+        "actualPoints": null,
+        "enteredField": false,
+        "dataQualityScore": 38.25,
+        "captainScore": 16.1941
+      },
+      "players": [
+        {
+          "athleteId": 88136,
+          "name": "Ivan Quaresma da Silva",
+          "clubId": 364,
+          "positionId": 1,
+          "position": "GOL",
+          "predictedPoints": 8.4,
+          "averageBeforeRound": 10.2,
+          "actualPoints": 10.2,
+          "enteredField": true,
+          "dataQualityScore": 14.45,
+          "availabilityStatus": "POST_MATCH_SCORE_AVAILABLE"
+        },
+        {
+          "athleteId": 147192,
+          "name": "Claudio Henrique de Jesus Passos",
+          "clubId": 293,
+          "positionId": 2,
+          "position": "LAT",
+          "predictedPoints": 7.6,
+          "averageBeforeRound": 9.27,
+          "actualPoints": 16.9,
+          "enteredField": true,
+          "dataQualityScore": 23.8,
+          "availabilityStatus": "POST_MATCH_SCORE_AVAILABLE"
+        },
+        {
+          "athleteId": 105531,
+          "name": "Matheus Lima Beltrão Oliveira Valin",
+          "clubId": 264,
+          "positionId": 2,
+          "position": "LAT",
+          "predictedPoints": 6.7,
+          "averageBeforeRound": 7.73,
+          "actualPoints": 6.8,
+          "enteredField": true,
+          "dataQualityScore": 38.25,
+          "availabilityStatus": "POST_MATCH_SCORE_AVAILABLE"
+        },
+        {
+          "athleteId": 63354,
+          "name": "Rodrigo Modesto da Silva Moledo",
+          "clubId": 294,
+          "positionId": 3,
+          "position": "ZAG",
+          "predictedPoints": 6.8,
+          "averageBeforeRound": 7.75,
+          "actualPoints": null,
+          "enteredField": false,
+          "dataQualityScore": 14.45,
+          "availabilityStatus": "POST_MATCH_DID_NOT_PLAY"
+        },
+        {
+          "athleteId": 125488,
+          "name": "João Pedro de Sousa Rodrigues - Tchoca",
+          "clubId": 264,
+          "positionId": 3,
+          "position": "ZAG",
+          "predictedPoints": 6.7,
+          "averageBeforeRound": 7.7,
+          "actualPoints": null,
+          "enteredField": false,
+          "dataQualityScore": 14.45,
+          "availabilityStatus": "POST_MATCH_DID_NOT_PLAY"
+        },
+        {
+          "athleteId": 107231,
+          "name": "Danilo dos Santos de Oliveira",
+          "clubId": 263,
+          "positionId": 4,
+          "position": "MEI",
+          "predictedPoints": 7.8,
+          "averageBeforeRound": 9.08,
+          "actualPoints": null,
+          "enteredField": false,
+          "dataQualityScore": 38.25,
+          "availabilityStatus": "POST_MATCH_DID_NOT_PLAY"
+        },
+        {
+          "athleteId": 63007,
+          "name": "Neymar da Silva Santos Júnior",
+          "clubId": 277,
+          "positionId": 4,
+          "position": "MEI",
+          "predictedPoints": 6.9,
+          "averageBeforeRound": 8.42,
+          "actualPoints": null,
+          "enteredField": false,
+          "dataQualityScore": 33.15,
+          "availabilityStatus": "POST_MATCH_DID_NOT_PLAY"
+        },
+        {
+          "athleteId": 87863,
+          "name": "Giorgian Daniel de Arrascaeta Benedetti",
+          "clubId": 262,
+          "positionId": 4,
+          "position": "MEI",
+          "predictedPoints": 4.5,
+          "averageBeforeRound": 6.41,
+          "actualPoints": null,
+          "enteredField": false,
+          "dataQualityScore": 33.15,
+          "availabilityStatus": "POST_MATCH_DID_NOT_PLAY"
+        },
+        {
+          "athleteId": 94583,
+          "name": "Pedro Guilherme Abreu dos Santos",
+          "clubId": 262,
+          "positionId": 5,
+          "position": "ATA",
+          "predictedPoints": 7.2,
+          "averageBeforeRound": 8.82,
+          "actualPoints": 20.4,
+          "enteredField": true,
+          "dataQualityScore": 38.25,
+          "availabilityStatus": "POST_MATCH_SCORE_AVAILABLE"
+        },
+        {
+          "athleteId": 130209,
+          "name": "Carlos Renê de Sousa Ferreira - Souza",
+          "clubId": 287,
+          "positionId": 5,
+          "position": "ATA",
+          "predictedPoints": 7,
+          "averageBeforeRound": 8.04,
+          "actualPoints": 18.1,
+          "enteredField": true,
+          "dataQualityScore": 38.25,
+          "availabilityStatus": "POST_MATCH_SCORE_AVAILABLE"
+        },
+        {
+          "athleteId": 102928,
+          "name": "Agustín Canobbio Graviz",
+          "clubId": 266,
+          "positionId": 5,
+          "position": "ATA",
+          "predictedPoints": 6.9,
+          "averageBeforeRound": 7.94,
+          "actualPoints": null,
+          "enteredField": false,
+          "dataQualityScore": 38.25,
+          "availabilityStatus": "POST_MATCH_DID_NOT_PLAY"
+        }
+      ]
+    },
+    "bestActualXI": {
+      "formation": "4-3-3",
+      "predictedPoints": 51.9,
+      "actualPointsWithoutCaptain": 190.4,
+      "actualPointsWithCaptain": 208.5,
+      "captain": {
+        "athleteId": 130209,
+        "name": "Carlos Renê de Sousa Ferreira - Souza",
+        "clubId": 287,
+        "positionId": 5,
+        "position": "ATA",
+        "predictedPoints": 7,
+        "averageBeforeRound": 8.04,
+        "actualPoints": 18.1,
+        "enteredField": true,
+        "dataQualityScore": 38.25,
+        "captainScore": 15.4393
+      },
+      "players": [
+        {
+          "athleteId": 72294,
+          "name": "Everson Felipe Marques Pires",
+          "clubId": 282,
+          "positionId": 1,
+          "position": "GOL",
+          "predictedPoints": 3.5,
+          "averageBeforeRound": 4.47,
+          "actualPoints": 14.6,
+          "enteredField": true,
+          "dataQualityScore": 31.45,
+          "availabilityStatus": "POST_MATCH_SCORE_AVAILABLE"
+        },
+        {
+          "athleteId": 147192,
+          "name": "Claudio Henrique de Jesus Passos",
+          "clubId": 293,
+          "positionId": 2,
+          "position": "LAT",
+          "predictedPoints": 7.6,
+          "averageBeforeRound": 9.27,
+          "actualPoints": 16.9,
+          "enteredField": true,
+          "dataQualityScore": 23.8,
+          "availabilityStatus": "POST_MATCH_SCORE_AVAILABLE"
+        },
+        {
+          "athleteId": 97795,
+          "name": "Marcelo Rodrigues Souza",
+          "clubId": 364,
+          "positionId": 2,
+          "position": "LAT",
+          "predictedPoints": 3.8,
+          "averageBeforeRound": 5.44,
+          "actualPoints": 16.7,
+          "enteredField": true,
+          "dataQualityScore": 34.85,
+          "availabilityStatus": "POST_MATCH_SCORE_AVAILABLE"
+        },
+        {
+          "athleteId": 72605,
+          "name": "Vitor Hugo Franchescoli de Souza",
+          "clubId": 282,
+          "positionId": 3,
+          "position": "ZAG",
+          "predictedPoints": 3.5,
+          "averageBeforeRound": 4.5,
+          "actualPoints": 14.5,
+          "enteredField": true,
+          "dataQualityScore": 29.75,
+          "availabilityStatus": "POST_MATCH_SCORE_AVAILABLE"
+        },
+        {
+          "athleteId": 91772,
+          "name": "David de Duarte Macedo",
+          "clubId": 265,
+          "positionId": 3,
+          "position": "ZAG",
+          "predictedPoints": 2.5,
+          "averageBeforeRound": 3.64,
+          "actualPoints": 11.9,
+          "enteredField": true,
+          "dataQualityScore": 31.45,
+          "availabilityStatus": "POST_MATCH_SCORE_AVAILABLE"
+        },
+        {
+          "athleteId": 145744,
+          "name": "André Luiz Santos Dias",
+          "clubId": 264,
+          "positionId": 4,
+          "position": "MEI",
+          "predictedPoints": 3.4,
+          "averageBeforeRound": 4.26,
+          "actualPoints": 18.4,
+          "enteredField": true,
+          "dataQualityScore": 31.45,
+          "availabilityStatus": "POST_MATCH_SCORE_AVAILABLE"
+        },
+        {
+          "athleteId": 115025,
+          "name": "Miguel Àngel Terceros",
+          "clubId": 277,
+          "positionId": 4,
+          "position": "MEI",
+          "predictedPoints": 3.4,
+          "averageBeforeRound": 4.88,
+          "actualPoints": 17.1,
+          "enteredField": true,
+          "dataQualityScore": 29.75,
+          "availabilityStatus": "POST_MATCH_SCORE_AVAILABLE"
+        },
+        {
+          "athleteId": 96610,
+          "name": "Matheus Fellipe Costa Pereira",
+          "clubId": 283,
+          "positionId": 4,
+          "position": "MEI",
+          "predictedPoints": 4.2,
+          "averageBeforeRound": 6.07,
+          "actualPoints": 15.8,
+          "enteredField": true,
+          "dataQualityScore": 38.25,
+          "availabilityStatus": "POST_MATCH_SCORE_AVAILABLE"
+        },
+        {
+          "athleteId": 98873,
+          "name": "Samuel Dias Lino",
+          "clubId": 262,
+          "positionId": 5,
+          "position": "ATA",
+          "predictedPoints": 5.8,
+          "averageBeforeRound": 7.08,
+          "actualPoints": 26,
+          "enteredField": true,
+          "dataQualityScore": 38.25,
+          "availabilityStatus": "POST_MATCH_SCORE_AVAILABLE"
+        },
+        {
+          "athleteId": 94583,
+          "name": "Pedro Guilherme Abreu dos Santos",
+          "clubId": 262,
+          "positionId": 5,
+          "position": "ATA",
+          "predictedPoints": 7.2,
+          "averageBeforeRound": 8.82,
+          "actualPoints": 20.4,
+          "enteredField": true,
+          "dataQualityScore": 38.25,
+          "availabilityStatus": "POST_MATCH_SCORE_AVAILABLE"
+        },
+        {
+          "athleteId": 130209,
+          "name": "Carlos Renê de Sousa Ferreira - Souza",
+          "clubId": 287,
+          "positionId": 5,
+          "position": "ATA",
+          "predictedPoints": 7,
+          "averageBeforeRound": 8.04,
+          "actualPoints": 18.1,
+          "enteredField": true,
+          "dataQualityScore": 38.25,
+          "availabilityStatus": "POST_MATCH_SCORE_AVAILABLE"
+        }
+      ]
+    },
+    "captureRateAbsolute": 0.4375,
+    "topPotentialCaptureRateTop5": {
+      "topK": 5,
+      "actualPointsWithoutCaptain": 101.4,
+      "actualPointsWithCaptain": 119.5,
+      "bestOverallActualPointsWithoutCaptain": 190.4,
+      "captureRate": 0.5326
+    },
+    "topPotentialCaptureRateTop10": {
+      "topK": 10,
+      "actualPointsWithoutCaptain": 132.7,
+      "actualPointsWithCaptain": 150.8,
+      "bestOverallActualPointsWithoutCaptain": 190.4,
+      "captureRate": 0.697
+    },
+    "formationComparison": {
+      "recommendedFormation": "4-3-3",
+      "bestPredictedFormation": "4-3-3",
+      "bestActualFormation": "4-3-3"
+    }
+  },
+  "formationAudit": {
+    "roundsEvaluated": 17,
+    "hitRate": 0.5882,
+    "rounds": [
+      {
+        "round": 2,
+        "recommendedFormation": "4-4-2",
+        "bestActualFormation": "4-3-3",
+        "hit": false
+      },
+      {
+        "round": 3,
+        "recommendedFormation": "4-5-1",
+        "bestActualFormation": "4-3-3",
+        "hit": false
+      },
+      {
+        "round": 4,
+        "recommendedFormation": "4-3-3",
+        "bestActualFormation": "4-4-2",
+        "hit": false
+      },
+      {
+        "round": 5,
+        "recommendedFormation": "4-4-2",
+        "bestActualFormation": "4-3-3",
+        "hit": false
+      },
+      {
+        "round": 6,
+        "recommendedFormation": "4-3-3",
+        "bestActualFormation": "4-3-3",
+        "hit": true
+      },
+      {
+        "round": 7,
+        "recommendedFormation": "4-3-3",
+        "bestActualFormation": "5-3-2",
+        "hit": false
+      },
+      {
+        "round": 8,
+        "recommendedFormation": "4-3-3",
+        "bestActualFormation": "4-3-3",
+        "hit": true
+      },
+      {
+        "round": 9,
+        "recommendedFormation": "4-4-2",
+        "bestActualFormation": "4-3-3",
+        "hit": false
+      },
+      {
+        "round": 10,
+        "recommendedFormation": "4-3-3",
+        "bestActualFormation": "4-3-3",
+        "hit": true
+      },
+      {
+        "round": 11,
+        "recommendedFormation": "4-3-3",
+        "bestActualFormation": "4-3-3",
+        "hit": true
+      },
+      {
+        "round": 12,
+        "recommendedFormation": "4-3-3",
+        "bestActualFormation": "4-3-3",
+        "hit": true
+      },
+      {
+        "round": 13,
+        "recommendedFormation": "4-3-3",
+        "bestActualFormation": "4-3-3",
+        "hit": true
+      },
+      {
+        "round": 14,
+        "recommendedFormation": "4-3-3",
+        "bestActualFormation": "4-3-3",
+        "hit": true
+      },
+      {
+        "round": 15,
+        "recommendedFormation": "4-3-3",
+        "bestActualFormation": "4-4-2",
+        "hit": false
+      },
+      {
+        "round": 16,
+        "recommendedFormation": "4-3-3",
+        "bestActualFormation": "4-3-3",
+        "hit": true
+      },
+      {
+        "round": 17,
+        "recommendedFormation": "4-3-3",
+        "bestActualFormation": "4-3-3",
+        "hit": true
+      },
+      {
+        "round": 18,
+        "recommendedFormation": "4-3-3",
+        "bestActualFormation": "4-3-3",
+        "hit": true
+      }
+    ]
+  },
+  "explainableErrors": {
+    "MODEL_ERROR": [
+      {
+        "athleteId": 123869,
+        "name": "Juan Felipe Aguirre Tabares",
+        "clubId": 293,
+        "positionId": 3,
+        "position": "ZAG",
+        "predictedPoints": 2.4,
+        "averageBeforeRound": 3.41,
+        "actualPoints": 10.3,
+        "enteredField": true,
+        "dataQualityScore": 31.45,
+        "predictionError": 7.9,
+        "category": "MODEL_ERROR"
+      },
+      {
+        "athleteId": 132071,
+        "name": "Kevin Steven Serna Jaramillo",
+        "clubId": 266,
+        "positionId": 5,
+        "position": "ATA",
+        "predictedPoints": 2.5,
+        "averageBeforeRound": 2.96,
+        "actualPoints": 10.4,
+        "enteredField": true,
+        "dataQualityScore": 28.05,
+        "predictionError": 7.9,
+        "category": "MODEL_ERROR"
+      },
+      {
+        "athleteId": 86859,
+        "name": "José Welison da Silva - Zé",
+        "clubId": 364,
+        "positionId": 4,
+        "position": "MEI",
+        "predictedPoints": 1.7,
+        "averageBeforeRound": 2.47,
+        "actualPoints": 9.5,
+        "enteredField": true,
+        "dataQualityScore": 28.05,
+        "predictionError": 7.8,
+        "category": "MODEL_ERROR"
+      },
+      {
+        "athleteId": 96591,
+        "name": "Renan Augusto Lodi dos Santos",
+        "clubId": 282,
+        "positionId": 2,
+        "position": "LAT",
+        "predictedPoints": 4.1,
+        "averageBeforeRound": 5.22,
+        "actualPoints": 11.9,
+        "enteredField": true,
+        "dataQualityScore": 34.85,
+        "predictionError": 7.8,
+        "category": "MODEL_ERROR"
+      },
+      {
+        "athleteId": 126471,
+        "name": "Álvaro Martín Barreal",
+        "clubId": 277,
+        "positionId": 4,
+        "position": "MEI",
+        "predictedPoints": 3.2,
+        "averageBeforeRound": 4.55,
+        "actualPoints": 10.9,
+        "enteredField": true,
+        "dataQualityScore": 34.85,
+        "predictionError": 7.7,
+        "category": "MODEL_ERROR"
+      },
+      {
+        "athleteId": 92087,
+        "name": "Lyanco Evangelista Silveira Neves Vojnovic",
+        "clubId": 282,
+        "positionId": 3,
+        "position": "ZAG",
+        "predictedPoints": 3.1,
+        "averageBeforeRound": 3.8,
+        "actualPoints": 10.4,
+        "enteredField": true,
+        "dataQualityScore": 26.35,
+        "predictionError": 7.3,
+        "category": "MODEL_ERROR"
+      },
+      {
+        "athleteId": 103056,
+        "name": "Gabriel Nascimento Rezende Brazão - Resende",
+        "clubId": 277,
+        "positionId": 1,
+        "position": "GOL",
+        "predictedPoints": 1.8,
+        "averageBeforeRound": 2.62,
+        "actualPoints": 8.9,
+        "enteredField": true,
+        "dataQualityScore": 28.05,
+        "predictionError": 7.1,
+        "category": "MODEL_ERROR"
+      },
+      {
+        "athleteId": 107256,
+        "name": "Jose Vitor Silva Neves",
+        "clubId": 287,
+        "positionId": 4,
+        "position": "MEI",
+        "predictedPoints": 3.2,
+        "averageBeforeRound": 4.07,
+        "actualPoints": 10.2,
+        "enteredField": true,
+        "dataQualityScore": 26.35,
+        "predictionError": 7,
+        "category": "MODEL_ERROR"
+      },
+      {
+        "athleteId": 83433,
+        "name": "Patrick Bezerra do Nascimento",
+        "clubId": 364,
+        "positionId": 4,
+        "position": "MEI",
+        "predictedPoints": 2.5,
+        "averageBeforeRound": 3.54,
+        "actualPoints": 9.4,
+        "enteredField": true,
+        "dataQualityScore": 31.45,
+        "predictionError": 6.9,
+        "category": "MODEL_ERROR"
+      },
+      {
+        "athleteId": 104085,
+        "name": "Bruno de Lara Fuchs",
+        "clubId": 275,
+        "positionId": 3,
+        "position": "ZAG",
+        "predictedPoints": 2.9,
+        "averageBeforeRound": 4.21,
+        "actualPoints": 9.5,
+        "enteredField": true,
+        "dataQualityScore": 26.35,
+        "predictionError": 6.6,
+        "category": "MODEL_ERROR"
+      }
+    ],
+    "DATA_LIMITATION": [],
+    "UNPREDICTABLE_EVENT": [
+      {
+        "athleteId": 98873,
+        "name": "Samuel Dias Lino",
+        "clubId": 262,
+        "positionId": 5,
+        "position": "ATA",
+        "predictedPoints": 5.8,
+        "averageBeforeRound": 7.08,
+        "actualPoints": 26,
+        "enteredField": true,
+        "dataQualityScore": 38.25,
+        "predictionError": 20.2,
+        "category": "UNPREDICTABLE_EVENT"
+      },
+      {
+        "athleteId": 145744,
+        "name": "André Luiz Santos Dias",
+        "clubId": 264,
+        "positionId": 4,
+        "position": "MEI",
+        "predictedPoints": 3.4,
+        "averageBeforeRound": 4.26,
+        "actualPoints": 18.4,
+        "enteredField": true,
+        "dataQualityScore": 31.45,
+        "predictionError": 15,
+        "category": "UNPREDICTABLE_EVENT"
+      },
+      {
+        "athleteId": 115025,
+        "name": "Miguel Àngel Terceros",
+        "clubId": 277,
+        "positionId": 4,
+        "position": "MEI",
+        "predictedPoints": 3.4,
+        "averageBeforeRound": 4.88,
+        "actualPoints": 17.1,
+        "enteredField": true,
+        "dataQualityScore": 29.75,
+        "predictionError": 13.7,
+        "category": "UNPREDICTABLE_EVENT"
+      },
+      {
+        "athleteId": 94583,
+        "name": "Pedro Guilherme Abreu dos Santos",
+        "clubId": 262,
+        "positionId": 5,
+        "position": "ATA",
+        "predictedPoints": 7.2,
+        "averageBeforeRound": 8.82,
+        "actualPoints": 20.4,
+        "enteredField": true,
+        "dataQualityScore": 38.25,
+        "predictionError": 13.2,
+        "category": "UNPREDICTABLE_EVENT"
+      },
+      {
+        "athleteId": 97795,
+        "name": "Marcelo Rodrigues Souza",
+        "clubId": 364,
+        "positionId": 2,
+        "position": "LAT",
+        "predictedPoints": 3.8,
+        "averageBeforeRound": 5.44,
+        "actualPoints": 16.7,
+        "enteredField": true,
+        "dataQualityScore": 34.85,
+        "predictionError": 12.9,
+        "category": "UNPREDICTABLE_EVENT"
+      },
+      {
+        "athleteId": 100695,
+        "name": "Fernando dos Santos Pedro",
+        "clubId": 280,
+        "positionId": 5,
+        "position": "ATA",
+        "predictedPoints": 3.5,
+        "averageBeforeRound": 5,
+        "actualPoints": 16.1,
+        "enteredField": true,
+        "dataQualityScore": 29.75,
+        "predictionError": 12.6,
+        "category": "UNPREDICTABLE_EVENT"
+      },
+      {
+        "athleteId": 141595,
+        "name": "Gabriel Ferreira de Carvalho",
+        "clubId": 284,
+        "positionId": 5,
+        "position": "ATA",
+        "predictedPoints": 2,
+        "averageBeforeRound": 2.82,
+        "actualPoints": 14.5,
+        "enteredField": true,
+        "dataQualityScore": 28.05,
+        "predictionError": 12.5,
+        "category": "UNPREDICTABLE_EVENT"
+      },
+      {
+        "athleteId": 100652,
+        "name": "Yuri Alberto Monteiro da Silva",
+        "clubId": 264,
+        "positionId": 5,
+        "position": "ATA",
+        "predictedPoints": 2.8,
+        "averageBeforeRound": 3.36,
+        "actualPoints": 14.5,
+        "enteredField": true,
+        "dataQualityScore": 31.45,
+        "predictionError": 11.7,
+        "category": "UNPREDICTABLE_EVENT"
+      },
+      {
+        "athleteId": 96610,
+        "name": "Matheus Fellipe Costa Pereira",
+        "clubId": 283,
+        "positionId": 4,
+        "position": "MEI",
+        "predictedPoints": 4.2,
+        "averageBeforeRound": 6.07,
+        "actualPoints": 15.8,
+        "enteredField": true,
+        "dataQualityScore": 38.25,
+        "predictionError": 11.6,
+        "category": "UNPREDICTABLE_EVENT"
+      },
+      {
+        "athleteId": 72294,
+        "name": "Everson Felipe Marques Pires",
+        "clubId": 282,
+        "positionId": 1,
+        "position": "GOL",
+        "predictedPoints": 3.5,
+        "averageBeforeRound": 4.47,
+        "actualPoints": 14.6,
+        "enteredField": true,
+        "dataQualityScore": 31.45,
+        "predictionError": 11.1,
+        "category": "UNPREDICTABLE_EVENT"
+      }
+    ],
+    "PLAYER_DID_NOT_PLAY": [
+      {
+        "athleteId": 37715,
+        "name": "Thiago Emiliano da Silva",
+        "clubId": 266,
+        "positionId": 3,
+        "position": "ZAG",
+        "predictedPoints": 0.4,
+        "averageBeforeRound": 0,
+        "actualPoints": null,
+        "enteredField": false,
+        "dataQualityScore": 3.5,
+        "predictionError": null,
+        "category": "PLAYER_DID_NOT_PLAY"
+      },
+      {
+        "athleteId": 39148,
+        "name": "Givanildo Vieira de Souza",
+        "clubId": 266,
+        "positionId": 5,
+        "position": "ATA",
+        "predictedPoints": 3.6,
+        "averageBeforeRound": 4.55,
+        "actualPoints": null,
+        "enteredField": false,
+        "dataQualityScore": 34.85,
+        "predictionError": null,
+        "category": "PLAYER_DID_NOT_PLAY"
+      },
+      {
+        "athleteId": 39656,
+        "name": "Alan Steven Franco Palma",
+        "clubId": 282,
+        "positionId": 4,
+        "position": "MEI",
+        "predictedPoints": 2.1,
+        "averageBeforeRound": 2.42,
+        "actualPoints": null,
+        "enteredField": false,
+        "dataQualityScore": 28.05,
+        "predictionError": null,
+        "category": "PLAYER_DID_NOT_PLAY"
+      },
+      {
+        "athleteId": 42135,
+        "name": "Willian Borges da Silva",
+        "clubId": 284,
+        "positionId": 4,
+        "position": "MEI",
+        "predictedPoints": 0.7,
+        "averageBeforeRound": 1.06,
+        "actualPoints": null,
+        "enteredField": false,
+        "dataQualityScore": 22.95,
+        "predictionError": null,
+        "category": "PLAYER_DID_NOT_PLAY"
+      },
+      {
+        "athleteId": 42234,
+        "name": "Cássio Roberto Ramos",
+        "clubId": 283,
+        "positionId": 1,
+        "position": "GOL",
+        "predictedPoints": 0.9,
+        "averageBeforeRound": 1.32,
+        "actualPoints": null,
+        "enteredField": false,
+        "dataQualityScore": 17,
+        "predictionError": null,
+        "category": "PLAYER_DID_NOT_PLAY"
+      },
+      {
+        "athleteId": 50742,
+        "name": "Gabriel Christoni Leite",
+        "clubId": 294,
+        "positionId": 1,
+        "position": "GOL",
+        "predictedPoints": 0.4,
+        "averageBeforeRound": 0,
+        "actualPoints": null,
+        "enteredField": false,
+        "dataQualityScore": 3.5,
+        "predictionError": null,
+        "category": "PLAYER_DID_NOT_PLAY"
+      },
+      {
+        "athleteId": 61987,
+        "name": "Alex Sandro Lobo Silva",
+        "clubId": 262,
+        "positionId": 2,
+        "position": "LAT",
+        "predictedPoints": 2.6,
+        "averageBeforeRound": 3.74,
+        "actualPoints": null,
+        "enteredField": false,
+        "dataQualityScore": 31.45,
+        "predictionError": null,
+        "category": "PLAYER_DID_NOT_PLAY"
+      },
+      {
+        "athleteId": 62977,
+        "name": "Paulo Henrique Chagas de Lima",
+        "clubId": 266,
+        "positionId": 4,
+        "position": "MEI",
+        "predictedPoints": 1,
+        "averageBeforeRound": 0.85,
+        "actualPoints": null,
+        "enteredField": false,
+        "dataQualityScore": 28.05,
+        "predictionError": null,
+        "category": "PLAYER_DID_NOT_PLAY"
+      },
+      {
+        "athleteId": 63007,
+        "name": "Neymar da Silva Santos Júnior",
+        "clubId": 277,
+        "positionId": 4,
+        "position": "MEI",
+        "predictedPoints": 6.9,
+        "averageBeforeRound": 8.42,
+        "actualPoints": null,
+        "enteredField": false,
+        "dataQualityScore": 33.15,
+        "predictionError": null,
+        "category": "PLAYER_DID_NOT_PLAY"
+      },
+      {
+        "athleteId": 63008,
+        "name": "Rafael Toloi",
+        "clubId": 276,
+        "positionId": 3,
+        "position": "ZAG",
+        "predictedPoints": 3.8,
+        "averageBeforeRound": 4.82,
+        "actualPoints": null,
+        "enteredField": false,
+        "dataQualityScore": 23.8,
+        "predictionError": null,
+        "category": "PLAYER_DID_NOT_PLAY"
+      }
+    ],
+    "INSUFFICIENT_PREMATCH_SIGNAL": []
+  },
+  "promotionGate": {
+    "allowedStates": [
+      "EXPERIMENTAL",
+      "REJECTED",
+      "PROMOTABLE"
+    ],
+    "anyPromotable": false,
+    "candidates": [
+      {
+        "candidateId": "clean-sheet-v2",
+        "state": "EXPERIMENTAL",
+        "promoted": false,
+        "reason": "Sem melhora consistente sobre V1."
+      },
+      {
+        "candidateId": "gol-v2",
+        "state": "EXPERIMENTAL",
+        "promoted": false,
+        "reason": "Shadow melhorou alguma metrica agregada, mas segue sem promocao automatica."
+      },
+      {
+        "candidateId": "lat-v2",
+        "state": "REJECTED",
+        "promoted": false,
+        "reason": "Nao superou o oficial no agregado Top5."
+      },
+      {
+        "candidateId": "zag-v2",
+        "state": "EXPERIMENTAL",
+        "promoted": false,
+        "reason": "Shadow melhorou alguma metrica agregada, mas segue sem promocao automatica."
+      },
+      {
+        "candidateId": "mei-v2",
+        "state": "EXPERIMENTAL",
+        "promoted": false,
+        "reason": "Shadow melhorou alguma metrica agregada, mas segue sem promocao automatica."
+      },
+      {
+        "candidateId": "ata-v2",
+        "state": "REJECTED",
+        "promoted": false,
+        "reason": "Nao superou o oficial no agregado Top5."
+      },
+      {
+        "candidateId": "tec-v2",
+        "state": "REJECTED",
+        "promoted": false,
+        "reason": "Nao superou o oficial no agregado Top5."
+      },
+      {
+        "candidateId": "captain-v2",
+        "state": "EXPERIMENTAL",
+        "promoted": false,
+        "reason": "Corrige auditoria de elegibilidade, mas nao altera a politica oficial sem mais rodadas."
+      }
+    ]
+  },
+  "limitations": [
+    "COR x REM so fecha quando a API oficial de partidas trouxer placar para o jogo.",
+    "Shadow mode usa apenas sinais ja presentes nos snapshots/backtests; scouts marcados como divergentes nao sao convertidos em certeza.",
+    "Pontuacao de atletas da Rodada 19 depende do snapshot/live market disponivel, nao de base historica final imutavel.",
+    "Nenhum candidato foi promovido para o motor oficial nesta build."
+  ],
+  "artifacts": {
+    "persistedAt": "data/research/2026/multi-round-calibration.json",
+    "report": "docs/research/build-5.2.4-multi-round-learning.md"
+  }
+}

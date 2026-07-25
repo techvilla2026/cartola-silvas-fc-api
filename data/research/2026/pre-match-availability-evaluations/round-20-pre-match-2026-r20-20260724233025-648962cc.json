@@ -1,0 +1,13 @@
+{
+  "schemaVersion": "pre-match-availability-evaluation/v1",
+  "sourceDefinitionVersion": "PRE_MATCH_AVAILABILITY_SOURCE_V1",
+  "season": 2026,
+  "round": 20,
+  "captureId": "pre-match-2026-r20-20260724233025-648962cc",
+  "snapshotFingerprint": "7353f12b56045a94eb2b6e2544e6de691e5639045b44c5e454d06f63c19a58c9",
+  "evaluatedAt": "2026-07-25T00:00:59.957Z",
+  "status": "PENDING_OUTCOME",
+  "targetRows": 0,
+  "reason": "Outcome real da rodada 20 nao encontrado.",
+  "metrics": null
+}
