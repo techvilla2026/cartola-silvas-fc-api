@@ -2,11 +2,11 @@
   "schemaVersion": "live-pre-round-snapshot-manifest/v1",
   "season": 2026,
   "round": 21,
-  "totalSnapshots": 2,
-  "validPreRoundSnapshots": 2,
+  "totalSnapshots": 3,
+  "validPreRoundSnapshots": 3,
   "firstSnapshotId": "live-2026-r21-20260727145534-cf37c57b",
-  "lastSnapshotId": "live-2026-r21-20260727170506-91d2def5",
-  "lastValidPreRoundSnapshotId": "live-2026-r21-20260727170506-91d2def5",
+  "lastSnapshotId": "live-2026-r21-20260727203816-622b6ef0",
+  "lastValidPreRoundSnapshotId": "live-2026-r21-20260727203816-622b6ef0",
   "snapshots": [
     {
       "snapshotId": "live-2026-r21-20260727145534-cf37c57b",
@@ -23,12 +23,20 @@
       "capturePhase": "PRE_MARKET_CLOSE",
       "isValidPreRoundSnapshot": true,
       "contentHash": "ed6a6990dc783d90c9605e8b341747b88f49e7137882a308f9bf275d2887400a"
+    },
+    {
+      "snapshotId": "live-2026-r21-20260727203816-622b6ef0",
+      "capturedAt": "2026-07-27T20:38:16.012Z",
+      "round": 21,
+      "capturePhase": "PRE_MARKET_CLOSE",
+      "isValidPreRoundSnapshot": true,
+      "contentHash": "af3f651b813faca7138070de0deca9723d220969bb31e51561d5efa20230decc"
     }
   ],
   "firstValidSnapshotId": "live-2026-r21-20260727145534-cf37c57b",
-  "finalPreCloseSnapshotId": "live-2026-r21-20260727170506-91d2def5",
-  "finalPreCloseCapturedAt": "2026-07-27T17:05:06.238Z",
-  "finalPreCloseDistanceToClosingSeconds": 192233,
+  "finalPreCloseSnapshotId": "live-2026-r21-20260727203816-622b6ef0",
+  "finalPreCloseCapturedAt": "2026-07-27T20:38:16.012Z",
+  "finalPreCloseDistanceToClosingSeconds": 179443,
   "finalCaptureQuality": "EARLIER_VALID_FALLBACK",
-  "updatedAt": "2026-07-27T17:05:08.431Z"
+  "updatedAt": "2026-07-27T20:38:17.346Z"
 }
