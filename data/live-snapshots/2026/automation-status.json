@@ -1,7 +1,7 @@
 {
   "schemaVersion": "live-snapshot-automation-status/v1",
-  "executionId": "exec-20260730000549625-28efc0d3",
-  "lastRunAt": "2026-07-30T00:05:51.541Z",
+  "executionId": "exec-20260730031932806-8a6b6752",
+  "lastRunAt": "2026-07-30T03:19:34.059Z",
   "result": "SKIPPED",
   "reason": "MARKET_CLOSED",
   "requestedReason": null,
@@ -12,7 +12,7 @@
   "auditStatus": null,
   "nextRecommendedCheckAt": null,
   "marketClosingAt": "2026-07-29T22:29:00.000Z",
-  "secondsToClosing": -5810,
+  "secondsToClosing": -17433,
   "scheduleWindow": {
     "name": "CLOSED",
     "intervalSeconds": null,
@@ -20,8 +20,8 @@
   },
   "capturePriority": "NONE",
   "changeSummary": {
-    "changedPlayers": 0,
-    "statusChanges": 0,
+    "changedPlayers": 20,
+    "statusChanges": 20,
     "priceChanges": 0,
     "predictionChanges": 0,
     "idealTeamChanged": true,
@@ -32,7 +32,7 @@
     "centralChanged": true
   },
   "previousSnapshotId": "live-2026-r21-20260729220923-8e80fab0",
-  "currentFingerprint": "8779e67fdc32fdcec473fe7c895b19cf432178d8a63e1c1fcbdcb71c463bd7b1",
+  "currentFingerprint": "79cb6942c3e469889c3c3af20279489258385d695fe01b709cbaf9b06c8ca0af",
   "previousFingerprint": "4db42e4d01ab4aecd9251f0d595c1ff4d4bd07c08aa266518624597172e15844",
   "staleLockRecovered": false,
   "lockReleased": true,
@@ -41,6 +41,6 @@
   "dryRun": false,
   "failureCount": 0,
   "consecutiveFailureCount": 0,
-  "lastSuccessfulRunAt": "2026-07-30T00:05:51.541Z",
+  "lastSuccessfulRunAt": "2026-07-30T03:19:34.059Z",
   "lastFailureAt": null
 }
