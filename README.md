@@ -4,7 +4,7 @@ Backend proxy do Cartola FC para o aplicativo Meu Time Ideal Web.
 
 Este servidor evita que a versao Web do app Flutter precise chamar diretamente `https://api.cartolafc.globo.com` a partir do navegador, reduzindo problemas de CORS. As rotas retornam dados reais da API oficial do Cartola FC, sem mocks, fallbacks ficticios ou alteracao silenciosa do conteudo recebido.
 
-A Build 5.2.12 adiciona avaliacao prospectiva da fonte pre-jogo e auto-captura segura antes do deadline, preservando CORS Netlify, laboratorio historico offline, Motor SLVS oficial, `AVAILABILITY_V1`, `AVAILABILITY_V2_CALIBRATED`, threshold oficial 0.50 e automacao de snapshots vivos em `READY`. Os indices abaixo sao sinais internos SLVS explicaveis; nao sao probabilidades oficiais.
+A Build 5.2.13 prepara um scheduler prospectivo seguro, idempotente e separado do workflow de live snapshots. O agendamento consulta dinamicamente rodada e deadline do Cartola, roda a cada 30 minutos e permanece em dry-run enquanto `PRE_MATCH_CAPTURE_WRITE_ENABLED` e `PRE_MATCH_CAPTURE_COMMIT_ENABLED` nao forem exatamente `true`. A persistencia Git restrita esta preparada, mas desabilitada. CORS Netlify, Motor SLVS oficial, `AVAILABILITY_V1`, `AVAILABILITY_V2_CALIBRATED`, threshold oficial 0.50 e baseline permanecem preservados.
 
 ## Endpoints
 
@@ -16,7 +16,7 @@ Retorna informacoes basicas do servico:
 {
   "service": "cartola-silvas-fc-api",
   "status": "online",
-  "version": "5.2.12",
+  "version": "5.2.13",
   "focus": "Brasileirao/Cartola FC"
 }
 ```
@@ -304,6 +304,24 @@ Copa do Brasil, Libertadores, Sul-Americana, desfalques, provaveis escalacoes e 
 Documentacao:
 
 - `docs/real-round-context-architecture.md`
+
+## Research Scheduler 5.2.13
+
+O scheduler prospectivo roda a cada 30 minutos, consulta rodada/deadline dinamicamente e permanece em dry-run por padrao.
+
+```bash
+npm run research:auto-capture-pre-match -- --dry-run --json
+npm run research:pre-match:persistence -- --json
+```
+
+Endpoints read-only:
+
+```text
+GET /research/pre-match-availability/capture-status
+GET /research/pre-match-availability/scheduler-readiness
+```
+
+O workflow `.github/workflows/research-pre-match-auto-capture.yml` requer simultaneamente `PRE_MATCH_CAPTURE_WRITE_ENABLED=true` e `PRE_MATCH_CAPTURE_COMMIT_ENABLED=true` para sair do dry-run. Consulte `docs/research/pre-match-scheduler-runbook.md` antes de habilitar qualquer escrita.
 
 ## Research Lab 5.2.12
 

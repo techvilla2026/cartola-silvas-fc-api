@@ -1,4 +1,5 @@
 const express = require("express");
+const path = require("node:path");
 const { HistoricalDataRepository } = require("./src/historical/repositories/fileRepository");
 const { buildAuditSummary } = require("./src/historical/audit");
 const { parseRound, parseSeason } = require("./src/historical/domain/validation");
@@ -14,6 +15,10 @@ const { buildProductionHealth } = require("./src/liveSnapshot/services/productio
 const { ResearchRepository } = require("./src/research/repository");
 const { PreMatchAvailabilityRepository, buildCaptureStatus } = require("./src/research/preMatchAvailabilitySource");
 const {
+  buildSchedulerReadiness,
+  resolveCurrentCaptureStatus
+} = require("./src/research/preMatchScheduler");
+const {
   buildCalendarContext,
   buildContextFeatureDiagnostics,
   buildPlayerContextContract,
@@ -27,7 +32,7 @@ const {
 } = require("./src/realRoundContext/service");
 
 const SERVICE_NAME = "cartola-silvas-fc-api";
-const BACKEND_VERSION = "5.2.12";
+const BACKEND_VERSION = "5.2.13";
 const DEFAULT_PORT = 3000;
 const CARTOLA_API_BASE_URL = "https://api.cartolafc.globo.com";
 const DEFAULT_TIMEOUT_MS = 8000;
@@ -1089,10 +1094,29 @@ function createApp(options = {}) {
     });
   });
 
-  app.get("/research/pre-match-availability/capture-status", (req, res) => {
-    return res.json(buildCaptureStatus({
+  app.get("/research/pre-match-availability/capture-status", async (req, res) => {
+    const requestedRound = req.query.round === undefined ? null : parseRound(String(req.query.round));
+    if (req.query.round !== undefined && !requestedRound) return sendValidationError(res, "INVALID_ROUND", "round deve ser um inteiro positivo.");
+    const status = await resolveCurrentCaptureStatus({
       season: 2026,
+      round: requestedRound,
+      fetchImpl: req.app.locals.fetchImpl,
+      timeoutMs: req.app.locals.timeoutMs,
       repository: app.locals.preMatchAvailabilityRepository
+    });
+    return res.json(status);
+  });
+
+  app.get("/research/pre-match-availability/scheduler-readiness", async (req, res) => {
+    const captureStatus = await resolveCurrentCaptureStatus({
+      season: 2026,
+      fetchImpl: req.app.locals.fetchImpl,
+      timeoutMs: req.app.locals.timeoutMs,
+      repository: app.locals.preMatchAvailabilityRepository
+    });
+    return res.json(buildSchedulerReadiness({
+      captureStatus,
+      workflowPath: path.resolve(__dirname, ".github/workflows/research-pre-match-auto-capture.yml")
     }));
   });
 

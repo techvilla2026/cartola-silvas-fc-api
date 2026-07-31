@@ -327,12 +327,23 @@ test("endpoints pre-match availability sao read-only e preservam CORS", async ()
     historicalRepository: historical,
     now: () => new Date("2026-07-24T10:00:00.000Z")
   });
-  const app = createApp({ fetchImpl: fetch, researchRepository: research, preMatchAvailabilityRepository: repository });
+  const currentStatusFetch = async () => new Response(JSON.stringify({
+    rodada_atual: 22,
+    status_mercado: 1,
+    fechamento: { timestamp: 1786215540 }
+  }), { status: 200, headers: { "content-type": "application/json" } });
+  const app = createApp({ fetchImpl: currentStatusFetch, researchRepository: research, preMatchAvailabilityRepository: repository });
   const headers = { Origin: "https://meutimeideal.netlify.app" };
   evaluatePreMatchAvailability({ season: 2026, round: 20, repository, historicalRepository: historical });
-  for (const pathname of ["/research/pre-match-availability", "/research/pre-match-availability/latest", "/research/pre-match-availability/round/20", "/research/pre-match-availability/coverage", "/research/pre-match-availability/capture-status", "/research/pre-match-availability/evaluation/20", "/research/pre-match-availability/comparison/20", "/research/prospective-controls"]) {
+  for (const pathname of ["/research/pre-match-availability", "/research/pre-match-availability/latest", "/research/pre-match-availability/round/20", "/research/pre-match-availability/coverage", "/research/pre-match-availability/capture-status", "/research/pre-match-availability/scheduler-readiness", "/research/pre-match-availability/evaluation/20", "/research/pre-match-availability/comparison/20", "/research/prospective-controls"]) {
     const response = await request(app, pathname, headers);
     assert.equal(response.status, 200);
     assert.equal(response.headers.get("access-control-allow-origin"), "https://meutimeideal.netlify.app");
   }
+  const current = await request(app, "/research/pre-match-availability/capture-status", headers);
+  assert.equal(current.body.currentRound, 22);
+  assert.equal(current.body.deadline, "2026-08-08T18:59:00.000Z");
+  assert.deepEqual(current.body.missedProspectiveRounds, [21]);
+  const previous = await request(app, "/research/pre-match-availability/capture-status?round=20", headers);
+  assert.equal(previous.body.currentRound, 20);
 });

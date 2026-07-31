@@ -1,5 +1,15 @@
 # Changelog
 
+## 5.2.13 - 2026-07-31
+
+- Prepara o workflow prospectivo separado `.github/workflows/research-pre-match-auto-capture.yml`, agendado a cada 30 minutos e em dry-run por padrao.
+- Adiciona saida machine-readable `--json`, exit codes operacionais, alertas de risco e persistencia `GITHUB_COMMIT_RESTRICTED` preparada, mas desabilitada.
+- Restringe persistencia a snapshots prospectivos e ao registry, bloqueando qualquer arquivo inesperado e proibindo staging amplo.
+- Corrige `capture-status` para consultar a rodada e o deadline atuais da API, preservando consulta explicita por rodada.
+- Adiciona `scheduler-readiness`, auditoria `missedProspectiveRounds` e registra R21 como captura prospectiva perdida sem reconstrucao.
+- Protege bytes canonicos de snapshots com `.gitattributes`, sem regravar arquivos existentes.
+- Mantem R20 `PENDING_OUTCOME`, baseline, V1, V2, threshold oficial 0.50, motor, formulas, Flutter, snapshots historicos e backtests intactos.
+
 ## 5.2.12 - 2026-07-24
 
 - Adiciona avaliacao prospectiva para snapshots `PRE_MATCH_AVAILABILITY_SOURCE_V1`, usando somente `post.players[].played` como outcome canonico.

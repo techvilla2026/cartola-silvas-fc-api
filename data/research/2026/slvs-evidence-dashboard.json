@@ -1,8 +1,8 @@
 {
   "schemaVersion": "slvs-evidence-dashboard/v1",
   "season": 2026,
-  "generatedAt": "2026-07-24T23:58:37.052Z",
-  "engineVersion": "slvs-evidence-dashboard/5.2.6",
+  "generatedAt": "2026-07-31T17:58:43.211Z",
+  "engineVersion": "slvs-evidence-dashboard/5.2.13",
   "officialEngine": {
     "modelId": "OFFICIAL_ENGINE",
     "status": "OFFICIAL",
@@ -476,7 +476,7 @@
         "Indice interno; nao probabilidade."
       ],
       "sourceArtifact": "multi-round-calibration.json",
-      "generatedAt": "2026-07-24T23:58:37.052Z"
+      "generatedAt": "2026-07-31T17:58:43.211Z"
     },
     {
       "evidenceId": "sg-v2-top3",
@@ -496,7 +496,7 @@
         "Indice interno; nao probabilidade."
       ],
       "sourceArtifact": "multi-round-calibration.json",
-      "generatedAt": "2026-07-24T23:58:37.052Z"
+      "generatedAt": "2026-07-31T17:58:43.211Z"
     },
     {
       "evidenceId": "sg-v2-top5",
@@ -516,7 +516,7 @@
         "Indice interno; nao probabilidade."
       ],
       "sourceArtifact": "multi-round-calibration.json",
-      "generatedAt": "2026-07-24T23:58:37.052Z"
+      "generatedAt": "2026-07-31T17:58:43.211Z"
     },
     {
       "evidenceId": "gol_v2-top1",
@@ -536,7 +536,7 @@
         "Shadow mode; requer validacao adicional por rodada."
       ],
       "sourceArtifact": "multi-round-calibration.json",
-      "generatedAt": "2026-07-24T23:58:37.052Z"
+      "generatedAt": "2026-07-31T17:58:43.211Z"
     },
     {
       "evidenceId": "gol_v2-top3",
@@ -556,7 +556,7 @@
         "Shadow mode; requer validacao adicional por rodada."
       ],
       "sourceArtifact": "multi-round-calibration.json",
-      "generatedAt": "2026-07-24T23:58:37.052Z"
+      "generatedAt": "2026-07-31T17:58:43.211Z"
     },
     {
       "evidenceId": "gol_v2-top5",
@@ -576,7 +576,7 @@
         "Shadow mode; requer validacao adicional por rodada."
       ],
       "sourceArtifact": "multi-round-calibration.json",
-      "generatedAt": "2026-07-24T23:58:37.052Z"
+      "generatedAt": "2026-07-31T17:58:43.211Z"
     },
     {
       "evidenceId": "lat_v2-top1",
@@ -596,7 +596,7 @@
         "Shadow mode; requer validacao adicional por rodada."
       ],
       "sourceArtifact": "multi-round-calibration.json",
-      "generatedAt": "2026-07-24T23:58:37.052Z"
+      "generatedAt": "2026-07-31T17:58:43.211Z"
     },
     {
       "evidenceId": "lat_v2-top3",
@@ -616,7 +616,7 @@
         "Shadow mode; requer validacao adicional por rodada."
       ],
       "sourceArtifact": "multi-round-calibration.json",
-      "generatedAt": "2026-07-24T23:58:37.052Z"
+      "generatedAt": "2026-07-31T17:58:43.211Z"
     },
     {
       "evidenceId": "lat_v2-top5",
@@ -636,7 +636,7 @@
         "Shadow mode; requer validacao adicional por rodada."
       ],
       "sourceArtifact": "multi-round-calibration.json",
-      "generatedAt": "2026-07-24T23:58:37.052Z"
+      "generatedAt": "2026-07-31T17:58:43.211Z"
     },
     {
       "evidenceId": "zag_v2-top1",
@@ -656,7 +656,7 @@
         "Shadow mode; requer validacao adicional por rodada."
       ],
       "sourceArtifact": "multi-round-calibration.json",
-      "generatedAt": "2026-07-24T23:58:37.052Z"
+      "generatedAt": "2026-07-31T17:58:43.211Z"
     },
     {
       "evidenceId": "zag_v2-top3",
@@ -676,7 +676,7 @@
         "Shadow mode; requer validacao adicional por rodada."
       ],
       "sourceArtifact": "multi-round-calibration.json",
-      "generatedAt": "2026-07-24T23:58:37.052Z"
+      "generatedAt": "2026-07-31T17:58:43.211Z"
     },
     {
       "evidenceId": "zag_v2-top5",
@@ -696,7 +696,7 @@
         "Shadow mode; requer validacao adicional por rodada."
       ],
       "sourceArtifact": "multi-round-calibration.json",
-      "generatedAt": "2026-07-24T23:58:37.052Z"
+      "generatedAt": "2026-07-31T17:58:43.211Z"
     },
     {
       "evidenceId": "mei_v2-top1",
@@ -716,7 +716,7 @@
         "Shadow mode; requer validacao adicional por rodada."
       ],
       "sourceArtifact": "multi-round-calibration.json",
-      "generatedAt": "2026-07-24T23:58:37.052Z"
+      "generatedAt": "2026-07-31T17:58:43.211Z"
     },
     {
       "evidenceId": "mei_v2-top3",
@@ -736,7 +736,7 @@
         "Shadow mode; requer validacao adicional por rodada."
       ],
       "sourceArtifact": "multi-round-calibration.json",
-      "generatedAt": "2026-07-24T23:58:37.052Z"
+      "generatedAt": "2026-07-31T17:58:43.211Z"
     },
     {
       "evidenceId": "mei_v2-top5",
@@ -756,7 +756,7 @@
         "Shadow mode; requer validacao adicional por rodada."
       ],
       "sourceArtifact": "multi-round-calibration.json",
-      "generatedAt": "2026-07-24T23:58:37.052Z"
+      "generatedAt": "2026-07-31T17:58:43.211Z"
     },
     {
       "evidenceId": "ata_v2-top1",
@@ -776,7 +776,7 @@
         "Shadow mode; requer validacao adicional por rodada."
       ],
       "sourceArtifact": "multi-round-calibration.json",
-      "generatedAt": "2026-07-24T23:58:37.052Z"
+      "generatedAt": "2026-07-31T17:58:43.211Z"
     },
     {
       "evidenceId": "ata_v2-top3",
@@ -796,7 +796,7 @@
         "Shadow mode; requer validacao adicional por rodada."
       ],
       "sourceArtifact": "multi-round-calibration.json",
-      "generatedAt": "2026-07-24T23:58:37.052Z"
+      "generatedAt": "2026-07-31T17:58:43.211Z"
     },
     {
       "evidenceId": "ata_v2-top5",
@@ -816,7 +816,7 @@
         "Shadow mode; requer validacao adicional por rodada."
       ],
       "sourceArtifact": "multi-round-calibration.json",
-      "generatedAt": "2026-07-24T23:58:37.052Z"
+      "generatedAt": "2026-07-31T17:58:43.211Z"
     },
     {
       "evidenceId": "tec_v2-top1",
@@ -836,7 +836,7 @@
         "Shadow mode; requer validacao adicional por rodada."
       ],
       "sourceArtifact": "multi-round-calibration.json",
-      "generatedAt": "2026-07-24T23:58:37.052Z"
+      "generatedAt": "2026-07-31T17:58:43.211Z"
     },
     {
       "evidenceId": "tec_v2-top3",
@@ -856,7 +856,7 @@
         "Shadow mode; requer validacao adicional por rodada."
       ],
       "sourceArtifact": "multi-round-calibration.json",
-      "generatedAt": "2026-07-24T23:58:37.052Z"
+      "generatedAt": "2026-07-31T17:58:43.211Z"
     },
     {
       "evidenceId": "tec_v2-top5",
@@ -876,7 +876,7 @@
         "Shadow mode; requer validacao adicional por rodada."
       ],
       "sourceArtifact": "multi-round-calibration.json",
-      "generatedAt": "2026-07-24T23:58:37.052Z"
+      "generatedAt": "2026-07-31T17:58:43.211Z"
     },
     {
       "evidenceId": "availability-r19-xi-points",
@@ -896,7 +896,7 @@
         "Uma rodada isolada nao prova superioridade multirrodada."
       ],
       "sourceArtifact": "availability-calibration.json",
-      "generatedAt": "2026-07-24T23:58:37.052Z"
+      "generatedAt": "2026-07-31T17:58:43.211Z"
     },
     {
       "evidenceId": "availability-r19-xi-did-not-play",
@@ -916,7 +916,7 @@
         "Contradicao com TopK historico exige cautela."
       ],
       "sourceArtifact": "availability-calibration.json",
-      "generatedAt": "2026-07-24T23:58:37.052Z"
+      "generatedAt": "2026-07-31T17:58:43.211Z"
     },
     {
       "evidenceId": "availability-historical-target",
@@ -936,7 +936,7 @@
         "A Rodada 19 live mostrou didNotPlay no XI; o backtest 2-18 nao reproduziu esse risco no TopK, portanto a evidencia multirrodada de disponibilidade e limitada."
       ],
       "sourceArtifact": "availability-calibration.json",
-      "generatedAt": "2026-07-24T23:58:37.052Z"
+      "generatedAt": "2026-07-31T17:58:43.211Z"
     },
     {
       "evidenceId": "formation-hit-rate",
@@ -956,7 +956,7 @@
         "Acerto de formacao nao implica ganho material de pontos."
       ],
       "sourceArtifact": "multi-round-calibration.json",
-      "generatedAt": "2026-07-24T23:58:37.052Z"
+      "generatedAt": "2026-07-31T17:58:43.211Z"
     }
   ],
   "scorecards": [
@@ -2390,14 +2390,37 @@
       ]
     },
     "threshold045ResearchStatus": "PENDING_OUTCOME",
-    "primaryCaptureStatus": "CAPTURED",
+    "primaryCaptureStatus": "MISSING",
     "finalCaptureStatus": "MISSING",
     "captureRisk": "NONE",
-    "nextDeadline": "2026-07-25T21:29:00.000Z",
-    "nextRecommendedAction": "WAITING_FOR_FINAL_WINDOW",
+    "missedProspectiveRounds": [
+      21
+    ],
+    "nextDeadline": "2026-08-08T18:59:00.000Z",
+    "nextRecommendedAction": "NO_ACTION",
     "externalSourceStatus": "AVAILABLE_NOW_CARTOLA_PUBLIC_API",
     "nextResearchPriority": "EVALUATE_PRE_MATCH_CAPTURE_AFTER_OUTCOME",
     "promotionStateChanged": false
+  },
+  "scheduler": {
+    "schedulerStatus": "READY_FOR_MANUAL_DISPATCH",
+    "workflowPrepared": true,
+    "workflowDryRunDefault": true,
+    "schedulerWriteEnabled": false,
+    "persistenceStrategy": "GITHUB_COMMIT_RESTRICTED",
+    "persistenceEnabled": false,
+    "persistenceReady": true,
+    "currentRound": 22,
+    "currentDeadline": "2026-08-08T18:59:00.000Z",
+    "currentPrimaryStatus": "MISSING",
+    "currentFinalStatus": "MISSING",
+    "captureRisk": "NONE",
+    "missedProspectiveRounds": [
+      21
+    ],
+    "lastSchedulerCheck": "2026-07-31T17:58:43.211Z",
+    "nextRecommendedAction": "KEEP_DRY_RUN_AND_VALIDATE_MANUAL_DISPATCH",
+    "nextResearchPriority": "EVALUATE_PRE_MATCH_CAPTURE_AFTER_OUTCOME"
   },
   "dataQuality": {
     "PARTICIPATION_DATA": {

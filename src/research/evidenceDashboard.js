@@ -7,7 +7,7 @@ const { ResearchRepository } = require("./repository");
 
 const SEASON = 2026;
 const SOURCE_BUILD_ID = "build-4.3.2";
-const EVIDENCE_DASHBOARD_VERSION = "slvs-evidence-dashboard/5.2.6";
+const EVIDENCE_DASHBOARD_VERSION = "slvs-evidence-dashboard/5.2.13";
 const SCORECARD_METADATA = {
   metricType: "internal_index",
   probability: false,
@@ -481,13 +481,15 @@ function buildEvidenceDashboard({
   researchRepository = new ResearchRepository(),
   historicalRepository = new HistoricalDataRepository(),
   backtestRepository = new BacktestRepository({ buildId: SOURCE_BUILD_ID }),
-  generatedAt = new Date().toISOString()
+  generatedAt = new Date().toISOString(),
+  schedulerContext = null
 } = {}) {
   const { PreMatchAvailabilityRepository, buildCaptureStatus } = require("./preMatchAvailabilitySource");
   const preMatchRepository = new PreMatchAvailabilityRepository({ researchRepository });
   const latestPreMatch = preMatchRepository.latestSnapshot(season);
   const prospectiveControls = preMatchRepository.readControls(season);
-  const captureStatus = buildCaptureStatus({ season, repository: preMatchRepository });
+  const captureStatus = schedulerContext?.captureStatus || buildCaptureStatus({ season, repository: preMatchRepository });
+  const schedulerReadiness = schedulerContext?.schedulerReadiness || null;
   const latestEvaluation = latestPreMatch
     ? researchRepository.readJson(season, `pre-match-availability-evaluations/round-${String(latestPreMatch.round).padStart(2, "0")}-${latestPreMatch.captureId}.json`)
     : null;
@@ -580,6 +582,7 @@ function buildEvidenceDashboard({
       primaryCaptureStatus: captureStatus.primaryCaptureStatus,
       finalCaptureStatus: captureStatus.finalCaptureStatus,
       captureRisk: captureStatus.captureRisk,
+      missedProspectiveRounds: captureStatus.missedProspectiveRounds || [],
       nextDeadline: captureStatus.deadline,
       nextRecommendedAction: captureStatus.nextRecommendedAction,
       externalSourceStatus: "AVAILABLE_NOW_CARTOLA_PUBLIC_API",
@@ -622,6 +625,24 @@ function buildEvidenceDashboard({
     availabilityRecalibration: baselineSummary?.availabilityRecalibration || null,
     availabilitySignals: baselineSummary?.availabilitySignals || null,
     preMatchAvailability: baselineSummary?.preMatchAvailability || null,
+    scheduler: schedulerReadiness ? {
+      schedulerStatus: schedulerReadiness.schedulerStatus,
+      workflowPrepared: schedulerReadiness.workflowPrepared,
+      workflowDryRunDefault: true,
+      schedulerWriteEnabled: schedulerReadiness.writeEnabled,
+      persistenceStrategy: schedulerReadiness.persistenceStrategy,
+      persistenceEnabled: schedulerReadiness.persistenceEnabled,
+      persistenceReady: schedulerReadiness.persistenceReady,
+      currentRound: schedulerReadiness.currentRound,
+      currentDeadline: schedulerReadiness.deadline,
+      currentPrimaryStatus: schedulerReadiness.currentPrimaryStatus,
+      currentFinalStatus: schedulerReadiness.currentFinalStatus,
+      captureRisk: schedulerReadiness.captureRisk,
+      missedProspectiveRounds: schedulerReadiness.missedProspectiveRounds,
+      lastSchedulerCheck: generatedAt,
+      nextRecommendedAction: schedulerReadiness.recommendedAction,
+      nextResearchPriority: latestEvaluation?.status === "EVALUATED" ? "COLLECT_MORE_PROSPECTIVE_ROUNDS" : "EVALUATE_PRE_MATCH_CAPTURE_AFTER_OUTCOME"
+    } : null,
     dataQuality,
     promotionGate,
     roundHighlights: buildRoundHighlights(artifacts),

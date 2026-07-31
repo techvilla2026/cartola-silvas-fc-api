@@ -1,0 +1,3 @@
+# Preserve canonical snapshot bytes. These rules are prospective and do not renormalize existing files.
+data/live-snapshots/**/*.json -text
+data/research/**/pre-match-availability/**/*.json -text

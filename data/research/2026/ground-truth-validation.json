@@ -1,7 +1,7 @@
 {
   "schemaVersion": "ground-truth-validation/v1",
   "season": 2026,
-  "generatedAt": "2026-07-24T23:58:23.259Z",
+  "generatedAt": "2026-07-31T17:58:36.532Z",
   "engineVersion": "ground-truth-validation/5.2.7",
   "definitions": {
     "DID_PLAY": "DID_PLAY",
@@ -71,7 +71,7 @@
       "targetClassification": "DID_PLAY",
       "classificationReason": "Campo post.players[].played=true.",
       "confidence": "HIGH",
-      "generatedAt": "2026-07-24T23:58:23.259Z"
+      "generatedAt": "2026-07-31T17:58:36.532Z"
     },
     {
       "season": 2026,
@@ -111,7 +111,7 @@
       "targetClassification": "DID_PLAY",
       "classificationReason": "Campo post.players[].played=true.",
       "confidence": "HIGH",
-      "generatedAt": "2026-07-24T23:58:23.259Z"
+      "generatedAt": "2026-07-31T17:58:36.532Z"
     },
     {
       "season": 2026,
@@ -150,7 +150,7 @@
       "targetClassification": "DID_PLAY",
       "classificationReason": "Campo post.players[].played=true.",
       "confidence": "HIGH",
-      "generatedAt": "2026-07-24T23:58:23.259Z"
+      "generatedAt": "2026-07-31T17:58:36.532Z"
     },
     {
       "season": 2026,
@@ -186,7 +186,7 @@
       "targetClassification": "DID_PLAY",
       "classificationReason": "Campo post.players[].played=true.",
       "confidence": "HIGH",
-      "generatedAt": "2026-07-24T23:58:23.259Z"
+      "generatedAt": "2026-07-31T17:58:36.532Z"
     },
     {
       "season": 2026,
@@ -220,7 +220,7 @@
       "targetClassification": "DID_NOT_PLAY",
       "classificationReason": "Campo post.players[].played=false em contexto pos-rodada valido.",
       "confidence": "HIGH",
-      "generatedAt": "2026-07-24T23:58:23.259Z"
+      "generatedAt": "2026-07-31T17:58:36.532Z"
     },
     {
       "season": 2026,
@@ -259,7 +259,7 @@
       "targetClassification": "DID_PLAY",
       "classificationReason": "Campo post.players[].played=true.",
       "confidence": "HIGH",
-      "generatedAt": "2026-07-24T23:58:23.259Z"
+      "generatedAt": "2026-07-31T17:58:36.532Z"
     },
     {
       "season": 2026,
@@ -295,7 +295,7 @@
       "targetClassification": "DID_NOT_PLAY",
       "classificationReason": "Campo post.players[].played=false em contexto pos-rodada valido.",
       "confidence": "HIGH",
-      "generatedAt": "2026-07-24T23:58:23.259Z"
+      "generatedAt": "2026-07-31T17:58:36.532Z"
     },
     {
       "season": 2026,
@@ -332,7 +332,7 @@
       "targetClassification": "DID_PLAY",
       "classificationReason": "Campo post.players[].played=true.",
       "confidence": "HIGH",
-      "generatedAt": "2026-07-24T23:58:23.259Z"
+      "generatedAt": "2026-07-31T17:58:36.532Z"
     },
     {
       "season": 2026,
@@ -369,7 +369,7 @@
       "targetClassification": "DID_PLAY",
       "classificationReason": "Campo post.players[].played=true.",
       "confidence": "HIGH",
-      "generatedAt": "2026-07-24T23:58:23.259Z"
+      "generatedAt": "2026-07-31T17:58:36.532Z"
     },
     {
       "season": 2026,
@@ -403,7 +403,7 @@
       "targetClassification": "DID_PLAY",
       "classificationReason": "Campo post.players[].played=true.",
       "confidence": "HIGH",
-      "generatedAt": "2026-07-24T23:58:23.259Z"
+      "generatedAt": "2026-07-31T17:58:36.532Z"
     },
     {
       "season": 2026,
@@ -437,7 +437,7 @@
       "targetClassification": "DID_NOT_PLAY",
       "classificationReason": "Campo post.players[].played=false em contexto pos-rodada valido.",
       "confidence": "HIGH",
-      "generatedAt": "2026-07-24T23:58:23.259Z"
+      "generatedAt": "2026-07-31T17:58:36.532Z"
     },
     {
       "season": 2026,
@@ -474,7 +474,7 @@
       "targetClassification": "DID_PLAY",
       "classificationReason": "Campo post.players[].played=true.",
       "confidence": "HIGH",
-      "generatedAt": "2026-07-24T23:58:23.259Z"
+      "generatedAt": "2026-07-31T17:58:36.532Z"
     },
     {
       "season": 2026,
@@ -512,7 +512,7 @@
       "targetClassification": "DID_PLAY",
       "classificationReason": "Campo post.players[].played=true.",
       "confidence": "HIGH",
-      "generatedAt": "2026-07-24T23:58:23.259Z"
+      "generatedAt": "2026-07-31T17:58:36.532Z"
     },
     {
       "season": 2026,
@@ -551,7 +551,7 @@
       "targetClassification": "DID_PLAY",
       "classificationReason": "Campo post.players[].played=true.",
       "confidence": "HIGH",
-      "generatedAt": "2026-07-24T23:58:23.259Z"
+      "generatedAt": "2026-07-31T17:58:36.532Z"
     },
     {
       "season": 2026,
@@ -587,7 +587,7 @@
       "targetClassification": "DID_PLAY",
       "classificationReason": "Campo post.players[].played=true.",
       "confidence": "HIGH",
-      "generatedAt": "2026-07-24T23:58:23.259Z"
+      "generatedAt": "2026-07-31T17:58:36.532Z"
     },
     {
       "season": 2026,
@@ -621,7 +621,7 @@
       "targetClassification": "DID_NOT_PLAY",
       "classificationReason": "Campo post.players[].played=false em contexto pos-rodada valido.",
       "confidence": "HIGH",
-      "generatedAt": "2026-07-24T23:58:23.259Z"
+      "generatedAt": "2026-07-31T17:58:36.532Z"
     },
     {
       "season": 2026,
@@ -655,7 +655,7 @@
       "targetClassification": "DID_NOT_PLAY",
       "classificationReason": "Campo post.players[].played=false em contexto pos-rodada valido.",
       "confidence": "HIGH",
-      "generatedAt": "2026-07-24T23:58:23.259Z"
+      "generatedAt": "2026-07-31T17:58:36.532Z"
     },
     {
       "season": 2026,
@@ -689,7 +689,7 @@
       "targetClassification": "DID_NOT_PLAY",
       "classificationReason": "Campo post.players[].played=false em contexto pos-rodada valido.",
       "confidence": "HIGH",
-      "generatedAt": "2026-07-24T23:58:23.259Z"
+      "generatedAt": "2026-07-31T17:58:36.532Z"
     },
     {
       "season": 2026,
@@ -729,7 +729,7 @@
       "targetClassification": "DID_PLAY",
       "classificationReason": "Campo post.players[].played=true.",
       "confidence": "HIGH",
-      "generatedAt": "2026-07-24T23:58:23.259Z"
+      "generatedAt": "2026-07-31T17:58:36.532Z"
     },
     {
       "season": 2026,
@@ -763,7 +763,7 @@
       "targetClassification": "DID_NOT_PLAY",
       "classificationReason": "Campo post.players[].played=false em contexto pos-rodada valido.",
       "confidence": "HIGH",
-      "generatedAt": "2026-07-24T23:58:23.259Z"
+      "generatedAt": "2026-07-31T17:58:36.532Z"
     },
     {
       "season": 2026,
@@ -802,7 +802,7 @@
       "targetClassification": "DID_PLAY",
       "classificationReason": "Campo post.players[].played=true.",
       "confidence": "HIGH",
-      "generatedAt": "2026-07-24T23:58:23.259Z"
+      "generatedAt": "2026-07-31T17:58:36.532Z"
     },
     {
       "season": 2026,
@@ -841,7 +841,7 @@
       "targetClassification": "DID_PLAY",
       "classificationReason": "Campo post.players[].played=true.",
       "confidence": "HIGH",
-      "generatedAt": "2026-07-24T23:58:23.259Z"
+      "generatedAt": "2026-07-31T17:58:36.532Z"
     },
     {
       "season": 2026,
@@ -879,7 +879,7 @@
       "targetClassification": "DID_PLAY",
       "classificationReason": "Campo post.players[].played=true.",
       "confidence": "HIGH",
-      "generatedAt": "2026-07-24T23:58:23.259Z"
+      "generatedAt": "2026-07-31T17:58:36.532Z"
     },
     {
       "season": 2026,
@@ -913,7 +913,7 @@
       "targetClassification": "DID_NOT_PLAY",
       "classificationReason": "Campo post.players[].played=false em contexto pos-rodada valido.",
       "confidence": "HIGH",
-      "generatedAt": "2026-07-24T23:58:23.259Z"
+      "generatedAt": "2026-07-31T17:58:36.532Z"
     },
     {
       "season": 2026,
@@ -947,7 +947,7 @@
       "targetClassification": "DID_NOT_PLAY",
       "classificationReason": "Campo post.players[].played=false em contexto pos-rodada valido.",
       "confidence": "HIGH",
-      "generatedAt": "2026-07-24T23:58:23.259Z"
+      "generatedAt": "2026-07-31T17:58:36.532Z"
     },
     {
       "season": 2026,
@@ -988,7 +988,7 @@
       "targetClassification": "DID_PLAY",
       "classificationReason": "Campo post.players[].played=true.",
       "confidence": "HIGH",
-      "generatedAt": "2026-07-24T23:58:23.259Z"
+      "generatedAt": "2026-07-31T17:58:36.532Z"
     },
     {
       "season": 2026,
@@ -1027,7 +1027,7 @@
       "targetClassification": "DID_PLAY",
       "classificationReason": "Campo post.players[].played=true.",
       "confidence": "HIGH",
-      "generatedAt": "2026-07-24T23:58:23.259Z"
+      "generatedAt": "2026-07-31T17:58:36.532Z"
     },
     {
       "season": 2026,
@@ -1064,7 +1064,7 @@
       "targetClassification": "DID_PLAY",
       "classificationReason": "Campo post.players[].played=true.",
       "confidence": "HIGH",
-      "generatedAt": "2026-07-24T23:58:23.259Z"
+      "generatedAt": "2026-07-31T17:58:36.532Z"
     },
     {
       "season": 2026,
@@ -1102,7 +1102,7 @@
       "targetClassification": "DID_PLAY",
       "classificationReason": "Campo post.players[].played=true.",
       "confidence": "HIGH",
-      "generatedAt": "2026-07-24T23:58:23.259Z"
+      "generatedAt": "2026-07-31T17:58:36.532Z"
     },
     {
       "season": 2026,
@@ -1136,7 +1136,7 @@
       "targetClassification": "DID_NOT_PLAY",
       "classificationReason": "Campo post.players[].played=false em contexto pos-rodada valido.",
       "confidence": "HIGH",
-      "generatedAt": "2026-07-24T23:58:23.259Z"
+      "generatedAt": "2026-07-31T17:58:36.532Z"
     },
     {
       "season": 2026,
@@ -1174,7 +1174,7 @@
       "targetClassification": "DID_PLAY",
       "classificationReason": "Campo post.players[].played=true.",
       "confidence": "HIGH",
-      "generatedAt": "2026-07-24T23:58:23.259Z"
+      "generatedAt": "2026-07-31T17:58:36.532Z"
     },
     {
       "season": 2026,
@@ -1211,7 +1211,7 @@
       "targetClassification": "DID_NOT_PLAY",
       "classificationReason": "Campo post.players[].played=false em contexto pos-rodada valido.",
       "confidence": "HIGH",
-      "generatedAt": "2026-07-24T23:58:23.259Z"
+      "generatedAt": "2026-07-31T17:58:36.532Z"
     },
     {
       "season": 2026,
@@ -1251,7 +1251,7 @@
       "targetClassification": "DID_PLAY",
       "classificationReason": "Campo post.players[].played=true.",
       "confidence": "HIGH",
-      "generatedAt": "2026-07-24T23:58:23.259Z"
+      "generatedAt": "2026-07-31T17:58:36.532Z"
     },
     {
       "season": 2026,
@@ -1287,7 +1287,7 @@
       "targetClassification": "DID_NOT_PLAY",
       "classificationReason": "Campo post.players[].played=false em contexto pos-rodada valido.",
       "confidence": "HIGH",
-      "generatedAt": "2026-07-24T23:58:23.259Z"
+      "generatedAt": "2026-07-31T17:58:36.532Z"
     },
     {
       "season": 2026,
@@ -1321,7 +1321,7 @@
       "targetClassification": "DID_NOT_PLAY",
       "classificationReason": "Campo post.players[].played=false em contexto pos-rodada valido.",
       "confidence": "HIGH",
-      "generatedAt": "2026-07-24T23:58:23.259Z"
+      "generatedAt": "2026-07-31T17:58:36.532Z"
     },
     {
       "season": 2026,
@@ -1360,7 +1360,7 @@
       "targetClassification": "DID_PLAY",
       "classificationReason": "Campo post.players[].played=true.",
       "confidence": "HIGH",
-      "generatedAt": "2026-07-24T23:58:23.259Z"
+      "generatedAt": "2026-07-31T17:58:36.532Z"
     },
     {
       "season": 2026,
@@ -1398,7 +1398,7 @@
       "targetClassification": "DID_PLAY",
       "classificationReason": "Campo post.players[].played=true.",
       "confidence": "HIGH",
-      "generatedAt": "2026-07-24T23:58:23.259Z"
+      "generatedAt": "2026-07-31T17:58:36.532Z"
     },
     {
       "season": 2026,
@@ -1437,7 +1437,7 @@
       "targetClassification": "DID_PLAY",
       "classificationReason": "Campo post.players[].played=true.",
       "confidence": "HIGH",
-      "generatedAt": "2026-07-24T23:58:23.259Z"
+      "generatedAt": "2026-07-31T17:58:36.532Z"
     },
     {
       "season": 2026,
@@ -1471,7 +1471,7 @@
       "targetClassification": "DID_NOT_PLAY",
       "classificationReason": "Campo post.players[].played=false em contexto pos-rodada valido.",
       "confidence": "HIGH",
-      "generatedAt": "2026-07-24T23:58:23.259Z"
+      "generatedAt": "2026-07-31T17:58:36.532Z"
     },
     {
       "season": 2026,
@@ -1509,7 +1509,7 @@
       "targetClassification": "DID_PLAY",
       "classificationReason": "Campo post.players[].played=true.",
       "confidence": "HIGH",
-      "generatedAt": "2026-07-24T23:58:23.259Z"
+      "generatedAt": "2026-07-31T17:58:36.532Z"
     },
     {
       "season": 2026,
@@ -1543,7 +1543,7 @@
       "targetClassification": "DID_PLAY",
       "classificationReason": "Campo post.players[].played=true.",
       "confidence": "HIGH",
-      "generatedAt": "2026-07-24T23:58:23.259Z"
+      "generatedAt": "2026-07-31T17:58:36.532Z"
     },
     {
       "season": 2026,
@@ -1583,7 +1583,7 @@
       "targetClassification": "DID_PLAY",
       "classificationReason": "Campo post.players[].played=true.",
       "confidence": "HIGH",
-      "generatedAt": "2026-07-24T23:58:23.259Z"
+      "generatedAt": "2026-07-31T17:58:36.532Z"
     },
     {
       "season": 2026,
@@ -1621,7 +1621,7 @@
       "targetClassification": "DID_PLAY",
       "classificationReason": "Campo post.players[].played=true.",
       "confidence": "HIGH",
-      "generatedAt": "2026-07-24T23:58:23.259Z"
+      "generatedAt": "2026-07-31T17:58:36.532Z"
     },
     {
       "season": 2026,
@@ -1660,7 +1660,7 @@
       "targetClassification": "DID_PLAY",
       "classificationReason": "Campo post.players[].played=true.",
       "confidence": "HIGH",
-      "generatedAt": "2026-07-24T23:58:23.259Z"
+      "generatedAt": "2026-07-31T17:58:36.532Z"
     },
     {
       "season": 2026,
@@ -1697,7 +1697,7 @@
       "targetClassification": "DID_PLAY",
       "classificationReason": "Campo post.players[].played=true.",
       "confidence": "HIGH",
-      "generatedAt": "2026-07-24T23:58:23.259Z"
+      "generatedAt": "2026-07-31T17:58:36.532Z"
     },
     {
       "season": 2026,
@@ -1735,7 +1735,7 @@
       "targetClassification": "DID_PLAY",
       "classificationReason": "Campo post.players[].played=true.",
       "confidence": "HIGH",
-      "generatedAt": "2026-07-24T23:58:23.259Z"
+      "generatedAt": "2026-07-31T17:58:36.532Z"
     },
     {
       "season": 2026,
@@ -1769,7 +1769,7 @@
       "targetClassification": "DID_NOT_PLAY",
       "classificationReason": "Campo post.players[].played=false em contexto pos-rodada valido.",
       "confidence": "HIGH",
-      "generatedAt": "2026-07-24T23:58:23.259Z"
+      "generatedAt": "2026-07-31T17:58:36.532Z"
     },
     {
       "season": 2026,
@@ -1806,7 +1806,7 @@
       "targetClassification": "DID_PLAY",
       "classificationReason": "Campo post.players[].played=true.",
       "confidence": "HIGH",
-      "generatedAt": "2026-07-24T23:58:23.259Z"
+      "generatedAt": "2026-07-31T17:58:36.532Z"
     },
     {
       "season": 2026,
@@ -1846,7 +1846,7 @@
       "targetClassification": "DID_PLAY",
       "classificationReason": "Campo post.players[].played=true.",
       "confidence": "HIGH",
-      "generatedAt": "2026-07-24T23:58:23.259Z"
+      "generatedAt": "2026-07-31T17:58:36.532Z"
     },
     {
       "season": 2026,
@@ -1880,7 +1880,7 @@
       "targetClassification": "DID_NOT_PLAY",
       "classificationReason": "Campo post.players[].played=false em contexto pos-rodada valido.",
       "confidence": "HIGH",
-      "generatedAt": "2026-07-24T23:58:23.259Z"
+      "generatedAt": "2026-07-31T17:58:36.532Z"
     }
   ],
   "didNotPlayAudit": {
@@ -2118,7 +2118,7 @@
         "targetClassification": "DID_NOT_PLAY",
         "classificationReason": "Campo post.players[].played=false em contexto pos-rodada valido.",
         "confidence": "HIGH",
-        "generatedAt": "2026-07-24T23:58:23.259Z",
+        "generatedAt": "2026-07-31T17:58:36.532Z",
         "searchedName": "Danilo dos Santos de Oliveira",
         "ranking": 1,
         "participationReliabilityScore": 40.8674,
@@ -2169,7 +2169,7 @@
         "targetClassification": "DID_NOT_PLAY",
         "classificationReason": "Campo post.players[].played=false em contexto pos-rodada valido.",
         "confidence": "HIGH",
-        "generatedAt": "2026-07-24T23:58:23.259Z",
+        "generatedAt": "2026-07-31T17:58:36.532Z",
         "searchedName": "Canobbio",
         "ranking": 3,
         "participationReliabilityScore": 49.6442,
@@ -2219,7 +2219,7 @@
         "targetClassification": "DID_PLAY",
         "classificationReason": "Campo post.players[].played=true.",
         "confidence": "HIGH",
-        "generatedAt": "2026-07-24T23:58:23.259Z",
+        "generatedAt": "2026-07-31T17:58:36.532Z",
         "searchedName": "Carlos Renê de Sousa Ferreira",
         "ranking": 2,
         "participationReliabilityScore": 100,
@@ -2264,7 +2264,7 @@
         "targetClassification": "DID_NOT_PLAY",
         "classificationReason": "Campo post.players[].played=false em contexto pos-rodada valido.",
         "confidence": "HIGH",
-        "generatedAt": "2026-07-24T23:58:23.259Z",
+        "generatedAt": "2026-07-31T17:58:36.532Z",
         "searchedName": "Kauê",
         "ranking": 2,
         "participationReliabilityScore": 0,
@@ -2310,7 +2310,7 @@
         "targetClassification": "DID_NOT_PLAY",
         "classificationReason": "Campo post.players[].played=false em contexto pos-rodada valido.",
         "confidence": "HIGH",
-        "generatedAt": "2026-07-24T23:58:23.259Z",
+        "generatedAt": "2026-07-31T17:58:36.532Z",
         "searchedName": "Lucas Willians Assis Arcanjo",
         "ranking": 4,
         "participationReliabilityScore": 77.2884,
@@ -2352,7 +2352,7 @@
         "targetClassification": "DID_PLAY",
         "classificationReason": "Campo post.players[].played=true.",
         "confidence": "HIGH",
-        "generatedAt": "2026-07-24T23:58:23.259Z",
+        "generatedAt": "2026-07-31T17:58:36.532Z",
         "searchedName": "Ivan Quaresma",
         "ranking": 1,
         "participationReliabilityScore": null,
@@ -2394,7 +2394,7 @@
         "targetClassification": "DID_PLAY",
         "classificationReason": "Campo post.players[].played=true.",
         "confidence": "HIGH",
-        "generatedAt": "2026-07-24T23:58:23.259Z",
+        "generatedAt": "2026-07-31T17:58:36.532Z",
         "searchedName": "Marcelo Lomba",
         "ranking": 3,
         "participationReliabilityScore": null,
@@ -2438,7 +2438,7 @@
         "targetClassification": "DID_PLAY",
         "classificationReason": "Campo post.players[].played=true.",
         "confidence": "HIGH",
-        "generatedAt": "2026-07-24T23:58:23.259Z",
+        "generatedAt": "2026-07-31T17:58:36.532Z",
         "searchedName": "Tiago Luis Volpi",
         "ranking": 5,
         "participationReliabilityScore": null,
@@ -2489,7 +2489,7 @@
         "targetClassification": "DID_PLAY",
         "classificationReason": "Campo post.players[].played=true.",
         "confidence": "HIGH",
-        "generatedAt": "2026-07-24T23:58:23.259Z",
+        "generatedAt": "2026-07-31T17:58:36.532Z",
         "searchedName": "Pedro Guilherme",
         "ranking": 1,
         "participationReliabilityScore": null,

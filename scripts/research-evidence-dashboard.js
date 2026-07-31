@@ -7,6 +7,9 @@ const {
   buildEvidenceDashboard,
   writeEvidenceDashboardReport
 } = require("../src/research/evidenceDashboard");
+const { PreMatchAvailabilityRepository } = require("../src/research/preMatchAvailabilitySource");
+const { buildSchedulerReadiness, resolveCurrentCaptureStatus } = require("../src/research/preMatchScheduler");
+const path = require("node:path");
 
 function parseArgs(argv) {
   const args = {};
@@ -17,14 +20,22 @@ function parseArgs(argv) {
   return args;
 }
 
-function main() {
+async function main() {
   const args = parseArgs(process.argv.slice(2));
   const season = Number(args.season || 2026);
+  const researchRepository = new ResearchRepository();
+  const preMatchRepository = new PreMatchAvailabilityRepository({ researchRepository });
+  const captureStatus = await resolveCurrentCaptureStatus({ season, repository: preMatchRepository });
+  const schedulerReadiness = buildSchedulerReadiness({
+    captureStatus,
+    workflowPath: path.resolve(__dirname, "../.github/workflows/research-pre-match-auto-capture.yml")
+  });
   const dashboard = buildEvidenceDashboard({
     season,
-    researchRepository: new ResearchRepository(),
+    researchRepository,
     historicalRepository: new HistoricalDataRepository(),
-    backtestRepository: new BacktestRepository({ buildId: "build-4.3.2" })
+    backtestRepository: new BacktestRepository({ buildId: "build-4.3.2" }),
+    schedulerContext: { captureStatus, schedulerReadiness }
   });
   const report = writeEvidenceDashboardReport(dashboard);
   console.log(JSON.stringify({
@@ -38,9 +49,7 @@ function main() {
   }, null, 2));
 }
 
-try {
-  main();
-} catch (error) {
+main().catch((error) => {
   console.error(error);
   process.exitCode = 1;
-}
+});
