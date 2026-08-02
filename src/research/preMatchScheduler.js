@@ -8,7 +8,7 @@ const {
   buildCaptureStatus
 } = require("./preMatchAvailabilitySource");
 
-const PROJECT_VERSION = "5.2.13";
+const PROJECT_VERSION = "5.2.15";
 const PERSISTENCE_STRATEGY = "GITHUB_COMMIT_RESTRICTED";
 const FIRST_PROSPECTIVE_ROUND = 20;
 const NORMAL_REASON_CODES = new Set([
@@ -25,6 +25,21 @@ const FAILURE_REASON_CODES = new Set([
 
 function exactlyTrue(value) {
   return String(value || "").trim() === "true";
+}
+
+function validateActivationConfiguration({ writeEnabled, commitEnabled } = {}) {
+  const write = exactlyTrue(writeEnabled);
+  const commit = exactlyTrue(commitEnabled);
+  const valid = write === commit;
+  return {
+    schemaVersion: "pre-match-activation-configuration/v1",
+    valid,
+    writeEnabled: write,
+    persistenceEnabled: commit,
+    mode: write && commit ? "LIVE" : valid ? "DRY_RUN" : "INVALID",
+    reasonCode: valid ? (write ? "LIVE_CONFIGURATION_READY" : "DRY_RUN_CONFIGURATION") : "INVALID_ACTIVATION_CONFIGURATION",
+    blockingIssues: valid ? [] : [write ? "WRITE_WITHOUT_PERSISTENCE_BLOCKED" : "PERSISTENCE_WITHOUT_WRITE_BLOCKED"]
+  };
 }
 
 function deadlineFromMarketStatus(body) {
@@ -95,11 +110,12 @@ function buildSchedulerReadiness({ captureStatus, workflowPath, env = process.en
   const scheduleConfigured = /cron:\s*["']?\*\/30 \* \* \* \*["']?/.test(workflowText);
   const writeEnabled = exactlyTrue(env.PRE_MATCH_CAPTURE_WRITE_ENABLED);
   const persistenceEnabled = exactlyTrue(env.PRE_MATCH_CAPTURE_COMMIT_ENABLED);
+  const activation = validateActivationConfiguration({ writeEnabled, commitEnabled: persistenceEnabled });
   const persistenceReady = workflowPrepared && /research:pre-match:persistence/.test(workflowText);
   const blockingIssues = [];
   if (!workflowPrepared) blockingIssues.push("WORKFLOW_NOT_PREPARED");
   if (!scheduleConfigured) blockingIssues.push("SCHEDULE_NOT_CONFIGURED");
-  if (writeEnabled && !persistenceEnabled) blockingIssues.push("WRITE_WITHOUT_PERSISTENCE_BLOCKED");
+  blockingIssues.push(...activation.blockingIssues);
   if (captureStatus?.statusSource === "STALE_LOCAL_FALLBACK") blockingIssues.push("CURRENT_MARKET_STATUS_UNAVAILABLE");
 
   let recommendedAction = "KEEP_DRY_RUN_AND_VALIDATE_MANUAL_DISPATCH";
@@ -112,13 +128,13 @@ function buildSchedulerReadiness({ captureStatus, workflowPath, env = process.en
     projectVersion: PROJECT_VERSION,
     workflowPrepared,
     scheduleConfigured,
-    workflowStatus: "PREPARED_DRY_RUN",
+    workflowStatus: activation.mode === "LIVE" ? "READY_FOR_WRITE" : activation.mode === "INVALID" ? "INVALID_CONFIGURATION" : "PREPARED_DRY_RUN",
     writeEnabled,
     persistenceStrategy: PERSISTENCE_STRATEGY,
     persistenceEnabled,
     persistenceReady,
-    persistenceStatus: persistenceEnabled ? "READY" : "PREPARED_BUT_DISABLED",
-    schedulerStatus: writeEnabled && persistenceEnabled ? "READY_FOR_REVIEWED_WRITE" : "READY_FOR_MANUAL_DISPATCH",
+    persistenceStatus: activation.mode === "INVALID" ? "BLOCKED_INVALID_CONFIGURATION" : persistenceEnabled ? "READY" : "PREPARED_BUT_DISABLED",
+    schedulerStatus: activation.mode === "INVALID" ? "BLOCKED" : writeEnabled && persistenceEnabled ? "READY_FOR_REVIEWED_WRITE" : "READY_FOR_MANUAL_DISPATCH",
     currentRound: captureStatus?.currentRound ?? null,
     deadline: captureStatus?.deadline ?? null,
     currentCaptureStatus: captureStatus?.captureRisk || "UNKNOWN",
@@ -215,5 +231,6 @@ module.exports = {
   normalizeAutomationResult,
   operationalExitCode,
   resolveCurrentCaptureStatus,
+  validateActivationConfiguration,
   validatePersistenceChanges
 };

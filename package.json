@@ -1,6 +1,6 @@
 {
   "name": "cartola-silvas-fc-api",
-  "version": "5.2.13",
+  "version": "5.2.15",
   "description": "Backend proxy Cartola FC para o Meu Time Ideal Web",
   "main": "server.js",
   "scripts": {
@@ -55,7 +55,8 @@
     "research:capture-pre-match": "node scripts/research-capture-pre-match.js --season=2026",
     "research:evaluate-pre-match": "node scripts/research-evaluate-pre-match.js --season=2026",
     "research:auto-capture-pre-match": "node scripts/research-auto-capture-pre-match.js --season=2026",
-    "research:pre-match:persistence": "node scripts/research-pre-match-persistence.js --season=2026"
+    "research:pre-match:persistence": "node scripts/research-pre-match-persistence.js --season=2026",
+    "research:pre-match:preflight": "node scripts/research-pre-match-preflight.js --season=2026"
   },
   "engines": {
     "node": ">=18"

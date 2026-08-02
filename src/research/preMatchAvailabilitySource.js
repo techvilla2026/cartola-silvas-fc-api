@@ -22,7 +22,7 @@ const {
 
 const PRE_MATCH_SOURCE_VERSION = "PRE_MATCH_AVAILABILITY_SOURCE_V1";
 const PRE_MATCH_SNAPSHOT_SCHEMA = "pre-match-availability-source/v1";
-const PRE_MATCH_ENGINE_VERSION = "pre-match-availability-source/5.2.13";
+const PRE_MATCH_ENGINE_VERSION = "pre-match-availability-source/5.2.15";
 const SOURCE_BUILD_ID = "build-4.3.2";
 const SAFE_PRE_MATCH = "SAFE_PRE_MATCH";
 const UNKNOWN_TIMING = "UNKNOWN_TIMING";

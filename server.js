@@ -32,7 +32,7 @@ const {
 } = require("./src/realRoundContext/service");
 
 const SERVICE_NAME = "cartola-silvas-fc-api";
-const BACKEND_VERSION = "5.2.13";
+const BACKEND_VERSION = "5.2.15";
 const DEFAULT_PORT = 3000;
 const CARTOLA_API_BASE_URL = "https://api.cartolafc.globo.com";
 const DEFAULT_TIMEOUT_MS = 8000;

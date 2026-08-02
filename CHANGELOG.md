@@ -1,5 +1,14 @@
 # Changelog
 
+## 5.2.15 - 2026-08-01
+
+- Adiciona modos `dry-run`, `preflight` e `live` ao dispatch prospectivo, preservando dry-run como padrao.
+- Bloqueia configuracoes parciais: escrita e persistencia precisam ser ativadas juntas.
+- Adiciona preflight sem escrita para allowlist, identidade do bot e `git push --dry-run`.
+- Mantem commit restrito com `[skip render]`, sem deploy, force push ou staging amplo.
+- Preserva baseline, modelos, thresholds, snapshots historicos, backtests e Flutter.
+
+
 ## 5.2.13 - 2026-07-31
 
 - Prepara o workflow prospectivo separado `.github/workflows/research-pre-match-auto-capture.yml`, agendado a cada 30 minutos e em dry-run por padrao.

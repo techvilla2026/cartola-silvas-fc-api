@@ -4,7 +4,7 @@ Backend proxy do Cartola FC para o aplicativo Meu Time Ideal Web.
 
 Este servidor evita que a versao Web do app Flutter precise chamar diretamente `https://api.cartolafc.globo.com` a partir do navegador, reduzindo problemas de CORS. As rotas retornam dados reais da API oficial do Cartola FC, sem mocks, fallbacks ficticios ou alteracao silenciosa do conteudo recebido.
 
-A Build 5.2.13 prepara um scheduler prospectivo seguro, idempotente e separado do workflow de live snapshots. O agendamento consulta dinamicamente rodada e deadline do Cartola, roda a cada 30 minutos e permanece em dry-run enquanto `PRE_MATCH_CAPTURE_WRITE_ENABLED` e `PRE_MATCH_CAPTURE_COMMIT_ENABLED` nao forem exatamente `true`. A persistencia Git restrita esta preparada, mas desabilitada. CORS Netlify, Motor SLVS oficial, `AVAILABILITY_V1`, `AVAILABILITY_V2_CALIBRATED`, threshold oficial 0.50 e baseline permanecem preservados.
+A Build 5.2.15 adiciona ativacao controlada ao scheduler prospectivo. `workflow_dispatch` oferece `dry-run`, `preflight` e `live`, com `dry-run` como padrao. Escrita real e persistencia so podem operar quando `PRE_MATCH_CAPTURE_WRITE_ENABLED` e `PRE_MATCH_CAPTURE_COMMIT_ENABLED` forem simultaneamente `true`; estados parciais falham sem captura. O preflight valida allowlist, identidade do bot e push em modo `--dry-run`, sem gravar arquivos, criar commit ou capturar. CORS Netlify, Motor SLVS oficial, `AVAILABILITY_V1`, `AVAILABILITY_V2_CALIBRATED`, threshold oficial 0.50 e baseline permanecem preservados.
 
 ## Endpoints
 
@@ -16,7 +16,7 @@ Retorna informacoes basicas do servico:
 {
   "service": "cartola-silvas-fc-api",
   "status": "online",
-  "version": "5.2.13",
+  "version": "5.2.15",
   "focus": "Brasileirao/Cartola FC"
 }
 ```
@@ -322,6 +322,10 @@ GET /research/pre-match-availability/scheduler-readiness
 ```
 
 O workflow `.github/workflows/research-pre-match-auto-capture.yml` requer simultaneamente `PRE_MATCH_CAPTURE_WRITE_ENABLED=true` e `PRE_MATCH_CAPTURE_COMMIT_ENABLED=true` para sair do dry-run. Consulte `docs/research/pre-match-scheduler-runbook.md` antes de habilitar qualquer escrita.
+
+## Controlled activation 5.2.15
+
+O dispatch remoto aceita `dry-run`, `preflight` e `live`. `preflight` executa a verificacao de ativacao sem escrita e publica o resultado no GitHub Actions Summary. O modo `live` e o schedule somente escrevem quando as duas Repository Variables estiverem exatamente `true`. Habilitar apenas uma delas retorna `INVALID_ACTIVATION_CONFIGURATION` e bloqueia a execucao antes da captura.
 
 ## Research Lab 5.2.12
 

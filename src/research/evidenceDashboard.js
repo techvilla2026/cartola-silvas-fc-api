@@ -7,7 +7,7 @@ const { ResearchRepository } = require("./repository");
 
 const SEASON = 2026;
 const SOURCE_BUILD_ID = "build-4.3.2";
-const EVIDENCE_DASHBOARD_VERSION = "slvs-evidence-dashboard/5.2.13";
+const EVIDENCE_DASHBOARD_VERSION = "slvs-evidence-dashboard/5.2.15";
 const SCORECARD_METADATA = {
   metricType: "internal_index",
   probability: false,

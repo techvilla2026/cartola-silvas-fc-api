@@ -12,7 +12,7 @@ const persistence = readJson(process.argv[3]);
 const writeEnabled = process.env.PRE_MATCH_CAPTURE_WRITE_ENABLED === "true";
 const persistenceEnabled = process.env.PRE_MATCH_CAPTURE_COMMIT_ENABLED === "true";
 const rows = {
-  projectVersion: "5.2.13",
+  projectVersion: "5.2.15",
   currentRound: capture.round ?? null,
   deadline: capture.deadline ?? null,
   currentTime: capture.currentTime ?? null,

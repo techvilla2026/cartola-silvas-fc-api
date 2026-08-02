@@ -10,8 +10,10 @@ const {
   normalizeAutomationResult,
   operationalExitCode,
   resolveCurrentCaptureStatus,
+  validateActivationConfiguration,
   validatePersistenceChanges
 } = require("../src/research/preMatchScheduler");
+const { buildPreflight } = require("../scripts/research-pre-match-preflight");
 
 const workflowPath = path.resolve(__dirname, "../.github/workflows/research-pre-match-auto-capture.yml");
 const workflow = fs.readFileSync(workflowPath, "utf8");
@@ -22,18 +24,29 @@ test("workflow prospectivo possui dispatch, schedule seguro, concorrencia e time
   assert.match(workflow, /concurrency:/);
   assert.match(workflow, /cancel-in-progress: false/);
   assert.match(workflow, /timeout-minutes: 15/);
+  assert.match(workflow, /activation_mode:/);
+  assert.match(workflow, /default: "dry-run"/);
+  assert.match(workflow, /- preflight/);
+  assert.match(workflow, /- live/);
 });
 
 test("workflow usa Node 22, npm ci e nao possui etapa de deploy", () => {
   assert.match(workflow, /node-version: "22"/);
   assert.match(workflow, /run: npm ci/);
   assert.doesNotMatch(workflow, /name:\s*Deploy/i);
+  assert.match(workflow, /permissions:\s*\r?\n\s+contents: write/);
+  assert.doesNotMatch(workflow, /pull-requests:\s*write/);
+  assert.doesNotMatch(workflow, /actions:\s*write/);
+  assert.doesNotMatch(workflow, /secrets\./);
+  assert.doesNotMatch(workflow, /git push[^\n]*(?:--force(?:-with-lease)?|-f(?:\s|$))/);
 });
 
 test("workflow deixa escrita e persistencia falsas por padrao", () => {
   assert.match(workflow, /PRE_MATCH_CAPTURE_WRITE_ENABLED:.*\|\| 'false'/);
   assert.match(workflow, /PRE_MATCH_CAPTURE_COMMIT_ENABLED:.*\|\| 'false'/);
   assert.match(workflow, /--dry-run --json/);
+  assert.match(workflow, /Write and persistence must be enabled together/);
+  assert.match(workflow, /Both repository variables must be exactly true/);
 });
 
 test("workflow nunca usa staging amplo", () => {
@@ -74,6 +87,41 @@ test("persistencia restrita fica pronta somente com mudancas permitidas", () => 
   });
   assert.equal(result.persistenceStatus, "READY_TO_COMMIT");
   assert.equal(result.commitAllowed, true);
+});
+
+test("ativacao exige as duas variaveis juntas", () => {
+  assert.equal(validateActivationConfiguration({}).mode, "DRY_RUN");
+  assert.equal(validateActivationConfiguration({ writeEnabled: "true", commitEnabled: "true" }).mode, "LIVE");
+  for (const input of [
+    { writeEnabled: "true", commitEnabled: "false" },
+    { writeEnabled: "false", commitEnabled: "true" }
+  ]) {
+    const result = validateActivationConfiguration(input);
+    assert.equal(result.valid, false);
+    assert.equal(result.mode, "INVALID");
+    assert.equal(result.reasonCode, "INVALID_ACTIVATION_CONFIGURATION");
+  }
+});
+
+test("preflight valida seguranca sem gravar, capturar ou commitar", () => {
+  const result = buildPreflight({
+    env: {
+      PRE_MATCH_CAPTURE_WRITE_ENABLED: "false",
+      PRE_MATCH_CAPTURE_COMMIT_ENABLED: "false",
+      BOT_NAME: "test-bot",
+      BOT_EMAIL: "test-bot@example.invalid",
+      GITHUB_ACTIONS: "true"
+    },
+    season: 2026,
+    checkPush: false
+  });
+  assert.equal(result.ok, true);
+  assert.equal(result.mode, "PREFLIGHT_NO_WRITE");
+  assert.deepEqual(result.filesChanged, []);
+  assert.equal(result.commitCreated, false);
+  assert.equal(result.captureCreated, false);
+  assert.equal(result.persistenceSimulation.persistenceStatus, "READY_TO_COMMIT");
+  assert.equal(result.unexpectedSimulation.persistenceStatus, "UNEXPECTED_FILE_CHANGE");
 });
 
 test("exit codes distinguem estados normais, risco e falhas", () => {

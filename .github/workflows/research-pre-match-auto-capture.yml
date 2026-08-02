@@ -7,6 +7,15 @@ on:
         description: "Cartola season"
         required: false
         default: "2026"
+      activation_mode:
+        description: "Safe activation mode"
+        required: true
+        type: choice
+        default: "dry-run"
+        options:
+          - dry-run
+          - preflight
+          - live
   schedule:
     - cron: "*/30 * * * *"
 
@@ -27,6 +36,7 @@ jobs:
       PRE_MATCH_CAPTURE_COMMIT_ENABLED: ${{ vars.PRE_MATCH_CAPTURE_COMMIT_ENABLED || 'false' }}
       BOT_NAME: slvs-research-capture-bot
       BOT_EMAIL: slvs-research-capture-bot@users.noreply.github.com
+      ACTIVATION_MODE: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.activation_mode || 'scheduled' }}
     steps:
       - name: Checkout
         uses: actions/checkout@v5
@@ -43,17 +53,39 @@ jobs:
         run: npm ci
 
       - name: Validate safe configuration
+        id: configuration
+        shell: bash
         run: |
-          if [[ "$PRE_MATCH_CAPTURE_WRITE_ENABLED" != "true" || "$PRE_MATCH_CAPTURE_COMMIT_ENABLED" != "true" ]]; then
-            echo "Safe mode active: capture will run as dry-run."
+          WRITE="$PRE_MATCH_CAPTURE_WRITE_ENABLED"
+          COMMIT="$PRE_MATCH_CAPTURE_COMMIT_ENABLED"
+          if [[ ( "$WRITE" == "true" && "$COMMIT" != "true" ) || ( "$WRITE" != "true" && "$COMMIT" == "true" ) ]]; then
+            echo "::error title=Invalid activation configuration::Write and persistence must be enabled together."
+            exit 7
           fi
+          if [[ "$ACTIVATION_MODE" == "live" && ( "$WRITE" != "true" || "$COMMIT" != "true" ) ]]; then
+            echo "::error title=Live activation blocked::Both repository variables must be exactly true."
+            exit 7
+          fi
+          echo "Safe configuration validated for mode $ACTIVATION_MODE."
 
-      - name: Run idempotent prospective scheduler
-        id: capture
+      - name: Run no-write activation preflight
+        id: preflight
+        if: env.ACTIVATION_MODE == 'preflight'
         shell: bash
         run: |
           set +e
-          if [[ "$PRE_MATCH_CAPTURE_WRITE_ENABLED" == "true" && "$PRE_MATCH_CAPTURE_COMMIT_ENABLED" == "true" ]]; then
+          npm --silent run research:pre-match:preflight -- --season="$SEASON" --branch="$GITHUB_REF_NAME" --check-push --json | tee "$RUNNER_TEMP/pre-match-preflight.json"
+          PREFLIGHT_EXIT=${PIPESTATUS[0]}
+          echo "exit_code=$PREFLIGHT_EXIT" >> "$GITHUB_OUTPUT"
+          exit 0
+
+      - name: Run idempotent prospective scheduler
+        id: capture
+        if: env.ACTIVATION_MODE != 'preflight'
+        shell: bash
+        run: |
+          set +e
+          if [[ "$PRE_MATCH_CAPTURE_WRITE_ENABLED" == "true" && "$PRE_MATCH_CAPTURE_COMMIT_ENABLED" == "true" && ( "$ACTIVATION_MODE" == "live" || "$ACTIVATION_MODE" == "scheduled" ) ]]; then
             npm --silent run research:auto-capture-pre-match -- --season="$SEASON" --json | tee "$RUNNER_TEMP/pre-match-result.json"
           else
             npm --silent run research:auto-capture-pre-match -- --season="$SEASON" --dry-run --json | tee "$RUNNER_TEMP/pre-match-result.json"
@@ -63,7 +95,7 @@ jobs:
           exit 0
 
       - name: Emit capture alerts
-        if: always()
+        if: always() && env.ACTIVATION_MODE != 'preflight'
         shell: bash
         run: |
           RISK="$(node -p "require(process.env.RUNNER_TEMP + '/pre-match-result.json').captureRisk || 'UNKNOWN'")"
@@ -76,7 +108,7 @@ jobs:
 
       - name: Validate restricted persistence
         id: persistence
-        if: always()
+        if: always() && env.ACTIVATION_MODE != 'preflight'
         shell: bash
         run: |
           set +e
@@ -88,7 +120,7 @@ jobs:
           exit 0
 
       - name: Restricted commit and push
-        if: env.PRE_MATCH_CAPTURE_WRITE_ENABLED == 'true' && env.PRE_MATCH_CAPTURE_COMMIT_ENABLED == 'true' && steps.persistence.outputs.status == 'READY_TO_COMMIT'
+        if: env.ACTIVATION_MODE != 'preflight' && env.PRE_MATCH_CAPTURE_WRITE_ENABLED == 'true' && env.PRE_MATCH_CAPTURE_COMMIT_ENABLED == 'true' && steps.persistence.outputs.status == 'READY_TO_COMMIT'
         shell: bash
         run: |
           ROUND="$(node -p "require(process.env.RUNNER_TEMP + '/pre-match-result.json').round")"
@@ -106,13 +138,41 @@ jobs:
           git push origin "HEAD:${GITHUB_REF_NAME}"
 
       - name: GitHub Actions Summary
-        if: always()
+        if: always() && env.ACTIVATION_MODE != 'preflight'
         run: node scripts/research-pre-match-workflow-summary.js "$RUNNER_TEMP/pre-match-result.json" "$RUNNER_TEMP/pre-match-persistence.json"
+
+      - name: Preflight Summary
+        if: always() && env.ACTIVATION_MODE == 'preflight'
+        shell: bash
+        run: |
+          node - <<'NODE'
+          const fs = require('fs');
+          const file = process.env.RUNNER_TEMP + '/pre-match-preflight.json';
+          const result = fs.existsSync(file) ? JSON.parse(fs.readFileSync(file, 'utf8')) : {};
+          const rows = {
+            projectVersion: result.projectVersion || '5.2.15',
+            activationMode: 'preflight',
+            ok: result.ok ?? false,
+            writeEnabled: process.env.PRE_MATCH_CAPTURE_WRITE_ENABLED === 'true',
+            persistenceEnabled: process.env.PRE_MATCH_CAPTURE_COMMIT_ENABLED === 'true',
+            directPushAllowed: result.pushReadiness?.directPushAllowed ?? null,
+            allowlistValid: result.checks?.allowlistValid ?? false,
+            unexpectedFileBlocked: result.checks?.unexpectedFileBlocked ?? false,
+            filesChanged: result.filesChanged || [],
+            commitCreated: false,
+            captureCreated: false,
+            blockingIssues: result.blockingIssues || []
+          };
+          fs.appendFileSync(process.env.GITHUB_STEP_SUMMARY, `## Prospective Capture Activation Preflight\n\n${Object.entries(rows).map(([k,v]) => `- ${k}: ${typeof v === 'object' ? JSON.stringify(v) : v}`).join('\n')}\n`);
+          NODE
 
       - name: Enforce scheduler result
         if: always()
         shell: bash
         run: |
+          if [[ "$ACTIVATION_MODE" == "preflight" ]]; then
+            exit "${{ steps.preflight.outputs.exit_code }}"
+          fi
           if [[ "${{ steps.persistence.outputs.exit_code }}" != "0" ]]; then
             exit "${{ steps.persistence.outputs.exit_code }}"
           fi
