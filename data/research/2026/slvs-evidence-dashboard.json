@@ -1,7 +1,7 @@
 {
   "schemaVersion": "slvs-evidence-dashboard/v1",
   "season": 2026,
-  "generatedAt": "2026-08-02T01:43:15.153Z",
+  "generatedAt": "2026-08-02T02:14:23.403Z",
   "engineVersion": "slvs-evidence-dashboard/5.2.15",
   "officialEngine": {
     "modelId": "OFFICIAL_ENGINE",
@@ -476,7 +476,7 @@
         "Indice interno; nao probabilidade."
       ],
       "sourceArtifact": "multi-round-calibration.json",
-      "generatedAt": "2026-08-02T01:43:15.153Z"
+      "generatedAt": "2026-08-02T02:14:23.403Z"
     },
     {
       "evidenceId": "sg-v2-top3",
@@ -496,7 +496,7 @@
         "Indice interno; nao probabilidade."
       ],
       "sourceArtifact": "multi-round-calibration.json",
-      "generatedAt": "2026-08-02T01:43:15.153Z"
+      "generatedAt": "2026-08-02T02:14:23.403Z"
     },
     {
       "evidenceId": "sg-v2-top5",
@@ -516,7 +516,7 @@
         "Indice interno; nao probabilidade."
       ],
       "sourceArtifact": "multi-round-calibration.json",
-      "generatedAt": "2026-08-02T01:43:15.153Z"
+      "generatedAt": "2026-08-02T02:14:23.403Z"
     },
     {
       "evidenceId": "gol_v2-top1",
@@ -536,7 +536,7 @@
         "Shadow mode; requer validacao adicional por rodada."
       ],
       "sourceArtifact": "multi-round-calibration.json",
-      "generatedAt": "2026-08-02T01:43:15.153Z"
+      "generatedAt": "2026-08-02T02:14:23.403Z"
     },
     {
       "evidenceId": "gol_v2-top3",
@@ -556,7 +556,7 @@
         "Shadow mode; requer validacao adicional por rodada."
       ],
       "sourceArtifact": "multi-round-calibration.json",
-      "generatedAt": "2026-08-02T01:43:15.153Z"
+      "generatedAt": "2026-08-02T02:14:23.403Z"
     },
     {
       "evidenceId": "gol_v2-top5",
@@ -576,7 +576,7 @@
         "Shadow mode; requer validacao adicional por rodada."
       ],
       "sourceArtifact": "multi-round-calibration.json",
-      "generatedAt": "2026-08-02T01:43:15.153Z"
+      "generatedAt": "2026-08-02T02:14:23.403Z"
     },
     {
       "evidenceId": "lat_v2-top1",
@@ -596,7 +596,7 @@
         "Shadow mode; requer validacao adicional por rodada."
       ],
       "sourceArtifact": "multi-round-calibration.json",
-      "generatedAt": "2026-08-02T01:43:15.153Z"
+      "generatedAt": "2026-08-02T02:14:23.403Z"
     },
     {
       "evidenceId": "lat_v2-top3",
@@ -616,7 +616,7 @@
         "Shadow mode; requer validacao adicional por rodada."
       ],
       "sourceArtifact": "multi-round-calibration.json",
-      "generatedAt": "2026-08-02T01:43:15.153Z"
+      "generatedAt": "2026-08-02T02:14:23.403Z"
     },
     {
       "evidenceId": "lat_v2-top5",
@@ -636,7 +636,7 @@
         "Shadow mode; requer validacao adicional por rodada."
       ],
       "sourceArtifact": "multi-round-calibration.json",
-      "generatedAt": "2026-08-02T01:43:15.153Z"
+      "generatedAt": "2026-08-02T02:14:23.403Z"
     },
     {
       "evidenceId": "zag_v2-top1",
@@ -656,7 +656,7 @@
         "Shadow mode; requer validacao adicional por rodada."
       ],
       "sourceArtifact": "multi-round-calibration.json",
-      "generatedAt": "2026-08-02T01:43:15.153Z"
+      "generatedAt": "2026-08-02T02:14:23.403Z"
     },
     {
       "evidenceId": "zag_v2-top3",
@@ -676,7 +676,7 @@
         "Shadow mode; requer validacao adicional por rodada."
       ],
       "sourceArtifact": "multi-round-calibration.json",
-      "generatedAt": "2026-08-02T01:43:15.153Z"
+      "generatedAt": "2026-08-02T02:14:23.403Z"
     },
     {
       "evidenceId": "zag_v2-top5",
@@ -696,7 +696,7 @@
         "Shadow mode; requer validacao adicional por rodada."
       ],
       "sourceArtifact": "multi-round-calibration.json",
-      "generatedAt": "2026-08-02T01:43:15.153Z"
+      "generatedAt": "2026-08-02T02:14:23.403Z"
     },
     {
       "evidenceId": "mei_v2-top1",
@@ -716,7 +716,7 @@
         "Shadow mode; requer validacao adicional por rodada."
       ],
       "sourceArtifact": "multi-round-calibration.json",
-      "generatedAt": "2026-08-02T01:43:15.153Z"
+      "generatedAt": "2026-08-02T02:14:23.403Z"
     },
     {
       "evidenceId": "mei_v2-top3",
@@ -736,7 +736,7 @@
         "Shadow mode; requer validacao adicional por rodada."
       ],
       "sourceArtifact": "multi-round-calibration.json",
-      "generatedAt": "2026-08-02T01:43:15.153Z"
+      "generatedAt": "2026-08-02T02:14:23.403Z"
     },
     {
       "evidenceId": "mei_v2-top5",
@@ -756,7 +756,7 @@
         "Shadow mode; requer validacao adicional por rodada."
       ],
       "sourceArtifact": "multi-round-calibration.json",
-      "generatedAt": "2026-08-02T01:43:15.153Z"
+      "generatedAt": "2026-08-02T02:14:23.403Z"
     },
     {
       "evidenceId": "ata_v2-top1",
@@ -776,7 +776,7 @@
         "Shadow mode; requer validacao adicional por rodada."
       ],
       "sourceArtifact": "multi-round-calibration.json",
-      "generatedAt": "2026-08-02T01:43:15.153Z"
+      "generatedAt": "2026-08-02T02:14:23.403Z"
     },
     {
       "evidenceId": "ata_v2-top3",
@@ -796,7 +796,7 @@
         "Shadow mode; requer validacao adicional por rodada."
       ],
       "sourceArtifact": "multi-round-calibration.json",
-      "generatedAt": "2026-08-02T01:43:15.153Z"
+      "generatedAt": "2026-08-02T02:14:23.403Z"
     },
     {
       "evidenceId": "ata_v2-top5",
@@ -816,7 +816,7 @@
         "Shadow mode; requer validacao adicional por rodada."
       ],
       "sourceArtifact": "multi-round-calibration.json",
-      "generatedAt": "2026-08-02T01:43:15.153Z"
+      "generatedAt": "2026-08-02T02:14:23.403Z"
     },
     {
       "evidenceId": "tec_v2-top1",
@@ -836,7 +836,7 @@
         "Shadow mode; requer validacao adicional por rodada."
       ],
       "sourceArtifact": "multi-round-calibration.json",
-      "generatedAt": "2026-08-02T01:43:15.153Z"
+      "generatedAt": "2026-08-02T02:14:23.403Z"
     },
     {
       "evidenceId": "tec_v2-top3",
@@ -856,7 +856,7 @@
         "Shadow mode; requer validacao adicional por rodada."
       ],
       "sourceArtifact": "multi-round-calibration.json",
-      "generatedAt": "2026-08-02T01:43:15.153Z"
+      "generatedAt": "2026-08-02T02:14:23.403Z"
     },
     {
       "evidenceId": "tec_v2-top5",
@@ -876,7 +876,7 @@
         "Shadow mode; requer validacao adicional por rodada."
       ],
       "sourceArtifact": "multi-round-calibration.json",
-      "generatedAt": "2026-08-02T01:43:15.153Z"
+      "generatedAt": "2026-08-02T02:14:23.403Z"
     },
     {
       "evidenceId": "availability-r19-xi-points",
@@ -896,7 +896,7 @@
         "Uma rodada isolada nao prova superioridade multirrodada."
       ],
       "sourceArtifact": "availability-calibration.json",
-      "generatedAt": "2026-08-02T01:43:15.153Z"
+      "generatedAt": "2026-08-02T02:14:23.403Z"
     },
     {
       "evidenceId": "availability-r19-xi-did-not-play",
@@ -916,7 +916,7 @@
         "Contradicao com TopK historico exige cautela."
       ],
       "sourceArtifact": "availability-calibration.json",
-      "generatedAt": "2026-08-02T01:43:15.153Z"
+      "generatedAt": "2026-08-02T02:14:23.403Z"
     },
     {
       "evidenceId": "availability-historical-target",
@@ -936,7 +936,7 @@
         "A Rodada 19 live mostrou didNotPlay no XI; o backtest 2-18 nao reproduziu esse risco no TopK, portanto a evidencia multirrodada de disponibilidade e limitada."
       ],
       "sourceArtifact": "availability-calibration.json",
-      "generatedAt": "2026-08-02T01:43:15.153Z"
+      "generatedAt": "2026-08-02T02:14:23.403Z"
     },
     {
       "evidenceId": "formation-hit-rate",
@@ -956,7 +956,7 @@
         "Acerto de formacao nao implica ganho material de pontos."
       ],
       "sourceArtifact": "multi-round-calibration.json",
-      "generatedAt": "2026-08-02T01:43:15.153Z"
+      "generatedAt": "2026-08-02T02:14:23.403Z"
     }
   ],
   "scorecards": [
@@ -2202,10 +2202,70 @@
     "latestRound": 20,
     "deadline": "2026-07-25T21:29:00.000Z",
     "minutesBeforeDeadline": 1318,
-    "prospectiveEvaluationStatus": "PENDING_OUTCOME",
-    "V1ProspectiveMetrics": null,
-    "V2Threshold050Metrics": null,
-    "V2Threshold045Metrics": null,
+    "prospectiveEvaluationStatus": "EVALUATED",
+    "V1ProspectiveMetrics": {
+      "count": 767,
+      "threshold": 0.5,
+      "confusionMatrix": {
+        "tp": 282,
+        "tn": 266,
+        "fp": 166,
+        "fn": 53
+      },
+      "accuracy": 0.7145,
+      "precision": 0.6295,
+      "recall": 0.8418,
+      "specificity": 0.6157,
+      "f1": 0.7203,
+      "balancedAccuracy": 0.7288,
+      "brierScore": 0.1936,
+      "logLoss": 0.825211,
+      "rocAuc": 0.8178,
+      "prAuc": 0.7738,
+      "ece": 0.156837
+    },
+    "V2Threshold050Metrics": {
+      "count": 767,
+      "threshold": 0.5,
+      "confusionMatrix": {
+        "tp": 244,
+        "tn": 340,
+        "fp": 92,
+        "fn": 91
+      },
+      "accuracy": 0.7614,
+      "precision": 0.7262,
+      "recall": 0.7284,
+      "specificity": 0.787,
+      "f1": 0.7273,
+      "balancedAccuracy": 0.7577,
+      "brierScore": 0.172089,
+      "logLoss": 0.521199,
+      "rocAuc": 0.8281,
+      "prAuc": 0.7789,
+      "ece": 0.052595
+    },
+    "V2Threshold045Metrics": {
+      "count": 767,
+      "threshold": 0.45,
+      "confusionMatrix": {
+        "tp": 284,
+        "tn": 277,
+        "fp": 155,
+        "fn": 51
+      },
+      "accuracy": 0.7314,
+      "precision": 0.6469,
+      "recall": 0.8478,
+      "specificity": 0.6412,
+      "f1": 0.7339,
+      "balancedAccuracy": 0.7445,
+      "brierScore": 0.172089,
+      "logLoss": 0.521199,
+      "rocAuc": 0.8281,
+      "prAuc": 0.7789,
+      "ece": 0.052595
+    },
     "signalCoverage": {
       "totalPlayers": 773,
       "playersWithStatus": 335,
@@ -2289,7 +2349,98 @@
         "STARTER_FLAG_UNAVAILABLE"
       ]
     },
-    "statusSignalValue": null,
+    "statusSignalValue": {
+      "WITH_STATUS_SIGNAL": {
+        "sampleSize": 335,
+        "v2Threshold050": {
+          "count": 335,
+          "threshold": 0.5,
+          "confusionMatrix": {
+            "tp": 199,
+            "tn": 52,
+            "fp": 44,
+            "fn": 40
+          },
+          "accuracy": 0.7493,
+          "precision": 0.8189,
+          "recall": 0.8326,
+          "specificity": 0.5417,
+          "f1": 0.8257,
+          "balancedAccuracy": 0.6872,
+          "brierScore": 0.175854,
+          "logLoss": 0.536824,
+          "rocAuc": 0.7475,
+          "prAuc": 0.8654,
+          "ece": 0.080476
+        },
+        "v2Threshold045": {
+          "count": 335,
+          "threshold": 0.45,
+          "confusionMatrix": {
+            "tp": 218,
+            "tn": 40,
+            "fp": 56,
+            "fn": 21
+          },
+          "accuracy": 0.7701,
+          "precision": 0.7956,
+          "recall": 0.9121,
+          "specificity": 0.4167,
+          "f1": 0.8499,
+          "balancedAccuracy": 0.6644,
+          "brierScore": 0.175854,
+          "logLoss": 0.536824,
+          "rocAuc": 0.7475,
+          "prAuc": 0.8654,
+          "ece": 0.080476
+        }
+      },
+      "WITHOUT_STATUS_SIGNAL": {
+        "sampleSize": 432,
+        "v2Threshold050": {
+          "count": 432,
+          "threshold": 0.5,
+          "confusionMatrix": {
+            "tp": 45,
+            "tn": 288,
+            "fp": 48,
+            "fn": 51
+          },
+          "accuracy": 0.7708,
+          "precision": 0.4839,
+          "recall": 0.4688,
+          "specificity": 0.8571,
+          "f1": 0.4762,
+          "balancedAccuracy": 0.6629,
+          "brierScore": 0.16917,
+          "logLoss": 0.509082,
+          "rocAuc": 0.7588,
+          "prAuc": 0.4807,
+          "ece": 0.131918
+        },
+        "v2Threshold045": {
+          "count": 432,
+          "threshold": 0.45,
+          "confusionMatrix": {
+            "tp": 66,
+            "tn": 237,
+            "fp": 99,
+            "fn": 30
+          },
+          "accuracy": 0.7014,
+          "precision": 0.4,
+          "recall": 0.6875,
+          "specificity": 0.7054,
+          "f1": 0.5057,
+          "balancedAccuracy": 0.6964,
+          "brierScore": 0.16917,
+          "logLoss": 0.509082,
+          "rocAuc": 0.7588,
+          "prAuc": 0.4807,
+          "ece": 0.131918
+        }
+      }
+    },
     "safeSignalCount": 773,
     "unknownTimingCount": 0,
     "prospectiveControls": {
@@ -2385,11 +2536,12 @@
             ]
           },
           "availabilityModelVersion": "AVAILABILITY_V1 + AVAILABILITY_V2_CALIBRATED",
-          "status": "PENDING_OUTCOME"
+          "status": "EVALUATED",
+          "evaluationArtifact": "pre-match-availability-evaluations/round-20-pre-match-2026-r20-20260724233025-648962cc.json"
         }
       ]
     },
-    "threshold045ResearchStatus": "PENDING_OUTCOME",
+    "threshold045ResearchStatus": "NEUTRAL",
     "primaryCaptureStatus": "MISSING",
     "finalCaptureStatus": "MISSING",
     "captureRisk": "NONE",
@@ -2399,7 +2551,7 @@
     "nextDeadline": "2026-08-08T18:59:00.000Z",
     "nextRecommendedAction": "NO_ACTION",
     "externalSourceStatus": "AVAILABLE_NOW_CARTOLA_PUBLIC_API",
-    "nextResearchPriority": "EVALUATE_PRE_MATCH_CAPTURE_AFTER_OUTCOME",
+    "nextResearchPriority": "COLLECT_MORE_PROSPECTIVE_ROUNDS",
     "promotionStateChanged": false
   },
   "scheduler": {
@@ -2418,9 +2570,9 @@
     "missedProspectiveRounds": [
       21
     ],
-    "lastSchedulerCheck": "2026-08-02T01:43:15.153Z",
+    "lastSchedulerCheck": "2026-08-02T02:14:23.403Z",
     "nextRecommendedAction": "KEEP_DRY_RUN_AND_VALIDATE_MANUAL_DISPATCH",
-    "nextResearchPriority": "EVALUATE_PRE_MATCH_CAPTURE_AFTER_OUTCOME"
+    "nextResearchPriority": "COLLECT_MORE_PROSPECTIVE_ROUNDS"
   },
   "dataQuality": {
     "PARTICIPATION_DATA": {
@@ -4374,8 +4526,8 @@
     "Target historico de participacao nao reproduziu os riscos observados na Rodada 19 live."
   ],
   "nextResearchPriority": {
-    "priority": "EVALUATE_PRE_MATCH_CAPTURE_AFTER_OUTCOME",
-    "reason": "Avaliacao prospectiva 5.2.12: PENDING_OUTCOME.",
+    "priority": "COLLECT_MORE_PROSPECTIVE_ROUNDS",
+    "reason": "Avaliacao prospectiva 5.2.12: EVALUATED.",
     "nextSteps": [
       "Capturar antes do deadline da proxima rodada",
       "Comparar threshold 0.50 vs 0.45 apenas em pesquisa",

@@ -104,5 +104,5 @@ Nenhum candidato ficou PROMOTABLE.
 
 ## 15. Proxima prioridade
 
-EVALUATE_PRE_MATCH_CAPTURE_AFTER_OUTCOME: Avaliacao prospectiva 5.2.12: PENDING_OUTCOME.
+COLLECT_MORE_PROSPECTIVE_ROUNDS: Avaliacao prospectiva 5.2.12: EVALUATED.
 
