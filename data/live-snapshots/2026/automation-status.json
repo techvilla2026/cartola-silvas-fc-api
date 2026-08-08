@@ -1,24 +1,24 @@
 {
   "schemaVersion": "live-snapshot-automation-status/v1",
-  "executionId": "exec-20260808094344418-52ea665f",
-  "lastRunAt": "2026-08-08T09:43:46.298Z",
-  "result": "SKIPPED",
-  "reason": "TOO_SOON",
+  "executionId": "exec-20260808130035292-a2c4cecd",
+  "lastRunAt": "2026-08-08T13:00:36.999Z",
+  "result": "CAPTURED",
+  "reason": "DAILY_CHECKPOINT",
   "requestedReason": null,
   "round": 22,
-  "snapshotId": null,
-  "captured": false,
-  "skipped": true,
-  "auditStatus": null,
-  "nextRecommendedCheckAt": "2026-08-08T11:50:02.251Z",
+  "snapshotId": "live-2026-r22-20260808130035-5a98b961",
+  "captured": true,
+  "skipped": false,
+  "auditStatus": "PASS",
+  "nextRecommendedCheckAt": "2026-08-08T14:00:35.293Z",
   "marketClosingAt": "2026-08-08T18:59:00.000Z",
-  "secondsToClosing": 33315,
+  "secondsToClosing": 21504,
   "scheduleWindow": {
-    "name": "TWENTY_FOUR_TO_SIX_HOURS",
-    "intervalSeconds": 10800,
-    "priority": "MEDIUM"
+    "name": "SIX_TO_ONE_HOURS",
+    "intervalSeconds": 3600,
+    "priority": "HIGH"
   },
-  "capturePriority": "MEDIUM",
+  "capturePriority": "HIGH",
   "changeSummary": {
     "changedPlayers": 0,
     "statusChanges": 0,
@@ -41,6 +41,6 @@
   "dryRun": false,
   "failureCount": 0,
   "consecutiveFailureCount": 0,
-  "lastSuccessfulRunAt": "2026-08-08T09:43:46.298Z",
+  "lastSuccessfulRunAt": "2026-08-08T13:00:36.999Z",
   "lastFailureAt": null
 }
