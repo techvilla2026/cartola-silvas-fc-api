@@ -1,7 +1,7 @@
 {
   "schemaVersion": "live-snapshot-automation-status/v1",
-  "executionId": "exec-20260819163740240-8f97fe76",
-  "lastRunAt": "2026-08-19T16:37:41.855Z",
+  "executionId": "exec-20260819193058231-39125ff6",
+  "lastRunAt": "2026-08-19T19:30:59.966Z",
   "result": "SKIPPED",
   "reason": "TOO_SOON",
   "requestedReason": null,
@@ -10,15 +10,15 @@
   "captured": false,
   "skipped": true,
   "auditStatus": null,
-  "nextRecommendedCheckAt": "2026-08-20T15:37:21.083Z",
+  "nextRecommendedCheckAt": "2026-08-20T03:37:21.083Z",
   "marketClosingAt": "2026-08-22T18:59:00.000Z",
-  "secondsToClosing": 267679,
+  "secondsToClosing": 257281,
   "scheduleWindow": {
-    "name": "MORE_THAN_72_HOURS",
-    "intervalSeconds": 86400,
-    "priority": "LOW"
+    "name": "SEVENTY_TWO_TO_TWENTY_FOUR_HOURS",
+    "intervalSeconds": 43200,
+    "priority": "MEDIUM"
   },
-  "capturePriority": "LOW",
+  "capturePriority": "MEDIUM",
   "changeSummary": {
     "changedPlayers": 0,
     "statusChanges": 0,
@@ -41,6 +41,6 @@
   "dryRun": false,
   "failureCount": 0,
   "consecutiveFailureCount": 0,
-  "lastSuccessfulRunAt": "2026-08-19T16:37:41.855Z",
+  "lastSuccessfulRunAt": "2026-08-19T19:30:59.966Z",
   "lastFailureAt": null
 }
