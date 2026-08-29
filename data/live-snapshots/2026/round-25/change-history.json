@@ -226,6 +226,22 @@
       "closingChanged": false,
       "summary": "Sem mudanca relevante.",
       "executionId": "exec-20260829085223867-008ed812"
+    },
+    {
+      "previousSnapshotId": "live-2026-r25-20260829085223-84c0821d",
+      "currentSnapshotId": "live-2026-r25-20260829141914-068d29b1",
+      "capturedAt": "2026-08-29T14:19:14.261Z",
+      "changedPlayers": 4,
+      "statusChanges": 4,
+      "priceChanges": 0,
+      "predictionChanges": 0,
+      "idealTeamChanged": false,
+      "captainChanged": false,
+      "viceChanged": false,
+      "matchChanges": 0,
+      "closingChanged": false,
+      "summary": "Mudanca relevante detectada.",
+      "executionId": "exec-20260829141914260-549e5724"
     }
   ]
 }
