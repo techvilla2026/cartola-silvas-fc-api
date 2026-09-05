@@ -821,6 +821,97 @@
       },
       "availabilityModelVersion": "AVAILABILITY_V1 + AVAILABILITY_V2_CALIBRATED",
       "status": "PENDING_OUTCOME"
+    },
+    {
+      "round": 26,
+      "captureId": "pre-match-2026-r26-primary-20260905134118-738cdbc6",
+      "capturedAt": "2026-09-05T13:41:18.967Z",
+      "deadline": "2026-09-05T18:59:00.000Z",
+      "coverage": {
+        "totalPlayers": 776,
+        "playersWithStatus": 360,
+        "playersWithProbableFlag": 360,
+        "playersWithDoubtFlag": 360,
+        "playersWithInjuryFlag": 360,
+        "playersWithSuspensionFlag": 360,
+        "playersWithStarterFlag": 0,
+        "percentages": {
+          "status": 0.463918,
+          "probableFlag": 0.463918,
+          "doubtFlag": 0.463918,
+          "injuryFlag": 0.463918,
+          "suspensionFlag": 0.463918,
+          "starterFlag": 0
+        },
+        "byPosition": {
+          "lat": {
+            "totalPlayers": 123,
+            "playersWithStatus": 60,
+            "playersWithProbableFlag": 60,
+            "playersWithDoubtFlag": 60,
+            "playersWithInjuryFlag": 60,
+            "playersWithSuspensionFlag": 60,
+            "playersWithStarterFlag": 0,
+            "statusCoverage": 0.487805
+          },
+          "mei": {
+            "totalPlayers": 232,
+            "playersWithStatus": 106,
+            "playersWithProbableFlag": 106,
+            "playersWithDoubtFlag": 106,
+            "playersWithInjuryFlag": 106,
+            "playersWithSuspensionFlag": 106,
+            "playersWithStarterFlag": 0,
+            "statusCoverage": 0.456897
+          },
+          "ata": {
+            "totalPlayers": 198,
+            "playersWithStatus": 87,
+            "playersWithProbableFlag": 87,
+            "playersWithDoubtFlag": 87,
+            "playersWithInjuryFlag": 87,
+            "playersWithSuspensionFlag": 87,
+            "playersWithStarterFlag": 0,
+            "statusCoverage": 0.439394
+          },
+          "zag": {
+            "totalPlayers": 119,
+            "playersWithStatus": 62,
+            "playersWithProbableFlag": 62,
+            "playersWithDoubtFlag": 62,
+            "playersWithInjuryFlag": 62,
+            "playersWithSuspensionFlag": 62,
+            "playersWithStarterFlag": 0,
+            "statusCoverage": 0.521008
+          },
+          "gol": {
+            "totalPlayers": 84,
+            "playersWithStatus": 25,
+            "playersWithProbableFlag": 25,
+            "playersWithDoubtFlag": 25,
+            "playersWithInjuryFlag": 25,
+            "playersWithSuspensionFlag": 25,
+            "playersWithStarterFlag": 0,
+            "statusCoverage": 0.297619
+          },
+          "tec": {
+            "totalPlayers": 20,
+            "playersWithStatus": 20,
+            "playersWithProbableFlag": 20,
+            "playersWithDoubtFlag": 20,
+            "playersWithInjuryFlag": 20,
+            "playersWithSuspensionFlag": 20,
+            "playersWithStarterFlag": 0,
+            "statusCoverage": 1
+          }
+        },
+        "warnings": [
+          "LOW_STATUS_COVERAGE",
+          "STARTER_FLAG_UNAVAILABLE"
+        ]
+      },
+      "availabilityModelVersion": "AVAILABILITY_V1 + AVAILABILITY_V2_CALIBRATED",
+      "status": "PENDING_OUTCOME"
     }
   ]
 }
