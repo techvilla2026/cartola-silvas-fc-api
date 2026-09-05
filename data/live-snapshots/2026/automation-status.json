@@ -1,27 +1,27 @@
 {
   "schemaVersion": "live-snapshot-automation-status/v1",
-  "executionId": "exec-20260905164222218-3b098f96",
-  "lastRunAt": "2026-09-05T16:42:24.337Z",
+  "executionId": "exec-20260905185615158-b832a9d9",
+  "lastRunAt": "2026-09-05T18:56:16.696Z",
   "result": "CAPTURED",
-  "reason": "DAILY_CHECKPOINT",
+  "reason": "FINAL_SAFETY_CAPTURE",
   "requestedReason": null,
   "round": 26,
-  "snapshotId": "live-2026-r26-20260905164222-da1a2c0c",
+  "snapshotId": "live-2026-r26-20260905185615-9e091446",
   "captured": true,
   "skipped": false,
   "auditStatus": "PASS",
-  "nextRecommendedCheckAt": "2026-09-05T17:42:22.219Z",
+  "nextRecommendedCheckAt": null,
   "marketClosingAt": "2026-09-05T18:59:00.000Z",
-  "secondsToClosing": 8197,
+  "secondsToClosing": 164,
   "scheduleWindow": {
-    "name": "SIX_TO_ONE_HOURS",
-    "intervalSeconds": 3600,
-    "priority": "HIGH"
+    "name": "LAST_15_MINUTES",
+    "intervalSeconds": 900,
+    "priority": "CRITICAL"
   },
-  "capturePriority": "HIGH",
+  "capturePriority": "CRITICAL",
   "changeSummary": {
-    "changedPlayers": 0,
-    "statusChanges": 0,
+    "changedPlayers": 14,
+    "statusChanges": 14,
     "priceChanges": 0,
     "predictionChanges": 0,
     "idealTeamChanged": false,
@@ -31,8 +31,8 @@
     "closingChanged": false,
     "centralChanged": false
   },
-  "previousSnapshotId": "live-2026-r26-20260905134839-34a486ea",
-  "currentFingerprint": "d99bea4c14632083e332a99c536d8720e2434a152cd978ca79d1f454a9aece42",
+  "previousSnapshotId": "live-2026-r26-20260905164222-da1a2c0c",
+  "currentFingerprint": "fa95e9f9f152126d43324b168d5a7e69a711c60e9ee2e7f95a304e01b3cf28d3",
   "previousFingerprint": "d99bea4c14632083e332a99c536d8720e2434a152cd978ca79d1f454a9aece42",
   "staleLockRecovered": false,
   "lockReleased": true,
@@ -41,6 +41,6 @@
   "dryRun": false,
   "failureCount": 0,
   "consecutiveFailureCount": 0,
-  "lastSuccessfulRunAt": "2026-09-05T16:42:24.337Z",
+  "lastSuccessfulRunAt": "2026-09-05T18:56:16.696Z",
   "lastFailureAt": null
 }
