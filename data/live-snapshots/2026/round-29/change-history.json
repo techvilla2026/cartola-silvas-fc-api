@@ -2,5 +2,22 @@
   "schemaVersion": "live-snapshot-change-history/v1",
   "season": 2026,
   "round": 29,
-  "changes": []
+  "changes": [
+    {
+      "previousSnapshotId": "live-2026-r29-20260921165541-8343c146",
+      "currentSnapshotId": "live-2026-r29-20260922042226-343c3b93",
+      "capturedAt": "2026-09-22T04:22:26.082Z",
+      "changedPlayers": 2,
+      "statusChanges": 2,
+      "priceChanges": 0,
+      "predictionChanges": 0,
+      "idealTeamChanged": false,
+      "captainChanged": false,
+      "viceChanged": false,
+      "matchChanges": 0,
+      "closingChanged": false,
+      "summary": "Mudanca relevante detectada.",
+      "executionId": "exec-20260922042226081-9895d59b"
+    }
+  ]
 }
