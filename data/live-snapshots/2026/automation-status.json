@@ -1,27 +1,27 @@
 {
   "schemaVersion": "live-snapshot-automation-status/v1",
-  "executionId": "exec-20261017113046774-c836cd49",
-  "lastRunAt": "2026-10-17T11:30:48.567Z",
+  "executionId": "exec-20261017152049443-30901bab",
+  "lastRunAt": "2026-10-17T15:20:51.367Z",
   "result": "CAPTURED",
-  "reason": "DAILY_CHECKPOINT",
+  "reason": "SIGNIFICANT_CHANGE",
   "requestedReason": null,
   "round": 31,
-  "snapshotId": "live-2026-r31-20261017113046-399df059",
+  "snapshotId": "live-2026-r31-20261017152049-11a60ff0",
   "captured": true,
   "skipped": false,
   "auditStatus": "PASS",
-  "nextRecommendedCheckAt": "2026-10-17T14:30:46.775Z",
+  "nextRecommendedCheckAt": "2026-10-17T16:20:49.444Z",
   "marketClosingAt": "2026-10-17T20:59:00.000Z",
-  "secondsToClosing": 34093,
+  "secondsToClosing": 20290,
   "scheduleWindow": {
-    "name": "TWENTY_FOUR_TO_SIX_HOURS",
-    "intervalSeconds": 10800,
-    "priority": "MEDIUM"
+    "name": "SIX_TO_ONE_HOURS",
+    "intervalSeconds": 3600,
+    "priority": "HIGH"
   },
-  "capturePriority": "MEDIUM",
+  "capturePriority": "HIGH",
   "changeSummary": {
-    "changedPlayers": 0,
-    "statusChanges": 0,
+    "changedPlayers": 6,
+    "statusChanges": 6,
     "priceChanges": 0,
     "predictionChanges": 0,
     "idealTeamChanged": false,
@@ -31,8 +31,8 @@
     "closingChanged": false,
     "centralChanged": false
   },
-  "previousSnapshotId": "live-2026-r31-20261017064745-726a9dd6",
-  "currentFingerprint": "b9b801d3d95d928f7d914244a930c46e139884e23783e75b528aece4d399135f",
+  "previousSnapshotId": "live-2026-r31-20261017113046-399df059",
+  "currentFingerprint": "2564e0bf684ee6e8b443fa6d58350e341ccdd74139103ed543ea5d1b6525fee0",
   "previousFingerprint": "b9b801d3d95d928f7d914244a930c46e139884e23783e75b528aece4d399135f",
   "staleLockRecovered": false,
   "lockReleased": true,
@@ -41,6 +41,6 @@
   "dryRun": false,
   "failureCount": 0,
   "consecutiveFailureCount": 0,
-  "lastSuccessfulRunAt": "2026-10-17T11:30:48.567Z",
+  "lastSuccessfulRunAt": "2026-10-17T15:20:51.367Z",
   "lastFailureAt": null
 }
