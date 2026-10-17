@@ -1,18 +1,18 @@
 {
   "schemaVersion": "live-snapshot-automation-status/v1",
-  "executionId": "exec-20261017064745433-ed745ac5",
-  "lastRunAt": "2026-10-17T06:47:47.400Z",
+  "executionId": "exec-20261017113046774-c836cd49",
+  "lastRunAt": "2026-10-17T11:30:48.567Z",
   "result": "CAPTURED",
   "reason": "DAILY_CHECKPOINT",
   "requestedReason": null,
   "round": 31,
-  "snapshotId": "live-2026-r31-20261017064745-726a9dd6",
+  "snapshotId": "live-2026-r31-20261017113046-399df059",
   "captured": true,
   "skipped": false,
   "auditStatus": "PASS",
-  "nextRecommendedCheckAt": "2026-10-17T09:47:45.433Z",
+  "nextRecommendedCheckAt": "2026-10-17T14:30:46.775Z",
   "marketClosingAt": "2026-10-17T20:59:00.000Z",
-  "secondsToClosing": 51074,
+  "secondsToClosing": 34093,
   "scheduleWindow": {
     "name": "TWENTY_FOUR_TO_SIX_HOURS",
     "intervalSeconds": 10800,
@@ -31,7 +31,7 @@
     "closingChanged": false,
     "centralChanged": false
   },
-  "previousSnapshotId": "live-2026-r31-20261017011207-ca10faff",
+  "previousSnapshotId": "live-2026-r31-20261017064745-726a9dd6",
   "currentFingerprint": "b9b801d3d95d928f7d914244a930c46e139884e23783e75b528aece4d399135f",
   "previousFingerprint": "b9b801d3d95d928f7d914244a930c46e139884e23783e75b528aece4d399135f",
   "staleLockRecovered": false,
@@ -41,6 +41,6 @@
   "dryRun": false,
   "failureCount": 0,
   "consecutiveFailureCount": 0,
-  "lastSuccessfulRunAt": "2026-10-17T06:47:47.400Z",
+  "lastSuccessfulRunAt": "2026-10-17T11:30:48.567Z",
   "lastFailureAt": null
 }
